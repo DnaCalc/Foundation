@@ -37,8 +37,9 @@ This protocol is versioned, negotiated, and fully schema-defined.
   - semantics (formula behavior, recalc rules, structural edit rules),
   - supported object-model facets,
   - obligation packs required for readiness,
-  - degrade/lower/opaque rules for unsupported features.
+  - degrade policy classes for unsupported features: `Native` / `Lowered` / `Opaque` / `Rejected`.
 - “Compatibility versions” exist as profile versions (Excel-style notion).
+- Feature-gate tokens are profile-scoped and versioned (for example `stream_semantics_version`, `FG_STREAM_BASE`, `FG_EXTERNAL_UPDATE_OPLOG`, `FG_RTD_LIFECYCLE`).
 
 ### 3.3 Epoch Model (MVCC-style)
 - `committed_epoch`: latest accepted document changes.
@@ -50,15 +51,25 @@ Snapshot pinning:
 - clients can pin an epoch for consistent reads while newer epochs progress.
 - GC retains pinned epochs/caches per policy.
 
+#### 3.3.1 Epoch Status Lattice and Invariants
+- Value status is explicit and monotonic per epoch view: `pending` -> `ready` (or `error`), with `stale` as a visibility flag relative to `committed_epoch`.
+- A derived result may commit only if produced against the same input epoch it claims (`no stale commit` invariant).
+- Structural edits run in exclusive mutation mode; no concurrent structural mutation may overlap their commit window.
+- Replay of local or remote operations must preserve epoch ordering guarantees and produce deterministic stale/pending signaling.
+
 ### 3.4 Calculation Engine Pipeline (conceptual)
 - Parse → bind/resolve refs → dependency graph → invalidation closure → schedule → evaluate → commit results.
 - Incremental recompute based on dependency closure.
-- Deterministic mode exists (fixed scheduling and fixed reduction order where needed).
+- Deterministic mode exists (fixed scheduling, fixed reduction order where needed, and replayable event traces).
+- Numeric reduction policy (for floating-point aggregation order) is profile-defined and must be explicit in compatibility documentation.
 
 ### 3.5 External Streaming and RTD-like Behavior
 - Pathfinder: `STREAM("topic")` is acceptable and deterministic (epoch-scoped external provider).
 - Full system: RTD support (topic lifecycle, updates, invalidations) is a core interop feature.
 - External updates must appear as explicit ops and be replayable for test harnesses where required.
+- STREAM/external update semantics include explicit topic identity, dedupe rules, ordering guarantees, and coalescing policy.
+- Profile policy defines whether oracle values are local-only or shared for collaboration scenarios.
+- A stream replay bundle (topic declarations, updates, timing/order envelope) is a required artifact for conformance and minimization.
 
 ### 3.6 External UDFs / XLL-like integration
 Pathfinder scope includes:
@@ -66,6 +77,7 @@ Pathfinder scope includes:
 - scalar + optional range inputs (scoped decision), scalar outputs initially,
 - thread-safe vs single-thread execution constraints,
 - UDFs treated as pure-oracle from Lean/TLA+ perspective (semantics parameterized by oracle results).
+- deterministic-mode rule: thread-safe UDF work may run in parallel but externally observable commit order must remain replayable.
 
 Full system adds:
 - full XLL compatibility including marshalling/lifetime contracts and RTD integration.
@@ -87,13 +99,15 @@ Windows-only COM automation is a separate facade layered on top of the identical
 - For Excel interop:
   - preserve unknown/unsupported OOXML parts where feasible (opaque attachments),
   - never silently drop meaning on round-trip,
-  - lowering pipeline may translate internal constructs to Excel-safe constructs or explicit loss markers.
+  - lowering pipeline may translate internal constructs to Excel-safe constructs or explicit loss markers,
+  - degrade outcomes must be surfaced through diagnostics with policy class (`Native` / `Lowered` / `Opaque` / `Rejected`).
 
 ### 3.9 Collaboration (designed-in seam)
 - Collaboration modeled as replication of the OpLog.
 - Initial design preference: server-sequenced ops (deterministic shared log).
 - Identity under structural edits is considered early (stable IDs where needed).
 - Derived calc is generally local; external oracles (RTD) may be local or shared depending on profile policy.
+- Replication envelope requires operation idempotency, causal ordering metadata, and transaction grouping.
 
 ### 3.10 UI Architecture (intended stack)
 - Tauri shell with web UI.
@@ -104,6 +118,7 @@ Windows-only COM automation is a separate facade layered on top of the identical
 - Geometry spec and hit-test invariants.
 - RenderPlan IR used for deterministic testing (avoid screenshot brittleness).
 - View state is partially document-backed (saved view settings) and partially session state.
+- UI reliability requires property-level invariants for geometry/hit-test consistency and deterministic RenderPlan validation.
 
 ## 4. Architectural Constraints (A2 / CONSTR- examples)
 - **CONSTR-001:** All persistent mutations are ops; direct document mutation is forbidden outside the coordinator.
@@ -111,6 +126,10 @@ Windows-only COM automation is a separate facade layered on top of the identical
 - **CONSTR-003:** Unsupported constructs never crash; they preserve or degrade explicitly.
 - **CONSTR-004:** Protocol surfaces are identical across Red/Blue; compatibility negotiation is mandatory.
 - **CONSTR-005:** Deterministic mode must exist and be used for conformance and minimization runs.
+- **CONSTR-006:** Spec stack/oracle/tool integration contracts are file/CLI-based with schema-versioned artifacts.
+- **CONSTR-007:** Compatibility claims require linked clean-room evidence records tied to REQ/INT/REAL identifiers.
+- **CONSTR-008:** Engine lock discipline forbids awaiting or user-callback execution while holding mutation-critical locks.
+- **CONSTR-009:** Performance readiness uses deterministic phase counters and published scaling signatures per required profile.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -125,9 +144,17 @@ Windows-only COM automation is a separate facade layered on top of the identical
   **REAL:** Every value carries `value_epoch` and explicit stale/pending status in UI/API.
 - **INT:** Custom features must not break other builds.  
   **REAL:** Unknown extension payloads round-trip; unsupported semantic extensions evaluate to explicit deterministic errors and emit diagnostics.
+- **INT:** STREAM/external updates must be predictable and replayable across engines.  
+  **REAL:** External updates are explicit OpLog operations with versioned stream semantics, deterministic replay bundles, and pack-validated ordering/dedupe behavior.
+- **INT:** UI correctness must be testable without screenshot dependence.  
+  **REAL:** Geometry/hit-test invariants and RenderPlan determinism are required and pack-gated.
+- **INT:** Performance claims must be trend-checkable, not anecdotal.  
+  **REAL:** Required profiles publish deterministic phase counters and slope-based scaling signatures with regression thresholds.
+- **INT:** Clean-room compatibility claims must be auditable.  
+  **REAL:** Every compatibility claim links to admissible evidence records and review status.
 
 ## 6. Pathfinder Scope Anchor (DnaVisiCalc)
-- VisiCalc-sized formula language and functions.
+- VisiCalc-sized formula language and functions (minimal deterministic subset, explicitly versioned by profile).
 - Manual and auto recalc.
 - STREAM external provider.
 - External UDF registration and invocation (XLL-like subset).
@@ -136,6 +163,17 @@ Windows-only COM automation is a separate facade layered on top of the identical
 - TLA+ verification of epoch/scheduling/invalidation invariants.
 - OCaml CLI oracle + trace minimizer.
 - UI stack: Tauri + canvas grid + DOM overlay editor, with stale markers.
+
+### 6.1 Round 0 Normative Contract (minimum)
+- Required semantics: core expressions, references, deterministic dependency closure, manual/auto recalc, STREAM basics, and one structural rewrite path.
+- Required obligations: core semantics packs, epoch/concurrency invariants, oracle alignment, and basic scaling signature.
+- Required artifacts: capability manifest, conformance report, minimized trace corpus, and replay bundles for stream cases.
+
+### 6.2 Explicit Non-goals for Round 0
+- Full XLL marshalling/lifetime compatibility.
+- Full RTD lifecycle parity.
+- Full OOXML fidelity breadth outside the pathfinder subset.
+- Multi-writer collaboration semantics beyond seam validation.
 
 ## 7. Rounds 1–3 Forward Compatibility
 DnaVisiCalc must already validate the meta-architecture and the discipline that enables:

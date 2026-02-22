@@ -1,0 +1,7 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260222-072145-foundation-pass-01,init,completed,2026-02-22T05:21:50.5468899Z,2026-02-22T05:21:50.5468899Z,synthesis/runs/20260222-072145-foundation-pass-01/inputs/source_hashes.csv,source responses hashed
+20260222-072145-foundation-pass-01,analysis,completed,2026-02-22T05:26:13.5642784Z,2026-02-22T05:26:13.5642784Z,synthesis/runs/20260222-072145-foundation-pass-01/analysis/suggestion_index.csv,20 suggestions indexed
+20260222-072145-foundation-pass-01,decisions,completed,2026-02-22T05:26:13.5642784Z,2026-02-22T05:26:13.5642784Z,synthesis/runs/20260222-072145-foundation-pass-01/decisions/decision_log.csv,20 decisions recorded
+20260222-072145-foundation-pass-01,edits,completed,2026-02-22T05:26:13.5642784Z,2026-02-22T05:26:13.5642784Z,CHARTER.md;ARCHITECTURE_AND_REQUIREMENTS.md;OPERATIONS.md,foundation docs updated
+20260222-072145-foundation-pass-01,report,completed,2026-02-22T05:26:34.9754780Z,2026-02-22T05:26:34.9754780Z,synthesis/runs/20260222-072145-foundation-pass-01/outputs/synthesis_report.md,synthesis summary emitted
+20260222-072145-foundation-pass-01,verify,completed,2026-02-22T05:26:59.2305807Z,2026-02-22T05:26:59.2305807Z,git diff --stat,edited files and run artifacts verified

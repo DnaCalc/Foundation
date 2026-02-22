@@ -15,7 +15,7 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 3. **One-command readiness**  
    `meta check` (or equivalent) is the standard way to declare a state “green.”
 4. **Regressions are assets**  
-   Every bug becomes a minimized trace/case and remains in the corpus.
+   Every bug becomes a minimized, machine-replayable trace/case artifact and remains in the corpus.
 5. **Determinism-first debugging**  
    Deterministic modes exist for triage and conformance runs; non-determinism is opt-in and labeled.
 6. **Evidence discipline**  
@@ -63,5 +63,10 @@ Excluded:
 - **Profile**: A versioned semantics bundle defining meaning, compatibility rules, and required obligation packs.
 - **OpLog**: The operation log—the single representation of persistent state changes.
 - **Epoch / Meta-epoch**: Epoch versions document state; meta-epochs version stabilized project states (profiles + packs + implementations).
+- **Stabilized epoch**: The latest epoch whose derived values are complete for a declared scope.
+- **Meta-epoch commit**: A published stabilization checkpoint containing capability manifest, conformance report, and regression updates.
+- **Artifact freeze**: A required set of versioned artifacts that must be locked before advancing rounds or declaring a profile green.
+- **External update op**: An explicit OpLog operation representing inbound STREAM/RTD-like value changes.
+- **Stream semantics version**: A profile-scoped version token controlling STREAM/external update behavior.
 - **Obligation pack**: A computed set of checks required to claim readiness for a profile.
 - **Capability manifest**: Runtime/Build metadata describing supported protocols, profiles, features, and pack results.
