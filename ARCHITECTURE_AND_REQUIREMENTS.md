@@ -56,17 +56,25 @@ Snapshot pinning:
 - A derived result may commit only if produced against the same input epoch it claims (`no stale commit` invariant).
 - Structural edits run in exclusive mutation mode; no concurrent structural mutation may overlap their commit window.
 - Replay of local or remote operations must preserve epoch ordering guarantees and produce deterministic stale/pending signaling.
+- Stream updates are monotonic per topic stream sequence; duplicate/out-of-order updates are deterministically deduped/rejected per profile policy.
+- Epoch GC must not reclaim any snapshot or derived cache still reachable from pinned epochs.
 
 ### 3.4 Calculation Engine Pipeline (conceptual)
 - Parse → bind/resolve refs → dependency graph → invalidation closure → schedule → evaluate → commit results.
 - Incremental recompute based on dependency closure.
 - Deterministic mode exists (fixed scheduling, fixed reduction order where needed, and replayable event traces).
 - Numeric reduction policy (for floating-point aggregation order) is profile-defined and must be explicit in compatibility documentation.
+- Dependency discovery and execution order are distinct artifacts; persisted calc order traces (for example calc-chain imports/exports) are treated as caches/diagnostics, not semantic truth.
+
+#### 3.4.1 Incremental Graph Invariant Model
+- Green specifies node-level invariants inspired by production incremental systems: `necessary`, `stale`, `height`, and `scope`.
+- Dynamic dependency rewiring (bind-like behavior) must carry explicit scope invalidation rules and deterministic re-stabilization behavior.
+- Recompute diagnostics must be analyzable: dependency graph and stabilization traces are exportable as deterministic artifacts.
 
 ### 3.5 External Streaming and RTD-like Behavior
 - Pathfinder: `STREAM("topic")` is acceptable and deterministic (epoch-scoped external provider).
 - Full system: RTD support (topic lifecycle, updates, invalidations) is a core interop feature.
-- External updates must appear as explicit ops and be replayable for test harnesses where required.
+- External updates must appear as explicit `OpExternalUpdate` ops (`topic_id`, `topic_seq`, payload ref/envelope) and be replayable for test harnesses where required.
 - STREAM/external update semantics include explicit topic identity, dedupe rules, ordering guarantees, and coalescing policy.
 - Profile policy defines whether oracle values are local-only or shared for collaboration scenarios.
 - A stream replay bundle (topic declarations, updates, timing/order envelope) is a required artifact for conformance and minimization.

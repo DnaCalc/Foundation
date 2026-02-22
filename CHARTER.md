@@ -20,6 +20,8 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
    Deterministic modes exist for triage and conformance runs; non-determinism is opt-in and labeled.
 6. **Evidence discipline**  
    Every Excel-compatibility claim is backed by public sources and/or a reproducible observation harness.
+7. **Coupled assurance stack**  
+   Claims of correctness must stay coupled across semantics, proofs/models, executable tests, and CI gate artifacts.
 
 ### 2.2 Evolution Doctrine
 1. **Profiles are the semantics spine**  
@@ -34,6 +36,12 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
    Migrations are expressed as operations and are testable/replayable.
 6. **No hidden mutation pathways**  
    All persistent state changes flow through the operation model; no “special cases” for UI, scripts, VBA, XLL, or collaboration.
+
+### 2.3 Named Program Principles
+1. **Alien Artifact leverage**
+   Use mathematically strong methods when they remove ambiguity and increase confidence, but keep each method tied to executable invariants and artifacts.
+2. **Design for Evolution**
+   Keep seams explicit, versioned, and negotiable so behavior can expand without semantic drift or silent breakage.
 
 ## 3. Program Structure and Names
 ### 3.1 System Family
@@ -63,10 +71,14 @@ Excluded:
 - **Profile**: A versioned semantics bundle defining meaning, compatibility rules, and required obligation packs.
 - **OpLog**: The operation log—the single representation of persistent state changes.
 - **Epoch / Meta-epoch**: Epoch versions document state; meta-epochs version stabilized project states (profiles + packs + implementations).
+- **Calc stabilized**: A runtime/data state where derived outputs are complete for a declared scope and epoch.
+- **Profile green**: A release/readiness state where all required obligation packs for a profile are passing.
 - **Stabilized epoch**: The latest epoch whose derived values are complete for a declared scope.
 - **Meta-epoch commit**: A published stabilization checkpoint containing capability manifest, conformance report, and regression updates.
 - **Artifact freeze**: A required set of versioned artifacts that must be locked before advancing rounds or declaring a profile green.
 - **External update op**: An explicit OpLog operation representing inbound STREAM/RTD-like value changes.
 - **Stream semantics version**: A profile-scoped version token controlling STREAM/external update behavior.
+- **Stream replay bundle**: A versioned artifact containing topic declarations and ordered update envelopes for deterministic replay.
+- **Degradation class**: Policy outcome for unsupported behavior (`Native`, `Lowered`, `Opaque`, `Rejected`).
 - **Obligation pack**: A computed set of checks required to claim readiness for a profile.
 - **Capability manifest**: Runtime/Build metadata describing supported protocols, profiles, features, and pack results.

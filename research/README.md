@@ -12,6 +12,7 @@ Track deep-research topics, prioritized sources, and run artifacts in a versione
 - Source and author/work tracking in `research/sources.csv`
 - Optional people-to-follow list in `research/people_watchlist.md`
 - Timestamped run artifacts in `research/runs/<run-id>/`
+- Run lifecycle state that distinguishes captured evidence from synthesized knowledge
 
 ## When To Use / When Not To Use
 - Use for source-backed investigation and evidence gathering.
@@ -21,6 +22,11 @@ Track deep-research topics, prioritized sources, and run artifacts in a versione
 ## Prompts vs Research
 - `prompts/` = reusable prompt templates (how to ask).
 - `research/` = concrete investigations and sources (what was found).
+
+## Lifecycle Status
+- `captured`: run outputs collected but not yet synthesized.
+- `synthesized`: findings promoted into core docs and/or `notes/RESEARCH_NOTES.md`.
+- `archived`: retained for audit/history; no longer active working set.
 
 ## Suggested Run Layout
 - `research/runs/<run-id>/README.md`

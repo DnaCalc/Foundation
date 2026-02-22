@@ -7,11 +7,11 @@ These are exploratory notes (similar status to `notes/BRAINSTORM_NOTES.md`), not
 
 ### 1) Charter principle: "Alien Artifact" math-leverage approach
 - Note: Consider adding the "Alien Artifact" math-leverage approach as a key principle in the Charter.
-- Status: Captured idea (not yet adopted).
+- Status: Adopted in Charter synthesis pass (`20260222-152845-foundation-pass-02-prompt-and-research`).
 
 ### 2) Charter principle: "Design for Evolution"
 - Note: Consider making "Design for Evolution" a named key principle in the Charter.
-- Status: Captured idea (not yet adopted).
+- Status: Adopted in Charter synthesis pass (`20260222-152845-foundation-pass-02-prompt-and-research`).
 
 ### 3) Potential fourth implementation track ("Black")
 - Note: Consider adding a later implementation track beyond Green/Red/Blue:
@@ -23,7 +23,7 @@ These are exploratory notes (similar status to `notes/BRAINSTORM_NOTES.md`), not
 - Note: Add a focused investigation item for the Jane Street OCaml stack as input for Green spec/reference work.
   - Priority subtopic: OxCaml (language/tooling model and fit for reference implementation ergonomics).
   - Priority subtopic: `Incremental` library (dependency graph maintenance, recomputation semantics, and potential transfer to spreadsheet-style incremental evaluation).
-- Status: Captured research note (not yet investigated).
+- Status: Investigated in run `20260222-123425-run4-janestreet-oxcaml-incremental-internal`; findings synthesized into core docs and `notes/RESEARCH_NOTES.md`.
 
 ### 5) License attribution update
 - Note: Update MIT license copyright attribution to "DNA Kode, Inc."

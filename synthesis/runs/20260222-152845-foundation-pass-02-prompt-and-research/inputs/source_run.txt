@@ -1,0 +1,53 @@
+Synthesis scope for 20260222-152845-foundation-pass-02-prompt-and-research
+
+Prompt run: prompts/runs/20260222-011351-prompt-pack
+Research runs:
+- research/runs/20260222-082019-run1-master-landscape/outputs/deep-research-report.md
+- research/runs/20260222-082019-run2-concurrency-mvcc/outputs/deep-research-report.md
+- research/runs/20260222-083307-run1-master-landscape-internal/outputs/response.md
+- research/runs/20260222-083307-run1-master-landscape-internal/outputs/research_report.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/response.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/research_report.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/combined_findings.md
+- research/runs/20260222-084640-run3-asupersync-deep-dive-internal/outputs/response.md
+- research/runs/20260222-084640-run3-asupersync-deep-dive-internal/outputs/research_report.md
+- research/runs/20260222-123425-run4-janestreet-oxcaml-incremental-internal/outputs/response.md
+- research/runs/20260222-123425-run4-janestreet-oxcaml-incremental-internal/outputs/research_report.md
+
+Input files hashed:
+- .\prompts\runs\20260222-011351-prompt-pack\responses\01_spec_stack_gap_finder.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\02_lean_module_plan_theorem_backlog.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\03_tlaplus_concurrency_protocol_outline.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\04_ocaml_oracle_cli_contract_shrinker.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\05_rust_engine_architecture_review.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\06_dotnet_engine_architecture_review.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\07_dotnet_meta_tool_obligation_resolver.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\08_clean_room_evidence_log_workflow.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\09_canvas_grid_reliability_test_strategy.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\10_scaling_signature_suite.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\11_degrade_gracefully_matrix.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\12_oplog_replication_seam.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\13_round_milestone_map.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\14_consistency_audit_refactor_suggestions.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\15_triad_design_stream_external_updates.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\16_triad_assurance_stream_external_updates.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\17_triad_delivery_stream_external_updates.md
+- .\prompts\runs\20260222-011351-prompt-pack\responses\18_triad_synthesis_stream_external_updates.md
+- research/runs/20260222-082019-run1-master-landscape/outputs/deep-research-report.md
+- research/runs/20260222-082019-run2-concurrency-mvcc/outputs/deep-research-report.md
+- research/runs/20260222-083307-run1-master-landscape-internal/outputs/response.md
+- research/runs/20260222-083307-run1-master-landscape-internal/outputs/research_report.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/response.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/research_report.md
+- research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/combined_findings.md
+- research/runs/20260222-084640-run3-asupersync-deep-dive-internal/outputs/response.md
+- research/runs/20260222-084640-run3-asupersync-deep-dive-internal/outputs/research_report.md
+- research/runs/20260222-123425-run4-janestreet-oxcaml-incremental-internal/outputs/response.md
+- research/runs/20260222-123425-run4-janestreet-oxcaml-incremental-internal/outputs/research_report.md
+
+Target docs for synthesis:
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/RESEARCH_NOTES.md
+- notes/BRAINSTORM_NOTES.md

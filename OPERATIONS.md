@@ -50,6 +50,7 @@ The project evolves through a “recalc” cycle operating on DAGs.
    - Work is dispatched along parallel tracks: Design / Assurance / Delivery / Logistics.
 4. **Execution**
    - Proofs/model checks, oracle runs, engine conformance, perf signatures.
+   - For behavior-sensitive changes, execute a coupled evidence lane: semantics/spec delta, proof/model output, deterministic replay artifacts, and scaling signature evidence.
 5. **Stabilization**
    - A profile is stabilized when its required obligation packs pass and artifacts are emitted.
 6. **Meta-epoch Commit**
@@ -145,6 +146,7 @@ Prompt execution, deep research, and synthesis are treated as operational activi
 - Synthesis-run operating procedure lives in `synthesis/README.md`.
 - Synthesis runs must record per-suggestion decisions (`accept` / `adapt` / `defer` / `reject`) with rationale and target-document references.
 - No synthesis edit should be applied without a corresponding decision-log record.
+- Synthesis artifacts are audit/history records; source-of-truth remains `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, `OPERATIONS.md`, and `notes/RESEARCH_NOTES.md` for non-doctrinal retained knowledge.
 
 ### 8.3 Research Runs
 - Deep-research prompt templates live in `prompts/PROMPT_PACK_DEEP_RESEARCH.md`.
@@ -157,7 +159,25 @@ When synthesis suggestions conflict, precedence remains:
 1. `CHARTER.md`
 2. `ARCHITECTURE_AND_REQUIREMENTS.md`
 3. `OPERATIONS.md`
-4. `notes/BRAINSTORM_NOTES.md`
+4. `notes/RESEARCH_NOTES.md`
+5. `notes/BRAINSTORM_NOTES.md`
+
+### 8.5 Synthesis Completion and Status Model
+- A synthesis run is complete only when all of the following exist:
+  - frozen input hashes,
+  - full suggestion index and decision log coverage for the scoped run set,
+  - applied/adapted changes reflected in source-of-truth docs,
+  - output synthesis report,
+  - source run manifests or registries marked `synthesized` with reference to the synthesis run id.
+- Suggested lifecycle states:
+  - `captured` (raw run outputs present),
+  - `synthesized` (decisions recorded and knowledge promoted),
+  - `archived` (run retained for audit/history, no longer active working set).
+
+### 8.6 Working Directory Semantics
+- `prompts/runs/*` and `research/runs/*` are working evidence directories.
+- Their outputs must be assumed non-authoritative until synthesis promotion.
+- After synthesis, these directories remain audit inputs; day-to-day guidance comes from source-of-truth docs and `notes/RESEARCH_NOTES.md`.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
