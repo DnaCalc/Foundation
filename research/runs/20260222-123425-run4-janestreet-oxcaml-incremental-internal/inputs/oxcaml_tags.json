@@ -1,0 +1,902 @@
+[
+  {
+    "name": "with-kinds-before-rebase",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/with-kinds-before-rebase",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/with-kinds-before-rebase",
+    "commit": {
+      "sha": "d1b324e9ad129caa04da41c54e4b2e06f3073f0d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d1b324e9ad129caa04da41c54e4b2e06f3073f0d"
+    }
+  },
+  {
+    "name": "with-kinds-after-one-rebase",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/with-kinds-after-one-rebase",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/with-kinds-after-one-rebase",
+    "commit": {
+      "sha": "3a05dd7d5f2778bae772ef35a172d9c605a43609",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/3a05dd7d5f2778bae772ef35a172d9c605a43609"
+    }
+  },
+  {
+    "name": "remove-old-syntax",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/remove-old-syntax",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/remove-old-syntax",
+    "commit": {
+      "sha": "b8838ebca63357301c9a4c10c7d973cc03016f69",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b8838ebca63357301c9a4c10c7d973cc03016f69"
+    }
+  },
+  {
+    "name": "pre-pivot-root",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/pre-pivot-root",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/pre-pivot-root",
+    "commit": {
+      "sha": "b0ff04e3b968a427dc36ba483df7353eebd78f15",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b0ff04e3b968a427dc36ba483df7353eebd78f15"
+    }
+  },
+  {
+    "name": "lazysigs",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/lazysigs",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/lazysigs",
+    "commit": {
+      "sha": "79a90bacde3036d31491fd3cdcc44a742482ea69",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/79a90bacde3036d31491fd3cdcc44a742482ea69"
+    }
+  },
+  {
+    "name": "last-ocamlformat.0.24.1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/last-ocamlformat.0.24.1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/last-ocamlformat.0.24.1",
+    "commit": {
+      "sha": "662bfcb41387be8a78e73152e309e144d0558ab5",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/662bfcb41387be8a78e73152e309e144d0558ab5"
+    }
+  },
+  {
+    "name": "last-4.14",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/last-4.14",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/last-4.14",
+    "commit": {
+      "sha": "718e914b0f1e9bcfc55cedce94ecd7c15d3b7153",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/718e914b0f1e9bcfc55cedce94ecd7c15d3b7153"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210805-0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210805-0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210805-0",
+    "commit": {
+      "sha": "493da09cef8bbf82e965ca232b2d11aaf339bf59",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/493da09cef8bbf82e965ca232b2d11aaf339bf59"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210730-1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210730-1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210730-1",
+    "commit": {
+      "sha": "3b28516e3dd221a9a4680af46e8ace2f128474a7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/3b28516e3dd221a9a4680af46e8ace2f128474a7"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210730-0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210730-0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210730-0",
+    "commit": {
+      "sha": "0f426c5380a0997513e50db29bf8e6dd6a6694a7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/0f426c5380a0997513e50db29bf8e6dd6a6694a7"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210728-4",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210728-4",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210728-4",
+    "commit": {
+      "sha": "9f8f7d4f4542dab5feb4d33b00c12debd84c63b1",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9f8f7d4f4542dab5feb4d33b00c12debd84c63b1"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210728-3",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210728-3",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210728-3",
+    "commit": {
+      "sha": "a4c903ccde4265eb7624f51f235c36f6a2ff1a65",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a4c903ccde4265eb7624f51f235c36f6a2ff1a65"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210728-2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210728-2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210728-2",
+    "commit": {
+      "sha": "e4d76dc2cb16bd809507544ca946016d708a9f36",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e4d76dc2cb16bd809507544ca946016d708a9f36"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210728-1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210728-1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210728-1",
+    "commit": {
+      "sha": "d19f7db6ae6143663ef5294f45d68d9384deb873",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d19f7db6ae6143663ef5294f45d68d9384deb873"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210728-0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210728-0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210728-0",
+    "commit": {
+      "sha": "c0fd776eb899f3098948b4ecefacaa484fd396c7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/c0fd776eb899f3098948b4ecefacaa484fd396c7"
+    }
+  },
+  {
+    "name": "flambda2-alpha-20210727-0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda2-alpha-20210727-0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda2-alpha-20210727-0",
+    "commit": {
+      "sha": "995a01c99d30d1dc853356687f67aefed2cef8dc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/995a01c99d30d1dc853356687f67aefed2cef8dc"
+    }
+  },
+  {
+    "name": "flambda_fork_point",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/flambda_fork_point",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/flambda_fork_point",
+    "commit": {
+      "sha": "16aab59a09dc5ecf61e47fc8091d1994cbba33bc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/16aab59a09dc5ecf61e47fc8091d1994cbba33bc"
+    }
+  },
+  {
+    "name": "first-system-ocaml.5.4.0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/first-system-ocaml.5.4.0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/first-system-ocaml.5.4.0",
+    "commit": {
+      "sha": "f95f6384fb8403501f8ecb1a3b591c0f588b9e22",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f95f6384fb8403501f8ecb1a3b591c0f588b9e22"
+    }
+  },
+  {
+    "name": "first-ocamlformat.0.28.1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/first-ocamlformat.0.28.1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/first-ocamlformat.0.28.1",
+    "commit": {
+      "sha": "09eb74cd546c2ea47b5de929b0190f9596fb70b4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/09eb74cd546c2ea47b5de929b0190f9596fb70b4"
+    }
+  },
+  {
+    "name": "dash-h-test1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/dash-h-test1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/dash-h-test1",
+    "commit": {
+      "sha": "1042682a52c27f0a939b098596a1ffb3ac506841",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1042682a52c27f0a939b098596a1ffb3ac506841"
+    }
+  },
+  {
+    "name": "csl-1.15",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.15",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.15",
+    "commit": {
+      "sha": "786012623dedd375982038aefabda0cc2621afcc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/786012623dedd375982038aefabda0cc2621afcc"
+    }
+  },
+  {
+    "name": "csl-1.14",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.14",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.14",
+    "commit": {
+      "sha": "7843bd32b00de5fc95d3da4a6185d3c7070a7d20",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7843bd32b00de5fc95d3da4a6185d3c7070a7d20"
+    }
+  },
+  {
+    "name": "csl-1.13",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.13",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.13",
+    "commit": {
+      "sha": "b42d0d25f40c4e3505450f7b128004815147eb9b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b42d0d25f40c4e3505450f7b128004815147eb9b"
+    }
+  },
+  {
+    "name": "csl-1.12",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.12",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.12",
+    "commit": {
+      "sha": "1462cbb6ce9f5e2586b79185aca7ee2e24f284c9",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1462cbb6ce9f5e2586b79185aca7ee2e24f284c9"
+    }
+  },
+  {
+    "name": "csl-1.11",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.11",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.11",
+    "commit": {
+      "sha": "b82cc436957e566a20d22ba2a527b78ac9b63d19",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b82cc436957e566a20d22ba2a527b78ac9b63d19"
+    }
+  },
+  {
+    "name": "csl-1.10",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.10",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.10",
+    "commit": {
+      "sha": "bf969d0aa8be613080b33e993e7bf058017754f3",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/bf969d0aa8be613080b33e993e7bf058017754f3"
+    }
+  },
+  {
+    "name": "csl-1.07",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.07",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.07",
+    "commit": {
+      "sha": "2195d6fbe8ac5db18e2a46eb7b31fedf22c3947c",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2195d6fbe8ac5db18e2a46eb7b31fedf22c3947c"
+    }
+  },
+  {
+    "name": "csl-1.06",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/csl-1.06",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/csl-1.06",
+    "commit": {
+      "sha": "19cfda517399cf845f38312e5fc3fddd5a0be00b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/19cfda517399cf845f38312e5fc3fddd5a0be00b"
+    }
+  },
+  {
+    "name": "ccasin-test-tag",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/ccasin-test-tag",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/ccasin-test-tag",
+    "commit": {
+      "sha": "a75ec86bdbf6da1b474f3136bb9808691d4d0511",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a75ec86bdbf6da1b474f3136bb9808691d4d0511"
+    }
+  },
+  {
+    "name": "before-rebase-xmas-eve",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/before-rebase-xmas-eve",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/before-rebase-xmas-eve",
+    "commit": {
+      "sha": "4ced59ee5ca1dcef661f4147f928bdcab546402f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/4ced59ee5ca1dcef661f4147f928bdcab546402f"
+    }
+  },
+  {
+    "name": "abstract-jkind-axes",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/abstract-jkind-axes",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/abstract-jkind-axes",
+    "commit": {
+      "sha": "d8b7d2d5500a0fbe82739750562143976c6ad4af",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d8b7d2d5500a0fbe82739750562143976c6ad4af"
+    }
+  },
+  {
+    "name": "5.4.0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.4.0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.4.0",
+    "commit": {
+      "sha": "907eec0b75c5bcf0fe6da5f4b9f11c5c22995a16",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/907eec0b75c5bcf0fe6da5f4b9f11c5c22995a16"
+    }
+  },
+  {
+    "name": "5.4.0-rc1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.4.0-rc1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.4.0-rc1",
+    "commit": {
+      "sha": "07d85c25b7cb01a9d30da49cffcb5afc062f1000",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/07d85c25b7cb01a9d30da49cffcb5afc062f1000"
+    }
+  },
+  {
+    "name": "5.4.0-beta2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.4.0-beta2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.4.0-beta2",
+    "commit": {
+      "sha": "32c0119e9f05d40625089f62033129d58fa8d9f6",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/32c0119e9f05d40625089f62033129d58fa8d9f6"
+    }
+  },
+  {
+    "name": "5.4.0-beta1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.4.0-beta1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.4.0-beta1",
+    "commit": {
+      "sha": "b76c4f9d1cfbb68226d3366e21f20c2df0a326ec",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b76c4f9d1cfbb68226d3366e21f20c2df0a326ec"
+    }
+  },
+  {
+    "name": "5.4.0-alpha1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.4.0-alpha1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.4.0-alpha1",
+    "commit": {
+      "sha": "ff1ab416a5503c8bde9fa3fae5f2bb21c7ddc81e",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ff1ab416a5503c8bde9fa3fae5f2bb21c7ddc81e"
+    }
+  },
+  {
+    "name": "5.3.0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.3.0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.3.0",
+    "commit": {
+      "sha": "1ccb919e35f8378834060c503ae953897fe0fb7f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1ccb919e35f8378834060c503ae953897fe0fb7f"
+    }
+  },
+  {
+    "name": "5.3.0-rc1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.3.0-rc1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.3.0-rc1",
+    "commit": {
+      "sha": "87db8a894c55645ac920b09cc54a3fd845f93f30",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/87db8a894c55645ac920b09cc54a3fd845f93f30"
+    }
+  },
+  {
+    "name": "5.3.0-beta2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.3.0-beta2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.3.0-beta2",
+    "commit": {
+      "sha": "c4a09cae93a271bc0c94c1fa4ba6c37d4d9daba8",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/c4a09cae93a271bc0c94c1fa4ba6c37d4d9daba8"
+    }
+  },
+  {
+    "name": "5.3.0-beta1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.3.0-beta1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.3.0-beta1",
+    "commit": {
+      "sha": "2722eefa0562cb266f21a6a8d9482991d5de5f46",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2722eefa0562cb266f21a6a8d9482991d5de5f46"
+    }
+  },
+  {
+    "name": "5.3.0-alpha1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.3.0-alpha1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.3.0-alpha1",
+    "commit": {
+      "sha": "ea88eb1a34b66baf405dcd09be183b5a655346ff",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ea88eb1a34b66baf405dcd09be183b5a655346ff"
+    }
+  },
+  {
+    "name": "5.2.1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.1",
+    "commit": {
+      "sha": "85d9a7ed3554a83af13fbf6d662cca3a0d494326",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/85d9a7ed3554a83af13fbf6d662cca3a0d494326"
+    }
+  },
+  {
+    "name": "5.2.1-rc1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.1-rc1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.1-rc1",
+    "commit": {
+      "sha": "9e2508c75169638400189f64588a35b0aeabe535",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9e2508c75169638400189f64588a35b0aeabe535"
+    }
+  },
+  {
+    "name": "5.2.0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0",
+    "commit": {
+      "sha": "74a76cc2f2588eb18a443a60918f040838292ac7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/74a76cc2f2588eb18a443a60918f040838292ac7"
+    }
+  },
+  {
+    "name": "5.2.0minus-31",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-31",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-31",
+    "commit": {
+      "sha": "7d714cfb3f1c79c9b1e2a9c40ac60ba0c44cafd7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7d714cfb3f1c79c9b1e2a9c40ac60ba0c44cafd7"
+    }
+  },
+  {
+    "name": "5.2.0minus-30",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-30",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-30",
+    "commit": {
+      "sha": "01024c4f9bcc74bb3a2cd44f4851b42d1ef2723a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/01024c4f9bcc74bb3a2cd44f4851b42d1ef2723a"
+    }
+  },
+  {
+    "name": "5.2.0minus-29",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-29",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-29",
+    "commit": {
+      "sha": "8cb97818cff035cf8784cf5ffd9726104343f6f1",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/8cb97818cff035cf8784cf5ffd9726104343f6f1"
+    }
+  },
+  {
+    "name": "5.2.0minus-28",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-28",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-28",
+    "commit": {
+      "sha": "d470e8af17f290e52a88a83d229d83ed49424cc6",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d470e8af17f290e52a88a83d229d83ed49424cc6"
+    }
+  },
+  {
+    "name": "5.2.0minus-27",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-27",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-27",
+    "commit": {
+      "sha": "977afdd4ebd2c9cf0d4756d7b37d0d9a76ca73ef",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/977afdd4ebd2c9cf0d4756d7b37d0d9a76ca73ef"
+    }
+  },
+  {
+    "name": "5.2.0minus-26",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-26",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-26",
+    "commit": {
+      "sha": "1c9ffa2e340b5ff566861f1cc3f511b562d1d161",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1c9ffa2e340b5ff566861f1cc3f511b562d1d161"
+    }
+  },
+  {
+    "name": "5.2.0minus-25",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-25",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-25",
+    "commit": {
+      "sha": "f6ad0e414c06d2186f25b2f016b71d874216b863",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f6ad0e414c06d2186f25b2f016b71d874216b863"
+    }
+  },
+  {
+    "name": "5.2.0minus-25-mode-solver-fix",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-25-mode-solver-fix",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-25-mode-solver-fix",
+    "commit": {
+      "sha": "076f16f8677a4589b088a65215337574f6ed732e",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/076f16f8677a4589b088a65215337574f6ed732e"
+    }
+  },
+  {
+    "name": "5.2.0minus-24",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-24",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-24",
+    "commit": {
+      "sha": "996a6635f0b131d78288b07227effb84b88cd035",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/996a6635f0b131d78288b07227effb84b88cd035"
+    }
+  },
+  {
+    "name": "5.2.0minus-23",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-23",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-23",
+    "commit": {
+      "sha": "282d1a4aca084782f9ea1f2631ba7b62ca7bc5ac",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/282d1a4aca084782f9ea1f2631ba7b62ca7bc5ac"
+    }
+  },
+  {
+    "name": "5.2.0minus-23-opam",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-23-opam",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-23-opam",
+    "commit": {
+      "sha": "133fa29bfdbe361693837c880b77cbc8147dbded",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/133fa29bfdbe361693837c880b77cbc8147dbded"
+    }
+  },
+  {
+    "name": "5.2.0minus-22",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-22",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-22",
+    "commit": {
+      "sha": "eea9697287f10719188cfd82d667caaeba346e87",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/eea9697287f10719188cfd82d667caaeba346e87"
+    }
+  },
+  {
+    "name": "5.2.0minus-21",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-21",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-21",
+    "commit": {
+      "sha": "8ce6f864665ae10ee842d06db89ef53653f3bca8",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/8ce6f864665ae10ee842d06db89ef53653f3bca8"
+    }
+  },
+  {
+    "name": "5.2.0minus-20",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-20",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-20",
+    "commit": {
+      "sha": "e56e773a95bc30841d83641069459cd1f404e83b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e56e773a95bc30841d83641069459cd1f404e83b"
+    }
+  },
+  {
+    "name": "5.2.0minus-19",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-19",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-19",
+    "commit": {
+      "sha": "c2a3ea6fbd0bea483c1aaa4a3c2c2bf0d4c379c5",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/c2a3ea6fbd0bea483c1aaa4a3c2c2bf0d4c379c5"
+    }
+  },
+  {
+    "name": "5.2.0minus-19-opam",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-19-opam",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-19-opam",
+    "commit": {
+      "sha": "eade3aea689033dd75b8e55223a978497ec39c90",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/eade3aea689033dd75b8e55223a978497ec39c90"
+    }
+  },
+  {
+    "name": "5.2.0minus-18",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-18",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-18",
+    "commit": {
+      "sha": "0724e632f809b4e2b03d6a1db38a56b2d28def9d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/0724e632f809b4e2b03d6a1db38a56b2d28def9d"
+    }
+  },
+  {
+    "name": "5.2.0minus-17",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-17",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-17",
+    "commit": {
+      "sha": "71c0bfd268e9dd3610e49750ee9cb92a21c9affe",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/71c0bfd268e9dd3610e49750ee9cb92a21c9affe"
+    }
+  },
+  {
+    "name": "5.2.0minus-16",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-16",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-16",
+    "commit": {
+      "sha": "2314e9cbd6ae3e5c70fa08e95d49bb9dc27cc812",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2314e9cbd6ae3e5c70fa08e95d49bb9dc27cc812"
+    }
+  },
+  {
+    "name": "5.2.0minus-15",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-15",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-15",
+    "commit": {
+      "sha": "1ffcfbcc26d0df8155983940ee869e42b6e4084b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1ffcfbcc26d0df8155983940ee869e42b6e4084b"
+    }
+  },
+  {
+    "name": "5.2.0minus-14",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-14",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-14",
+    "commit": {
+      "sha": "c9088f528a4a666b830134598ee10fc3a1dea321",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/c9088f528a4a666b830134598ee10fc3a1dea321"
+    }
+  },
+  {
+    "name": "5.2.0minus-13",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-13",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-13",
+    "commit": {
+      "sha": "1bd1ae3ae508dd64b05ca97781e6de4ed53ba646",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1bd1ae3ae508dd64b05ca97781e6de4ed53ba646"
+    }
+  },
+  {
+    "name": "5.2.0minus-12",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-12",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-12",
+    "commit": {
+      "sha": "05380e9d5d3f5df3a381490cb972b75086c4c36f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/05380e9d5d3f5df3a381490cb972b75086c4c36f"
+    }
+  },
+  {
+    "name": "5.2.0minus-11",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-11",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-11",
+    "commit": {
+      "sha": "f62dcb9505f17d6bec3b5e9e77ec479b32f9edfa",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f62dcb9505f17d6bec3b5e9e77ec479b32f9edfa"
+    }
+  },
+  {
+    "name": "5.2.0minus-11-opam",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-11-opam",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-11-opam",
+    "commit": {
+      "sha": "f95abcf5e28df52afc4491d2802403b0afd49bc7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f95abcf5e28df52afc4491d2802403b0afd49bc7"
+    }
+  },
+  {
+    "name": "5.2.0minus-10",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-10",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-10",
+    "commit": {
+      "sha": "d8dbd01dd6a0b4f0e39bbbf9caec4e5254ca5bb4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d8dbd01dd6a0b4f0e39bbbf9caec4e5254ca5bb4"
+    }
+  },
+  {
+    "name": "5.2.0minus-9",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-9",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-9",
+    "commit": {
+      "sha": "e06264f05b4317dd1120de78239de47957b42073",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e06264f05b4317dd1120de78239de47957b42073"
+    }
+  },
+  {
+    "name": "5.2.0minus-8",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-8",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-8",
+    "commit": {
+      "sha": "52595299dba207b1713912036608c949ff7363ee",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/52595299dba207b1713912036608c949ff7363ee"
+    }
+  },
+  {
+    "name": "5.2.0minus-7",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-7",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-7",
+    "commit": {
+      "sha": "9af08951c69b6ab8be73ee9c53b8b29a1a6e5c66",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9af08951c69b6ab8be73ee9c53b8b29a1a6e5c66"
+    }
+  },
+  {
+    "name": "5.2.0minus-6",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-6",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-6",
+    "commit": {
+      "sha": "db3778f932fc0a2f9d71ba5f9dcf7c76fcc74a63",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/db3778f932fc0a2f9d71ba5f9dcf7c76fcc74a63"
+    }
+  },
+  {
+    "name": "5.2.0minus-5",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-5",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-5",
+    "commit": {
+      "sha": "df4a6e0ba4f74dc790e0ad79f15ea73be1225c4b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/df4a6e0ba4f74dc790e0ad79f15ea73be1225c4b"
+    }
+  },
+  {
+    "name": "5.2.0minus-4",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-4",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-4",
+    "commit": {
+      "sha": "791f3f07d21cbf57d395e2da6c413f0baa301ab4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/791f3f07d21cbf57d395e2da6c413f0baa301ab4"
+    }
+  },
+  {
+    "name": "5.2.0minus-3",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-3",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-3",
+    "commit": {
+      "sha": "3499a4fadfc0c1ea6319d674ed26e8a7c1b29d14",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/3499a4fadfc0c1ea6319d674ed26e8a7c1b29d14"
+    }
+  },
+  {
+    "name": "5.2.0minus-2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-2",
+    "commit": {
+      "sha": "d011c660a19be3af12ecf00e6729c0a715f0b1be",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d011c660a19be3af12ecf00e6729c0a715f0b1be"
+    }
+  },
+  {
+    "name": "5.2.0minus-1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-1",
+    "commit": {
+      "sha": "69c04271e033a9c4420b2391b9e77427bf3c0c9a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/69c04271e033a9c4420b2391b9e77427bf3c0c9a"
+    }
+  },
+  {
+    "name": "5.2.0minus-0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0minus-0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0minus-0",
+    "commit": {
+      "sha": "efe8f8dfb491f8e0fae4fbe8788f1c740b5b3b06",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/efe8f8dfb491f8e0fae4fbe8788f1c740b5b3b06"
+    }
+  },
+  {
+    "name": "5.2.0-rc1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0-rc1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0-rc1",
+    "commit": {
+      "sha": "9b4698b2bd490afce856e78c1ff8780df938de06",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9b4698b2bd490afce856e78c1ff8780df938de06"
+    }
+  },
+  {
+    "name": "5.2.0-beta2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0-beta2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0-beta2",
+    "commit": {
+      "sha": "69881e2c9df2db24300c00539fa5af3d2e46792c",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/69881e2c9df2db24300c00539fa5af3d2e46792c"
+    }
+  },
+  {
+    "name": "5.2.0-beta1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0-beta1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0-beta1",
+    "commit": {
+      "sha": "4f6950eb941973cb3915c1e9e8b974e5dd66cb5b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/4f6950eb941973cb3915c1e9e8b974e5dd66cb5b"
+    }
+  },
+  {
+    "name": "5.2.0-alpha1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.2.0-alpha1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.2.0-alpha1",
+    "commit": {
+      "sha": "5a920f95222a4703118fb19fb27d3eceae40e287",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/5a920f95222a4703118fb19fb27d3eceae40e287"
+    }
+  },
+  {
+    "name": "5.1.1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1",
+    "commit": {
+      "sha": "bdda743eb66456b659b9f70922a3cba867b57dd2",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/bdda743eb66456b659b9f70922a3cba867b57dd2"
+    }
+  },
+  {
+    "name": "5.1.1minus-alpha4",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-alpha4",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-alpha4",
+    "commit": {
+      "sha": "177760ad8f2b96538c30db223ec467493a5803b2",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/177760ad8f2b96538c30db223ec467493a5803b2"
+    }
+  },
+  {
+    "name": "5.1.1minus-alpha3",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-alpha3",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-alpha3",
+    "commit": {
+      "sha": "625af15686169cddfe692978433e64be8427b780",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/625af15686169cddfe692978433e64be8427b780"
+    }
+  },
+  {
+    "name": "5.1.1minus-alpha2",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-alpha2",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-alpha2",
+    "commit": {
+      "sha": "a8979c89955cf9db448f72178ea92f1e02be583d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a8979c89955cf9db448f72178ea92f1e02be583d"
+    }
+  },
+  {
+    "name": "5.1.1minus-alpha1",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-alpha1",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-alpha1",
+    "commit": {
+      "sha": "9d637a8bee5fd1f841b73d3341798ee238c2cf42",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9d637a8bee5fd1f841b73d3341798ee238c2cf42"
+    }
+  },
+  {
+    "name": "5.1.1minus-alpha0",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-alpha0",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-alpha0",
+    "commit": {
+      "sha": "fc694febe9c22bab117c53ca04bde9c84bb5c94a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/fc694febe9c22bab117c53ca04bde9c84bb5c94a"
+    }
+  },
+  {
+    "name": "5.1.1minus-24",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-24",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-24",
+    "commit": {
+      "sha": "a54ec041ff48677cace3076fdd05ed31b302b7e0",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a54ec041ff48677cace3076fdd05ed31b302b7e0"
+    }
+  },
+  {
+    "name": "5.1.1minus-23",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-23",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-23",
+    "commit": {
+      "sha": "caebc8adff25cdb64ebd2e52c97e6863e29fbb6c",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/caebc8adff25cdb64ebd2e52c97e6863e29fbb6c"
+    }
+  },
+  {
+    "name": "5.1.1minus-22",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-22",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-22",
+    "commit": {
+      "sha": "a23d393df6c294ccd2da08a17e3cf5c767f178bc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a23d393df6c294ccd2da08a17e3cf5c767f178bc"
+    }
+  },
+  {
+    "name": "5.1.1minus-21",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-21",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-21",
+    "commit": {
+      "sha": "224b9429c5858d54db3885188e85d4b7b86205ae",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/224b9429c5858d54db3885188e85d4b7b86205ae"
+    }
+  },
+  {
+    "name": "5.1.1minus-20",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-20",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-20",
+    "commit": {
+      "sha": "1cc52ed5fa73a88abe59baf3058df23ee48e105d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1cc52ed5fa73a88abe59baf3058df23ee48e105d"
+    }
+  },
+  {
+    "name": "5.1.1minus-19",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-19",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-19",
+    "commit": {
+      "sha": "67af44229de4b16cf45ce6ec00aa52657e7b005a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/67af44229de4b16cf45ce6ec00aa52657e7b005a"
+    }
+  },
+  {
+    "name": "5.1.1minus-18",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-18",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-18",
+    "commit": {
+      "sha": "70ec392f795f68d1ec17c7889a0a6ff6c853e11a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/70ec392f795f68d1ec17c7889a0a6ff6c853e11a"
+    }
+  },
+  {
+    "name": "5.1.1minus-18-param-libs",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-18-param-libs",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-18-param-libs",
+    "commit": {
+      "sha": "b609f96c1ddbdd71d7c967a1a7f5a7c969ea9efa",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b609f96c1ddbdd71d7c967a1a7f5a7c969ea9efa"
+    }
+  },
+  {
+    "name": "5.1.1minus-17",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-17",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-17",
+    "commit": {
+      "sha": "44e40db5ff117daf29689e14a80f156951b92598",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/44e40db5ff117daf29689e14a80f156951b92598"
+    }
+  },
+  {
+    "name": "5.1.1minus-16",
+    "zipball_url": "https://api.github.com/repos/oxcaml/oxcaml/zipball/refs/tags/5.1.1minus-16",
+    "tarball_url": "https://api.github.com/repos/oxcaml/oxcaml/tarball/refs/tags/5.1.1minus-16",
+    "commit": {
+      "sha": "aadd9e04082ba13d8f25dd72601d5b05876d7023",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/aadd9e04082ba13d8f25dd72601d5b05876d7023"
+    }
+  }
+]

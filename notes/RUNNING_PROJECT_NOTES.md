@@ -18,3 +18,13 @@ These are exploratory notes (similar status to `notes/BRAINSTORM_NOTES.md`), not
   - "Black": TinyGrad-based GPU calculation core.
   - Idea: lift calculation trees into TinyGrad for GPU-backed evaluation.
 - Status: Captured exploration note (future consideration).
+
+### 4) Green track research: Jane Street stack (OxCaml + Incremental)
+- Note: Add a focused investigation item for the Jane Street OCaml stack as input for Green spec/reference work.
+  - Priority subtopic: OxCaml (language/tooling model and fit for reference implementation ergonomics).
+  - Priority subtopic: `Incremental` library (dependency graph maintenance, recomputation semantics, and potential transfer to spreadsheet-style incremental evaluation).
+- Status: Captured research note (not yet investigated).
+
+### 5) License attribution update
+- Note: Update MIT license copyright attribution to "DNA Kode, Inc."
+- Status: Captured legal/packaging note (pending update).

@@ -1,0 +1,802 @@
+[
+  {
+    "name": "4.12.0-21-microbranch",
+    "commit": {
+      "sha": "555728f7ab151816927da50b5d7897c2667d92c5",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/555728f7ab151816927da50b5d7897c2667d92c5"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.12.0-23-fix-cmov",
+    "commit": {
+      "sha": "f68f9a97000c52e8e1599487eaa3b56d626184f2",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f68f9a97000c52e8e1599487eaa3b56d626184f2"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.12.0-25-microbranch",
+    "commit": {
+      "sha": "9550e82a322c1eb886970deab1b4127a0b5e5601",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9550e82a322c1eb886970deab1b4127a0b5e5601"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.12.0-26-microbranch",
+    "commit": {
+      "sha": "ccfc94f69c7741e1fefeae52a12082a90f4603fb",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ccfc94f69c7741e1fefeae52a12082a90f4603fb"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.0-1-microbranch",
+    "commit": {
+      "sha": "1012cb2ed14113143b0b93a8423752893e7d01dc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1012cb2ed14113143b0b93a8423752893e7d01dc"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-1",
+    "commit": {
+      "sha": "f1cdad1e7673e825547f3c36747ca24ac04f6710",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f1cdad1e7673e825547f3c36747ca24ac04f6710"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-2",
+    "commit": {
+      "sha": "1b70fdf0dbdb0c2c497f4c0fb266cf60a608ef5a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1b70fdf0dbdb0c2c497f4c0fb266cf60a608ef5a"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-3",
+    "commit": {
+      "sha": "6f95f74d166e28cc5b7b57a17e0741f92548d0fd",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/6f95f74d166e28cc5b7b57a17e0741f92548d0fd"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-4",
+    "commit": {
+      "sha": "e61953bb60f84886b07440dc0c4bf1ae8a7ba8a5",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e61953bb60f84886b07440dc0c4bf1ae8a7ba8a5"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-9-microbranch",
+    "commit": {
+      "sha": "2a71d653f0d89bd1d31820f3d6bd8f2767913474",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2a71d653f0d89bd1d31820f3d6bd8f2767913474"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-14-microbranch",
+    "commit": {
+      "sha": "b79b965b3c58bc3c49afefa08be385847807584e",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b79b965b3c58bc3c49afefa08be385847807584e"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-20",
+    "commit": {
+      "sha": "d7eb2d208b24740afe86caacbb08eb6ed9810dd4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d7eb2d208b24740afe86caacbb08eb6ed9810dd4"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-21-microbranch",
+    "commit": {
+      "sha": "358ce83177f7c354f3dd68d842dadaebb693344a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/358ce83177f7c354f3dd68d842dadaebb693344a"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-23-microbranch",
+    "commit": {
+      "sha": "176d93b87e5dbb2242c02018b1aca001e33b5eec",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/176d93b87e5dbb2242c02018b1aca001e33b5eec"
+    },
+    "protected": false
+  },
+  {
+    "name": "4.14.1-24-microbranch",
+    "commit": {
+      "sha": "0c8a400e403b8f888315d92b4a01883a3f971435",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/0c8a400e403b8f888315d92b4a01883a3f971435"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-2-microbranch",
+    "commit": {
+      "sha": "a0bf2f53a360d5b64e99832d3036e6674be8a973",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a0bf2f53a360d5b64e99832d3036e6674be8a973"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-6-microbranch",
+    "commit": {
+      "sha": "e5b21574814671630561270109d07ef31c7bcbde",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e5b21574814671630561270109d07ef31c7bcbde"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-7-microbranch",
+    "commit": {
+      "sha": "d4f4bd2b765509f02301f2ead04fd5e0295d4570",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d4f4bd2b765509f02301f2ead04fd5e0295d4570"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-8-with-stack-checks-clflag",
+    "commit": {
+      "sha": "ee34d53315d504a9add1c7b2f0b688fa8926192b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ee34d53315d504a9add1c7b2f0b688fa8926192b"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-10-microbranch",
+    "commit": {
+      "sha": "639bfe32c601cada24eb6783cb5fa7f6706ab13f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/639bfe32c601cada24eb6783cb5fa7f6706ab13f"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-12",
+    "commit": {
+      "sha": "756b22dc416d43ac92b6341b9678ca0ed9f3b07f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/756b22dc416d43ac92b6341b9678ca0ed9f3b07f"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-15-microbranch",
+    "commit": {
+      "sha": "4c6962a8085bc139e331c5f745ccfcc6d7c77ded",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/4c6962a8085bc139e331c5f745ccfcc6d7c77ded"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-16-microbranch",
+    "commit": {
+      "sha": "aadd9e04082ba13d8f25dd72601d5b05876d7023",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/aadd9e04082ba13d8f25dd72601d5b05876d7023"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-18-M-10000",
+    "commit": {
+      "sha": "2424910db93c63ad274b95f601eaafd362191a7e",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2424910db93c63ad274b95f601eaafd362191a7e"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-18-microbranch",
+    "commit": {
+      "sha": "70ec392f795f68d1ec17c7889a0a6ff6c853e11a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/70ec392f795f68d1ec17c7889a0a6ff6c853e11a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-19-microbranch",
+    "commit": {
+      "sha": "67af44229de4b16cf45ce6ec00aa52657e7b005a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/67af44229de4b16cf45ce6ec00aa52657e7b005a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-20-microbranch",
+    "commit": {
+      "sha": "1cc52ed5fa73a88abe59baf3058df23ee48e105d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1cc52ed5fa73a88abe59baf3058df23ee48e105d"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-20-special-Float",
+    "commit": {
+      "sha": "bf6ea9064827f95403d363697619ffbcb6572d9b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/bf6ea9064827f95403d363697619ffbcb6572d9b"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-21-microbranch",
+    "commit": {
+      "sha": "224b9429c5858d54db3885188e85d4b7b86205ae",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/224b9429c5858d54db3885188e85d4b7b86205ae"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.1.1minus-22-microbranch",
+    "commit": {
+      "sha": "a23d393df6c294ccd2da08a17e3cf5c767f178bc",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a23d393df6c294ccd2da08a17e3cf5c767f178bc"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-revert-quoting-of-types-in-errors",
+    "commit": {
+      "sha": "38e1acf1107be969168aa8e3f5d7ed046dfdd55c",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/38e1acf1107be969168aa8e3f5d7ed046dfdd55c"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-runtime-wip-main-backport-12991",
+    "commit": {
+      "sha": "422985c0ed1556a921f84b36dd8a0e3812ad95ad",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/422985c0ed1556a921f84b36dd8a0e3812ad95ad"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-runtime-wip-main-fix-duplicate-test-stanzas",
+    "commit": {
+      "sha": "3389c9408e55ee07f68bd2866ac27dafc8dbcaa3",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/3389c9408e55ee07f68bd2866ac27dafc8dbcaa3"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-runtime-wip-main-gadt-regression-test",
+    "commit": {
+      "sha": "05343a3c073a8f7be58a5606a635226c79037529",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/05343a3c073a8f7be58a5606a635226c79037529"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-runtime-wip-main-typing-test-fixes",
+    "commit": {
+      "sha": "a524c8cea57b0e7ead3bac0d8bee5618fc65e3bf",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/a524c8cea57b0e7ead3bac0d8bee5618fc65e3bf"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2-runtime-wip-main-w53-fix",
+    "commit": {
+      "sha": "d61df5241083e6c4eb87ee18023c8d20efef40a1",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d61df5241083e6c4eb87ee18023c8d20efef40a1"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0-parallel-sprint",
+    "commit": {
+      "sha": "b005b597c1b170f1db17d148c84b28fcf90546e6",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b005b597c1b170f1db17d148c84b28fcf90546e6"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-efe8f8df-with-no-mpa",
+    "commit": {
+      "sha": "b9879fdc026bbca3934d725ea82ade6eb1fd42ad",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b9879fdc026bbca3934d725ea82ade6eb1fd42ad"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-microbranch",
+    "commit": {
+      "sha": "efe8f8dfb491f8e0fae4fbe8788f1c740b5b3b06",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/efe8f8dfb491f8e0fae4fbe8788f1c740b5b3b06"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-mmap-hugepages",
+    "commit": {
+      "sha": "b45caf9d9e4ad51f4501caa27d7d8ea08b8b73ce",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b45caf9d9e4ad51f4501caa27d7d8ea08b8b73ce"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-more-hugepages",
+    "commit": {
+      "sha": "164572dd9efd53ef2e31f6247bf5f79107c8d09f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/164572dd9efd53ef2e31f6247bf5f79107c8d09f"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-with-fix-stack-mmap",
+    "commit": {
+      "sha": "7559f2a24a85a269af2b368c158833a88161ed4a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7559f2a24a85a269af2b368c158833a88161ed4a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-with-memory-testing",
+    "commit": {
+      "sha": "405a8970b80391b5f282acd736afba1bbd34f43a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/405a8970b80391b5f282acd736afba1bbd34f43a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-without-madv-nohugepage2",
+    "commit": {
+      "sha": "675f6f026b1d91be1bd15f560449a02b62124482",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/675f6f026b1d91be1bd15f560449a02b62124482"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-0-without-madv-nohugepage3",
+    "commit": {
+      "sha": "675f6f026b1d91be1bd15f560449a02b62124482",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/675f6f026b1d91be1bd15f560449a02b62124482"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-1-memtest",
+    "commit": {
+      "sha": "519512fd157374d32661a5b5438d303ea028af96",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/519512fd157374d32661a5b5438d303ea028af96"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-1-microbranch",
+    "commit": {
+      "sha": "69c04271e033a9c4420b2391b9e77427bf3c0c9a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/69c04271e033a9c4420b2391b9e77427bf3c0c9a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-1-no-compact-unmap",
+    "commit": {
+      "sha": "7f35dcdf42f97d7307291c4efe2fe8f482e96fd4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7f35dcdf42f97d7307291c4efe2fe8f482e96fd4"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-1-plus-markdelay",
+    "commit": {
+      "sha": "7a5d856e5860ec363cfe8f9d52d0336a8be2f1ce",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7a5d856e5860ec363cfe8f9d52d0336a8be2f1ce"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-2-microbranch",
+    "commit": {
+      "sha": "d011c660a19be3af12ecf00e6729c0a715f0b1be",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d011c660a19be3af12ecf00e6729c0a715f0b1be"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-3-microbranch",
+    "commit": {
+      "sha": "3499a4fadfc0c1ea6319d674ed26e8a7c1b29d14",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/3499a4fadfc0c1ea6319d674ed26e8a7c1b29d14"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-6-microbranch",
+    "commit": {
+      "sha": "db3778f932fc0a2f9d71ba5f9dcf7c76fcc74a63",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/db3778f932fc0a2f9d71ba5f9dcf7c76fcc74a63"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-7-microbranch",
+    "commit": {
+      "sha": "9af08951c69b6ab8be73ee9c53b8b29a1a6e5c66",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/9af08951c69b6ab8be73ee9c53b8b29a1a6e5c66"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-8-microbranch",
+    "commit": {
+      "sha": "52595299dba207b1713912036608c949ff7363ee",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/52595299dba207b1713912036608c949ff7363ee"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-8-plus-pacing-200",
+    "commit": {
+      "sha": "6a2b56bcd4c17c4a34b9f3526e9cf272c566afb6",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/6a2b56bcd4c17c4a34b9f3526e9cf272c566afb6"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-8-plus-plus-80",
+    "commit": {
+      "sha": "5744e3d4d7ba333dc13bbafa53ac813c434fe490",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/5744e3d4d7ba333dc13bbafa53ac813c434fe490"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-8-plus-plus-200",
+    "commit": {
+      "sha": "eaedaf0e7e45ceba99c9c33fba9ef4e42f79ff5d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/eaedaf0e7e45ceba99c9c33fba9ef4e42f79ff5d"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-8-without-segv-handler",
+    "commit": {
+      "sha": "e02a9635a4246c0f6701e34b55a665e32b18319b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e02a9635a4246c0f6701e34b55a665e32b18319b"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-microbranch",
+    "commit": {
+      "sha": "e06264f05b4317dd1120de78239de47957b42073",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e06264f05b4317dd1120de78239de47957b42073"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-o40",
+    "commit": {
+      "sha": "8d1d33a1d2cd027653b9e3ffb6b60dc71c7f279f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/8d1d33a1d2cd027653b9e3ffb6b60dc71c7f279f"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-o60",
+    "commit": {
+      "sha": "ac40bce66ffa73d1d0f092d8b39ae41227a50b00",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ac40bce66ffa73d1d0f092d8b39ae41227a50b00"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-o120",
+    "commit": {
+      "sha": "5ab2121c6d4b12cf5dd40c67046eb36c1437c9a0",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/5ab2121c6d4b12cf5dd40c67046eb36c1437c9a0"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-o160",
+    "commit": {
+      "sha": "b2030cfe16e94ee1e6bb07a1c589ebb6bb414fc9",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/b2030cfe16e94ee1e6bb07a1c589ebb6bb414fc9"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-9-o200",
+    "commit": {
+      "sha": "d89e8e244be3c688b4a765e73d48edec825a86e4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d89e8e244be3c688b4a765e73d48edec825a86e4"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-10-microbranch",
+    "commit": {
+      "sha": "d8dbd01dd6a0b4f0e39bbbf9caec4e5254ca5bb4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d8dbd01dd6a0b4f0e39bbbf9caec4e5254ca5bb4"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-11-microbranch",
+    "commit": {
+      "sha": "f62dcb9505f17d6bec3b5e9e77ec479b32f9edfa",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f62dcb9505f17d6bec3b5e9e77ec479b32f9edfa"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-11-public-microbranch",
+    "commit": {
+      "sha": "f95abcf5e28df52afc4491d2802403b0afd49bc7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/f95abcf5e28df52afc4491d2802403b0afd49bc7"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-12-microbranch",
+    "commit": {
+      "sha": "05380e9d5d3f5df3a381490cb972b75086c4c36f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/05380e9d5d3f5df3a381490cb972b75086c4c36f"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-13-microbranch",
+    "commit": {
+      "sha": "1bd1ae3ae508dd64b05ca97781e6de4ed53ba646",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1bd1ae3ae508dd64b05ca97781e6de4ed53ba646"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-14-microbranch",
+    "commit": {
+      "sha": "c9088f528a4a666b830134598ee10fc3a1dea321",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/c9088f528a4a666b830134598ee10fc3a1dea321"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-15-microbranch",
+    "commit": {
+      "sha": "1ee779fde64db2fb57998f44ce5add24efd04b28",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1ee779fde64db2fb57998f44ce5add24efd04b28"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-16-microbranch",
+    "commit": {
+      "sha": "2314e9cbd6ae3e5c70fa08e95d49bb9dc27cc812",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/2314e9cbd6ae3e5c70fa08e95d49bb9dc27cc812"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-17-microbranch",
+    "commit": {
+      "sha": "71c0bfd268e9dd3610e49750ee9cb92a21c9affe",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/71c0bfd268e9dd3610e49750ee9cb92a21c9affe"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-18-with-shrink-wrapping-epilogues",
+    "commit": {
+      "sha": "86bebbce184b89bf1a403aed0feb76e4c6d7c479",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/86bebbce184b89bf1a403aed0feb76e4c6d7c479"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-18+debugger",
+    "commit": {
+      "sha": "225376ddff0e216562af0293e4ee824015c1bc02",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/225376ddff0e216562af0293e4ee824015c1bc02"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-20-microbranch",
+    "commit": {
+      "sha": "e56e773a95bc30841d83641069459cd1f404e83b",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e56e773a95bc30841d83641069459cd1f404e83b"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-21-microbranch",
+    "commit": {
+      "sha": "8ce6f864665ae10ee842d06db89ef53653f3bca8",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/8ce6f864665ae10ee842d06db89ef53653f3bca8"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-23-alpha-microbranch",
+    "commit": {
+      "sha": "1ab9605579f69a918b958e2140a0b2726e952506",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1ab9605579f69a918b958e2140a0b2726e952506"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-23-microbranch",
+    "commit": {
+      "sha": "282d1a4aca084782f9ea1f2631ba7b62ca7bc5ac",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/282d1a4aca084782f9ea1f2631ba7b62ca7bc5ac"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-25-microbranch",
+    "commit": {
+      "sha": "076f16f8677a4589b088a65215337574f6ed732e",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/076f16f8677a4589b088a65215337574f6ed732e"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-26-microbranch",
+    "commit": {
+      "sha": "1c9ffa2e340b5ff566861f1cc3f511b562d1d161",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/1c9ffa2e340b5ff566861f1cc3f511b562d1d161"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28-microbranch",
+    "commit": {
+      "sha": "d470e8af17f290e52a88a83d229d83ed49424cc6",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/d470e8af17f290e52a88a83d229d83ed49424cc6"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28-reaper-debug",
+    "commit": {
+      "sha": "818679fcdc1d179eab8a7e1821c9db992131f183",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/818679fcdc1d179eab8a7e1821c9db992131f183"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28-snake",
+    "commit": {
+      "sha": "38b573036c3335ad4638b78e8475fa1727d63c6d",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/38b573036c3335ad4638b78e8475fa1727d63c6d"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28-snake-simon",
+    "commit": {
+      "sha": "0284d6de7b2d3e86bed89cf999399271a9b4c547",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/0284d6de7b2d3e86bed89cf999399271a9b4c547"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28-snake-simon-debug-info",
+    "commit": {
+      "sha": "bdfbfb7ba0c49ff398f2fd655b8679364ee96490",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/bdfbfb7ba0c49ff398f2fd655b8679364ee96490"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-28+fiber-cache",
+    "commit": {
+      "sha": "26596aa698ca3f236e9552de552c74d7cb34035a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/26596aa698ca3f236e9552de552c74d7cb34035a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-30-microbranch",
+    "commit": {
+      "sha": "01024c4f9bcc74bb3a2cd44f4851b42d1ef2723a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/01024c4f9bcc74bb3a2cd44f4851b42d1ef2723a"
+    },
+    "protected": false
+  },
+  {
+    "name": "5.2.0minus-31-microbranch",
+    "commit": {
+      "sha": "7d714cfb3f1c79c9b1e2a9c40ac60ba0c44cafd7",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/7d714cfb3f1c79c9b1e2a9c40ac60ba0c44cafd7"
+    },
+    "protected": false
+  },
+  {
+    "name": "JVB.apint",
+    "commit": {
+      "sha": "cfdafbb5bd0c55a9cb6f8c2e8612cc116aa5e562",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/cfdafbb5bd0c55a9cb6f8c2e8612cc116aa5e562"
+    },
+    "protected": false
+  },
+  {
+    "name": "JVB.type-directed-int-literals",
+    "commit": {
+      "sha": "5a26ab95ab054fa6c3583edc00d3d7b51757b780",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/5a26ab95ab054fa6c3583edc00d3d7b51757b780"
+    },
+    "protected": false
+  },
+  {
+    "name": "add-cfg-equality-functions",
+    "commit": {
+      "sha": "ec55a606a714b023a17c3292f4c3efe02db753b0",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/ec55a606a714b023a17c3292f4c3efe02db753b0"
+    },
+    "protected": false
+  },
+  {
+    "name": "add-claude-github-actions-1755016358026",
+    "commit": {
+      "sha": "4105f628a13d09857c506c7762bdcc47ed02aa0f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/4105f628a13d09857c506c7762bdcc47ed02aa0f"
+    },
+    "protected": false
+  },
+  {
+    "name": "add-func-apply-morph-hint",
+    "commit": {
+      "sha": "771e69eca25847e7c0f6512d8404be93c62f098f",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/771e69eca25847e7c0f6512d8404be93c62f098f"
+    },
+    "protected": false
+  },
+  {
+    "name": "add-portability",
+    "commit": {
+      "sha": "6e89b33ba6e8e6b220762ce5d1d6cee121feb8f4",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/6e89b33ba6e8e6b220762ce5d1d6cee121feb8f4"
+    },
+    "protected": false
+  },
+  {
+    "name": "add-provides-for-symbols",
+    "commit": {
+      "sha": "6a8e024d9e01494d1361d6dd463530515fdfedde",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/6a8e024d9e01494d1361d6dd463530515fdfedde"
+    },
+    "protected": false
+  },
+  {
+    "name": "aec/add-path-to-type-argument",
+    "commit": {
+      "sha": "98896c0a42fa733ad8ef8304de936bbf18296c01",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/98896c0a42fa733ad8ef8304de936bbf18296c01"
+    },
+    "protected": false
+  },
+  {
+    "name": "aec/better-msg-on-value-default",
+    "commit": {
+      "sha": "e6a487f17a386c4c9ec6e4d9ee9dfa40b37329f9",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/e6a487f17a386c4c9ec6e4d9ee9dfa40b37329f9"
+    },
+    "protected": false
+  },
+  {
+    "name": "aec/change-wording-and-more-tests",
+    "commit": {
+      "sha": "0cb571b8f6dc82bfcbe3283ae64fc2a17732c70a",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/0cb571b8f6dc82bfcbe3283ae64fc2a17732c70a"
+    },
+    "protected": false
+  },
+  {
+    "name": "aec/enable-layout-histories",
+    "commit": {
+      "sha": "5de42c76623a0bb1ad0ce51298f98c5a8e2f88c5",
+      "url": "https://api.github.com/repos/oxcaml/oxcaml/commits/5de42c76623a0bb1ad0ce51298f98c5a8e2f88c5"
+    },
+    "protected": false
+  }
+]
