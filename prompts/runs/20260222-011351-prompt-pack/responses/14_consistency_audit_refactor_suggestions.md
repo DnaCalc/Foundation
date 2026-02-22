@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Consistency Audit and Refactor Suggestions
 
 ## Source-of-Truth Resolution Order Used

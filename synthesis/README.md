@@ -15,6 +15,7 @@ Convert prompt-run responses into disciplined, traceable edits to the foundation
 - Explicit per-suggestion decisions
 - Document edits to the three foundation docs
 - Run logs and change summary under `synthesis/runs/<run-id>/`
+- Internal artifacts should not include external-publication attribution headers unless explicitly requested.
 
 ## When To Use / When Not To Use
 - Use when folding a batch of prompt outputs into authoritative documents.

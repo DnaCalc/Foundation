@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Triad Synthesis - STREAM External Updates
 
 ## 1) Recommended decision set (now vs later)

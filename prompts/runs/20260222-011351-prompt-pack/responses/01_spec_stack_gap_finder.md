@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Round 0 Missing Pieces Report (DnaVisiCalc)
 
 ## Contradictions / ambiguity collisions and single resolution

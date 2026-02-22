@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # 0→1→2→3 Milestone Map with Hard Exits and Artifact Freezes
 
 ## Contradictions Check (Source-of-Truth Pass)

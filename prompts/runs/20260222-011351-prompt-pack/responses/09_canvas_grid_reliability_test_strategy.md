@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Prompt Pack Run: 09_canvas_grid_reliability_test_strategy
 
 ## Source-truth check

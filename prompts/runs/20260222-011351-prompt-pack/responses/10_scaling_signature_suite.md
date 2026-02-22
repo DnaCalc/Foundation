@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Scaling Characterization Suite for DnaVisiCalc (Early Big-O Signals)
 
 ## 0) Source-of-Truth Check (Universal Wrapper Requirement)

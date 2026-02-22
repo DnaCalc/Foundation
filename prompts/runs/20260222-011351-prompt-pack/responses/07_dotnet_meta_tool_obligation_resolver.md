@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 ## Source-of-truth check
 
 Using `CHARTER.md`, `OPERATIONS.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, and `notes/BRAINSTORM_NOTES.md` as authoritative input.

@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Triad Prompt - Assurance
 Task: Define STREAM + external updates semantics for DnaVisiCalc.
 

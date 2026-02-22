@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # 05_rust_engine_architecture_review
 
 ## Source-of-truth check

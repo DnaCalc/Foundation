@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # 08_clean_room_evidence_log_workflow
 
 ## Contradictions and Resolution

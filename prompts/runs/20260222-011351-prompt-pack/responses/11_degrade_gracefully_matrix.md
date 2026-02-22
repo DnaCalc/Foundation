@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Degrade/Preserve Policy Matrix (Profiles + Extensions)
 
 ## Source-of-truth check

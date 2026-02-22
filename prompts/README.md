@@ -13,6 +13,7 @@ Define reusable prompt assets and store prompt-run artifacts as versioned projec
 - Structured prompt responses in `prompts/runs/<run-id>/responses/`
 - Run logs/manifests in `prompts/runs/<run-id>/logs/`
 - Reusable role/pack prompt files in this directory tree
+- Internal artifacts should not include external-publication attribution headers unless explicitly requested.
 
 ## When To Use / When Not To Use
 - Use when generating design/assurance/delivery refinements from the foundation docs.

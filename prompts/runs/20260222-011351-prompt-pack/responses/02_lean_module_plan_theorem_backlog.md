@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # Lean Module Plan + Theorem Backlog (DnaVisiCalc)
 
 ## Source-of-truth check

@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # OCaml Oracle CLI Contract + Shrinker
 
 ## Contradiction check

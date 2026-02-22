@@ -3,13 +3,20 @@
 This file defines how coding agents should operate in this repository.
 
 ## 1. Public Attribution Doctrine (Mandatory)
-For any issue, pull request, email response, release note, discussion post, or any other public-facing message authored by an agent, the first line must be an italicized attribution line.
+For any issue, pull request, email response, release note, discussion post, or any other external/public-facing message authored by an agent, the first line must be an italicized attribution line.
 
 Required format:
 
 *Posted by Codex agent on behalf of @govert*
 
 If a different agent is used, replace `Codex` with the applicable identifier (for example, `Claude`).
+
+Scope exclusions (do not add attribution line by default):
+- internal run artifacts (for example `prompts/runs/*` and `synthesis/runs/*` outputs),
+- repository documentation drafts and working notes,
+- local analysis files that are not being published externally.
+
+Only add attribution in these excluded contexts if explicitly requested for publication formatting.
 
 ## 2. Context Loading Doctrine
 Do not assume project context is already loaded.

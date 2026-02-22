@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # TLA+ Concurrency Protocol Model Outline (Smallest Useful Model)
 
 ## Source-of-truth check

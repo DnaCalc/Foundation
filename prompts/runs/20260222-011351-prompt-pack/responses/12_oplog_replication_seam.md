@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # OpLog Replication Seam and Evolution Plan
 
 ## Source-of-truth check

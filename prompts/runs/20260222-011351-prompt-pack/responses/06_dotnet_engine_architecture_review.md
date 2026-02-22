@@ -1,5 +1,3 @@
-*Posted by Codex agent on behalf of @govert*
-
 # 06 dotnet engine architecture review
 
 ## Source-of-truth check and conflict handling
