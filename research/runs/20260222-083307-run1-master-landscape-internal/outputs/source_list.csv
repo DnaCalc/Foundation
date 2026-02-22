@@ -1,0 +1,23 @@
+source_id,title,author_or_org,type,url,publish_date,accessed_utc,credibility_note,topic_id,tags
+R1-S001,Excel Recalculation,Microsoft Learn,docs,https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation,2021-10-12,2026-02-22T08:34:00Z,Primary product documentation,R-TOPIC-001,recalc;excel;semantics
+R1-S002,ECMA-376 Office Open XML,Ecma International,standard,https://ecma-international.org/publications-and-standards/standards/ecma-376/,2021-12-01,2026-02-22T08:34:00Z,Primary standards body reference,R-TOPIC-001,ooxml;interop;standard
+R1-S003,OpenDocument v1.3,OASIS,standard,https://www.oasis-open.org/standard/open-document-format-for-office-applications-opendocument-version-1-3/,2020-10-30,2026-02-22T08:34:00Z,Primary open standard source,R-TOPIC-001,odf;openformula;interop
+R1-S004,Specifying Systems,Leslie Lamport,book,https://lamport.org/tla/book.html,2002-01-01,2026-02-22T08:34:00Z,Primary TLA+ reference,R-TOPIC-001,tla;formal-methods
+R1-S005,How AWS Uses Formal Methods,AWS and CACM,article,https://cacm.acm.org/research/how-amazon-web-services-uses-formal-methods/,2015-04-01,2026-02-22T08:34:00Z,Widely cited production case study,R-TOPIC-001,tla;industry
+R1-S006,Theorem Proving in Lean 4,Lean community,docs,https://leanprover.github.io/theorem_proving_in_lean4/,2024-01-01,2026-02-22T08:34:00Z,Primary tooling documentation,R-TOPIC-001,lean;proofs
+R1-S007,OCaml Manual 5.3,OCaml,docs,https://ocaml.org/manual/latest,2025-01-01,2026-02-22T08:34:00Z,Primary language reference,R-TOPIC-001,ocaml;oracle
+R1-S008,A Spreadsheet Core Implementation in C#,Peter Sestoft,technical_report,https://en.itu.dk/Research/Technical-Reports/Technical-Reports-Archive/2006/TR-2006-91/,2006-09-01,2026-02-22T08:34:00Z,Direct spreadsheet engine implementation research,R-TOPIC-001,corecalc;recalc
+R1-S009,Spreadsheet Technology,Peter Sestoft,technical_report,https://en.itu.dk/Research/Technical-Reports/Technical-Reports-Archive/2011/TR-2011-142/,2011-12-01,2026-02-22T08:34:00Z,Direct extension model reference,R-TOPIC-001,funcalc;sheet-defined-functions
+R1-S010,Corecalc and Funcalc portal,Peter Sestoft,project_page,https://www.itu.dk/~sestoft/funcalc/,2017-06-01,2026-02-22T08:34:00Z,Project/code anchor for Sestoft work,R-TOPIC-001,corecalc;code
+R1-S011,Felienne publications,Felienne Hermans,publication_index,https://www.felienne.com/publications,2012-01-01,2026-02-22T08:34:00Z,Primary author publication index,R-TOPIC-001,spreadsheets;research
+R1-S012,A Maintainability Checklist for Spreadsheets,Vlootman and Hermans,paper,https://arxiv.org/abs/1401.7814,2014-01-30,2026-02-22T08:34:00Z,Direct maintainability methodology source,R-TOPIC-001,maintainability;spreadsheets
+R1-S013,Enron spreadsheets dataset note,Felienne Hermans,blog_dataset_pointer,https://www.felienne.com/archives/3634,2014-10-26,2026-02-22T08:34:00Z,Dataset access context from domain researcher,R-TOPIC-001,enron;dataset
+R1-S014,HyperFormula repository,Handsontable,repo,https://github.com/handsontable/hyperformula,2026-01-01,2026-02-22T08:34:00Z,Active open-source spreadsheet engine,R-TOPIC-001,engine;open-source
+R1-S015,Apache POI Formula Evaluation,Apache POI,engineering_docs,https://poi.apache.org/components/spreadsheet/eval.html,2025-01-01,2026-02-22T08:34:00Z,Mature formula evaluator implementation guidance,R-TOPIC-001,formula-eval;cache
+R1-S016,FoundationDB Developer Guide,FoundationDB,docs,https://apple.github.io/foundationdb/developer-guide.html,2025-09-01,2026-02-22T08:34:00Z,Primary transaction semantics docs,R-TOPIC-001,mvcc;transactions
+R1-S017,A Critique of ANSI SQL Isolation Levels,Berenson et al,paper,https://arxiv.org/abs/cs/0701157,2007-01-25,2026-02-22T08:34:00Z,Canonical isolation taxonomy source,R-TOPIC-001,isolation;snapshot
+R1-S018,asupersync repository,Jeffrey Emanuel,repo,https://github.com/Dicklesworthstone/asupersync,2026-02-19,2026-02-22T08:34:00Z,Primary tracked project source,R-TOPIC-001,agentic-tooling;determinism
+R1-S019,Tauri start docs,Tauri,docs,https://tauri.app/start/,2025-08-01,2026-02-22T08:34:00Z,Primary framework docs,R-TOPIC-001,ui-shell;desktop
+R1-S020,OpenOffice Calc,Apache OpenOffice,product_docs,https://www.documentation.openoffice.org/product/calc.html,2026-01-01,2026-02-22T08:34:00Z,Seeded non-Excel spreadsheet system,R-TOPIC-001,spreadsheet-systems
+R1-S021,WPS Spreadsheet,WPS,product_page,https://www.wps.com/office/spreadsheet/,2026-01-01,2026-02-22T08:34:00Z,Seeded commercial non-Excel system,R-TOPIC-001,spreadsheet-systems
+R1-S022,Google Sheets API overview,Google,docs,https://developers.google.com/workspace/sheets/api/guides/concepts,2025-12-11,2026-02-22T08:34:00Z,Primary Google Sheets platform model docs,R-TOPIC-001,google-sheets;api

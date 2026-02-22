@@ -1,0 +1,25 @@
+## Run 2 — Concurrency protocol & MVCC epochs (TLA+-first)
+
+```text
+You are researching only the concurrency/event-processing pillar for DNA Calc.
+
+Goal:
+Find the best public references and exemplars for:
+- MVCC/snapshot consistency concepts applied to non-database systems
+- generation/epoch tagging and stale result dropping patterns
+- verified scheduling protocols and cancellation semantics
+- real-world TLA+ models of similar systems (task scheduling, queues, state machines)
+- refinement strategies: TLA+ protocol ↔ sequential spec ↔ implementation checks
+
+Deliver:
+- 10–15 best sources with annotated notes
+- a shortlist of 3–5 TLA+ model patterns we can directly adapt
+- common failure modes and the invariants that catch them
+- recommended TLC configuration strategies for small-model discovery
+- a “how to translate our terms into TLA+ state/actions” guide
+
+===DOCS===
+[paste the four docs]
+```
+
+---

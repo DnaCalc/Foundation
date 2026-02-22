@@ -1,0 +1,6 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260222-083307-run1-master-landscape-internal,init,completed,2026-02-22T06:33:08.0404020Z,2026-02-22T06:33:08.0404020Z,research/runs/20260222-083307-run1-master-landscape-internal/inputs/source_hashes.csv,inputs prepared and hashed
+20260222-083307-run1-master-landscape-internal,run1_research,completed,2026-02-22T06:36:10.8450031Z,2026-02-22T06:36:10.8450031Z,research/runs/20260222-083307-run1-master-landscape-internal/outputs/response.md,run1 response written
+20260222-083307-run1-master-landscape-internal,run1_sources,completed,2026-02-22T06:36:10.8450031Z,2026-02-22T06:36:10.8450031Z,research/runs/20260222-083307-run1-master-landscape-internal/outputs/source_list.csv,22 sources captured
+20260222-083307-run1-master-landscape-internal,run1_report,completed,2026-02-22T06:36:10.8450031Z,2026-02-22T06:36:10.8450031Z,research/runs/20260222-083307-run1-master-landscape-internal/outputs/research_report.md,report written
+20260222-083307-run1-master-landscape-internal,postrun_complete,completed,2026-02-22T06:37:55.1513691Z,2026-02-22T06:37:55.1513691Z,research/runs/20260222-083307-run1-master-landscape-internal/outputs/research_report.md,run1 outputs finalized

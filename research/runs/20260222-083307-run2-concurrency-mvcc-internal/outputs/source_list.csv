@@ -1,0 +1,16 @@
+source_id,title,author_or_org,type,url,publish_date,accessed_utc,credibility_note,topic_id,tags
+R2-S001,Specifying Systems,Leslie Lamport,book,https://lamport.org/tla/book.html,2002-01-01,2026-02-22T08:39:00Z,Primary TLA+ reference,R-TOPIC-002,tla;formal-methods
+R2-S002,TLA+ Hyperbook,Leslie Lamport,docs,https://lamport.org/tla/hyperbook.html,2025-01-01,2026-02-22T08:39:00Z,Primary practical TLA+ guide,R-TOPIC-002,tla;patterns
+R2-S003,TLA+ Toolbox,TLA+,tool_docs,https://lamport.azurewebsites.net/tla/toolbox.html,2025-01-01,2026-02-22T08:39:00Z,Primary model-checking tooling docs,R-TOPIC-002,tlc;tooling
+R2-S004,Apalache docs,Informal Systems,tool_docs,https://apalache-mc.org/docs/,2026-01-01,2026-02-22T08:39:00Z,Primary symbolic checker docs,R-TOPIC-002,apalache;model-checking
+R2-S005,How AWS Uses Formal Methods,AWS and CACM,article,https://cacm.acm.org/research/how-amazon-web-services-uses-formal-methods/,2015-04-01,2026-02-22T08:39:00Z,Production-formal-methods case study,R-TOPIC-002,tla;industry
+R2-S006,A Critique of ANSI SQL Isolation Levels,Berenson et al,paper,https://arxiv.org/abs/cs/0701157,2007-01-25,2026-02-22T08:39:00Z,Canonical isolation anomaly source,R-TOPIC-002,mvcc;isolation
+R2-S007,FoundationDB Developer Guide,FoundationDB,docs,https://apple.github.io/foundationdb/developer-guide.html,2025-09-01,2026-02-22T08:39:00Z,Primary strict-serializable transactional model docs,R-TOPIC-002,mvcc;transactions
+R2-S008,FoundationDB Known Limitations,FoundationDB,docs,https://apple.github.io/foundationdb/known-limitations.html,2025-09-01,2026-02-22T08:39:00Z,Operational constraints useful for liveness assumptions,R-TOPIC-002,mvcc;limits
+R2-S009,CockroachDB transaction layer,Cockroach Labs,docs,https://www.cockroachlabs.com/docs/stable/architecture/transaction-layer.html,2026-02-19,2026-02-22T08:39:00Z,Modern MVCC transaction architecture docs,R-TOPIC-002,mvcc;architecture
+R2-S010,PostgreSQL MVCC intro,PostgreSQL,docs,https://www.postgresql.org/docs/current/mvcc-intro.html,2025-01-01,2026-02-22T08:39:00Z,Stable MVCC baseline terminology,R-TOPIC-002,mvcc;database
+R2-S011,Excel Recalculation,Microsoft Learn,docs,https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation,2021-10-12,2026-02-22T08:39:00Z,Spreadsheet-specific recompute semantics,R-TOPIC-002,excel;recalc
+R2-S012,Excel performance and limits improvements,Microsoft Learn,docs,https://learn.microsoft.com/en-us/office/vba/excel/concepts/excel-performance/excel-performance-and-limit-improvements,2024-08-08,2026-02-22T08:39:00Z,RTD and async function behavior context,R-TOPIC-002,excel;rtd;async
+R2-S013,Apache POI Formula Evaluation,Apache POI,engineering_docs,https://poi.apache.org/components/spreadsheet/eval.html,2025-01-01,2026-02-22T08:39:00Z,Implementation hints for evaluator behaviors,R-TOPIC-002,formula-eval
+R2-S014,Jepsen consistency models,Jepsen,reference,https://jepsen.io/consistency,2024-01-01,2026-02-22T08:39:00Z,Operational anomaly vocabulary for testing,R-TOPIC-002,consistency;anomalies
+R2-S015,TLA+ and PlusCal,The Morning Paper,secondary_article,https://blog.acolyer.org/2015/01/20/tlaplus-and-pluscal/,2015-01-20,2026-02-22T08:39:00Z,Secondary onboarding support source,R-TOPIC-002,tla;onboarding

@@ -1,0 +1,51 @@
+## Run 1 — Master Deep Research (landscape + prioritized reading list)
+
+```text
+You are Green Team Research (Spec/Assurance). You will receive four documents: CHARTER.md, OPERATIONS.md, ARCHITECTURE_AND_REQUIREMENTS.md, BRAINSTORM_NOTES.md.
+
+Mission for this research run:
+Build a deeply relevant, clean-room-safe research dossier for DNA Calc / DnaVisiCalc. Gather public documents, specs, research papers, and open-source projects that directly support the key ideas and requirements in the docs. Favor primary sources and authoritative references. Include links.
+
+Hard constraints:
+- Clean-room: use only public sources and observable behavior writeups; do not rely on proprietary leaks or reverse-engineering internals.
+- Focus: prefer sources that directly inform our spec stack (Lean semantics, TLA+ concurrency, oracle/testing, protocol versioning/profiles, Excel compatibility, XLL/RTD/VBA interfaces, UI grid performance, collaboration op-log).
+- Recency: for unstable topics (Excel compatibility versions, Office APIs, WebView/Tauri behavior), prioritize the most recent reliable sources and call out dates.
+
+Deliverables (structure exactly like this):
+1) Executive Summary (10 bullets max): the top findings and why they matter for DnaVisiCalc and DnaCalc.
+2) Prioritized Reading Order: 12–20 items, grouped into “Must read now / Soon / Later”.
+3) Research Map (categories):
+   A. Spreadsheet recalculation engines (dependency graphs, calc chain, incremental recompute)
+   B. Concurrency & event-processing correctness (epochs/MVCC, scheduling, cancellation)
+   C. Formal methods for software + DSL semantics (Lean, Coq/F*, refinement patterns)
+   D. TLA+ for concurrency protocols (practical patterns and case studies)
+   E. Excel interop (OOXML/xlsx/xlsm parts, macro blob handling, compatibility versions)
+   F. XLL & RTD semantics (registration, marshalling, thread safety, volatility)
+   G. UI at scale (canvas/WebGL grids, DOM overlay editing, IME, virtualization, tile caching)
+   H. Collaboration (op-log replication, OT/CRDT lessons for spreadsheets)
+   I. Design-for-evolution (profiles, capability negotiation, graceful degradation)
+4) Annotated Bibliography:
+   For each item, provide:
+   - Title + link
+   - Type: (paper/spec/docs/repo/blog)
+   - What it teaches us (3 bullets)
+   - Which DNA Calc module(s) it informs (reference the boundaries / profiles / packs concepts)
+   - How to apply it (actionable)
+   - Credibility note (why this source)
+5) “Steal This Pattern” section:
+   10–15 concrete patterns we should adopt (each 1–3 sentences) with supporting sources.
+6) Risk Retirement Table:
+   List the top 10 risks in the docs, and which sources/patterns help retire them (with links).
+7) Gaps and Follow-up Queries:
+   What you could not find or what is still ambiguous; propose exact search queries for a second run.
+
+End with:
+- A recommended set of 3 follow-up Deep Research runs (from the targeted prompts below) based on what you discovered.
+
+Now ingest the docs (pasted below) and begin.
+
+===DOCS===
+[paste CHARTER.md, OPERATIONS.md, ARCHITECTURE_AND_REQUIREMENTS.md, BRAINSTORM_NOTES.md]
+```
+
+---

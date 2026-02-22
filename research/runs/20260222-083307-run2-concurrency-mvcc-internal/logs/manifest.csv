@@ -1,0 +1,7 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260222-083307-run2-concurrency-mvcc-internal,init,completed,2026-02-22T06:33:08.0503389Z,2026-02-22T06:33:08.0503389Z,research/runs/20260222-083307-run2-concurrency-mvcc-internal/inputs/source_hashes.csv,inputs prepared and hashed
+20260222-083307-run2-concurrency-mvcc-internal,run2_research,completed,2026-02-22T06:37:07.3888156Z,2026-02-22T06:37:07.3888156Z,research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/response.md,run2 response written
+20260222-083307-run2-concurrency-mvcc-internal,run2_sources,completed,2026-02-22T06:37:07.3888156Z,2026-02-22T06:37:07.3888156Z,research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/source_list.csv,15 sources captured
+20260222-083307-run2-concurrency-mvcc-internal,run2_report,completed,2026-02-22T06:37:07.3888156Z,2026-02-22T06:37:07.3888156Z,research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/research_report.md,report written
+20260222-083307-run2-concurrency-mvcc-internal,postrun_complete,completed,2026-02-22T06:37:07.3888156Z,2026-02-22T06:37:07.3888156Z,research/runs/20260222-083307-run2-concurrency-mvcc-internal/outputs/combined_findings.md,combined findings emitted
+20260222-083307-run2-concurrency-mvcc-internal,registry_update,completed,2026-02-22T06:37:55.1513691Z,2026-02-22T06:37:55.1513691Z,research/sources.csv;research/topic_registry.csv,topics and sources updated from run outputs
