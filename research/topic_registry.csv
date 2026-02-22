@@ -1,0 +1,3 @@
+topic_id,topic_name,scope,priority,status,owner,source_prompt,next_action,notes
+R-TOPIC-001,Master landscape for DNA Calc,Overall research map and reading order,high,pending,@govert,Run 1 in prompts/PROMPT_PACK_DEEP_RESEARCH.md,Prepare run inputs and execute,Initial deep research wave
+R-TOPIC-002,Concurrency protocol and MVCC epochs,TLA+ and scheduling correctness focus,high,pending,@govert,Run 2 in prompts/PROMPT_PACK_DEEP_RESEARCH.md,Prepare run inputs and execute,Second run after master landscape

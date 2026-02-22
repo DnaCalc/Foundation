@@ -11,6 +11,7 @@ Gather clean-room-safe external sources and turn them into actionable, cited res
 - Annotated source lists with links
 - Risk retirement mappings
 - Follow-up query set for next research pass
+- Run artifacts stored under `research/runs/<run-id>/`
 
 ## When To Use / When Not To Use
 - Use when source-backed decisions are needed (interop, APIs, standards, formal methods references).

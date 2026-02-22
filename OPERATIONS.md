@@ -133,8 +133,8 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Round 2: **DnaSuperCalc** — refactor/polish and “too-perfect” exploration.
 - Round 3: **DnaCalc** — streamlined, maintainable Goldilocks product.
 
-## 8. Prompt and Synthesis Run Discipline
-Prompt execution and synthesis are treated as operational activities with run artifacts.
+## 8. Prompt, Research, and Synthesis Run Discipline
+Prompt execution, deep research, and synthesis are treated as operational activities with run artifacts.
 
 ### 8.1 Prompt Runs
 - Prompt-run operating procedure lives in `prompts/README.md`.
@@ -146,7 +146,13 @@ Prompt execution and synthesis are treated as operational activities with run ar
 - Synthesis runs must record per-suggestion decisions (`accept` / `adapt` / `defer` / `reject`) with rationale and target-document references.
 - No synthesis edit should be applied without a corresponding decision-log record.
 
-### 8.3 Document Precedence During Synthesis
+### 8.3 Research Runs
+- Deep-research prompt templates live in `prompts/PROMPT_PACK_DEEP_RESEARCH.md`.
+- Research topic and source registries live under `research/`.
+- Research runs must capture exact prompt input text, source links, and output artifacts under `research/runs/<run-id>/`.
+- Research outputs are evidence inputs; they do not become doctrine until synthesized into source-of-truth docs.
+
+### 8.4 Document Precedence During Synthesis
 When synthesis suggestions conflict, precedence remains:
 1. `CHARTER.md`
 2. `ARCHITECTURE_AND_REQUIREMENTS.md`
