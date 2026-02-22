@@ -1,0 +1,18 @@
+metric,value,notes
+snapshot_commit,ac7c77a5ab26351f24bd72f0da2404bef95781d3,Analyzed commit
+total_files,993,All tracked files in snapshot
+rust_files,825,Count of *.rs files
+markdown_files,41,Count of *.md files
+total_commits,2689,Full history after unshallow fetch
+main_author_commits,2686,Dicklesworthstone
+theorem_surface_count,146,formal/lean/coverage/theorem_surface_inventory.json
+step_constructor_coverage,22/22,formal/lean/coverage/step_constructor_coverage.json
+invariant_status,1 fully proven; 3 partially proven; 2 unproven,formal/lean/coverage/invariant_status_inventory.json
+lean_lines,3835,formal/lean/Asupersync.lean
+tla_lines,435,formal/tla/Asupersync.tla
+test_files,239,tests/*.rs count
+test_lines,102659,tests/*.rs line count
+src_files,510,src/*.rs count
+src_lines,390638,src/*.rs line count
+workflow_files,8,.github/workflows/*.yml
+workflow_lines,2559,Total workflow lines
