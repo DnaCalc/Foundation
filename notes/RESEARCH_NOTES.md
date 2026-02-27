@@ -4,7 +4,7 @@
 - This file stores retained, non-doctrinal knowledge synthesized from prompt and research runs.
 - Source-of-truth doctrine remains `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, and `OPERATIONS.md`.
 - This notes file is the live knowledge base for details not yet promoted to doctrine.
-- Current synthesis pass: `20260222-152845-foundation-pass-02-prompt-and-research`.
+- Current synthesis pass: `20260227-124919-visicalc-foundation-pass-02` follow-up (after `20260226-224457-visicalc-foundation-pass-01`).
 
 ## 2. Inputs synthesized in this pass
 - Prompt run set: `prompts/runs/20260222-011351-prompt-pack/responses/*` (18 responses).
@@ -119,7 +119,7 @@
   - comparative analysis tasks not yet doctrinally settled.
 
 ## 7. Next synthesis-triggering questions
-- What exact Round-0 Excel compatibility surface (function/operator/error/coercion set) is binding for `PACK.visicalc.core`?
+- How should Green pack coverage be staged against the now-stabilized DnaVisiCalc v0 functional contract (`SPEC_v0`, `ENGINE_REQUIREMENTS`, `ENGINE_API`)?
 - Which deterministic replay schema is canonical for concurrent evaluator traces?
 - What is the chosen OxCaml posture for Green (observe-only, experimental, or committed)?
 - Which OpenClaw source corpus is canonical for topic 004?

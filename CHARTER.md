@@ -46,7 +46,8 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 ## 3. Program Structure and Names
 ### 3.1 System Family
 - **DNA Calc** (code token: `DnaCalc`) — the Goldilocks long-term foundation.
-- **DNA VisiCalc** (`DnaVisiCalc`) — Round 0 pathfinder.
+- **DNA VisiCalc** (`DnaVisiCalc`) — Round 0 pathfinder.  
+  Functional scope authority for Round 0 is maintained in the DnaVisiCalc docs set (`SPEC_v0.md`, `ENGINE_REQUIREMENTS.md`, `ENGINE_API.md`); Foundation doctrine/process docs must remain consistent with that scope.
 - **DNA PreCalc** (`DnaPreCalc`) — Round 1 full end-to-end.
 - **DNA SuperCalc** (`DnaSuperCalc`) — Round 2 refactor/perfection pass.
 - **DNA Calc** (`DnaCalc`) — Round 3 synthesized long-term product.

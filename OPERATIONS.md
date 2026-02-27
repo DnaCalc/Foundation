@@ -145,6 +145,14 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Round 2: **DnaSuperCalc** — refactor/polish and “too-perfect” exploration.
 - Round 3: **DnaCalc** — streamlined, maintainable Goldilocks product.
 
+### 7.1 Round 0 Functional Scope Authority
+- For DnaVisiCalc pathfinder v0 functional-scope questions, use:
+  - `..\\DnaVisiCalc\\docs\\SPEC_v0.md`
+  - `..\\DnaVisiCalc\\docs\\ENGINE_REQUIREMENTS.md`
+  - `..\\DnaVisiCalc\\docs\\ENGINE_API.md`
+- Foundation docs remain the source of truth for doctrine, architecture framing, and operations process, and must stay consistent with that upstream functional contract.
+- Proposed functional-scope expansions discovered in implementation (for example from gap-analysis style docs) are tracked as follow-on backlog and routed through synthesis before any doctrine/policy promotion.
+
 ## 8. Prompt, Research, and Synthesis Run Discipline
 Prompt execution, deep research, and synthesis are treated as operational activities with run artifacts.
 
@@ -200,6 +208,13 @@ When synthesis suggestions conflict, precedence remains:
   4. route proposals through synthesis (`accept` / `adapt` / `defer` / `reject`) before doctrine promotion.
 - Pathfinder feedback documents are proposal inputs, not source-of-truth edits by themselves.
 - Proposal sets should include target-section references, rationale, and dependency notes to support deterministic synthesis decisions.
+
+### 8.8 Legacy Guidance Hand-off
+- When an upstream pathfinder guide is superseded (for example gap-analysis/proposal/mapping docs), synthesis must do one of:
+  - promote the relevant content into source-of-truth docs, or
+  - retain it explicitly in Foundation notes as deferred backlog with rationale.
+- Current retained example: `notes/VISICALC_V0_SCOPE_ALIGNMENT_NOTES.md`.
+- Superseded guides can then be archived without losing material planning knowledge.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:

@@ -2,6 +2,8 @@
 
 This document captures additional ideas, potentials, open questions, and lower-level notes from the discussion. It is intentionally broader and less curated than the Charter/Operations/Architecture docs.
 
+Round 0 note (2026-02-27): DnaVisiCalc pathfinder functional scope is now stabilized in `..\\DnaVisiCalc\\docs\\SPEC_v0.md`, `ENGINE_REQUIREMENTS.md`, and `ENGINE_API.md`. Items here that differ should be treated as historical brainstorming or post-v0 expansion ideas.
+
 ## A. Core architectural motifs
 - “Small toy built like a big system”: strict boundaries, replaceable adapters, protocol-first design.
 - Three hard boundaries: OpLog → DocSnapshot → CalcDeltas.
@@ -60,8 +62,8 @@ This document captures additional ideas, potentials, open questions, and lower-l
 - STREAM("topic") for deterministic external data in Pathfinder.
 - Full RTD support is required in full system (topic lifecycle and update-triggered invalidation).
 - External UDF registration:
-  - metadata: name/arity/volatile/thread-safe.
-  - scheduling: thread-safe UDFs can run on worker pool; non-thread-safe run serialized.
+  - metadata: name/arity/volatility class (`Standard` / `Volatile` / `ExternallyInvalidated`).
+  - external invalidation path is distinct from volatile invalidation path.
   - async UDF continuations deferred unless absolutely needed in Pathfinder.
 - XLL boundary contracts formally specified; in-process XLL host in full system.
 
@@ -116,7 +118,6 @@ This document captures additional ideas, potentials, open questions, and lower-l
 - Determinism policy under parallelism (float reduction, scheduling).
 - External oracle policy for collaboration (local vs shared).
 - Export degradation: cell errors vs metadata/comments vs both.
-- Range inputs/outputs in external UDFs for Pathfinder (exact scope).
-- Async UDF continuations: needed in Pathfinder or later?
+- Async UDF continuations: needed after Pathfinder or later?
 - How much “view state” is document-backed vs session-only.
 - Minimum set of Excel semantics to define profiles early (subset selection and measurement).

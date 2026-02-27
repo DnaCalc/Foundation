@@ -1,0 +1,9 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260227-124919-visicalc-foundation-pass-02,init,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,synthesis/runs/20260227-124919-visicalc-foundation-pass-02/inputs/source_run.txt,run scaffold initialized as follow-up to pass-01
+20260227-124919-visicalc-foundation-pass-02,input_freeze,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,synthesis/runs/20260227-124919-visicalc-foundation-pass-02/inputs/source_hashes.csv,input scope hashed across authoritative upstream + context docs
+20260227-124919-visicalc-foundation-pass-02,suggestion_index,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,synthesis/runs/20260227-124919-visicalc-foundation-pass-02/analysis/suggestion_index.csv,suggestions indexed VF2-001 to VF2-014
+20260227-124919-visicalc-foundation-pass-02,decision_log,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,synthesis/runs/20260227-124919-visicalc-foundation-pass-02/decisions/decision_log.csv,decisions recorded with explicit action and change references
+20260227-124919-visicalc-foundation-pass-02,doc_updates,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,README.md;CHARTER.md;ARCHITECTURE_AND_REQUIREMENTS.md;OPERATIONS.md;notes/BRAINSTORM_NOTES.md;notes/RESEARCH_NOTES.md,foundation docs aligned to stabilized v0 functional scope authority
+20260227-124919-visicalc-foundation-pass-02,doc_updates,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,notes/VISICALC_V0_SCOPE_ALIGNMENT_NOTES.md,retained-notes artifact created for superseded guide hand-off
+20260227-124919-visicalc-foundation-pass-02,source_status_marking,not_applicable,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,n/a,upstream inputs are docs not prompt/research run manifests
+20260227-124919-visicalc-foundation-pass-02,report,completed,2026-02-27T12:50:56Z,2026-02-27T12:50:56Z,synthesis/runs/20260227-124919-visicalc-foundation-pass-02/outputs/synthesis_report.md,synthesis report emitted

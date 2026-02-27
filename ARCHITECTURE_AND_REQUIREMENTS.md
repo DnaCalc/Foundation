@@ -133,11 +133,10 @@ NodeId =
 
 ### 3.6 External UDFs / XLL-like integration
 Pathfinder scope includes:
-- external UDF registration with explicit volatility class and thread-safety flag,
-- scalar + optional range inputs (scoped decision), scalar outputs initially,
-- thread-safe vs single-thread execution constraints,
+- external UDF registration/unregistration with explicit volatility class,
+- externally driven invalidation hooks (`invalidate_udf`) that feed normal dirty-closure propagation,
+- deterministic caller-driven execution (no autonomous internal timers/threads in pathfinder engine boundary),
 - UDFs treated as pure-oracle from Lean/TLA+ perspective (semantics parameterized by oracle results).
-- deterministic-mode rule: thread-safe UDF work may run in parallel but externally observable commit order must remain replayable.
 
 Volatility classification:
 - `Standard`: recalculates when upstream dependencies change.
@@ -486,38 +485,57 @@ Minimum module split for next discussion:
   **REAL:** SCC decomposition order, iteration bounds, convergence policy, and terminal-state rules are profile-governed and replayable.
 
 ## 6. Pathfinder Scope Anchor (DnaVisiCalc)
-- VisiCalc-sized formula language and functions (minimal deterministic subset, explicitly versioned by profile).
-- Manual and auto recalc.
-- STREAM external provider.
-- External UDF registration and invocation (XLL-like subset).
-- Async/multithread scheduling + event processing scaffolding.
-- Lean proofs for core semantics + one disruptive structural rewrite.
-- TLA+ verification of epoch/scheduling/invalidation invariants.
-- OCaml CLI oracle + trace minimizer.
-- UI stack: Tauri + canvas grid + DOM overlay editor, with stale markers.
+Round 0 pathfinder functional scope is authoritative in the DnaVisiCalc docs set:
+- `..\\DnaVisiCalc\\docs\\SPEC_v0.md`
+- `..\\DnaVisiCalc\\docs\\ENGINE_REQUIREMENTS.md`
+- `..\\DnaVisiCalc\\docs\\ENGINE_API.md`
+
+Foundation documents define doctrine/architecture/process and must remain consistent with that authoritative functional scope.
 
 ### 6.1 Round 0 Normative Contract (minimum)
-- Required semantics: core expressions, references, deterministic dependency closure, manual/auto recalc, STREAM basics, and one structural rewrite path.
+- Required functional scope baseline (frozen for pathfinder v0) includes:
+  - externally driven single-sheet engine contract with default `A1..BK254` bounds,
+  - cell/name inputs, deterministic formula evaluation, dynamic arrays/spill behavior,
+  - epoch model (`committed_epoch`, `stabilized_epoch`, `value_epoch`) and manual/auto recalc,
+  - deterministic row/column structural rewrites with explicit invalidation behavior,
+  - SCC-based cycle handling with iterative mode configuration,
+  - three-class invalidation model (`Standard`, `Volatile`, `ExternallyInvalidated`) with distinct trigger paths,
+  - external UDF registration/invalidation, engine-managed controls/charts, typed change-tracking journal,
+  - metadata-only formatting and deterministic bulk enumeration sufficient for current file-adapter handoff,
+  - TUI interaction/testing scope (editing/commands plus deterministic replay/capture surfaces) as defined by upstream pathfinder docs.
 - Required obligations: core semantics packs, epoch/concurrency invariants, oracle alignment, and basic scaling signature.
 - Required artifacts: capability manifest, conformance report, minimized trace corpus, replay bundles for stream cases, and formal-core traces (structural rewrite + reference-grid delta + SCC iteration).
 
 ### 6.2 Explicit Non-goals for Round 0
+- Multi-sheet workbook semantics.
+- Full number-format mini-language and full date/time serial compatibility system.
+- Full Excel coercion parity and implicit-intersection (`@`) compatibility breadth.
+- Lambda-helper family completeness beyond the stabilized pathfinder subset.
 - Full XLL marshalling/lifetime compatibility.
 - Full RTD lifecycle parity.
 - Full OOXML fidelity breadth outside the pathfinder subset.
+- VBA runtime hosting.
 - Multi-writer collaboration semantics beyond seam validation.
 
 ### 6.3 Round 0 Track Status Decomposition (Pathfinder Feedback Snapshot)
-As of **February 26, 2026**, synthesis of `DnaVisiCalc` pathfinder feedback indicates:
+As of **February 27, 2026**, synthesis of DnaVisiCalc pathfinder feedback indicates:
 
 - Track A — Engine implementation scope:
-  - status: substantially exercised in pathfinder (including structural rewrites, SCC iteration, incremental dirty-closure, UDF registration, and streaming invalidation paths).
+  - status: functional scope is stabilized and exercised against the authoritative v0 spec/requirements/API contract.
 - Track B — Green formal artifacts and assurance packs:
   - status: remains the principal Round 0 exit blocker (Lean/TLA+/oracle/pack artifacts still required by doctrine).
 - Track C — beyond-minimum artifacts:
   - status: design/API artifacts exist and should be treated as evidence inputs for Round 1 shaping, not as Round 0 gate substitutes.
 
 Round 0 exit remains blocked until required Track B obligations are completed, regardless of Track A progress.
+
+### 6.4 Deferred Functional Expansion Backlog (Retained From Pathfinder Gap Analysis)
+The following areas are retained as explicit post-freeze expansion candidates, not pathfinder-v0 functional-scope requirements:
+- comprehensive number-format code language behavior,
+- full date/time serial compatibility system,
+- full coercion-matrix parity and implicit-intersection behavior,
+- multi-sheet references and workbook semantics,
+- broader lambda-helper family coverage.
 
 ## 7. Rounds 1–3 Forward Compatibility
 DnaVisiCalc must already validate the meta-architecture and the discipline that enables:

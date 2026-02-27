@@ -1,0 +1,35 @@
+Synthesis scope for 20260227-124919-visicalc-foundation-pass-02
+
+Follow-up to:
+- synthesis/runs/20260226-224457-visicalc-foundation-pass-01
+
+Authoritative DnaVisiCalc Round 0 functional scope sources:
+- ..\\DnaVisiCalc\\docs\\SPEC_v0.md
+- ..\\DnaVisiCalc\\docs\\ENGINE_REQUIREMENTS.md
+- ..\\DnaVisiCalc\\docs\\ENGINE_API.md
+
+Possibly out-of-date guidance sources (to be archived after this pass):
+- ..\\DnaVisiCalc\\docs\\GAP_ANALYSIS.md
+- ..\\DnaVisiCalc\\docs\\FOUNDATION_REQUIREMENTS_MAPPING.md
+- ..\\DnaVisiCalc\\docs\\FOUNDATION_PROPOSALS.md
+
+Prior synthesis context:
+- synthesis/runs/20260226-224457-visicalc-foundation-pass-01/outputs/synthesis_report.md
+- synthesis/runs/20260226-224457-visicalc-foundation-pass-01/decisions/decision_log.csv
+
+Doctrine context docs:
+- README.md
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/BRAINSTORM_NOTES.md
+- notes/RESEARCH_NOTES.md
+
+Target docs for this synthesis:
+- README.md
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/BRAINSTORM_NOTES.md
+- notes/RESEARCH_NOTES.md
+- notes/VISICALC_V0_SCOPE_ALIGNMENT_NOTES.md
