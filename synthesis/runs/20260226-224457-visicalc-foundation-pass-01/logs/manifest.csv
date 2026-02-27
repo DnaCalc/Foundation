@@ -1,0 +1,9 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260226-224457-visicalc-foundation-pass-01,init,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,synthesis/runs/20260226-224457-visicalc-foundation-pass-01/inputs/source_run.txt,run scaffold initialized
+20260226-224457-visicalc-foundation-pass-01,input_freeze,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,synthesis/runs/20260226-224457-visicalc-foundation-pass-01/inputs/source_hashes.csv,input scope hashed (including upstream DnaVisiCalc docs)
+20260226-224457-visicalc-foundation-pass-01,suggestion_index,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,synthesis/runs/20260226-224457-visicalc-foundation-pass-01/analysis/suggestion_index.csv,suggestions indexed VF001-VF015
+20260226-224457-visicalc-foundation-pass-01,decision_log,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,synthesis/runs/20260226-224457-visicalc-foundation-pass-01/decisions/decision_log.csv,decisions recorded with explicit accept/adapt/defer outcomes
+20260226-224457-visicalc-foundation-pass-01,doc_updates,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,ARCHITECTURE_AND_REQUIREMENTS.md,pathfinder-informed architecture updates applied
+20260226-224457-visicalc-foundation-pass-01,doc_updates,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,OPERATIONS.md,pathfinder-informed operations updates applied
+20260226-224457-visicalc-foundation-pass-01,source_status_marking,not_applicable,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,n/a,upstream sources are docs not prompt/research run manifests
+20260226-224457-visicalc-foundation-pass-01,report,completed,2026-02-26T20:46:22Z,2026-02-26T20:46:22Z,synthesis/runs/20260226-224457-visicalc-foundation-pass-01/outputs/synthesis_report.md,synthesis report emitted

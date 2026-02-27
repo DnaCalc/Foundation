@@ -1,0 +1,19 @@
+Synthesis scope for 20260226-224457-visicalc-foundation-pass-01
+
+Primary upstream proposal source:
+- ..\\DnaVisiCalc\\docs\\FOUNDATION_PROPOSALS.md
+
+Supporting upstream evidence docs:
+- ..\\DnaVisiCalc\\docs\\ENGINE_DESIGN_NOTES.md
+- ..\\DnaVisiCalc\\docs\\ENGINE_API.md
+- ..\\DnaVisiCalc\\docs\\GAP_ANALYSIS.md
+
+Doctrine context docs:
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/BRAINSTORM_NOTES.md
+
+Target docs for synthesis:
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md

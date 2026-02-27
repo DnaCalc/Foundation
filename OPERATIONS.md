@@ -76,6 +76,17 @@ Packs are the unit of readiness (examples):
 - `PACK.interop.roundtrip.opaque` (unknown-part round-trip guarantees)
 - `PACK.collab.replication.core` (OpLog replication envelope and idempotency checks)
 
+Additional Round 1 candidate packs informed by pathfinder evidence:
+- `PACK.control.basic` (control definition, validation, dependency participation)
+- `PACK.chart.basic` (chart definition, sink-node evaluation, chart-output determinism)
+- `PACK.calcdelta.basic` (typed delta entries, epoch tagging, emission/drain semantics)
+- `PACK.volatility.three_cat` (Standard/Volatile/ExternallyInvalidated invalidation behavior)
+
+Pack status terminology:
+- `exercised`: implementation-level behavior exists with local tests.
+- `green-validated`: Green-owned pack artifacts and required conformance evidence are complete.
+- `exercised` is not sufficient for stabilization claims.
+
 ### 4.2 Gate Rules
 - A profile cannot be declared “stabilized” unless all required packs for that profile are green.
 - Failing packs must generate or update minimized cases.
@@ -179,6 +190,15 @@ When synthesis suggestions conflict, precedence remains:
 - Their outputs must be assumed non-authoritative until synthesis promotion.
 - After synthesis, these directories remain audit inputs; day-to-day guidance comes from source-of-truth docs and `notes/RESEARCH_NOTES.md`.
 
+### 8.7 Pathfinder Feedback Pattern
+- Pathfinder teams should follow a repeatable upstream-feedback loop:
+  1. implement against Foundation docs,
+  2. capture gaps/ambiguities from implementation reality,
+  3. document local evidence and proposal set,
+  4. route proposals through synthesis (`accept` / `adapt` / `defer` / `reject`) before doctrine promotion.
+- Pathfinder feedback documents are proposal inputs, not source-of-truth edits by themselves.
+- Proposal sets should include target-section references, rationale, and dependency notes to support deterministic synthesis decisions.
+
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
   - claim identifier, linked REQ/INT/REAL IDs, admissible source type, capture/reproduction steps, reviewer decision.
@@ -200,7 +220,14 @@ When synthesis suggestions conflict, precedence remains:
   - pack result index for required profiles.
 - Round transitions are blocked when required artifacts or pack obligations are missing.
 
-### 10.1 Open Decisions Register
+### 10.1 Round Exit Track Decomposition
+- For planning clarity, round-progress reports may decompose work into:
+  - Track A: implementation scope,
+  - Track B: formal/assurance obligations,
+  - Track C: beyond-minimum exploratory artifacts.
+- Decomposition is informational; gate authority remains required artifacts and required packs.
+
+### 10.2 Open Decisions Register
 - Open cross-team policy decisions are tracked as `DEC-###` entries with:
   - owner, target round, current status, blocking impact.
 - No critical ambiguity should remain implicit in brainstorm-only notes once it affects stabilization criteria.
