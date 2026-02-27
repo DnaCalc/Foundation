@@ -1,0 +1,21 @@
+Synthesis scope for 20260225-222801-formal-model-pass-01
+
+Primary formal-model inputs:
+- notes/FORMAL_MODELS_IDEAS.md
+
+Supporting notes:
+- notes/BRAINSTORM_NOTES.md
+- notes/RESEARCH_NOTES.md
+- notes/RUNNING_PROJECT_NOTES.md
+- notes/INDEPENDENT_REVIEW.md
+- notes/review/alternative_architectures.md
+- notes/review/formal_methods_reality.md
+
+Doctrine context docs:
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+
+Target docs for synthesis:
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- notes/FORMAL_MODEL_REMAINING_NOTES.md

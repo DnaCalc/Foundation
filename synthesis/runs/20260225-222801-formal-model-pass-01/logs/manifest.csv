@@ -1,0 +1,9 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260225-222801-formal-model-pass-01,init,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,synthesis/runs/20260225-222801-formal-model-pass-01/inputs/source_run.txt,run scaffold initialized
+20260225-222801-formal-model-pass-01,input_freeze,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,synthesis/runs/20260225-222801-formal-model-pass-01/inputs/source_hashes.csv,input scope hashed
+20260225-222801-formal-model-pass-01,suggestion_index,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,synthesis/runs/20260225-222801-formal-model-pass-01/analysis/suggestion_index.csv,suggestions classified and reviewed
+20260225-222801-formal-model-pass-01,decision_log,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,synthesis/runs/20260225-222801-formal-model-pass-01/decisions/decision_log.csv,decisions recorded for FM001-FM020
+20260225-222801-formal-model-pass-01,doc_updates,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,ARCHITECTURE_AND_REQUIREMENTS.md,accepted formal-core architecture updates applied
+20260225-222801-formal-model-pass-01,deferred_capture,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,notes/FORMAL_MODEL_REMAINING_NOTES.md,deferred and unused ideas retained explicitly
+20260225-222801-formal-model-pass-01,source_status_marking,not_applicable,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,n/a,scoped inputs were notes/docs not prompt/research run manifests
+20260225-222801-formal-model-pass-01,report,completed,2026-02-25T22:28:01Z,2026-02-25T22:28:01Z,synthesis/runs/20260225-222801-formal-model-pass-01/outputs/synthesis_report.md,synthesis report emitted
