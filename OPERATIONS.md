@@ -189,6 +189,8 @@ When synthesis suggestions conflict, precedence remains:
 - `prompts/runs/*` and `research/runs/*` are working evidence directories.
 - Their outputs must be assumed non-authoritative until synthesis promotion.
 - After synthesis, these directories remain audit inputs; day-to-day guidance comes from source-of-truth docs and `notes/RESEARCH_NOTES.md`.
+- Temporary agent-generated files should default to a repository-local `.tmp/` directory that is `.gitignore`d.
+- Prefer repository-local `.tmp/` over OS user temp directories unless an explicit task requires system temp location semantics.
 
 ### 8.7 Pathfinder Feedback Pattern
 - Pathfinder teams should follow a repeatable upstream-feedback loop:
