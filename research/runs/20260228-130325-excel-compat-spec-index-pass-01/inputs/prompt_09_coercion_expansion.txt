@@ -1,0 +1,15 @@
+You are running pass 09 for Excel compatibility research.
+
+Goal:
+Expand the coercion matrix beyond the seed while keeping confidence levels explicit.
+
+Focus:
+- operator contexts
+- conversion functions
+- date serial systems
+- dynamic-array and structured-reference coercion unknowns
+
+Deliverables:
+- expanded coercion matrix
+- confidence annotation
+- unresolved behavior backlog

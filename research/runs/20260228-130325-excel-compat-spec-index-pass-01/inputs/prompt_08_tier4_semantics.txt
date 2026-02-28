@@ -1,0 +1,15 @@
+You are running pass 08 for Excel compatibility research.
+
+Goal:
+Deepen semantics for tier-4 high-interest families while preserving exhaustive index posture.
+
+Focus:
+- dynamic-array/spill family
+- functional formula language family (LET/LAMBDA/helpers)
+- CUBE family context (include, but keep MDX internals out-of-scope)
+- external/live-data family context
+
+Deliverables:
+- family-level semantics brief
+- key compatibility risk notes
+- known unknowns for deeper per-function expansion

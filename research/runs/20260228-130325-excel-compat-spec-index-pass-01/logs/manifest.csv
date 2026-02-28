@@ -3,3 +3,5 @@ run_id,status,start_utc,end_utc,artifact,notes
 20260228-130325-excel-compat-spec-index-pass-01,captured_extended,2026-02-28T11:32:37Z,2026-02-28T11:32:37Z,research/runs/20260228-130325-excel-compat-spec-index-pass-01,pass-04 and pass-05 executed; full catalog and 5-tier classification added
 
 20260228-130325-excel-compat-spec-index-pass-01,captured_extended,2026-02-28T11:40:28Z,2026-02-28T11:40:28Z,research/runs/20260228-130325-excel-compat-spec-index-pass-01,pass-06 and pass-07 executed; tier-5 semantics and coercion matrix seed added
+
+20260228-130325-excel-compat-spec-index-pass-01,captured_extended,2026-02-28T11:51:04Z,2026-02-28T11:51:04Z,research/runs/20260228-130325-excel-compat-spec-index-pass-01,pass-08 and pass-09 executed; source freeze completed; domain guides and completion audit emitted

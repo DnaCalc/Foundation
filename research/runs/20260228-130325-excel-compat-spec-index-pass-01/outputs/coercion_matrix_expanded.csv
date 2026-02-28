@@ -1,0 +1,27 @@
+context,operator_or_function,input_pattern,example,expected_behavior,confidence,source_anchor,notes
+arithmetic_add,+,number+number,=2+3,5,high,support_operator_precedence,baseline arithmetic
+arithmetic_add,+,date_serial+number,=TODAY()+1,next day serial/date,high,support_today_function,dates are serial numbers
+arithmetic_add,+,text_numeric+number,="2"+3,coerces numeric text then adds,medium,support_value_function,exact parser/coercion precedence needs full matrix
+arithmetic_add,+,text_non_numeric+number,="x"+1,#VALUE!,medium,known_unknown,common behavior but requires explicit source citation per context
+arithmetic_subtract,-,date-date,=TODAY()-DATE(2025,1,1),day interval,high,support_today_function,date serial subtraction semantics
+arithmetic_multiply,*,boolean*number,=TRUE*5,5,medium,support_n_function,boolean numeric coercion aligns with N function table
+comparison,=,number=text_numeric,=1="1",coercion-dependent compare,low,known_unknown,needs explicit operator coercion source
+comparison,>,date_serial comparison,=TODAY()>DATE(2020,1,1),TRUE/FALSE by serial ordering,high,support_today_function,date serial compare
+concat,&,number&text,=1&"a","1a",high,support_operator_precedence,text concatenation coercion
+logical,AND,logical inputs,=AND(TRUE,FALSE),FALSE,high,support_function_by_category,logical baseline
+type_probe,TYPE,number,=TYPE(1),1,high,support_type_function,documented code
+type_probe,TYPE,text,=TYPE("x"),2,high,support_type_function,documented code
+type_probe,TYPE,logical,=TYPE(TRUE),4,high,support_type_function,documented code
+type_probe,TYPE,error,=TYPE(#N/A),16,high,support_type_function,documented code
+type_probe,TYPE,array,=TYPE(A1:A2),64,high,support_type_function,documented code
+type_probe,TYPE,compound_data,=TYPE(A1),128,medium,support_type_function,depends on linked-data value
+coercion,N,text,=N("abc"),0,high,support_n_function,documented behavior
+coercion,N,error,=N(#VALUE!),#VALUE!,high,support_n_function,errors pass through
+coercion,VALUE,numeric_text,=VALUE("123"),123,high,support_value_function,documented behavior
+coercion,VALUE,invalid_text,=VALUE("abc"),#VALUE!,high,support_value_function,documented behavior
+coercion,VALUETOTEXT,strict flag,=VALUETOTEXT(A1,1),strict literal formatting,medium,support_valuetotext_function,exact rendering variants need deeper pass
+date_system,serial_model,1900 system,basis date 1900-01-01,serial baseline,high,support_date_systems,default modern windows behavior
+date_system,serial_model,1904 system,basis date 1904-01-01,serial baseline,high,support_date_systems,older mac lineage support
+date_system,delta,1900 vs 1904,same date serial diff,1462-day difference,high,support_date_systems,documented explicit delta
+spill_coercion,dynamic_array,mixed scalar/array,function dependent,pending,low,known_unknown,requires per-function empirical matrix
+structured_ref_coercion,table refs,table col in arithmetic,function dependent,pending,low,known_unknown,needs table+operator combined evidence
