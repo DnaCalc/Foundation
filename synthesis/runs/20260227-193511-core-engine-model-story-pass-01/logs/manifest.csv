@@ -1,0 +1,7 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260227-193511-core-engine-model-story-pass-01,init,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,synthesis/runs/20260227-193511-core-engine-model-story-pass-01/inputs/source_run.txt,run scaffold initialized
+20260227-193511-core-engine-model-story-pass-01,input_freeze,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,synthesis/runs/20260227-193511-core-engine-model-story-pass-01/inputs/source_hashes.csv,input scope hashed including prompt/context/idea docs
+20260227-193511-core-engine-model-story-pass-01,suggestion_index,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,synthesis/runs/20260227-193511-core-engine-model-story-pass-01/analysis/suggestion_index.csv,suggestions indexed CMS001-CMS014
+20260227-193511-core-engine-model-story-pass-01,decision_log,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,synthesis/runs/20260227-193511-core-engine-model-story-pass-01/decisions/decision_log.csv,decisions recorded with actions/rationales/change refs
+20260227-193511-core-engine-model-story-pass-01,doc_updates,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,CORE_ENGINE_FORMAL_MODEL.md;ARCHITECTURE_AND_REQUIREMENTS.md,consolidated story doc expanded and architecture core sections summarized
+20260227-193511-core-engine-model-story-pass-01,report,completed,2026-02-27T19:36:10Z,2026-02-27T19:36:10Z,synthesis/runs/20260227-193511-core-engine-model-story-pass-01/outputs/synthesis_report.md,synthesis report emitted

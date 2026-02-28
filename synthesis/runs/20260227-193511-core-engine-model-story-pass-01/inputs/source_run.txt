@@ -1,0 +1,16 @@
+Synthesis scope for 20260227-193511-core-engine-model-story-pass-01
+
+Primary objective:
+- Consolidate core-engine formal-model story into one active doc with no loss and explicit triage tags.
+
+Inputs:
+- prompt: inputs/prompt.txt
+- context docs: README.md, CHARTER.md, ARCHITECTURE_AND_REQUIREMENTS.md, OPERATIONS.md
+- idea docs: notes/BRAINSTORM_NOTES.md, notes/archive/formal-model/FORMAL_MODELS_IDEAS.md,
+  notes/archive/formal-model/FORMAL_MODEL_REMAINING_NOTES.md,
+  notes/archive/formal-model/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md
+
+Targets:
+- CORE_ENGINE_FORMAL_MODEL.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- synthesis run artifacts

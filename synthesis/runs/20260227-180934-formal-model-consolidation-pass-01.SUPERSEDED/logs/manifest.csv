@@ -1,0 +1,8 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260227-180934-formal-model-consolidation-pass-01,init,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,synthesis/runs/20260227-180934-formal-model-consolidation-pass-01/inputs/source_run.txt,run scaffold initialized
+20260227-180934-formal-model-consolidation-pass-01,input_freeze,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,synthesis/runs/20260227-180934-formal-model-consolidation-pass-01/inputs/source_hashes.csv,input scope hashed for formal-consolidation pass
+20260227-180934-formal-model-consolidation-pass-01,suggestion_index,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,synthesis/runs/20260227-180934-formal-model-consolidation-pass-01/analysis/suggestion_index.csv,suggestions indexed FMC001-FMC012
+20260227-180934-formal-model-consolidation-pass-01,decision_log,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,synthesis/runs/20260227-180934-formal-model-consolidation-pass-01/decisions/decision_log.csv,decisions recorded with action/rationale/change refs
+20260227-180934-formal-model-consolidation-pass-01,doc_updates,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,CORE_ENGINE_FORMAL_MODEL.md;ARCHITECTURE_AND_REQUIREMENTS.md;README.md;OPERATIONS.md,consolidated formal-model ownership and extracted architecture detail
+20260227-180934-formal-model-consolidation-pass-01,doc_updates,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,notes/archive/formal-model/*;notes/FORMAL_*.md,superseded formal notes archived with path-stable redirects
+20260227-180934-formal-model-consolidation-pass-01,report,completed,2026-02-27T18:10:28Z,2026-02-27T18:10:28Z,synthesis/runs/20260227-180934-formal-model-consolidation-pass-01/outputs/synthesis_report.md,synthesis report emitted

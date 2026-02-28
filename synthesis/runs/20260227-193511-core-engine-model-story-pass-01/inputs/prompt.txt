@@ -1,0 +1,25 @@
+Docs synthesis prompt (core-engine-model-story-pass-01)
+
+Objective:
+- Build a consolidated CORE_ENGINE_FORMAL_MODEL story-so-far document with no idea loss.
+- Treat this as an expanding working/funnel document, not the final design/spec.
+
+Required context docs:
+- README.md
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+
+Required additional source docs:
+- notes/BRAINSTORM_NOTES.md
+- notes/archive/formal-model/FORMAL_MODELS_IDEAS.md
+- notes/archive/formal-model/FORMAL_MODEL_REMAINING_NOTES.md
+- notes/archive/formal-model/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md
+
+Requested synthesis directives:
+- Move more of architecture section 3 core material into CORE_ENGINE_FORMAL_MODEL,
+  at least 3.1, 3.2, 3.3, 3.4, 3.6.1 and 3.11+ (everything in core).
+- ARCH doc should keep outside-core architecture discussion and a summary of core-system interaction.
+- CORE_ENGINE_FORMAL_MODEL must have full coverage of core-engine-related items/ideas captured so far.
+- No losses: funnel, triage, tags, organization, and commentary.
+- Superseded formal notes remain archived/deleted as active sources.

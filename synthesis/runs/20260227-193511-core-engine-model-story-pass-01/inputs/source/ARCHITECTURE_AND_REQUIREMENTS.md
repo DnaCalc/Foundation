@@ -142,48 +142,48 @@ Formal-model note:
 - Sections `3.11`..`3.17` in this document are architecture summaries linked to that detailed model.
 
 ### 3.11 Formal State Kernel (tree-grid hybrid with persistence facades)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.1`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.1`).
 Architecture summary:
 - immutable green core + ephemeral red facade split,
 - identity is ID-based (not coordinate-string-based),
 - representation strategy may vary while preserving identical semantics.
 
 ### 3.12 Layered Semantics (structure, refs, deps, values, ops)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.2`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.2`).
 Architecture summary:
 - five-layer model `S/R/D/V/O`,
 - explicit derivation contracts between layers,
 - mutation authority remains operation-driven.
 
 ### 3.13 OpLog Formal Transition Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.4`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.5`).
 Architecture summary:
 - `OpEnvelope` is the canonical persistent-change carrier,
 - `apply_op` is the canonical transition relation,
 - replay target is observational equivalence under profile constraints.
 
 ### 3.14 Structural Rewrite Semantics (rows/cols/sheets)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.5`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.6`).
 Architecture summary:
 - structural edits require deterministic rewrite functions and reference-classification outputs,
 - invalidated targets must remain explicit and traceable.
 
 ### 3.15 Reference Resolution and Reference-Grid Update Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.3`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.3`).
 Architecture summary:
 - normalized reference forms are required for deterministic binder outputs,
 - reference-grid updates must preserve explicit forward/reverse/provenance information,
 - unresolved references remain explicit errors, never silent drops.
 
 ### 3.16 Cycle Detection, Iteration, and Stabilization Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.6`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.4`).
 Architecture summary:
 - SCC processing order is deterministic,
 - cycle mode is profile-governed (`CycleError` vs `Iterative`),
 - stabilization rules are explicit and terminal-state based.
 
 ### 3.17 Formalization Seams for Lean and OCaml
-Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`6.7`).
+Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`4.7`, `6`).
 Architecture summary:
 - Lean, OCaml oracle, and shared trace schemas remain mandatory integration seams,
 - the `CoreIds/CoreStructure/CoreRefs/CoreDeps/CoreEval/CoreOps` split remains baseline.

@@ -28,32 +28,94 @@ Detailed core formal/semantic model development is maintained in `CORE_ENGINE_FO
 This document should keep architecture-level summaries and stable constraints, with minimal duplication of formal-core detail.
 
 ### 3.1 Protocol Surface (identical across Red/Blue)
-- Dispatch ops/transactions.
-- Query snapshots/state.
-- Subscribe to deltas/events.
-- Capability negotiation.
+- **Dispatch ops/transactions**
+- **Query snapshots**
+- **Subscribe to deltas/events**
+- **Capability negotiation**
 
-Detailed core semantics are in `CORE_ENGINE_FORMAL_MODEL.md`:
-- protocol baseline: Section `5.1`,
-- operation/replay semantics: Section `6.4`.
+This protocol is versioned, negotiated, and fully schema-defined.
 
 ### 3.2 Profiles, Feature Gates, and Compatibility
-- Profiles remain the semantic spine (`profile_id` + `profile_version`) for compatibility, feature gates, obligation packs, and degrade behavior.
-
-Detailed core profile semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.2`.
+- Documents bind to `profile_id` + `profile_version`.
+- Profiles define:
+  - semantics (formula behavior, recalc rules, structural edit rules),
+  - supported object-model facets,
+  - obligation packs required for readiness,
+  - degrade policy classes for unsupported features: `Native` / `Lowered` / `Opaque` / `Rejected`.
+- “Compatibility versions” exist as profile versions (Excel-style notion).
+- Feature-gate tokens are profile-scoped and versioned (for example `stream_semantics_version`, `FG_STREAM_BASE`, `FG_EXTERNAL_UPDATE_OPLOG`, `FG_RTD_LIFECYCLE`).
 
 ### 3.3 Epoch Model (MVCC-style)
-- Core epoch semantics (`committed/stabilized/value epoch`, stale/pending visibility, pinning/GC constraints) remain mandatory.
-- Core calc-delta derived-output semantics remain mandatory.
+- `committed_epoch`: latest accepted document changes.
+- `stabilized_epoch`: latest epoch with completed derived computation (for a scope or whole workbook).
+- Values carry `value_epoch`.
+- Stale values are allowed but **must be detectable** (UI/API).
 
-Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.3`.
+Snapshot pinning:
+- clients can pin an epoch for consistent reads while newer epochs progress.
+- GC retains pinned epochs/caches per policy.
+
+#### 3.3.1 Epoch Status Lattice and Invariants
+- Value status is explicit and monotonic per epoch view: `pending` -> `ready` (or `error`), with `stale` as a visibility flag relative to `committed_epoch`.
+- A derived result may commit only if produced against the same input epoch it claims (`no stale commit` invariant).
+- Structural edits run in exclusive mutation mode; no concurrent structural mutation may overlap their commit window.
+- Replay of local or remote operations must preserve epoch ordering guarantees and produce deterministic stale/pending signaling.
+- Stream updates are monotonic per topic stream sequence; duplicate/out-of-order updates are deterministically deduped/rejected per profile policy.
+- Epoch GC must not reclaim any snapshot or derived cache still reachable from pinned epochs.
+
+#### 3.3.2 CalcDelta Shape and Delivery Contract
+- CalcDeltas are typed derived-output entries, not mutation records (mutations are represented by OpLog).
+- A valid baseline shape is:
+
+```text
+ChangeEntryKind =
+  | CellValue
+  | NameValue
+  | ChartOutput
+  | SpillRegion
+  | CellFormat
+```
+
+- Each entry carries:
+  - target identity (cell/name/chart/spill anchor),
+  - change payload (old/new value or old/new extent where applicable),
+  - `epoch` of the snapshot that produced the entry.
+- Baseline emission rule: value/output entries emit only on actual change (`old != new`); metadata deltas are profile-governed.
+- Baseline delivery contract: drain-based retrieval is valid for pathfinder/embedding APIs; subscription/callback delivery may be layered as an adapter.
 
 ### 3.4 Calculation Engine Pipeline (conceptual)
-- Core pipeline remains parse/bind/dependency/invalidation/schedule/evaluate/commit with deterministic and incremental requirements.
-- `NodeId`-based dependency identity remains baseline.
-- Both invariant-oriented and dirty-closure propagation models remain valid formal baselines.
+- Parse → bind/resolve refs → dependency graph → invalidation closure → schedule → evaluate → commit results.
+- Incremental recompute based on dependency closure.
+- Deterministic mode exists (fixed scheduling, fixed reduction order where needed, and replayable event traces).
+- Numeric reduction policy (for floating-point aggregation order) is profile-defined and must be explicit in compatibility documentation.
+- Dependency discovery and execution order are distinct artifacts; persisted calc order traces (for example calc-chain imports/exports) are treated as caches/diagnostics, not semantic truth.
+- The dependency graph operates over a unified identity domain:
 
-Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.4`.
+```text
+NodeId =
+  | Cell(CellId)
+  | Name(NameId)
+  | Chart(ChartId)
+```
+
+- Controls are modeled as named-value nodes with attached control metadata (no separate control node kind required).
+- Layer D "evaluable nodes" are `NodeId` values.
+
+#### 3.4.1 Incremental Graph Invariant Model
+- Green specifies node-level invariants inspired by production incremental systems: `necessary`, `stale`, `height`, and `scope`.
+- Dynamic dependency rewiring (bind-like behavior) must carry explicit scope invalidation rules and deterministic re-stabilization behavior.
+- Recompute diagnostics must be analyzable: dependency graph and stabilization traces are exportable as deterministic artifacts.
+
+#### 3.4.2 Baseline Dirty-Closure Propagation Model (Pathfinder-Validated)
+- A valid Round 0 baseline implementation uses:
+  - `dirty_nodes: Set<NodeId>`
+  - `reverse_deps: Map<NodeId, Set<NodeId>>`
+- Baseline flow:
+  1. Mark source nodes dirty from applied operations/external invalidations.
+  2. Expand transitive dirty closure through `reverse_deps`.
+  3. Evaluate dirty subgraph in deterministic order (with SCC handling for cyclic components).
+- Formula-structure mutations may force full graph rebuild.
+- Value-only mutations and targeted external invalidations should prefer incremental dirty-closure propagation.
 
 ### 3.5 External Streaming and RTD-like Behavior
 - Pathfinder: `STREAM("topic")` is acceptable and deterministic (epoch-scoped external provider).
@@ -90,9 +152,11 @@ Full system adds:
 - XLL is in-process with the engine; boundary contracts are formally specified and validated by Green packs.
 
 ### 3.6.1 Controls and Charts as Engine Entities
-- Controls/charts are core engine entities participating in dependency semantics and operation/replay lifecycle.
-
-Detailed core semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.6`.
+- Controls and charts are engine-managed entities, not UI-only caches.
+- Controls are named-value entities with attached control metadata (kind/constraints) and act as source nodes.
+- Charts are sink nodes consuming referenced values and producing structured chart outputs.
+- Both participate in Layer D via `NodeId` and incremental dirty-closure propagation.
+- Persistent creation/removal/update flows through explicit operations (`OpDefineControl`, `OpDefineChart`) and replay artifacts.
 
 ### 3.7 VBA and Macros (outside core)
 - VBA runtime and editor live outside the core engine.
@@ -131,59 +195,53 @@ Windows-only COM automation is a separate facade layered on top of the identical
 - View state is partially document-backed (saved view settings) and partially session state.
 - UI reliability requires property-level invariants for geometry/hit-test consistency and deterministic RenderPlan validation.
 
-### 3.10.1 Core and Non-core Interaction Summary
-- UI/TUI layers read snapshots/deltas and dispatch explicit operations; no hidden persistent core mutation path is allowed.
-- File adapters translate external formats to/from core entities and operations, and surface degradation outcomes explicitly.
-- VBA/macro runtimes execute outside core and interact through operation pathways.
-- Collaboration adapters replicate operation envelopes and preserve causality/idempotency constraints.
-
 Formal-model note:
 - Detailed formal semantics for the core engine model are in `CORE_ENGINE_FORMAL_MODEL.md`.
 - Sections `3.11`..`3.17` in this document are architecture summaries linked to that detailed model.
 
 ### 3.11 Formal State Kernel (tree-grid hybrid with persistence facades)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.1`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.1`).
 Architecture summary:
 - immutable green core + ephemeral red facade split,
 - identity is ID-based (not coordinate-string-based),
 - representation strategy may vary while preserving identical semantics.
 
 ### 3.12 Layered Semantics (structure, refs, deps, values, ops)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.2`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.2`).
 Architecture summary:
 - five-layer model `S/R/D/V/O`,
 - explicit derivation contracts between layers,
 - mutation authority remains operation-driven.
 
 ### 3.13 OpLog Formal Transition Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.4`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.5`).
 Architecture summary:
 - `OpEnvelope` is the canonical persistent-change carrier,
 - `apply_op` is the canonical transition relation,
 - replay target is observational equivalence under profile constraints.
 
 ### 3.14 Structural Rewrite Semantics (rows/cols/sheets)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.5`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.6`).
 Architecture summary:
 - structural edits require deterministic rewrite functions and reference-classification outputs,
 - invalidated targets must remain explicit and traceable.
 
 ### 3.15 Reference Resolution and Reference-Grid Update Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.3`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.3`).
 Architecture summary:
 - normalized reference forms are required for deterministic binder outputs,
 - reference-grid updates must preserve explicit forward/reverse/provenance information,
 - unresolved references remain explicit errors, never silent drops.
 
 ### 3.16 Cycle Detection, Iteration, and Stabilization Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.6`).
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`4.4`).
 Architecture summary:
 - SCC processing order is deterministic,
 - cycle mode is profile-governed (`CycleError` vs `Iterative`),
 - stabilization rules are explicit and terminal-state based.
 
 ### 3.17 Formalization Seams for Lean and OCaml
-Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`6.7`).
+Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`4.7`, `6`).
 Architecture summary:
 - Lean, OCaml oracle, and shared trace schemas remain mandatory integration seams,
 - the `CoreIds/CoreStructure/CoreRefs/CoreDeps/CoreEval/CoreOps` split remains baseline.

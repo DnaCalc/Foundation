@@ -1,0 +1,264 @@
+# CORE_ENGINE_FORMAL_MODEL.md — Core Engine Formal/Semantic Model
+
+## 1. Purpose
+This is the consolidated working document for DNA Calc core engine formalization.
+
+It unifies:
+- formal/semantic model content extracted from `ARCHITECTURE_AND_REQUIREMENTS.md`,
+- deferred and exploratory formal-model notes previously captured in:
+  - `notes/FORMAL_MODELS_IDEAS.md`,
+  - `notes/FORMAL_MODEL_REMAINING_NOTES.md`,
+  - `notes/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md`.
+
+## 2. Authority and Confidence Labels
+Document role boundaries:
+- `CHARTER.md`: doctrine authority.
+- `ARCHITECTURE_AND_REQUIREMENTS.md`: architecture constraints and requirements authority.
+- `OPERATIONS.md`: process/gating authority.
+- This document: detailed core formal/semantic model authority.
+
+Confidence labels used below:
+- `Stable`: intended as current formal baseline.
+- `Provisional`: accepted model shape with unresolved details.
+- `Exploratory`: ideas/proposals not yet normative.
+
+## 3. Consolidation Scope (This Pass)
+`Stable`/`Provisional` model material consolidated from architecture sections:
+- `3.11` formal state kernel,
+- `3.12` layered semantics,
+- `3.13` OpLog transition semantics,
+- `3.14` structural rewrite semantics,
+- `3.15` reference resolution/reference-grid semantics,
+- `3.16` cycle/iteration semantics,
+- `3.17` formalization seams.
+
+`Exploratory` material consolidated from former `notes/FORMAL_...` docs:
+- representation strategy alternatives,
+- unresolved semantic decisions,
+- OCaml/Lean kickoff suggestions,
+- benchmarking/downselect ideas,
+- pack-clarification suggestions.
+
+## 4. Core Formal Model Baseline
+
+### 4.1 Kernel and Identity (`Stable`)
+Core identity and persistence split:
+- Immutable green structures hold semantic truth.
+- Ephemeral red facades provide context/caches.
+- Coordinates are projections, not identity.
+
+Canonical identities:
+```text
+type Epoch = u64
+type WorkbookId = opaque
+type SheetId = opaque
+type RowId = opaque
+type ColId = opaque
+type CellId = RowId * ColId
+```
+
+Kernel invariants:
+- Green structures are immutable and share unchanged substructure across epochs.
+- Edits respin only edited leaves and ancestor spine.
+- Address projection (`A1`/`R1C1`) is derived and never source of truth.
+- Virtual grid regions do not mutate green state except via explicit operations.
+
+### 4.2 Layer Model (`Stable`)
+```text
+Layer S: Structure
+Layer R: References
+Layer D: Dependencies
+Layer V: Values/iteration
+Cross-cutting O: Operations
+```
+
+Contracts:
+- `R` derives from `S` + bind context + dynamic outcomes.
+- `D` derives from `R` via dependency normalization.
+- `V` commits only against exact claimed input epoch.
+- `O` transitions must preserve `S/R/D/V` well-formedness.
+
+### 4.3 Reference and Binding Semantics (`Provisional`)
+Binding context:
+```text
+BindCtx = {
+  workbook_id,
+  sheet_id,
+  anchor_cell: CellId?,
+  address_mode: A1 | R1C1,
+  name_scope_chain,
+  profile_semantics
+}
+```
+
+Normalized references:
+```text
+BoundRef =
+  | CellRef(CellId)
+  | RegionRef(SheetId, RowIdRange, ColIdRange)
+  | NameRef(NameId, resolved_target?)
+  | ExternalRef(ProviderId, TopicId)
+  | ErrorRef(ErrorKind, origin_span)
+```
+
+Current unresolved hotspot (`Provisional`):
+- canonical normal form/domain for `RegionRef` under structural rewrites.
+
+Reference-grid obligations:
+- explicit forward and reverse indices,
+- deterministic rewrite provenance on structural edits,
+- unresolved refs persist as explicit `ErrorRef`.
+
+### 4.4 Dependency, Cycles, and Stabilization (`Stable`)
+Dependency/cycle contract:
+1. Build affected subgraph.
+2. Compute SCCs in stable order.
+3. Evaluate acyclic SCCs topologically.
+4. Evaluate cyclic SCCs by profile mode:
+   - `CycleError`, or
+   - `Iterative` with bounded convergence policy.
+
+Iteration contract:
+- profile defines bounds/tolerance/metric,
+- per-iteration progress state is explicit,
+- non-convergence yields deterministic terminal error,
+- `stabilized_epoch` advances only when dirty SCCs are terminal.
+
+### 4.5 Operations and Replay Semantics (`Stable`)
+Canonical envelope:
+```text
+OpEnvelope = {
+  op_id,
+  tx_id?,
+  actor_id,
+  base_epoch,
+  profile_id,
+  profile_version,
+  op_kind,
+  payload,
+  causality,
+  wall_clock_utc
+}
+```
+
+Transition relation:
+```text
+apply_op(profile, snapshot_e, op) -> Result(snapshot_e_plus_1, OpError)
+```
+
+Normative phases:
+1. Validate envelope/idempotency/causality.
+2. Apply mutation to affected layers.
+3. Re-bind normalized references.
+4. Recompute affected dependency closure.
+5. Mark dirty/pending.
+6. Emit deterministic calc work and deltas.
+7. Publish next snapshot/epoch.
+
+Replay target:
+- primary target is observational equivalence under same profile.
+- stronger equalities (structural/id-preserving/canonical serialization) remain open.
+
+### 4.6 Structural Rewrite Semantics (`Stable`)
+Required rewrite functions:
+```text
+mu_row : RowIndex_old -> RowIndex_new | Invalid
+mu_col : ColIndex_old -> ColIndex_new | Invalid
+```
+
+Required per-reference classification:
+- `Preserved`, `Shifted`, `Expanded`, `Contracted`, `Invalidated`.
+
+Semantics:
+- insert creates new axis IDs and rewrites projection,
+- delete removes axis IDs and rewrites through `mu_*`,
+- unresolved/removed targets become explicit error references,
+- rewrite traces are deterministic artifacts.
+
+### 4.7 Formalization Seams and Module Split (`Stable`)
+Handoff artifacts:
+- Lean core types/lemmas for transition semantics.
+- OCaml oracle interpreter for transition/rewrite/dependency/cycle execution.
+- Shared deterministic trace schemas:
+  - operation trace,
+  - structural rewrite trace,
+  - reference-grid delta trace,
+  - SCC iteration trace,
+  - value-commit trace.
+
+Minimum module split:
+- `CoreIds`
+- `CoreStructure`
+- `CoreRefs`
+- `CoreDeps`
+- `CoreEval`
+- `CoreOps`
+
+## 5. Consolidated Open Decisions and Backlog
+
+### 5.1 Priority Decisions (`Provisional`)
+P0:
+- lock `RowId`/`ColId` scope and reuse policy,
+- lock canonical address-text policy for traces/diagnostics.
+
+P1:
+- finalize value algebra (scalar/array/error/coercion/lifting),
+- finalize dynamic-reference (`INDIRECT`-class) dependency policy.
+
+P2:
+- finalize OpLog granularity for range edits,
+- finalize compaction/snapshot boundaries preserving deterministic replay.
+
+P3:
+- finalize iterative-cycle defaults (bounds, metric, tolerance/rounding).
+
+### 5.2 Deferred Semantics and Representation Work (`Exploratory`)
+- spill interior-cell identity under overlapping structural edits,
+- volatile/impure interaction with dependency discovery,
+- conflict policy if collaboration extends beyond server-sequenced model,
+- representation downselect across axis-map sparse, tile DAG, patch stack, region algebra, and related hybrids.
+
+### 5.3 Candidate Representation Design Space (`Exploratory`)
+Consolidated alternatives retained for evaluation:
+- axis maps + sparse store,
+- persistent tile DAG,
+- row/column rope variants,
+- piece-table/patch-stack,
+- rectangle algebra,
+- columnar chunk store,
+- measured balanced-block hybrids.
+
+Working stance:
+- these are implementation strategy options, not current semantics.
+- any selection must preserve the `Stable` semantics in Section 4.
+
+## 6. Suggested Formalization Work Plan
+
+### 6.1 OCaml Kickoff (`Provisional`)
+- implement core ADTs (`OpEnvelope`, snapshot core, `BoundRef`, SCC state),
+- implement `apply_op` skeleton with explicit per-phase delta outputs.
+
+### 6.2 Lean Kickoff (`Provisional`)
+- define inductive/record mirrors for `CoreIds/Structure/Refs/Ops`,
+- first theorem backlog:
+  - replay determinism for admissible suffixes,
+  - structural rewrite totality/invalidation coverage,
+  - no hidden mutation of green state.
+
+### 6.3 Pack and Evidence Implications (`Provisional`)
+Candidate clarifications:
+- `PACK.structural.insert`: require rewrite classification traces,
+- `PACK.concurrent.epochs`: include SCC iteration-state replay for cycle cases,
+- `PACK.visicalc.core`: include binder-normalized refs + error-ref persistence checks.
+
+## 7. Uncertainty and Change Discipline
+- `Exploratory` sections are intentionally uncertain and may be vague by design.
+- Promotion from `Exploratory`/`Provisional` to `Stable` requires:
+  - profile/pack need,
+  - deterministic artifact/test expression,
+  - doctrine/architecture consistency,
+  - synthesis decision logging.
+
+## 8. Superseded Notes Handling
+The three former `notes/FORMAL_...` docs are superseded by this document for active work.
+They should be archived as historical pointers, with this file as the single active formal-model doc.

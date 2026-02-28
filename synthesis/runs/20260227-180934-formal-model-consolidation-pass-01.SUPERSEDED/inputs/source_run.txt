@@ -1,0 +1,27 @@
+Synthesis scope for 20260227-180934-formal-model-consolidation-pass-01
+
+Purpose:
+- Consolidate formal-model content into `CORE_ENGINE_FORMAL_MODEL.md`.
+- Reduce formal-detail duplication in `ARCHITECTURE_AND_REQUIREMENTS.md`.
+- Archive superseded `notes/FORMAL_...` working notes.
+
+Primary source docs consolidated:
+- notes/archive/formal-model/FORMAL_MODELS_IDEAS.md
+- notes/archive/formal-model/FORMAL_MODEL_REMAINING_NOTES.md
+- notes/archive/formal-model/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md
+
+Context docs:
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- README.md
+
+Target docs:
+- CORE_ENGINE_FORMAL_MODEL.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- README.md
+- OPERATIONS.md
+- notes/FORMAL_MODELS_IDEAS.md
+- notes/FORMAL_MODEL_REMAINING_NOTES.md
+- notes/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md
+- notes/archive/formal-model/*
