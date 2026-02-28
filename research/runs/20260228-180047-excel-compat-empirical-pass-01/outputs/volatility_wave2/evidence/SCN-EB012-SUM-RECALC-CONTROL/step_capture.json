@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-182924-0484b54bd",
+  "task_id": "ECS-EB-012",
+  "scenario_id": "SCN-EB012-SUM-RECALC-CONTROL",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:26.6650448Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:27.0043872Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:27.0114221Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:29:27.0200442Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:27.0271323Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+﻿{
+  "run_id": "run-20260228-182924-0484b54bd",
+  "scenario": {
+    "scenario_id": "SCN-EB012-SUM-RECALC-CONTROL",
+    "task_id": "ECS-EB-012",
+    "topic": "volatility_context_probe_wave2",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave2.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=SUM(B1:B2)"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "args": {
+          "value": 123
+        },
+        "op": "edit_cell",
+        "target": "Sheet1!C1"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB012-SUM-RECALC-CONTROL",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Non-volatile control: does SUM(B1:B2) stay stable under unrelated edit \u002B recalc?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Negative volatility control for wave2."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:26.6650730Z",
+      "finished_utc": "2026-02-28T18:29:27.0043942Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:27.0044063Z",
+      "finished_utc": "2026-02-28T18:29:27.0114286Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T18:29:27.0114491Z",
+      "finished_utc": "2026-02-28T18:29:27.0200486Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:27.0200590Z",
+      "finished_utc": "2026-02-28T18:29:27.0271372Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:26.6650448Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:27.0043872Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:27.0114221Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:29:27.0200442Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:27.0271323Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=SUM(B1:B2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 3,
+      "formula": "=SUM(B1:B2)",
+      "display_text": "3",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

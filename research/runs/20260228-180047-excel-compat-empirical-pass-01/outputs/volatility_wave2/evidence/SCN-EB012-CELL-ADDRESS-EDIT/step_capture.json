@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-182809-15d207a88",
+  "task_id": "ECS-EB-012",
+  "scenario_id": "SCN-EB012-CELL-ADDRESS-EDIT",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:28:13.0120108Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:28:13.2382332Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:28:13.2520093Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:28:13.2652699Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:28:13.2721966Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

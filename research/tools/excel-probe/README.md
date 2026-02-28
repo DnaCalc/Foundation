@@ -44,6 +44,7 @@ Direct `dotnet run` usage is also supported, but run it from `research/tools/` t
 - `run_manifest.json`
 - `raw_capture.json`
 - `normalized_capture.json`
+- `step_capture.json`
 - `stdout.log`
 - `stderr.log`
 

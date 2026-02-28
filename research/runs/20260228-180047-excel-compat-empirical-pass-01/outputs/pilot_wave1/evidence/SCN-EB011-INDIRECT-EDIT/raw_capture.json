@@ -1,0 +1,196 @@
+﻿{
+  "run_id": "run-20260228-181852-d6614d307",
+  "scenario": {
+    "scenario_id": "SCN-EB011-INDIRECT-EDIT",
+    "task_id": "ECS-EB-011",
+    "topic": "volatility_probe_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=INDIRECT(\u0022B1\u0022)"
+            },
+            {
+              "address": "B1",
+              "kind": "value",
+              "value": 42
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!C1",
+        "args": {
+          "value": 5
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-INDIRECT-VOLATILITY-CHECK",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does INDIRECT show volatile-style recalc behavior under unrelated edits?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "INDIRECT volatility classification probe."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:55.0757434Z",
+      "finished_utc": "2026-02-28T18:18:55.4757867Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:55.4757991Z",
+      "finished_utc": "2026-02-28T18:18:55.4863504Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T18:18:55.4863658Z",
+      "finished_utc": "2026-02-28T18:18:55.5026790Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:55.5027039Z",
+      "finished_utc": "2026-02-28T18:18:55.5126150Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:55.0757179Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:55.4757774Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:55.4863438Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:18:55.5026725Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:55.5126089Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 42,
+      "formula": "=INDIRECT(\u0022B1\u0022)",
+      "display_text": "########",
+      "number_format": "yyyy/mm/dd hh:mm",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

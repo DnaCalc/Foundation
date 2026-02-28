@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-190530-94f8502ac",
+  "task_id": "ECS-EB-015",
+  "scenario_id": "SCN-EB015-RTD-MISSING-PROGID",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:05:32.3693248Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826246,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdservermissing\u0022,,\u0022TICKS\u0022)",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:05:32.7703743Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826246,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdservermissing\u0022,,\u0022TICKS\u0022)",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:32.7778538Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826246,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdservermissing\u0022,,\u0022TICKS\u0022)",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:05:33.2993039Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826246,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdservermissing\u0022,,\u0022TICKS\u0022)",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:33.3066729Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826246,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdservermissing\u0022,,\u0022TICKS\u0022)",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

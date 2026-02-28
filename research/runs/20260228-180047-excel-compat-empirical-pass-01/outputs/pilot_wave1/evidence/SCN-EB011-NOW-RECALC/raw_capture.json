@@ -1,0 +1,162 @@
+﻿{
+  "run_id": "run-20260228-181844-c4488d94b",
+  "scenario": {
+    "scenario_id": "SCN-EB011-NOW-RECALC",
+    "task_id": "ECS-EB-011",
+    "topic": "volatility_probe_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=NOW()"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-NOW-VOLATILE",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does NOW() value change between recalc events?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Volatility wave1 primary volatile sample."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:47.1503864Z",
+      "finished_utc": "2026-02-28T18:18:47.6206929Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:47.6207067Z",
+      "finished_utc": "2026-02-28T18:18:47.6282838Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:47.6282985Z",
+      "finished_utc": "2026-02-28T18:18:47.6369960Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:47.1503533Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84637881944,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:47.6206856Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84638402778,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:47.6282782Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84638449074,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:47.6369854Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84638449074,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 46081.84638449074,
+      "formula": "=NOW()",
+      "display_text": "########",
+      "number_format": "yyyy/mm/dd hh:mm",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

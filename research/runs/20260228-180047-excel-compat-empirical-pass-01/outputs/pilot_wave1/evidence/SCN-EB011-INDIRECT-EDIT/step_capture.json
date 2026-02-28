@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181852-d6614d307",
+  "task_id": "ECS-EB-011",
+  "scenario_id": "SCN-EB011-INDIRECT-EDIT",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:55.0757179Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:55.4757774Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:55.4863438Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:18:55.5026725Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:55.5126089Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 42,
+          "formula": "=INDIRECT(\u0022B1\u0022)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

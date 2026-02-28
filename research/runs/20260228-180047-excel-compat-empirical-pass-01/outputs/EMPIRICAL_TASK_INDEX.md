@@ -10,6 +10,7 @@ It is split between:
 - Context snapshot: `../inputs/context_snapshot.md`
 - Parent run backlog: `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/17_follow_up_execution_backlog.md`
 - Parent run master guide: `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/EXCEL_COMPATIBILITY_RESEARCH_MASTER_GUIDE.md`
+- Parent Track A execution docs: `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/18_trackA_doc_search_execution_pass.md` through `28_tier45_source_index_completion_pass.md`
 
 ## Task catalogs
 - `01_known_known_empirical_tasks.md`
@@ -17,7 +18,7 @@ It is split between:
 
 Current task counts:
 - Known-known empirical tasks: 48 (`ECS-EK-001..048`)
-- Backlog-linked empirical tasks: 46 (`ECS-EB-001..046`)
+- Backlog-linked empirical tasks: 48 (`ECS-EB-001..048`)
 
 ## Execution ordering
 1. Bootstrapping
@@ -42,5 +43,6 @@ Current task counts:
 
 ## Current execution note
 Backlog bootstrapping tasks `ECS-EB-001..004` have initial v0 artifacts under `outputs/artifacts/`.
-High-signal pilot tasks `ECS-EB-010/011/014/023` now have prepared wave-1 artifacts under `outputs/pilot_wave1/`.
-Platform/version starter tasks `ECS-EB-037/038/046` have seeded artifacts under `outputs/platform_availability/`.
+High-signal pilot tasks `ECS-EB-010/011/014/023` have executed wave-1 artifacts under `outputs/pilot_wave1/` (see `PILOT_WAVE1_EXECUTION_REPORT.md`).
+Platform/version task `ECS-EB-037` has completed source extraction/merge artifacts under `outputs/platform_availability/` (`source_matrix_full_interest_enriched.csv`, `function_availability_matrix.csv`, `ECS-EB-037_EXECUTION_REPORT.md`), including merged Windows probe outcomes for `RTD`, `NOW`, and `TODAY`; starter artifacts for `ECS-EB-038/046` remain in the same directory.
+Volatility context task `ECS-EB-012` and reason-code mapping task `ECS-EB-013` have executed wave-2 artifacts under `outputs/volatility_wave2/`.

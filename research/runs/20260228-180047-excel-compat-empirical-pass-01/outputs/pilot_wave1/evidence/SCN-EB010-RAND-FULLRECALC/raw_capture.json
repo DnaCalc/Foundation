@@ -1,0 +1,163 @@
+﻿{
+  "run_id": "run-20260228-181840-2fee8d383",
+  "scenario": {
+    "scenario_id": "SCN-EB010-RAND-FULLRECALC",
+    "task_id": "ECS-EB-010",
+    "topic": "recalc_event_matrix",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/recalc_event_matrix.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=RAND()"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "full_recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-RAND-CHANGES-FULLRECALC",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Did RAND() change after full recalc?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/01_landscape_response.md"
+    ],
+    "notes": "Full recalc volatile probe."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:41.9978585Z",
+      "finished_utc": "2026-02-28T18:18:42.3790489Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:42.3790682Z",
+      "finished_utc": "2026-02-28T18:18:42.3850523Z"
+    },
+    {
+      "op": "full_recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:42.3850682Z",
+      "finished_utc": "2026-02-28T18:18:42.3934195Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:41.9978281Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.22362264155515132,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:42.3790433Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.6766509787880134,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:42.3850471Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.47829319016748795,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_full_recalc",
+      "operation": "full_recalc",
+      "timestamp_utc": "2026-02-28T18:18:42.3934139Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.11112830384543393,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 0.11112830384543393,
+      "formula": "=RAND()",
+      "display_text": "########",
+      "number_format": "yyyy/mm/dd hh:mm",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

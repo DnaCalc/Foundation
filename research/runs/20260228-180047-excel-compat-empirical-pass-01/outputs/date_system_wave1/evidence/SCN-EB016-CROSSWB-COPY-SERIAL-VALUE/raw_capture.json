@@ -1,0 +1,255 @@
+﻿{
+  "run_id": "run-20260228-191750-7c363c215",
+  "scenario": {
+    "scenario_id": "SCN-EB016-CROSSWB-COPY-SERIAL-VALUE",
+    "task_id": "ECS-EB-016",
+    "topic": "now_today_date_system_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\date_system_dest.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "value": "",
+              "address": "A1",
+              "kind": "value"
+            },
+            {
+              "value": "yyyy-mm-dd",
+              "address": "A1",
+              "kind": "format"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode"
+      },
+      {
+        "target": "workbook",
+        "args": {
+          "system": "1900"
+        },
+        "op": "set_date_system"
+      },
+      {
+        "target": "Sheet1!A1",
+        "args": {
+          "source_workbook_fixture": "research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\date_system_source.xlsx",
+          "source": "Sheet1!B1"
+        },
+        "op": "copy_paste_from_workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "target": "workbook",
+        "args": {
+          "system": "1904"
+        },
+        "op": "set_date_system"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB016-CROSSWB-COPY-SERIAL-VALUE",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "For copied date serial value, how does displayed date change between 1900 and 1904 systems?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Cross-workbook serial value copy \u002B date-system transition."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:52.1727342Z",
+      "finished_utc": "2026-02-28T19:17:52.3480420Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:52.3480511Z",
+      "finished_utc": "2026-02-28T19:17:52.3636793Z"
+    },
+    {
+      "op": "copy_paste_from_workbook",
+      "target": "Sheet1!A1",
+      "started_utc": "2026-02-28T19:17:52.3636889Z",
+      "finished_utc": "2026-02-28T19:17:52.5502083Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:52.5502171Z",
+      "finished_utc": "2026-02-28T19:17:52.5535048Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:52.5535222Z",
+      "finished_utc": "2026-02-28T19:17:52.5655341Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:52.5655413Z",
+      "finished_utc": "2026-02-28T19:17:52.5689037Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:17:52.1727009Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:17:52.3480371Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:52.3636764Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_copy_paste_from_workbook",
+      "operation": "copy_paste_from_workbook",
+      "timestamp_utc": "2026-02-28T19:17:52.5502052Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45292,
+          "formula": "45292",
+          "display_text": "2024-01-01",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:52.5535029Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45292,
+          "formula": "45292",
+          "display_text": "2024-01-01",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:52.5655321Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45292,
+          "formula": "45292",
+          "display_text": "2028-01-02",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:52.5689008Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45292,
+          "formula": "45292",
+          "display_text": "2028-01-02",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 45292,
+      "formula": "45292",
+      "display_text": "2028-01-02",
+      "number_format": "yyyy-mm-dd",
+      "has_formula": false
+    }
+  ],
+  "error": null
+}

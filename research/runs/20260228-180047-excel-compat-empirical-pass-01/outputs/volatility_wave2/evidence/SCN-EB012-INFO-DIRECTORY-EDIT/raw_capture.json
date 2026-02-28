@@ -1,0 +1,193 @@
+﻿{
+  "run_id": "run-20260228-182917-32440953c",
+  "scenario": {
+    "scenario_id": "SCN-EB012-INFO-DIRECTORY-EDIT",
+    "task_id": "ECS-EB-012",
+    "topic": "volatility_context_probe_wave2",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave2.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=INFO(\u0022directory\u0022)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "args": {
+          "value": 99
+        },
+        "op": "edit_cell",
+        "target": "Sheet1!C1"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB012-INFO-DIRECTORY-EDIT",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does INFO(\u0022directory\u0022) behave like volatile or remain stable under unrelated edit?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "INFO directory context probe."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:19.2342950Z",
+      "finished_utc": "2026-02-28T18:29:19.6097622Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:19.6097824Z",
+      "finished_utc": "2026-02-28T18:29:19.6164296Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T18:29:19.6164545Z",
+      "finished_utc": "2026-02-28T18:29:19.6279603Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:19.6279806Z",
+      "finished_utc": "2026-02-28T18:29:19.6351572Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:19.2342643Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:19.6097553Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:19.6164234Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:29:19.6279543Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:19.6351511Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+      "formula": "=INFO(\u0022directory\u0022)",
+      "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

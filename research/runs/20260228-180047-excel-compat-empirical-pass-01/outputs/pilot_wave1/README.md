@@ -17,7 +17,9 @@ This folder contains runnable planning artifacts for the first high-signal backl
 - `scenarios/*.json` (scenario files conforming to `artifacts/empirical_scenario_schema.v0.json`)
 - `RUN_INSTRUCTIONS.md`
 - `run_wave1.ps1` (PowerShell launcher that calls .NET `excel-probe run-manifest`)
+- `pilot_wave1_result_summary.csv`
+- `PILOT_WAVE1_EXECUTION_REPORT.md`
 
 ## Execution note
-These artifacts are prepared for execution and have one completed smoke run (`SCN-EB010-SUM-UNRELATED-EDIT`) against the C# Excel runner.
-Remaining result columns are pre-created and mostly marked `queued` where empirical values are pending.
+These artifacts have now been executed as a complete pilot wave (`14/14` scenarios) against the C# Excel runner.
+Follow-up result interpretation tables still need a dedicated analysis pass over captured evidence bundles.

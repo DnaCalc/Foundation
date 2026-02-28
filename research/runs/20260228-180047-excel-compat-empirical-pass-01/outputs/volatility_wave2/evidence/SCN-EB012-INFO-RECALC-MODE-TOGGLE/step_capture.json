@@ -1,0 +1,115 @@
+﻿{
+  "run_id": "run-20260228-182919-ec7432413",
+  "task_id": "ECS-EB-012",
+  "scenario_id": "SCN-EB012-INFO-RECALC-MODE-TOGGLE",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:21.7248823Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.0860054Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.0927894Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.1068844Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.1126515Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Manual",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Manual",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.1270792Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.1319730Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

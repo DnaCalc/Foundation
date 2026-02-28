@@ -1,0 +1,194 @@
+﻿{
+  "run_id": "run-20260228-181905-a68714a68",
+  "scenario": {
+    "scenario_id": "SCN-EB014-OFFSET-DELETE-COL",
+    "task_id": "ECS-EB-014",
+    "topic": "indirect_offset_structural",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/indirect_offset_structural.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=SUM(OFFSET(B1,0,0,1,1))"
+            },
+            {
+              "address": "B1",
+              "kind": "value",
+              "value": 400
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "delete_column",
+        "target": "Sheet1!B:B"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-OFFSET-COL-DELETE-BEHAVIOR",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "After deleting anchor/target column, is resulting behavior deterministic and explicit?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "error",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Structural edit probe for OFFSET column deletion."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:07.4429223Z",
+      "finished_utc": "2026-02-28T18:19:07.8148383Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:07.8148480Z",
+      "finished_utc": "2026-02-28T18:19:07.8222166Z"
+    },
+    {
+      "op": "delete_column",
+      "target": "Sheet1!B:B",
+      "started_utc": "2026-02-28T18:19:07.8222285Z",
+      "finished_utc": "2026-02-28T18:19:07.8386521Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:07.8386652Z",
+      "finished_utc": "2026-02-28T18:19:07.8450661Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:07.4428878Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:07.8148305Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:07.8221909Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_delete_column",
+      "operation": "delete_column",
+      "timestamp_utc": "2026-02-28T18:19:07.8386456Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826265,
+          "formula": "=SUM(OFFSET(#REF!,0,0,1,1))",
+          "display_text": "#REF!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:07.8450606Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826265,
+          "formula": "=SUM(OFFSET(#REF!,0,0,1,1))",
+          "display_text": "#REF!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": -2146826265,
+      "formula": "=SUM(OFFSET(#REF!,0,0,1,1))",
+      "display_text": "#REF!",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

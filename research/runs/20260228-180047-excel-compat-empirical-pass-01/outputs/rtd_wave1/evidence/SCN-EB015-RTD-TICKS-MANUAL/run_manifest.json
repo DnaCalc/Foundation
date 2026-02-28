@@ -1,0 +1,99 @@
+﻿{
+  "run_id": "run-20260228-190509-304cd2bc4",
+  "task_id": "ECS-EB-015",
+  "scenario_id": "SCN-EB015-RTD-TICKS-MANUAL",
+  "runner_version": "0.2.0\u002Bb6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-02-28T19:05:09.4521331Z",
+  "end_utc": "2026-02-28T19:05:14.7717170Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 240,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 48920,
+  "excel_process_snapshot": {
+    "pid": 48920,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-02-28T19:05:10.1446421Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "date_system": "1900",
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\rtd_lifecycle_wave1.xlsx",
+  "fixture_preexisting": true,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:12.0334886Z",
+      "finished_utc": "2026-02-28T19:05:12.2584899Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:12.2585083Z",
+      "finished_utc": "2026-02-28T19:05:12.2665497Z"
+    },
+    {
+      "op": "sleep",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:12.2665705Z",
+      "finished_utc": "2026-02-28T19:05:13.4826230Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:13.4826497Z",
+      "finished_utc": "2026-02-28T19:05:13.4897702Z"
+    },
+    {
+      "op": "sleep",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:13.4897902Z",
+      "finished_utc": "2026-02-28T19:05:14.7013245Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:14.7013494Z",
+      "finished_utc": "2026-02-28T19:05:14.7075855Z"
+    },
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:14.7076173Z",
+      "finished_utc": "2026-02-28T19:05:14.7167035Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:14.7167208Z",
+      "finished_utc": "2026-02-28T19:05:14.7217501Z"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002Bb6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "b6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+    "repo_git_commit_short": "b6ff4ae",
+    "repo_git_is_dirty": true
+  }
+}

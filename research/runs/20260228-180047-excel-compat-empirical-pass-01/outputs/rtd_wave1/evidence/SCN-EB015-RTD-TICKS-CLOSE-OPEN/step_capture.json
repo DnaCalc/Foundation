@@ -1,0 +1,157 @@
+﻿{
+  "run_id": "run-20260228-190514-1dd3bc9d8",
+  "task_id": "ECS-EB-015",
+  "scenario_id": "SCN-EB015-RTD-TICKS-CLOSE-OPEN",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:05:16.9992485Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:05:17.3582859Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:17.3632347Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:05:18.5806573Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:18.5883633Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_save",
+      "operation": "save",
+      "timestamp_utc": "2026-02-28T19:05:18.6391148Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_close",
+      "operation": "close",
+      "timestamp_utc": "2026-02-28T19:05:18.6554004Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "status": "workbook_closed",
+          "message": "Workbook was closed during this step."
+        }
+      ]
+    },
+    {
+      "step": "after_open",
+      "operation": "open",
+      "timestamp_utc": "2026-02-28T19:05:18.7424582Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:05:19.9554413Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:19.9604040Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

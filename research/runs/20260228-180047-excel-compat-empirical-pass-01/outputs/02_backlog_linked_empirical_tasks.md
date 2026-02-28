@@ -9,6 +9,18 @@ Primary backlog reference:
 
 Status defaults to `planned`.
 
+Track A linkage reference set:
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/18_trackA_doc_search_execution_pass.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/19_formula_language_formal_mapping_dossier.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/21_conditional_format_semantics_model_scaffold.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/22_platform_availability_doc_pipeline.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/24_tier45_function_evidence_binding_expansion.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/25_formula_parse_corpus_registry_seed.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/26_full_interest_platform_matrix_seed_expansion.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/27_trackA_continuation_execution_pass.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/28_tier45_source_index_completion_pass.md`
+
 | Task ID | Backlog link | Empirical objective | Method outline | Expected artifact(s) |
 |---|---|---|---|---|
 | ECS-EB-001 | ECS-BL-01 | Define canonical scenario manifest schema for empirical probes | Draft and validate JSON schema over representative scenarios | empirical_scenario_schema.json |
@@ -63,6 +75,8 @@ These tasks were not explicit in Pass 17 wording but are needed for practical ex
 | ECS-EB-044 | ECS-BL-02, ECS-BL-06 | Add workbook reopen determinism checks for selected coercion and function edge probes | reopen_determinism_probe.csv |
 | ECS-EB-045 | ECS-BL-02, ECS-BL-04 | Define minimization routine for empirical divergence cases | empirical_divergence_minimization.md |
 | ECS-EB-046 | ECS-BL-10 | Define platform capability self-report schema to annotate untestable scenarios explicitly | platform_capability_profile.json |
+| ECS-EB-047 | ECS-BL-03, ECS-BL-04 | Add per-operation step snapshot capture (before/after each operation) for volatility and structural-transition assertions | stepwise_capture_schema.json |
+| ECS-EB-048 | ECS-BL-06, ECS-BL-10 | Add locale-controlled execution lane and locale metadata contract for locale-sensitive probes | locale_execution_profile.json |
 
 ## Immediate start set
 Start execution in this order for maximum downstream unlock:
@@ -80,6 +94,13 @@ Start execution in this order for maximum downstream unlock:
 - `ECS-EB-014`: pilot structural probe matrix and scenarios published under `outputs/pilot_wave1/`
 - `ECS-EB-023`: locale harness plan, locale seed matrix, and scenarios published under `outputs/pilot_wave1/`
 - Wave execution guidance added in `outputs/pilot_wave1/RUN_INSTRUCTIONS.md` and `outputs/pilot_wave1/run_wave1.ps1` (launcher for .NET runner)
-- `ECS-EB-037`: seeded availability matrix published at `outputs/platform_availability/function_availability_matrix.csv`
+- `ECS-EB-015`: RTD lifecycle wave-1 executed and summarized at `outputs/rtd_wave1/rtd_lifecycle_probe.csv` and `outputs/rtd_wave1/RTD_WAVE1_EXECUTION_REPORT.md`
+- `ECS-EB-016`: date-system wave-1 executed and summarized at `outputs/date_system_wave1/now_today_date_system_probe.csv` and `outputs/date_system_wave1/DATE_SYSTEM_WAVE1_EXECUTION_REPORT.md`
+- `ECS-EB-037`: source extraction and merge workflow executed with artifacts at `outputs/platform_availability/source_matrix_full_interest_enriched.csv`, `outputs/platform_availability/function_availability_matrix.csv`, and `outputs/platform_availability/ECS-EB-037_EXECUTION_REPORT.md` (including merged Windows probe outcomes for `RTD`, `NOW`, `TODAY` from `ECS-EB-015/016`)
 - `ECS-EB-038`: build metadata schema v0 published at `outputs/platform_availability/platform_build_metadata_schema.v0.json`
 - `ECS-EB-046`: capability profile template published at `outputs/platform_availability/platform_capability_profile.template.json`
+- `ECS-EB-012`: wave-2 volatility context probes executed and summarized at `outputs/volatility_wave2/ECS-EB-012_volatility_context_probe.csv`
+- `ECS-EB-013`: observed volatility reason-code mapping published at `outputs/volatility_wave2/ECS-EB-013_volatility_reason_codes.md` and `outputs/volatility_wave2/ECS-EB-013_volatility_reason_codes_observed.csv`
+- Pilot execution follow-up added:
+  - `ECS-EB-047`: derived from pilot wave evidence limits; requires operation-step snapshots for volatility/transition assertions.
+  - `ECS-EB-048`: derived from locale probe caveats; requires locale-controlled execution profiles.

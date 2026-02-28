@@ -61,3 +61,26 @@ Create an exhaustive topic and source index for Excel compatibility work focused
 2. Coercion matrix expansion: operator-by-operator and function-family-by-family with locale variants.
 3. Function-catalog hardening: periodic canonical-index recrawl and dated diff.
 4. Conditional-format semantics pass from Open XML + observed behavior probes.
+
+## Track A execution status update
+Documentation/search execution follow-up has started and produced:
+- `18_trackA_doc_search_execution_pass.md`
+- `19_formula_language_formal_mapping_dossier.md`
+- `20_reason_code_dictionary_and_coverage.md`
+- `21_conditional_format_semantics_model_scaffold.md`
+- `22_platform_availability_doc_pipeline.md`
+- `23_excel_financial_functions_watch_note.md`
+- `24_tier45_function_evidence_binding_expansion.md`
+- `25_formula_parse_corpus_registry_seed.md`
+- `26_full_interest_platform_matrix_seed_expansion.md`
+- `27_trackA_continuation_execution_pass.md`
+- `28_tier45_source_index_completion_pass.md`
+
+New machine-readable support artifacts:
+- `function_reason_code_evidence_tracker.csv`
+- `platform_availability_source_matrix_seed.csv`
+- `tier45_function_evidence_dossier.csv`
+- `formula_parse_corpus_registry.csv`
+- `platform_availability_source_matrix_full_interest_seed.csv`
+- `source_list.csv`/`source_digest.*` expanded with full tier-5/tier-4 function-specific source rows (`48/48` source-bound in dossier)
+- `source_list.csv`/`source_digest.*` now include `ECS-061` (`ExcelFinancialFunctions` repository) as a prominent investigation resource

@@ -1,0 +1,130 @@
+﻿{
+  "run_id": "run-20260228-191741-7934a4a77",
+  "task_id": "ECS-EB-016",
+  "scenario_id": "SCN-EB016-NOW-TOGGLE-1900-1904",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:17:43.6833274Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.887310185186,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:44",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:17:43.8263461Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.8873125,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:44",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:43.8440075Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.88731284722,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:44",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:43.8559774Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.887312962965,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:44",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:17:45.0651848Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.887312962965,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:44",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:45.0688750Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.887327083336,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:45",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:45.0811121Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619.887327083336,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:45",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:45.0842514Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619.887327199074,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:45",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

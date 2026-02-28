@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-182917-32440953c",
+  "task_id": "ECS-EB-012",
+  "scenario_id": "SCN-EB012-INFO-DIRECTORY-EDIT",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:19.2342643Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:19.6097553Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:19.6164234Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:29:19.6279543Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:19.6351511Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "formula": "=INFO(\u0022directory\u0022)",
+          "display_text": "C:\\Users\\GovertvanDrimmelen\\OneDrive - DNA Kode, Inc\\Documents\\",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

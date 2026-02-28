@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181850-6ded52629",
+  "task_id": "ECS-EB-011",
+  "scenario_id": "SCN-EB011-OFFSET-EDIT",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:52.1067757Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(OFFSET(B1,0,0,3,1))",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:52.4255024Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(OFFSET(B1,0,0,3,1))",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:52.4321742Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(OFFSET(B1,0,0,3,1))",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:18:52.4430050Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(OFFSET(B1,0,0,3,1))",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:52.4486483Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(OFFSET(B1,0,0,3,1))",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

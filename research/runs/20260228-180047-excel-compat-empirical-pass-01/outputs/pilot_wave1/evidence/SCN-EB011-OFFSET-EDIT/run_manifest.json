@@ -1,0 +1,74 @@
+﻿{
+  "run_id": "run-20260228-181850-6ded52629",
+  "task_id": "ECS-EB-011",
+  "scenario_id": "SCN-EB011-OFFSET-EDIT",
+  "runner_version": "0.2.0\u002Bb6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-02-28T18:18:50.3480080Z",
+  "end_utc": "2026-02-28T18:18:52.4983009Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 180,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 45552,
+  "excel_process_snapshot": {
+    "pid": 45552,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-02-28T18:18:50.8181968Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\volatility_wave1.xlsx",
+  "fixture_preexisting": true,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:52.1068070Z",
+      "finished_utc": "2026-02-28T18:18:52.4255092Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:52.4255208Z",
+      "finished_utc": "2026-02-28T18:18:52.4321794Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T18:18:52.4321903Z",
+      "finished_utc": "2026-02-28T18:18:52.4430095Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:52.4430189Z",
+      "finished_utc": "2026-02-28T18:18:52.4486529Z"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002Bb6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "b6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+    "repo_git_commit_short": "b6ff4ae",
+    "repo_git_is_dirty": true
+  }
+}

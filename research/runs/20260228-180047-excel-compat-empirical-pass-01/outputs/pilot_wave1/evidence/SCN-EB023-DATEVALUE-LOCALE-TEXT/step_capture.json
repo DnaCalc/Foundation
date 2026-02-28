@@ -1,0 +1,55 @@
+﻿{
+  "run_id": "run-20260228-181912-ef7402ec5",
+  "task_id": "ECS-EB-023",
+  "scenario_id": "SCN-EB023-DATEVALUE-LOCALE-TEXT",
+  "targets": [
+    "Sheet1!B1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:14.5752161Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": -2146826273,
+          "formula": "=DATEVALUE(A1)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:14.8967082Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": -2146826273,
+          "formula": "=DATEVALUE(A1)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:14.9028796Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": -2146826273,
+          "formula": "=DATEVALUE(A1)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

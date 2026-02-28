@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181903-3addc84d3",
+  "task_id": "ECS-EB-014",
+  "scenario_id": "SCN-EB014-OFFSET-INSERT-COL",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:05.0039356Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:05.3281452Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:05.3329608Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_insert_column",
+      "operation": "insert_column",
+      "timestamp_utc": "2026-02-28T18:19:05.3470398Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(C1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:05.3520526Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(C1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

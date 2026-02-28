@@ -34,3 +34,30 @@ timestamp_utc,event,artifact,notes
 2026-02-28T17:39:00Z,pilot_script_refined,outputs/pilot_wave1/run_wave1.ps1,Updated wave launcher to call excel-probe C# runtime
 2026-02-28T17:40:57Z,env_snapshot_emitted,outputs/platform_availability/excel_env_snapshot.json,Validated env command and tooling metadata capture
 2026-02-28T17:43:37Z,pilot_smoke_run_completed,outputs/pilot_wave1/evidence/SCN-EB010-SUM-UNRELATED-EDIT,Validated C# runner end-to-end output bundle on one pilot scenario
+2026-02-28T19:55:36Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Added cross-links to Track-A passes 18-22
+2026-02-28T19:55:36Z,backlog_catalog_refined,outputs/02_backlog_linked_empirical_tasks.md,Bound empirical task catalog to new Track-A dossier artifacts
+2026-02-28T20:00:50Z,pilot_wave1_batch_completed,outputs/pilot_wave1/evidence,Executed all 14 pilot scenarios via run-manifest with zero reported failures
+2026-02-28T20:00:50Z,pilot_manifest_status_updated,outputs/pilot_wave1/scenario_manifest_wave1.csv,Updated scenario statuses to completed after successful batch execution
+2026-02-28T20:15:57Z,pilot_wave1_summary_generated,outputs/pilot_wave1/pilot_wave1_result_summary.csv,Generated consolidated summary across all pilot evidence bundles
+2026-02-28T20:15:57Z,pilot_wave1_analysis_reported,outputs/pilot_wave1/PILOT_WAVE1_EXECUTION_REPORT.md,Published execution report with key findings and follow-on requirements
+2026-02-28T20:15:57Z,pilot_result_tables_updated,outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv,Populated recalc/volatility/structural tables with observed final-state results
+2026-02-28T20:15:57Z,locale_wave1_output_created,outputs/pilot_wave1/locale_coercion_probe_wave1.csv,Created locale probe output with execution-locale caveat annotations
+2026-02-28T20:15:57Z,new_tasks_derived_from_pilot,outputs/02_backlog_linked_empirical_tasks.md,Added ECS-EB-047 and ECS-EB-048 from pilot limitations (stepwise capture and locale-controlled execution)
+2026-02-28T18:25:21Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Expanded parent Track-A linkage through pass 27 and aligned backlog task catalog references
+2026-02-28T18:28:00Z,volatility_wave2_created,outputs/volatility_wave2/README.md,Created ECS-EB-012 scenario package and manifest for argument-conditional volatility probes
+2026-02-28T18:30:00Z,volatility_wave2_batch_completed,outputs/volatility_wave2/evidence,Executed 6 wave2 scenarios via run-manifest with zero reported failures
+2026-02-28T18:34:10Z,volatility_wave2_analysis_completed,outputs/volatility_wave2/WAVE2_EXECUTION_REPORT.md,Published ECS-EB-012 probe summary and ECS-EB-013 observed reason-code mapping artifacts
+2026-02-28T18:35:30Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Extended parent Track-A linkage through pass 28 (tier-5/4 source index completion)
+2026-02-28T18:38:00Z,volatility_wave2_fixture_relocated,outputs/volatility_wave2/scenarios,Updated wave2 scenario fixture paths to run-local fixtures directory and removed accidental repo-root fixture artifact
+2026-02-28T19:34:00Z,rtd_server_tool_created,../../tools/excel-rtd-server/README.md,Added local .NET Framework COM RTD server tool and registration scripts for ECS-EB-015 probes
+2026-02-28T19:34:00Z,rtd_wave1_batch_completed,outputs/rtd_wave1/evidence,Executed 5 ECS-EB-015 RTD lifecycle scenarios with zero failures
+2026-02-28T19:34:00Z,rtd_wave1_analysis_completed,outputs/rtd_wave1/RTD_WAVE1_EXECUTION_REPORT.md,Published RTD lifecycle wave summary and consolidated probe table
+2026-02-28T19:34:00Z,date_system_wave1_batch_completed,outputs/date_system_wave1/evidence,Executed 5 ECS-EB-016 date-system scenarios with zero failures
+2026-02-28T19:34:00Z,date_system_wave1_analysis_completed,outputs/date_system_wave1/DATE_SYSTEM_WAVE1_EXECUTION_REPORT.md,Published date-system wave summary and consolidated probe table
+2026-02-28T19:34:00Z,platform_source_matrix_enriched,outputs/platform_availability/source_matrix_full_interest_enriched.csv,Completed ECS-EB-037 applies-to extraction for all 71 interesting functions
+2026-02-28T19:34:00Z,platform_matrix_merged,outputs/platform_availability/function_availability_matrix.csv,Regenerated merged function availability matrix with zero source_incomplete rows
+2026-02-28T19:34:00Z,platform_pipeline_reported,outputs/platform_availability/ECS-EB-037_EXECUTION_REPORT.md,Published ECS-EB-037 execution report and run script
+2026-02-28T19:36:30Z,platform_matrix_refreshed,outputs/platform_availability/function_availability_matrix.csv,Re-ran ECS-EB-037 after crawler hardening; extraction failures remain zero
+2026-02-28T19:36:30Z,entrypoint_docs_refreshed,START_HERE.md,Updated run state to include ECS-EB-015/016/037 completions
+2026-02-28T19:36:30Z,backlog_catalog_refreshed,outputs/02_backlog_linked_empirical_tasks.md,Recorded ECS-EB-015/016 execution artifacts and ECS-EB-037 completion outputs
+2026-02-28T19:36:45Z,platform_probe_merge_applied,outputs/platform_availability/function_availability_matrix.csv,Merged ECS-EB-015/016 empirical outcomes into RTD/NOW/TODAY function availability rows (windows_probed)

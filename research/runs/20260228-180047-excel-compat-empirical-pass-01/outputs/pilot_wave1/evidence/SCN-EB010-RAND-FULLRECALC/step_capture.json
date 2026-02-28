@@ -1,0 +1,70 @@
+﻿{
+  "run_id": "run-20260228-181840-2fee8d383",
+  "task_id": "ECS-EB-010",
+  "scenario_id": "SCN-EB010-RAND-FULLRECALC",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:41.9978281Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.22362264155515132,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:42.3790433Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.6766509787880134,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:42.3850471Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.47829319016748795,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_full_recalc",
+      "operation": "full_recalc",
+      "timestamp_utc": "2026-02-28T18:18:42.3934139Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.11112830384543393,
+          "formula": "=RAND()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

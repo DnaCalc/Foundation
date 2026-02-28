@@ -37,3 +37,10 @@ Use this file to track specific researchers/engineers/authors whose public work 
   Topic IDs: `R-TOPIC-005`
   Preferred sources: canonical publication index, talks, public papers, and related repositories
   Specific focus: insights with direct implications for usability, evolvability, and compatibility strategy
+
+- Name: FsProjects ExcelFinancialFunctions maintainers
+  Area: Excel financial function implementation and test architecture (F#)
+  Why relevant: Public implementation and test corpus may provide high-value hypotheses, edge-case sets, and test-structure patterns for financial-function compatibility work
+  Topic IDs: `R-TOPIC-006`
+  Preferred sources: repository code/tests/issues at `https://github.com/fsprojects/ExcelFinancialFunctions`
+  Specific focus: implemented financial-function semantics, explicit behavior choices, and reusable testing methodology for conformance-pack design

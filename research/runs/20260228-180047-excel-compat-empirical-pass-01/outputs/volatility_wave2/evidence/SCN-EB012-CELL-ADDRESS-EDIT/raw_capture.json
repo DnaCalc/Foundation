@@ -1,0 +1,198 @@
+﻿{
+  "run_id": "run-20260228-182809-15d207a88",
+  "scenario": {
+    "scenario_id": "SCN-EB012-CELL-ADDRESS-EDIT",
+    "task_id": "ECS-EB-012",
+    "topic": "volatility_context_probe_wave2",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave2.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=CELL(\u0022address\u0022,B1)"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 42
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "args": {
+          "value": 5
+        },
+        "op": "edit_cell",
+        "target": "Sheet1!C1"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB012-CELL-ADDRESS-EDIT",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does CELL(\u0022address\u0022,B1) remain stable under unrelated edit \u002B recalc?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "CELL info_type=address candidate for argument-conditional volatility profile."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:28:13.0121175Z",
+      "finished_utc": "2026-02-28T18:28:13.2382642Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:28:13.2382934Z",
+      "finished_utc": "2026-02-28T18:28:13.2520204Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T18:28:13.2520622Z",
+      "finished_utc": "2026-02-28T18:28:13.2652781Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:28:13.2653077Z",
+      "finished_utc": "2026-02-28T18:28:13.2722056Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:28:13.0120108Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:28:13.2382332Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:28:13.2520093Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:28:13.2652699Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:28:13.2721966Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$B$1",
+          "formula": "=CELL(\u0022address\u0022,B1)",
+          "display_text": "$B$1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": "$B$1",
+      "formula": "=CELL(\u0022address\u0022,B1)",
+      "display_text": "$B$1",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

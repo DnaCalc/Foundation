@@ -24,6 +24,7 @@ internal static class Program
         public required bool FixturePreexisting { get; init; }
     }
 
+    [STAThread]
     static int Main(string[] args)
     {
         try
@@ -142,6 +143,7 @@ excel-probe (C#)
         var manifestPath = Path.Combine(outDir, "run_manifest.json");
         var rawPath = Path.Combine(outDir, "raw_capture.json");
         var normPath = Path.Combine(outDir, "normalized_capture.json");
+        var stepCapturePath = Path.Combine(outDir, "step_capture.json");
         var stdoutPath = Path.Combine(outDir, "stdout.log");
         var stderrPath = Path.Combine(outDir, "stderr.log");
 
@@ -151,9 +153,13 @@ excel-probe (C#)
         dynamic? excel = null;
         dynamic? workbook = null;
         int? excelPid = null;
+        var messageFilterInstalled = false;
 
         try
         {
+            OleMessageFilter.Register();
+            messageFilterInstalled = true;
+
             if (!File.Exists(scenarioPath)) throw new FileNotFoundException("Scenario file not found.", scenarioPath);
             scenario = JsonNode.Parse(File.ReadAllText(scenarioPath))?.AsObject() ?? throw new InvalidOperationException("Invalid scenario json");
 
@@ -172,6 +178,9 @@ excel-probe (C#)
             workbook = wb.Workbook;
             var fixturePath = wb.FixturePath;
             var fixturePreexisting = wb.FixturePreexisting;
+            var targets = CaptureTargets(scenario);
+            var stepCaptures = new List<Dictionary<string, object?>>();
+            stepCaptures.Add(CaptureStep(workbook, targets, "initial_after_setup", "setup"));
 
             var opTrace = new List<Dictionary<string, object?>>();
             foreach (var opNode in (scenario["operations"] as JsonArray ?? []))
@@ -182,12 +191,12 @@ excel-probe (C#)
                 var target = op["target"]?.GetValue<string>();
                 var s = Utc();
                 workbook = InvokeOp(excel, workbook, op, fixturePath);
+                stepCaptures.Add(CaptureStep(workbook, targets, $"after_{opName}", opName));
                 opTrace.Add(new() { ["op"] = opName, ["target"] = target, ["started_utc"] = s, ["finished_utc"] = Utc() });
             }
 
             if (workbook is not null) workbook.Save();
 
-            var targets = CaptureTargets(scenario);
             var captures = new List<Dictionary<string, object?>>();
             foreach (var target in targets)
             {
@@ -196,6 +205,7 @@ excel-probe (C#)
             }
 
             var calcMode = CalcModeName((int)excel.Calculation);
+            var dateSystem = DateSystemName(workbook);
             var finish = Utc();
             var sourceRefs = (scenario["sources"] as JsonArray ?? []).Select(n => n?.GetValue<string>()).ToList();
 
@@ -206,23 +216,33 @@ excel-probe (C#)
                 ["start_utc"] = start, ["end_utc"] = finish, ["exit_status"] = "success", ["visible"] = visible, ["timeout_sec"] = timeoutSec,
                 ["platform"] = "windows_desktop", ["excel_build"] = excelBinary["excel_file_version"], ["excel_channel"] = "unknown",
                 ["calc_mode"] = calcMode, ["excel_app_version"] = JsonFriendly(excel.Version), ["excel_pid"] = excelPid, ["excel_process_snapshot"] = ProcessSnap(excelPid), ["excel_binary"] = excelBinary,
-                ["fixture_path"] = fixturePath, ["fixture_preexisting"] = fixturePreexisting, ["operation_trace"] = opTrace, ["tooling"] = tool
+                ["date_system"] = dateSystem,
+                ["fixture_path"] = fixturePath, ["fixture_preexisting"] = fixturePreexisting, ["operation_trace"] = opTrace, ["step_capture_enabled"] = true, ["tooling"] = tool
             };
-            var raw = new Dictionary<string, object?> { ["run_id"] = runId, ["scenario"] = scenario, ["operation_trace"] = opTrace, ["captures"] = captures, ["error"] = null };
+            var raw = new Dictionary<string, object?> { ["run_id"] = runId, ["scenario"] = scenario, ["operation_trace"] = opTrace, ["step_captures"] = stepCaptures, ["captures"] = captures, ["error"] = null };
             var obs = captures.Select(c => c.TryGetValue("status", out var st) && Equals(st, "capture_error")
                 ? new Dictionary<string, object?> { ["target"] = c["target"], ["kind"] = "value", ["status"] = "failed", ["value"] = null, ["metadata"] = new Dictionary<string, object?> { ["message"] = c["message"] } }
                 : new Dictionary<string, object?> { ["target"] = c["target"], ["kind"] = "value", ["status"] = "observed", ["value"] = c["value"], ["metadata"] = new Dictionary<string, object?> { ["formula"] = c["formula"], ["display_text"] = c["display_text"], ["number_format"] = c["number_format"], ["has_formula"] = c["has_formula"] } }).ToList();
             var norm = new Dictionary<string, object?>
             {
                 ["run_id"] = runId, ["task_id"] = scenario["task_id"]?.GetValue<string>() ?? "unknown", ["scenario_id"] = scenario["scenario_id"]?.GetValue<string>() ?? "unknown", ["timestamp_utc"] = finish,
-                ["environment"] = new Dictionary<string, object?> { ["platform"] = "windows_desktop", ["excel_channel"] = "unknown", ["excel_build"] = excelBinary["excel_file_version"], ["locale"] = CultureInfo.CurrentCulture.Name, ["calc_mode"] = calcMode, ["capability_profile"] = "unknown", ["tooling"] = tool },
+                ["environment"] = new Dictionary<string, object?> { ["platform"] = "windows_desktop", ["excel_channel"] = "unknown", ["excel_build"] = excelBinary["excel_file_version"], ["locale"] = CultureInfo.CurrentCulture.Name, ["calc_mode"] = calcMode, ["date_system"] = dateSystem, ["capability_profile"] = "unknown", ["tooling"] = tool },
                 ["observations"] = obs, ["comparison"] = new Dictionary<string, object?> { ["expected_profile"] = "scenario_expectations", ["result"] = "manual_review", ["mismatch_count"] = 0 },
-                ["evidence"] = new Dictionary<string, object?> { ["raw_capture_ref"] = "raw_capture.json", ["rerun_command"] = $"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"] = sourceRefs }
+                ["evidence"] = new Dictionary<string, object?> { ["raw_capture_ref"] = "raw_capture.json", ["step_capture_ref"] = "step_capture.json", ["rerun_command"] = $"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"] = sourceRefs }
+            };
+            var stepCapturePayload = new Dictionary<string, object?>
+            {
+                ["run_id"] = runId,
+                ["task_id"] = scenario["task_id"]?.GetValue<string>() ?? "unknown",
+                ["scenario_id"] = scenario["scenario_id"]?.GetValue<string>() ?? "unknown",
+                ["targets"] = targets,
+                ["steps"] = stepCaptures
             };
 
             WriteJson(manifestPath, manifest);
             WriteJson(rawPath, raw);
             WriteJson(normPath, norm);
+            WriteJson(stepCapturePath, stepCapturePayload);
             File.WriteAllText(stdoutPath, "Run completed successfully.\n", Encoding.UTF8);
             File.WriteAllText(stderrPath, "", Encoding.UTF8);
             return 0;
@@ -240,10 +260,11 @@ excel-probe (C#)
             WriteJson(rawPath, new Dictionary<string, object?> { ["run_id"] = runId, ["error"] = ex.ToString() });
             WriteJson(normPath, new Dictionary<string, object?> {
                 ["run_id"]=runId, ["task_id"]=scenario?["task_id"]?.GetValue<string>() ?? "unknown", ["scenario_id"]=scenario?["scenario_id"]?.GetValue<string>() ?? "unknown", ["timestamp_utc"]=end,
-                ["environment"]=new Dictionary<string, object?> { ["platform"]="windows_desktop", ["excel_channel"]="unknown", ["excel_build"]=excelBinary.TryGetValue("excel_file_version", out var bb) ? bb : null, ["locale"]=CultureInfo.CurrentCulture.Name, ["calc_mode"]="unknown", ["capability_profile"]="unknown", ["tooling"]=tool },
+                ["environment"]=new Dictionary<string, object?> { ["platform"]="windows_desktop", ["excel_channel"]="unknown", ["excel_build"]=excelBinary.TryGetValue("excel_file_version", out var bb) ? bb : null, ["locale"]=CultureInfo.CurrentCulture.Name, ["calc_mode"]="unknown", ["date_system"]="unknown", ["capability_profile"]="unknown", ["tooling"]=tool },
                 ["observations"]=Array.Empty<object>(), ["comparison"]=new Dictionary<string, object?> { ["expected_profile"]="scenario_expectations", ["result"]="manual_review", ["mismatch_count"]=0 },
-                ["evidence"]=new Dictionary<string, object?> { ["raw_capture_ref"]="raw_capture.json", ["rerun_command"]=$"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"]=Array.Empty<object>() }
+                ["evidence"]=new Dictionary<string, object?> { ["raw_capture_ref"]="raw_capture.json", ["step_capture_ref"]="step_capture.json", ["rerun_command"]=$"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"]=Array.Empty<object>() }
             });
+            WriteJson(stepCapturePath, new Dictionary<string, object?> { ["run_id"] = runId, ["error"] = ex.ToString() });
             File.WriteAllText(stdoutPath, "", Encoding.UTF8);
             File.WriteAllText(stderrPath, ex + "\n", Encoding.UTF8);
             Console.Error.WriteLine(ex);
@@ -251,6 +272,7 @@ excel-probe (C#)
         }
         finally
         {
+            if (messageFilterInstalled) OleMessageFilter.Revoke();
             try { if (workbook is not null) workbook.Close(true); } catch { }
             try { if (excel is not null) excel.Quit(); } catch { }
             ReleaseCom(workbook); ReleaseCom(excel);
@@ -313,6 +335,19 @@ excel-probe (C#)
             case "set_calc_mode": excel.Calculation = (args?["mode"]?.GetValue<string>() ?? "").ToLowerInvariant() switch { "automatic" => XlAutomatic, "manual" => XlManual, "semiautomatic" => XlSemiautomatic, _ => throw new InvalidOperationException("invalid calc mode") }; return wb;
             case "recalc": excel.Calculate(); return wb;
             case "full_recalc": try { excel.CalculateFullRebuild(); } catch { excel.CalculateFull(); } return wb;
+            case "sleep": { var ms = args?["milliseconds"]?.GetValue<int>() ?? args?["ms"]?.GetValue<int>() ?? 250; Thread.Sleep(ms); return wb; }
+            case "set_date_system":
+                {
+                    var w = RequireWb(wb, opName);
+                    var mode = (args?["system"]?.GetValue<string>() ?? "1900").Trim();
+                    w.Date1904 = mode switch
+                    {
+                        "1904" => true,
+                        "1900" => false,
+                        _ => throw new InvalidOperationException("invalid date system (expected 1900 or 1904)")
+                    };
+                    return w;
+                }
             case "edit_cell": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); dynamic ws = w.Worksheets.Item(sh); if (args?.TryGetPropertyValue("formula", out var f) == true && f is not null) ws.Range(ad).Formula = f.GetValue<string>(); else ws.Range(ad).Value2 = NodeToCom(args?["value"]); return w; }
             case "insert_row": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); w.Worksheets.Item(sh).Range(ad).EntireRow.Insert(); return w; }
             case "delete_row": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); w.Worksheets.Item(sh).Range(ad).EntireRow.Delete(); return w; }
@@ -322,6 +357,31 @@ excel-probe (C#)
             case "close": { var w = RequireWb(wb, opName); w.Close(true); ReleaseCom(w); return null; }
             case "open": if (wb is not null) { wb.Close(false); ReleaseCom(wb); } return excel.Workbooks.Open(fixturePath);
             case "copy_paste": { var w = RequireWb(wb, opName); var src = ParseTarget(args?["source"]?.GetValue<string>()); var dst = ParseTarget(args?["target"]?.GetValue<string>()); w.Worksheets.Item(src.sheet).Range(src.address).Copy(w.Worksheets.Item(dst.sheet).Range(dst.address)); return w; }
+            case "copy_paste_from_workbook":
+                {
+                    var w = RequireWb(wb, opName);
+                    var sourceFixtureHint = args?["source_workbook_fixture"]?.GetValue<string>()
+                        ?? throw new InvalidOperationException("copy_paste_from_workbook requires args.source_workbook_fixture");
+                    var sourceTarget = ParseTarget(args?["source"]?.GetValue<string>());
+                    var destTarget = ParseTarget(target);
+                    var sourcePath = ResolveInputPath(sourceFixtureHint);
+                    if (!File.Exists(sourcePath)) throw new FileNotFoundException("source workbook fixture not found", sourcePath);
+
+                    dynamic? sourceWb = null;
+                    try
+                    {
+                        sourceWb = excel.Workbooks.Open(sourcePath);
+                        var srcRange = sourceWb.Worksheets.Item(sourceTarget.sheet).Range(sourceTarget.address);
+                        var dstRange = w.Worksheets.Item(destTarget.sheet).Range(destTarget.address);
+                        srcRange.Copy(dstRange);
+                    }
+                    finally
+                    {
+                        try { if (sourceWb is not null) sourceWb.Close(false); } catch { }
+                        ReleaseCom(sourceWb);
+                    }
+                    return w;
+                }
             default: throw new InvalidOperationException($"Unsupported operation '{opName}'.");
         }
     }
@@ -330,6 +390,46 @@ excel-probe (C#)
     {
         var (sheet, address) = ParseTarget(target); dynamic cell = wb.Worksheets.Item(sheet).Range(address);
         return new() { ["target"] = target, ["value"] = JsonFriendly(cell.Value2), ["formula"] = JsonFriendly(cell.Formula), ["display_text"] = JsonFriendly(cell.Text), ["number_format"] = JsonFriendly(cell.NumberFormat), ["has_formula"] = JsonFriendly(cell.HasFormula) };
+    }
+
+    static Dictionary<string, object?> CaptureStep(dynamic? wb, List<string> targets, string stepLabel, string operation)
+    {
+        var captures = new List<Dictionary<string, object?>>();
+        foreach (var target in targets)
+        {
+            if (wb is null)
+            {
+                captures.Add(new Dictionary<string, object?>
+                {
+                    ["target"] = target,
+                    ["status"] = "workbook_closed",
+                    ["message"] = "Workbook was closed during this step."
+                });
+                continue;
+            }
+
+            try
+            {
+                captures.Add(CellSnapshot(wb, target));
+            }
+            catch (Exception ex)
+            {
+                captures.Add(new Dictionary<string, object?>
+                {
+                    ["target"] = target,
+                    ["status"] = "capture_error",
+                    ["message"] = ex.Message
+                });
+            }
+        }
+
+        return new Dictionary<string, object?>
+        {
+            ["step"] = stepLabel,
+            ["operation"] = operation,
+            ["timestamp_utc"] = Utc(),
+            ["captures"] = captures
+        };
     }
 
     static List<string> CaptureTargets(JsonObject scenario)
@@ -348,6 +448,42 @@ excel-probe (C#)
     static (string sheet, string address) ParseTarget(string? t) { if (string.IsNullOrWhiteSpace(t)) throw new InvalidOperationException("target missing"); var i = t.IndexOf('!'); if (i <= 0 || i >= t.Length - 1) throw new InvalidOperationException($"invalid target '{t}'"); return (t[..i], t[(i + 1)..]); }
     static dynamic RequireWb(dynamic? wb, string op) { if (wb is null) throw new InvalidOperationException($"{op} requires open workbook"); return wb; }
     static string CalcModeName(int code) => code switch { XlAutomatic => "automatic", XlManual => "manual", XlSemiautomatic => "semiautomatic", _ => "unknown" };
+    static string DateSystemName(dynamic? wb)
+    {
+        if (wb is null) return "unknown";
+        try { return (bool)wb.Date1904 ? "1904" : "1900"; } catch { return "unknown"; }
+    }
+
+    // Office automation occasionally returns RPC_E_SERVERCALL_RETRYLATER.
+    // Installing an OLE message filter enables automatic retry behavior.
+    [ComImport, Guid("00000016-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    interface IMessageFilter
+    {
+        [PreserveSig] int HandleInComingCall(int dwCallType, IntPtr hTaskCaller, int dwTickCount, IntPtr lpInterfaceInfo);
+        [PreserveSig] int RetryRejectedCall(IntPtr hTaskCallee, int dwTickCount, int dwRejectType);
+        [PreserveSig] int MessagePending(IntPtr hTaskCallee, int dwTickCount, int dwPendingType);
+    }
+
+    sealed class OleMessageFilter : IMessageFilter
+    {
+        [DllImport("ole32.dll")]
+        static extern int CoRegisterMessageFilter(IMessageFilter? newFilter, out IMessageFilter? oldFilter);
+
+        public static void Register() => CoRegisterMessageFilter(new OleMessageFilter(), out _);
+
+        public static void Revoke() => CoRegisterMessageFilter(null, out _);
+
+        public int HandleInComingCall(int dwCallType, IntPtr hTaskCaller, int dwTickCount, IntPtr lpInterfaceInfo) => 0;
+
+        public int RetryRejectedCall(IntPtr hTaskCallee, int dwTickCount, int dwRejectType)
+        {
+            // SERVERCALL_RETRYLATER (2): retry in 100 ms.
+            return dwRejectType == 2 ? 100 : -1;
+        }
+
+        public int MessagePending(IntPtr hTaskCallee, int dwTickCount, int dwPendingType) => 2;
+    }
+
     static string Utc() => DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture);
     static int Fail(string s) { Console.Error.WriteLine(s); return 1; }
 

@@ -1,0 +1,5 @@
+"reason_code","trigger_class","observed_pattern","evidence_scenarios","confidence","notes"
+"volatile_or_recalc_sensitive","always_volatile","Value changes across recalc without input edits","SCN-EB012-RAND-RECALC-CONTROL","high","Control confirmation via RAND."
+"volatile_or_recalc_sensitive","argument_conditional_context","Value reflects calc mode context (Automatic/Manual)","SCN-EB012-INFO-RECALC-MODE-TOGGLE","medium_high","Observed with INFO(""recalc""); supports conditional-context behavior class."
+"volatile_or_recalc_sensitive","stable_argument_variant","No value change under unrelated edit for tested argument variants","SCN-EB012-CELL-ADDRESS-EDIT|SCN-EB012-INFO-DIRECTORY-EDIT|SCN-EB012-SUM-RECALC-CONTROL","medium","Shows not all candidates behave volatile in tested triggers."
+"volatile_or_recalc_sensitive","lifecycle_sensitive","Workbook close/open transition introduces non-observed step while open-state values stable","SCN-EB012-CELL-FILENAME-REOPEN","medium","Observed using CELL(""filename"") close/open sequence."

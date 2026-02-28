@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181833-b0c5345fe",
+  "task_id": "ECS-EB-010",
+  "scenario_id": "SCN-EB010-NOW-UNRELATED-EDIT",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:36.5597844Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84625555555,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:36.8446282Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84625925926,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:36.8590177Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84625983796,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:18:36.8764643Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.8462599537,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:36.8875749Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.84626006945,
+          "formula": "=NOW()",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

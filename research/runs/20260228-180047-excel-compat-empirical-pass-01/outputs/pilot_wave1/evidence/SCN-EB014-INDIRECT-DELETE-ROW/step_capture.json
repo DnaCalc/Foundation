@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181858-b3dee50ef",
+  "task_id": "ECS-EB-014",
+  "scenario_id": "SCN-EB014-INDIRECT-DELETE-ROW",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:00.3438908Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 200,
+          "formula": "=INDIRECT(\u0022B2\u0022)",
+          "display_text": "200",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:00.6648028Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 200,
+          "formula": "=INDIRECT(\u0022B2\u0022)",
+          "display_text": "200",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:00.6713859Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 200,
+          "formula": "=INDIRECT(\u0022B2\u0022)",
+          "display_text": "200",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_delete_row",
+      "operation": "delete_row",
+      "timestamp_utc": "2026-02-28T18:19:00.6864238Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 100,
+          "formula": "=INDIRECT(\u0022B2\u0022)",
+          "display_text": "100",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:00.6921828Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 100,
+          "formula": "=INDIRECT(\u0022B2\u0022)",
+          "display_text": "100",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

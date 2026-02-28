@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260228-174333-a531ecdd7",
+  "run_id": "run-20260228-181837-9504d2b9b",
   "scenario": {
     "scenario_id": "SCN-EB010-SUM-UNRELATED-EDIT",
     "task_id": "ECS-EB-010",
@@ -91,26 +91,103 @@
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-02-28T17:43:36.7282008Z",
-      "finished_utc": "2026-02-28T17:43:37.0104435Z"
+      "started_utc": "2026-02-28T18:18:39.7536912Z",
+      "finished_utc": "2026-02-28T18:18:39.9870071Z"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-02-28T17:43:37.0105135Z",
-      "finished_utc": "2026-02-28T17:43:37.0178884Z"
+      "started_utc": "2026-02-28T18:18:39.9870248Z",
+      "finished_utc": "2026-02-28T18:18:39.9943074Z"
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!C1",
-      "started_utc": "2026-02-28T17:43:37.0179275Z",
-      "finished_utc": "2026-02-28T17:43:37.0521058Z"
+      "started_utc": "2026-02-28T18:18:39.9943273Z",
+      "finished_utc": "2026-02-28T18:18:40.0055271Z"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-02-28T17:43:37.0521502Z",
-      "finished_utc": "2026-02-28T17:43:37.0528459Z"
+      "started_utc": "2026-02-28T18:18:40.0055508Z",
+      "finished_utc": "2026-02-28T18:18:40.0117370Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:39.7536446Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:39.9869975Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:39.9942970Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T18:18:40.0055193Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:40.0117274Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 60,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
     }
   ],
   "captures": [
@@ -118,8 +195,8 @@
       "target": "Sheet1!A1",
       "value": 60,
       "formula": "=SUM(B1:B3)",
-      "display_text": "60",
-      "number_format": "General",
+      "display_text": "########",
+      "number_format": "yyyy/mm/dd hh:mm",
       "has_formula": true
     }
   ],

@@ -1,0 +1,88 @@
+{
+  "scenario_id": "SCN-EB016-TODAY-TOGGLE-1900-1904",
+  "task_id": "ECS-EB-016",
+  "topic": "now_today_date_system_wave1",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\date_system_dest.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "value": "=TODAY()",
+            "address": "A1",
+            "kind": "formula"
+          },
+          {
+            "value": "yyyy-mm-dd",
+            "address": "A1",
+            "kind": "format"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      },
+      "op": "set_calc_mode"
+    },
+    {
+      "target": "workbook",
+      "args": {
+        "system": "1900"
+      },
+      "op": "set_date_system"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "target": "workbook",
+      "args": {
+        "system": "1904"
+      },
+      "op": "set_date_system"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-EB016-TODAY-TOGGLE-1900-1904",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "How does TODAY() behave when date system toggles from 1900 to 1904?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "display_text",
+      "number_format",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+  ],
+  "notes": "TODAY date-system toggle probe."
+}

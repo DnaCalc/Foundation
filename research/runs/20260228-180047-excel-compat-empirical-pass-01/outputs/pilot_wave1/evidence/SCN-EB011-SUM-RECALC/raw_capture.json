@@ -1,0 +1,175 @@
+﻿{
+  "run_id": "run-20260228-181847-37aef368d",
+  "scenario": {
+    "scenario_id": "SCN-EB011-SUM-RECALC",
+    "task_id": "ECS-EB-011",
+    "topic": "volatility_probe_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=SUM(B1:B3)"
+            },
+            {
+              "address": "B1",
+              "kind": "value",
+              "value": 1
+            },
+            {
+              "address": "B2",
+              "kind": "value",
+              "value": 2
+            },
+            {
+              "address": "B3",
+              "kind": "value",
+              "value": 3
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SUM-NONVOLATILE",
+        "kind": "value_equals",
+        "target": "Sheet1!A1",
+        "expected": 6,
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ],
+    "notes": "Volatility control scenario."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:49.8565811Z",
+      "finished_utc": "2026-02-28T18:18:50.1850509Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:50.1850607Z",
+      "finished_utc": "2026-02-28T18:18:50.1903736Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:18:50.1903823Z",
+      "finished_utc": "2026-02-28T18:18:50.1960351Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:49.8565574Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 6,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:50.1850457Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 6,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:50.1903692Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 6,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:50.1960309Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 6,
+          "formula": "=SUM(B1:B3)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 6,
+      "formula": "=SUM(B1:B3)",
+      "display_text": "########",
+      "number_format": "yyyy/mm/dd hh:mm",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

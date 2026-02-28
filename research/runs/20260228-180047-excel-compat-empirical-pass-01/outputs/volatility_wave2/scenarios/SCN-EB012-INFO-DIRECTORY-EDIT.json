@@ -1,0 +1,76 @@
+{
+  "scenario_id": "SCN-EB012-INFO-DIRECTORY-EDIT",
+  "task_id": "ECS-EB-012",
+  "topic": "volatility_context_probe_wave2",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/volatility_wave2.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "kind": "formula",
+            "address": "A1",
+            "value": "=INFO(\"directory\")"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "args": {
+        "mode": "automatic"
+      },
+      "op": "set_calc_mode",
+      "target": "workbook"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "args": {
+        "value": 99
+      },
+      "op": "edit_cell",
+      "target": "Sheet1!C1"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-EB012-INFO-DIRECTORY-EDIT",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "Does INFO(\"directory\") behave like volatile or remain stable under unrelated edit?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "display_text",
+      "number_format",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+  ],
+  "notes": "INFO directory context probe."
+}

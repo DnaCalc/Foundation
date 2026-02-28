@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-181905-a68714a68",
+  "task_id": "ECS-EB-014",
+  "scenario_id": "SCN-EB014-OFFSET-DELETE-COL",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:07.4428878Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:07.8148305Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:07.8221909Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 400,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "400",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_delete_column",
+      "operation": "delete_column",
+      "timestamp_utc": "2026-02-28T18:19:07.8386456Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826265,
+          "formula": "=SUM(OFFSET(#REF!,0,0,1,1))",
+          "display_text": "#REF!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:07.8450606Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": -2146826265,
+          "formula": "=SUM(OFFSET(#REF!,0,0,1,1))",
+          "display_text": "#REF!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

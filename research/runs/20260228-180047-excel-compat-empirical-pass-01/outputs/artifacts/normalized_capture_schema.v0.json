@@ -59,6 +59,9 @@
         },
         "capability_profile": {
           "type": "string"
+        },
+        "tooling": {
+          "type": "object"
         }
       },
       "additionalProperties": false
@@ -138,6 +141,9 @@
       ],
       "properties": {
         "raw_capture_ref": {
+          "type": "string"
+        },
+        "step_capture_ref": {
           "type": "string"
         },
         "rerun_command": {

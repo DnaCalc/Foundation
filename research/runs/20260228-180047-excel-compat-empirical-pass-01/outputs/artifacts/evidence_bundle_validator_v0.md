@@ -11,6 +11,7 @@ Required files:
 - `run_manifest.json`
 - `raw_capture.json`
 - `normalized_capture.json`
+- `step_capture.json`
 - `stdout.log`
 - `stderr.log`
 
@@ -30,6 +31,9 @@ Required files:
    - Every observation has `status`.
 7. Skip semantics
    - Any `not_testable` status must include explicit capability reason in metadata.
+8. Stepwise capture completeness
+   - `step_capture.json` must contain at least one `initial_after_setup` step.
+   - For scenarios with `N` operations, step captures should include at least `N + 1` steps (initial + per-operation).
 
 ## Validator output format
 The validator should emit:

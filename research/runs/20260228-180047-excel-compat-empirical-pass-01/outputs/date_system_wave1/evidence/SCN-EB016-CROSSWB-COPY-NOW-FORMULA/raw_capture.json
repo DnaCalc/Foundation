@@ -1,0 +1,255 @@
+﻿{
+  "run_id": "run-20260228-191746-4fdd3d87b",
+  "scenario": {
+    "scenario_id": "SCN-EB016-CROSSWB-COPY-NOW-FORMULA",
+    "task_id": "ECS-EB-016",
+    "topic": "now_today_date_system_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\date_system_dest.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "value": "",
+              "address": "A1",
+              "kind": "value"
+            },
+            {
+              "value": "yyyy-mm-dd hh:mm:ss",
+              "address": "A1",
+              "kind": "format"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode"
+      },
+      {
+        "target": "workbook",
+        "args": {
+          "system": "1900"
+        },
+        "op": "set_date_system"
+      },
+      {
+        "target": "Sheet1!A1",
+        "args": {
+          "source_workbook_fixture": "research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\date_system_source.xlsx",
+          "source": "Sheet1!A1"
+        },
+        "op": "copy_paste_from_workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "target": "workbook",
+        "args": {
+          "system": "1904"
+        },
+        "op": "set_date_system"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB016-CROSSWB-COPY-NOW-FORMULA",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "After cross-workbook copy of NOW() formula, what changes when destination date system switches?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Cross-workbook NOW formula copy \u002B date-system transition."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:48.3122709Z",
+      "finished_utc": "2026-02-28T19:17:48.4528706Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:48.4528833Z",
+      "finished_utc": "2026-02-28T19:17:48.4645344Z"
+    },
+    {
+      "op": "copy_paste_from_workbook",
+      "target": "Sheet1!A1",
+      "started_utc": "2026-02-28T19:17:48.4645472Z",
+      "finished_utc": "2026-02-28T19:17:48.6377601Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:48.6377730Z",
+      "finished_utc": "2026-02-28T19:17:48.6414728Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:48.6414854Z",
+      "finished_utc": "2026-02-28T19:17:48.6522329Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:17:48.6522465Z",
+      "finished_utc": "2026-02-28T19:17:48.6562091Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:17:48.3122468Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:17:48.4528671Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:48.4645319Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_copy_paste_from_workbook",
+      "operation": "copy_paste_from_workbook",
+      "timestamp_utc": "2026-02-28T19:17:48.6377554Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.88736736111,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:49",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:48.6414700Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081.88736828704,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:49",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T19:17:48.6522311Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619.88736840278,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:49",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:17:48.6562058Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619.88736840278,
+          "formula": "=NOW()",
+          "display_text": "2026-02-28 21:17:49",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 44619.88736840278,
+      "formula": "=NOW()",
+      "display_text": "2026-02-28 21:17:49",
+      "number_format": "yyyy-mm-dd hh:mm:ss",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

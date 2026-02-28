@@ -1,0 +1,194 @@
+﻿{
+  "run_id": "run-20260228-181903-3addc84d3",
+  "scenario": {
+    "scenario_id": "SCN-EB014-OFFSET-INSERT-COL",
+    "task_id": "ECS-EB-014",
+    "topic": "indirect_offset_structural",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/indirect_offset_structural.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=SUM(OFFSET(B1,0,0,1,1))"
+            },
+            {
+              "address": "B1",
+              "kind": "value",
+              "value": 300
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "insert_column",
+        "target": "Sheet1!B:B"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-OFFSET-COL-INSERT-BEHAVIOR",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "After column insertion, does OFFSET-based reference path remain deterministic?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "error",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Structural edit probe for OFFSET column insertion."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:05.0039521Z",
+      "finished_utc": "2026-02-28T18:19:05.3281535Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:05.3281645Z",
+      "finished_utc": "2026-02-28T18:19:05.3329658Z"
+    },
+    {
+      "op": "insert_column",
+      "target": "Sheet1!B:B",
+      "started_utc": "2026-02-28T18:19:05.3329741Z",
+      "finished_utc": "2026-02-28T18:19:05.3470676Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:19:05.3470775Z",
+      "finished_utc": "2026-02-28T18:19:05.3520563Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:19:05.0039356Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:19:05.3281452Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:05.3329608Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(B1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_insert_column",
+      "operation": "insert_column",
+      "timestamp_utc": "2026-02-28T18:19:05.3470398Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(C1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:19:05.3520526Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 300,
+          "formula": "=SUM(OFFSET(C1,0,0,1,1))",
+          "display_text": "300",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 300,
+      "formula": "=SUM(OFFSET(C1,0,0,1,1))",
+      "display_text": "300",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

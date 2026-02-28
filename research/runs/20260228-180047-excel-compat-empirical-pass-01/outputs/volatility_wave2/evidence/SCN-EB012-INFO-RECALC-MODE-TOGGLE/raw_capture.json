@@ -1,0 +1,246 @@
+﻿{
+  "run_id": "run-20260228-182919-ec7432413",
+  "scenario": {
+    "scenario_id": "SCN-EB012-INFO-RECALC-MODE-TOGGLE",
+    "task_id": "ECS-EB-012",
+    "topic": "volatility_context_probe_wave2",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave2.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=INFO(\u0022recalc\u0022)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "args": {
+          "mode": "manual"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB012-INFO-RECALC-MODE-TOGGLE",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does INFO(\u0022recalc\u0022) reflect calc mode changes (argument-conditional context behavior)?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "INFO recalc-mode argument conditionality probe."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:21.7249210Z",
+      "finished_utc": "2026-02-28T18:29:22.0860140Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:22.0860290Z",
+      "finished_utc": "2026-02-28T18:29:22.0927949Z"
+    },
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:22.0928187Z",
+      "finished_utc": "2026-02-28T18:29:22.1068919Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:22.1069060Z",
+      "finished_utc": "2026-02-28T18:29:22.1126630Z"
+    },
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:22.1126974Z",
+      "finished_utc": "2026-02-28T18:29:22.1270834Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:22.1270990Z",
+      "finished_utc": "2026-02-28T18:29:22.1319766Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:21.7248823Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.0860054Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.0927894Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.1068844Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.1126515Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Manual",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Manual",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:22.1270792Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:22.1319730Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "Automatic",
+          "formula": "=INFO(\u0022recalc\u0022)",
+          "display_text": "Automatic",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": "Automatic",
+      "formula": "=INFO(\u0022recalc\u0022)",
+      "display_text": "Automatic",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

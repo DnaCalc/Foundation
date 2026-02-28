@@ -1,0 +1,53 @@
+﻿{
+  "run_id": "run-20260228-182919-ec7432413",
+  "task_id": "ECS-EB-012",
+  "scenario_id": "SCN-EB012-INFO-RECALC-MODE-TOGGLE",
+  "timestamp_utc": "2026-02-28T18:29:22.1913157Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002Bb6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "b6ff4ae8cf4245c34c67d143c3d82f2d72aadd03",
+      "repo_git_commit_short": "b6ff4ae",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!A1",
+      "kind": "value",
+      "status": "observed",
+      "value": "Automatic",
+      "metadata": {
+        "formula": "=INFO(\u0022recalc\u0022)",
+        "display_text": "Automatic",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\volatility_wave2\\scenarios\\SCN-EB012-INFO-RECALC-MODE-TOGGLE.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\volatility_wave2\\evidence\\SCN-EB012-INFO-RECALC-MODE-TOGGLE\u0022 --visible false --timeout-sec 180",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ]
+  }
+}

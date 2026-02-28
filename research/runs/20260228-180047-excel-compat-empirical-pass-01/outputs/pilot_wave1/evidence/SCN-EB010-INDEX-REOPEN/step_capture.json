@@ -1,0 +1,112 @@
+﻿{
+  "run_id": "run-20260228-181842-f29f0791a",
+  "task_id": "ECS-EB-010",
+  "scenario_id": "SCN-EB010-INDEX-REOPEN",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:18:44.3327367Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:18:44.6539153Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:44.6605218Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_save",
+      "operation": "save",
+      "timestamp_utc": "2026-02-28T18:18:44.7080972Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_close",
+      "operation": "close",
+      "timestamp_utc": "2026-02-28T18:18:44.7266635Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "status": "workbook_closed",
+          "message": "Workbook was closed during this step."
+        }
+      ]
+    },
+    {
+      "step": "after_open",
+      "operation": "open",
+      "timestamp_utc": "2026-02-28T18:18:44.8043892Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:18:44.8097658Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 7,
+          "formula": "=INDEX(B1:B3,2)",
+          "display_text": "########",
+          "number_format": "yyyy/mm/dd hh:mm",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

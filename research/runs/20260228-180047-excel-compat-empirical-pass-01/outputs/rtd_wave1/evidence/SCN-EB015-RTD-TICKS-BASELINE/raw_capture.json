@@ -1,0 +1,247 @@
+﻿{
+  "run_id": "run-20260228-190502-f668e412e",
+  "scenario": {
+    "scenario_id": "SCN-EB015-RTD-TICKS-BASELINE",
+    "task_id": "ECS-EB-015",
+    "topic": "rtd_lifecycle_wave1",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/rtd_lifecycle_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "address": "A1",
+              "kind": "formula",
+              "value": "=RTD(\u0022DnaCalc.Tools.RtdServer\u0022,,\u0022TICKS\u0022)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "target": "workbook",
+        "op": "set_calc_mode",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "target": "workbook",
+        "op": "recalc"
+      },
+      {
+        "target": "workbook",
+        "op": "sleep",
+        "args": {
+          "milliseconds": 1200
+        }
+      },
+      {
+        "target": "workbook",
+        "op": "recalc"
+      },
+      {
+        "target": "workbook",
+        "op": "sleep",
+        "args": {
+          "milliseconds": 1200
+        }
+      },
+      {
+        "target": "workbook",
+        "op": "recalc"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB015-RTD-TICKS-BASELINE",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does RTD TICKS update over time under automatic mode?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/source_summaries_full.md"
+    ],
+    "notes": "Baseline RTD topic update behavior."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:06.3457070Z",
+      "finished_utc": "2026-02-28T19:05:06.6927967Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:06.6928400Z",
+      "finished_utc": "2026-02-28T19:05:06.7070841Z"
+    },
+    {
+      "op": "sleep",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:06.7071215Z",
+      "finished_utc": "2026-02-28T19:05:07.9298793Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:07.9299448Z",
+      "finished_utc": "2026-02-28T19:05:07.9393646Z"
+    },
+    {
+      "op": "sleep",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:07.9394229Z",
+      "finished_utc": "2026-02-28T19:05:09.1572864Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T19:05:09.1573187Z",
+      "finished_utc": "2026-02-28T19:05:09.1664322Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T19:05:06.3455873Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T19:05:06.6927639Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:06.7070729Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:05:07.9298668Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:07.9393518Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T19:05:09.1572786Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T19:05:09.1664221Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 3,
+          "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 3,
+      "formula": "=RTD(\u0022dnacalc.tools.rtdserver\u0022,,\u0022TICKS\u0022)",
+      "display_text": "3",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

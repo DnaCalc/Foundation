@@ -1,0 +1,6 @@
+"scenario_id","task_id","initial_value","final_value","unique_observed_value_count","stepwise_value_changed_any","workbook_closed_step_seen","reopen_recovered","calc_mode_final","classification","note","evidence_path","status"
+"SCN-EB015-RTD-MISSING-PROGID","ECS-EB-015","-2146826246","-2146826246","1","false","false","false","automatic","missing_progid_expected_na","Negative control for unavailable server ProgID.","evidence/SCN-EB015-RTD-MISSING-PROGID","completed"
+"SCN-EB015-RTD-PULSE-CLOSE-OPEN","ECS-EB-015","0","1","2","true","true","true","automatic","reopen_reconnect_observed","Alternate topic reconnect lifecycle probe.","evidence/SCN-EB015-RTD-PULSE-CLOSE-OPEN","completed"
+"SCN-EB015-RTD-TICKS-BASELINE","ECS-EB-015","0","3","3","true","false","false","automatic","rtd_updates_observed","Baseline update progression under automatic mode.","evidence/SCN-EB015-RTD-TICKS-BASELINE","completed"
+"SCN-EB015-RTD-TICKS-CLOSE-OPEN","ECS-EB-015","0","3","3","true","true","true","automatic","reopen_reconnect_observed","Close/open reconnect lifecycle probe.","evidence/SCN-EB015-RTD-TICKS-CLOSE-OPEN","completed"
+"SCN-EB015-RTD-TICKS-MANUAL","ECS-EB-015","0","3","3","true","false","false","automatic","manual_mode_transition_observed","Manual/automatic mode transition behavior captured.","evidence/SCN-EB015-RTD-TICKS-MANUAL","completed"

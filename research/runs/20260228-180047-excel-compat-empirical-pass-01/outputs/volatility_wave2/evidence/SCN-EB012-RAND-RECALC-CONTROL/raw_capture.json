@@ -1,0 +1,165 @@
+﻿{
+  "run_id": "run-20260228-182922-7139603dd",
+  "scenario": {
+    "scenario_id": "SCN-EB012-RAND-RECALC-CONTROL",
+    "task_id": "ECS-EB-012",
+    "topic": "volatility_context_probe_wave2",
+    "priority": "P0",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "fixtures/volatility_wave2.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=RAND()"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "args": {
+          "mode": "automatic"
+        },
+        "op": "set_calc_mode",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB012-RAND-RECALC-CONTROL",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Volatile control: does RAND() change across recalc steps?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info",
+        "platform_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+    ],
+    "notes": "Positive volatility control for wave2."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:24.3018747Z",
+      "finished_utc": "2026-02-28T18:29:24.5554836Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:24.5554945Z",
+      "finished_utc": "2026-02-28T18:29:24.5604895Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T18:29:24.5605016Z",
+      "finished_utc": "2026-02-28T18:29:24.5658776Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T18:29:24.3018419Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.846772592661399,
+          "formula": "=RAND()",
+          "display_text": "0.846773",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T18:29:24.5554789Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.4159530492270861,
+          "formula": "=RAND()",
+          "display_text": "0.415953",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:24.5604847Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.5414978023404804,
+          "formula": "=RAND()",
+          "display_text": "0.541498",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T18:29:24.5658740Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 0.44115543543131897,
+          "formula": "=RAND()",
+          "display_text": "0.441155",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 0.44115543543131897,
+      "formula": "=RAND()",
+      "display_text": "0.441155",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

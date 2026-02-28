@@ -8,7 +8,13 @@ Use this file as the entry point.
 - Planning and scaffolding complete.
 - Pilot wave scenarios prepared.
 - Runner migration complete (`excel-probe` C# runtime).
-- Smoke execution completed for `SCN-EB010-SUM-UNRELATED-EDIT`; remaining wave scenarios are still pending.
+- Pilot wave execution completed for all scenarios in `outputs/pilot_wave1/scenario_manifest_wave1.csv` (14/14).
+- Initial interpretation pass completed (`outputs/pilot_wave1/pilot_wave1_result_summary.csv` and `PILOT_WAVE1_EXECUTION_REPORT.md`).
+- Volatility context wave execution completed for `ECS-EB-012` and `ECS-EB-013` in `outputs/volatility_wave2/` (6/6).
+- RTD lifecycle wave execution completed for `ECS-EB-015` in `outputs/rtd_wave1/` (5/5).
+- Date-system wave execution completed for `ECS-EB-016` in `outputs/date_system_wave1/` (5/5).
+- Platform availability source extraction/merge completed for `ECS-EB-037` in `outputs/platform_availability/`.
+- Manual-review scenarios still require stepwise-capture and locale-controlled follow-up passes.
 
 ## First read order
 1. `README.md`
@@ -24,10 +30,13 @@ Start with pilot scenarios only:
 - `ECS-EB-014`
 - `ECS-EB-023`
 
-Then continue with platform/version starters:
-- `ECS-EB-037`
+Then continue with remaining platform/version starters:
 - `ECS-EB-038`
 - `ECS-EB-046`
+
+Then continue with volatility depth tasks:
+- `ECS-EB-012`
+- `ECS-EB-013`
 
 ## Working directory assumptions
 - For manual commands in `RUN_INSTRUCTIONS.md`, run from:

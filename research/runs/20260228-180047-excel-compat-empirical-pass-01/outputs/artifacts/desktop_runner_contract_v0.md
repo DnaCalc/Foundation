@@ -23,8 +23,9 @@ For each run:
 1. `run_manifest.json`
 2. `raw_capture.json`
 3. `normalized_capture.json` (conforms to `normalized_capture_schema.v0.json`)
-4. `stderr.log`
-5. `stdout.log`
+4. `step_capture.json` (stepwise captures, initial + post-operation)
+5. `stderr.log`
+6. `stdout.log`
 
 ## Fixture resolution policy
 - `inputs.workbook_fixture` is an execution hint path, relative to the run root unless absolute.
