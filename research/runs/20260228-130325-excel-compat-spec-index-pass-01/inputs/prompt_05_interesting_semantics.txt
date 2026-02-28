@@ -1,0 +1,15 @@
+You are running pass 05 for Excel compatibility research.
+
+Goal:
+Deepen semantics for high-interest function families while maintaining comprehensive index-first posture.
+
+Requirements:
+- Prioritize critical and high-interest tiers first.
+- Capture context, edge-case risks, and platform caveats.
+- Keep CUBE family depth intentionally light (context + interfaces only, no MDX language deep-dive).
+- Keep full-catalog completeness and known-unknowns explicit.
+
+Deliverables:
+- interesting-function family brief
+- platform-specific notes
+- updated next-pass backlog

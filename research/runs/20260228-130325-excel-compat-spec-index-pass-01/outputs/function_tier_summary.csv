@@ -1,0 +1,6 @@
+"tier","tier_label","count"
+"1","regular_pure_or_low_risk","305"
+"2","baseline_context","124"
+"3","medium_interest","23"
+"4","high_interest","43"
+"5","critical_interest","5"

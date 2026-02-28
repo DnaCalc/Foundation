@@ -1,0 +1,16 @@
+You are running pass 04 for Excel compatibility research.
+
+Goal:
+Create an exhaustive machine-readable worksheet-function catalog from canonical Microsoft function indexes.
+
+Requirements:
+- Build full deduplicated function list.
+- Carry category and any visible version marker hints from category index page.
+- Assign 5-tier interest levels with explicit reason codes.
+- Mark CUBE function family as interesting and include context notes while keeping MDX semantics out-of-scope.
+- Record platform notes as union-first with explicit quirks where visible.
+
+Deliverables:
+- function_catalog_full.csv
+- function_tier_summary.csv
+- concise pass report with counts and caveats

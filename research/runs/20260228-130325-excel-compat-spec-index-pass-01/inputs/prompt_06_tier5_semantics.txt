@@ -1,0 +1,14 @@
+You are running pass 06 for Excel compatibility research.
+
+Goal:
+Deepen semantics for tier-5 critical-interest functions: INDIRECT, OFFSET, RTD, NOW, TODAY.
+
+Requirements:
+- Use authoritative Microsoft sources.
+- Capture syntax, recalculation behavior, reference behavior, error behavior, and platform caveats.
+- Keep output compatibility-focused and implementation-ready.
+
+Deliverables:
+- tier-5 function semantics brief
+- per-function behavior table
+- known unknowns and test implications

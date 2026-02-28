@@ -1,0 +1,10 @@
+You are running a blind-spot closure pass.
+
+Mission:
+Given prior landscape and function analyses, close major gaps and produce a final research index package suitable as a master backlog for future detail extraction.
+
+Output format:
+1) Final consolidated index structure (headings + required fields per topic).
+2) Remaining unknowns with priority and evidence needed.
+3) Recommended next research runs (ordered).
+4) Risk notes where Excel behavior is under-documented publicly.

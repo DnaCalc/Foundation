@@ -1,0 +1,21 @@
+You are conducting function-centric Excel compatibility research.
+
+Mission:
+Produce a complete built-in function inventory framework and classify functions into:
+- interesting
+- regular
+with documented criteria.
+
+Interest criteria should include:
+- volatile functions,
+- dynamic reference/grid-sensitive functions (e.g. INDIRECT/OFFSET family),
+- dynamic-array creators and spill-sensitive functions,
+- LET/LAMBDA and helper family,
+- RTD/externally-driven functions,
+- functions known for edge-case coercion or implicit formatting side effects.
+
+Output format:
+1) Canonical source(s) for full function list and categories.
+2) Classification framework with rationale and caveats.
+3) Initial interesting-function candidate set grouped by reason.
+4) Known unknowns for per-function semantic edge-case extraction.

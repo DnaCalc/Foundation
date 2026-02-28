@@ -1,0 +1,24 @@
+domain,subdomain,priority,coverage_status,evidence_quality,next_action
+formula_language,operators_and_precedence,high,covered,high,extract canonical operator table
+formula_language,implicit_intersection_at_operator,high,covered,high,add migration cases
+formula_language,spilled_range_hash_operator,high,covered,high,add spill-blocking cases
+formula_language,range_union_intersection_operators,high,covered,high,cross-link user doc and ABNF grammar
+formula_language,formal_grammar_abnf,high,covered,high,derive parser checklist
+functions,canonical_full_inventory,high,covered,high,maintain dated snapshot and diff over time
+functions,tiered_interest_classification_5_levels,high,covered,high,periodically retune tiers with evidence
+functions,tier5_critical_semantics,high,covered,high,run behavior probes and add minimization fixtures
+functions,per_function_semantics_edge_cases,high,partial,medium,run deep semantics passes by tier priority
+functions,cube_function_family_listing_and_context,high,covered,high,keep MDX explicitly out-of-scope
+types,sheet_visible_value_type_taxonomy,high,partial,medium,consolidate TYPE/IS/N/value docs
+types,coercion_matrix_seed,high,covered,medium,expand to full operator/function matrix
+types,coercion_matrix_operators_and_functions,high,partial,low,run dedicated coercion expansion pass
+tables,structured_reference_syntax,high,covered,high,extract syntax table
+tables,auto_expand_and_calculated_columns,high,covered,high,capture blocked expansion edge cases
+tables,listobject_api_linkage,medium,partial,medium,separate API from sheet semantics
+formatting,number_format_codes,high,covered,high,compile code grammar examples
+formatting,cell_style_limits_and_constraints,medium,covered,high,map limits to compatibility tests
+formatting,conditional_format_rule_semantics,medium,partial,medium,add OOXML/open-spec pass
+formatting,merge_unmerge_behavior,medium,covered,high,add interactions with spill and sort/filter
+versioning,compatibility_versions_feature,high,covered,high,track behavior-diff candidates
+versioning,channel_rollout_and_preview_tracking,high,partial,medium,create channel watchlist
+platform,union_across_platforms_with_caveats,medium,partial,medium,add per-function platform evidence on demand

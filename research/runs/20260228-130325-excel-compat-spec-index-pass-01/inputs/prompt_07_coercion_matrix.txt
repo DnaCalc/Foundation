@@ -1,0 +1,13 @@
+You are running pass 07 for Excel compatibility research.
+
+Goal:
+Build an initial worksheet-level coercion matrix seed for value and type behavior.
+
+Requirements:
+- Focus on sheet-visible semantics and function/operator contexts.
+- Anchor with TYPE/IS/N/VALUE/VALUETOTEXT/date-system docs and operator docs.
+- Mark unknowns explicitly where official docs are incomplete.
+
+Deliverables:
+- coercion_matrix_seed.csv
+- coercion pass summary with confidence levels and unresolved cases

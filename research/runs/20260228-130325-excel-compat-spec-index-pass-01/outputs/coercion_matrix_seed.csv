@@ -1,0 +1,20 @@
+context,input_a_type,input_b_type,example_formula,expected_sheet_visible_result,confidence,source_anchor,notes
+N_function,number,n/a,=N(42),42,high,support_n_function,Number passes through unchanged
+N_function,date_serial,n/a,=N(DATE(2025,1,1)),date serial number,high,support_n_function,Dates are numeric serials in Excel model
+N_function,TRUE,n/a,=N(TRUE),1,high,support_n_function,Logical TRUE coerces to 1
+N_function,FALSE,n/a,=N(FALSE),0,high,support_n_function,Logical FALSE coerces to 0
+N_function,error,n/a,=N(#VALUE!),#VALUE!,high,support_n_function,Errors pass through
+N_function,text,n/a,=N("abc"),0,high,support_n_function,Non-numeric text to 0
+VALUE_function,numeric_text,n/a,=VALUE("123"),123,high,support_value_function,Converts recognized numeric text
+VALUE_function,non_numeric_text,n/a,=VALUE("abc"),#VALUE!,high,support_value_function,Invalid numeric text returns error
+TYPE_function,number,n/a,=TYPE(1),1,high,support_type_function,Type code for number
+TYPE_function,text,n/a,=TYPE("a"),2,high,support_type_function,Type code for text
+TYPE_function,logical,n/a,=TYPE(TRUE),4,high,support_type_function,Type code for logical
+TYPE_function,error,n/a,=TYPE(#N/A),16,high,support_type_function,Type code for error
+TYPE_function,array,n/a,=TYPE(A1:A3),64,high,support_type_function,Type code for array value
+TYPE_function,compound_data,n/a,=TYPE(A1),128,medium,support_type_function,Code 128 for compound data type values
+arithmetic_plus,number,number,=1+2,3,high,support_operator_precedence,Standard arithmetic
+concatenation,number,text,=1&"x","1x",high,support_operator_precedence,Concatenation coerces to text representation
+date_system,1900_vs_1904,n/a,n/a,serials differ by 1462 days,high,support_date_systems,Workbook setting influences displayed serial mapping
+coercion_unknown,text_numeric_with_locale,n/a,=VALUE("1,23"),locale-dependent,low,known_unknown,Need locale-specific evidence pack
+coercion_unknown,dynamic_array_lifting,mixed_array,example pending,pending,low,known_unknown,Need explicit array coercion matrix by operator/function

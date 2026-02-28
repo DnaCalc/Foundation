@@ -1,0 +1,22 @@
+You are conducting clean-room Excel compatibility research.
+
+Mission:
+Build an exhaustive topic and source coverage map for:
+- formula language syntax/eval semantics,
+- built-in functions inventory,
+- sheet-visible value types,
+- ListObject/Table semantics,
+- cell formatting and conditional formatting.
+
+Requirements:
+- Prioritize primary and authoritative public sources first.
+- Then include secondary public sources (blog/forum/community) as supporting triangulation.
+- Focus on post-Excel-2007 era and currently relevant behavior (including preview features).
+- Exclude Power Query/M and DAX.
+- Mark gaps/ambiguities explicitly.
+
+Output format:
+1) Coverage Matrix by domain and subdomain with status (covered/partial/missing).
+2) Prioritized Source List (authoritative first) with rationale.
+3) Version/Release-status notes.
+4) Blind spots and exact follow-up queries.
