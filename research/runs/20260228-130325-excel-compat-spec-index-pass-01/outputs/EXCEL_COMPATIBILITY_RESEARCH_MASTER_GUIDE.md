@@ -16,6 +16,7 @@ This document is the consolidated entry point for this research project.
 - `14_formatting_guide.md`
 - `15_version_platform_guide.md`
 - `16_scope_completion_audit.md`
+- `17_follow_up_execution_backlog.md` (structured next-phase execution list and empirical validation plan)
 
 ## What is complete
 - Full scope indexing and authoritative source mapping.

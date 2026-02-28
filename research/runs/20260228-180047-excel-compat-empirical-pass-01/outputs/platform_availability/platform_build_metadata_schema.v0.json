@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dna-calc:excel-compat:platform-build-metadata-schema:v0",
+  "title": "Excel Probe Platform Build Metadata",
+  "type": "object",
+  "required": [
+    "capture_utc",
+    "platform",
+    "os_version",
+    "excel_product",
+    "excel_channel",
+    "excel_build",
+    "excel_version_string",
+    "locale",
+    "date_system",
+    "calc_mode"
+  ],
+  "properties": {
+    "capture_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "windows_desktop",
+        "mac_desktop",
+        "web",
+        "mobile",
+        "unknown"
+      ]
+    },
+    "os_version": {
+      "type": "string"
+    },
+    "excel_product": {
+      "type": "string"
+    },
+    "excel_channel": {
+      "type": "string"
+    },
+    "excel_build": {
+      "type": "string"
+    },
+    "excel_version_string": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "date_system": {
+      "type": "string",
+      "enum": [
+        "1900",
+        "1904",
+        "unknown"
+      ]
+    },
+    "calc_mode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual",
+        "semiautomatic",
+        "unknown"
+      ]
+    },
+    "capability_profile_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

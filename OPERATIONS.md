@@ -140,6 +140,15 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Local mode may skip heavyweight packs for cycle-time, but must still compute full impacted closure.
 - CI mode executes full required closure and is the authority for merge readiness.
 
+### 6.4 Tooling Language Policy
+- Repository tooling implementations are .NET-first (C# or F#) unless explicitly approved otherwise.
+- Python is not an allowed tooling implementation language in this repository by default.
+- Any Python exception requires an explicit logged approval record, including:
+  - scope and owner,
+  - rationale for exception,
+  - sunset/replacement plan.
+- PowerShell (`pwsh`) is permitted for convenience orchestration and launcher scripts, but behavior-critical tool runtime logic (for example empirical Excel driving and artifact emission) must remain in stable .NET tools.
+
 ## 7. Deliverable Names per Round
 - Round 0: **DnaVisiCalc** (Pathfinder) — proves the verification + meta-control loop.
 - Round 1: **DnaPreCalc** — first full end-to-end implementation and spec push.

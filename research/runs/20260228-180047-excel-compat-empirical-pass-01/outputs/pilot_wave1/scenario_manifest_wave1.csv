@@ -1,0 +1,15 @@
+scenario_id,task_id,priority,domain,fixture,scenario_file,status,notes
+SCN-EB010-NOW-UNRELATED-EDIT,ECS-EB-010,P0,recalc,fixtures/recalc_event_matrix.xlsx,scenarios/SCN-EB010-NOW-UNRELATED-EDIT.json,queued,Volatile control under unrelated edit
+SCN-EB010-SUM-UNRELATED-EDIT,ECS-EB-010,P0,recalc,fixtures/recalc_event_matrix.xlsx,scenarios/SCN-EB010-SUM-UNRELATED-EDIT.json,completed,Smoke run completed on 2026-02-28 using C# runner
+SCN-EB010-RAND-FULLRECALC,ECS-EB-010,P0,recalc,fixtures/recalc_event_matrix.xlsx,scenarios/SCN-EB010-RAND-FULLRECALC.json,queued,Volatile function under full recalc
+SCN-EB010-INDEX-REOPEN,ECS-EB-010,P0,recalc,fixtures/recalc_event_matrix.xlsx,scenarios/SCN-EB010-INDEX-REOPEN.json,queued,Non-volatile lookup under reopen
+SCN-EB011-NOW-RECALC,ECS-EB-011,P0,volatility,fixtures/volatility_wave1.xlsx,scenarios/SCN-EB011-NOW-RECALC.json,queued,Volatile expected-change probe
+SCN-EB011-SUM-RECALC,ECS-EB-011,P0,volatility,fixtures/volatility_wave1.xlsx,scenarios/SCN-EB011-SUM-RECALC.json,queued,Non-volatile control probe
+SCN-EB011-OFFSET-EDIT,ECS-EB-011,P0,volatility,fixtures/volatility_wave1.xlsx,scenarios/SCN-EB011-OFFSET-EDIT.json,queued,Reference-sensitive volatility probe
+SCN-EB011-INDIRECT-EDIT,ECS-EB-011,P0,volatility,fixtures/volatility_wave1.xlsx,scenarios/SCN-EB011-INDIRECT-EDIT.json,queued,Reference indirection volatility probe
+SCN-EB014-INDIRECT-INSERT-ROW,ECS-EB-014,P0,structural,fixtures/indirect_offset_structural.xlsx,scenarios/SCN-EB014-INDIRECT-INSERT-ROW.json,queued,Dependency behavior after row insert
+SCN-EB014-INDIRECT-DELETE-ROW,ECS-EB-014,P0,structural,fixtures/indirect_offset_structural.xlsx,scenarios/SCN-EB014-INDIRECT-DELETE-ROW.json,queued,Dependency behavior after row delete
+SCN-EB014-OFFSET-INSERT-COL,ECS-EB-014,P0,structural,fixtures/indirect_offset_structural.xlsx,scenarios/SCN-EB014-OFFSET-INSERT-COL.json,queued,Dependency behavior after column insert
+SCN-EB014-OFFSET-DELETE-COL,ECS-EB-014,P0,structural,fixtures/indirect_offset_structural.xlsx,scenarios/SCN-EB014-OFFSET-DELETE-COL.json,queued,Dependency behavior after column delete
+SCN-EB023-VALUE-LOCALE-COMMA,ECS-EB-023,P0,coercion-locale,fixtures/locale_coercion.xlsx,scenarios/SCN-EB023-VALUE-LOCALE-COMMA.json,queued,Decimal comma parsing case
+SCN-EB023-DATEVALUE-LOCALE-TEXT,ECS-EB-023,P0,coercion-locale,fixtures/locale_coercion.xlsx,scenarios/SCN-EB023-DATEVALUE-LOCALE-TEXT.json,queued,Locale-sensitive date text parsing case

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dna-calc:excel-compat:normalized-capture-schema:v0",
+  "title": "Excel Compatibility Normalized Capture",
+  "type": "object",
+  "required": [
+    "run_id",
+    "task_id",
+    "scenario_id",
+    "timestamp_utc",
+    "environment",
+    "observations"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^ECS-(EK|EB)-[0-9]{3}$"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "platform",
+        "excel_channel",
+        "excel_build",
+        "locale",
+        "calc_mode"
+      ],
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "excel_channel": {
+          "type": "string"
+        },
+        "excel_build": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "calc_mode": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "manual",
+            "semiautomatic",
+            "unknown"
+          ]
+        },
+        "capability_profile": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "kind",
+          "status"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "value",
+              "error",
+              "formula",
+              "type_code",
+              "display_text",
+              "number_format",
+              "spill_shape",
+              "availability",
+              "calc_trigger"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "not_supported",
+              "not_testable",
+              "failed"
+            ]
+          },
+          "value": {},
+          "metadata": {
+            "type": "object",
+            "default": {}
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "properties": {
+        "expected_profile": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "match",
+            "mismatch",
+            "partial",
+            "manual_review"
+          ]
+        },
+        "mismatch_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "raw_capture_ref",
+        "rerun_command"
+      ],
+      "properties": {
+        "raw_capture_ref": {
+          "type": "string"
+        },
+        "rerun_command": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

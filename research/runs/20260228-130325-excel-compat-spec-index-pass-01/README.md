@@ -40,9 +40,11 @@ This run executes nine prompt passes:
 - `outputs/14_formatting_guide.md`
 - `outputs/15_version_platform_guide.md`
 - `outputs/16_scope_completion_audit.md`
+- `outputs/17_follow_up_execution_backlog.md`
 
 ## Notes
 - Prioritizes Microsoft Support, Microsoft Learn, and Open Specifications as primary sources.
 - Uses secondary/community sources only for triangulation and gap discovery.
 - Tracks version/channel ambiguity as explicit known unknowns.
 - Maintains union-across-platform posture with caveat tracking.
+- Follow-on empirical planning and task decomposition is tracked in `../20260228-180047-excel-compat-empirical-pass-01/`.

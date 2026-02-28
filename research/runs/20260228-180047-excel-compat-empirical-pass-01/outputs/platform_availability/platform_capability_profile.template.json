@@ -1,0 +1,21 @@
+{
+  "capability_profile_id": "CAP-WIN-DESKTOP-EXAMPLE-001",
+  "capture_utc": "2026-02-28T16:52:00Z",
+  "platform": "windows_desktop",
+  "supports_com_automation": true,
+  "supports_rtd_server_registration": false,
+  "supports_cube_context": "unknown",
+  "supports_external_web_requests": "unknown",
+  "supports_dynamic_array_functions": "unknown",
+  "supports_groupby_pivotby": "unknown",
+  "supports_compatibility_version_controls": "unknown",
+  "supports_calc_mode_switch": true,
+  "supports_reopen_automation": true,
+  "supports_locale_switch_for_probe": "manual_or_external",
+  "not_testable_reason_codes": [
+    "missing_rtd_server",
+    "missing_external_data_connector",
+    "platform_ui_only_feature"
+  ],
+  "notes": "Template profile for ECS-EB-046. Replace unknown values during environment qualification."
+}

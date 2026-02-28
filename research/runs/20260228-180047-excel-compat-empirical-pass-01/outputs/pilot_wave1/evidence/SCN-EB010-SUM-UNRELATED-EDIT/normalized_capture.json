@@ -1,0 +1,52 @@
+﻿{
+  "run_id": "run-20260228-174333-a531ecdd7",
+  "task_id": "ECS-EB-010",
+  "scenario_id": "SCN-EB010-SUM-UNRELATED-EDIT",
+  "timestamp_utc": "2026-02-28T17:43:37.1514903Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B0934496281fde9770abdd6ca6a0292e865d9f10d",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "0934496281fde9770abdd6ca6a0292e865d9f10d",
+      "repo_git_commit_short": "0934496",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!A1",
+      "kind": "value",
+      "status": "observed",
+      "value": 60,
+      "metadata": {
+        "formula": "=SUM(B1:B3)",
+        "display_text": "60",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\pilot_wave1\\scenarios\\SCN-EB010-SUM-UNRELATED-EDIT.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\pilot_wave1\\evidence\\SCN-EB010-SUM-UNRELATED-EDIT\u0022 --visible false --timeout-sec 180",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "scenario_id": "SCN-EB010-NOW-UNRELATED-EDIT",
+  "task_id": "ECS-EB-010",
+  "topic": "recalc_event_matrix",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "fixtures/recalc_event_matrix.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "address": "A1",
+            "kind": "formula",
+            "value": "=NOW()"
+          },
+          {
+            "address": "B1",
+            "kind": "value",
+            "value": 1
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "args": {
+        "value": 99
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-NOW-CHANGE-UNRELATED-EDIT",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "Does NOW() update after unrelated edit and recalc?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md",
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/01_landscape_response.md"
+  ],
+  "notes": "Pilot scenario for volatility trigger matrix."
+}

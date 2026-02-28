@@ -1,0 +1,6 @@
+locale_tag,decimal_separator,list_separator,date_order,currency_symbol,probe_case_id,probe_focus,expected_risk_level,status
+en-US,.,,",",MDY,$,LOC-001,VALUE numeric text with decimal point,medium,queued
+nl-NL,",",;,DMY,EUR,LOC-002,VALUE numeric text with decimal comma,high,queued
+de-DE,",",;,DMY,EUR,LOC-003,DATEVALUE text date parsing (DD.MM.YYYY),high,queued
+fr-FR,",",;,DMY,EUR,LOC-004,TEXT/VALUE roundtrip with space thousands separator,high,queued
+sv-SE,",",;,YMD,kr,LOC-005,Date text ambiguity and serial conversion,high,queued

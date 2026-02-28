@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dna-calc:excel-compat:empirical-scenario-schema:v0",
+  "title": "Excel Compatibility Empirical Scenario",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "task_id",
+    "topic",
+    "priority",
+    "inputs",
+    "operations",
+    "expectations",
+    "capture"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^SCN-[A-Z0-9_-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^ECS-(EK|EB)-[0-9]{3}$"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2"
+      ]
+    },
+    "platform_target": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "windows_desktop",
+          "mac_desktop",
+          "web",
+          "mobile",
+          "unknown"
+        ]
+      },
+      "default": [
+        "windows_desktop"
+      ]
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "workbook_fixture",
+        "sheet_setup"
+      ],
+      "properties": {
+        "workbook_fixture": {
+          "type": "string"
+        },
+        "sheet_setup": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "sheet",
+              "writes"
+            ],
+            "properties": {
+              "sheet": {
+                "type": "string"
+              },
+              "writes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "address",
+                    "kind",
+                    "value"
+                  ],
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "value",
+                        "formula",
+                        "name",
+                        "format",
+                        "table"
+                      ]
+                    },
+                    "value": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "op",
+          "target"
+        ],
+        "properties": {
+          "op": {
+            "type": "string",
+            "enum": [
+              "edit_cell",
+              "insert_row",
+              "insert_column",
+              "delete_row",
+              "delete_column",
+              "recalc",
+              "full_recalc",
+              "save",
+              "close",
+              "open",
+              "set_calc_mode",
+              "copy_paste",
+              "table_resize",
+              "rename_table_column"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "args": {
+            "type": "object",
+            "default": {}
+          }
+        }
+      }
+    },
+    "expectations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "assertion_id",
+          "kind"
+        ],
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "value_equals",
+              "value_type_equals",
+              "error_equals",
+              "formula_equals",
+              "display_equals",
+              "spill_shape_equals",
+              "format_equals",
+              "availability_equals",
+              "no_crash",
+              "manual_review"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "expected": {},
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ],
+            "default": "high"
+          }
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "raw_capture",
+        "normalized_capture",
+        "capture_fields"
+      ],
+      "properties": {
+        "raw_capture": {
+          "type": "string"
+        },
+        "normalized_capture": {
+          "type": "string"
+        },
+        "capture_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "value",
+              "formula",
+              "error",
+              "type_code",
+              "display_text",
+              "number_format",
+              "spill_range",
+              "calc_mode",
+              "build_info",
+              "platform_info"
+            ]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

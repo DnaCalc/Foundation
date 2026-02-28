@@ -1,0 +1,77 @@
+{
+  "scenario_id": "SCN-EB014-INDIRECT-DELETE-ROW",
+  "task_id": "ECS-EB-014",
+  "topic": "indirect_offset_structural",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "fixtures/indirect_offset_structural.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "address": "A1",
+            "kind": "formula",
+            "value": "=INDIRECT(\"B2\")"
+          },
+          {
+            "address": "B2",
+            "kind": "value",
+            "value": 200
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "delete_row",
+      "target": "Sheet1!2:2"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-INDIRECT-ROW-DELETE-BEHAVIOR",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "After deleting target row, does result become deterministic value or explicit error?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "error",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md"
+  ],
+  "notes": "Structural edit probe for INDIRECT row deletion."
+}

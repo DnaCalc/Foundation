@@ -1,0 +1,70 @@
+{
+  "scenario_id": "SCN-EB023-DATEVALUE-LOCALE-TEXT",
+  "task_id": "ECS-EB-023",
+  "topic": "locale_coercion",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "fixtures/locale_coercion.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "address": "A1",
+            "kind": "value",
+            "value": "01/02/2025"
+          },
+          {
+            "address": "B1",
+            "kind": "formula",
+            "value": "=DATEVALUE(A1)"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-DATEVALUE-LOCALE-TEXT",
+      "kind": "manual_review",
+      "target": "Sheet1!B1",
+      "expected": {
+        "question": "Does DATEVALUE parse ambiguous date text according to locale date order?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "error",
+      "display_text",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/12_value_types_guide.md",
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md"
+  ],
+  "notes": "Locale-sensitive date text coercion probe; capture locale and date-system metadata."
+}

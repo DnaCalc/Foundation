@@ -1,0 +1,67 @@
+{
+  "scenario_id": "SCN-EB010-RAND-FULLRECALC",
+  "task_id": "ECS-EB-010",
+  "topic": "recalc_event_matrix",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "fixtures/recalc_event_matrix.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "address": "A1",
+            "kind": "formula",
+            "value": "=RAND()"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "full_recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-RAND-CHANGES-FULLRECALC",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "Did RAND() change after full recalc?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/01_landscape_response.md"
+  ],
+  "notes": "Full recalc volatile probe."
+}

@@ -1,0 +1,36 @@
+timestamp_utc,event,artifact,notes
+2026-02-28T16:01:54Z,run_scaffold_created,README.md,Empirical pass scaffolding initialized
+2026-02-28T16:01:54Z,context_snapshot_frozen,inputs/context_snapshot.md,Parent run and commit baseline captured
+2026-02-28T16:01:54Z,task_index_created,outputs/EMPIRICAL_TASK_INDEX.md,Execution order and contract documented
+2026-02-28T16:01:54Z,known_known_tasks_created,outputs/01_known_known_empirical_tasks.md,Systematic known-known empirical task catalog created
+2026-02-28T16:01:54Z,backlog_tasks_created,outputs/02_backlog_linked_empirical_tasks.md,Backlog-linked empirical decomposition created
+2026-02-28T16:18:00Z,artifact_schema_created,outputs/artifacts/empirical_scenario_schema.v0.json,Initial scenario schema for empirical runner
+2026-02-28T16:18:00Z,artifact_schema_created,outputs/artifacts/normalized_capture_schema.v0.json,Initial normalized capture schema
+2026-02-28T16:18:00Z,runner_contract_created,outputs/artifacts/desktop_runner_contract_v0.md,Desktop runner command and output contract
+2026-02-28T16:18:00Z,validator_spec_created,outputs/artifacts/evidence_bundle_validator_v0.md,Evidence completeness validator rules
+2026-02-28T16:36:00Z,pilot_wave1_created,outputs/pilot_wave1/README.md,High-signal pilot package initialized
+2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv,Prepared matrix for recalc event pilot
+2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-011_volatility_probe_results_wave1.csv,Prepared template/results table for volatility pilot
+2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-014_indirect_offset_structural_probe.csv,Prepared structural dependency probe matrix
+2026-02-28T16:36:00Z,pilot_plan_created,outputs/pilot_wave1/ECS-EB-023_locale_coercion_harness_plan.md,Prepared locale coercion harness plan
+2026-02-28T16:36:00Z,pilot_seed_created,outputs/pilot_wave1/ECS-EB-023_locale_matrix_seed.csv,Prepared locale seed matrix
+2026-02-28T16:36:00Z,pilot_manifest_created,outputs/pilot_wave1/scenario_manifest_wave1.csv,Wave1 scenario inventory created
+2026-02-28T16:36:00Z,pilot_scenarios_created,outputs/pilot_wave1/scenarios,Prepared 14 scenario json files for tasks ECS-EB-010/011/014/023
+2026-02-28T16:41:00Z,pilot_instructions_created,outputs/pilot_wave1/RUN_INSTRUCTIONS.md,Batch and single-run execution instructions added
+2026-02-28T16:41:00Z,pilot_script_created,outputs/pilot_wave1/run_wave1.ps1,Wave1 batch execution script added
+2026-02-28T16:52:00Z,platform_seed_created,outputs/platform_availability/function_availability_matrix.csv,Seeded availability matrix from selected platform probes
+2026-02-28T16:52:00Z,platform_schema_created,outputs/platform_availability/platform_build_metadata_schema.v0.json,Build metadata capture schema for ECS-EB-038
+2026-02-28T16:52:00Z,platform_template_created,outputs/platform_availability/platform_capability_profile.template.json,Capability profile template for ECS-EB-046
+2026-02-28T17:05:00Z,entrypoint_created,START_HERE.md,Added deferred execution entrypoint and readiness checklist
+2026-02-28T17:05:00Z,runner_contract_refined,outputs/artifacts/desktop_runner_contract_v0.md,Added fixture-resolution policy and date-system capture note
+2026-02-28T17:05:00Z,pilot_instructions_refined,outputs/pilot_wave1/RUN_INSTRUCTIONS.md,Added cwd precondition and manifest status update step
+2026-02-28T17:35:00Z,runner_tool_created,../../tools/excel-probe/excel-probe.ps1,Implemented excel-probe run/env CLI for COM-based empirical runs
+2026-02-28T17:35:00Z,runner_wrapper_created,../../tools/excel-probe/excel-probe.cmd,Added cmd wrapper for excel-probe
+2026-02-28T17:35:00Z,jobguard_tooling_added,../../tools/JobGuard/README.md,Local JobGuard source/scripts copied and retained for runner hardening
+2026-02-28T17:35:00Z,pilot_script_refined,outputs/pilot_wave1/run_wave1.ps1,Switched batch runner to explicit excel-probe path
+2026-02-28T17:39:00Z,runner_runtime_migrated,../../tools/excel-probe/tools/ExcelProbe/Program.cs,Moved excel-probe core runtime from PowerShell to C#/.NET
+2026-02-28T17:39:00Z,sdk_policy_pinned,../../tools/global.json,Pinned research tooling SDK to 10.0.103 release with preview disabled
+2026-02-28T17:39:00Z,runner_wrapper_refined,../../tools/excel-probe/excel-probe.ps1,Replaced PowerShell runtime with thin launcher to C# tool
+2026-02-28T17:39:00Z,pilot_script_refined,outputs/pilot_wave1/run_wave1.ps1,Updated wave launcher to call excel-probe C# runtime
+2026-02-28T17:40:57Z,env_snapshot_emitted,outputs/platform_availability/excel_env_snapshot.json,Validated env command and tooling metadata capture
+2026-02-28T17:43:37Z,pilot_smoke_run_completed,outputs/pilot_wave1/evidence/SCN-EB010-SUM-UNRELATED-EDIT,Validated C# runner end-to-end output bundle on one pilot scenario

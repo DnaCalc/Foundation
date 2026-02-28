@@ -1,0 +1,92 @@
+{
+  "scenario_id": "SCN-EB010-INDEX-REOPEN",
+  "task_id": "ECS-EB-010",
+  "topic": "recalc_event_matrix",
+  "priority": "P0",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "fixtures/recalc_event_matrix.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "address": "A1",
+            "kind": "formula",
+            "value": "=INDEX(B1:B3,2)"
+          },
+          {
+            "address": "B1",
+            "kind": "value",
+            "value": 5
+          },
+          {
+            "address": "B2",
+            "kind": "value",
+            "value": 7
+          },
+          {
+            "address": "B3",
+            "kind": "value",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "save",
+      "target": "workbook"
+    },
+    {
+      "op": "close",
+      "target": "workbook"
+    },
+    {
+      "op": "open",
+      "target": "workbook"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-INDEX-STABLE-REOPEN",
+      "kind": "value_equals",
+      "target": "Sheet1!A1",
+      "expected": 7,
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "calc_mode",
+      "build_info",
+      "platform_info"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+  ],
+  "notes": "Reopen stability control for recalc event matrix."
+}
