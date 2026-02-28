@@ -1,0 +1,100 @@
+﻿{
+  "run_id": "run-20260228-211045-bae0b782d",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-TODAY-DATE-SYSTEM",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:10:47.6750885Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:10:47.8706240Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T21:10:47.8914677Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:47.8991762Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T21:10:47.9163588Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:47.9227480Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

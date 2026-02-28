@@ -1,0 +1,320 @@
+﻿{
+  "run_id": "run-20260228-211104-4d376ff5d",
+  "scenario": {
+    "scenario_id": "SCN-EB040-TYPE-COERCION-MATRIX",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=VALUE(\u0022123.45\u0022)"
+            },
+            {
+              "kind": "formula",
+              "address": "A2",
+              "value": "=TYPE(A1)"
+            },
+            {
+              "kind": "formula",
+              "address": "A3",
+              "value": "=N(\u0022text\u0022)"
+            },
+            {
+              "kind": "formula",
+              "address": "A4",
+              "value": "=T(123)"
+            },
+            {
+              "kind": "formula",
+              "address": "A5",
+              "value": "=VALUETOTEXT(A1)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-TYPE-VALUE",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "VALUE returns numeric value from text literal?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-TYPE-TYPE",
+        "kind": "manual_review",
+        "target": "Sheet1!A2",
+        "expected": {
+          "question": "TYPE returns numeric class code for VALUE output?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-TYPE-N",
+        "kind": "manual_review",
+        "target": "Sheet1!A3",
+        "expected": {
+          "question": "N converts text to numeric zero?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-TYPE-T",
+        "kind": "manual_review",
+        "target": "Sheet1!A4",
+        "expected": {
+          "question": "T converts numeric input to empty text?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-TYPE-VALUETOTEXT",
+        "kind": "manual_review",
+        "target": "Sheet1!A5",
+        "expected": {
+          "question": "VALUETOTEXT renders text representation of numeric value?"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "display_text",
+        "formula"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Tier-3 type/coercion-sensitive matrix verification for VALUE/TYPE/N/T/VALUETOTEXT."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:06.5319916Z",
+      "finished_utc": "2026-02-28T21:11:06.7856251Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:06.7856376Z",
+      "finished_utc": "2026-02-28T21:11:06.8185738Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:11:06.5319712Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "1900-05-02",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 1,
+          "formula": "=TYPE(A1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 0,
+          "formula": "=N(\u0022text\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A4",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A5",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(A1)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:11:06.7856175Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "1900-05-02",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 1,
+          "formula": "=TYPE(A1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 0,
+          "formula": "=N(\u0022text\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A4",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A5",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(A1)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:06.8185703Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "1900-05-02",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 1,
+          "formula": "=TYPE(A1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 0,
+          "formula": "=N(\u0022text\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A4",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A5",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(A1)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 123.45,
+      "formula": "=VALUE(\u0022123.45\u0022)",
+      "display_text": "1900-05-02",
+      "number_format": "yyyy-mm-dd",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A2",
+      "value": 1,
+      "formula": "=TYPE(A1)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A3",
+      "value": 0,
+      "formula": "=N(\u0022text\u0022)",
+      "display_text": "0",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A4",
+      "value": "",
+      "formula": "=T(123)",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A5",
+      "value": "123.45",
+      "formula": "=VALUETOTEXT(A1)",
+      "display_text": "123.45",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

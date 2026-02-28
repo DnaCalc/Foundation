@@ -1,0 +1,63 @@
+﻿{
+  "run_id": "run-20260228-211104-4d376ff5d",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-TYPE-COERCION-MATRIX",
+  "runner_version": "0.2.0\u002B683a6a2e053f34899ca8b24e94248c289ee5e483",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-02-28T21:11:04.5540994Z",
+  "end_utc": "2026-02-28T21:11:06.9057186Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 240,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 2464,
+  "excel_process_snapshot": {
+    "pid": 2464,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-02-28T21:11:05.1158642Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "date_system": "1900",
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\reason_code_wave1.xlsx",
+  "fixture_preexisting": true,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:06.5319916Z",
+      "finished_utc": "2026-02-28T21:11:06.7856251Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:06.7856376Z",
+      "finished_utc": "2026-02-28T21:11:06.8185738Z"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002B683a6a2e053f34899ca8b24e94248c289ee5e483",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "683a6a2e053f34899ca8b24e94248c289ee5e483",
+    "repo_git_commit_short": "683a6a2",
+    "repo_git_is_dirty": true
+  }
+}

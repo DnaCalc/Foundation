@@ -1,0 +1,5 @@
+"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"SCN-EB024-OP-CORE","ECS-EB-024","P1","coercion","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB024-OP-CORE.xlsx","scenarios/SCN-EB024-OP-CORE.json","completed","coercion_wave1"
+"SCN-EB025-FUNCTION-CORE","ECS-EB-025","P1","coercion","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB025-FUNCTION-CORE.xlsx","scenarios/SCN-EB025-FUNCTION-CORE.json","completed","coercion_wave1"
+"SCN-EB025-AGG-COERCION","ECS-EB-025","P1","coercion","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB025-AGG-COERCION.xlsx","scenarios/SCN-EB025-AGG-COERCION.json","completed","coercion_wave1"
+"SCN-EB026-NESTED-PRECEDENCE","ECS-EB-026","P1","coercion","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB026-NESTED-PRECEDENCE.xlsx","scenarios/SCN-EB026-NESTED-PRECEDENCE.json","completed","coercion_wave1"

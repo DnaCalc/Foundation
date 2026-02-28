@@ -1,0 +1,219 @@
+﻿{
+  "run_id": "run-20260228-211109-f404e8ae5",
+  "scenario": {
+    "scenario_id": "SCN-EB040-SUMIF-UNRELATED-EDIT",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "A3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 10
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 20
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 30
+            },
+            {
+              "kind": "formula",
+              "address": "C1",
+              "value": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "value": 999
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-SUMIF-UNRELATED-EDIT",
+        "kind": "manual_review",
+        "target": "Sheet1!C1",
+        "expected": {
+          "question": "Does SUMIF remain stable under unrelated edit \u002B recalc?"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Counter-check for SUMIF volatile/recalc reason code under unrelated edit."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:11.5742635Z",
+      "finished_utc": "2026-02-28T21:11:11.9419237Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:11.9419358Z",
+      "finished_utc": "2026-02-28T21:11:11.9512675Z"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T21:11:11.9512804Z",
+      "finished_utc": "2026-02-28T21:11:11.9643797Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:11.9643922Z",
+      "finished_utc": "2026-02-28T21:11:11.9729008Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:11:11.5742303Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:11:11.9419174Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:11.9512610Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:11:11.9643746Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:11.9728967Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!C1",
+      "value": 50,
+      "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+      "display_text": "50",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

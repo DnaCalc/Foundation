@@ -1,0 +1,200 @@
+﻿{
+  "run_id": "run-20260228-212854-dd3da9cda",
+  "scenario": {
+    "scenario_id": "SCN-EB028-REF-INTERSECTION-ACCEPT",
+    "task_id": "ECS-EB-028",
+    "topic": "formula_parse_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/formula_parse_wave1/SCN-EB028-REF-INTERSECTION-ACCEPT.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "A3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 4
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 5
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 6
+            },
+            {
+              "kind": "value",
+              "address": "D1",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=SUM(A1:C1 A1:A3)"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EB028-REF-INTERSECTION-ACCEPT",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture parse acceptance/rejection and stored-formula normalization behavior."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/19_formula_language_formal_mapping_dossier.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/25_formula_parse_corpus_registry_seed.md"
+    ],
+    "notes": "Space intersection operator acceptance."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:28:57.2392941Z",
+      "finished_utc": "2026-02-28T21:28:57.5339706Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T21:28:57.5339940Z",
+      "finished_utc": "2026-02-28T21:28:57.5468866Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:28:57.5468999Z",
+      "finished_utc": "2026-02-28T21:28:57.5538565Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:28:57.2392206Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:28:57.5339628Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:28:57.5468794Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=SUM(A1:C1 A1:A3)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:28:57.5538501Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=SUM(A1:C1 A1:A3)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 1,
+      "formula": "=SUM(A1:C1 A1:A3)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

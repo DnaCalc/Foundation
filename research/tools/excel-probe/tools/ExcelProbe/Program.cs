@@ -16,6 +16,7 @@ internal static class Program
     const int XlAutomatic = -4105;
     const int XlManual = -4135;
     const int XlSemiautomatic = 2;
+    const int XlExpression = 2;
 
     sealed class WorkbookContext
     {
@@ -190,9 +191,35 @@ excel-probe (C#)
                 var opName = op["op"]?.GetValue<string>() ?? "unknown";
                 var target = op["target"]?.GetValue<string>();
                 var s = Utc();
-                workbook = InvokeOp(excel, workbook, op, fixturePath);
-                stepCaptures.Add(CaptureStep(workbook, targets, $"after_{opName}", opName));
-                opTrace.Add(new() { ["op"] = opName, ["target"] = target, ["started_utc"] = s, ["finished_utc"] = Utc() });
+                var allowError = (op["args"] as JsonObject)?.TryGetPropertyValue("allow_error", out var allowNode) == true
+                    && allowNode is not null
+                    && allowNode.GetValue<bool>();
+                try
+                {
+                    workbook = InvokeOp(excel, workbook, op, fixturePath);
+                    stepCaptures.Add(CaptureStep(workbook, targets, $"after_{opName}", opName));
+                    opTrace.Add(new()
+                    {
+                        ["op"] = opName,
+                        ["target"] = target,
+                        ["started_utc"] = s,
+                        ["finished_utc"] = Utc(),
+                        ["status"] = "ok"
+                    });
+                }
+                catch (Exception opEx) when (allowError)
+                {
+                    stepCaptures.Add(CaptureStep(workbook, targets, $"after_{opName}_allowed_error", opName));
+                    opTrace.Add(new()
+                    {
+                        ["op"] = opName,
+                        ["target"] = target,
+                        ["started_utc"] = s,
+                        ["finished_utc"] = Utc(),
+                        ["status"] = "allowed_error",
+                        ["message"] = opEx.Message
+                    });
+                }
             }
 
             if (workbook is not null) workbook.Save();
@@ -382,14 +409,161 @@ excel-probe (C#)
                     }
                     return w;
                 }
+            case "create_table":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    var tableName = args?["name"]?.GetValue<string>();
+                    var hasHeaders = args?["has_headers"]?.GetValue<bool>() ?? true;
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic rng = ws.Range(ad);
+                    // 1 = xlSrcRange, 1 = xlYes, 2 = xlNo
+                    dynamic lo = ws.ListObjects.Add(1, rng, Type.Missing, hasHeaders ? 1 : 2, Type.Missing);
+                    if (!string.IsNullOrWhiteSpace(tableName)) lo.Name = tableName;
+                    return w;
+                }
+            case "clear_cf":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic rng = ws.Range(ad);
+                    rng.FormatConditions.Delete();
+                    return w;
+                }
+            case "add_cf_expression":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic rng = ws.Range(ad);
+                    var formula = args?["formula"]?.GetValue<string>() ?? throw new InvalidOperationException("add_cf_expression requires args.formula");
+                    dynamic fc = rng.FormatConditions.Add(XlExpression, Type.Missing, formula, Type.Missing);
+
+                    var interiorColor = ParseColor(args?["interior_color"]);
+                    if (interiorColor.HasValue) fc.Interior.Color = interiorColor.Value;
+
+                    var fontColor = ParseColor(args?["font_color"]);
+                    if (fontColor.HasValue) fc.Font.Color = fontColor.Value;
+
+                    if (args is not null && args.TryGetPropertyValue("bold", out var boldNode) && boldNode is not null)
+                        fc.Font.Bold = boldNode.GetValue<bool>();
+
+                    if (args is not null && args.TryGetPropertyValue("stop_if_true", out var stopNode) && stopNode is not null)
+                        fc.StopIfTrue = stopNode.GetValue<bool>();
+
+                    if (args?["set_first_priority"]?.GetValue<bool>() == true) fc.SetFirstPriority();
+                    if (args?["set_last_priority"]?.GetValue<bool>() == true) fc.SetLastPriority();
+                    return w;
+                }
+            case "set_cf_priority":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic rng = ws.Range(ad);
+                    var index = args?["index"]?.GetValue<int>() ?? 1;
+                    dynamic fc = rng.FormatConditions.Item(index);
+
+                    if (args is not null && args.TryGetPropertyValue("priority", out var priorityNode) && priorityNode is not null)
+                        fc.Priority = priorityNode.GetValue<int>();
+
+                    if (args?["set_first"]?.GetValue<bool>() == true) fc.SetFirstPriority();
+                    if (args?["set_last"]?.GetValue<bool>() == true) fc.SetLastPriority();
+                    return w;
+                }
+            case "set_cf_stop_if_true":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic rng = ws.Range(ad);
+                    var index = args?["index"]?.GetValue<int>() ?? 1;
+                    var value = args?["value"]?.GetValue<bool>() ?? true;
+                    dynamic fc = rng.FormatConditions.Item(index);
+                    fc.StopIfTrue = value;
+                    return w;
+                }
             default: throw new InvalidOperationException($"Unsupported operation '{opName}'.");
         }
     }
 
+    static object? TryCom(Func<object?> getter)
+    {
+        try { return JsonFriendly(getter()); }
+        catch { return null; }
+    }
+
+    static int? ParseColor(JsonNode? node)
+    {
+        if (node is null) return null;
+
+        try { return node.GetValue<int>(); }
+        catch { }
+
+        string? text = null;
+        try { text = node.GetValue<string>(); }
+        catch { }
+
+        if (!string.IsNullOrWhiteSpace(text))
+        {
+            var s = text.Trim();
+            if (s.StartsWith("#", StringComparison.Ordinal) && s.Length == 7)
+            {
+                var r = int.Parse(s.Substring(1, 2), NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                var g = int.Parse(s.Substring(3, 2), NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                var b = int.Parse(s.Substring(5, 2), NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+                return (r & 0xFF) | ((g & 0xFF) << 8) | ((b & 0xFF) << 16);
+            }
+
+            var parts = s.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length == 3 &&
+                int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var r2) &&
+                int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var g2) &&
+                int.TryParse(parts[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out var b2))
+            {
+                return (r2 & 0xFF) | ((g2 & 0xFF) << 8) | ((b2 & 0xFF) << 16);
+            }
+        }
+
+        if (node is JsonArray arr && arr.Count >= 3)
+        {
+            try
+            {
+                var r = arr[0]!.GetValue<int>();
+                var g = arr[1]!.GetValue<int>();
+                var b = arr[2]!.GetValue<int>();
+                return (r & 0xFF) | ((g & 0xFF) << 8) | ((b & 0xFF) << 16);
+            }
+            catch { }
+        }
+
+        return null;
+    }
+
     static Dictionary<string, object?> CellSnapshot(dynamic wb, string target)
     {
-        var (sheet, address) = ParseTarget(target); dynamic cell = wb.Worksheets.Item(sheet).Range(address);
-        return new() { ["target"] = target, ["value"] = JsonFriendly(cell.Value2), ["formula"] = JsonFriendly(cell.Formula), ["display_text"] = JsonFriendly(cell.Text), ["number_format"] = JsonFriendly(cell.NumberFormat), ["has_formula"] = JsonFriendly(cell.HasFormula) };
+        var (sheet, address) = ParseTarget(target);
+        dynamic cell = wb.Worksheets.Item(sheet).Range(address);
+        dynamic? displayFormat = null;
+        try { displayFormat = cell.DisplayFormat; } catch { }
+
+        return new()
+        {
+            ["target"] = target,
+            ["value"] = TryCom(() => cell.Value2),
+            ["formula"] = TryCom(() => cell.Formula),
+            ["display_text"] = TryCom(() => cell.Text),
+            ["number_format"] = TryCom(() => cell.NumberFormat),
+            ["has_formula"] = TryCom(() => cell.HasFormula),
+            ["interior_color"] = TryCom(() => cell.Interior.Color),
+            ["font_color"] = TryCom(() => cell.Font.Color),
+            ["font_bold"] = TryCom(() => cell.Font.Bold),
+            ["display_interior_color"] = displayFormat is null ? null : TryCom(() => displayFormat.Interior.Color),
+            ["display_font_color"] = displayFormat is null ? null : TryCom(() => displayFormat.Font.Color),
+            ["display_font_bold"] = displayFormat is null ? null : TryCom(() => displayFormat.Font.Bold),
+            ["display_number_format"] = displayFormat is null ? null : TryCom(() => displayFormat.NumberFormat)
+        };
     }
 
     static Dictionary<string, object?> CaptureStep(dynamic? wb, List<string> targets, string stepLabel, string operation)

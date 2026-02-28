@@ -1,0 +1,140 @@
+﻿{
+  "run_id": "run-20260228-214240-8d336feac",
+  "task_id": "ECS-EB-024",
+  "scenario_id": "SCN-EB024-OP-CORE",
+  "timestamp_utc": "2026-02-28T21:42:42.9128845Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B683a6a2e053f34899ca8b24e94248c289ee5e483",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "683a6a2e053f34899ca8b24e94248c289ee5e483",
+      "repo_git_commit_short": "683a6a2",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!B1",
+      "kind": "value",
+      "status": "observed",
+      "value": 5,
+      "metadata": {
+        "formula": "=\u00222\u0022\u002B3",
+        "display_text": "5",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B2",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=\u0022x\u0022\u002B1",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B3",
+      "kind": "value",
+      "status": "observed",
+      "value": 5,
+      "metadata": {
+        "formula": "=TRUE*5",
+        "display_text": "5",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B4",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=TRUE\u002B1",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B5",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FALSE\u002B1",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B6",
+      "kind": "value",
+      "status": "observed",
+      "value": "1a",
+      "metadata": {
+        "formula": "=1\u0026\u0022a\u0022",
+        "display_text": "1a",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B7",
+      "kind": "value",
+      "status": "observed",
+      "value": false,
+      "metadata": {
+        "formula": "=1=\u00221\u0022",
+        "display_text": "FALSE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B10",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=B8-B9",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\coercion_wave1\\scenarios\\SCN-EB024-OP-CORE.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\coercion_wave1\\evidence\\SCN-EB024-OP-CORE\u0022 --visible false --timeout-sec 300",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/07_coercion_matrix_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/coercion_matrix_expanded.csv"
+    ]
+  }
+}

@@ -11,6 +11,10 @@ Use this file as the entry point.
 - Pilot wave execution completed for all scenarios in `outputs/pilot_wave1/scenario_manifest_wave1.csv` (14/14).
 - Initial interpretation pass completed (`outputs/pilot_wave1/pilot_wave1_result_summary.csv` and `PILOT_WAVE1_EXECUTION_REPORT.md`).
 - Volatility context wave execution completed for `ECS-EB-012` and `ECS-EB-013` in `outputs/volatility_wave2/` (6/6).
+- Reason-code wave execution completed for `ECS-EB-040` and `ECS-EB-041` in `outputs/reason_code_wave1/` (8/8 scenarios, 24 probe rows, 1 explicit counter-signal flag for `SUMIF`).
+- Formula-parse wave execution completed for `ECS-EB-028`, `ECS-EB-029`, and `ECS-EB-030` in `outputs/formula_parse_wave1/` (20/20 scenarios; one explicit ambiguity mismatch retained for triage).
+- Coercion wave execution completed for `ECS-EB-024`, `ECS-EB-025`, `ECS-EB-026`, and `ECS-EB-027` in `outputs/coercion_wave1/` (4/4 scenarios, 38 case rows; 3 explicit mismatches retained for triage in range coercion expectations).
+- Conditional-format wave execution completed for `ECS-EB-031`, `ECS-EB-032`, and `ECS-EB-033` in `outputs/cf_wave1/` (3/3 scenarios, 7 case rows; 2 explicit spill-related display-color mismatches retained for triage).
 - RTD lifecycle wave execution completed for `ECS-EB-015` in `outputs/rtd_wave1/` (5/5).
 - Date-system wave execution completed for `ECS-EB-016` in `outputs/date_system_wave1/` (5/5).
 - Platform availability source extraction/merge completed for `ECS-EB-037` in `outputs/platform_availability/`.
@@ -20,8 +24,9 @@ Use this file as the entry point.
 1. `README.md`
 2. `outputs/EMPIRICAL_TASK_INDEX.md`
 3. `outputs/02_backlog_linked_empirical_tasks.md`
-4. `outputs/pilot_wave1/RUN_INSTRUCTIONS.md`
-5. `outputs/artifacts/desktop_runner_contract_v0.md`
+4. `outputs/03_execution_progress_status.md`
+5. `outputs/pilot_wave1/RUN_INSTRUCTIONS.md`
+6. `outputs/artifacts/desktop_runner_contract_v0.md`
 
 ## Execution boundary
 Start with pilot scenarios only:
@@ -37,6 +42,22 @@ Then continue with remaining platform/version starters:
 Then continue with volatility depth tasks:
 - `ECS-EB-012`
 - `ECS-EB-013`
+
+Then continue with formula-language depth tasks:
+- `ECS-EB-028`
+- `ECS-EB-029`
+- `ECS-EB-030`
+
+Then continue with coercion depth tasks:
+- `ECS-EB-024`
+- `ECS-EB-025`
+- `ECS-EB-026`
+- `ECS-EB-027`
+
+Then continue with conditional-format depth tasks:
+- `ECS-EB-031`
+- `ECS-EB-032`
+- `ECS-EB-033`
 
 ## Working directory assumptions
 - For manual commands in `RUN_INSTRUCTIONS.md`, run from:

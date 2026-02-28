@@ -1,0 +1,70 @@
+﻿{
+  "run_id": "run-20260228-212903-82755afb0",
+  "task_id": "ECS-EB-028",
+  "scenario_id": "SCN-EB028-HASH-OP-ACCEPT",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:29:05.8328689Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:29:06.1199023Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:29:06.1388204Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 10,
+          "formula": "=A1#",
+          "display_text": "10",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:29:06.1464547Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 10,
+          "formula": "=A1#",
+          "display_text": "10",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

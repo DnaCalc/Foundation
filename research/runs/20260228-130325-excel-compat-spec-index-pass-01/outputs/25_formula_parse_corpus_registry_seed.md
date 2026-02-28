@@ -21,3 +21,10 @@ This pass defines corpus IDs, construct families, representative examples, and e
 
 ## Status decision
 Track A now has explicit parse-corpus identifiers ready for Track B scenario generation.
+
+## Pass-30 interleaving note
+Seed rows from this registry have now been executed in wave-1 empirical form via:
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/formula_parse_wave1/`
+
+Updated row-level execution statuses and evidence notes are tracked in:
+- `formula_parse_corpus_registry.csv`

@@ -1,0 +1,121 @@
+{
+    "scenario_id":  "SCN-EB031-CF-OVERLAP-STOP",
+    "task_id":  "ECS-EB-031",
+    "topic":  "cf_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/cf_wave1/SCN-EB031-CF-OVERLAP-STOP.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  2
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  3
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "clear_cf",
+                           "target":  "Sheet1!A1:A3"
+                       },
+                       {
+                           "op":  "add_cf_expression",
+                           "target":  "Sheet1!A1:A3",
+                           "args":  {
+                                        "formula":  "=A1\u003e=2",
+                                        "interior_color":  255,
+                                        "stop_if_true":  true,
+                                        "set_first_priority":  true
+                                    }
+                       },
+                       {
+                           "op":  "add_cf_expression",
+                           "target":  "Sheet1!A1:A3",
+                           "args":  {
+                                        "formula":  "=A1\u003c=2",
+                                        "interior_color":  65280,
+                                        "stop_if_true":  false,
+                                        "set_last_priority":  true
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB031-CF-OVERLAP-STOP-Sheet1_A1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A1",
+                             "expected":  {
+                                              "question":  "Capture conditional-format rendered outcome and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB031-CF-OVERLAP-STOP-Sheet1_A2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A2",
+                             "expected":  {
+                                              "question":  "Capture conditional-format rendered outcome and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB031-CF-OVERLAP-STOP-Sheet1_A3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A3",
+                             "expected":  {
+                                              "question":  "Capture conditional-format rendered outcome and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "display_interior_color",
+                                           "display_font_color",
+                                           "display_font_bold",
+                                           "display_number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/21_conditional_format_semantics_model_scaffold.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/13_table_semantics_guide.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md"
+                ],
+    "notes":  "Conditional-format wave1 empirical scenario."
+}

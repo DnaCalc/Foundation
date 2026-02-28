@@ -90,8 +90,7 @@
                         "value",
                         "formula",
                         "name",
-                        "format",
-                        "table"
+                        "format"
                       ]
                     },
                     "value": {}
@@ -115,23 +114,29 @@
         "properties": {
           "op": {
             "type": "string",
-            "enum": [
-              "edit_cell",
-              "insert_row",
-              "insert_column",
-              "delete_row",
-              "delete_column",
-              "recalc",
-              "full_recalc",
-              "save",
-              "close",
-              "open",
-              "set_calc_mode",
-              "copy_paste",
-              "table_resize",
-              "rename_table_column"
-            ]
-          },
+              "enum": [
+                "edit_cell",
+                "insert_row",
+                "insert_column",
+                "delete_row",
+                "delete_column",
+                "recalc",
+                "full_recalc",
+                "sleep",
+                "save",
+                "close",
+                "open",
+                "set_calc_mode",
+                "set_date_system",
+                "copy_paste",
+                "copy_paste_from_workbook",
+                "create_table",
+                "clear_cf",
+                "add_cf_expression",
+                "set_cf_priority",
+                "set_cf_stop_if_true"
+              ]
+            },
           "target": {
             "type": "string"
           },
@@ -211,6 +216,13 @@
               "type_code",
               "display_text",
               "number_format",
+              "interior_color",
+              "font_color",
+              "font_bold",
+              "display_interior_color",
+              "display_font_color",
+              "display_font_bold",
+              "display_number_format",
               "spill_range",
               "calc_mode",
               "build_info",

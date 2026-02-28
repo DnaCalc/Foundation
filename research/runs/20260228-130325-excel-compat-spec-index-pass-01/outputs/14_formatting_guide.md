@@ -14,3 +14,11 @@
 ## Known unknowns
 - Full precedence/conflict semantics for overlapping conditional formatting rules at deep formal level.
 - Exhaustive mapping of formatting interactions with dynamic-array spill and table expansion.
+
+## Pass-32 empirical update
+Wave-1 conditional-format probes for `ECS-EB-031/032/033` are now executed under:
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/cf_wave1/`
+
+Key observed signal:
+1. Overlap and stop-if-true precedence behavior is now empirically anchored for baseline fixture cases.
+2. Spill-interaction behavior remains partially unresolved; spill-target color expectations (`C3/C4`) did not match seeded assumptions and remain explicit follow-up items.

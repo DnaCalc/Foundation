@@ -44,3 +44,15 @@ Use this scaffold as Track A input for:
 
 ## Status decision
 Conditional-format precedence is now modeled as an explicit worksheet-visible scaffold with clear probe targets and uncertainty boundaries.
+
+## Pass-32 empirical update
+Wave-1 empirical outputs for `ECS-EB-031/032/033` are now linked at:
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/cf_wave1/ECS-EB-031_cf_overlap_fixture_manifest_wave1.csv`
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/cf_wave1/ECS-EB-032_cf_stopiftrue_probe_wave1.csv`
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/cf_wave1/ECS-EB-033_cf_table_spill_interaction_probe_wave1.csv`
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/cf_wave1/WAVE1_EXECUTION_REPORT.md`
+
+Wave highlights:
+1. Overlap + stop-if-true baseline rows matched expected rendered fill-color outcomes (`ECS-EB-031`).
+2. Priority transition scenario captured stepwise color transitions on the same target after stop-if-true and priority edits (`ECS-EB-032`).
+3. Spill-related conditional-format expectations mismatched for `C3/C4` in the table+spill scenario (`ECS-EB-033`), and are now explicit follow-up triage items.

@@ -33,6 +33,13 @@ For each run:
 - If fixture file does not exist: runner creates a new workbook, applies `sheet_setup`, and records the created fixture path in `run_manifest.json`.
 - Runner must not fail only because the fixture path is missing when `sheet_setup` is sufficient to construct the scenario.
 
+## Operation support baseline (current)
+- Cell/grid edits and structure: `edit_cell`, `insert_row`, `delete_row`, `insert_column`, `delete_column`, `copy_paste`, `copy_paste_from_workbook`.
+- Calc/date controls: `set_calc_mode`, `recalc`, `full_recalc`, `set_date_system`, `sleep`.
+- Workbook lifecycle: `save`, `close`, `open`.
+- Table operations: `create_table`.
+- Conditional-format operations: `clear_cf`, `add_cf_expression`, `set_cf_priority`, `set_cf_stop_if_true`.
+
 ## Required run manifest fields
 - `run_id`
 - `task_id`
@@ -60,6 +67,7 @@ For each run:
 - Runner must log workbook open/save/close operations with timestamps.
 - Runner must include a rerun command string in normalized capture.
 - Runner should record workbook date system (`1900` / `1904` / `unknown`) when observable.
+- Runner should capture both direct cell format and rendered display format fields where available (`display_interior_color`, `display_font_color`, `display_font_bold`, `display_number_format`).
 
 ## Minimal acceptance checks
 - Scenario schema validation passes.

@@ -1,0 +1,224 @@
+﻿{
+  "run_id": "run-20260228-211045-bae0b782d",
+  "scenario": {
+    "scenario_id": "SCN-EB040-TODAY-DATE-SYSTEM",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=TODAY()"
+            },
+            {
+              "kind": "format",
+              "address": "A1",
+              "value": "yyyy-mm-dd"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "set_date_system",
+        "target": "workbook",
+        "args": {
+          "system": "1904"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "set_date_system",
+        "target": "workbook",
+        "args": {
+          "system": "1900"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-TODAY-DATE-SYSTEM",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does TODAY serial respond to date-system transitions?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "date_system"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Tier-3 weak-evidence volatile/format reason-code verification for TODAY."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:47.6751360Z",
+      "finished_utc": "2026-02-28T21:10:47.8706374Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:47.8706634Z",
+      "finished_utc": "2026-02-28T21:10:47.8914733Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:47.8914937Z",
+      "finished_utc": "2026-02-28T21:10:47.8991842Z"
+    },
+    {
+      "op": "set_date_system",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:47.8992054Z",
+      "finished_utc": "2026-02-28T21:10:47.9163664Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:47.9163894Z",
+      "finished_utc": "2026-02-28T21:10:47.9227560Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:10:47.6750885Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:10:47.8706240Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T21:10:47.8914677Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:47.8991762Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 44619,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_date_system",
+      "operation": "set_date_system",
+      "timestamp_utc": "2026-02-28T21:10:47.9163588Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:47.9227480Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46081,
+          "formula": "=TODAY()",
+          "display_text": "2026-02-28",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 46081,
+      "formula": "=TODAY()",
+      "display_text": "2026-02-28",
+      "number_format": "yyyy-mm-dd",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

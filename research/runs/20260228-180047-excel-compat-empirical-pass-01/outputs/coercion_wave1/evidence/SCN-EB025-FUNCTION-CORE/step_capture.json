@@ -1,0 +1,330 @@
+﻿{
+  "run_id": "run-20260228-214243-0f604e4c0",
+  "task_id": "ECS-EB-025",
+  "scenario_id": "SCN-EB025-FUNCTION-CORE",
+  "targets": [
+    "Sheet1!B1",
+    "Sheet1!B2",
+    "Sheet1!B4",
+    "Sheet1!B5",
+    "Sheet1!B6",
+    "Sheet1!B7",
+    "Sheet1!B8",
+    "Sheet1!B9",
+    "Sheet1!B10",
+    "Sheet1!B11",
+    "Sheet1!B12",
+    "Sheet1!B13"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:42:44.7928315Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 0,
+          "formula": "=N(\u0022abc\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 1,
+          "formula": "=N(TRUE)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1,
+          "formula": "=TYPE(1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=TYPE(\u0022x\u0022)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 4,
+          "formula": "=TYPE(TRUE)",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 16,
+          "formula": "=TYPE(NA())",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=VALUE(\u0022abc\u0022)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B11",
+          "value": "abc",
+          "formula": "=T(\u0022abc\u0022)",
+          "display_text": "abc",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B12",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(123.45)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B13",
+          "value": "#N/A",
+          "formula": "=VALUETOTEXT(NA())",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:42:44.9605292Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 0,
+          "formula": "=N(\u0022abc\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 1,
+          "formula": "=N(TRUE)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1,
+          "formula": "=TYPE(1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=TYPE(\u0022x\u0022)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 4,
+          "formula": "=TYPE(TRUE)",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 16,
+          "formula": "=TYPE(NA())",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=VALUE(\u0022abc\u0022)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B11",
+          "value": "abc",
+          "formula": "=T(\u0022abc\u0022)",
+          "display_text": "abc",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B12",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(123.45)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B13",
+          "value": "#N/A",
+          "formula": "=VALUETOTEXT(NA())",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:42:44.9987420Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 0,
+          "formula": "=N(\u0022abc\u0022)",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 1,
+          "formula": "=N(TRUE)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1,
+          "formula": "=TYPE(1)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=TYPE(\u0022x\u0022)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 4,
+          "formula": "=TYPE(TRUE)",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 16,
+          "formula": "=TYPE(NA())",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 123.45,
+          "formula": "=VALUE(\u0022123.45\u0022)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=VALUE(\u0022abc\u0022)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": "",
+          "formula": "=T(123)",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B11",
+          "value": "abc",
+          "formula": "=T(\u0022abc\u0022)",
+          "display_text": "abc",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B12",
+          "value": "123.45",
+          "formula": "=VALUETOTEXT(123.45)",
+          "display_text": "123.45",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B13",
+          "value": "#N/A",
+          "formula": "=VALUETOTEXT(NA())",
+          "display_text": "#N/A",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

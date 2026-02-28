@@ -88,6 +88,10 @@
               "type_code",
               "display_text",
               "number_format",
+              "display_interior_color",
+              "display_font_color",
+              "display_font_bold",
+              "display_number_format",
               "spill_shape",
               "availability",
               "calc_trigger"

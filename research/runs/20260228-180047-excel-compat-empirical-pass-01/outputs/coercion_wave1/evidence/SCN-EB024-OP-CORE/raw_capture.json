@@ -1,0 +1,474 @@
+﻿{
+  "run_id": "run-20260228-214240-8d336feac",
+  "scenario": {
+    "scenario_id": "SCN-EB024-OP-CORE",
+    "task_id": "ECS-EB-024",
+    "topic": "coercion_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB024-OP-CORE.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "B1",
+              "value": "=\u00222\u0022\u002B3"
+            },
+            {
+              "kind": "formula",
+              "address": "B2",
+              "value": "=\u0022x\u0022\u002B1"
+            },
+            {
+              "kind": "formula",
+              "address": "B3",
+              "value": "=TRUE*5"
+            },
+            {
+              "kind": "formula",
+              "address": "B4",
+              "value": "=TRUE\u002B1"
+            },
+            {
+              "kind": "formula",
+              "address": "B5",
+              "value": "=FALSE\u002B1"
+            },
+            {
+              "kind": "formula",
+              "address": "B6",
+              "value": "=1\u0026\u0022a\u0022"
+            },
+            {
+              "kind": "formula",
+              "address": "B7",
+              "value": "=1=\u00221\u0022"
+            },
+            {
+              "kind": "formula",
+              "address": "B8",
+              "value": "=TODAY()\u002B1"
+            },
+            {
+              "kind": "formula",
+              "address": "B9",
+              "value": "=TODAY()"
+            },
+            {
+              "kind": "formula",
+              "address": "B10",
+              "value": "=B8-B9"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B1",
+        "kind": "manual_review",
+        "target": "Sheet1!B1",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B2",
+        "kind": "manual_review",
+        "target": "Sheet1!B2",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B3",
+        "kind": "manual_review",
+        "target": "Sheet1!B3",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B4",
+        "kind": "manual_review",
+        "target": "Sheet1!B4",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B5",
+        "kind": "manual_review",
+        "target": "Sheet1!B5",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B6",
+        "kind": "manual_review",
+        "target": "Sheet1!B6",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B7",
+        "kind": "manual_review",
+        "target": "Sheet1!B7",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB024-OP-CORE-Sheet1_B10",
+        "kind": "manual_review",
+        "target": "Sheet1!B10",
+        "expected": {
+          "question": "Capture coercion outcome and compare against expected case registry."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/07_coercion_matrix_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/coercion_matrix_expanded.csv"
+    ],
+    "notes": "Coercion wave1 empirical scenario."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:42:42.6181022Z",
+      "finished_utc": "2026-02-28T21:42:42.8187919Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:42:42.8188170Z",
+      "finished_utc": "2026-02-28T21:42:42.8513958Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:42:42.6179823Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 5,
+          "formula": "=\u00222\u0022\u002B3",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": -2146826273,
+          "formula": "=\u0022x\u0022\u002B1",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 5,
+          "formula": "=TRUE*5",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 2,
+          "formula": "=TRUE\u002B1",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 1,
+          "formula": "=FALSE\u002B1",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": "1a",
+          "formula": "=1\u0026\u0022a\u0022",
+          "display_text": "1a",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": false,
+          "formula": "=1=\u00221\u0022",
+          "display_text": "FALSE",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": 1,
+          "formula": "=B8-B9",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:42:42.8187776Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 5,
+          "formula": "=\u00222\u0022\u002B3",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": -2146826273,
+          "formula": "=\u0022x\u0022\u002B1",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 5,
+          "formula": "=TRUE*5",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 2,
+          "formula": "=TRUE\u002B1",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 1,
+          "formula": "=FALSE\u002B1",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": "1a",
+          "formula": "=1\u0026\u0022a\u0022",
+          "display_text": "1a",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": false,
+          "formula": "=1=\u00221\u0022",
+          "display_text": "FALSE",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": 1,
+          "formula": "=B8-B9",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:42:42.8513893Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 5,
+          "formula": "=\u00222\u0022\u002B3",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": -2146826273,
+          "formula": "=\u0022x\u0022\u002B1",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 5,
+          "formula": "=TRUE*5",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 2,
+          "formula": "=TRUE\u002B1",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 1,
+          "formula": "=FALSE\u002B1",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": "1a",
+          "formula": "=1\u0026\u0022a\u0022",
+          "display_text": "1a",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": false,
+          "formula": "=1=\u00221\u0022",
+          "display_text": "FALSE",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B10",
+          "value": 1,
+          "formula": "=B8-B9",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!B1",
+      "value": 5,
+      "formula": "=\u00222\u0022\u002B3",
+      "display_text": "5",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B2",
+      "value": -2146826273,
+      "formula": "=\u0022x\u0022\u002B1",
+      "display_text": "#VALUE!",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B3",
+      "value": 5,
+      "formula": "=TRUE*5",
+      "display_text": "5",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B4",
+      "value": 2,
+      "formula": "=TRUE\u002B1",
+      "display_text": "2",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B5",
+      "value": 1,
+      "formula": "=FALSE\u002B1",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B6",
+      "value": "1a",
+      "formula": "=1\u0026\u0022a\u0022",
+      "display_text": "1a",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B7",
+      "value": false,
+      "formula": "=1=\u00221\u0022",
+      "display_text": "FALSE",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!B10",
+      "value": 1,
+      "formula": "=B8-B9",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

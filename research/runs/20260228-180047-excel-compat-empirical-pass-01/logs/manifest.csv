@@ -1,63 +1,87 @@
-timestamp_utc,event,artifact,notes
-2026-02-28T16:01:54Z,run_scaffold_created,README.md,Empirical pass scaffolding initialized
-2026-02-28T16:01:54Z,context_snapshot_frozen,inputs/context_snapshot.md,Parent run and commit baseline captured
-2026-02-28T16:01:54Z,task_index_created,outputs/EMPIRICAL_TASK_INDEX.md,Execution order and contract documented
-2026-02-28T16:01:54Z,known_known_tasks_created,outputs/01_known_known_empirical_tasks.md,Systematic known-known empirical task catalog created
-2026-02-28T16:01:54Z,backlog_tasks_created,outputs/02_backlog_linked_empirical_tasks.md,Backlog-linked empirical decomposition created
-2026-02-28T16:18:00Z,artifact_schema_created,outputs/artifacts/empirical_scenario_schema.v0.json,Initial scenario schema for empirical runner
-2026-02-28T16:18:00Z,artifact_schema_created,outputs/artifacts/normalized_capture_schema.v0.json,Initial normalized capture schema
-2026-02-28T16:18:00Z,runner_contract_created,outputs/artifacts/desktop_runner_contract_v0.md,Desktop runner command and output contract
-2026-02-28T16:18:00Z,validator_spec_created,outputs/artifacts/evidence_bundle_validator_v0.md,Evidence completeness validator rules
-2026-02-28T16:36:00Z,pilot_wave1_created,outputs/pilot_wave1/README.md,High-signal pilot package initialized
-2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv,Prepared matrix for recalc event pilot
-2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-011_volatility_probe_results_wave1.csv,Prepared template/results table for volatility pilot
-2026-02-28T16:36:00Z,pilot_matrix_created,outputs/pilot_wave1/ECS-EB-014_indirect_offset_structural_probe.csv,Prepared structural dependency probe matrix
-2026-02-28T16:36:00Z,pilot_plan_created,outputs/pilot_wave1/ECS-EB-023_locale_coercion_harness_plan.md,Prepared locale coercion harness plan
-2026-02-28T16:36:00Z,pilot_seed_created,outputs/pilot_wave1/ECS-EB-023_locale_matrix_seed.csv,Prepared locale seed matrix
-2026-02-28T16:36:00Z,pilot_manifest_created,outputs/pilot_wave1/scenario_manifest_wave1.csv,Wave1 scenario inventory created
-2026-02-28T16:36:00Z,pilot_scenarios_created,outputs/pilot_wave1/scenarios,Prepared 14 scenario json files for tasks ECS-EB-010/011/014/023
-2026-02-28T16:41:00Z,pilot_instructions_created,outputs/pilot_wave1/RUN_INSTRUCTIONS.md,Batch and single-run execution instructions added
-2026-02-28T16:41:00Z,pilot_script_created,outputs/pilot_wave1/run_wave1.ps1,Wave1 batch execution script added
-2026-02-28T16:52:00Z,platform_seed_created,outputs/platform_availability/function_availability_matrix.csv,Seeded availability matrix from selected platform probes
-2026-02-28T16:52:00Z,platform_schema_created,outputs/platform_availability/platform_build_metadata_schema.v0.json,Build metadata capture schema for ECS-EB-038
-2026-02-28T16:52:00Z,platform_template_created,outputs/platform_availability/platform_capability_profile.template.json,Capability profile template for ECS-EB-046
-2026-02-28T17:05:00Z,entrypoint_created,START_HERE.md,Added deferred execution entrypoint and readiness checklist
-2026-02-28T17:05:00Z,runner_contract_refined,outputs/artifacts/desktop_runner_contract_v0.md,Added fixture-resolution policy and date-system capture note
-2026-02-28T17:05:00Z,pilot_instructions_refined,outputs/pilot_wave1/RUN_INSTRUCTIONS.md,Added cwd precondition and manifest status update step
-2026-02-28T17:35:00Z,runner_tool_created,../../tools/excel-probe/excel-probe.ps1,Implemented excel-probe run/env CLI for COM-based empirical runs
-2026-02-28T17:35:00Z,runner_wrapper_created,../../tools/excel-probe/excel-probe.cmd,Added cmd wrapper for excel-probe
-2026-02-28T17:35:00Z,jobguard_tooling_added,../../tools/JobGuard/README.md,Local JobGuard source/scripts copied and retained for runner hardening
-2026-02-28T17:35:00Z,pilot_script_refined,outputs/pilot_wave1/run_wave1.ps1,Switched batch runner to explicit excel-probe path
-2026-02-28T17:39:00Z,runner_runtime_migrated,../../tools/excel-probe/tools/ExcelProbe/Program.cs,Moved excel-probe core runtime from PowerShell to C#/.NET
-2026-02-28T17:39:00Z,sdk_policy_pinned,../../tools/global.json,Pinned research tooling SDK to 10.0.103 release with preview disabled
-2026-02-28T17:39:00Z,runner_wrapper_refined,../../tools/excel-probe/excel-probe.ps1,Replaced PowerShell runtime with thin launcher to C# tool
-2026-02-28T17:39:00Z,pilot_script_refined,outputs/pilot_wave1/run_wave1.ps1,Updated wave launcher to call excel-probe C# runtime
-2026-02-28T17:40:57Z,env_snapshot_emitted,outputs/platform_availability/excel_env_snapshot.json,Validated env command and tooling metadata capture
-2026-02-28T17:43:37Z,pilot_smoke_run_completed,outputs/pilot_wave1/evidence/SCN-EB010-SUM-UNRELATED-EDIT,Validated C# runner end-to-end output bundle on one pilot scenario
-2026-02-28T19:55:36Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Added cross-links to Track-A passes 18-22
-2026-02-28T19:55:36Z,backlog_catalog_refined,outputs/02_backlog_linked_empirical_tasks.md,Bound empirical task catalog to new Track-A dossier artifacts
-2026-02-28T20:00:50Z,pilot_wave1_batch_completed,outputs/pilot_wave1/evidence,Executed all 14 pilot scenarios via run-manifest with zero reported failures
-2026-02-28T20:00:50Z,pilot_manifest_status_updated,outputs/pilot_wave1/scenario_manifest_wave1.csv,Updated scenario statuses to completed after successful batch execution
-2026-02-28T20:15:57Z,pilot_wave1_summary_generated,outputs/pilot_wave1/pilot_wave1_result_summary.csv,Generated consolidated summary across all pilot evidence bundles
-2026-02-28T20:15:57Z,pilot_wave1_analysis_reported,outputs/pilot_wave1/PILOT_WAVE1_EXECUTION_REPORT.md,Published execution report with key findings and follow-on requirements
-2026-02-28T20:15:57Z,pilot_result_tables_updated,outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv,Populated recalc/volatility/structural tables with observed final-state results
-2026-02-28T20:15:57Z,locale_wave1_output_created,outputs/pilot_wave1/locale_coercion_probe_wave1.csv,Created locale probe output with execution-locale caveat annotations
-2026-02-28T20:15:57Z,new_tasks_derived_from_pilot,outputs/02_backlog_linked_empirical_tasks.md,Added ECS-EB-047 and ECS-EB-048 from pilot limitations (stepwise capture and locale-controlled execution)
-2026-02-28T18:25:21Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Expanded parent Track-A linkage through pass 27 and aligned backlog task catalog references
-2026-02-28T18:28:00Z,volatility_wave2_created,outputs/volatility_wave2/README.md,Created ECS-EB-012 scenario package and manifest for argument-conditional volatility probes
-2026-02-28T18:30:00Z,volatility_wave2_batch_completed,outputs/volatility_wave2/evidence,Executed 6 wave2 scenarios via run-manifest with zero reported failures
-2026-02-28T18:34:10Z,volatility_wave2_analysis_completed,outputs/volatility_wave2/WAVE2_EXECUTION_REPORT.md,Published ECS-EB-012 probe summary and ECS-EB-013 observed reason-code mapping artifacts
-2026-02-28T18:35:30Z,trackA_linkage_updated,outputs/EMPIRICAL_TASK_INDEX.md,Extended parent Track-A linkage through pass 28 (tier-5/4 source index completion)
-2026-02-28T18:38:00Z,volatility_wave2_fixture_relocated,outputs/volatility_wave2/scenarios,Updated wave2 scenario fixture paths to run-local fixtures directory and removed accidental repo-root fixture artifact
-2026-02-28T19:34:00Z,rtd_server_tool_created,../../tools/excel-rtd-server/README.md,Added local .NET Framework COM RTD server tool and registration scripts for ECS-EB-015 probes
-2026-02-28T19:34:00Z,rtd_wave1_batch_completed,outputs/rtd_wave1/evidence,Executed 5 ECS-EB-015 RTD lifecycle scenarios with zero failures
-2026-02-28T19:34:00Z,rtd_wave1_analysis_completed,outputs/rtd_wave1/RTD_WAVE1_EXECUTION_REPORT.md,Published RTD lifecycle wave summary and consolidated probe table
-2026-02-28T19:34:00Z,date_system_wave1_batch_completed,outputs/date_system_wave1/evidence,Executed 5 ECS-EB-016 date-system scenarios with zero failures
-2026-02-28T19:34:00Z,date_system_wave1_analysis_completed,outputs/date_system_wave1/DATE_SYSTEM_WAVE1_EXECUTION_REPORT.md,Published date-system wave summary and consolidated probe table
-2026-02-28T19:34:00Z,platform_source_matrix_enriched,outputs/platform_availability/source_matrix_full_interest_enriched.csv,Completed ECS-EB-037 applies-to extraction for all 71 interesting functions
-2026-02-28T19:34:00Z,platform_matrix_merged,outputs/platform_availability/function_availability_matrix.csv,Regenerated merged function availability matrix with zero source_incomplete rows
-2026-02-28T19:34:00Z,platform_pipeline_reported,outputs/platform_availability/ECS-EB-037_EXECUTION_REPORT.md,Published ECS-EB-037 execution report and run script
-2026-02-28T19:36:30Z,platform_matrix_refreshed,outputs/platform_availability/function_availability_matrix.csv,Re-ran ECS-EB-037 after crawler hardening; extraction failures remain zero
-2026-02-28T19:36:30Z,entrypoint_docs_refreshed,START_HERE.md,Updated run state to include ECS-EB-015/016/037 completions
-2026-02-28T19:36:30Z,backlog_catalog_refreshed,outputs/02_backlog_linked_empirical_tasks.md,Recorded ECS-EB-015/016 execution artifacts and ECS-EB-037 completion outputs
-2026-02-28T19:36:45Z,platform_probe_merge_applied,outputs/platform_availability/function_availability_matrix.csv,Merged ECS-EB-015/016 empirical outcomes into RTD/NOW/TODAY function availability rows (windows_probed)
+"timestamp_utc","event","artifact","notes"
+"2026-02-28T16:01:54Z","run_scaffold_created","README.md","Empirical pass scaffolding initialized"
+"2026-02-28T16:01:54Z","context_snapshot_frozen","inputs/context_snapshot.md","Parent run and commit baseline captured"
+"2026-02-28T16:01:54Z","task_index_created","outputs/EMPIRICAL_TASK_INDEX.md","Execution order and contract documented"
+"2026-02-28T16:01:54Z","known_known_tasks_created","outputs/01_known_known_empirical_tasks.md","Systematic known-known empirical task catalog created"
+"2026-02-28T16:01:54Z","backlog_tasks_created","outputs/02_backlog_linked_empirical_tasks.md","Backlog-linked empirical decomposition created"
+"2026-02-28T16:18:00Z","artifact_schema_created","outputs/artifacts/empirical_scenario_schema.v0.json","Initial scenario schema for empirical runner"
+"2026-02-28T16:18:00Z","artifact_schema_created","outputs/artifacts/normalized_capture_schema.v0.json","Initial normalized capture schema"
+"2026-02-28T16:18:00Z","runner_contract_created","outputs/artifacts/desktop_runner_contract_v0.md","Desktop runner command and output contract"
+"2026-02-28T16:18:00Z","validator_spec_created","outputs/artifacts/evidence_bundle_validator_v0.md","Evidence completeness validator rules"
+"2026-02-28T16:36:00Z","pilot_wave1_created","outputs/pilot_wave1/README.md","High-signal pilot package initialized"
+"2026-02-28T16:36:00Z","pilot_matrix_created","outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv","Prepared matrix for recalc event pilot"
+"2026-02-28T16:36:00Z","pilot_matrix_created","outputs/pilot_wave1/ECS-EB-011_volatility_probe_results_wave1.csv","Prepared template/results table for volatility pilot"
+"2026-02-28T16:36:00Z","pilot_matrix_created","outputs/pilot_wave1/ECS-EB-014_indirect_offset_structural_probe.csv","Prepared structural dependency probe matrix"
+"2026-02-28T16:36:00Z","pilot_plan_created","outputs/pilot_wave1/ECS-EB-023_locale_coercion_harness_plan.md","Prepared locale coercion harness plan"
+"2026-02-28T16:36:00Z","pilot_seed_created","outputs/pilot_wave1/ECS-EB-023_locale_matrix_seed.csv","Prepared locale seed matrix"
+"2026-02-28T16:36:00Z","pilot_manifest_created","outputs/pilot_wave1/scenario_manifest_wave1.csv","Wave1 scenario inventory created"
+"2026-02-28T16:36:00Z","pilot_scenarios_created","outputs/pilot_wave1/scenarios","Prepared 14 scenario json files for tasks ECS-EB-010/011/014/023"
+"2026-02-28T16:41:00Z","pilot_instructions_created","outputs/pilot_wave1/RUN_INSTRUCTIONS.md","Batch and single-run execution instructions added"
+"2026-02-28T16:41:00Z","pilot_script_created","outputs/pilot_wave1/run_wave1.ps1","Wave1 batch execution script added"
+"2026-02-28T16:52:00Z","platform_seed_created","outputs/platform_availability/function_availability_matrix.csv","Seeded availability matrix from selected platform probes"
+"2026-02-28T16:52:00Z","platform_schema_created","outputs/platform_availability/platform_build_metadata_schema.v0.json","Build metadata capture schema for ECS-EB-038"
+"2026-02-28T16:52:00Z","platform_template_created","outputs/platform_availability/platform_capability_profile.template.json","Capability profile template for ECS-EB-046"
+"2026-02-28T17:05:00Z","entrypoint_created","START_HERE.md","Added deferred execution entrypoint and readiness checklist"
+"2026-02-28T17:05:00Z","runner_contract_refined","outputs/artifacts/desktop_runner_contract_v0.md","Added fixture-resolution policy and date-system capture note"
+"2026-02-28T17:05:00Z","pilot_instructions_refined","outputs/pilot_wave1/RUN_INSTRUCTIONS.md","Added cwd precondition and manifest status update step"
+"2026-02-28T17:35:00Z","runner_tool_created","../../tools/excel-probe/excel-probe.ps1","Implemented excel-probe run/env CLI for COM-based empirical runs"
+"2026-02-28T17:35:00Z","runner_wrapper_created","../../tools/excel-probe/excel-probe.cmd","Added cmd wrapper for excel-probe"
+"2026-02-28T17:35:00Z","jobguard_tooling_added","../../tools/JobGuard/README.md","Local JobGuard source/scripts copied and retained for runner hardening"
+"2026-02-28T17:35:00Z","pilot_script_refined","outputs/pilot_wave1/run_wave1.ps1","Switched batch runner to explicit excel-probe path"
+"2026-02-28T17:39:00Z","runner_runtime_migrated","../../tools/excel-probe/tools/ExcelProbe/Program.cs","Moved excel-probe core runtime from PowerShell to C#/.NET"
+"2026-02-28T17:39:00Z","sdk_policy_pinned","../../tools/global.json","Pinned research tooling SDK to 10.0.103 release with preview disabled"
+"2026-02-28T17:39:00Z","runner_wrapper_refined","../../tools/excel-probe/excel-probe.ps1","Replaced PowerShell runtime with thin launcher to C# tool"
+"2026-02-28T17:39:00Z","pilot_script_refined","outputs/pilot_wave1/run_wave1.ps1","Updated wave launcher to call excel-probe C# runtime"
+"2026-02-28T17:40:57Z","env_snapshot_emitted","outputs/platform_availability/excel_env_snapshot.json","Validated env command and tooling metadata capture"
+"2026-02-28T17:43:37Z","pilot_smoke_run_completed","outputs/pilot_wave1/evidence/SCN-EB010-SUM-UNRELATED-EDIT","Validated C# runner end-to-end output bundle on one pilot scenario"
+"2026-02-28T19:55:36Z","trackA_linkage_updated","outputs/EMPIRICAL_TASK_INDEX.md","Added cross-links to Track-A passes 18-22"
+"2026-02-28T19:55:36Z","backlog_catalog_refined","outputs/02_backlog_linked_empirical_tasks.md","Bound empirical task catalog to new Track-A dossier artifacts"
+"2026-02-28T20:00:50Z","pilot_wave1_batch_completed","outputs/pilot_wave1/evidence","Executed all 14 pilot scenarios via run-manifest with zero reported failures"
+"2026-02-28T20:00:50Z","pilot_manifest_status_updated","outputs/pilot_wave1/scenario_manifest_wave1.csv","Updated scenario statuses to completed after successful batch execution"
+"2026-02-28T20:15:57Z","pilot_wave1_summary_generated","outputs/pilot_wave1/pilot_wave1_result_summary.csv","Generated consolidated summary across all pilot evidence bundles"
+"2026-02-28T20:15:57Z","pilot_wave1_analysis_reported","outputs/pilot_wave1/PILOT_WAVE1_EXECUTION_REPORT.md","Published execution report with key findings and follow-on requirements"
+"2026-02-28T20:15:57Z","pilot_result_tables_updated","outputs/pilot_wave1/ECS-EB-010_recalc_event_matrix.csv","Populated recalc/volatility/structural tables with observed final-state results"
+"2026-02-28T20:15:57Z","locale_wave1_output_created","outputs/pilot_wave1/locale_coercion_probe_wave1.csv","Created locale probe output with execution-locale caveat annotations"
+"2026-02-28T20:15:57Z","new_tasks_derived_from_pilot","outputs/02_backlog_linked_empirical_tasks.md","Added ECS-EB-047 and ECS-EB-048 from pilot limitations (stepwise capture and locale-controlled execution)"
+"2026-02-28T18:25:21Z","trackA_linkage_updated","outputs/EMPIRICAL_TASK_INDEX.md","Expanded parent Track-A linkage through pass 27 and aligned backlog task catalog references"
+"2026-02-28T18:28:00Z","volatility_wave2_created","outputs/volatility_wave2/README.md","Created ECS-EB-012 scenario package and manifest for argument-conditional volatility probes"
+"2026-02-28T18:30:00Z","volatility_wave2_batch_completed","outputs/volatility_wave2/evidence","Executed 6 wave2 scenarios via run-manifest with zero reported failures"
+"2026-02-28T18:34:10Z","volatility_wave2_analysis_completed","outputs/volatility_wave2/WAVE2_EXECUTION_REPORT.md","Published ECS-EB-012 probe summary and ECS-EB-013 observed reason-code mapping artifacts"
+"2026-02-28T18:35:30Z","trackA_linkage_updated","outputs/EMPIRICAL_TASK_INDEX.md","Extended parent Track-A linkage through pass 28 (tier-5/4 source index completion)"
+"2026-02-28T18:38:00Z","volatility_wave2_fixture_relocated","outputs/volatility_wave2/scenarios","Updated wave2 scenario fixture paths to run-local fixtures directory and removed accidental repo-root fixture artifact"
+"2026-02-28T19:34:00Z","rtd_server_tool_created","../../tools/excel-rtd-server/README.md","Added local .NET Framework COM RTD server tool and registration scripts for ECS-EB-015 probes"
+"2026-02-28T19:34:00Z","rtd_wave1_batch_completed","outputs/rtd_wave1/evidence","Executed 5 ECS-EB-015 RTD lifecycle scenarios with zero failures"
+"2026-02-28T19:34:00Z","rtd_wave1_analysis_completed","outputs/rtd_wave1/RTD_WAVE1_EXECUTION_REPORT.md","Published RTD lifecycle wave summary and consolidated probe table"
+"2026-02-28T19:34:00Z","date_system_wave1_batch_completed","outputs/date_system_wave1/evidence","Executed 5 ECS-EB-016 date-system scenarios with zero failures"
+"2026-02-28T19:34:00Z","date_system_wave1_analysis_completed","outputs/date_system_wave1/DATE_SYSTEM_WAVE1_EXECUTION_REPORT.md","Published date-system wave summary and consolidated probe table"
+"2026-02-28T19:34:00Z","platform_source_matrix_enriched","outputs/platform_availability/source_matrix_full_interest_enriched.csv","Completed ECS-EB-037 applies-to extraction for all 71 interesting functions"
+"2026-02-28T19:34:00Z","platform_matrix_merged","outputs/platform_availability/function_availability_matrix.csv","Regenerated merged function availability matrix with zero source_incomplete rows"
+"2026-02-28T19:34:00Z","platform_pipeline_reported","outputs/platform_availability/ECS-EB-037_EXECUTION_REPORT.md","Published ECS-EB-037 execution report and run script"
+"2026-02-28T19:36:30Z","platform_matrix_refreshed","outputs/platform_availability/function_availability_matrix.csv","Re-ran ECS-EB-037 after crawler hardening; extraction failures remain zero"
+"2026-02-28T19:36:30Z","entrypoint_docs_refreshed","START_HERE.md","Updated run state to include ECS-EB-015/016/037 completions"
+"2026-02-28T19:36:30Z","backlog_catalog_refreshed","outputs/02_backlog_linked_empirical_tasks.md","Recorded ECS-EB-015/016 execution artifacts and ECS-EB-037 completion outputs"
+"2026-02-28T19:36:45Z","platform_probe_merge_applied","outputs/platform_availability/function_availability_matrix.csv","Merged ECS-EB-015/016 empirical outcomes into RTD/NOW/TODAY function availability rows (windows_probed)"
+"2026-02-28T21:08:30Z","reason_code_wave1_outputs_generated","outputs/reason_code_wave1/ECS-EB-040_reason_code_verification_probe_wave1.csv","Synthesized probe-level outputs from step-capture evidence for tier-3 weak-evidence set"
+"2026-02-28T21:08:30Z","reason_code_wave1_sync_generated","outputs/reason_code_wave1/ECS-EB-041_classification_evidence_sync_wave1.csv","Generated classification sync table and mapped probe IDs by function"
+"2026-02-28T21:08:30Z","reason_code_wave1_manifest_status_updated","outputs/reason_code_wave1/scenario_manifest_wave1.csv","Marked all wave1 scenarios completed after evidence verification"
+"2026-02-28T21:08:30Z","reason_code_wave1_reported","outputs/reason_code_wave1/WAVE1_EXECUTION_REPORT.md","Published wave1 execution report with mixed-signal SUMIF classification note"
+"2026-02-28T21:08:30Z","reason_code_wave1_tracker_synced","../20260228-130325-excel-compat-spec-index-pass-01/outputs/function_reason_code_evidence_tracker.csv","Applied ECS-EB-041 sync to tier-3 tracker rows with probe IDs and status transitions"
+"2026-02-28T21:25:42Z","formula_parse_wave1_seeded","outputs/formula_parse_wave1/formula_parse_case_registry_wave1.csv","Seeded formula parse case registry and scenario manifest for ECS-EB-028/029/030"
+"2026-02-28T21:25:42Z","formula_parse_wave1_outputs_generated","outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv","Generated parse acceptance corpus outputs from wave1 evidence bundles"
+"2026-02-28T21:25:42Z","formula_parse_wave1_outputs_generated","outputs/formula_parse_wave1/ECS-EB-029_formula_normalization_capture_wave1.csv","Generated normalization capture outputs from wave1 evidence bundles"
+"2026-02-28T21:25:42Z","formula_parse_wave1_outputs_generated","outputs/formula_parse_wave1/ECS-EB-030_grammar_ambiguity_probe_wave1.csv","Generated ambiguity probe outputs from wave1 evidence bundles"
+"2026-02-28T21:25:42Z","formula_parse_wave1_reported","outputs/formula_parse_wave1/WAVE1_EXECUTION_REPORT.md","Published formula parse wave1 execution report"
+"2026-02-28T21:25:42Z","formula_parse_wave1_manifest_status_updated","outputs/formula_parse_wave1/scenario_manifest_wave1.csv","Marked formula parse wave1 scenarios completed after evidence verification"
+"2026-02-28T21:42:52Z","coercion_wave1_seeded","outputs/coercion_wave1/coercion_case_registry_wave1.csv","Seeded coercion wave1 case registry and scenario manifest for ECS-EB-024/025/026"
+"2026-02-28T21:42:52Z","coercion_wave1_outputs_generated","outputs/coercion_wave1/ECS-EB-024_operator_coercion_truth_table_wave1.csv","Generated operator coercion truth-table output from wave1 evidence bundles"
+"2026-02-28T21:42:52Z","coercion_wave1_outputs_generated","outputs/coercion_wave1/ECS-EB-025_function_family_coercion_probe_wave1.csv","Generated function-family coercion probe output from wave1 evidence bundles"
+"2026-02-28T21:42:52Z","coercion_wave1_outputs_generated","outputs/coercion_wave1/ECS-EB-026_compatibility_coercion_probe_wave1.csv","Generated compatibility/precedence coercion output from wave1 evidence bundles"
+"2026-02-28T21:42:52Z","coercion_wave1_outputs_generated","outputs/coercion_wave1/ECS-EB-027_coercion_confidence_scores_wave1.csv","Generated confidence scoring synthesis output for coercion wave1"
+"2026-02-28T21:42:52Z","coercion_wave1_reported","outputs/coercion_wave1/WAVE1_EXECUTION_REPORT.md","Published coercion wave1 execution report"
+"2026-02-28T21:42:52Z","coercion_wave1_manifest_status_updated","outputs/coercion_wave1/scenario_manifest_wave1.csv","Marked coercion wave1 scenarios completed after evidence verification"
+"2026-02-28T21:53:05Z","cf_wave1_seeded","outputs/cf_wave1/cf_case_registry_wave1.csv","Seeded conditional-format wave1 case registry and scenario manifest for ECS-EB-031/032/033"
+"2026-02-28T21:53:05Z","cf_wave1_outputs_generated","outputs/cf_wave1/ECS-EB-031_cf_overlap_fixture_manifest_wave1.csv","Generated CF overlap output from wave1 evidence bundles"
+"2026-02-28T21:53:05Z","cf_wave1_outputs_generated","outputs/cf_wave1/ECS-EB-032_cf_stopiftrue_probe_wave1.csv","Generated CF stop-if-true/priority probe output from wave1 evidence bundles"
+"2026-02-28T21:53:05Z","cf_wave1_outputs_generated","outputs/cf_wave1/ECS-EB-033_cf_table_spill_interaction_probe_wave1.csv","Generated CF table+spill interaction output from wave1 evidence bundles"
+"2026-02-28T21:53:05Z","cf_wave1_reported","outputs/cf_wave1/WAVE1_EXECUTION_REPORT.md","Published conditional-format wave1 execution report"
+"2026-02-28T21:53:05Z","cf_wave1_manifest_status_updated","outputs/cf_wave1/scenario_manifest_wave1.csv","Marked conditional-format wave1 scenarios completed after evidence verification"

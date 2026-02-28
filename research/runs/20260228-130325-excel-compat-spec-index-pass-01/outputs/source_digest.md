@@ -151,6 +151,42 @@
   - relevance: Auto-seeded from function_interest_index for full tier-5/4 function source coverage; not yet screened in detail.
 - ECS-093 [XMATCH function](https://support.microsoft.com/en-us/office/xmatch-function-d966da31-7a6b-4a13-a1c6-5a33ed6a0312) [official_ms_support] tags: interesting_function|function_semantics|tier4
   - relevance: Auto-seeded from function_interest_index for full tier-5/4 function source coverage; not yet screened in detail.
+- ECS-094 [ADDRESS function](https://support.microsoft.com/en-us/office/address-function-d0c26c0d-3991-446b-8de4-ab46431d4f89) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-095 [AREAS function](https://support.microsoft.com/en-us/office/areas-function-8392ba32-7a41-43b3-96b0-3695d2ec6152) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-096 [COLUMN function](https://support.microsoft.com/en-us/office/column-function-44e8c754-711c-4df3-9da4-47a55042554b) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-097 [COLUMNS function](https://support.microsoft.com/en-us/office/columns-function-4e8e7b4e-e603-43e8-b177-956088fa48ca) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-098 [DOLLAR function](https://support.microsoft.com/en-us/office/dollar-function-a6cd05d9-9740-4ad3-a469-8109d18ff611) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-099 [FIXED function](https://support.microsoft.com/en-us/office/fixed-function-ffd5723c-324c-45e9-8b96-e41be2a8274a) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-100 [FORMULATEXT function](https://support.microsoft.com/en-us/office/formulatext-function-0a786771-54fd-4ae2-96ee-09cda35439c8) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-101 [INDEX function](https://support.microsoft.com/en-us/office/index-function-a5dcf0dd-996d-40a4-a822-b56b061328bd) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-102 [RAND function](https://support.microsoft.com/en-us/office/rand-function-4cbfa695-8869-4788-8d90-021ea9f5be73) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-103 [RANDBETWEEN function](https://support.microsoft.com/en-us/office/randbetween-function-4cc7f0d1-87dc-4eb7-987f-a469ab381685) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-104 [ROW function](https://support.microsoft.com/en-us/office/row-function-3a63b74a-c4d0-4093-b49a-e76eb49a6d8d) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-105 [ROWS function](https://support.microsoft.com/en-us/office/rows-function-b592593e-3fc2-47f2-bec1-bda493811597) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-106 [SHEET function](https://support.microsoft.com/en-us/office/sheet-function-44718b6f-8b87-47a1-a9d6-b701c06cff24) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-107 [SHEETS function](https://support.microsoft.com/en-us/office/sheets-function-770515eb-e1e8-45ce-8066-b557e5e4b80b) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-108 [SUMIF function](https://support.microsoft.com/en-us/office/sumif-function-169b8c99-c05c-4483-a712-1697a653039b) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-109 [T function](https://support.microsoft.com/en-us/office/t-function-fb83aeec-45e7-4924-af95-53e073541228) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-110 [TEXT function](https://support.microsoft.com/en-us/office/text-function-20d5ac4d-7b94-49fd-bb38-93d29371225c) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
+- ECS-111 [TYPE function](https://support.microsoft.com/en-us/office/type-function-45b4e688-4bc3-48b3-a105-ffa892995899) [official_ms_support] tags: interesting_function|function_semantics|tier3
+  - relevance: Auto-seeded from tier-3 reason-code source binding pass for ECS-BL-11 hardening.
 
 ## history
 - ECS-051 [Preview of Dynamic Arrays in Excel](https://techcommunity.microsoft.com/blog/excelblog/preview-of-dynamic-arrays-in-excel/252944) [official_ms_blog] tags: dynamic_arrays|historical_rollout

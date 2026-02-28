@@ -1,0 +1,187 @@
+{
+    "scenario_id":  "SCN-EB026-NESTED-PRECEDENCE",
+    "task_id":  "ECS-EB-026",
+    "topic":  "coercion_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB026-NESTED-PRECEDENCE.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  4
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B1",
+                                                              "value":  "=1+2*3"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B2",
+                                                              "value":  "=(1+2)*3"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B3",
+                                                              "value":  "=--\"1\"+2"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B4",
+                                                              "value":  "=1\u00262+3"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B5",
+                                                              "value":  "=1+2\u00263"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B6",
+                                                              "value":  "=2^3*2"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B7",
+                                                              "value":  "=-2^2"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B8",
+                                                              "value":  "=(-2)^2"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B9",
+                                                              "value":  "=SUM(A1,,B1)"
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B1",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B2",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B3",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B4",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B5",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B5",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B6",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B6",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B7",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B7",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B8",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B8",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB026-NESTED-PRECEDENCE-Sheet1_B9",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B9",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/07_coercion_matrix_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/coercion_matrix_expanded.csv"
+                ],
+    "notes":  "Coercion wave1 empirical scenario."
+}

@@ -1,0 +1,190 @@
+﻿{
+  "run_id": "run-20260228-212903-82755afb0",
+  "scenario": {
+    "scenario_id": "SCN-EB028-HASH-OP-ACCEPT",
+    "task_id": "ECS-EB-028",
+    "topic": "formula_parse_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/formula_parse_wave1/SCN-EB028-HASH-OP-ACCEPT.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=SEQUENCE(3,1,10,1)"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "D1",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=A1#"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EB028-HASH-OP-ACCEPT",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture parse acceptance/rejection and stored-formula normalization behavior."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/19_formula_language_formal_mapping_dossier.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/25_formula_parse_corpus_registry_seed.md"
+    ],
+    "notes": "Spill reference operator acceptance."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:29:05.8329022Z",
+      "finished_utc": "2026-02-28T21:29:06.1199100Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T21:29:06.1199330Z",
+      "finished_utc": "2026-02-28T21:29:06.1388252Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:29:06.1388453Z",
+      "finished_utc": "2026-02-28T21:29:06.1464594Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:29:05.8328689Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:29:06.1199023Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:29:06.1388204Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 10,
+          "formula": "=A1#",
+          "display_text": "10",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:29:06.1464547Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 10,
+          "formula": "=A1#",
+          "display_text": "10",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 10,
+      "formula": "=A1#",
+      "display_text": "10",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

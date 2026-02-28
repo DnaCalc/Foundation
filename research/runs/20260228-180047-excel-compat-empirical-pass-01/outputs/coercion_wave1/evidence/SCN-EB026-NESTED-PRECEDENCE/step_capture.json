@@ -1,0 +1,255 @@
+﻿{
+  "run_id": "run-20260228-214247-6fe4c4572",
+  "task_id": "ECS-EB-026",
+  "scenario_id": "SCN-EB026-NESTED-PRECEDENCE",
+  "targets": [
+    "Sheet1!B1",
+    "Sheet1!B2",
+    "Sheet1!B3",
+    "Sheet1!B4",
+    "Sheet1!B5",
+    "Sheet1!B6",
+    "Sheet1!B7",
+    "Sheet1!B8",
+    "Sheet1!B9"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:42:49.0796931Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 7,
+          "formula": "=1\u002B2*3",
+          "display_text": "7",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 9,
+          "formula": "=(1\u002B2)*3",
+          "display_text": "9",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=--\u00221\u0022\u002B2",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": "15",
+          "formula": "=1\u00262\u002B3",
+          "display_text": "15",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": "33",
+          "formula": "=1\u002B2\u00263",
+          "display_text": "33",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 16,
+          "formula": "=2^3*2",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 4,
+          "formula": "=-2^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 4,
+          "formula": "=(-2)^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": 8,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "8",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:42:49.2548693Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 7,
+          "formula": "=1\u002B2*3",
+          "display_text": "7",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 9,
+          "formula": "=(1\u002B2)*3",
+          "display_text": "9",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=--\u00221\u0022\u002B2",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": "15",
+          "formula": "=1\u00262\u002B3",
+          "display_text": "15",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": "33",
+          "formula": "=1\u002B2\u00263",
+          "display_text": "33",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 16,
+          "formula": "=2^3*2",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 4,
+          "formula": "=-2^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 4,
+          "formula": "=(-2)^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": 8,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "8",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:42:49.2858953Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 7,
+          "formula": "=1\u002B2*3",
+          "display_text": "7",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 9,
+          "formula": "=(1\u002B2)*3",
+          "display_text": "9",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=--\u00221\u0022\u002B2",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": "15",
+          "formula": "=1\u00262\u002B3",
+          "display_text": "15",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": "33",
+          "formula": "=1\u002B2\u00263",
+          "display_text": "33",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 16,
+          "formula": "=2^3*2",
+          "display_text": "16",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 4,
+          "formula": "=-2^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": 4,
+          "formula": "=(-2)^2",
+          "display_text": "4",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": 8,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "8",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

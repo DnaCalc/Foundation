@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-212934-6fcae472d",
+  "task_id": "ECS-EB-028",
+  "scenario_id": "SCN-EB028-TABLE-THISROW-ACCEPT",
+  "targets": [
+    "Sheet1!B2"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:29:36.6699128Z",
+      "captures": [
+        {
+          "target": "Sheet1!B2",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:29:36.9136688Z",
+      "captures": [
+        {
+          "target": "Sheet1!B2",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_create_table",
+      "operation": "create_table",
+      "timestamp_utc": "2026-02-28T21:29:36.9349478Z",
+      "captures": [
+        {
+          "target": "Sheet1!B2",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:29:36.9555177Z",
+      "captures": [
+        {
+          "target": "Sheet1!B2",
+          "value": 20,
+          "formula": "=[@Amount]*2",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:29:36.9630257Z",
+      "captures": [
+        {
+          "target": "Sheet1!B2",
+          "value": 20,
+          "formula": "=[@Amount]*2",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

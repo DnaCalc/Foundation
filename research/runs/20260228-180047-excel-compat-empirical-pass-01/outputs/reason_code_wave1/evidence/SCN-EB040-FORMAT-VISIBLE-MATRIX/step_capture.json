@@ -1,0 +1,105 @@
+﻿{
+  "run_id": "run-20260228-211100-49952bd1c",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-FORMAT-VISIBLE-MATRIX",
+  "targets": [
+    "Sheet1!A1",
+    "Sheet1!A2",
+    "Sheet1!A3"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:11:01.7818727Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:11:02.0017585Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:02.0181535Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

@@ -48,3 +48,12 @@ Corpus registry anchor (added in pass 25):
 
 ## Status decision
 This dossier provides the Track A formal mapping baseline for modern worksheet formula syntax. Remaining ambiguity is explicitly tagged and routed to Track B probe tasks.
+
+## Pass-30 empirical update
+Wave-1 empirical outputs for `ECS-EB-028/029/030` are now linked at:
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv`
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/formula_parse_wave1/ECS-EB-029_formula_normalization_capture_wave1.csv`
+- `../../20260228-180047-excel-compat-empirical-pass-01/outputs/formula_parse_wave1/ECS-EB-030_grammar_ambiguity_probe_wave1.csv`
+
+Observed highlight needing follow-up triage:
+1. `=SUM(A1,,B1)` was accepted/evaluated in this environment, contrary to initial reject expectation used in the seeded ambiguity case.

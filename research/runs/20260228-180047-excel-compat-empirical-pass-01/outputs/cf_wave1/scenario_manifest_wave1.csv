@@ -1,0 +1,4 @@
+"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"SCN-EB031-CF-OVERLAP-STOP","ECS-EB-031","P1","conditional_format","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/cf_wave1/SCN-EB031-CF-OVERLAP-STOP.xlsx","scenarios/SCN-EB031-CF-OVERLAP-STOP.json","completed","cf_wave1"
+"SCN-EB032-CF-PRIORITY-TRANSITION","ECS-EB-032","P1","conditional_format","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/cf_wave1/SCN-EB032-CF-PRIORITY-TRANSITION.xlsx","scenarios/SCN-EB032-CF-PRIORITY-TRANSITION.json","completed","cf_wave1"
+"SCN-EB033-CF-TABLE-SPILL","ECS-EB-033","P1","conditional_format","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/cf_wave1/SCN-EB033-CF-TABLE-SPILL.xlsx","scenarios/SCN-EB033-CF-TABLE-SPILL.json","completed","cf_wave1"

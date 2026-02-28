@@ -1,0 +1,64 @@
+{
+  "scenario_id": "SCN-EB040-RAND-RECALC",
+  "task_id": "ECS-EB-040",
+  "topic": "reason_code_verification_wave1",
+  "priority": "P1",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "kind": "formula",
+            "address": "A1",
+            "value": "=RAND()"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-EB040-RAND-RECALC",
+      "kind": "manual_review",
+      "target": "Sheet1!A1",
+      "expected": {
+        "question": "Does RAND change across recalc operations?"
+      },
+      "confidence": "high"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "calc_mode"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+  ],
+  "notes": "Tier-3 weak-evidence volatile reason-code verification for RAND."
+}

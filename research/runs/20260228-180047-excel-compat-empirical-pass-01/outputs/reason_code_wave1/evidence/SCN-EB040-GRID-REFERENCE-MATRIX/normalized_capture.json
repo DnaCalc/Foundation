@@ -1,0 +1,174 @@
+﻿{
+  "run_id": "run-20260228-211057-9ac40f88a",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-GRID-REFERENCE-MATRIX",
+  "timestamp_utc": "2026-02-28T21:10:59.9238599Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B683a6a2e053f34899ca8b24e94248c289ee5e483",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "683a6a2e053f34899ca8b24e94248c289ee5e483",
+      "repo_git_commit_short": "683a6a2",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!C1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=ROW(A1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C2",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=COLUMN(B1)",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C3",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=ROWS(A1:B2)",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C4",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=COLUMNS(A1:B2)",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C5",
+      "kind": "value",
+      "status": "observed",
+      "value": "$C$2",
+      "metadata": {
+        "formula": "=ADDRESS(2,3)",
+        "display_text": "$C$2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C6",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=AREAS((A1:A2,B1:B2))",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C7",
+      "kind": "value",
+      "status": "observed",
+      "value": 99,
+      "metadata": {
+        "formula": "=INDEX(A1:B2,1,1)",
+        "display_text": "99",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C8",
+      "kind": "value",
+      "status": "observed",
+      "value": "=INDEX(A1:B2,1,1)",
+      "metadata": {
+        "formula": "=FORMULATEXT(C7)",
+        "display_text": "=INDEX(A1:B2,1,1)",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C9",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SHEET()",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C10",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SHEETS()",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C11",
+      "kind": "value",
+      "status": "observed",
+      "value": 60,
+      "metadata": {
+        "formula": "=SUMIF(A1:A2,\u0022\u003E15\u0022,B1:B2)",
+        "display_text": "60",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\reason_code_wave1\\scenarios\\SCN-EB040-GRID-REFERENCE-MATRIX.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\reason_code_wave1\\evidence\\SCN-EB040-GRID-REFERENCE-MATRIX\u0022 --visible false --timeout-sec 240",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ]
+  }
+}

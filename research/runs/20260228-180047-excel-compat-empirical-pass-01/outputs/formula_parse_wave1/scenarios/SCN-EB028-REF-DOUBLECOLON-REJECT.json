@@ -1,0 +1,102 @@
+{
+    "scenario_id":  "SCN-EB028-REF-DOUBLECOLON-REJECT",
+    "task_id":  "ECS-EB-028",
+    "topic":  "formula_parse_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/formula_parse_wave1/SCN-EB028-REF-DOUBLECOLON-REJECT.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  2
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  3
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  4
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  5
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B3",
+                                                              "value":  6
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "D1",
+                                                              "value":  0
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D1",
+                           "args":  {
+                                        "formula":  "=SUM(A1::B2)",
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB028-REF-DOUBLECOLON-REJECT",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D1",
+                             "expected":  {
+                                              "question":  "Capture parse acceptance/rejection and stored-formula normalization behavior."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/19_formula_language_formal_mapping_dossier.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/25_formula_parse_corpus_registry_seed.md"
+                ],
+    "notes":  "Malformed range token should reject."
+}

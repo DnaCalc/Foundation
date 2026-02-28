@@ -1,0 +1,228 @@
+﻿{
+  "run_id": "run-20260228-211100-49952bd1c",
+  "scenario": {
+    "scenario_id": "SCN-EB040-FORMAT-VISIBLE-MATRIX",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=TEXT(1234.567,\u0022$#,##0.00\u0022)"
+            },
+            {
+              "kind": "formula",
+              "address": "A2",
+              "value": "=DOLLAR(1234.567,2)"
+            },
+            {
+              "kind": "formula",
+              "address": "A3",
+              "value": "=FIXED(1234.567,2,TRUE)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-FORMAT-TEXT",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "TEXT renders formatted string output?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-FORMAT-DOLLAR",
+        "kind": "manual_review",
+        "target": "Sheet1!A2",
+        "expected": {
+          "question": "DOLLAR renders currency-formatted text output?"
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-EB040-FORMAT-FIXED",
+        "kind": "manual_review",
+        "target": "Sheet1!A3",
+        "expected": {
+          "question": "FIXED renders fixed-decimal text output?"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "display_text",
+        "number_format"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Tier-3 format-visible behavior matrix verification for TEXT/DOLLAR/FIXED."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:01.7819042Z",
+      "finished_utc": "2026-02-28T21:11:02.0017660Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:11:02.0017777Z",
+      "finished_utc": "2026-02-28T21:11:02.0181572Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:11:01.7818727Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:11:02.0017585Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:02.0181535Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": "$1,234.57",
+          "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+          "display_text": "$1,234.57",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": "R1 234.57",
+          "formula": "=DOLLAR(1234.567,2)",
+          "display_text": "R1 234.57",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": "1234.57",
+          "formula": "=FIXED(1234.567,2,TRUE)",
+          "display_text": "1234.57",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": "$1,234.57",
+      "formula": "=TEXT(1234.567,\u0022$#,##0.00\u0022)",
+      "display_text": "$1,234.57",
+      "number_format": "yyyy-mm-dd",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A2",
+      "value": "R1 234.57",
+      "formula": "=DOLLAR(1234.567,2)",
+      "display_text": "R1 234.57",
+      "number_format": "General",
+      "has_formula": true
+    },
+    {
+      "target": "Sheet1!A3",
+      "value": "1234.57",
+      "formula": "=FIXED(1234.567,2,TRUE)",
+      "display_text": "1234.57",
+      "number_format": "General",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

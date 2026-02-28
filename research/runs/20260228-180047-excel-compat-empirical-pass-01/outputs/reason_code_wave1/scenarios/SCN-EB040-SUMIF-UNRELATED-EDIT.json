@@ -1,0 +1,102 @@
+{
+  "scenario_id": "SCN-EB040-SUMIF-UNRELATED-EDIT",
+  "task_id": "ECS-EB-040",
+  "topic": "reason_code_verification_wave1",
+  "priority": "P1",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "kind": "value",
+            "address": "A1",
+            "value": 1
+          },
+          {
+            "kind": "value",
+            "address": "A2",
+            "value": 2
+          },
+          {
+            "kind": "value",
+            "address": "A3",
+            "value": 3
+          },
+          {
+            "kind": "value",
+            "address": "B1",
+            "value": 10
+          },
+          {
+            "kind": "value",
+            "address": "B2",
+            "value": 20
+          },
+          {
+            "kind": "value",
+            "address": "B3",
+            "value": 30
+          },
+          {
+            "kind": "formula",
+            "address": "C1",
+            "value": "=SUMIF(A1:A3,\">1\",B1:B3)"
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "args": {
+        "value": 999
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-EB040-SUMIF-UNRELATED-EDIT",
+      "kind": "manual_review",
+      "target": "Sheet1!C1",
+      "expected": {
+        "question": "Does SUMIF remain stable under unrelated edit + recalc?"
+      },
+      "confidence": "medium"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "calc_mode"
+    ]
+  },
+  "sources": [
+    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+  ],
+  "notes": "Counter-check for SUMIF volatile/recalc reason code under unrelated edit."
+}

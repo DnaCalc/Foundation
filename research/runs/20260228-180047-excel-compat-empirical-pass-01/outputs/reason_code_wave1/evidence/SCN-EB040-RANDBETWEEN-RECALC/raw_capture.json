@@ -1,0 +1,160 @@
+﻿{
+  "run_id": "run-20260228-211052-47ffc2214",
+  "scenario": {
+    "scenario_id": "SCN-EB040-RANDBETWEEN-RECALC",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=RANDBETWEEN(1,100)"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-RANDBETWEEN-RECALC",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does RANDBETWEEN change across recalc operations?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Tier-3 weak-evidence volatile reason-code verification for RANDBETWEEN."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:54.3804989Z",
+      "finished_utc": "2026-02-28T21:10:54.5848866Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:54.5849016Z",
+      "finished_utc": "2026-02-28T21:10:54.5922089Z"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T21:10:54.5922228Z",
+      "finished_utc": "2026-02-28T21:10:54.5984919Z"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:10:54.3804741Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 35,
+          "formula": "=RANDBETWEEN(1,100)",
+          "display_text": "1900-02-04",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:10:54.5848789Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 12,
+          "formula": "=RANDBETWEEN(1,100)",
+          "display_text": "1900-01-12",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:54.5922035Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 100,
+          "formula": "=RANDBETWEEN(1,100)",
+          "display_text": "1900-04-09",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:10:54.5984860Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 6,
+          "formula": "=RANDBETWEEN(1,100)",
+          "display_text": "1900-01-06",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 6,
+      "formula": "=RANDBETWEEN(1,100)",
+      "display_text": "1900-01-06",
+      "number_format": "yyyy-mm-dd",
+      "has_formula": true
+    }
+  ],
+  "error": null
+}

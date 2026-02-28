@@ -1,0 +1,8 @@
+"case_id","scenario_id","task_id","family","target","expected_kind","expected_value","confidence","notes"
+"CFW1-001","SCN-EB031-CF-OVERLAP-STOP","ECS-EB-031","cf_overlap","Sheet1!A1","display_color","65280","high","A1 matches second rule only (green)."
+"CFW1-002","SCN-EB031-CF-OVERLAP-STOP","ECS-EB-031","cf_overlap","Sheet1!A2","display_color","255","high","A2 matches both; first rule stop-if-true should keep red."
+"CFW1-003","SCN-EB031-CF-OVERLAP-STOP","ECS-EB-031","cf_overlap","Sheet1!A3","display_color","255","high","A3 matches first rule only (red)."
+"CFW1-010","SCN-EB032-CF-PRIORITY-TRANSITION","ECS-EB-032","cf_priority_transition","Sheet1!A2","probe_transition","2","medium","A2 should expose at least two displayed-color states across stop-if-true/priority transitions."
+"CFW1-020","SCN-EB033-CF-TABLE-SPILL","ECS-EB-033","cf_table_spill","Sheet1!B3","display_color","16711680","medium","Appended table row should receive blue conditional format when B3>=2."
+"CFW1-021","SCN-EB033-CF-TABLE-SPILL","ECS-EB-033","cf_table_spill","Sheet1!C3","display_color","65535","medium","Spill target C3 should receive yellow conditional format for C3>=2."
+"CFW1-022","SCN-EB033-CF-TABLE-SPILL","ECS-EB-033","cf_table_spill","Sheet1!C4","display_color","65535","medium","Spill target C4 should receive yellow conditional format for C4>=2."

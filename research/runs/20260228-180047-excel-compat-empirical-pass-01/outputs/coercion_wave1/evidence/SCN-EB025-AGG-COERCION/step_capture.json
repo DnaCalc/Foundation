@@ -1,0 +1,255 @@
+﻿{
+  "run_id": "run-20260228-214245-7e19239d5",
+  "task_id": "ECS-EB-025",
+  "scenario_id": "SCN-EB025-AGG-COERCION",
+  "targets": [
+    "Sheet1!B1",
+    "Sheet1!B2",
+    "Sheet1!B3",
+    "Sheet1!B4",
+    "Sheet1!B5",
+    "Sheet1!B6",
+    "Sheet1!B7",
+    "Sheet1!B8",
+    "Sheet1!B9"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:42:46.8874756Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 3,
+          "formula": "=SUM(\u00221\u0022,2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 3,
+          "formula": "=SUM(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=AVERAGE(\u00222\u0022,4)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1.5,
+          "formula": "=AVERAGE(A1:A3)",
+          "display_text": "1.5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=COUNT(A1:A3)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 3,
+          "formula": "=COUNTA(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 3,
+          "formula": "=SUMPRODUCT(--(A1:A2))",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": -2146826273,
+          "formula": "=IF(\u00220\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=IF(\u0022\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:42:47.0469180Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 3,
+          "formula": "=SUM(\u00221\u0022,2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 3,
+          "formula": "=SUM(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=AVERAGE(\u00222\u0022,4)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1.5,
+          "formula": "=AVERAGE(A1:A3)",
+          "display_text": "1.5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=COUNT(A1:A3)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 3,
+          "formula": "=COUNTA(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 3,
+          "formula": "=SUMPRODUCT(--(A1:A2))",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": -2146826273,
+          "formula": "=IF(\u00220\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=IF(\u0022\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:42:47.0720639Z",
+      "captures": [
+        {
+          "target": "Sheet1!B1",
+          "value": 3,
+          "formula": "=SUM(\u00221\u0022,2)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B2",
+          "value": 3,
+          "formula": "=SUM(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "=AVERAGE(\u00222\u0022,4)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B4",
+          "value": 1.5,
+          "formula": "=AVERAGE(A1:A3)",
+          "display_text": "1.5",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B5",
+          "value": 2,
+          "formula": "=COUNT(A1:A3)",
+          "display_text": "2",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B6",
+          "value": 3,
+          "formula": "=COUNTA(A1:A3)",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B7",
+          "value": 3,
+          "formula": "=SUMPRODUCT(--(A1:A2))",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B8",
+          "value": -2146826273,
+          "formula": "=IF(\u00220\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        },
+        {
+          "target": "Sheet1!B9",
+          "value": -2146826273,
+          "formula": "=IF(\u0022\u0022,1,2)",
+          "display_text": "#VALUE!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

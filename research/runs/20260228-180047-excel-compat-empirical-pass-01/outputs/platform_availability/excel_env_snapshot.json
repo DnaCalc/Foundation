@@ -1,5 +1,5 @@
 ﻿{
-  "captured_utc": "2026-02-28T17:43:22.5261850Z",
+  "captured_utc": "2026-02-28T21:16:04.9651038Z",
   "platform": "windows_desktop",
   "locale": "en-ZA",
   "excel_binary": {
@@ -13,13 +13,13 @@
   "tooling": {
     "runner_name": "excel-probe",
     "runner_language": "C#",
-    "runner_version": "0.2.0\u002B0934496281fde9770abdd6ca6a0292e865d9f10d",
+    "runner_version": "0.2.0\u002B683a6a2e053f34899ca8b24e94248c289ee5e483",
     "runner_build_version": "0.2.0.0",
     "dotnet_sdk_version": "10.0.103",
     "dotnet_runtime_version": "10.0.3",
     "repo_root": "C:\\Work\\DnaCalc\\Foundation",
-    "repo_git_commit": "0934496281fde9770abdd6ca6a0292e865d9f10d",
-    "repo_git_commit_short": "0934496",
+    "repo_git_commit": "683a6a2e053f34899ca8b24e94248c289ee5e483",
+    "repo_git_commit_short": "683a6a2",
     "repo_git_is_dirty": true
   }
 }

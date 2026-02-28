@@ -1,0 +1,70 @@
+﻿{
+  "run_id": "run-20260228-212948-f08fbc29c",
+  "task_id": "ECS-EB-030",
+  "scenario_id": "SCN-EB030-AMBIG-INTERSECTION-SINGLE",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:29:51.0016291Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:29:51.3495210Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:29:51.3658679Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826288,
+          "formula": "=A1 B1",
+          "display_text": "#NULL!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:29:51.3708602Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826288,
+          "formula": "=A1 B1",
+          "display_text": "#NULL!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

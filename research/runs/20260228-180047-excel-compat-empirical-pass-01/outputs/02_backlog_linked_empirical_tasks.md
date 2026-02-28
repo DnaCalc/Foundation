@@ -20,6 +20,10 @@ Track A linkage reference set:
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/26_full_interest_platform_matrix_seed_expansion.md`
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/27_trackA_continuation_execution_pass.md`
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/28_tier45_source_index_completion_pass.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/29_trackA_trackB_interleaving_reason_code_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/30_trackA_trackB_interleaving_formula_parse_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/31_trackA_trackB_interleaving_coercion_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/32_trackA_trackB_interleaving_cf_wave1.md`
 
 | Task ID | Backlog link | Empirical objective | Method outline | Expected artifact(s) |
 |---|---|---|---|---|
@@ -101,6 +105,18 @@ Start execution in this order for maximum downstream unlock:
 - `ECS-EB-046`: capability profile template published at `outputs/platform_availability/platform_capability_profile.template.json`
 - `ECS-EB-012`: wave-2 volatility context probes executed and summarized at `outputs/volatility_wave2/ECS-EB-012_volatility_context_probe.csv`
 - `ECS-EB-013`: observed volatility reason-code mapping published at `outputs/volatility_wave2/ECS-EB-013_volatility_reason_codes.md` and `outputs/volatility_wave2/ECS-EB-013_volatility_reason_codes_observed.csv`
+- `ECS-EB-040`: reason-code verifier wave-1 executed and summarized at `outputs/reason_code_wave1/ECS-EB-040_reason_code_verification_probe_wave1.csv` and `outputs/reason_code_wave1/WAVE1_EXECUTION_REPORT.md`
+- `ECS-EB-041`: classification evidence-ID sync table published at `outputs/reason_code_wave1/ECS-EB-041_classification_evidence_sync_wave1.csv` with tracker updates applied to `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/function_reason_code_evidence_tracker.csv`
+- `ECS-EB-028`: parse acceptance wave-1 executed and summarized at `outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv`
+- `ECS-EB-029`: normalization wave-1 capture published at `outputs/formula_parse_wave1/ECS-EB-029_formula_normalization_capture_wave1.csv`
+- `ECS-EB-030`: ambiguity probe wave-1 published at `outputs/formula_parse_wave1/ECS-EB-030_grammar_ambiguity_probe_wave1.csv` with one explicit mismatch retained for triage (`=SUM(A1,,B1)` accepted)
+- `ECS-EB-024`: coercion operator truth-table wave-1 executed and summarized at `outputs/coercion_wave1/ECS-EB-024_operator_coercion_truth_table_wave1.csv`
+- `ECS-EB-025`: coercion function-family wave-1 executed and summarized at `outputs/coercion_wave1/ECS-EB-025_function_family_coercion_probe_wave1.csv` with three explicit range-text expectation mismatches retained for triage
+- `ECS-EB-026`: compatibility/precedence coercion wave-1 executed and summarized at `outputs/coercion_wave1/ECS-EB-026_compatibility_coercion_probe_wave1.csv`
+- `ECS-EB-027`: coercion confidence scoring wave-1 published at `outputs/coercion_wave1/ECS-EB-027_coercion_confidence_scores_wave1.csv`
+- `ECS-EB-031`: conditional-format overlap fixture wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-031_cf_overlap_fixture_manifest_wave1.csv`
+- `ECS-EB-032`: conditional-format stop-if-true/priority transition wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-032_cf_stopiftrue_probe_wave1.csv`
+- `ECS-EB-033`: conditional-format table+spill interaction wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-033_cf_table_spill_interaction_probe_wave1.csv` with two explicit spill-related display-color mismatches retained for triage
 - Pilot execution follow-up added:
   - `ECS-EB-047`: derived from pilot wave evidence limits; requires operation-step snapshots for volatility/transition assertions.
   - `ECS-EB-048`: derived from locale probe caveats; requires locale-controlled execution profiles.

@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-211109-f404e8ae5",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-SUMIF-UNRELATED-EDIT",
+  "targets": [
+    "Sheet1!C1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:11:11.5742303Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:11:11.9419174Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:11.9512610Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:11:11.9643746Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:11:11.9728967Z",
+      "captures": [
+        {
+          "target": "Sheet1!C1",
+          "value": 50,
+          "formula": "=SUMIF(A1:A3,\u0022\u003E1\u0022,B1:B3)",
+          "display_text": "50",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}

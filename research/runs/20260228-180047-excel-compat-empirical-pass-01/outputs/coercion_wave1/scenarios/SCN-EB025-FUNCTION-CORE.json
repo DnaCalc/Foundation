@@ -1,0 +1,224 @@
+{
+    "scenario_id":  "SCN-EB025-FUNCTION-CORE",
+    "task_id":  "ECS-EB-025",
+    "topic":  "coercion_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/coercion_wave1/SCN-EB025-FUNCTION-CORE.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B1",
+                                                              "value":  "=N(\"abc\")"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B2",
+                                                              "value":  "=N(TRUE)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B3",
+                                                              "value":  "=N(5)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B4",
+                                                              "value":  "=TYPE(1)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B5",
+                                                              "value":  "=TYPE(\"x\")"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B6",
+                                                              "value":  "=TYPE(TRUE)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B7",
+                                                              "value":  "=TYPE(NA())"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B8",
+                                                              "value":  "=VALUE(\"123.45\")"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B9",
+                                                              "value":  "=VALUE(\"abc\")"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B10",
+                                                              "value":  "=T(123)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B11",
+                                                              "value":  "=T(\"abc\")"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B12",
+                                                              "value":  "=VALUETOTEXT(123.45)"
+                                                          },
+                                                          {
+                                                              "kind":  "formula",
+                                                              "address":  "B13",
+                                                              "value":  "=VALUETOTEXT(NA())"
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B1",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B2",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B4",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B5",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B5",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B6",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B6",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B7",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B7",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B8",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B8",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B9",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B9",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B10",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B10",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B11",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B11",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B12",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B12",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB025-FUNCTION-CORE-Sheet1_B13",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B13",
+                             "expected":  {
+                                              "question":  "Capture coercion outcome and compare against expected case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/07_coercion_matrix_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/coercion_matrix_expanded.csv"
+                ],
+    "notes":  "Coercion wave1 empirical scenario."
+}

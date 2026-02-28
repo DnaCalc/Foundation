@@ -1,0 +1,70 @@
+﻿{
+  "run_id": "run-20260228-212924-cabcb4907",
+  "task_id": "ECS-EB-028",
+  "scenario_id": "SCN-EB028-FIELDVALUE-ACCEPT",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T21:29:27.3870823Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T21:29:27.6351595Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T21:29:27.6705550Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826239,
+          "formula": "=FIELDVALUE(A1,\u0022Price\u0022)",
+          "display_text": "#FIELD!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T21:29:27.6778399Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826239,
+          "formula": "=FIELDVALUE(A1,\u0022Price\u0022)",
+          "display_text": "#FIELD!",
+          "number_format": "General",
+          "has_formula": true
+        }
+      ]
+    }
+  ]
+}
