@@ -20,12 +20,12 @@ tools\spec-pack-processor\spec-pack-processor.cmd run --source-index reference\i
 ## Outputs
 - `run_manifest.json`
 - `documents.csv`
-- `conformance_items.ndjson`
-- `llm/classification_tasks.ndjson`
+- `conformance_items.jsonl`
+- `llm/classification_tasks.jsonl`
 - `docs/<document_id>/document_manifest.json`
-- `docs/<document_id>/segments.ndjson`
-- `docs/<document_id>/sentences.ndjson`
-- `docs/<document_id>/conformance_candidates.ndjson`
+- `docs/<document_id>/segments.jsonl`
+- `docs/<document_id>/sentences.jsonl`
+- `docs/<document_id>/conformance_candidates.jsonl`
 - `docs/<document_id>/images/*` (for docx image artifacts)
 
 ## Notes

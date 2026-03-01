@@ -35,8 +35,8 @@ tools\spec-pack-processor\spec-pack-processor.ps1 run --source-index reference/i
 
 The processing run emits:
 - segment-level extracted text with source anchors,
-- sentence-level classification task list (`llm/classification_tasks.ndjson`),
-- conformance candidate items (`conformance_items.ndjson`),
+- sentence-level classification task list (`llm/classification_tasks.jsonl`),
+- conformance candidate items (`conformance_items.jsonl`),
 - per-document manifests and explicit pending coverage markers.
 
 Detailed artifact contract: `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md`.

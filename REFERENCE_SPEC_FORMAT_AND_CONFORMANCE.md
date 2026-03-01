@@ -18,18 +18,18 @@ This document defines the normalized artifact shape produced from mirrored exter
 - Authority: extracted text segments plus source anchors.
 
 3. Conformance-candidate layer
-- Location: same run directory (`conformance_items.ndjson`)
+- Location: same run directory (`conformance_items.jsonl`)
 - Authority: machine-generated candidate requirements that must be reviewed before being promoted into test packs or formal models.
 
 ## Required output files per run
 - `run_manifest.json`
 - `documents.csv`
-- `conformance_items.ndjson`
-- `llm/classification_tasks.ndjson`
+- `conformance_items.jsonl`
+- `llm/classification_tasks.jsonl`
 - `docs/<document_id>/document_manifest.json`
-- `docs/<document_id>/segments.ndjson`
-- `docs/<document_id>/sentences.ndjson`
-- `docs/<document_id>/conformance_candidates.ndjson`
+- `docs/<document_id>/segments.jsonl`
+- `docs/<document_id>/sentences.jsonl`
+- `docs/<document_id>/conformance_candidates.jsonl`
 
 ## Segment requirements
 Each segment record must include:

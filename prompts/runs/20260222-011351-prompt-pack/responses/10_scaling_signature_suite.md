@@ -126,7 +126,7 @@ artifacts/scaling-signature/
   <timestamp_utc>/
     manifest.json
     <engine>/<profile>/<workload>/
-      raw_runs.ndjson
+      raw_runs.jsonl
       aggregates.json
       slope_report.json
       slope_report.md
@@ -139,7 +139,7 @@ artifacts/scaling-signature/
 - gate result summary.
 
 Data contracts:
-- `raw_runs.ndjson`: one record per iteration-size-phase.
+- `raw_runs.jsonl`: one record per iteration-size-phase.
 - `aggregates.json`: median/p95/count summaries per size-phase.
 - `slope_report.json`: fit coefficients, CI, quality metrics, baseline deltas, classifications.
 - `slope_report.md`: human-readable summary with top regressions table.

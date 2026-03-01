@@ -105,8 +105,8 @@ spec-pack-processor (C#)
             docSummaries.Add(summary);
         }
 
-        WriteNdjson(Path.Combine(outputRoot, "conformance_items.ndjson"), allConformance);
-        WriteNdjson(Path.Combine(llmRoot, "classification_tasks.ndjson"), allSentences);
+        WriteJsonl(Path.Combine(outputRoot, "conformance_items.jsonl"), allConformance);
+        WriteJsonl(Path.Combine(llmRoot, "classification_tasks.jsonl"), allSentences);
         WriteCsv(Path.Combine(outputRoot, "documents.csv"),
             ["document_id","source_id","source_url","local_path","sha256","extraction_status","extraction_mode","segments","sentences","conformance","images","tables","pending","notes"],
             docSummaries.Select(s => new[] { s.DocumentId, s.SourceId, s.SourceUrl, s.LocalPath, s.Sha256, s.ExtractionStatus, s.ExtractionMode,
@@ -128,8 +128,8 @@ spec-pack-processor (C#)
             outputs = new
             {
                 documents_csv = Path.Combine(outputRoot, "documents.csv"),
-                conformance_ndjson = Path.Combine(outputRoot, "conformance_items.ndjson"),
-                llm_tasks_ndjson = Path.Combine(llmRoot, "classification_tasks.ndjson")
+                conformance_jsonl = Path.Combine(outputRoot, "conformance_items.jsonl"),
+                llm_tasks_jsonl = Path.Combine(llmRoot, "classification_tasks.jsonl")
             }
         };
         WriteJson(Path.Combine(outputRoot, "run_manifest.json"), runManifest);
@@ -226,9 +226,9 @@ spec-pack-processor (C#)
 
         var sha = string.IsNullOrWhiteSpace(row.Sha256) ? Sha256(sourcePath) : row.Sha256!;
 
-        WriteNdjson(Path.Combine(docOutDir, "segments.ndjson"), segments);
-        WriteNdjson(Path.Combine(docOutDir, "sentences.ndjson"), sentences);
-        WriteNdjson(Path.Combine(docOutDir, "conformance_candidates.ndjson"), conformance);
+        WriteJsonl(Path.Combine(docOutDir, "segments.jsonl"), segments);
+        WriteJsonl(Path.Combine(docOutDir, "sentences.jsonl"), sentences);
+        WriteJsonl(Path.Combine(docOutDir, "conformance_candidates.jsonl"), conformance);
 
         WriteJson(Path.Combine(docOutDir, "document_manifest.json"), new
         {
@@ -242,9 +242,9 @@ spec-pack-processor (C#)
             notes = extracted.Notes,
             artifacts = new
             {
-                segments_ndjson = Path.Combine(docOutDir, "segments.ndjson"),
-                sentences_ndjson = Path.Combine(docOutDir, "sentences.ndjson"),
-                conformance_candidates_ndjson = Path.Combine(docOutDir, "conformance_candidates.ndjson"),
+                segments_jsonl = Path.Combine(docOutDir, "segments.jsonl"),
+                sentences_jsonl = Path.Combine(docOutDir, "sentences.jsonl"),
+                conformance_candidates_jsonl = Path.Combine(docOutDir, "conformance_candidates.jsonl"),
                 images_dir = imageDir
             }
         });
@@ -794,7 +794,7 @@ spec-pack-processor (C#)
         File.WriteAllText(path, JsonSerializer.Serialize(value, JsonIndented), Encoding.UTF8);
     }
 
-    static void WriteNdjson<T>(string path, IEnumerable<T> values)
+    static void WriteJsonl<T>(string path, IEnumerable<T> values)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         using var w = new StreamWriter(path, false, new UTF8Encoding(false));
