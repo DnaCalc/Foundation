@@ -13,7 +13,7 @@ For DnaVisiCalc Round 0 functional scope, treat `..\\DnaVisiCalc\\docs\\SPEC_v0.
 Use Foundation docs to hold doctrine, architecture framing, and process that remain consistent with that upstream scope.
 See `prompts/README.md` for prompt execution guidance and run artifacts.
 See `research/README.md` for topic/source registry and deep-research run artifacts.
-See `reference/README.md` for reference-spec mirror and managed processing runs.
+See `reference/README.md` for reference-spec mirror, managed processing runs, and curated empirical conformance findings.
 See `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md` for the normalized reference/conformance artifact contract.
 See `tools/README.md` for local tooling layout and policy notes.
 See `synthesis/README.md` for synthesis-pass workflow and decision logging.

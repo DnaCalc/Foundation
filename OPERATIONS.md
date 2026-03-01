@@ -239,14 +239,29 @@ When synthesis suggestions conflict, precedence remains:
   - `run_manifest.json`,
   - `documents.csv`,
   - `selected_sources.csv`,
+  - `spec_items.jsonl`,
   - `conformance_items.jsonl`,
   - `conformance_excluded.jsonl`,
   - `llm/classification_tasks.jsonl`,
-  - per-document `document_manifest.json`, `segments.jsonl`, `sentences.jsonl`, `conformance_candidates.jsonl`, and `conformance_excluded.jsonl`.
+  - per-document `document_manifest.json`, `segments.jsonl`, `sentences.jsonl`, `spec_items.jsonl`, `conformance_candidates.jsonl`, and `conformance_excluded.jsonl`.
 - Every extracted segment/sentence/conformance item must retain source back-references (source URL, mirrored local path, and finest available anchor such as page/section/table/cell/image reference).
 - Coverage must be explicit: if any source artifact cannot be fully extracted (for example OCR-pending PDF), the run must emit pending markers/counters rather than silently dropping content.
 - LLM-assisted classification is allowed only as an auditable layer on top of deterministic extraction; prompts/responses or imported classifier outputs must be captured as run artifacts.
 - Detailed format contract for this layer is maintained in `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md`.
+
+### 8.10 Empirical Findings as Reference-Conformance Inputs
+- Empirical run outputs under `research/runs/<run-id>/` remain working evidence by default; they do not become standing conformance references automatically.
+- High-value empirical observations (for example behavior that resolves spec ambiguity, contradicts expectation, or materially constrains compatibility design) must be curated into `reference/empirical/` as promoted finding records (`findings_registry.jsonl` + human index/docs).
+- Promoted empirical findings are first-class conformance-source inputs alongside processed spec items, with explicit provenance links back to:
+  - research run id and scenario/task id,
+  - captured evidence artifacts,
+  - Excel build/version metadata and `EXCEL.EXE` hash,
+  - runner/tool version and source revision.
+- Empirical promotions must be selective: not every executed probe is promoted; only findings with durable conformance relevance.
+- Conformance requirement synthesis must allow source binding to either:
+  - spec-derived evidence (`SPEC-*` lineage), or
+  - empirical-derived evidence (`EMP-*` lineage),
+  and should support mixed-source justification where both apply.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
