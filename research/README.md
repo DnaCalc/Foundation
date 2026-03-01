@@ -11,6 +11,7 @@ Track deep-research topics, prioritized sources, and run artifacts in a versione
 - Topic queue and priority state in `research/topic_registry.csv`
 - Source and author/work tracking in `research/sources.csv`
 - Optional people-to-follow list in `research/people_watchlist.md`
+- Managed external-spec mirror and index in `research/specs/`
 - Timestamped run artifacts in `research/runs/<run-id>/`
 - Run lifecycle state that distinguishes captured evidence from synthesized knowledge
 
