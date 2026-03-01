@@ -20,18 +20,22 @@ tools\spec-pack-processor\spec-pack-processor.cmd run --source-index reference\i
 ## Outputs
 - `run_manifest.json`
 - `documents.csv`
+- `selected_sources.csv`
 - `conformance_items.jsonl`
+- `conformance_excluded.jsonl`
 - `llm/classification_tasks.jsonl`
 - `docs/<document_id>/document_manifest.json`
 - `docs/<document_id>/segments.jsonl`
 - `docs/<document_id>/sentences.jsonl`
 - `docs/<document_id>/conformance_candidates.jsonl`
+- `docs/<document_id>/conformance_excluded.jsonl`
 - `docs/<document_id>/images/*` (for docx image artifacts)
 
 ## Notes
 - PDF extraction uses `pdftotext` when available on `PATH`.
 - If no PDF extractor is available, the run records explicit `pdf_pending` segments and pending counts.
 - Tool runtime is C#/.NET and follows repository tooling policy.
+- JSON/JSONL output records use `snake_case` keys.
 
 ## Planned Extensions (Deferred Until Needed)
 1. External LLM ingestion layer:

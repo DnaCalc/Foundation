@@ -24,12 +24,17 @@ This document defines the normalized artifact shape produced from mirrored exter
 ## Required output files per run
 - `run_manifest.json`
 - `documents.csv`
+- `selected_sources.csv`
 - `conformance_items.jsonl`
+- `conformance_excluded.jsonl`
 - `llm/classification_tasks.jsonl`
 - `docs/<document_id>/document_manifest.json`
 - `docs/<document_id>/segments.jsonl`
 - `docs/<document_id>/sentences.jsonl`
 - `docs/<document_id>/conformance_candidates.jsonl`
+- `docs/<document_id>/conformance_excluded.jsonl`
+
+All JSON/JSONL records use `snake_case` property names.
 
 ## Segment requirements
 Each segment record must include:
@@ -47,6 +52,8 @@ Each candidate item must include:
 - priority
 - verification-hint tag
 - source back-reference
+
+Excluded normative records (`conformance_excluded.jsonl`) must retain the same source linkage and include an explicit `exclusion_reason`.
 
 ## LLM usage constraints
 - LLM classification must operate over deterministic extraction outputs.

@@ -8,4 +8,9 @@ Use layout:
 - `reference/runs/<run-id>/outputs/*`
 - `reference/runs/<run-id>/logs/*`
 
-The `tools/spec-pack-processor` tool writes into `outputs/` and can be wrapped by run-manifest scripts that add explicit `inputs/` and `logs/` capture.
+Minimum `inputs/` capture should include:
+- source index reference and filter parameters,
+- capture timestamp,
+- Foundation commit hash used to run the tool.
+
+The `tools/spec-pack-processor` tool writes into `outputs/` and should be wrapped by run-manifest scripts that add explicit `inputs/` and `logs/` capture.

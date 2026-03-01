@@ -37,6 +37,8 @@ The processing run emits:
 - segment-level extracted text with source anchors,
 - sentence-level classification task list (`llm/classification_tasks.jsonl`),
 - conformance candidate items (`conformance_items.jsonl`),
+- excluded normative items with explicit reasons (`conformance_excluded.jsonl`),
+- selected-source capture for reproducibility (`selected_sources.csv`),
 - per-document manifests and explicit pending coverage markers.
 
 Detailed artifact contract: `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md`.

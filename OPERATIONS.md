@@ -238,9 +238,11 @@ When synthesis suggestions conflict, precedence remains:
 - Required processed-run outputs:
   - `run_manifest.json`,
   - `documents.csv`,
+  - `selected_sources.csv`,
   - `conformance_items.jsonl`,
+  - `conformance_excluded.jsonl`,
   - `llm/classification_tasks.jsonl`,
-  - per-document `document_manifest.json`, `segments.jsonl`, `sentences.jsonl`, and `conformance_candidates.jsonl`.
+  - per-document `document_manifest.json`, `segments.jsonl`, `sentences.jsonl`, `conformance_candidates.jsonl`, and `conformance_excluded.jsonl`.
 - Every extracted segment/sentence/conformance item must retain source back-references (source URL, mirrored local path, and finest available anchor such as page/section/table/cell/image reference).
 - Coverage must be explicit: if any source artifact cannot be fully extracted (for example OCR-pending PDF), the run must emit pending markers/counters rather than silently dropping content.
 - LLM-assisted classification is allowed only as an auditable layer on top of deterministic extraction; prompts/responses or imported classifier outputs must be captured as run artifacts.

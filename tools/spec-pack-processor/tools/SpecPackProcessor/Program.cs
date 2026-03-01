@@ -11,8 +11,20 @@ using System.Xml.Linq;
 
 internal static class Program
 {
-    static readonly JsonSerializerOptions JsonIndented = new() { WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
-    static readonly JsonSerializerOptions JsonCompact = new() { WriteIndented = false, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+    static readonly JsonSerializerOptions JsonIndented = new()
+    {
+        WriteIndented = true,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+        DictionaryKeyPolicy = JsonNamingPolicy.SnakeCaseLower
+    };
+    static readonly JsonSerializerOptions JsonCompact = new()
+    {
+        WriteIndented = false,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+        DictionaryKeyPolicy = JsonNamingPolicy.SnakeCaseLower
+    };
     static readonly string InvocationCwd = Environment.GetEnvironmentVariable("SPEC_PACK_PROCESSOR_INVOKE_CWD") ?? Directory.GetCurrentDirectory();
 
     [STAThread]
@@ -94,25 +106,34 @@ spec-pack-processor (C#)
 
         var docSummaries = new List<DocSummary>();
         var allConformance = new List<ConformanceItem>();
+        var allExcludedConformance = new List<ExcludedConformanceItem>();
         var allSentences = new List<SentenceRecord>();
+
+        WriteSelectedSourcesCsv(Path.Combine(outputRoot, "selected_sources.csv"), rows);
 
         int iDoc = 0;
         foreach (var row in rows)
         {
             iDoc++;
             Console.WriteLine($"[{iDoc}/{rows.Count}] {row.LocalPath}");
-            var summary = ProcessDocument(row, docsRoot, allConformance, allSentences);
+            var summary = ProcessDocument(row, docsRoot, allConformance, allExcludedConformance, allSentences);
             docSummaries.Add(summary);
         }
 
         WriteJsonl(Path.Combine(outputRoot, "conformance_items.jsonl"), allConformance);
+        WriteJsonl(Path.Combine(outputRoot, "conformance_excluded.jsonl"), allExcludedConformance);
         WriteJsonl(Path.Combine(llmRoot, "classification_tasks.jsonl"), allSentences);
         WriteCsv(Path.Combine(outputRoot, "documents.csv"),
-            ["document_id","source_id","source_url","local_path","sha256","extraction_status","extraction_mode","segments","sentences","conformance","images","tables","pending","notes"],
+            ["document_id","source_id","source_url","local_path","sha256","extraction_status","extraction_mode","segments","sentences","conformance","conformance_excluded","images","tables","pending","notes"],
             docSummaries.Select(s => new[] { s.DocumentId, s.SourceId, s.SourceUrl, s.LocalPath, s.Sha256, s.ExtractionStatus, s.ExtractionMode,
                 s.SegmentCount.ToString(CultureInfo.InvariantCulture), s.SentenceCount.ToString(CultureInfo.InvariantCulture),
-                s.ConformanceCount.ToString(CultureInfo.InvariantCulture), s.ImageCount.ToString(CultureInfo.InvariantCulture),
+                s.ConformanceCount.ToString(CultureInfo.InvariantCulture), s.ExcludedConformanceCount.ToString(CultureInfo.InvariantCulture), s.ImageCount.ToString(CultureInfo.InvariantCulture),
                 s.TableCount.ToString(CultureInfo.InvariantCulture), s.PendingCount.ToString(CultureInfo.InvariantCulture), s.Notes ?? string.Empty }));
+
+        var excludedByReason = allExcludedConformance
+            .GroupBy(x => x.ExclusionReason)
+            .OrderByDescending(g => g.Count())
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.OrdinalIgnoreCase);
 
         var runManifest = new
         {
@@ -123,25 +144,37 @@ spec-pack-processor (C#)
             segments = docSummaries.Sum(d => d.SegmentCount),
             sentences = docSummaries.Sum(d => d.SentenceCount),
             conformance_candidates = allConformance.Count,
+            conformance_excluded = allExcludedConformance.Count,
             pending_items = docSummaries.Sum(d => d.PendingCount),
             tooling = ToolingInfo(),
+            quality = new
+            {
+                excluded_by_reason = excludedByReason
+            },
             outputs = new
             {
                 documents_csv = Path.Combine(outputRoot, "documents.csv"),
+                selected_sources_csv = Path.Combine(outputRoot, "selected_sources.csv"),
                 conformance_jsonl = Path.Combine(outputRoot, "conformance_items.jsonl"),
+                conformance_excluded_jsonl = Path.Combine(outputRoot, "conformance_excluded.jsonl"),
                 llm_tasks_jsonl = Path.Combine(llmRoot, "classification_tasks.jsonl")
             }
         };
         WriteJson(Path.Combine(outputRoot, "run_manifest.json"), runManifest);
 
-        File.WriteAllText(Path.Combine(outputRoot, "README.md"), BuildRunReadme(runManifest, docSummaries), Encoding.UTF8);
+        File.WriteAllText(Path.Combine(outputRoot, "README.md"), BuildRunReadme(runManifest, docSummaries, excludedByReason), Encoding.UTF8);
 
         Console.WriteLine($"Processed: {docSummaries.Count}");
         Console.WriteLine($"Conformance candidates: {allConformance.Count}");
         Console.WriteLine($"Output: {outputRoot}");
         return 0;
     }
-    static DocSummary ProcessDocument(IndexRow row, string docsRoot, List<ConformanceItem> allConformance, List<SentenceRecord> allSentences)
+    static DocSummary ProcessDocument(
+        IndexRow row,
+        string docsRoot,
+        List<ConformanceItem> allConformance,
+        List<ExcludedConformanceItem> allExcludedConformance,
+        List<SentenceRecord> allSentences)
     {
         var sourcePath = row.LocalPath!;
         var ext = Path.GetExtension(sourcePath).ToLowerInvariant();
@@ -208,11 +241,31 @@ spec-pack-processor (C#)
         }
 
         int cidx = 0;
-        var conformance = sentences
-            .Where(s => s.Informative && IsNormative(s.NormativeLevel))
-            .Select(s => new ConformanceItem
+        var conformance = new List<ConformanceItem>();
+        var excluded = new List<ExcludedConformanceItem>();
+        foreach (var s in sentences.Where(x => x.Informative && IsNormative(x.NormativeLevel)))
+        {
+            if (TryGetConformanceExclusionReason(s.Text, s.TopicTags, out var reason))
             {
-                ItemId = $"CONF-{docId}-{++cidx:D4}",
+                excluded.Add(new ExcludedConformanceItem
+                {
+                    ItemId = $"CONF-EXCL-{docId}-{excluded.Count + 1:D4}",
+                    DocumentId = docId,
+                    SourceSentenceId = s.SentenceId,
+                    NormativeLevel = s.NormativeLevel,
+                    Statement = s.Text,
+                    TopicTags = s.TopicTags,
+                    ExclusionReason = reason,
+                    Status = "excluded",
+                    Source = s.Source
+                });
+                continue;
+            }
+
+            cidx++;
+            conformance.Add(new ConformanceItem
+            {
+                ItemId = $"CONF-{docId}-{cidx:D4}",
                 DocumentId = docId,
                 SourceSentenceId = s.SentenceId,
                 Priority = Priority(s.NormativeLevel),
@@ -222,13 +275,15 @@ spec-pack-processor (C#)
                 VerificationHint = VerificationHint(s.TopicTags),
                 Status = "candidate",
                 Source = s.Source
-            }).ToList();
+            });
+        }
 
         var sha = string.IsNullOrWhiteSpace(row.Sha256) ? Sha256(sourcePath) : row.Sha256!;
 
         WriteJsonl(Path.Combine(docOutDir, "segments.jsonl"), segments);
         WriteJsonl(Path.Combine(docOutDir, "sentences.jsonl"), sentences);
         WriteJsonl(Path.Combine(docOutDir, "conformance_candidates.jsonl"), conformance);
+        WriteJsonl(Path.Combine(docOutDir, "conformance_excluded.jsonl"), excluded);
 
         WriteJson(Path.Combine(docOutDir, "document_manifest.json"), new
         {
@@ -245,11 +300,13 @@ spec-pack-processor (C#)
                 segments_jsonl = Path.Combine(docOutDir, "segments.jsonl"),
                 sentences_jsonl = Path.Combine(docOutDir, "sentences.jsonl"),
                 conformance_candidates_jsonl = Path.Combine(docOutDir, "conformance_candidates.jsonl"),
+                conformance_excluded_jsonl = Path.Combine(docOutDir, "conformance_excluded.jsonl"),
                 images_dir = imageDir
             }
         });
 
         allConformance.AddRange(conformance);
+        allExcludedConformance.AddRange(excluded);
         allSentences.AddRange(sentences);
 
         return new DocSummary
@@ -264,6 +321,7 @@ spec-pack-processor (C#)
             SegmentCount = segments.Count,
             SentenceCount = sentences.Count,
             ConformanceCount = conformance.Count,
+            ExcludedConformanceCount = excluded.Count,
             ImageCount = extracted.ImageCount,
             TableCount = extracted.TableCount,
             PendingCount = extracted.PendingCount,
@@ -677,17 +735,27 @@ spec-pack-processor (C#)
 
     static string NormalizeWhitespace(string value) => Regex.Replace(value ?? string.Empty, @"\s+", " ").Trim();
 
-    static bool IsInformative(string text, string kind) => !string.IsNullOrWhiteSpace(text) && kind != "pdf_pending" && text != "<blank>" && text.Length >= 12;
+    static bool IsInformative(string text, string kind) =>
+        !string.IsNullOrWhiteSpace(text)
+        && kind is not "pdf_pending" and not "heading"
+        && text != "<blank>"
+        && text.Length >= 12;
     static bool IsNormative(string level) => level is "must" or "must_not" or "shall" or "should" or "may";
 
     static string NormativeLevel(string text)
     {
+        if (Regex.IsMatch(text, @"\b(MUST NOT|SHALL NOT)\b")) return "must_not";
+        if (Regex.IsMatch(text, @"\bMUST\b")) return "must";
+        if (Regex.IsMatch(text, @"\bSHALL\b")) return "shall";
+        if (Regex.IsMatch(text, @"\bSHOULD\b|\bRECOMMENDED\b")) return "should";
+        if (Regex.IsMatch(text, @"\bMAY\b|\bOPTIONAL\b")) return "may";
+
         var s = text.ToLowerInvariant();
         if (Regex.IsMatch(s, @"\b(must not|shall not|cannot|can not|never)\b")) return "must_not";
         if (Regex.IsMatch(s, @"\bmust\b")) return "must";
         if (Regex.IsMatch(s, @"\bshall\b")) return "shall";
         if (Regex.IsMatch(s, @"\bshould\b|\brecommended\b")) return "should";
-        if (Regex.IsMatch(s, @"\bmay\b|\boptional\b")) return "may";
+        if (Regex.IsMatch(s, @"\boptional\b")) return "may";
         return "none";
     }
 
@@ -705,6 +773,22 @@ spec-pack-processor (C#)
         if (s.Contains("rtd") || s.Contains("volatile") || s.Contains("recalc") || s.Contains("external")) tags.Add("recalc_external");
         if (s.Contains("format") || s.Contains("number format") || s.Contains("conditional format")) tags.Add("formatting");
         if (s.Contains("compat") || s.Contains("version") || s.Contains("channel")) tags.Add("versioning");
+        if (s.Contains("intellectual property rights notice")
+            || s.Contains("trademarks")
+            || s.Contains("no trade secrets")
+            || s.Contains("reservation of rights")
+            || s.Contains("license programs")
+            || s.Contains("patents")
+            || s.Contains("copyright")
+            || s.Contains("no association with any real company"))
+        {
+            tags.Add("legal_notice");
+        }
+        if (s.Contains("these terms (in all caps) are used as defined in [rfc2119]")
+            || s.Contains("all statements of optional behavior use either may"))
+        {
+            tags.Add("editorial_meta");
+        }
         return tags.OrderBy(x => x, StringComparer.OrdinalIgnoreCase).ToList();
     }
 
@@ -726,7 +810,36 @@ spec-pack-processor (C#)
         return "doc_to_probe_mapping_review";
     }
 
-    static string BuildRunReadme(dynamic manifest, List<DocSummary> summaries)
+    static bool TryGetConformanceExclusionReason(string text, List<string> topicTags, out string reason)
+    {
+        var s = text.ToLowerInvariant();
+        if (topicTags.Contains("legal_notice", StringComparer.OrdinalIgnoreCase))
+        {
+            reason = "legal_notice";
+            return true;
+        }
+        if (s.Contains("these terms (in all caps) are used as defined in [rfc2119]"))
+        {
+            reason = "normative_keyword_definition";
+            return true;
+        }
+        if (s.StartsWith("all statements of optional behavior use either may", StringComparison.OrdinalIgnoreCase))
+        {
+            reason = "normative_keyword_definition";
+            return true;
+        }
+        if (s.Contains("individual documents in the library are not updated at the same time")
+            || s.Contains("section numbers in the documents may not match"))
+        {
+            reason = "document_library_metadata";
+            return true;
+        }
+
+        reason = string.Empty;
+        return false;
+    }
+
+    static string BuildRunReadme(dynamic manifest, List<DocSummary> summaries, IReadOnlyDictionary<string, int> excludedByReason)
     {
         var sb = new StringBuilder();
         sb.AppendLine("# Processed Spec Run");
@@ -737,6 +850,7 @@ spec-pack-processor (C#)
         sb.AppendLine($"- Segment count: `{manifest.segments}`");
         sb.AppendLine($"- Sentence count: `{manifest.sentences}`");
         sb.AppendLine($"- Conformance candidates: `{manifest.conformance_candidates}`");
+        sb.AppendLine($"- Conformance excluded: `{manifest.conformance_excluded}`");
         sb.AppendLine($"- Pending items: `{manifest.pending_items}`");
         sb.AppendLine();
         sb.AppendLine("## Pending Extraction");
@@ -744,6 +858,17 @@ spec-pack-processor (C#)
         var pending = summaries.Where(x => x.PendingCount > 0 || x.ExtractionStatus != "ok").ToList();
         if (pending.Count == 0) sb.AppendLine("- None");
         else foreach (var p in pending) sb.AppendLine($"- `{p.DocumentId}` status=`{p.ExtractionStatus}` pending=`{p.PendingCount}` mode=`{p.ExtractionMode}`");
+        sb.AppendLine();
+        sb.AppendLine("## Excluded Conformance Reasons");
+        sb.AppendLine();
+        if (excludedByReason.Count > 0)
+        {
+            foreach (var kv in excludedByReason.OrderByDescending(x => x.Value)) sb.AppendLine($"- `{kv.Key}`: `{kv.Value}`");
+        }
+        else
+        {
+            sb.AppendLine("- None");
+        }
         return sb.ToString();
     }
 
@@ -807,6 +932,22 @@ spec-pack-processor (C#)
         using var w = new StreamWriter(path, false, new UTF8Encoding(false));
         w.WriteLine(string.Join(',', headers.Select(CsvEscape)));
         foreach (var row in rows) w.WriteLine(string.Join(',', row.Select(CsvEscape)));
+    }
+
+    static void WriteSelectedSourcesCsv(string path, IEnumerable<IndexRow> rows)
+    {
+        WriteCsv(
+            path,
+            ["source_id", "source_url", "local_path", "kind", "status", "sha256"],
+            rows.Select(r => new[]
+            {
+                r.SourceId ?? string.Empty,
+                r.SourceUrl ?? string.Empty,
+                r.LocalPath ?? string.Empty,
+                r.Kind ?? string.Empty,
+                r.Status ?? string.Empty,
+                r.Sha256 ?? string.Empty
+            }));
     }
 
     static string CsvEscape(string value)
@@ -930,6 +1071,19 @@ spec-pack-processor (C#)
         public required SourceRef Source { get; init; }
     }
 
+    sealed class ExcludedConformanceItem
+    {
+        public required string ItemId { get; init; }
+        public required string DocumentId { get; init; }
+        public required string SourceSentenceId { get; init; }
+        public required string NormativeLevel { get; init; }
+        public required string Statement { get; init; }
+        public required List<string> TopicTags { get; init; }
+        public required string ExclusionReason { get; init; }
+        public required string Status { get; init; }
+        public required SourceRef Source { get; init; }
+    }
+
     sealed class DocSummary
     {
         public required string DocumentId { get; init; }
@@ -942,6 +1096,7 @@ spec-pack-processor (C#)
         public required int SegmentCount { get; init; }
         public required int SentenceCount { get; init; }
         public required int ConformanceCount { get; init; }
+        public required int ExcludedConformanceCount { get; init; }
         public required int ImageCount { get; init; }
         public required int TableCount { get; init; }
         public required int PendingCount { get; init; }
