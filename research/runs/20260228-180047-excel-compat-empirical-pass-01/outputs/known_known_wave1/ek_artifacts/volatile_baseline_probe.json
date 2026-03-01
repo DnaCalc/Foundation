@@ -1,0 +1,10 @@
+{
+    "notes":  "Volatile baseline from pilot and volatility wave2.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-023",
+    "evidence_refs":  [
+                          "outputs/pilot_wave1/pilot_wave1_result_summary.csv",
+                          "outputs/volatility_wave2/ECS-EB-012_volatility_context_probe.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

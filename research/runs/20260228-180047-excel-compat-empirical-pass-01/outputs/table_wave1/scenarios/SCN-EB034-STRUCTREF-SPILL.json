@@ -1,0 +1,160 @@
+{
+    "scenario_id":  "SCN-EB034-STRUCTREF-SPILL",
+    "task_id":  "ECS-EB-034",
+    "topic":  "table_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/table_wave1/SCN-EB034-STRUCTREF-SPILL.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  "Item"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  "Val"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "C1",
+                                                              "value":  "Calc"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  "a"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  "b"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B3",
+                                                              "value":  2
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "create_table",
+                           "target":  "Sheet1!A1:C3",
+                           "args":  {
+                                        "name":  "TblMain",
+                                        "has_headers":  true
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C2",
+                           "args":  {
+                                        "formula":  "=[@Val]*2"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D2",
+                           "args":  {
+                                        "formula":  "=SUM(TblMain[Val])"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!E2",
+                           "args":  {
+                                        "formula":  "=SEQUENCE(ROWS(TblMain[Val]),1,1,1)"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A4",
+                           "args":  {
+                                        "value":  "c"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B4",
+                           "args":  {
+                                        "value":  3
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB034-STRUCTREF-SPILL-Sheet1_D2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D2",
+                             "expected":  {
+                                              "question":  "Capture table/spill interaction outcomes and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB034-STRUCTREF-SPILL-Sheet1_E4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!E4",
+                             "expected":  {
+                                              "question":  "Capture table/spill interaction outcomes and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB034-STRUCTREF-SPILL-Sheet1_C4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C4",
+                             "expected":  {
+                                              "question":  "Capture table/spill interaction outcomes and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/13_table_semantics_guide.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/15_version_platform_guide.md"
+                ],
+    "notes":  "Table wave1 empirical scenario."
+}

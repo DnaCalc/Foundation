@@ -1,0 +1,118 @@
+{
+    "scenario_id":  "SCN-EB021-EXTERNAL-REPLAY",
+    "task_id":  "ECS-EB-021",
+    "topic":  "tier45_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/tier45_wave1/SCN-EB021-EXTERNAL-REPLAY.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A1",
+                           "args":  {
+                                        "formula":  "=WEBSERVICE(\"https://example.com\")",
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A2",
+                           "args":  {
+                                        "formula":  "=ENCODEURL(\"a b\")"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A3",
+                           "args":  {
+                                        "formula":  "=FILTERXML(\"\u003croot\u003e\u003cv\u003e1\u003c/v\u003e\u003c/root\u003e\",\"//v\")",
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "save",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "close",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "open",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB021-EXTERNAL-REPLAY-Sheet1_A2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A2",
+                             "expected":  {
+                                              "question":  "Capture tier4/tier5 function behavior and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB021-EXTERNAL-REPLAY-Sheet1_A1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A1",
+                             "expected":  {
+                                              "question":  "Capture tier4/tier5 function behavior and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB021-EXTERNAL-REPLAY-Sheet1_A3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A3",
+                             "expected":  {
+                                              "question":  "Capture tier4/tier5 function behavior and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/08_tier4_family_semantics_response.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/15_version_platform_guide.md"
+                ],
+    "notes":  "Tier4/5 wave1 empirical scenario."
+}

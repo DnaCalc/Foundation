@@ -1,0 +1,31 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!B1",
+                             "value":  "1234.5",
+                             "formula":  "=VALUETOTEXT(A1)",
+                             "display_text":  "1234.5",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B2",
+                             "value":  "1234.5",
+                             "formula":  "=VALUETOTEXT(A1,1)",
+                             "display_text":  "1234.5",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B3",
+                             "value":  "text",
+                             "formula":  "=VALUETOTEXT(A2)",
+                             "display_text":  "text",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-027",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK027-VALUETOTEXT",
+    "scenario_id":  "SCN-EK027-VALUETOTEXT",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "VALUETOTEXT baseline direct probe."
+}

@@ -1,0 +1,7 @@
+"case_id","scenario_id","target","expected_kind","expected_value","notes"
+"RPDW1-001","SCN-EB044-REOPEN-COERCION","Sheet1!A1","stable_replay","1","SUM literal coercion should be stable across reopen."
+"RPDW1-002","SCN-EB044-REOPEN-COERCION","Sheet1!A1","value","3","SUM literal coercion baseline value."
+"RPDW1-003","SCN-EB044-REOPEN-COERCION","Sheet1!A2","stable_replay","1","VALUE text conversion should be stable across reopen."
+"RPDW1-004","SCN-EB044-REOPEN-COERCION","Sheet1!A2","value","123.45","VALUE literal baseline value."
+"RPDW1-005","SCN-EB044-REOPEN-DYNARRAY","Sheet1!B3","stable_replay","1","SEQUENCE spill tail should be stable across reopen."
+"RPDW1-006","SCN-EB044-REOPEN-DYNARRAY","Sheet1!B3","value","3","SEQUENCE spill tail baseline value."

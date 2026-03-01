@@ -1,0 +1,137 @@
+{
+    "scenario_id":  "SCN-EK014-LOOKUP-BASELINE",
+    "task_id":  "ECS-EK-014",
+    "topic":  "known_known_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK014-LOOKUP-BASELINE.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  "k1"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  "k2"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  "k3"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  10
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  20
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B3",
+                                                              "value":  30
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D1",
+                           "args":  {
+                                        "formula":  "=INDEX(B1:B3,MATCH(\"k2\",A1:A3,0))"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D2",
+                           "args":  {
+                                        "formula":  "=XLOOKUP(\"k3\",A1:A3,B1:B3)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D3",
+                           "args":  {
+                                        "formula":  "=XMATCH(\"k1\",A1:A3,0)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D4",
+                           "args":  {
+                                        "formula":  "=VLOOKUP(\"k2\",A1:B3,2,FALSE)"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D3",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D4",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode",
+                                           "display_number_format"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+                ],
+    "notes":  "Lookup/reference baseline sample."
+}

@@ -1,0 +1,38 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!B1",
+                             "value":  3.5,
+                             "formula":  "=N(A1)",
+                             "display_text":  "3.5",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B2",
+                             "value":  0,
+                             "formula":  "=N(A2)",
+                             "display_text":  "0",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B3",
+                             "value":  1,
+                             "formula":  "=N(A3)",
+                             "display_text":  "1",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B4",
+                             "value":  -2146826281,
+                             "formula":  "=N(1/0)",
+                             "display_text":  "#DIV/0!",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-025",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK025-N-CONVERSION",
+    "scenario_id":  "SCN-EK025-N-CONVERSION",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "N conversion baseline direct probe."
+}

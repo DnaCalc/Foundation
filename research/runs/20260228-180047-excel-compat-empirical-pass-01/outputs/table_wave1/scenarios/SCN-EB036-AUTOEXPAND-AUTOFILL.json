@@ -1,0 +1,118 @@
+{
+    "scenario_id":  "SCN-EB036-AUTOEXPAND-AUTOFILL",
+    "task_id":  "ECS-EB-036",
+    "topic":  "table_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/table_wave1/SCN-EB036-AUTOEXPAND-AUTOFILL.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  "Key"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  "Val"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "C1",
+                                                              "value":  "Calc"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  10
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "create_table",
+                           "target":  "Sheet1!A1:C2",
+                           "args":  {
+                                        "name":  "TblPlatform",
+                                        "has_headers":  true
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C2",
+                           "args":  {
+                                        "formula":  "=[@Val]*10"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A3",
+                           "args":  {
+                                        "value":  2
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B3",
+                           "args":  {
+                                        "value":  20
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB036-AUTOEXPAND-AUTOFILL-Sheet1_C3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C3",
+                             "expected":  {
+                                              "question":  "Capture table/spill interaction outcomes and compare to case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/13_table_semantics_guide.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/15_version_platform_guide.md"
+                ],
+    "notes":  "Table wave1 empirical scenario."
+}

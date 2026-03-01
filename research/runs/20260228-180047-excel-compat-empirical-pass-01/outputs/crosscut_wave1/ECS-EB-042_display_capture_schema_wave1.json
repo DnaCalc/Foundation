@@ -1,0 +1,27 @@
+{
+    "schema_id":  "urn:dna-calc:excel-compat:display-capture-schema:wave1",
+    "version":  "wave1",
+    "description":  "Display-focused capture overlay for formatting-sensitive probes.",
+    "required_fields":  [
+                            "target",
+                            "value",
+                            "display_text",
+                            "number_format",
+                            "interior_color",
+                            "font_color",
+                            "font_bold",
+                            "display_interior_color",
+                            "display_font_color",
+                            "display_font_bold",
+                            "display_number_format"
+                        ],
+    "status_values":  [
+                          "observed",
+                          "capture_error",
+                          "workbook_closed"
+                      ],
+    "notes":  [
+                  "display_* fields represent rendered visual state and may differ from base cell format fields.",
+                  "Use together with stepwise capture for precedence and transition analysis."
+              ]
+}

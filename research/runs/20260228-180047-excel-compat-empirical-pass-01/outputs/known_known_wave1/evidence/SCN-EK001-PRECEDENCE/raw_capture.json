@@ -1,0 +1,515 @@
+﻿{
+  "run_id": "run-20260228-230308-55f2ac89c",
+  "scenario": {
+    "scenario_id": "SCN-EK001-PRECEDENCE",
+    "task_id": "ECS-EK-001",
+    "topic": "known_known_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK001-PRECEDENCE.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "C1",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=A1\u002BB1*C1"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D2",
+        "args": {
+          "formula": "=(A1\u002BB1)*C1"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D3",
+        "args": {
+          "formula": "=-A1^B1"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EK001-PRECEDENCE-Sheet1_D1",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK001-PRECEDENCE-Sheet1_D2",
+        "kind": "manual_review",
+        "target": "Sheet1!D2",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK001-PRECEDENCE-Sheet1_D3",
+        "kind": "manual_review",
+        "target": "Sheet1!D3",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "display_number_format"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/10_formula_language_guide.md"
+    ],
+    "notes": "Operator precedence baseline."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:03:12.2244119Z",
+      "finished_utc": "2026-02-28T23:03:12.4884688Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T23:03:12.4884993Z",
+      "finished_utc": "2026-02-28T23:03:12.5880758Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D2",
+      "started_utc": "2026-02-28T23:03:12.5881036Z",
+      "finished_utc": "2026-02-28T23:03:12.6522983Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D3",
+      "started_utc": "2026-02-28T23:03:12.6523434Z",
+      "finished_utc": "2026-02-28T23:03:12.7196613Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:03:12.7196937Z",
+      "finished_utc": "2026-02-28T23:03:12.8830886Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:03:12.2242817Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T23:03:12.4884519Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:03:12.5880685Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 14,
+          "formula": "=A1\u002BB1*C1",
+          "display_text": "14",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:03:12.6522910Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 14,
+          "formula": "=A1\u002BB1*C1",
+          "display_text": "14",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 20,
+          "formula": "=(A1\u002BB1)*C1",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:03:12.7196504Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 14,
+          "formula": "=A1\u002BB1*C1",
+          "display_text": "14",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 20,
+          "formula": "=(A1\u002BB1)*C1",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": -8,
+          "formula": "=-A1^B1",
+          "display_text": "-8",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:03:12.8830685Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 14,
+          "formula": "=A1\u002BB1*C1",
+          "display_text": "14",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 20,
+          "formula": "=(A1\u002BB1)*C1",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": -8,
+          "formula": "=-A1^B1",
+          "display_text": "-8",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 14,
+      "formula": "=A1\u002BB1*C1",
+      "display_text": "14",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!D2",
+      "value": 20,
+      "formula": "=(A1\u002BB1)*C1",
+      "display_text": "20",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!D3",
+      "value": -8,
+      "formula": "=-A1^B1",
+      "display_text": "-8",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    }
+  ],
+  "error": null
+}

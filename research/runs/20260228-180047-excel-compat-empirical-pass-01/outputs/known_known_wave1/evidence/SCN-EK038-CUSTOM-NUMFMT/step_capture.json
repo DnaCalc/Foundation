@@ -1,0 +1,147 @@
+﻿{
+  "run_id": "run-20260228-235002-d5b379daf",
+  "task_id": "ECS-EK-038",
+  "scenario_id": "SCN-EK038-CUSTOM-NUMFMT",
+  "targets": [
+    "Sheet1!A1",
+    "Sheet1!A2",
+    "Sheet1!A3",
+    "Sheet1!A4"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:50:04.4766153Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 12,
+          "formula": "12",
+          "display_text": "12.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": -12,
+          "formula": "-12",
+          "display_text": "-12.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 255,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A4",
+          "value": "abc",
+          "formula": "abc",
+          "display_text": "txt:abc",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:50:04.5369656Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 12,
+          "formula": "12",
+          "display_text": "12.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": -12,
+          "formula": "-12",
+          "display_text": "-12.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 255,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0.00",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        },
+        {
+          "target": "Sheet1!A4",
+          "value": "abc",
+          "formula": "abc",
+          "display_text": "txt:abc",
+          "number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00;[Red]-0.00;0.00;\u0022txt:\u0022@"
+        }
+      ]
+    }
+  ]
+}

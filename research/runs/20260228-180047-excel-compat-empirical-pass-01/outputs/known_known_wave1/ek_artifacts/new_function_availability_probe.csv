@@ -1,0 +1,4 @@
+"function_name","windows","mac","web","ios","android","windows_probe_status","notes"
+"GROUPBY",,,,,,,"Seeded from platform_probe_selected_functions.csv | ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"PIVOTBY",,,,,,,"Seeded from platform_probe_selected_functions.csv | ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"TRIMRANGE",,,,,,,"ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"

@@ -1,7 +1,7 @@
 # Excel Compatibility Empirical Pass 01
 
 - Run ID: `20260228-180047-excel-compat-empirical-pass-01`
-- Status: active; pilot wave (14/14), volatility wave2 (6/6), RTD wave1 (5/5), date-system wave1 (5/5), reason-code wave1 (8/8), formula-parse wave1 (20/20), coercion wave1 (4/4 scenarios, 38 cases), conditional-format wave1 (3/3 scenarios, 7 cases), and platform availability source merge completed with evidence bundles/artifacts
+- Status: complete; backlog-linked (`ECS-EB-001..048`), known-known (`ECS-EK-001..048`), and unresolved closure wave artifacts are present
 - Parent research run: `20260228-130325-excel-compat-spec-index-pass-01`
 - Parent baseline commit: `0934496`
 - Snapshot timestamp (local): `2026-02-28T18:01:54+02:00`
@@ -16,7 +16,7 @@ It is designed to be executable without implicit agent memory by using explicit 
 - Decompose follow-up backlog items into executable empirical tasks.
 - Prepare stable runner/evidence scaffolding for future automated Excel probe passes.
 - Maintain explicit linkage to Track A documentation/search passes from the parent run.
-  - Including continuation closures from parent passes `24` through `32` (tier-5/4 evidence bindings, parse corpus registry, full interesting-function platform seed, and interleaving closures for BL-11, BL-07, BL-06, and BL-08 wave-1 passes).
+  - Including continuation closures from parent passes `24` through `37` (interleaving closure, run completion synthesis, and full-list empirical closure).
 
 ## Directory layout
 - `START_HERE.md`: deferred execution entrypoint and readiness checklist.
@@ -32,7 +32,15 @@ It is designed to be executable without implicit agent memory by using explicit 
 - `outputs/formula_parse_wave1/`: formula parse acceptance/normalization/ambiguity artifacts for `ECS-EB-028/029/030`.
 - `outputs/coercion_wave1/`: coercion operator/function/precedence artifacts for `ECS-EB-024/025/026/027`.
 - `outputs/cf_wave1/`: conditional-format overlap/priority/table-spill artifacts for `ECS-EB-031/032/033`.
+- `outputs/table_wave1/`: table/listobject deep interaction artifacts for `ECS-EB-034/035/036`.
+- `outputs/tier45_wave1/`: tier-5 caveat + tier-4/3 deep-semantics artifacts for `ECS-EB-017/018/019/020/021/022`.
+- `outputs/reopen_wave1/`: reopen-determinism probe artifacts for `ECS-EB-044`.
+- `outputs/function_edge_wave1/`: function-edge planning/index artifacts for `ECS-EB-005/006/007/008/009`.
+- `outputs/crosscut_wave1/`: cross-cutting schema/method artifacts for `ECS-EB-042/043/044/045/047/048`.
 - `outputs/platform_availability/`: `ECS-EB-037` source-crawl/merge artifacts plus `ECS-EB-038/046` schemas/templates.
+- `outputs/refresh_cycle_01/`: refresh-loop artifacts (ECS-EB-039 parity regression + targeted drift probes).
+- `outputs/known_known_wave1/`: closure artifacts for `ECS-EK-001..048` (direct probes + linked evidence matrix).
+- `outputs/unresolved_wave2/`: deduplicated unresolved queue replay and closure matrix.
 - `logs/`: execution manifests and run logs for future empirical runs.
 
 ## Working rule

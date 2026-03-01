@@ -1,0 +1,24 @@
+{
+    "profile_id":  "locale-exec-profile-wave1",
+    "captured_utc":  "2026-02-28T22:18:20Z",
+    "locale_name":  "en-ZA",
+    "ui_culture":  "en-US",
+    "decimal_separator":  ".",
+    "group_separator":  " ",
+    "list_separator":  ",",
+    "date_short_pattern":  "yyyy/MM/dd",
+    "timezone":  "South Africa Standard Time",
+    "lane_policy":  {
+                        "default_lane":  "current_locale",
+                        "additional_lanes":  [
+                                                 "en-US",
+                                                 "de-DE",
+                                                 "fr-FR"
+                                             ],
+                        "execution_mode":  "separate_process_per_locale"
+                    },
+    "notes":  [
+                  "Use this profile to parameterize locale-sensitive coercion and parser probes.",
+                  "Current wave captures one observed locale; additional lanes are queued for follow-up."
+              ]
+}

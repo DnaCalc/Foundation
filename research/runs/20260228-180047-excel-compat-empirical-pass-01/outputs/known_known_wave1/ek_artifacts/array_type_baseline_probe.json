@@ -1,0 +1,10 @@
+{
+    "notes":  "Array/type coercion behavior from coercion wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-030",
+    "evidence_refs":  [
+                          "outputs/coercion_wave1/ECS-EB-024_operator_coercion_truth_table_wave1.csv",
+                          "outputs/coercion_wave1/ECS-EB-025_function_family_coercion_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

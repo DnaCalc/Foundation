@@ -1,0 +1,24 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!A1",
+                             "value":  1,
+                             "formula":  "=SEQUENCE(3,1,1,1)",
+                             "display_text":  "1",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!A2",
+                             "value":  99,
+                             "formula":  "99",
+                             "display_text":  "99",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-009",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK009-SPILL-BLOCK",
+    "scenario_id":  "SCN-EK009-SPILL-BLOCK",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Spill-block direct probe."
+}

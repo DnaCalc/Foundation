@@ -1,0 +1,748 @@
+﻿{
+  "run_id": "run-20260228-234934-2c89f3fcb",
+  "scenario": {
+    "scenario_id": "SCN-EK018-DYNAMIC-SHAPE",
+    "task_id": "ECS-EK-018",
+    "topic": "known_known_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK018-DYNAMIC-SHAPE.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 4
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=HSTACK(A1:A2,B1:B2)"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!G1",
+        "args": {
+          "formula": "=VSTACK(A1:B1,A2:B2)"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!J1",
+        "args": {
+          "formula": "=TOROW(A1:B2)"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!L1",
+        "args": {
+          "formula": "=WRAPROWS(TOROW(A1:B2),2)"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_D1",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_E2",
+        "kind": "manual_review",
+        "target": "Sheet1!E2",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_G3",
+        "kind": "manual_review",
+        "target": "Sheet1!G3",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_J1",
+        "kind": "manual_review",
+        "target": "Sheet1!J1",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_L2",
+        "kind": "manual_review",
+        "target": "Sheet1!L2",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "display_number_format"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ],
+    "notes": "Dynamic shape baseline sample."
+  },
+  "operation_trace": [
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T23:49:36.3886547Z",
+      "finished_utc": "2026-02-28T23:49:36.4683149Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G1",
+      "started_utc": "2026-02-28T23:49:36.4683215Z",
+      "finished_utc": "2026-02-28T23:49:36.5263329Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J1",
+      "started_utc": "2026-02-28T23:49:36.5263398Z",
+      "finished_utc": "2026-02-28T23:49:36.5797123Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L1",
+      "started_utc": "2026-02-28T23:49:36.5797185Z",
+      "finished_utc": "2026-02-28T23:49:36.6303844Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:49:36.6303906Z",
+      "finished_utc": "2026-02-28T23:49:36.6817838Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:49:36.3886345Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:36.4683112Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=HSTACK(A1:A2,B1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:36.5263276Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=HSTACK(A1:A2,B1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:36.5797100Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=HSTACK(A1:A2,B1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": 1,
+          "formula": "=TOROW(A1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:36.6303809Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=HSTACK(A1:A2,B1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": 1,
+          "formula": "=TOROW(A1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:49:36.6817809Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=HSTACK(A1:A2,B1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!E2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!G3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!J1",
+          "value": 1,
+          "formula": "=TOROW(A1:B2)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!L2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 1,
+      "formula": "=HSTACK(A1:A2,B1:B2)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!E2",
+      "value": null,
+      "formula": "",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!G3",
+      "value": null,
+      "formula": "",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!J1",
+      "value": 1,
+      "formula": "=TOROW(A1:B2)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!L2",
+      "value": null,
+      "formula": "",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    }
+  ],
+  "error": null
+}

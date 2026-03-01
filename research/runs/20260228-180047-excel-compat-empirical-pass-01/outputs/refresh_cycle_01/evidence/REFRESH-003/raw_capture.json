@@ -1,0 +1,242 @@
+﻿{
+  "run_id": "run-20260228-222028-d31851a68",
+  "scenario": {
+    "scenario_id": "SCN-EB040-NOW-RECALC",
+    "task_id": "ECS-EB-040",
+    "topic": "reason_code_verification_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reason_code_wave1.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=NOW()"
+            },
+            {
+              "kind": "format",
+              "address": "A1",
+              "value": "yyyy-mm-dd hh:mm:ss"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      },
+      {
+        "op": "sleep",
+        "target": "workbook",
+        "args": {
+          "milliseconds": 1200
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-EB040-NOW-RECALC",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Does NOW change across recalc after elapsed wall-clock time?"
+        },
+        "confidence": "high"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "build_info"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/20_reason_code_dictionary_and_coverage.md"
+    ],
+    "notes": "Tier-3 weak-evidence volatile reason-code verification for NOW."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T22:20:34.2005217Z",
+      "finished_utc": "2026-02-28T22:20:34.4373435Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T22:20:34.4373711Z",
+      "finished_utc": "2026-02-28T22:20:34.4620440Z",
+      "status": "ok"
+    },
+    {
+      "op": "sleep",
+      "target": "workbook",
+      "started_utc": "2026-02-28T22:20:34.4620688Z",
+      "finished_utc": "2026-02-28T22:20:35.6830999Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T22:20:35.6831374Z",
+      "finished_utc": "2026-02-28T22:20:35.6953474Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T22:20:34.2004422Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01428275463,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T22:20:34.4373277Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01428668982,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:20:34.4620356Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.014287384256,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T22:20:35.6830953Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.014287384256,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:20:35.6953424Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01430173611,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:36",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 46082.01430173611,
+      "formula": "=NOW()",
+      "display_text": "2026-03-01 00:20:36",
+      "number_format": "yyyy-mm-dd hh:mm:ss",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "yyyy-mm-dd hh:mm:ss"
+    }
+  ],
+  "error": null
+}

@@ -1,0 +1,152 @@
+﻿{
+  "run_id": "run-20260228-235856-e37198adb",
+  "task_id": "ECS-EB-026",
+  "scenario_id": "SCN-EB026-NESTED-PRECEDENCE",
+  "timestamp_utc": "2026-02-28T23:58:59.0856962Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!B1",
+      "kind": "value",
+      "status": "observed",
+      "value": 7,
+      "metadata": {
+        "formula": "=1\u002B2*3",
+        "display_text": "7",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B2",
+      "kind": "value",
+      "status": "observed",
+      "value": 9,
+      "metadata": {
+        "formula": "=(1\u002B2)*3",
+        "display_text": "9",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B3",
+      "kind": "value",
+      "status": "observed",
+      "value": 3,
+      "metadata": {
+        "formula": "=--\u00221\u0022\u002B2",
+        "display_text": "3",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B4",
+      "kind": "value",
+      "status": "observed",
+      "value": "15",
+      "metadata": {
+        "formula": "=1\u00262\u002B3",
+        "display_text": "15",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B5",
+      "kind": "value",
+      "status": "observed",
+      "value": "33",
+      "metadata": {
+        "formula": "=1\u002B2\u00263",
+        "display_text": "33",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B6",
+      "kind": "value",
+      "status": "observed",
+      "value": 16,
+      "metadata": {
+        "formula": "=2^3*2",
+        "display_text": "16",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B7",
+      "kind": "value",
+      "status": "observed",
+      "value": 4,
+      "metadata": {
+        "formula": "=-2^2",
+        "display_text": "4",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B8",
+      "kind": "value",
+      "status": "observed",
+      "value": 4,
+      "metadata": {
+        "formula": "=(-2)^2",
+        "display_text": "4",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B9",
+      "kind": "value",
+      "status": "observed",
+      "value": 8,
+      "metadata": {
+        "formula": "=SUM(A1,,B1)",
+        "display_text": "8",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\coercion_wave1\\scenarios\\SCN-EB026-NESTED-PRECEDENCE.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\unresolved_wave2\\evidence\\SCN-EB026-NESTED-PRECEDENCE\u0022 --visible false --timeout-sec 900",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/07_coercion_matrix_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/coercion_matrix_expanded.csv"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "notes":  "Date system behavior from date_system_wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-029",
+    "evidence_refs":  [
+                          "outputs/date_system_wave1/now_today_date_system_probe.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

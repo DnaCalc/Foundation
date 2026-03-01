@@ -1,0 +1,9 @@
+{
+    "notes":  "External function replay baseline from tier45 wave.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-021",
+    "evidence_refs":  [
+                          "outputs/tier45_wave1/ECS-EB-021_external_data_replay_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

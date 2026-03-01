@@ -1,0 +1,9 @@
+{
+    "notes":  "Table creation/structured refs from table wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-031",
+    "evidence_refs":  [
+                          "outputs/table_wave1/ECS-EB-034_table_spill_interaction_matrix_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

@@ -1,0 +1,138 @@
+{
+    "scenario_id":  "SCN-EK024-TYPE-CODES",
+    "task_id":  "ECS-EK-024",
+    "topic":  "known_known_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK024-TYPE-CODES.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  "txt"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  true
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B1",
+                           "args":  {
+                                        "formula":  "=TYPE(A1)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B2",
+                           "args":  {
+                                        "formula":  "=TYPE(A2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B3",
+                           "args":  {
+                                        "formula":  "=TYPE(A3)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B4",
+                           "args":  {
+                                        "formula":  "=TYPE(1/0)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B5",
+                           "args":  {
+                                        "formula":  "=TYPE(SEQUENCE(2,1,1,1))"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK024-TYPE-CODES-Sheet1_B1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK024-TYPE-CODES-Sheet1_B2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK024-TYPE-CODES-Sheet1_B3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B3",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK024-TYPE-CODES-Sheet1_B4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B4",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK024-TYPE-CODES-Sheet1_B5",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B5",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode",
+                                           "display_number_format"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/12_value_types_guide.md"
+                ],
+    "notes":  "TYPE code baseline sample."
+}

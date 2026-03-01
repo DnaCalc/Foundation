@@ -1,0 +1,6 @@
+"function_name","windows","mac","web","windows_probe_status","notes"
+"CUBESET",,,,,"Seeded from platform_probe_selected_functions.csv | ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"CUBEVALUE",,,,,"Seeded from platform_probe_selected_functions.csv | ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"RTD",,,,,"Seeded from platform_probe_selected_functions.csv | ECS-EB-015 RTD lifecycle probe completed. | ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"STOCKHISTORY",,,,,"ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"
+"WEBSERVICE",,,,,"ECS-EB-037 merge updated source applies-to at 2026-02-28T22:19:32Z"

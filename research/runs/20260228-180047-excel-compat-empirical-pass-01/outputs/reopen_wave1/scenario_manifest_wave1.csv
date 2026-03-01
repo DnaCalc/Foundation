@@ -1,0 +1,3 @@
+"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"SCN-EB044-REOPEN-COERCION","ECS-EB-044","P1","reopen_determinism","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reopen_wave1/SCN-EB044-REOPEN-COERCION.xlsx","scenarios/SCN-EB044-REOPEN-COERCION.json","completed","reopen_wave1"
+"SCN-EB044-REOPEN-DYNARRAY","ECS-EB-044","P1","reopen_determinism","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reopen_wave1/SCN-EB044-REOPEN-DYNARRAY.xlsx","scenarios/SCN-EB044-REOPEN-DYNARRAY.json","completed","reopen_wave1"

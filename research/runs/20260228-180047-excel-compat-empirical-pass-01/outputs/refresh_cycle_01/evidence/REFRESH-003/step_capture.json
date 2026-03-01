@@ -1,0 +1,120 @@
+﻿{
+  "run_id": "run-20260228-222028-d31851a68",
+  "task_id": "ECS-EB-040",
+  "scenario_id": "SCN-EB040-NOW-RECALC",
+  "targets": [
+    "Sheet1!A1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T22:20:34.2004422Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01428275463,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T22:20:34.4373277Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01428668982,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:20:34.4620356Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.014287384256,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_sleep",
+      "operation": "sleep",
+      "timestamp_utc": "2026-02-28T22:20:35.6830953Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.014287384256,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:34",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:20:35.6953424Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 46082.01430173611,
+          "formula": "=NOW()",
+          "display_text": "2026-03-01 00:20:36",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        }
+      ]
+    }
+  ]
+}

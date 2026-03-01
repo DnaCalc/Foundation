@@ -1,0 +1,106 @@
+{
+    "scenario_id":  "SCN-EB044-REOPEN-COERCION",
+    "task_id":  "ECS-EB-044",
+    "topic":  "reopen_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/reopen_wave1/SCN-EB044-REOPEN-COERCION.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A1",
+                           "args":  {
+                                        "formula":  "=SUM(\"1\",2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A2",
+                           "args":  {
+                                        "formula":  "=VALUE(\"123.45\")"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!A3",
+                           "args":  {
+                                        "formula":  "=TODAY()"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "save",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "close",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "open",
+                           "target":  "workbook"
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB044-REOPEN-COERCION-Sheet1_A1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A1",
+                             "expected":  {
+                                              "question":  "Capture reopen determinism signal and compare against case registry."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EB044-REOPEN-COERCION-Sheet1_A2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!A2",
+                             "expected":  {
+                                              "question":  "Capture reopen determinism signal and compare against case registry."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/17_follow_up_execution_backlog.md",
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md"
+                ],
+    "notes":  "Reopen determinism wave1 scenario."
+}

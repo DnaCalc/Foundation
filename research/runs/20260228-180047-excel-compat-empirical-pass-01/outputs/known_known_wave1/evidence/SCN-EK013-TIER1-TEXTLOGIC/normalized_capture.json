@@ -1,0 +1,90 @@
+﻿{
+  "run_id": "run-20260228-234917-2280d09e5",
+  "task_id": "ECS-EK-013",
+  "scenario_id": "SCN-EK013-TIER1-TEXTLOGIC",
+  "timestamp_utc": "2026-02-28T23:49:19.3845656Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!C1",
+      "kind": "value",
+      "status": "observed",
+      "value": "Al",
+      "metadata": {
+        "formula": "=LEFT(A1,2)",
+        "display_text": "Al",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C2",
+      "kind": "value",
+      "status": "observed",
+      "value": "ta",
+      "metadata": {
+        "formula": "=RIGHT(A2,2)",
+        "display_text": "ta",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C3",
+      "kind": "value",
+      "status": "observed",
+      "value": "yes",
+      "metadata": {
+        "formula": "=IF(B1\u003EB2,\u0022yes\u0022,\u0022no\u0022)",
+        "display_text": "yes",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C4",
+      "kind": "value",
+      "status": "observed",
+      "value": true,
+      "metadata": {
+        "formula": "=AND(B1=1,B2=0)",
+        "display_text": "TRUE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\scenarios\\SCN-EK013-TIER1-TEXTLOGIC.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\evidence\\SCN-EK013-TIER1-TEXTLOGIC\u0022 --visible false --timeout-sec 3600",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ]
+  }
+}

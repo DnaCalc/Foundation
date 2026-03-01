@@ -4,6 +4,12 @@
 This catalog defines empirical tasks for topic areas already documented as covered in the parent run.
 It explicitly excludes depth-expansion and unresolved work already tracked in `17_follow_up_execution_backlog.md`.
 
+## Execution update
+Known-known closure wave 1 is complete:
+1. Completion matrix: `known_known_wave1/ECS-EK_execution_matrix_wave1.csv`
+2. Per-task artifacts: `known_known_wave1/ek_artifacts/*`
+3. Summary report: `known_known_wave1/WAVE1_EXECUTION_REPORT.md`
+
 ## Systematic source sweep (parent outputs -> known-known extraction)
 | Parent output artifact | Known-known content extracted for empirical confirmation |
 |---|---|

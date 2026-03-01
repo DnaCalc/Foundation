@@ -1,0 +1,85 @@
+﻿{
+  "run_id": "run-20260228-235007-3e3d7ea45",
+  "task_id": "ECS-EK-039",
+  "scenario_id": "SCN-EK039-DATETIME-FMT",
+  "targets": [
+    "Sheet1!A1",
+    "Sheet1!A2"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:50:08.6710284Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45123.75,
+          "formula": "45123.75",
+          "display_text": "2023-07-16 18:00:00",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "Sunday, July 16, 2023",
+          "number_format": "dddd, mmmm dd, yyyy",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "dddd, mmmm dd, yyyy"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:50:08.7221277Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45123.75,
+          "formula": "45123.75",
+          "display_text": "2023-07-16 18:00:00",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "Sunday, July 16, 2023",
+          "number_format": "dddd, mmmm dd, yyyy",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "dddd, mmmm dd, yyyy"
+        }
+      ]
+    }
+  ]
+}

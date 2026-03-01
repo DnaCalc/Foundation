@@ -1,0 +1,24 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!A1",
+                             "value":  45123.75,
+                             "formula":  "45123.75",
+                             "display_text":  "2023-07-16 18:00:00",
+                             "number_format":  "yyyy-mm-dd hh:mm:ss"
+                         },
+                         {
+                             "target":  "Sheet1!A2",
+                             "value":  45123,
+                             "formula":  "45123",
+                             "display_text":  "Sunday, July 16, 2023",
+                             "number_format":  "dddd, mmmm dd, yyyy"
+                         }
+                     ],
+    "task_id":  "ECS-EK-039",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK039-DATETIME-FMT",
+    "scenario_id":  "SCN-EK039-DATETIME-FMT",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Datetime format token direct probe."
+}

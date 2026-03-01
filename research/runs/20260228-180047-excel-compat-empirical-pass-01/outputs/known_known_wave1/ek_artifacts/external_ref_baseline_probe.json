@@ -1,0 +1,10 @@
+{
+    "notes":  "Cross-workbook and reopen baseline captured in existing waves.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-006",
+    "evidence_refs":  [
+                          "outputs/date_system_wave1/now_today_date_system_probe.csv",
+                          "outputs/reopen_wave1/ECS-EB-044_reopen_determinism_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

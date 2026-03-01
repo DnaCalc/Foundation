@@ -1,0 +1,38 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!C1",
+                             "value":  "Al",
+                             "formula":  "=LEFT(A1,2)",
+                             "display_text":  "Al",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!C2",
+                             "value":  "ta",
+                             "formula":  "=RIGHT(A2,2)",
+                             "display_text":  "ta",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!C3",
+                             "value":  "yes",
+                             "formula":  "=IF(B1\u003eB2,\"yes\",\"no\")",
+                             "display_text":  "yes",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!C4",
+                             "value":  true,
+                             "formula":  "=AND(B1=1,B2=0)",
+                             "display_text":  "TRUE",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-013",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK013-TIER1-TEXTLOGIC",
+    "scenario_id":  "SCN-EK013-TIER1-TEXTLOGIC",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Tier1 text/logical direct probe."
+}

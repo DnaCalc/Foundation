@@ -1,0 +1,644 @@
+﻿{
+  "run_id": "run-20260228-234921-7f21f902c",
+  "scenario": {
+    "scenario_id": "SCN-EK014-LOOKUP-BASELINE",
+    "task_id": "ECS-EK-014",
+    "topic": "known_known_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK014-LOOKUP-BASELINE.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": "k1"
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": "k2"
+            },
+            {
+              "kind": "value",
+              "address": "A3",
+              "value": "k3"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 10
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 20
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 30
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D2",
+        "args": {
+          "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D3",
+        "args": {
+          "formula": "=XMATCH(\u0022k1\u0022,A1:A3,0)"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D4",
+        "args": {
+          "formula": "=VLOOKUP(\u0022k2\u0022,A1:B3,2,FALSE)"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D1",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D2",
+        "kind": "manual_review",
+        "target": "Sheet1!D2",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D3",
+        "kind": "manual_review",
+        "target": "Sheet1!D3",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK014-LOOKUP-BASELINE-Sheet1_D4",
+        "kind": "manual_review",
+        "target": "Sheet1!D4",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "display_number_format"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ],
+    "notes": "Lookup/reference baseline sample."
+  },
+  "operation_trace": [
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T23:49:23.2095614Z",
+      "finished_utc": "2026-02-28T23:49:23.2776977Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D2",
+      "started_utc": "2026-02-28T23:49:23.2777050Z",
+      "finished_utc": "2026-02-28T23:49:23.3227508Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D3",
+      "started_utc": "2026-02-28T23:49:23.3227596Z",
+      "finished_utc": "2026-02-28T23:49:23.3729268Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D4",
+      "started_utc": "2026-02-28T23:49:23.3729339Z",
+      "finished_utc": "2026-02-28T23:49:23.4166772Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:49:23.4166855Z",
+      "finished_utc": "2026-02-28T23:49:23.4562682Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:49:23.2095315Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:23.2776939Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 20,
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:23.3227472Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 20,
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 30,
+          "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)",
+          "display_text": "30",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:23.3729232Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 20,
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 30,
+          "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)",
+          "display_text": "30",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": 1,
+          "formula": "=XMATCH(\u0022k1\u0022,A1:A3,0)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T23:49:23.4166735Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 20,
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 30,
+          "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)",
+          "display_text": "30",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": 1,
+          "formula": "=XMATCH(\u0022k1\u0022,A1:A3,0)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": 20,
+          "formula": "=VLOOKUP(\u0022k2\u0022,A1:B3,2,FALSE)",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:49:23.4562652Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 20,
+          "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D2",
+          "value": 30,
+          "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)",
+          "display_text": "30",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D3",
+          "value": 1,
+          "formula": "=XMATCH(\u0022k1\u0022,A1:A3,0)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!D4",
+          "value": 20,
+          "formula": "=VLOOKUP(\u0022k2\u0022,A1:B3,2,FALSE)",
+          "display_text": "20",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 20,
+      "formula": "=INDEX(B1:B3,MATCH(\u0022k2\u0022,A1:A3,0))",
+      "display_text": "20",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!D2",
+      "value": 30,
+      "formula": "=XLOOKUP(\u0022k3\u0022,A1:A3,B1:B3)",
+      "display_text": "30",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!D3",
+      "value": 1,
+      "formula": "=XMATCH(\u0022k1\u0022,A1:A3,0)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    },
+    {
+      "target": "Sheet1!D4",
+      "value": 20,
+      "formula": "=VLOOKUP(\u0022k2\u0022,A1:B3,2,FALSE)",
+      "display_text": "20",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    }
+  ],
+  "error": null
+}

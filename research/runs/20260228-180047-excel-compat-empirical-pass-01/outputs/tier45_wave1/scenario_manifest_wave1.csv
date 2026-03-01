@@ -1,0 +1,5 @@
+"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"SCN-EB018-DYNARRAY-MIXED","ECS-EB-018","P1","tier45","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/tier45_wave1/SCN-EB018-DYNARRAY-MIXED.xlsx","scenarios/SCN-EB018-DYNARRAY-MIXED.json","completed","tier45_wave1"
+"SCN-EB019-LAMBDA-HELPER-EDGE","ECS-EB-019","P1","tier45","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/tier45_wave1/SCN-EB019-LAMBDA-HELPER-EDGE.xlsx","scenarios/SCN-EB019-LAMBDA-HELPER-EDGE.json","completed","tier45_wave1"
+"SCN-EB020-CUBE-CONTRACT","ECS-EB-020","P1","tier45","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/tier45_wave1/SCN-EB020-CUBE-CONTRACT.xlsx","scenarios/SCN-EB020-CUBE-CONTRACT.json","completed","tier45_wave1"
+"SCN-EB021-EXTERNAL-REPLAY","ECS-EB-021","P1","tier45","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/tier45_wave1/SCN-EB021-EXTERNAL-REPLAY.xlsx","scenarios/SCN-EB021-EXTERNAL-REPLAY.json","completed","tier45_wave1"

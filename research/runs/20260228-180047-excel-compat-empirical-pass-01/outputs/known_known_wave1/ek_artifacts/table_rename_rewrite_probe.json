@@ -1,0 +1,9 @@
+{
+    "notes":  "Table resize/structure mutation evidence used as rename rewrite baseline linkage.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-034",
+    "evidence_refs":  [
+                          "outputs/table_wave1/ECS-EB-035_table_resize_coercion_format_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

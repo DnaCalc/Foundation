@@ -1,0 +1,9 @@
+{
+    "notes":  "Compatibility-sensitive behavior linkage from coercion compatibility probe.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-044",
+    "evidence_refs":  [
+                          "outputs/coercion_wave1/ECS-EB-026_compatibility_coercion_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

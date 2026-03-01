@@ -1,0 +1,3 @@
+"case_id","scenario_id","task_id","aspect","target","windows_result_status","windows_value","windows_formula","mac_status","web_status","platform_divergence_flag","evidence_bundle_ref"
+"TBW1-020","SCN-EB036-AUTOEXPAND-AUTOFILL","ECS-EB-036","Windows baseline for auto-expand + calculated column fill.","Sheet1!C3","matches_expected","200","=[@Val]*10","not_tested_in_this_wave","not_tested_in_this_wave","none_observed_windows_only","evidence\SCN-EB036-AUTOEXPAND-AUTOFILL"
+"TBW1-021","SCN-EB036-AUTOEXPAND-AUTOFILL","ECS-EB-036","Windows baseline formula shape for platform divergence table.","Sheet1!C3","matches_expected","200","=[@Val]*10","not_tested_in_this_wave","not_tested_in_this_wave","none_observed_windows_only","evidence\SCN-EB036-AUTOEXPAND-AUTOFILL"

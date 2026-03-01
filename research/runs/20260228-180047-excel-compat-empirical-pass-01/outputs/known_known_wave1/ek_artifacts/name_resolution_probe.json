@@ -1,0 +1,17 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!B1",
+                             "value":  12,
+                             "formula":  "=SUM(MyNums)",
+                             "display_text":  "12",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-005",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK005-NAME-RESOLUTION",
+    "scenario_id":  "SCN-EK005-NAME-RESOLUTION",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Workbook name resolution direct probe."
+}

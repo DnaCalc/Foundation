@@ -1,0 +1,9 @@
+{
+    "notes":  "`@` operator acceptance captured in parse wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-007",
+    "evidence_refs":  [
+                          "outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

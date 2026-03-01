@@ -1,0 +1,4 @@
+"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"SCN-EB034-STRUCTREF-SPILL","ECS-EB-034","P1","table","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/table_wave1/SCN-EB034-STRUCTREF-SPILL.xlsx","scenarios/SCN-EB034-STRUCTREF-SPILL.json","completed","table_wave1"
+"SCN-EB035-GROW-SHRINK-COERCION-FORMAT","ECS-EB-035","P1","table","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/table_wave1/SCN-EB035-GROW-SHRINK-COERCION-FORMAT.xlsx","scenarios/SCN-EB035-GROW-SHRINK-COERCION-FORMAT.json","completed","table_wave1"
+"SCN-EB036-AUTOEXPAND-AUTOFILL","ECS-EB-036","P1","table","research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/table_wave1/SCN-EB036-AUTOEXPAND-AUTOFILL.xlsx","scenarios/SCN-EB036-AUTOEXPAND-AUTOFILL.json","completed","table_wave1"

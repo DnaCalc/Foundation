@@ -1,0 +1,10 @@
+{
+    "notes":  "`#` references and spill interactions covered.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-008",
+    "evidence_refs":  [
+                          "outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv",
+                          "outputs/table_wave1/ECS-EB-034_table_spill_interaction_matrix_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

@@ -1,0 +1,3853 @@
+﻿{
+  "run_id": "run-20260228-230327-85f5e1045",
+  "task_id": "ECS-EK-011",
+  "scenario_id": "SCN-EK011-FUNCTION-RECOGNITION",
+  "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-02-28T23:03:27.2927505Z",
+  "end_utc": "2026-02-28T23:49:10.8864491Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 3600,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 6852,
+  "excel_process_snapshot": {
+    "pid": 6852,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-02-28T23:03:27.9137715Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "date_system": "1900",
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\fixtures\\known_known_wave1\\SCN-EK011-FUNCTION-RECOGNITION.xlsx",
+  "fixture_preexisting": false,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:03:39.9087250Z",
+      "finished_utc": "2026-02-28T23:03:50.6278170Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B1",
+      "started_utc": "2026-02-28T23:03:50.6278425Z",
+      "finished_utc": "2026-02-28T23:04:01.1650763Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B2",
+      "started_utc": "2026-02-28T23:04:01.1650900Z",
+      "finished_utc": "2026-02-28T23:04:10.3227526Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B3",
+      "started_utc": "2026-02-28T23:04:10.3229817Z",
+      "finished_utc": "2026-02-28T23:04:17.9870888Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B4",
+      "started_utc": "2026-02-28T23:04:17.9871124Z",
+      "finished_utc": "2026-02-28T23:04:27.2166018Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B5",
+      "started_utc": "2026-02-28T23:04:27.2166177Z",
+      "finished_utc": "2026-02-28T23:04:35.4327964Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B6",
+      "started_utc": "2026-02-28T23:04:35.4328176Z",
+      "finished_utc": "2026-02-28T23:04:42.4049674Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B7",
+      "started_utc": "2026-02-28T23:04:42.4049776Z",
+      "finished_utc": "2026-02-28T23:04:49.4288660Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B8",
+      "started_utc": "2026-02-28T23:04:49.4288791Z",
+      "finished_utc": "2026-02-28T23:04:56.2677084Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B9",
+      "started_utc": "2026-02-28T23:04:56.2677333Z",
+      "finished_utc": "2026-02-28T23:05:02.6971535Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B10",
+      "started_utc": "2026-02-28T23:05:02.6971735Z",
+      "finished_utc": "2026-02-28T23:05:10.7059920Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B11",
+      "started_utc": "2026-02-28T23:05:10.7060157Z",
+      "finished_utc": "2026-02-28T23:05:17.6847143Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B12",
+      "started_utc": "2026-02-28T23:05:17.6847343Z",
+      "finished_utc": "2026-02-28T23:05:24.0620090Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B13",
+      "started_utc": "2026-02-28T23:05:24.0620181Z",
+      "finished_utc": "2026-02-28T23:05:31.1624191Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B14",
+      "started_utc": "2026-02-28T23:05:31.1625345Z",
+      "finished_utc": "2026-02-28T23:05:37.7105849Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B15",
+      "started_utc": "2026-02-28T23:05:37.7106037Z",
+      "finished_utc": "2026-02-28T23:05:44.0603153Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B16",
+      "started_utc": "2026-02-28T23:05:44.0603235Z",
+      "finished_utc": "2026-02-28T23:05:50.7037165Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B17",
+      "started_utc": "2026-02-28T23:05:50.7037366Z",
+      "finished_utc": "2026-02-28T23:05:57.1654482Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B18",
+      "started_utc": "2026-02-28T23:05:57.1654616Z",
+      "finished_utc": "2026-02-28T23:06:02.9999929Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B19",
+      "started_utc": "2026-02-28T23:06:03.0000002Z",
+      "finished_utc": "2026-02-28T23:06:09.3364734Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B20",
+      "started_utc": "2026-02-28T23:06:09.3364835Z",
+      "finished_utc": "2026-02-28T23:06:15.5530949Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B21",
+      "started_utc": "2026-02-28T23:06:15.5531123Z",
+      "finished_utc": "2026-02-28T23:06:21.6945785Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B22",
+      "started_utc": "2026-02-28T23:06:21.6945869Z",
+      "finished_utc": "2026-02-28T23:06:28.1922658Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B23",
+      "started_utc": "2026-02-28T23:06:28.1922846Z",
+      "finished_utc": "2026-02-28T23:06:34.0603920Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B24",
+      "started_utc": "2026-02-28T23:06:34.0603996Z",
+      "finished_utc": "2026-02-28T23:06:40.0928304Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B25",
+      "started_utc": "2026-02-28T23:06:40.0928622Z",
+      "finished_utc": "2026-02-28T23:06:45.9412363Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B26",
+      "started_utc": "2026-02-28T23:06:45.9412555Z",
+      "finished_utc": "2026-02-28T23:06:51.8295907Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B27",
+      "started_utc": "2026-02-28T23:06:51.8296195Z",
+      "finished_utc": "2026-02-28T23:06:58.6732847Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B28",
+      "started_utc": "2026-02-28T23:06:58.6732927Z",
+      "finished_utc": "2026-02-28T23:07:05.4668715Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B29",
+      "started_utc": "2026-02-28T23:07:05.4668959Z",
+      "finished_utc": "2026-02-28T23:07:12.0923871Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B30",
+      "started_utc": "2026-02-28T23:07:12.0924078Z",
+      "finished_utc": "2026-02-28T23:07:19.6956578Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B31",
+      "started_utc": "2026-02-28T23:07:19.6956750Z",
+      "finished_utc": "2026-02-28T23:07:26.5666003Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B32",
+      "started_utc": "2026-02-28T23:07:26.5666184Z",
+      "finished_utc": "2026-02-28T23:07:32.2509569Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B33",
+      "started_utc": "2026-02-28T23:07:32.2509769Z",
+      "finished_utc": "2026-02-28T23:07:38.1062509Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B34",
+      "started_utc": "2026-02-28T23:07:38.1062678Z",
+      "finished_utc": "2026-02-28T23:07:44.0598629Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B35",
+      "started_utc": "2026-02-28T23:07:44.0598810Z",
+      "finished_utc": "2026-02-28T23:07:51.1835281Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B36",
+      "started_utc": "2026-02-28T23:07:51.1835516Z",
+      "finished_utc": "2026-02-28T23:07:58.1569187Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B37",
+      "started_utc": "2026-02-28T23:07:58.1569379Z",
+      "finished_utc": "2026-02-28T23:08:05.3174697Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B38",
+      "started_utc": "2026-02-28T23:08:05.3174823Z",
+      "finished_utc": "2026-02-28T23:08:12.0346717Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B39",
+      "started_utc": "2026-02-28T23:08:12.0346790Z",
+      "finished_utc": "2026-02-28T23:08:19.2802236Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B40",
+      "started_utc": "2026-02-28T23:08:19.2802352Z",
+      "finished_utc": "2026-02-28T23:08:24.9559084Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C1",
+      "started_utc": "2026-02-28T23:08:24.9559348Z",
+      "finished_utc": "2026-02-28T23:08:30.4872387Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C2",
+      "started_utc": "2026-02-28T23:08:30.4872555Z",
+      "finished_utc": "2026-02-28T23:08:36.3232475Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C3",
+      "started_utc": "2026-02-28T23:08:36.3232693Z",
+      "finished_utc": "2026-02-28T23:08:43.2195917Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C4",
+      "started_utc": "2026-02-28T23:08:43.2197419Z",
+      "finished_utc": "2026-02-28T23:08:49.9647414Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C5",
+      "started_utc": "2026-02-28T23:08:49.9647623Z",
+      "finished_utc": "2026-02-28T23:08:57.0297094Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C6",
+      "started_utc": "2026-02-28T23:08:57.0297267Z",
+      "finished_utc": "2026-02-28T23:09:03.6989000Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C7",
+      "started_utc": "2026-02-28T23:09:03.6989326Z",
+      "finished_utc": "2026-02-28T23:09:10.9061081Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C8",
+      "started_utc": "2026-02-28T23:09:10.9061260Z",
+      "finished_utc": "2026-02-28T23:09:17.5691448Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C9",
+      "started_utc": "2026-02-28T23:09:17.5691637Z",
+      "finished_utc": "2026-02-28T23:09:23.2491348Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C10",
+      "started_utc": "2026-02-28T23:09:23.2491430Z",
+      "finished_utc": "2026-02-28T23:09:29.0793515Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C11",
+      "started_utc": "2026-02-28T23:09:29.0793674Z",
+      "finished_utc": "2026-02-28T23:09:35.4342011Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C12",
+      "started_utc": "2026-02-28T23:09:35.4342198Z",
+      "finished_utc": "2026-02-28T23:09:41.5905423Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C13",
+      "started_utc": "2026-02-28T23:09:41.5905646Z",
+      "finished_utc": "2026-02-28T23:09:47.8789174Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C14",
+      "started_utc": "2026-02-28T23:09:47.8789248Z",
+      "finished_utc": "2026-02-28T23:09:54.3834103Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C15",
+      "started_utc": "2026-02-28T23:09:54.3834304Z",
+      "finished_utc": "2026-02-28T23:10:00.8375775Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C16",
+      "started_utc": "2026-02-28T23:10:00.8375899Z",
+      "finished_utc": "2026-02-28T23:10:07.8266498Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C17",
+      "started_utc": "2026-02-28T23:10:07.8266588Z",
+      "finished_utc": "2026-02-28T23:10:14.3289535Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C18",
+      "started_utc": "2026-02-28T23:10:14.3291112Z",
+      "finished_utc": "2026-02-28T23:10:20.7300733Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C19",
+      "started_utc": "2026-02-28T23:10:20.7300981Z",
+      "finished_utc": "2026-02-28T23:10:27.3758514Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C20",
+      "started_utc": "2026-02-28T23:10:27.3758770Z",
+      "finished_utc": "2026-02-28T23:10:34.4224577Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C21",
+      "started_utc": "2026-02-28T23:10:34.4224958Z",
+      "finished_utc": "2026-02-28T23:10:40.8650306Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C22",
+      "started_utc": "2026-02-28T23:10:40.8650497Z",
+      "finished_utc": "2026-02-28T23:10:47.7992857Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C23",
+      "started_utc": "2026-02-28T23:10:47.7993061Z",
+      "finished_utc": "2026-02-28T23:10:55.1153585Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C24",
+      "started_utc": "2026-02-28T23:10:55.1153801Z",
+      "finished_utc": "2026-02-28T23:11:01.9787610Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C25",
+      "started_utc": "2026-02-28T23:11:01.9787811Z",
+      "finished_utc": "2026-02-28T23:11:08.8804726Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C26",
+      "started_utc": "2026-02-28T23:11:08.8804948Z",
+      "finished_utc": "2026-02-28T23:11:15.2673195Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C27",
+      "started_utc": "2026-02-28T23:11:15.2673369Z",
+      "finished_utc": "2026-02-28T23:11:21.4257914Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C28",
+      "started_utc": "2026-02-28T23:11:21.4258190Z",
+      "finished_utc": "2026-02-28T23:11:27.2233750Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C29",
+      "started_utc": "2026-02-28T23:11:27.2233830Z",
+      "finished_utc": "2026-02-28T23:11:33.2802350Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C30",
+      "started_utc": "2026-02-28T23:11:33.2802432Z",
+      "finished_utc": "2026-02-28T23:11:39.6794138Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C31",
+      "started_utc": "2026-02-28T23:11:39.6794313Z",
+      "finished_utc": "2026-02-28T23:11:45.2122055Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C32",
+      "started_utc": "2026-02-28T23:11:45.2122146Z",
+      "finished_utc": "2026-02-28T23:11:51.1503451Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C33",
+      "started_utc": "2026-02-28T23:11:51.1503632Z",
+      "finished_utc": "2026-02-28T23:11:57.3879145Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C34",
+      "started_utc": "2026-02-28T23:11:57.3879458Z",
+      "finished_utc": "2026-02-28T23:12:03.7777615Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C35",
+      "started_utc": "2026-02-28T23:12:03.7777887Z",
+      "finished_utc": "2026-02-28T23:12:10.6221486Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C36",
+      "started_utc": "2026-02-28T23:12:10.6221591Z",
+      "finished_utc": "2026-02-28T23:12:17.3898418Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C37",
+      "started_utc": "2026-02-28T23:12:17.3898522Z",
+      "finished_utc": "2026-02-28T23:12:25.5593124Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C38",
+      "started_utc": "2026-02-28T23:12:25.5593396Z",
+      "finished_utc": "2026-02-28T23:12:31.5893943Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C39",
+      "started_utc": "2026-02-28T23:12:31.5894096Z",
+      "finished_utc": "2026-02-28T23:12:35.4631867Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C40",
+      "started_utc": "2026-02-28T23:12:35.4632049Z",
+      "finished_utc": "2026-02-28T23:12:39.4316288Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-02-28T23:12:39.4316543Z",
+      "finished_utc": "2026-02-28T23:12:44.1369753Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D2",
+      "started_utc": "2026-02-28T23:12:44.1369827Z",
+      "finished_utc": "2026-02-28T23:12:48.2951916Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D3",
+      "started_utc": "2026-02-28T23:12:48.2952062Z",
+      "finished_utc": "2026-02-28T23:12:52.1254991Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D4",
+      "started_utc": "2026-02-28T23:12:52.1255058Z",
+      "finished_utc": "2026-02-28T23:12:56.0706436Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D5",
+      "started_utc": "2026-02-28T23:12:56.0706505Z",
+      "finished_utc": "2026-02-28T23:12:59.9985421Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D6",
+      "started_utc": "2026-02-28T23:12:59.9985491Z",
+      "finished_utc": "2026-02-28T23:13:03.9329722Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D7",
+      "started_utc": "2026-02-28T23:13:03.9329795Z",
+      "finished_utc": "2026-02-28T23:13:07.8811498Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D8",
+      "started_utc": "2026-02-28T23:13:07.8811581Z",
+      "finished_utc": "2026-02-28T23:13:11.7778312Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D9",
+      "started_utc": "2026-02-28T23:13:11.7778384Z",
+      "finished_utc": "2026-02-28T23:13:15.9474952Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D10",
+      "started_utc": "2026-02-28T23:13:15.9475106Z",
+      "finished_utc": "2026-02-28T23:13:20.6128098Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D11",
+      "started_utc": "2026-02-28T23:13:20.6128250Z",
+      "finished_utc": "2026-02-28T23:13:25.1271198Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D12",
+      "started_utc": "2026-02-28T23:13:25.1271516Z",
+      "finished_utc": "2026-02-28T23:13:31.0257376Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D13",
+      "started_utc": "2026-02-28T23:13:31.0257546Z",
+      "finished_utc": "2026-02-28T23:13:36.0155833Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D14",
+      "started_utc": "2026-02-28T23:13:36.0155977Z",
+      "finished_utc": "2026-02-28T23:13:40.1445834Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D15",
+      "started_utc": "2026-02-28T23:13:40.1445975Z",
+      "finished_utc": "2026-02-28T23:13:44.1782361Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D16",
+      "started_utc": "2026-02-28T23:13:44.1782615Z",
+      "finished_utc": "2026-02-28T23:13:48.1529415Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D17",
+      "started_utc": "2026-02-28T23:13:48.1529596Z",
+      "finished_utc": "2026-02-28T23:13:52.5897950Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D18",
+      "started_utc": "2026-02-28T23:13:52.5898094Z",
+      "finished_utc": "2026-02-28T23:13:56.4205206Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D19",
+      "started_utc": "2026-02-28T23:13:56.4205340Z",
+      "finished_utc": "2026-02-28T23:14:00.6754808Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D20",
+      "started_utc": "2026-02-28T23:14:00.6755830Z",
+      "finished_utc": "2026-02-28T23:14:04.5963348Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D21",
+      "started_utc": "2026-02-28T23:14:04.5963479Z",
+      "finished_utc": "2026-02-28T23:14:08.5153696Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D22",
+      "started_utc": "2026-02-28T23:14:08.5153836Z",
+      "finished_utc": "2026-02-28T23:14:12.4521856Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D23",
+      "started_utc": "2026-02-28T23:14:12.4521924Z",
+      "finished_utc": "2026-02-28T23:14:16.3074231Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D24",
+      "started_utc": "2026-02-28T23:14:16.3074301Z",
+      "finished_utc": "2026-02-28T23:14:20.4506160Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D25",
+      "started_utc": "2026-02-28T23:14:20.4506325Z",
+      "finished_utc": "2026-02-28T23:14:24.9316228Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D26",
+      "started_utc": "2026-02-28T23:14:24.9316373Z",
+      "finished_utc": "2026-02-28T23:14:28.8271418Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D27",
+      "started_utc": "2026-02-28T23:14:28.8271545Z",
+      "finished_utc": "2026-02-28T23:14:34.0065772Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D28",
+      "started_utc": "2026-02-28T23:14:34.0065924Z",
+      "finished_utc": "2026-02-28T23:14:40.1870889Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D29",
+      "started_utc": "2026-02-28T23:14:40.1871161Z",
+      "finished_utc": "2026-02-28T23:14:44.5885789Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D30",
+      "started_utc": "2026-02-28T23:14:44.5885875Z",
+      "finished_utc": "2026-02-28T23:14:49.8331256Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D31",
+      "started_utc": "2026-02-28T23:14:49.8331313Z",
+      "finished_utc": "2026-02-28T23:14:53.9646253Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D32",
+      "started_utc": "2026-02-28T23:14:53.9646384Z",
+      "finished_utc": "2026-02-28T23:14:58.1592818Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D33",
+      "started_utc": "2026-02-28T23:14:58.1592938Z",
+      "finished_utc": "2026-02-28T23:15:02.4859802Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D34",
+      "started_utc": "2026-02-28T23:15:02.4859932Z",
+      "finished_utc": "2026-02-28T23:15:06.6254256Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D35",
+      "started_utc": "2026-02-28T23:15:06.6254415Z",
+      "finished_utc": "2026-02-28T23:15:10.6997799Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D36",
+      "started_utc": "2026-02-28T23:15:10.6997861Z",
+      "finished_utc": "2026-02-28T23:15:15.2446064Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D37",
+      "started_utc": "2026-02-28T23:15:15.2446202Z",
+      "finished_utc": "2026-02-28T23:15:19.2631692Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D38",
+      "started_utc": "2026-02-28T23:15:19.2631753Z",
+      "finished_utc": "2026-02-28T23:15:23.2959845Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D39",
+      "started_utc": "2026-02-28T23:15:23.2959968Z",
+      "finished_utc": "2026-02-28T23:15:27.4583663Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D40",
+      "started_utc": "2026-02-28T23:15:27.4583809Z",
+      "finished_utc": "2026-02-28T23:15:31.5672171Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E1",
+      "started_utc": "2026-02-28T23:15:31.5672298Z",
+      "finished_utc": "2026-02-28T23:15:35.7090723Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E2",
+      "started_utc": "2026-02-28T23:15:35.7090809Z",
+      "finished_utc": "2026-02-28T23:15:39.8061553Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E3",
+      "started_utc": "2026-02-28T23:15:39.8061677Z",
+      "finished_utc": "2026-02-28T23:15:44.0592034Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E4",
+      "started_utc": "2026-02-28T23:15:44.0592163Z",
+      "finished_utc": "2026-02-28T23:15:47.9992521Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E5",
+      "started_utc": "2026-02-28T23:15:47.9992755Z",
+      "finished_utc": "2026-02-28T23:15:52.4368317Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E6",
+      "started_utc": "2026-02-28T23:15:52.4368388Z",
+      "finished_utc": "2026-02-28T23:15:56.4514356Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E7",
+      "started_utc": "2026-02-28T23:15:56.4514421Z",
+      "finished_utc": "2026-02-28T23:16:00.6208169Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E8",
+      "started_utc": "2026-02-28T23:16:00.6208230Z",
+      "finished_utc": "2026-02-28T23:16:04.8013385Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E9",
+      "started_utc": "2026-02-28T23:16:04.8013544Z",
+      "finished_utc": "2026-02-28T23:16:08.9223460Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E10",
+      "started_utc": "2026-02-28T23:16:08.9223569Z",
+      "finished_utc": "2026-02-28T23:16:13.0904705Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E11",
+      "started_utc": "2026-02-28T23:16:13.0904769Z",
+      "finished_utc": "2026-02-28T23:16:17.4924573Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E12",
+      "started_utc": "2026-02-28T23:16:17.4924632Z",
+      "finished_utc": "2026-02-28T23:16:22.1606847Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E13",
+      "started_utc": "2026-02-28T23:16:22.1606913Z",
+      "finished_utc": "2026-02-28T23:16:27.4131475Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E14",
+      "started_utc": "2026-02-28T23:16:27.4131650Z",
+      "finished_utc": "2026-02-28T23:16:32.0795715Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E15",
+      "started_utc": "2026-02-28T23:16:32.0795868Z",
+      "finished_utc": "2026-02-28T23:16:37.3576304Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E16",
+      "started_utc": "2026-02-28T23:16:37.3576555Z",
+      "finished_utc": "2026-02-28T23:16:41.9796220Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E17",
+      "started_utc": "2026-02-28T23:16:41.9796408Z",
+      "finished_utc": "2026-02-28T23:16:46.2320342Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E18",
+      "started_utc": "2026-02-28T23:16:46.2320402Z",
+      "finished_utc": "2026-02-28T23:16:50.3933018Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E19",
+      "started_utc": "2026-02-28T23:16:50.3933159Z",
+      "finished_utc": "2026-02-28T23:16:54.5281787Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E20",
+      "started_utc": "2026-02-28T23:16:54.5281917Z",
+      "finished_utc": "2026-02-28T23:16:59.1889799Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E21",
+      "started_utc": "2026-02-28T23:16:59.1889969Z",
+      "finished_utc": "2026-02-28T23:17:04.1889740Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E22",
+      "started_utc": "2026-02-28T23:17:04.1889972Z",
+      "finished_utc": "2026-02-28T23:17:11.5078201Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E23",
+      "started_utc": "2026-02-28T23:17:11.5078380Z",
+      "finished_utc": "2026-02-28T23:17:16.3864274Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E24",
+      "started_utc": "2026-02-28T23:17:16.3864450Z",
+      "finished_utc": "2026-02-28T23:17:22.7271164Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E25",
+      "started_utc": "2026-02-28T23:17:22.7271370Z",
+      "finished_utc": "2026-02-28T23:17:28.0136180Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E26",
+      "started_utc": "2026-02-28T23:17:28.0136334Z",
+      "finished_utc": "2026-02-28T23:17:32.6934659Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E27",
+      "started_utc": "2026-02-28T23:17:32.6934787Z",
+      "finished_utc": "2026-02-28T23:17:37.4567902Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E28",
+      "started_utc": "2026-02-28T23:17:37.4568056Z",
+      "finished_utc": "2026-02-28T23:17:42.3965742Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E29",
+      "started_utc": "2026-02-28T23:17:42.3965895Z",
+      "finished_utc": "2026-02-28T23:17:47.6467615Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E30",
+      "started_utc": "2026-02-28T23:17:47.6467741Z",
+      "finished_utc": "2026-02-28T23:17:53.7862462Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E31",
+      "started_utc": "2026-02-28T23:17:53.7862551Z",
+      "finished_utc": "2026-02-28T23:17:59.3794976Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E32",
+      "started_utc": "2026-02-28T23:17:59.3795119Z",
+      "finished_utc": "2026-02-28T23:18:04.7704273Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E33",
+      "started_utc": "2026-02-28T23:18:04.7704342Z",
+      "finished_utc": "2026-02-28T23:18:09.9217135Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E34",
+      "started_utc": "2026-02-28T23:18:09.9217251Z",
+      "finished_utc": "2026-02-28T23:18:15.0322138Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E35",
+      "started_utc": "2026-02-28T23:18:15.0322246Z",
+      "finished_utc": "2026-02-28T23:18:19.5269279Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E36",
+      "started_utc": "2026-02-28T23:18:19.5269399Z",
+      "finished_utc": "2026-02-28T23:18:24.5930663Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E37",
+      "started_utc": "2026-02-28T23:18:24.5930728Z",
+      "finished_utc": "2026-02-28T23:18:29.5704686Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E38",
+      "started_utc": "2026-02-28T23:18:29.5704749Z",
+      "finished_utc": "2026-02-28T23:18:34.9676729Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E39",
+      "started_utc": "2026-02-28T23:18:34.9676823Z",
+      "finished_utc": "2026-02-28T23:18:40.6677298Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E40",
+      "started_utc": "2026-02-28T23:18:40.6677470Z",
+      "finished_utc": "2026-02-28T23:18:45.9430059Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F1",
+      "started_utc": "2026-02-28T23:18:45.9430125Z",
+      "finished_utc": "2026-02-28T23:18:50.9010029Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F2",
+      "started_utc": "2026-02-28T23:18:50.9010179Z",
+      "finished_utc": "2026-02-28T23:18:56.7907228Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F3",
+      "started_utc": "2026-02-28T23:18:56.7907369Z",
+      "finished_utc": "2026-02-28T23:19:01.5790565Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F4",
+      "started_utc": "2026-02-28T23:19:01.5790697Z",
+      "finished_utc": "2026-02-28T23:19:06.7823323Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F5",
+      "started_utc": "2026-02-28T23:19:06.7823637Z",
+      "finished_utc": "2026-02-28T23:19:12.0195944Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F6",
+      "started_utc": "2026-02-28T23:19:12.0196268Z",
+      "finished_utc": "2026-02-28T23:19:16.5845083Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F7",
+      "started_utc": "2026-02-28T23:19:16.5845268Z",
+      "finished_utc": "2026-02-28T23:19:22.3555764Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F8",
+      "started_utc": "2026-02-28T23:19:22.3555925Z",
+      "finished_utc": "2026-02-28T23:19:27.3931302Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F9",
+      "started_utc": "2026-02-28T23:19:27.3931545Z",
+      "finished_utc": "2026-02-28T23:19:32.4099648Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F10",
+      "started_utc": "2026-02-28T23:19:32.4099726Z",
+      "finished_utc": "2026-02-28T23:19:39.7035718Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F11",
+      "started_utc": "2026-02-28T23:19:39.7035802Z",
+      "finished_utc": "2026-02-28T23:19:45.8644645Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F12",
+      "started_utc": "2026-02-28T23:19:45.8645107Z",
+      "finished_utc": "2026-02-28T23:19:51.3369369Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F13",
+      "started_utc": "2026-02-28T23:19:51.3369598Z",
+      "finished_utc": "2026-02-28T23:19:56.7809601Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F14",
+      "started_utc": "2026-02-28T23:19:56.7809844Z",
+      "finished_utc": "2026-02-28T23:20:02.4137270Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F15",
+      "started_utc": "2026-02-28T23:20:02.4137411Z",
+      "finished_utc": "2026-02-28T23:20:09.5489670Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F16",
+      "started_utc": "2026-02-28T23:20:09.5489877Z",
+      "finished_utc": "2026-02-28T23:20:19.1182710Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F17",
+      "started_utc": "2026-02-28T23:20:19.1182864Z",
+      "finished_utc": "2026-02-28T23:20:25.6912823Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F18",
+      "started_utc": "2026-02-28T23:20:25.6912897Z",
+      "finished_utc": "2026-02-28T23:20:33.5104179Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F19",
+      "started_utc": "2026-02-28T23:20:33.5104261Z",
+      "finished_utc": "2026-02-28T23:20:40.2388750Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F20",
+      "started_utc": "2026-02-28T23:20:40.2388825Z",
+      "finished_utc": "2026-02-28T23:20:46.7375721Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F21",
+      "started_utc": "2026-02-28T23:20:46.7375875Z",
+      "finished_utc": "2026-02-28T23:20:53.6086898Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F22",
+      "started_utc": "2026-02-28T23:20:53.6086973Z",
+      "finished_utc": "2026-02-28T23:21:00.1008486Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F23",
+      "started_utc": "2026-02-28T23:21:00.1008597Z",
+      "finished_utc": "2026-02-28T23:21:06.1148925Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F24",
+      "started_utc": "2026-02-28T23:21:06.1149223Z",
+      "finished_utc": "2026-02-28T23:21:13.1588073Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F25",
+      "started_utc": "2026-02-28T23:21:13.1588219Z",
+      "finished_utc": "2026-02-28T23:21:18.6153304Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F26",
+      "started_utc": "2026-02-28T23:21:18.6153606Z",
+      "finished_utc": "2026-02-28T23:21:25.4388732Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F27",
+      "started_utc": "2026-02-28T23:21:25.4388892Z",
+      "finished_utc": "2026-02-28T23:21:31.8555248Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F28",
+      "started_utc": "2026-02-28T23:21:31.8555403Z",
+      "finished_utc": "2026-02-28T23:21:38.4398585Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F29",
+      "started_utc": "2026-02-28T23:21:38.4398705Z",
+      "finished_utc": "2026-02-28T23:21:45.2064214Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F30",
+      "started_utc": "2026-02-28T23:21:45.2064356Z",
+      "finished_utc": "2026-02-28T23:21:51.7901653Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F31",
+      "started_utc": "2026-02-28T23:21:51.7901866Z",
+      "finished_utc": "2026-02-28T23:21:58.1439856Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F32",
+      "started_utc": "2026-02-28T23:21:58.1440000Z",
+      "finished_utc": "2026-02-28T23:22:04.0730534Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F33",
+      "started_utc": "2026-02-28T23:22:04.0730685Z",
+      "finished_utc": "2026-02-28T23:22:12.0083306Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F34",
+      "started_utc": "2026-02-28T23:22:12.0083376Z",
+      "finished_utc": "2026-02-28T23:22:20.0479670Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F35",
+      "started_utc": "2026-02-28T23:22:20.0479752Z",
+      "finished_utc": "2026-02-28T23:22:27.1504909Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F36",
+      "started_utc": "2026-02-28T23:22:27.1505078Z",
+      "finished_utc": "2026-02-28T23:22:35.4528119Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F37",
+      "started_utc": "2026-02-28T23:22:35.4528214Z",
+      "finished_utc": "2026-02-28T23:22:43.2125550Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F38",
+      "started_utc": "2026-02-28T23:22:43.2125620Z",
+      "finished_utc": "2026-02-28T23:22:49.0075744Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F39",
+      "started_utc": "2026-02-28T23:22:49.0075817Z",
+      "finished_utc": "2026-02-28T23:22:54.9277252Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!F40",
+      "started_utc": "2026-02-28T23:22:54.9277478Z",
+      "finished_utc": "2026-02-28T23:23:01.5190124Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G1",
+      "started_utc": "2026-02-28T23:23:01.5190434Z",
+      "finished_utc": "2026-02-28T23:23:09.8740353Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G2",
+      "started_utc": "2026-02-28T23:23:09.8740427Z",
+      "finished_utc": "2026-02-28T23:23:18.2305108Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G3",
+      "started_utc": "2026-02-28T23:23:18.2305184Z",
+      "finished_utc": "2026-02-28T23:23:27.1848147Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G4",
+      "started_utc": "2026-02-28T23:23:27.1848279Z",
+      "finished_utc": "2026-02-28T23:23:34.3318658Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G5",
+      "started_utc": "2026-02-28T23:23:34.3318741Z",
+      "finished_utc": "2026-02-28T23:23:39.9866684Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G6",
+      "started_utc": "2026-02-28T23:23:39.9866760Z",
+      "finished_utc": "2026-02-28T23:23:46.9299771Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G7",
+      "started_utc": "2026-02-28T23:23:46.9299929Z",
+      "finished_utc": "2026-02-28T23:23:52.8879721Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G8",
+      "started_utc": "2026-02-28T23:23:52.8879807Z",
+      "finished_utc": "2026-02-28T23:23:59.3051227Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G9",
+      "started_utc": "2026-02-28T23:23:59.3051307Z",
+      "finished_utc": "2026-02-28T23:24:06.0785341Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G10",
+      "started_utc": "2026-02-28T23:24:06.0785474Z",
+      "finished_utc": "2026-02-28T23:24:14.6690400Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G11",
+      "started_utc": "2026-02-28T23:24:14.6690601Z",
+      "finished_utc": "2026-02-28T23:24:23.0052574Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G12",
+      "started_utc": "2026-02-28T23:24:23.0052761Z",
+      "finished_utc": "2026-02-28T23:24:29.5371755Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G13",
+      "started_utc": "2026-02-28T23:24:29.5371904Z",
+      "finished_utc": "2026-02-28T23:24:35.3259616Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G14",
+      "started_utc": "2026-02-28T23:24:35.3259766Z",
+      "finished_utc": "2026-02-28T23:24:41.0551606Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G15",
+      "started_utc": "2026-02-28T23:24:41.0551898Z",
+      "finished_utc": "2026-02-28T23:24:47.1964036Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G16",
+      "started_utc": "2026-02-28T23:24:47.1964280Z",
+      "finished_utc": "2026-02-28T23:24:53.8726921Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G17",
+      "started_utc": "2026-02-28T23:24:53.8726998Z",
+      "finished_utc": "2026-02-28T23:25:01.0115159Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G18",
+      "started_utc": "2026-02-28T23:25:01.0115290Z",
+      "finished_utc": "2026-02-28T23:25:10.2789656Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G19",
+      "started_utc": "2026-02-28T23:25:10.2789738Z",
+      "finished_utc": "2026-02-28T23:25:16.5974473Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G20",
+      "started_utc": "2026-02-28T23:25:16.5974551Z",
+      "finished_utc": "2026-02-28T23:25:22.9748284Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G21",
+      "started_utc": "2026-02-28T23:25:22.9748391Z",
+      "finished_utc": "2026-02-28T23:25:30.0221903Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G22",
+      "started_utc": "2026-02-28T23:25:30.0222019Z",
+      "finished_utc": "2026-02-28T23:25:37.3716057Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G23",
+      "started_utc": "2026-02-28T23:25:37.3716139Z",
+      "finished_utc": "2026-02-28T23:25:43.6817510Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G24",
+      "started_utc": "2026-02-28T23:25:43.6817582Z",
+      "finished_utc": "2026-02-28T23:25:51.6842233Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G25",
+      "started_utc": "2026-02-28T23:25:51.6842372Z",
+      "finished_utc": "2026-02-28T23:25:58.0233785Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G26",
+      "started_utc": "2026-02-28T23:25:58.0233877Z",
+      "finished_utc": "2026-02-28T23:26:06.8988470Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G27",
+      "started_utc": "2026-02-28T23:26:06.8988800Z",
+      "finished_utc": "2026-02-28T23:26:15.3694070Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G28",
+      "started_utc": "2026-02-28T23:26:15.3694169Z",
+      "finished_utc": "2026-02-28T23:26:23.1060393Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G29",
+      "started_utc": "2026-02-28T23:26:23.1060488Z",
+      "finished_utc": "2026-02-28T23:26:30.5801637Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G30",
+      "started_utc": "2026-02-28T23:26:30.5801704Z",
+      "finished_utc": "2026-02-28T23:26:35.0026033Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G31",
+      "started_utc": "2026-02-28T23:26:35.0026089Z",
+      "finished_utc": "2026-02-28T23:26:38.8949678Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G32",
+      "started_utc": "2026-02-28T23:26:38.8949795Z",
+      "finished_utc": "2026-02-28T23:26:42.8788248Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G33",
+      "started_utc": "2026-02-28T23:26:42.8788367Z",
+      "finished_utc": "2026-02-28T23:26:47.2201935Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G34",
+      "started_utc": "2026-02-28T23:26:47.2202012Z",
+      "finished_utc": "2026-02-28T23:26:50.8505644Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G35",
+      "started_utc": "2026-02-28T23:26:50.8505707Z",
+      "finished_utc": "2026-02-28T23:26:55.0649017Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G36",
+      "started_utc": "2026-02-28T23:26:55.0649100Z",
+      "finished_utc": "2026-02-28T23:27:00.1552871Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G37",
+      "started_utc": "2026-02-28T23:27:00.1552930Z",
+      "finished_utc": "2026-02-28T23:27:03.9646619Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G38",
+      "started_utc": "2026-02-28T23:27:03.9646689Z",
+      "finished_utc": "2026-02-28T23:27:07.7812318Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G39",
+      "started_utc": "2026-02-28T23:27:07.7812382Z",
+      "finished_utc": "2026-02-28T23:27:11.3988780Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!G40",
+      "started_utc": "2026-02-28T23:27:11.3988904Z",
+      "finished_utc": "2026-02-28T23:27:14.9915680Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H1",
+      "started_utc": "2026-02-28T23:27:14.9915743Z",
+      "finished_utc": "2026-02-28T23:27:18.7503033Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H2",
+      "started_utc": "2026-02-28T23:27:18.7503098Z",
+      "finished_utc": "2026-02-28T23:27:22.6119920Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H3",
+      "started_utc": "2026-02-28T23:27:22.6120037Z",
+      "finished_utc": "2026-02-28T23:27:27.1999334Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H4",
+      "started_utc": "2026-02-28T23:27:27.1999407Z",
+      "finished_utc": "2026-02-28T23:27:32.0428088Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H5",
+      "started_utc": "2026-02-28T23:27:32.0428175Z",
+      "finished_utc": "2026-02-28T23:27:36.8640075Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H6",
+      "started_utc": "2026-02-28T23:27:36.8640141Z",
+      "finished_utc": "2026-02-28T23:27:40.6317232Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H7",
+      "started_utc": "2026-02-28T23:27:40.6317363Z",
+      "finished_utc": "2026-02-28T23:27:44.8200887Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H8",
+      "started_utc": "2026-02-28T23:27:44.8201022Z",
+      "finished_utc": "2026-02-28T23:27:48.9149828Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H9",
+      "started_utc": "2026-02-28T23:27:48.9149959Z",
+      "finished_utc": "2026-02-28T23:27:53.1975152Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H10",
+      "started_utc": "2026-02-28T23:27:53.1975224Z",
+      "finished_utc": "2026-02-28T23:27:58.2693777Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H11",
+      "started_utc": "2026-02-28T23:27:58.2693870Z",
+      "finished_utc": "2026-02-28T23:28:03.0254398Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H12",
+      "started_utc": "2026-02-28T23:28:03.0254524Z",
+      "finished_utc": "2026-02-28T23:28:06.9586191Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H13",
+      "started_utc": "2026-02-28T23:28:06.9586407Z",
+      "finished_utc": "2026-02-28T23:28:10.9032814Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H14",
+      "started_utc": "2026-02-28T23:28:10.9032877Z",
+      "finished_utc": "2026-02-28T23:28:15.2445777Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H15",
+      "started_utc": "2026-02-28T23:28:15.2445841Z",
+      "finished_utc": "2026-02-28T23:28:19.3677881Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H16",
+      "started_utc": "2026-02-28T23:28:19.3678096Z",
+      "finished_utc": "2026-02-28T23:28:23.3809009Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H17",
+      "started_utc": "2026-02-28T23:28:23.3809085Z",
+      "finished_utc": "2026-02-28T23:28:27.5062855Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H18",
+      "started_utc": "2026-02-28T23:28:27.5062913Z",
+      "finished_utc": "2026-02-28T23:28:31.2108326Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H19",
+      "started_utc": "2026-02-28T23:28:31.2108388Z",
+      "finished_utc": "2026-02-28T23:28:35.3797422Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H20",
+      "started_utc": "2026-02-28T23:28:35.3797555Z",
+      "finished_utc": "2026-02-28T23:28:40.2492168Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H21",
+      "started_utc": "2026-02-28T23:28:40.2492248Z",
+      "finished_utc": "2026-02-28T23:28:45.2860240Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H22",
+      "started_utc": "2026-02-28T23:28:45.2860366Z",
+      "finished_utc": "2026-02-28T23:28:49.4722261Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H23",
+      "started_utc": "2026-02-28T23:28:49.4722468Z",
+      "finished_utc": "2026-02-28T23:28:53.3403541Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H24",
+      "started_utc": "2026-02-28T23:28:53.3403667Z",
+      "finished_utc": "2026-02-28T23:28:57.8257789Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H25",
+      "started_utc": "2026-02-28T23:28:57.8257852Z",
+      "finished_utc": "2026-02-28T23:29:02.4587163Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H26",
+      "started_utc": "2026-02-28T23:29:02.4587231Z",
+      "finished_utc": "2026-02-28T23:29:06.4329651Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H27",
+      "started_utc": "2026-02-28T23:29:06.4329710Z",
+      "finished_utc": "2026-02-28T23:29:10.8710686Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H28",
+      "started_utc": "2026-02-28T23:29:10.8710770Z",
+      "finished_utc": "2026-02-28T23:29:15.0961665Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H29",
+      "started_utc": "2026-02-28T23:29:15.0961748Z",
+      "finished_utc": "2026-02-28T23:29:19.1581223Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H30",
+      "started_utc": "2026-02-28T23:29:19.1581422Z",
+      "finished_utc": "2026-02-28T23:29:23.4765308Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H31",
+      "started_utc": "2026-02-28T23:29:23.4765426Z",
+      "finished_utc": "2026-02-28T23:29:27.1839137Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H32",
+      "started_utc": "2026-02-28T23:29:27.1839270Z",
+      "finished_utc": "2026-02-28T23:29:31.5218865Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H33",
+      "started_utc": "2026-02-28T23:29:31.5218989Z",
+      "finished_utc": "2026-02-28T23:29:35.7527747Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H34",
+      "started_utc": "2026-02-28T23:29:35.7527936Z",
+      "finished_utc": "2026-02-28T23:29:41.2051351Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H35",
+      "started_utc": "2026-02-28T23:29:41.2051409Z",
+      "finished_utc": "2026-02-28T23:29:47.5958794Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H36",
+      "started_utc": "2026-02-28T23:29:47.5958922Z",
+      "finished_utc": "2026-02-28T23:29:52.7235712Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H37",
+      "started_utc": "2026-02-28T23:29:52.7235855Z",
+      "finished_utc": "2026-02-28T23:29:56.5530877Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H38",
+      "started_utc": "2026-02-28T23:29:56.5531072Z",
+      "finished_utc": "2026-02-28T23:30:00.1618127Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H39",
+      "started_utc": "2026-02-28T23:30:00.1618252Z",
+      "finished_utc": "2026-02-28T23:30:03.7837292Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!H40",
+      "started_utc": "2026-02-28T23:30:03.7837350Z",
+      "finished_utc": "2026-02-28T23:30:08.0192836Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I1",
+      "started_utc": "2026-02-28T23:30:08.0192969Z",
+      "finished_utc": "2026-02-28T23:30:11.9626890Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I2",
+      "started_utc": "2026-02-28T23:30:11.9626953Z",
+      "finished_utc": "2026-02-28T23:30:16.8305933Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I3",
+      "started_utc": "2026-02-28T23:30:16.8306102Z",
+      "finished_utc": "2026-02-28T23:30:21.3049728Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I4",
+      "started_utc": "2026-02-28T23:30:21.3049788Z",
+      "finished_utc": "2026-02-28T23:30:26.9011881Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I5",
+      "started_utc": "2026-02-28T23:30:26.9012119Z",
+      "finished_utc": "2026-02-28T23:30:32.0650974Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I6",
+      "started_utc": "2026-02-28T23:30:32.0651066Z",
+      "finished_utc": "2026-02-28T23:30:39.1605048Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I7",
+      "started_utc": "2026-02-28T23:30:39.1605119Z",
+      "finished_utc": "2026-02-28T23:30:48.7195738Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I8",
+      "started_utc": "2026-02-28T23:30:48.7195867Z",
+      "finished_utc": "2026-02-28T23:30:54.7849093Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I9",
+      "started_utc": "2026-02-28T23:30:54.7849156Z",
+      "finished_utc": "2026-02-28T23:30:59.3866636Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I10",
+      "started_utc": "2026-02-28T23:30:59.3866798Z",
+      "finished_utc": "2026-02-28T23:31:03.7031813Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I11",
+      "started_utc": "2026-02-28T23:31:03.7031954Z",
+      "finished_utc": "2026-02-28T23:31:08.2061280Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I12",
+      "started_utc": "2026-02-28T23:31:08.2061425Z",
+      "finished_utc": "2026-02-28T23:31:13.8989151Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I13",
+      "started_utc": "2026-02-28T23:31:13.8989279Z",
+      "finished_utc": "2026-02-28T23:31:18.6727985Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I14",
+      "started_utc": "2026-02-28T23:31:18.6728052Z",
+      "finished_utc": "2026-02-28T23:31:23.2983691Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I15",
+      "started_utc": "2026-02-28T23:31:23.2983762Z",
+      "finished_utc": "2026-02-28T23:31:27.5932995Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I16",
+      "started_utc": "2026-02-28T23:31:27.5933065Z",
+      "finished_utc": "2026-02-28T23:31:31.6999166Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I17",
+      "started_utc": "2026-02-28T23:31:31.6999231Z",
+      "finished_utc": "2026-02-28T23:31:35.8789456Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I18",
+      "started_utc": "2026-02-28T23:31:35.8789605Z",
+      "finished_utc": "2026-02-28T23:31:40.4205813Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I19",
+      "started_utc": "2026-02-28T23:31:40.4205877Z",
+      "finished_utc": "2026-02-28T23:31:44.9619759Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I20",
+      "started_utc": "2026-02-28T23:31:44.9619824Z",
+      "finished_utc": "2026-02-28T23:31:49.2707110Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I21",
+      "started_utc": "2026-02-28T23:31:49.2707172Z",
+      "finished_utc": "2026-02-28T23:31:54.3493320Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I22",
+      "started_utc": "2026-02-28T23:31:54.3493449Z",
+      "finished_utc": "2026-02-28T23:31:58.6405322Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I23",
+      "started_utc": "2026-02-28T23:31:58.6405443Z",
+      "finished_utc": "2026-02-28T23:32:02.8809552Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I24",
+      "started_utc": "2026-02-28T23:32:02.8809745Z",
+      "finished_utc": "2026-02-28T23:32:07.7762154Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I25",
+      "started_utc": "2026-02-28T23:32:07.7762280Z",
+      "finished_utc": "2026-02-28T23:32:12.3568909Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I26",
+      "started_utc": "2026-02-28T23:32:12.3569064Z",
+      "finished_utc": "2026-02-28T23:32:16.6558574Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I27",
+      "started_utc": "2026-02-28T23:32:16.6558724Z",
+      "finished_utc": "2026-02-28T23:32:21.5122558Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I28",
+      "started_utc": "2026-02-28T23:32:21.5122686Z",
+      "finished_utc": "2026-02-28T23:32:25.8759668Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I29",
+      "started_utc": "2026-02-28T23:32:25.8759808Z",
+      "finished_utc": "2026-02-28T23:32:31.5641367Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I30",
+      "started_utc": "2026-02-28T23:32:31.5641593Z",
+      "finished_utc": "2026-02-28T23:32:36.9826552Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I31",
+      "started_utc": "2026-02-28T23:32:36.9826639Z",
+      "finished_utc": "2026-02-28T23:32:42.2568656Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I32",
+      "started_utc": "2026-02-28T23:32:42.2568852Z",
+      "finished_utc": "2026-02-28T23:32:47.2064104Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I33",
+      "started_utc": "2026-02-28T23:32:47.2064312Z",
+      "finished_utc": "2026-02-28T23:32:52.7685895Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I34",
+      "started_utc": "2026-02-28T23:32:52.7685960Z",
+      "finished_utc": "2026-02-28T23:32:57.9576508Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I35",
+      "started_utc": "2026-02-28T23:32:57.9576575Z",
+      "finished_utc": "2026-02-28T23:33:03.1721261Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I36",
+      "started_utc": "2026-02-28T23:33:03.1721344Z",
+      "finished_utc": "2026-02-28T23:33:08.7619069Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I37",
+      "started_utc": "2026-02-28T23:33:08.7619219Z",
+      "finished_utc": "2026-02-28T23:33:15.8413250Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I38",
+      "started_utc": "2026-02-28T23:33:15.8413437Z",
+      "finished_utc": "2026-02-28T23:33:21.8911350Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I39",
+      "started_utc": "2026-02-28T23:33:21.8911593Z",
+      "finished_utc": "2026-02-28T23:33:27.6663973Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!I40",
+      "started_utc": "2026-02-28T23:33:27.6664081Z",
+      "finished_utc": "2026-02-28T23:33:33.4043714Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J1",
+      "started_utc": "2026-02-28T23:33:33.4043778Z",
+      "finished_utc": "2026-02-28T23:33:38.2400375Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J2",
+      "started_utc": "2026-02-28T23:33:38.2400445Z",
+      "finished_utc": "2026-02-28T23:33:43.4942028Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J3",
+      "started_utc": "2026-02-28T23:33:43.4942092Z",
+      "finished_utc": "2026-02-28T23:33:48.7938013Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J4",
+      "started_utc": "2026-02-28T23:33:48.7938161Z",
+      "finished_utc": "2026-02-28T23:33:54.5250827Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J5",
+      "started_utc": "2026-02-28T23:33:54.5250982Z",
+      "finished_utc": "2026-02-28T23:34:01.0135171Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J6",
+      "started_utc": "2026-02-28T23:34:01.0135391Z",
+      "finished_utc": "2026-02-28T23:34:06.9330040Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J7",
+      "started_utc": "2026-02-28T23:34:06.9330220Z",
+      "finished_utc": "2026-02-28T23:34:12.6967031Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J8",
+      "started_utc": "2026-02-28T23:34:12.6967199Z",
+      "finished_utc": "2026-02-28T23:34:18.1720376Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J9",
+      "started_utc": "2026-02-28T23:34:18.1720548Z",
+      "finished_utc": "2026-02-28T23:34:23.3609629Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J10",
+      "started_utc": "2026-02-28T23:34:23.3609757Z",
+      "finished_utc": "2026-02-28T23:34:27.9566134Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J11",
+      "started_utc": "2026-02-28T23:34:27.9566260Z",
+      "finished_utc": "2026-02-28T23:34:32.0915867Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J12",
+      "started_utc": "2026-02-28T23:34:32.0916017Z",
+      "finished_utc": "2026-02-28T23:34:36.9007682Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J13",
+      "started_utc": "2026-02-28T23:34:36.9007820Z",
+      "finished_utc": "2026-02-28T23:34:42.6182413Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J14",
+      "started_utc": "2026-02-28T23:34:42.6182570Z",
+      "finished_utc": "2026-02-28T23:34:48.0761537Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J15",
+      "started_utc": "2026-02-28T23:34:48.0761781Z",
+      "finished_utc": "2026-02-28T23:34:52.4397506Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J16",
+      "started_utc": "2026-02-28T23:34:52.4397634Z",
+      "finished_utc": "2026-02-28T23:34:57.6301489Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J17",
+      "started_utc": "2026-02-28T23:34:57.6301634Z",
+      "finished_utc": "2026-02-28T23:35:03.0970612Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J18",
+      "started_utc": "2026-02-28T23:35:03.0970765Z",
+      "finished_utc": "2026-02-28T23:35:08.3659677Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J19",
+      "started_utc": "2026-02-28T23:35:08.3659806Z",
+      "finished_utc": "2026-02-28T23:35:14.5246910Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J20",
+      "started_utc": "2026-02-28T23:35:14.5247105Z",
+      "finished_utc": "2026-02-28T23:35:20.3428568Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J21",
+      "started_utc": "2026-02-28T23:35:20.3428718Z",
+      "finished_utc": "2026-02-28T23:35:27.7351727Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J22",
+      "started_utc": "2026-02-28T23:35:27.7351797Z",
+      "finished_utc": "2026-02-28T23:35:32.4245830Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J23",
+      "started_utc": "2026-02-28T23:35:32.4245963Z",
+      "finished_utc": "2026-02-28T23:35:36.7385975Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J24",
+      "started_utc": "2026-02-28T23:35:36.7386118Z",
+      "finished_utc": "2026-02-28T23:35:41.2672001Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J25",
+      "started_utc": "2026-02-28T23:35:41.2672143Z",
+      "finished_utc": "2026-02-28T23:35:45.7833954Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J26",
+      "started_utc": "2026-02-28T23:35:45.7834087Z",
+      "finished_utc": "2026-02-28T23:35:51.0856432Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J27",
+      "started_utc": "2026-02-28T23:35:51.0856574Z",
+      "finished_utc": "2026-02-28T23:35:56.6724641Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J28",
+      "started_utc": "2026-02-28T23:35:56.6724792Z",
+      "finished_utc": "2026-02-28T23:36:03.0253321Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J29",
+      "started_utc": "2026-02-28T23:36:03.0253465Z",
+      "finished_utc": "2026-02-28T23:36:09.4927853Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J30",
+      "started_utc": "2026-02-28T23:36:09.4927999Z",
+      "finished_utc": "2026-02-28T23:36:15.0194523Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J31",
+      "started_utc": "2026-02-28T23:36:15.0194697Z",
+      "finished_utc": "2026-02-28T23:36:20.1573219Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J32",
+      "started_utc": "2026-02-28T23:36:20.1573359Z",
+      "finished_utc": "2026-02-28T23:36:25.4202455Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J33",
+      "started_utc": "2026-02-28T23:36:25.4202591Z",
+      "finished_utc": "2026-02-28T23:36:31.4742682Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J34",
+      "started_utc": "2026-02-28T23:36:31.4742822Z",
+      "finished_utc": "2026-02-28T23:36:37.4399618Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J35",
+      "started_utc": "2026-02-28T23:36:37.4399677Z",
+      "finished_utc": "2026-02-28T23:36:43.2481333Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J36",
+      "started_utc": "2026-02-28T23:36:43.2481402Z",
+      "finished_utc": "2026-02-28T23:36:48.4378709Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J37",
+      "started_utc": "2026-02-28T23:36:48.4378831Z",
+      "finished_utc": "2026-02-28T23:36:53.3980141Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J38",
+      "started_utc": "2026-02-28T23:36:53.3980347Z",
+      "finished_utc": "2026-02-28T23:36:58.6915145Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J39",
+      "started_utc": "2026-02-28T23:36:58.6915318Z",
+      "finished_utc": "2026-02-28T23:37:03.7017612Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!J40",
+      "started_utc": "2026-02-28T23:37:03.7017742Z",
+      "finished_utc": "2026-02-28T23:37:08.7937670Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K1",
+      "started_utc": "2026-02-28T23:37:08.7937797Z",
+      "finished_utc": "2026-02-28T23:37:13.6638221Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K2",
+      "started_utc": "2026-02-28T23:37:13.6638290Z",
+      "finished_utc": "2026-02-28T23:37:18.4914727Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K3",
+      "started_utc": "2026-02-28T23:37:18.4914859Z",
+      "finished_utc": "2026-02-28T23:37:23.0971530Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K4",
+      "started_utc": "2026-02-28T23:37:23.0971588Z",
+      "finished_utc": "2026-02-28T23:37:27.7547638Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K5",
+      "started_utc": "2026-02-28T23:37:27.7547697Z",
+      "finished_utc": "2026-02-28T23:37:32.8973925Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K6",
+      "started_utc": "2026-02-28T23:37:32.8974052Z",
+      "finished_utc": "2026-02-28T23:37:38.3936326Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K7",
+      "started_utc": "2026-02-28T23:37:38.3936471Z",
+      "finished_utc": "2026-02-28T23:37:43.0287536Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K8",
+      "started_utc": "2026-02-28T23:37:43.0287663Z",
+      "finished_utc": "2026-02-28T23:37:47.5870119Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K9",
+      "started_utc": "2026-02-28T23:37:47.5870331Z",
+      "finished_utc": "2026-02-28T23:37:52.0113118Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K10",
+      "started_utc": "2026-02-28T23:37:52.0113246Z",
+      "finished_utc": "2026-02-28T23:37:56.4951156Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K11",
+      "started_utc": "2026-02-28T23:37:56.4951334Z",
+      "finished_utc": "2026-02-28T23:38:01.4685916Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K12",
+      "started_utc": "2026-02-28T23:38:01.4686061Z",
+      "finished_utc": "2026-02-28T23:38:06.5698859Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K13",
+      "started_utc": "2026-02-28T23:38:06.5698997Z",
+      "finished_utc": "2026-02-28T23:38:11.8046171Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K14",
+      "started_utc": "2026-02-28T23:38:11.8046350Z",
+      "finished_utc": "2026-02-28T23:38:17.2200207Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K15",
+      "started_utc": "2026-02-28T23:38:17.2200407Z",
+      "finished_utc": "2026-02-28T23:38:22.3541837Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K16",
+      "started_utc": "2026-02-28T23:38:22.3542071Z",
+      "finished_utc": "2026-02-28T23:38:27.8788909Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K17",
+      "started_utc": "2026-02-28T23:38:27.8789090Z",
+      "finished_utc": "2026-02-28T23:38:33.4511346Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K18",
+      "started_utc": "2026-02-28T23:38:33.4511578Z",
+      "finished_utc": "2026-02-28T23:38:38.2808861Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K19",
+      "started_utc": "2026-02-28T23:38:38.2809061Z",
+      "finished_utc": "2026-02-28T23:38:42.7496538Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K20",
+      "started_utc": "2026-02-28T23:38:42.7496599Z",
+      "finished_utc": "2026-02-28T23:38:47.2766496Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K21",
+      "started_utc": "2026-02-28T23:38:47.2766646Z",
+      "finished_utc": "2026-02-28T23:38:52.4324544Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K22",
+      "started_utc": "2026-02-28T23:38:52.4324747Z",
+      "finished_utc": "2026-02-28T23:38:58.8419328Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K23",
+      "started_utc": "2026-02-28T23:38:58.8420182Z",
+      "finished_utc": "2026-02-28T23:39:02.9063509Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K24",
+      "started_utc": "2026-02-28T23:39:02.9063644Z",
+      "finished_utc": "2026-02-28T23:39:07.3889653Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K25",
+      "started_utc": "2026-02-28T23:39:07.3889738Z",
+      "finished_utc": "2026-02-28T23:39:11.6340683Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K26",
+      "started_utc": "2026-02-28T23:39:11.6340828Z",
+      "finished_utc": "2026-02-28T23:39:16.2129386Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K27",
+      "started_utc": "2026-02-28T23:39:16.2129548Z",
+      "finished_utc": "2026-02-28T23:39:20.7796900Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K28",
+      "started_utc": "2026-02-28T23:39:20.7797126Z",
+      "finished_utc": "2026-02-28T23:39:25.2282665Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K29",
+      "started_utc": "2026-02-28T23:39:25.2282826Z",
+      "finished_utc": "2026-02-28T23:39:30.8950868Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K30",
+      "started_utc": "2026-02-28T23:39:30.8951037Z",
+      "finished_utc": "2026-02-28T23:39:35.8442046Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K31",
+      "started_utc": "2026-02-28T23:39:35.8442116Z",
+      "finished_utc": "2026-02-28T23:39:40.8726052Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K32",
+      "started_utc": "2026-02-28T23:39:40.8726846Z",
+      "finished_utc": "2026-02-28T23:39:45.6558444Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K33",
+      "started_utc": "2026-02-28T23:39:45.6558528Z",
+      "finished_utc": "2026-02-28T23:39:50.9010316Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K34",
+      "started_utc": "2026-02-28T23:39:50.9010388Z",
+      "finished_utc": "2026-02-28T23:39:56.0076973Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K35",
+      "started_utc": "2026-02-28T23:39:56.0077202Z",
+      "finished_utc": "2026-02-28T23:40:00.9606116Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K36",
+      "started_utc": "2026-02-28T23:40:00.9606251Z",
+      "finished_utc": "2026-02-28T23:40:07.5373316Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K37",
+      "started_utc": "2026-02-28T23:40:07.5373377Z",
+      "finished_utc": "2026-02-28T23:40:13.2119564Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K38",
+      "started_utc": "2026-02-28T23:40:13.2119645Z",
+      "finished_utc": "2026-02-28T23:40:18.1607989Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K39",
+      "started_utc": "2026-02-28T23:40:18.1608051Z",
+      "finished_utc": "2026-02-28T23:40:23.1026984Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!K40",
+      "started_utc": "2026-02-28T23:40:23.1027046Z",
+      "finished_utc": "2026-02-28T23:40:27.7824037Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L1",
+      "started_utc": "2026-02-28T23:40:27.7824130Z",
+      "finished_utc": "2026-02-28T23:40:32.2570784Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L2",
+      "started_utc": "2026-02-28T23:40:32.2570855Z",
+      "finished_utc": "2026-02-28T23:40:37.5274002Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L3",
+      "started_utc": "2026-02-28T23:40:37.5274922Z",
+      "finished_utc": "2026-02-28T23:40:43.8229086Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L4",
+      "started_utc": "2026-02-28T23:40:43.8229279Z",
+      "finished_utc": "2026-02-28T23:40:48.7043894Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L5",
+      "started_utc": "2026-02-28T23:40:48.7044073Z",
+      "finished_utc": "2026-02-28T23:40:53.6125974Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L6",
+      "started_utc": "2026-02-28T23:40:53.6126104Z",
+      "finished_utc": "2026-02-28T23:40:59.0424933Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L7",
+      "started_utc": "2026-02-28T23:40:59.0425090Z",
+      "finished_utc": "2026-02-28T23:41:05.4978330Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L8",
+      "started_utc": "2026-02-28T23:41:05.4978425Z",
+      "finished_utc": "2026-02-28T23:41:12.4834847Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L9",
+      "started_utc": "2026-02-28T23:41:12.4878162Z",
+      "finished_utc": "2026-02-28T23:41:19.3120974Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L10",
+      "started_utc": "2026-02-28T23:41:19.3121154Z",
+      "finished_utc": "2026-02-28T23:41:26.1683885Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L11",
+      "started_utc": "2026-02-28T23:41:26.1683985Z",
+      "finished_utc": "2026-02-28T23:41:34.1141846Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L12",
+      "started_utc": "2026-02-28T23:41:34.1141969Z",
+      "finished_utc": "2026-02-28T23:41:41.4472635Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L13",
+      "started_utc": "2026-02-28T23:41:41.4472768Z",
+      "finished_utc": "2026-02-28T23:41:48.5490984Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L14",
+      "started_utc": "2026-02-28T23:41:48.5491128Z",
+      "finished_utc": "2026-02-28T23:41:55.0239859Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L15",
+      "started_utc": "2026-02-28T23:41:55.0239972Z",
+      "finished_utc": "2026-02-28T23:41:59.7264368Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L16",
+      "started_utc": "2026-02-28T23:41:59.7264443Z",
+      "finished_utc": "2026-02-28T23:42:04.8061811Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L17",
+      "started_utc": "2026-02-28T23:42:04.8061975Z",
+      "finished_utc": "2026-02-28T23:42:10.6762962Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L18",
+      "started_utc": "2026-02-28T23:42:10.6763130Z",
+      "finished_utc": "2026-02-28T23:42:16.8664850Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L19",
+      "started_utc": "2026-02-28T23:42:16.8665056Z",
+      "finished_utc": "2026-02-28T23:42:22.6958234Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L20",
+      "started_utc": "2026-02-28T23:42:22.6958410Z",
+      "finished_utc": "2026-02-28T23:42:27.6965842Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L21",
+      "started_utc": "2026-02-28T23:42:27.6966044Z",
+      "finished_utc": "2026-02-28T23:42:33.0570883Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L22",
+      "started_utc": "2026-02-28T23:42:33.0571018Z",
+      "finished_utc": "2026-02-28T23:42:40.0798417Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L23",
+      "started_utc": "2026-02-28T23:42:40.0798626Z",
+      "finished_utc": "2026-02-28T23:42:47.5459005Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L24",
+      "started_utc": "2026-02-28T23:42:47.5459073Z",
+      "finished_utc": "2026-02-28T23:42:53.3074442Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L25",
+      "started_utc": "2026-02-28T23:42:53.3074523Z",
+      "finished_utc": "2026-02-28T23:42:59.3055178Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L26",
+      "started_utc": "2026-02-28T23:42:59.3055960Z",
+      "finished_utc": "2026-02-28T23:43:06.1201056Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L27",
+      "started_utc": "2026-02-28T23:43:06.1201206Z",
+      "finished_utc": "2026-02-28T23:43:11.7247877Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L28",
+      "started_utc": "2026-02-28T23:43:11.7248033Z",
+      "finished_utc": "2026-02-28T23:43:17.5029903Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L29",
+      "started_utc": "2026-02-28T23:43:17.5030103Z",
+      "finished_utc": "2026-02-28T23:43:23.1235116Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L30",
+      "started_utc": "2026-02-28T23:43:23.1235260Z",
+      "finished_utc": "2026-02-28T23:43:28.8652923Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L31",
+      "started_utc": "2026-02-28T23:43:28.8653010Z",
+      "finished_utc": "2026-02-28T23:43:34.5011246Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L32",
+      "started_utc": "2026-02-28T23:43:34.5011479Z",
+      "finished_utc": "2026-02-28T23:43:40.1922731Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L33",
+      "started_utc": "2026-02-28T23:43:40.1922873Z",
+      "finished_utc": "2026-02-28T23:43:45.9316340Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L34",
+      "started_utc": "2026-02-28T23:43:45.9316508Z",
+      "finished_utc": "2026-02-28T23:43:51.9361510Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L35",
+      "started_utc": "2026-02-28T23:43:51.9368418Z",
+      "finished_utc": "2026-02-28T23:43:57.0071782Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L36",
+      "started_utc": "2026-02-28T23:43:57.0071952Z",
+      "finished_utc": "2026-02-28T23:44:01.8156344Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L37",
+      "started_utc": "2026-02-28T23:44:01.8156525Z",
+      "finished_utc": "2026-02-28T23:44:07.1767179Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L38",
+      "started_utc": "2026-02-28T23:44:07.1767338Z",
+      "finished_utc": "2026-02-28T23:44:11.2122898Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L39",
+      "started_utc": "2026-02-28T23:44:11.2122965Z",
+      "finished_utc": "2026-02-28T23:44:15.2677719Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!L40",
+      "started_utc": "2026-02-28T23:44:15.2677781Z",
+      "finished_utc": "2026-02-28T23:44:19.4932631Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M1",
+      "started_utc": "2026-02-28T23:44:19.4932789Z",
+      "finished_utc": "2026-02-28T23:44:23.4391742Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M2",
+      "started_utc": "2026-02-28T23:44:23.4391888Z",
+      "finished_utc": "2026-02-28T23:44:28.1125099Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M3",
+      "started_utc": "2026-02-28T23:44:28.1125232Z",
+      "finished_utc": "2026-02-28T23:44:31.7877848Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M4",
+      "started_utc": "2026-02-28T23:44:31.7877969Z",
+      "finished_utc": "2026-02-28T23:44:36.6980794Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M5",
+      "started_utc": "2026-02-28T23:44:36.6980945Z",
+      "finished_utc": "2026-02-28T23:44:41.6195837Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M6",
+      "started_utc": "2026-02-28T23:44:41.6195953Z",
+      "finished_utc": "2026-02-28T23:44:45.8937534Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M7",
+      "started_utc": "2026-02-28T23:44:45.8937663Z",
+      "finished_utc": "2026-02-28T23:44:49.5076982Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M8",
+      "started_utc": "2026-02-28T23:44:49.5077119Z",
+      "finished_utc": "2026-02-28T23:44:54.0079154Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M9",
+      "started_utc": "2026-02-28T23:44:54.0079274Z",
+      "finished_utc": "2026-02-28T23:44:58.4065041Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M10",
+      "started_utc": "2026-02-28T23:44:58.4065170Z",
+      "finished_utc": "2026-02-28T23:45:02.3483685Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M11",
+      "started_utc": "2026-02-28T23:45:02.3483755Z",
+      "finished_utc": "2026-02-28T23:45:06.1515935Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M12",
+      "started_utc": "2026-02-28T23:45:06.1516063Z",
+      "finished_utc": "2026-02-28T23:45:10.3091571Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M13",
+      "started_utc": "2026-02-28T23:45:10.3091624Z",
+      "finished_utc": "2026-02-28T23:45:14.2760551Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M14",
+      "started_utc": "2026-02-28T23:45:14.2760671Z",
+      "finished_utc": "2026-02-28T23:45:18.2355756Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M15",
+      "started_utc": "2026-02-28T23:45:18.2355822Z",
+      "finished_utc": "2026-02-28T23:45:22.7014505Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M16",
+      "started_utc": "2026-02-28T23:45:22.7014582Z",
+      "finished_utc": "2026-02-28T23:45:28.9480091Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M17",
+      "started_utc": "2026-02-28T23:45:28.9480151Z",
+      "finished_utc": "2026-02-28T23:45:33.7088472Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M18",
+      "started_utc": "2026-02-28T23:45:33.7088536Z",
+      "finished_utc": "2026-02-28T23:45:38.8903160Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M19",
+      "started_utc": "2026-02-28T23:45:38.8903222Z",
+      "finished_utc": "2026-02-28T23:45:43.8293958Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M20",
+      "started_utc": "2026-02-28T23:45:43.8294169Z",
+      "finished_utc": "2026-02-28T23:45:48.6026593Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M21",
+      "started_utc": "2026-02-28T23:45:48.6026654Z",
+      "finished_utc": "2026-02-28T23:45:53.2775736Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M22",
+      "started_utc": "2026-02-28T23:45:53.2775885Z",
+      "finished_utc": "2026-02-28T23:45:57.8984240Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M23",
+      "started_utc": "2026-02-28T23:45:57.8984300Z",
+      "finished_utc": "2026-02-28T23:46:02.4724798Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M24",
+      "started_utc": "2026-02-28T23:46:02.4724921Z",
+      "finished_utc": "2026-02-28T23:46:07.0032949Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M25",
+      "started_utc": "2026-02-28T23:46:07.0033020Z",
+      "finished_utc": "2026-02-28T23:46:11.5333275Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M26",
+      "started_utc": "2026-02-28T23:46:11.5333342Z",
+      "finished_utc": "2026-02-28T23:46:16.5105796Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M27",
+      "started_utc": "2026-02-28T23:46:16.5105865Z",
+      "finished_utc": "2026-02-28T23:46:21.1554325Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M28",
+      "started_utc": "2026-02-28T23:46:21.1554384Z",
+      "finished_utc": "2026-02-28T23:46:25.7642605Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M29",
+      "started_utc": "2026-02-28T23:46:25.7642664Z",
+      "finished_utc": "2026-02-28T23:46:30.2150787Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M30",
+      "started_utc": "2026-02-28T23:46:30.2150851Z",
+      "finished_utc": "2026-02-28T23:46:34.8370987Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M31",
+      "started_utc": "2026-02-28T23:46:34.8371094Z",
+      "finished_utc": "2026-02-28T23:46:39.6946384Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M32",
+      "started_utc": "2026-02-28T23:46:39.6946444Z",
+      "finished_utc": "2026-02-28T23:46:44.3703206Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M33",
+      "started_utc": "2026-02-28T23:46:44.3703268Z",
+      "finished_utc": "2026-02-28T23:46:49.0779605Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M34",
+      "started_utc": "2026-02-28T23:46:49.0779673Z",
+      "finished_utc": "2026-02-28T23:46:54.1841820Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M35",
+      "started_utc": "2026-02-28T23:46:54.1841886Z",
+      "finished_utc": "2026-02-28T23:46:58.6998938Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M36",
+      "started_utc": "2026-02-28T23:46:58.6999002Z",
+      "finished_utc": "2026-02-28T23:47:03.6340450Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M37",
+      "started_utc": "2026-02-28T23:47:03.6340527Z",
+      "finished_utc": "2026-02-28T23:47:08.6693340Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M38",
+      "started_utc": "2026-02-28T23:47:08.6693521Z",
+      "finished_utc": "2026-02-28T23:47:13.6463736Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M39",
+      "started_utc": "2026-02-28T23:47:13.6463891Z",
+      "finished_utc": "2026-02-28T23:47:18.6229198Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!M40",
+      "started_utc": "2026-02-28T23:47:18.6229270Z",
+      "finished_utc": "2026-02-28T23:47:26.6080733Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N1",
+      "started_utc": "2026-02-28T23:47:26.6080816Z",
+      "finished_utc": "2026-02-28T23:47:31.7890289Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N2",
+      "started_utc": "2026-02-28T23:47:31.7890354Z",
+      "finished_utc": "2026-02-28T23:47:37.1071455Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N3",
+      "started_utc": "2026-02-28T23:47:37.1071523Z",
+      "finished_utc": "2026-02-28T23:47:41.8777016Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N4",
+      "started_utc": "2026-02-28T23:47:41.8777258Z",
+      "finished_utc": "2026-02-28T23:47:46.6619204Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N5",
+      "started_utc": "2026-02-28T23:47:46.6619365Z",
+      "finished_utc": "2026-02-28T23:47:51.4213630Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N6",
+      "started_utc": "2026-02-28T23:47:51.4213780Z",
+      "finished_utc": "2026-02-28T23:47:56.1720059Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N7",
+      "started_utc": "2026-02-28T23:47:56.1720206Z",
+      "finished_utc": "2026-02-28T23:48:00.7909802Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N8",
+      "started_utc": "2026-02-28T23:48:00.7910006Z",
+      "finished_utc": "2026-02-28T23:48:05.4418336Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N9",
+      "started_utc": "2026-02-28T23:48:05.4418470Z",
+      "finished_utc": "2026-02-28T23:48:10.0914743Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N10",
+      "started_utc": "2026-02-28T23:48:10.0914873Z",
+      "finished_utc": "2026-02-28T23:48:15.2076144Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N11",
+      "started_utc": "2026-02-28T23:48:15.2076278Z",
+      "finished_utc": "2026-02-28T23:48:19.7425535Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N12",
+      "started_utc": "2026-02-28T23:48:19.7425685Z",
+      "finished_utc": "2026-02-28T23:48:24.2676762Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N13",
+      "started_utc": "2026-02-28T23:48:24.2676897Z",
+      "finished_utc": "2026-02-28T23:48:28.9437800Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N14",
+      "started_utc": "2026-02-28T23:48:28.9437958Z",
+      "finished_utc": "2026-02-28T23:48:33.5561787Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N15",
+      "started_utc": "2026-02-28T23:48:33.5561886Z",
+      "finished_utc": "2026-02-28T23:48:38.1240405Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N16",
+      "started_utc": "2026-02-28T23:48:38.1240568Z",
+      "finished_utc": "2026-02-28T23:48:42.6835315Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N17",
+      "started_utc": "2026-02-28T23:48:42.6835459Z",
+      "finished_utc": "2026-02-28T23:48:47.8481368Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N18",
+      "started_utc": "2026-02-28T23:48:47.8481502Z",
+      "finished_utc": "2026-02-28T23:48:52.3982462Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N19",
+      "started_utc": "2026-02-28T23:48:52.3982599Z",
+      "finished_utc": "2026-02-28T23:48:56.9218642Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!N20",
+      "started_utc": "2026-02-28T23:48:56.9218829Z",
+      "finished_utc": "2026-02-28T23:49:01.4520938Z",
+      "status": "allowed_error",
+      "message": "0x800A03EC"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:49:01.4521065Z",
+      "finished_utc": "2026-02-28T23:49:06.0809836Z",
+      "status": "ok"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+    "repo_git_commit_short": "5d0cfc1",
+    "repo_git_is_dirty": true
+  }
+}

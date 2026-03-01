@@ -1,0 +1,38 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!D1",
+                             "value":  20,
+                             "formula":  "=INDEX(B1:B3,MATCH(\"k2\",A1:A3,0))",
+                             "display_text":  "20",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D2",
+                             "value":  30,
+                             "formula":  "=XLOOKUP(\"k3\",A1:A3,B1:B3)",
+                             "display_text":  "30",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D3",
+                             "value":  1,
+                             "formula":  "=XMATCH(\"k1\",A1:A3,0)",
+                             "display_text":  "1",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D4",
+                             "value":  20,
+                             "formula":  "=VLOOKUP(\"k2\",A1:B3,2,FALSE)",
+                             "display_text":  "20",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-014",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK014-LOOKUP-BASELINE",
+    "scenario_id":  "SCN-EK014-LOOKUP-BASELINE",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Lookup baseline direct probe."
+}

@@ -1,0 +1,9 @@
+{
+    "notes":  "LET/LAMBDA baseline from tier45 wave.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-019",
+    "evidence_refs":  [
+                          "outputs/tier45_wave1/ECS-EB-019_lambda_helper_edge_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

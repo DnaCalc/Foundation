@@ -1,0 +1,127 @@
+{
+    "scenario_id":  "SCN-EK013-TIER1-TEXTLOGIC",
+    "task_id":  "ECS-EK-013",
+    "topic":  "known_known_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK013-TIER1-TEXTLOGIC.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  "Alpha"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  "Beta"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  0
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C1",
+                           "args":  {
+                                        "formula":  "=LEFT(A1,2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C2",
+                           "args":  {
+                                        "formula":  "=RIGHT(A2,2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C3",
+                           "args":  {
+                                        "formula":  "=IF(B1\u003eB2,\"yes\",\"no\")"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!C4",
+                           "args":  {
+                                        "formula":  "=AND(B1=1,B2=0)"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK013-TIER1-TEXTLOGIC-Sheet1_C1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK013-TIER1-TEXTLOGIC-Sheet1_C2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK013-TIER1-TEXTLOGIC-Sheet1_C3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C3",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK013-TIER1-TEXTLOGIC-Sheet1_C4",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!C4",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode",
+                                           "display_number_format"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+                ],
+    "notes":  "Tier-1 text/logical baseline sample."
+}

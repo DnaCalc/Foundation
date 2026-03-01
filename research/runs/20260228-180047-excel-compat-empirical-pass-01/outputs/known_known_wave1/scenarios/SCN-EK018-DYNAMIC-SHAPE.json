@@ -1,0 +1,136 @@
+{
+    "scenario_id":  "SCN-EK018-DYNAMIC-SHAPE",
+    "task_id":  "ECS-EK-018",
+    "topic":  "known_known_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK018-DYNAMIC-SHAPE.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  2
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  3
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  4
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D1",
+                           "args":  {
+                                        "formula":  "=HSTACK(A1:A2,B1:B2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!G1",
+                           "args":  {
+                                        "formula":  "=VSTACK(A1:B1,A2:B2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!J1",
+                           "args":  {
+                                        "formula":  "=TOROW(A1:B2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!L1",
+                           "args":  {
+                                        "formula":  "=WRAPROWS(TOROW(A1:B2),2)"
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_D1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_E2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!E2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_G3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!G3",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_J1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!J1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK018-DYNAMIC-SHAPE-Sheet1_L2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!L2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode",
+                                           "display_number_format"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+                ],
+    "notes":  "Dynamic shape baseline sample."
+}

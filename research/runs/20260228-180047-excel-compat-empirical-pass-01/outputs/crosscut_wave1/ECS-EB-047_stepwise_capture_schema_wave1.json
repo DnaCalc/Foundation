@@ -1,0 +1,40 @@
+{
+    "schema_id":  "urn:dna-calc:excel-compat:stepwise-capture-schema:wave1",
+    "version":  "wave1",
+    "description":  "Schema for operation-level before/after capture emitted in step_capture.json.",
+    "required_top_level":  [
+                               "run_id",
+                               "task_id",
+                               "scenario_id",
+                               "targets",
+                               "steps"
+                           ],
+    "step_object":  {
+                        "required":  [
+                                         "step",
+                                         "operation",
+                                         "timestamp_utc",
+                                         "captures"
+                                     ],
+                        "capture_fields":  [
+                                               "target",
+                                               "status",
+                                               "value",
+                                               "formula",
+                                               "display_text",
+                                               "number_format",
+                                               "interior_color",
+                                               "font_color",
+                                               "font_bold",
+                                               "display_interior_color",
+                                               "display_font_color",
+                                               "display_font_bold",
+                                               "display_number_format"
+                                           ]
+                    },
+    "status_semantics":  {
+                             "observed":  "Normal capture row with field values.",
+                             "capture_error":  "Cell capture failed at this step.",
+                             "workbook_closed":  "Workbook intentionally closed during lifecycle operation."
+                         }
+}

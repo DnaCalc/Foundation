@@ -1,0 +1,203 @@
+﻿{
+  "run_id": "run-20260228-235007-3e3d7ea45",
+  "scenario": {
+    "scenario_id": "SCN-EK039-DATETIME-FMT",
+    "task_id": "ECS-EK-039",
+    "topic": "known_known_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK039-DATETIME-FMT.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 45123.75
+            },
+            {
+              "kind": "format",
+              "address": "A1",
+              "value": "yyyy-mm-dd hh:mm:ss"
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": 45123
+            },
+            {
+              "kind": "format",
+              "address": "A2",
+              "value": "dddd, mmmm dd, yyyy"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EK039-DATETIME-FMT-Sheet1_A1",
+        "kind": "manual_review",
+        "target": "Sheet1!A1",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EK039-DATETIME-FMT-Sheet1_A2",
+        "kind": "manual_review",
+        "target": "Sheet1!A2",
+        "expected": {
+          "question": "Capture observed worksheet behavior and compare against baseline expectation."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "calc_mode",
+        "display_number_format"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/12_value_types_guide.md"
+    ],
+    "notes": "Date/time format token baseline."
+  },
+  "operation_trace": [
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-02-28T23:50:08.6710484Z",
+      "finished_utc": "2026-02-28T23:50:08.7221347Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:50:08.6710284Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45123.75,
+          "formula": "45123.75",
+          "display_text": "2023-07-16 18:00:00",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "Sunday, July 16, 2023",
+          "number_format": "dddd, mmmm dd, yyyy",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "dddd, mmmm dd, yyyy"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:50:08.7221277Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 45123.75,
+          "formula": "45123.75",
+          "display_text": "2023-07-16 18:00:00",
+          "number_format": "yyyy-mm-dd hh:mm:ss",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd hh:mm:ss"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "Sunday, July 16, 2023",
+          "number_format": "dddd, mmmm dd, yyyy",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "dddd, mmmm dd, yyyy"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!A1",
+      "value": 45123.75,
+      "formula": "45123.75",
+      "display_text": "2023-07-16 18:00:00",
+      "number_format": "yyyy-mm-dd hh:mm:ss",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "yyyy-mm-dd hh:mm:ss"
+    },
+    {
+      "target": "Sheet1!A2",
+      "value": 45123,
+      "formula": "45123",
+      "display_text": "Sunday, July 16, 2023",
+      "number_format": "dddd, mmmm dd, yyyy",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "dddd, mmmm dd, yyyy"
+    }
+  ],
+  "error": null
+}

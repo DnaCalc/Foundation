@@ -1,0 +1,10 @@
+{
+    "notes":  "Merge/spill interaction evidence linked pending explicit merge/unmerge operation support in runner.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-040",
+    "evidence_refs":  [
+                          "outputs/formula_parse_wave1/ECS-EB-030_grammar_ambiguity_probe_wave1.csv",
+                          "outputs/cf_wave1/ECS-EB-033_cf_table_spill_interaction_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

@@ -1,0 +1,31 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!D1",
+                             "value":  14,
+                             "formula":  "=A1+B1*C1",
+                             "display_text":  "14",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D2",
+                             "value":  20,
+                             "formula":  "=(A1+B1)*C1",
+                             "display_text":  "20",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D3",
+                             "value":  -8,
+                             "formula":  "=-A1^B1",
+                             "display_text":  "-8",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-001",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK001-PRECEDENCE",
+    "scenario_id":  "SCN-EK001-PRECEDENCE",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Operator precedence baseline direct probe."
+}

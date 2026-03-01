@@ -1,0 +1,31 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!B1",
+                             "value":  123.45,
+                             "formula":  "=VALUE(A1)",
+                             "display_text":  "123.45",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B2",
+                             "value":  45322,
+                             "formula":  "=VALUE(A2)",
+                             "display_text":  "45322",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B3",
+                             "value":  -2146826273,
+                             "formula":  "=VALUE(A3)",
+                             "display_text":  "#VALUE!",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-026",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK026-VALUE-CONVERSION",
+    "scenario_id":  "SCN-EK026-VALUE-CONVERSION",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "VALUE conversion baseline direct probe."
+}

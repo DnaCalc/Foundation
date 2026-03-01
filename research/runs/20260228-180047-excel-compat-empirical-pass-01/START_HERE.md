@@ -1,91 +1,40 @@
-# Start Here - Deferred Execution Guide
+# Start Here - Run Completion Index
 
-## Why this file exists
-This run is intentionally prepared for later execution without relying on prior agent context.
-Use this file as the entry point.
+## Status
+This empirical run is complete.
 
-## Current state
-- Planning and scaffolding complete.
-- Pilot wave scenarios prepared.
-- Runner migration complete (`excel-probe` C# runtime).
-- Pilot wave execution completed for all scenarios in `outputs/pilot_wave1/scenario_manifest_wave1.csv` (14/14).
-- Initial interpretation pass completed (`outputs/pilot_wave1/pilot_wave1_result_summary.csv` and `PILOT_WAVE1_EXECUTION_REPORT.md`).
-- Volatility context wave execution completed for `ECS-EB-012` and `ECS-EB-013` in `outputs/volatility_wave2/` (6/6).
-- Reason-code wave execution completed for `ECS-EB-040` and `ECS-EB-041` in `outputs/reason_code_wave1/` (8/8 scenarios, 24 probe rows, 1 explicit counter-signal flag for `SUMIF`).
-- Formula-parse wave execution completed for `ECS-EB-028`, `ECS-EB-029`, and `ECS-EB-030` in `outputs/formula_parse_wave1/` (20/20 scenarios; one explicit ambiguity mismatch retained for triage).
-- Coercion wave execution completed for `ECS-EB-024`, `ECS-EB-025`, `ECS-EB-026`, and `ECS-EB-027` in `outputs/coercion_wave1/` (4/4 scenarios, 38 case rows; 3 explicit mismatches retained for triage in range coercion expectations).
-- Conditional-format wave execution completed for `ECS-EB-031`, `ECS-EB-032`, and `ECS-EB-033` in `outputs/cf_wave1/` (3/3 scenarios, 7 case rows; 2 explicit spill-related display-color mismatches retained for triage).
-- RTD lifecycle wave execution completed for `ECS-EB-015` in `outputs/rtd_wave1/` (5/5).
-- Date-system wave execution completed for `ECS-EB-016` in `outputs/date_system_wave1/` (5/5).
-- Platform availability source extraction/merge completed for `ECS-EB-037` in `outputs/platform_availability/`.
-- Manual-review scenarios still require stepwise-capture and locale-controlled follow-up passes.
+All backlog-linked tasks (`ECS-EB-001..048`) have emitted artifacts, known-known tasks (`ECS-EK-001..048`) are closed in wave1, and unresolved closure wave2 has completed with explicit resolution states.
 
-## First read order
+## Read order
 1. `README.md`
 2. `outputs/EMPIRICAL_TASK_INDEX.md`
-3. `outputs/02_backlog_linked_empirical_tasks.md`
-4. `outputs/03_execution_progress_status.md`
-5. `outputs/pilot_wave1/RUN_INSTRUCTIONS.md`
-6. `outputs/artifacts/desktop_runner_contract_v0.md`
+3. `outputs/03_execution_progress_status.md`
+4. `outputs/refresh_cycle_01/REFRESH_CYCLE_01_REPORT.md`
+5. `outputs/known_known_wave1/WAVE1_EXECUTION_REPORT.md`
+6. `outputs/unresolved_wave2/UNRESOLVED_WAVE2_REPORT.md`
 
-## Execution boundary
-Start with pilot scenarios only:
-- `ECS-EB-010`
-- `ECS-EB-011`
-- `ECS-EB-014`
-- `ECS-EB-023`
+## Completion artifacts by batch family
+- Harness/contracts: `outputs/artifacts/`
+- Volatility/reason-code/formula/coercion/CF/table waves:
+  - `outputs/volatility_wave2/`
+  - `outputs/reason_code_wave1/`
+  - `outputs/formula_parse_wave1/`
+  - `outputs/coercion_wave1/`
+  - `outputs/cf_wave1/`
+  - `outputs/table_wave1/`
+- Tier4/5 deep semantics and caveats: `outputs/tier45_wave1/`
+- Function-edge planning/index: `outputs/function_edge_wave1/`
+- Reopen and cross-cutting instrumentation:
+  - `outputs/reopen_wave1/`
+  - `outputs/crosscut_wave1/`
+- Platform/refresh loop:
+  - `outputs/platform_availability/`
+  - `outputs/refresh_cycle_01/`
+- Known-known closure:
+  - `outputs/known_known_wave1/`
+- Unresolved closure:
+  - `outputs/unresolved_wave2/`
 
-Then continue with remaining platform/version starters:
-- `ECS-EB-038`
-- `ECS-EB-046`
-
-Then continue with volatility depth tasks:
-- `ECS-EB-012`
-- `ECS-EB-013`
-
-Then continue with formula-language depth tasks:
-- `ECS-EB-028`
-- `ECS-EB-029`
-- `ECS-EB-030`
-
-Then continue with coercion depth tasks:
-- `ECS-EB-024`
-- `ECS-EB-025`
-- `ECS-EB-026`
-- `ECS-EB-027`
-
-Then continue with conditional-format depth tasks:
-- `ECS-EB-031`
-- `ECS-EB-032`
-- `ECS-EB-033`
-
-## Working directory assumptions
-- For manual commands in `RUN_INSTRUCTIONS.md`, run from:
-  `research/runs/20260228-180047-excel-compat-empirical-pass-01/`
-- For `run_wave1.ps1`, run from any directory (script resolves local paths from its own location).
-
-## Readiness checklist
-1. Windows Desktop Excel automation is available.
-2. `excel-probe` .NET runner is available at:
-   - `research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj`
-   - launcher: `research/tools/excel-probe/excel-probe.cmd` (recommended).
-   - SDK policy pinned by `research/tools/global.json` (`10.0.103`, non-preview).
-3. Output schemas are available:
-   - `outputs/artifacts/empirical_scenario_schema.v0.json`
-   - `outputs/artifacts/normalized_capture_schema.v0.json`
-4. Capability profile is captured:
-   - `outputs/platform_availability/platform_capability_profile.template.json` cloned and filled for actual environment.
-5. Build metadata capture format is in place:
-   - `outputs/platform_availability/platform_build_metadata_schema.v0.json`
-
-## Definition of done for pilot wave
-1. Every scenario in `outputs/pilot_wave1/scenario_manifest_wave1.csv` has a generated evidence bundle.
-2. `ECS-EB-011_volatility_probe_results_wave1.csv` is populated with observed values/status.
-3. `ECS-EB-014_indirect_offset_structural_probe.csv` is populated with observed outcomes.
-4. `locale_coercion_probe_wave1.csv` is created and linked.
-5. Bundle validation reports are produced per scenario.
-6. `logs/manifest.csv` is updated with execution records.
-
-## Known deferred items
-- Full function-wide empirical passes and deep backlog tasks remain intentionally queued.
-- External dependency scenarios (RTD/CUBE/connectors) may be `not_testable` depending on environment; mark explicitly, do not skip silently.
+## Notes
+1. Explicit triage mismatches/counter-signals are intentionally retained in wave reports and backlog cross-links.
+2. `logs/manifest.csv` is the authoritative chronological event index for this run.

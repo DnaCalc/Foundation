@@ -28,6 +28,15 @@ This document is the consolidated entry point for this research project.
 - `26_full_interest_platform_matrix_seed_expansion.md`
 - `27_trackA_continuation_execution_pass.md`
 - `28_tier45_source_index_completion_pass.md`
+- `29_trackA_trackB_interleaving_reason_code_wave1.md`
+- `30_trackA_trackB_interleaving_formula_parse_wave1.md`
+- `31_trackA_trackB_interleaving_coercion_wave1.md`
+- `32_trackA_trackB_interleaving_cf_wave1.md`
+- `33_trackA_trackB_interleaving_table_wave1.md`
+- `34_trackA_trackB_interleaving_tier45_wave1.md`
+- `35_trackA_trackB_interleaving_crosscut_function_edge_and_refresh.md`
+- `36_trackA_trackB_run_completion.md`
+- `37_trackA_trackB_empirical_full_list_completion.md`
 - `function_reason_code_evidence_tracker.csv`
 - `platform_availability_source_matrix_seed.csv`
 - `tier45_function_evidence_dossier.csv`
@@ -48,5 +57,5 @@ This document is the consolidated entry point for this research project.
 These are now documented as intentional next-depth tasks rather than blind spots.
 
 ## Current follow-up state
-- Track A (documentation/search execution): progressed through passes 18-28, including continuation closure for the remaining items listed in pass 18 and tier-5/4 source-index completion.
-- Track B (empirical execution): active in `../../20260228-180047-excel-compat-empirical-pass-01/`, with runner baseline complete and pilot evidence started.
+- Track A (documentation/search execution): complete through pass 37, including empirical full-list closure synthesis.
+- Track B (empirical execution): complete in `../../20260228-180047-excel-compat-empirical-pass-01/` for backlog-linked tasks (`ECS-EB-001..048`), known-known tasks (`ECS-EK-001..048`), and unresolved closure replay.

@@ -1,0 +1,10 @@
+{
+    "notes":  "Range/union/intersection operators covered in formula parse wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-002",
+    "evidence_refs":  [
+                          "outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv",
+                          "outputs/formula_parse_wave1/ECS-EB-030_grammar_ambiguity_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

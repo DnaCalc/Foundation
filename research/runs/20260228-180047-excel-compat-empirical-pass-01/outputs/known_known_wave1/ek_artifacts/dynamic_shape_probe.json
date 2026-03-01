@@ -1,0 +1,45 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!D1",
+                             "value":  1,
+                             "formula":  "=HSTACK(A1:A2,B1:B2)",
+                             "display_text":  "1",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!E2",
+                             "value":  null,
+                             "formula":  "",
+                             "display_text":  "",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!G3",
+                             "value":  null,
+                             "formula":  "",
+                             "display_text":  "",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!J1",
+                             "value":  1,
+                             "formula":  "=TOROW(A1:B2)",
+                             "display_text":  "1",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!L2",
+                             "value":  null,
+                             "formula":  "",
+                             "display_text":  "",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-018",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK018-DYNAMIC-SHAPE",
+    "scenario_id":  "SCN-EK018-DYNAMIC-SHAPE",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Dynamic-shape baseline direct probe."
+}

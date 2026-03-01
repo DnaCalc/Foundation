@@ -1,0 +1,38 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!A1",
+                             "value":  12,
+                             "formula":  "12",
+                             "display_text":  "12.00",
+                             "number_format":  "0.00;[Red]-0.00;0.00;\"txt:\"@"
+                         },
+                         {
+                             "target":  "Sheet1!A2",
+                             "value":  -12,
+                             "formula":  "-12",
+                             "display_text":  "-12.00",
+                             "number_format":  "0.00;[Red]-0.00;0.00;\"txt:\"@"
+                         },
+                         {
+                             "target":  "Sheet1!A3",
+                             "value":  0,
+                             "formula":  "0",
+                             "display_text":  "0.00",
+                             "number_format":  "0.00;[Red]-0.00;0.00;\"txt:\"@"
+                         },
+                         {
+                             "target":  "Sheet1!A4",
+                             "value":  "abc",
+                             "formula":  "abc",
+                             "display_text":  "txt:abc",
+                             "number_format":  "0.00;[Red]-0.00;0.00;\"txt:\"@"
+                         }
+                     ],
+    "task_id":  "ECS-EK-038",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK038-CUSTOM-NUMFMT",
+    "scenario_id":  "SCN-EK038-CUSTOM-NUMFMT",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "Custom format section direct probe."
+}

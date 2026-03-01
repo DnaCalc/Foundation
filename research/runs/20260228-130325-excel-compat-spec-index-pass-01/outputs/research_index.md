@@ -84,3 +84,17 @@ New machine-readable support artifacts:
 - `platform_availability_source_matrix_full_interest_seed.csv`
 - `source_list.csv`/`source_digest.*` expanded with full tier-5/tier-4 function-specific source rows (`48/48` source-bound in dossier)
 - `source_list.csv`/`source_digest.*` now include `ECS-061` (`ExcelFinancialFunctions` repository) as a prominent investigation resource
+
+## Track A/B interleaving completion update
+Empirical interleaving closure passes are now recorded through:
+- `29_trackA_trackB_interleaving_reason_code_wave1.md`
+- `30_trackA_trackB_interleaving_formula_parse_wave1.md`
+- `31_trackA_trackB_interleaving_coercion_wave1.md`
+- `32_trackA_trackB_interleaving_cf_wave1.md`
+- `33_trackA_trackB_interleaving_table_wave1.md`
+- `34_trackA_trackB_interleaving_tier45_wave1.md`
+- `35_trackA_trackB_interleaving_crosscut_function_edge_and_refresh.md`
+- `36_trackA_trackB_run_completion.md`
+- `37_trackA_trackB_empirical_full_list_completion.md`
+
+Result: planned interleaved batches are closed with retained mismatch/counter-signal triage made explicit as follow-on work, not unresolved scope holes.

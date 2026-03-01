@@ -1,0 +1,502 @@
+﻿{
+  "run_id": "run-20260228-221351-f48766794",
+  "task_id": "ECS-EB-021",
+  "scenario_id": "SCN-EB021-EXTERNAL-REPLAY",
+  "targets": [
+    "Sheet1!A2",
+    "Sheet1!A1",
+    "Sheet1!A3"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T22:13:53.0599680Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-02-28T22:13:53.2826331Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T22:13:53.4136636Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T22:13:53.4451673Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-02-28T22:13:53.4857435Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 1,
+          "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:13:53.5139684Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 1,
+          "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_save",
+      "operation": "save",
+      "timestamp_utc": "2026-02-28T22:13:53.5734052Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 1,
+          "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_close",
+      "operation": "close",
+      "timestamp_utc": "2026-02-28T22:13:53.5841462Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "status": "workbook_closed",
+          "message": "Workbook was closed during this step."
+        },
+        {
+          "target": "Sheet1!A1",
+          "status": "workbook_closed",
+          "message": "Workbook was closed during this step."
+        },
+        {
+          "target": "Sheet1!A3",
+          "status": "workbook_closed",
+          "message": "Workbook was closed during this step."
+        }
+      ]
+    },
+    {
+      "step": "after_open",
+      "operation": "open",
+      "timestamp_utc": "2026-02-28T22:13:53.6828228Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 1,
+          "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T22:13:53.7687809Z",
+      "captures": [
+        {
+          "target": "Sheet1!A2",
+          "value": "a%20b",
+          "formula": "=ENCODEURL(\u0022a b\u0022)",
+          "display_text": "a%20b",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A1",
+          "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+          "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 1,
+          "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ]
+}

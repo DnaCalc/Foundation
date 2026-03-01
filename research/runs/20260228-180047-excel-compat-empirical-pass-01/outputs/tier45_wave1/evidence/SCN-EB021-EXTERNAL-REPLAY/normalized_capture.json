@@ -1,0 +1,80 @@
+﻿{
+  "run_id": "run-20260228-221351-f48766794",
+  "task_id": "ECS-EB-021",
+  "scenario_id": "SCN-EB021-EXTERNAL-REPLAY",
+  "timestamp_utc": "2026-02-28T22:13:53.8334110Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!A2",
+      "kind": "value",
+      "status": "observed",
+      "value": "a%20b",
+      "metadata": {
+        "formula": "=ENCODEURL(\u0022a b\u0022)",
+        "display_text": "a%20b",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!A1",
+      "kind": "value",
+      "status": "observed",
+      "value": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+      "metadata": {
+        "formula": "=WEBSERVICE(\u0022https://example.com\u0022)",
+        "display_text": "\u003C!doctype html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Ctitle\u003EExample Domain\u003C/title\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\u003Cstyle\u003Ebody{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cdiv\u003E\u003Ch1\u003EExample Domain\u003C/h1\u003E\u003Cp\u003EThis domain is for use in documentation examples without needing permission. Avoid use in operations.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\u0022https://iana.org/domains/example\u0022\u003ELearn more\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E\u003C/body\u003E\u003C/html\u003E\n",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!A3",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FILTERXML(\u0022\u003Croot\u003E\u003Cv\u003E1\u003C/v\u003E\u003C/root\u003E\u0022,\u0022//v\u0022)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\tier45_wave1\\scenarios\\SCN-EB021-EXTERNAL-REPLAY.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\tier45_wave1\\evidence\\SCN-EB021-EXTERNAL-REPLAY\u0022 --visible false --timeout-sec 300",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/06_tier5_semantics_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/08_tier4_family_semantics_response.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/15_version_platform_guide.md"
+    ]
+  }
+}

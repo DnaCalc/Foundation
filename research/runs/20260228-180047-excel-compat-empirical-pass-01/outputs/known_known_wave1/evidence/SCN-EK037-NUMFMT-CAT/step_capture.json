@@ -1,0 +1,116 @@
+﻿{
+  "run_id": "run-20260228-234958-c4b6032bb",
+  "task_id": "ECS-EK-037",
+  "scenario_id": "SCN-EK037-NUMFMT-CAT",
+  "targets": [
+    "Sheet1!A1",
+    "Sheet1!A2",
+    "Sheet1!A3"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-02-28T23:50:00.2292567Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1234.5,
+          "formula": "1234.5",
+          "display_text": "1234.50",
+          "number_format": "0.00",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 0.25,
+          "formula": "0.25",
+          "display_text": "25.00%",
+          "number_format": "0.00%",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00%"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "2023-07-16",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-02-28T23:50:00.2702110Z",
+      "captures": [
+        {
+          "target": "Sheet1!A1",
+          "value": 1234.5,
+          "formula": "1234.5",
+          "display_text": "1234.50",
+          "number_format": "0.00",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00"
+        },
+        {
+          "target": "Sheet1!A2",
+          "value": 0.25,
+          "formula": "0.25",
+          "display_text": "25.00%",
+          "number_format": "0.00%",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "0.00%"
+        },
+        {
+          "target": "Sheet1!A3",
+          "value": 45123,
+          "formula": "45123",
+          "display_text": "2023-07-16",
+          "number_format": "yyyy-mm-dd",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "yyyy-mm-dd"
+        }
+      ]
+    }
+  ]
+}

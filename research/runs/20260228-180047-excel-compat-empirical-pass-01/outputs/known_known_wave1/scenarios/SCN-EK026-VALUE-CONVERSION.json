@@ -1,0 +1,107 @@
+{
+    "scenario_id":  "SCN-EK026-VALUE-CONVERSION",
+    "task_id":  "ECS-EK-026",
+    "topic":  "known_known_wave1",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260228-180047-excel-compat-empirical-pass-01/fixtures/known_known_wave1/SCN-EK026-VALUE-CONVERSION.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  "123.45"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  "2024-01-31"
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  "not_a_number"
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B1",
+                           "args":  {
+                                        "formula":  "=VALUE(A1)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B2",
+                           "args":  {
+                                        "formula":  "=VALUE(A2)"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!B3",
+                           "args":  {
+                                        "formula":  "=VALUE(A3)",
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK026-VALUE-CONVERSION-Sheet1_B1",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B1",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK026-VALUE-CONVERSION-Sheet1_B2",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B2",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         },
+                         {
+                             "assertion_id":  "ASSERT-SCN-EK026-VALUE-CONVERSION-Sheet1_B3",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!B3",
+                             "expected":  {
+                                              "question":  "Capture observed worksheet behavior and compare against baseline expectation."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "calc_mode",
+                                           "display_number_format"
+                                       ]
+                },
+    "sources":  [
+                    "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/12_value_types_guide.md"
+                ],
+    "notes":  "VALUE conversion baseline sample."
+}

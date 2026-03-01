@@ -1,0 +1,67 @@
+﻿{
+  "run_id": "run-20260228-221649-35f56d3da",
+  "task_id": "ECS-EB-044",
+  "scenario_id": "SCN-EB044-REOPEN-COERCION",
+  "timestamp_utc": "2026-02-28T22:16:57.6920941Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!A1",
+      "kind": "value",
+      "status": "observed",
+      "value": 3,
+      "metadata": {
+        "formula": "=SUM(\u00221\u0022,2)",
+        "display_text": "3",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!A2",
+      "kind": "value",
+      "status": "observed",
+      "value": 123.45,
+      "metadata": {
+        "formula": "=VALUE(\u0022123.45\u0022)",
+        "display_text": "123.45",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\reopen_wave1\\scenarios\\SCN-EB044-REOPEN-COERCION.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\reopen_wave1\\evidence\\SCN-EB044-REOPEN-COERCION\u0022 --visible false --timeout-sec 300",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/17_follow_up_execution_backlog.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/09_coercion_matrix_expansion_response.md"
+    ]
+  }
+}

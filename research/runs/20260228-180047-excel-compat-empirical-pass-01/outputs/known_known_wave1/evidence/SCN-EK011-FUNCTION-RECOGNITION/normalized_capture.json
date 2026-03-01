@@ -1,0 +1,6043 @@
+﻿{
+  "run_id": "run-20260228-230327-85f5e1045",
+  "task_id": "ECS-EK-011",
+  "scenario_id": "SCN-EK011-FUNCTION-RECOGNITION",
+  "timestamp_utc": "2026-02-28T23:49:10.8864491Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!B1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=ABS(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B4",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=ACOS(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B5",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=ACOSH(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B6",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.7853981633974483,
+      "metadata": {
+        "formula": "=ACOT(1)",
+        "display_text": "0.785398",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B7",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=ACOTH(1)",
+        "display_text": "#NUM!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B12",
+      "kind": "value",
+      "status": "observed",
+      "value": true,
+      "metadata": {
+        "formula": "=AND(1)",
+        "display_text": "TRUE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B13",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=ARABIC(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B15",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=ARRAYTOTEXT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B16",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=ASC(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B17",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.5707963267948966,
+      "metadata": {
+        "formula": "=ASIN(1)",
+        "display_text": "1.570796",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B18",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.8813735870195429,
+      "metadata": {
+        "formula": "=ASINH(1)",
+        "display_text": "0.881374",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B19",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.7853981633974483,
+      "metadata": {
+        "formula": "=ATAN(1)",
+        "display_text": "0.785398",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B21",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=ATANH(1)",
+        "display_text": "#NUM!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B22",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=AVEDEV(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B23",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=AVERAGE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B24",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=AVERAGEA(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B27",
+      "kind": "value",
+      "status": "observed",
+      "value": "\u0E2B\u0E19\u0E36\u0E48\u0E07\u0E1A\u0E32\u0E17\u0E16\u0E49\u0E27\u0E19",
+      "metadata": {
+        "formula": "=BAHTTEXT(1)",
+        "display_text": "\u0E2B\u0E19\u0E36\u0E48\u0E07\u0E1A\u0E32\u0E17\u0E16\u0E49\u0E27\u0E19",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B30",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B34",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B35",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!B37",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=BIN2DEC(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B38",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=BIN2HEX(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B39",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=BIN2OCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!B40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C1",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C9",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826238,
+      "metadata": {
+        "formula": "=BYCOL(1)",
+        "display_text": "#CALC!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C10",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826238,
+      "metadata": {
+        "formula": "=BYROW(1)",
+        "display_text": "#CALC!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C13",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=CEILING.MATH(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C14",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=CEILING.PRECISE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C15",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=CELL(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C16",
+      "kind": "value",
+      "status": "observed",
+      "value": "\u0001",
+      "metadata": {
+        "formula": "=CHAR(1)",
+        "display_text": "\u0001",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C28",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=CLEAN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C29",
+      "kind": "value",
+      "status": "observed",
+      "value": 49,
+      "metadata": {
+        "formula": "=CODE(1)",
+        "display_text": "49",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C30",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C31",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=COLUMNS(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C34",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C35",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=CONCAT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C36",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=CONCATENATE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!C37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C38",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D1",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826259,
+      "metadata": {
+        "formula": "=COPILOT(1)",
+        "display_text": "#NAME?",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D3",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.5403023058681398,
+      "metadata": {
+        "formula": "=COS(1)",
+        "display_text": "0.540302",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D4",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.5430806348152437,
+      "metadata": {
+        "formula": "=COSH(1)",
+        "display_text": "1.543081",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D5",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.6420926159343306,
+      "metadata": {
+        "formula": "=COT(1)",
+        "display_text": "0.642093",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D6",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.3130352854993315,
+      "metadata": {
+        "formula": "=COTH(1)",
+        "display_text": "1.313035",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D7",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=COUNT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D8",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=COUNTA(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D22",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.1883951057781212,
+      "metadata": {
+        "formula": "=CSC(1)",
+        "display_text": "1.188395",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D23",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.8509181282393216,
+      "metadata": {
+        "formula": "=CSCH(1)",
+        "display_text": "0.850918",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D29",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=CUBESETCOUNT(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D30",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=CUBEVALUE(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D34",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D35",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=DATEVALUE(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D37",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=DAY(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D38",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!D40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E1",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=DBCS(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E5",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=DEC2BIN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E6",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=DEC2HEX(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E7",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=DEC2OCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E9",
+      "kind": "value",
+      "status": "observed",
+      "value": 57.29577951308232,
+      "metadata": {
+        "formula": "=DEGREES(1)",
+        "display_text": "57.29578",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E10",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=DELTA(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E11",
+      "kind": "value",
+      "status": "observed",
+      "value": "en",
+      "metadata": {
+        "formula": "=DETECTLANGUAGE(1)",
+        "display_text": "en",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E12",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=DEVSQ(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E17",
+      "kind": "value",
+      "status": "observed",
+      "value": "R1.00",
+      "metadata": {
+        "formula": "=DOLLAR(1)",
+        "display_text": "R1.00",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E30",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=ENCODEURL(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E32",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.8427007929497149,
+      "metadata": {
+        "formula": "=ERF(1)",
+        "display_text": "0.842701",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E33",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.8427007929497149,
+      "metadata": {
+        "formula": "=ERF.PRECISE(1)",
+        "display_text": "0.842701",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E34",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.15729920705028513,
+      "metadata": {
+        "formula": "=ERFC(1)",
+        "display_text": "0.157299",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E35",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.15729920705028513,
+      "metadata": {
+        "formula": "=ERFC.PRECISE(1)",
+        "display_text": "0.157299",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E36",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=ERROR.TYPE(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E37",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826259,
+      "metadata": {
+        "formula": "=EUROCONVERT(1)",
+        "display_text": "#NAME?",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E38",
+      "kind": "value",
+      "status": "observed",
+      "value": 2,
+      "metadata": {
+        "formula": "=EVEN(1)",
+        "display_text": "2",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!E39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!E40",
+      "kind": "value",
+      "status": "observed",
+      "value": 2.718281828459045,
+      "metadata": {
+        "formula": "=EXP(1)",
+        "display_text": "2.718282",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F1",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F9",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FACT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F10",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FACTDOUBLE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F17",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=FISHER(1)",
+        "display_text": "#NUM!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F18",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.7615941559557649,
+      "metadata": {
+        "formula": "=FISHERINV(1)",
+        "display_text": "0.761594",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F19",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.00",
+      "metadata": {
+        "formula": "=FIXED(1)",
+        "display_text": "1.00",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F21",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FLOOR.MATH(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F22",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=FLOOR.PRECISE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F28",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=GAMMA(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F30",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F33",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=GAMMALN(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F34",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=GAMMALN.PRECISE(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F35",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.34134474606854304,
+      "metadata": {
+        "formula": "=GAUSS(1)",
+        "display_text": "0.341345",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F36",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=GCD(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F37",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=GEOMEAN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F38",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=GESTEP(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!F39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!F40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=GROWTH(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G2",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=HARMEAN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G3",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=HEX2BIN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G4",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=HEX2DEC(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G5",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=HEX2OCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G7",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=HOUR(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G8",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=HSTACK(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G9",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=HYPERLINK(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G16",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=IMABS(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G17",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=IMAGE(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G18",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=IMAGINARY(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G19",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=IMARGUMENT(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G20",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=IMCONJUGATE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G21",
+      "kind": "value",
+      "status": "observed",
+      "value": "0.54030230586814",
+      "metadata": {
+        "formula": "=IMCOS(1)",
+        "display_text": "0.54030230586814",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G22",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.54308063481524",
+      "metadata": {
+        "formula": "=IMCOSH(1)",
+        "display_text": "1.54308063481524",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G23",
+      "kind": "value",
+      "status": "observed",
+      "value": "0.642092615934331",
+      "metadata": {
+        "formula": "=IMCOT(1)",
+        "display_text": "0.642092615934331",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G24",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.18839510577812",
+      "metadata": {
+        "formula": "=IMCSC(1)",
+        "display_text": "1.18839510577812",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G25",
+      "kind": "value",
+      "status": "observed",
+      "value": "0.850918128239322",
+      "metadata": {
+        "formula": "=IMCSCH(1)",
+        "display_text": "0.850918128239322",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G27",
+      "kind": "value",
+      "status": "observed",
+      "value": "2.71828182845905",
+      "metadata": {
+        "formula": "=IMEXP(1)",
+        "display_text": "2.71828182845905",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G28",
+      "kind": "value",
+      "status": "observed",
+      "value": "0",
+      "metadata": {
+        "formula": "=IMLN(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G29",
+      "kind": "value",
+      "status": "observed",
+      "value": "0",
+      "metadata": {
+        "formula": "=IMLOG10(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G30",
+      "kind": "value",
+      "status": "observed",
+      "value": "0",
+      "metadata": {
+        "formula": "=IMLOG2(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G32",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=IMPRODUCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G33",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=IMREAL(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G34",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.85081571768093",
+      "metadata": {
+        "formula": "=IMSEC(1)",
+        "display_text": "1.85081571768093",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G35",
+      "kind": "value",
+      "status": "observed",
+      "value": "0.648054273663885",
+      "metadata": {
+        "formula": "=IMSECH(1)",
+        "display_text": "0.648054273663885",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G36",
+      "kind": "value",
+      "status": "observed",
+      "value": "0.841470984807897",
+      "metadata": {
+        "formula": "=IMSIN(1)",
+        "display_text": "0.841470984807897",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G37",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.1752011936438",
+      "metadata": {
+        "formula": "=IMSINH(1)",
+        "display_text": "1.1752011936438",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G38",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=IMSQRT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!G39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!G40",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=IMSUM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H1",
+      "kind": "value",
+      "status": "observed",
+      "value": "1.5574077246549",
+      "metadata": {
+        "formula": "=IMTAN(1)",
+        "display_text": "1.5574077246549",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H3",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826265,
+      "metadata": {
+        "formula": "=INDIRECT(1)",
+        "display_text": "#REF!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H4",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=INFO(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H5",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=INT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H9",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=IRR(1)",
+        "display_text": "#NUM!",
+        "number_format": "0%",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H10",
+      "kind": "value",
+      "status": "observed",
+      "value": false,
+      "metadata": {
+        "formula": "=ISEVEN(1)",
+        "display_text": "FALSE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H12",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=ISO.CEILING(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H13",
+      "kind": "value",
+      "status": "observed",
+      "value": false,
+      "metadata": {
+        "formula": "=ISOMITTED(1)",
+        "display_text": "FALSE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H14",
+      "kind": "value",
+      "status": "observed",
+      "value": 52,
+      "metadata": {
+        "formula": "=ISOWEEKNUM(1)",
+        "display_text": "52",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H16",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826259,
+      "metadata": {
+        "formula": "=JIS(1)",
+        "display_text": "#NAME?",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H17",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=KURT(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H18",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826238,
+      "metadata": {
+        "formula": "=LAMBDA(1)",
+        "display_text": "#CALC!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H20",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=LCM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H24",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=LINEST(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H25",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=LN(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H26",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=LOG(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H27",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=LOG10(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H28",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=LOGEST(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H30",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H34",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=LOWER(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H35",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!H38",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MAX(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H39",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MAXA(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!H40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MDETERM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I3",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MEDIAN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I5",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MIN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I6",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MINA(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I8",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=MINUTE(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I9",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MINVERSE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I13",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=MODE(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I14",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=MODE.MULT(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I15",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=MODE.SNGL(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I16",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MONTH(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I18",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MULTINOMIAL(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I19",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=MUNIT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I20",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=N(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I30",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=NORM.S.INV(1)",
+        "display_text": "#NUM!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I33",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.841344746068543,
+      "metadata": {
+        "formula": "=NORMSDIST(1)",
+        "display_text": "0.841345",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I34",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826252,
+      "metadata": {
+        "formula": "=NORMSINV(1)",
+        "display_text": "#NUM!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I35",
+      "kind": "value",
+      "status": "observed",
+      "value": false,
+      "metadata": {
+        "formula": "=NOT(1)",
+        "display_text": "FALSE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I38",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!I39",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=NUMBERVALUE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!I40",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=OCT2BIN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=OCT2DEC(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J2",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=OCT2HEX(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J3",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=ODD(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J9",
+      "kind": "value",
+      "status": "observed",
+      "value": true,
+      "metadata": {
+        "formula": "=OR(1)",
+        "display_text": "TRUE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J21",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.24197072451914337,
+      "metadata": {
+        "formula": "=PHI(1)",
+        "display_text": "0.241971",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J24",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J30",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J34",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=PRODUCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J35",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=PROPER(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!J36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J38",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J39",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!J40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K1",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.017453292519943295,
+      "metadata": {
+        "formula": "=RADIANS(1)",
+        "display_text": "0.017453",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K3",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826259,
+      "metadata": {
+        "formula": "=RANDARRA(1)",
+        "display_text": "#NAME?",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K4",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.32622133954115595,
+      "metadata": {
+        "formula": "=RANDARRAY(1)",
+        "display_text": "0.326221",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K14",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K19",
+      "kind": "value",
+      "status": "observed",
+      "value": "I",
+      "metadata": {
+        "formula": "=ROMAN(1)",
+        "display_text": "I",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K24",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=ROWS(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K30",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.8508157176809255,
+      "metadata": {
+        "formula": "=SEC(1)",
+        "display_text": "1.850816",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K31",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.6480542736638855,
+      "metadata": {
+        "formula": "=SECH(1)",
+        "display_text": "0.648054",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K32",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=SECOND(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K33",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SEQUENCE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K34",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!K35",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=SHEET(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K36",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826246,
+      "metadata": {
+        "formula": "=SHEETS(1)",
+        "display_text": "#N/A",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K37",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SIGN(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K38",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.8414709848078965,
+      "metadata": {
+        "formula": "=SIN(1)",
+        "display_text": "0.841471",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K39",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.1752011936438014,
+      "metadata": {
+        "formula": "=SINH(1)",
+        "display_text": "1.175201",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!K40",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=SKEW(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L1",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=SKEW.P(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L5",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SORT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L7",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SQRT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L8",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.7724538509055159,
+      "metadata": {
+        "formula": "=SQRTPI(1)",
+        "display_text": "1.772454",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L10",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=STDEV(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L11",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=STDEV.P(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L12",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=STDEV.S(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L13",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=STDEVA(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L14",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=STDEVP(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L15",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=STDEVPA(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L20",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SUM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L22",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L23",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SUMPRODUCT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L24",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=SUMSQ(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L25",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L26",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L27",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L28",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L29",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L30",
+      "kind": "value",
+      "status": "observed",
+      "value": "",
+      "metadata": {
+        "formula": "=T(1)",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L31",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L32",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L33",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L34",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L35",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L36",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!L38",
+      "kind": "value",
+      "status": "observed",
+      "value": 1.5574077246549023,
+      "metadata": {
+        "formula": "=TAN(1)",
+        "display_text": "1.557408",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L39",
+      "kind": "value",
+      "status": "observed",
+      "value": 0.7615941559557649,
+      "metadata": {
+        "formula": "=TANH(1)",
+        "display_text": "0.761594",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!L40",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M1",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M2",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M10",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=TIMEVALUE(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M12",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TOCOL(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M13",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M14",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TOROW(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M15",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=TRANSLATE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M16",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TRANSPOSE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M17",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TREND(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M18",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=TRIM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M20",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TRIMRANGE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M21",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M22",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TRUNC(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M23",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M24",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=TYPE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M25",
+      "kind": "value",
+      "status": "observed",
+      "value": "\u0001",
+      "metadata": {
+        "formula": "=UNICHAR(1)",
+        "display_text": "\u0001",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M26",
+      "kind": "value",
+      "status": "observed",
+      "value": 49,
+      "metadata": {
+        "formula": "=UNICODE(1)",
+        "display_text": "49",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M27",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=UNIQUE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M28",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=UPPER(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M29",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=VALUE(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M30",
+      "kind": "value",
+      "status": "observed",
+      "value": "1",
+      "metadata": {
+        "formula": "=VALUETOTEXT(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M31",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=VAR(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M32",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=VAR.P(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M33",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=VAR.S(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M34",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826281,
+      "metadata": {
+        "formula": "=VARA(1)",
+        "display_text": "#DIV/0!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M35",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=VARP(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M36",
+      "kind": "value",
+      "status": "observed",
+      "value": 0,
+      "metadata": {
+        "formula": "=VARPA(1)",
+        "display_text": "0",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M37",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M38",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!M39",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=VSTACK(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!M40",
+      "kind": "value",
+      "status": "observed",
+      "value": -2146826273,
+      "metadata": {
+        "formula": "=WEBSERVICE(1)",
+        "display_text": "#VALUE!",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!N1",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=WEEKDAY(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!N2",
+      "kind": "value",
+      "status": "observed",
+      "value": 1,
+      "metadata": {
+        "formula": "=WEEKNUM(1)",
+        "display_text": "1",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!N3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N5",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N6",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N7",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N8",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N9",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N10",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N11",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N12",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N13",
+      "kind": "value",
+      "status": "observed",
+      "value": true,
+      "metadata": {
+        "formula": "=XOR(1)",
+        "display_text": "TRUE",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!N14",
+      "kind": "value",
+      "status": "observed",
+      "value": 1900,
+      "metadata": {
+        "formula": "=YEAR(1)",
+        "display_text": "1900",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!N15",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N16",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N17",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N18",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N19",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!N20",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\scenarios\\SCN-EK011-FUNCTION-RECOGNITION.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\evidence\\SCN-EK011-FUNCTION-RECOGNITION\u0022 --visible false --timeout-sec 3600",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/15_version_platform_guide.md"
+    ]
+  }
+}

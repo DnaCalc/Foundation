@@ -1,7 +1,7 @@
 # Excel Compatibility Spec Index Research Run
 
 - Run ID: 20260228-130325-excel-compat-spec-index-pass-01
-- Status: captured (extended; Track A continuation passes added)
+- Status: complete (extended; Track A/B interleaving passes through run closure added)
 - Scope: Excel worksheet formula language + built-in functions + sheet-visible value types + ListObject/Table semantics + formatting semantics
 - Out of scope: Power Query/M, DAX/Power BI formula language, pre-Excel-2007 legacy history (except where needed to explain current behavior)
 
@@ -18,6 +18,8 @@ This run executes nine prompt passes plus Track A documentation/search execution
 9. Coercion matrix expansion pass.
 10. Track A execution pass (passes 18-23) for backlog-linked documentation/search scaffolding and external implementation watchlisting.
 11. Track A continuation pass (passes 24-28) to close remaining doc/search items from pass 18 and complete tier-5/4 source indexing.
+12. Track A/B interleaving passes (29-35) to execute and synthesize empirical wave closures.
+13. Run completion pass (36) to close planned batches and refresh loop execution.
 
 ## Primary outputs
 - `outputs/research_index.md`
@@ -54,6 +56,15 @@ This run executes nine prompt passes plus Track A documentation/search execution
 - `outputs/26_full_interest_platform_matrix_seed_expansion.md`
 - `outputs/27_trackA_continuation_execution_pass.md`
 - `outputs/28_tier45_source_index_completion_pass.md`
+- `outputs/29_trackA_trackB_interleaving_reason_code_wave1.md`
+- `outputs/30_trackA_trackB_interleaving_formula_parse_wave1.md`
+- `outputs/31_trackA_trackB_interleaving_coercion_wave1.md`
+- `outputs/32_trackA_trackB_interleaving_cf_wave1.md`
+- `outputs/33_trackA_trackB_interleaving_table_wave1.md`
+- `outputs/34_trackA_trackB_interleaving_tier45_wave1.md`
+- `outputs/35_trackA_trackB_interleaving_crosscut_function_edge_and_refresh.md`
+- `outputs/36_trackA_trackB_run_completion.md`
+- `outputs/37_trackA_trackB_empirical_full_list_completion.md`
 - `outputs/function_reason_code_evidence_tracker.csv`
 - `outputs/platform_availability_source_matrix_seed.csv`
 - `outputs/tier45_function_evidence_dossier.csv`
@@ -65,4 +76,4 @@ This run executes nine prompt passes plus Track A documentation/search execution
 - Uses secondary/community sources only for triangulation and gap discovery.
 - Tracks version/channel ambiguity as explicit known unknowns.
 - Maintains union-across-platform posture with caveat tracking.
-- Follow-on empirical planning and task decomposition is tracked in `../20260228-180047-excel-compat-empirical-pass-01/`.
+- Follow-on empirical planning/execution is captured in `../20260228-180047-excel-compat-empirical-pass-01/` and closed for this batch plan.

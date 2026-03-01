@@ -1,0 +1,9 @@
+{
+    "notes":  "CUBE contract baseline from tier45 wave.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-022",
+    "evidence_refs":  [
+                          "outputs/tier45_wave1/ECS-EB-020_cube_contract_probe_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

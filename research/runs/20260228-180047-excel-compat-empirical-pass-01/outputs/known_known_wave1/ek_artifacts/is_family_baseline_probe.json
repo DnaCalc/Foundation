@@ -1,0 +1,38 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!B1",
+                             "value":  true,
+                             "formula":  "=ISNUMBER(A1)",
+                             "display_text":  "TRUE",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B2",
+                             "value":  true,
+                             "formula":  "=ISTEXT(A2)",
+                             "display_text":  "TRUE",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B3",
+                             "value":  true,
+                             "formula":  "=ISLOGICAL(A3)",
+                             "display_text":  "TRUE",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!B4",
+                             "value":  true,
+                             "formula":  "=ISERROR(1/0)",
+                             "display_text":  "TRUE",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-028",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK028-IS-FAMILY",
+    "scenario_id":  "SCN-EK028-IS-FAMILY",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "IS family baseline direct probe."
+}

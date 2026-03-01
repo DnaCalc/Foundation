@@ -24,6 +24,11 @@ Track A linkage reference set:
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/30_trackA_trackB_interleaving_formula_parse_wave1.md`
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/31_trackA_trackB_interleaving_coercion_wave1.md`
 - `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/32_trackA_trackB_interleaving_cf_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/33_trackA_trackB_interleaving_table_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/34_trackA_trackB_interleaving_tier45_wave1.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/35_trackA_trackB_interleaving_crosscut_function_edge_and_refresh.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/36_trackA_trackB_run_completion.md`
+- `../../20260228-130325-excel-compat-spec-index-pass-01/outputs/37_trackA_trackB_empirical_full_list_completion.md`
 
 | Task ID | Backlog link | Empirical objective | Method outline | Expected artifact(s) |
 |---|---|---|---|---|
@@ -117,6 +122,29 @@ Start execution in this order for maximum downstream unlock:
 - `ECS-EB-031`: conditional-format overlap fixture wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-031_cf_overlap_fixture_manifest_wave1.csv`
 - `ECS-EB-032`: conditional-format stop-if-true/priority transition wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-032_cf_stopiftrue_probe_wave1.csv`
 - `ECS-EB-033`: conditional-format table+spill interaction wave-1 executed and summarized at `outputs/cf_wave1/ECS-EB-033_cf_table_spill_interaction_probe_wave1.csv` with two explicit spill-related display-color mismatches retained for triage
-- Pilot execution follow-up added:
-  - `ECS-EB-047`: derived from pilot wave evidence limits; requires operation-step snapshots for volatility/transition assertions.
-  - `ECS-EB-048`: derived from locale probe caveats; requires locale-controlled execution profiles.
+- `ECS-EB-034`: table structured-ref/spill wave-1 output published at `outputs/table_wave1/ECS-EB-034_table_spill_interaction_matrix_wave1.csv`
+- `ECS-EB-035`: table resize/coercion/format wave-1 output published at `outputs/table_wave1/ECS-EB-035_table_resize_coercion_format_probe_wave1.csv`
+- `ECS-EB-036`: table platform divergence wave-1 output published at `outputs/table_wave1/ECS-EB-036_table_platform_divergence_probe_wave1.csv`
+- `ECS-EB-017`: tier-5 caveat synthesis published at `outputs/tier45_wave1/ECS-EB-017_tier5_platform_caveat_report_wave1.md`
+- `ECS-EB-018`: dynamic-array mixed-type wave-1 output published at `outputs/tier45_wave1/ECS-EB-018_dynamic_array_mixed_type_probe_wave1.csv`
+- `ECS-EB-019`: lambda/helper edge wave-1 output published at `outputs/tier45_wave1/ECS-EB-019_lambda_helper_edge_probe_wave1.csv`
+- `ECS-EB-020`: CUBE contract wave-1 output published at `outputs/tier45_wave1/ECS-EB-020_cube_contract_probe_wave1.csv`
+- `ECS-EB-021`: external-data replay wave-1 output published at `outputs/tier45_wave1/ECS-EB-021_external_data_replay_probe_wave1.csv`
+- `ECS-EB-022`: tier-3 expansion queue wave-1 output published at `outputs/tier45_wave1/ECS-EB-022_tier3_expansion_queue_wave1.csv`
+- `ECS-EB-044`: reopen determinism wave-1 output published at `outputs/reopen_wave1/ECS-EB-044_reopen_determinism_probe_wave1.csv` and canonical merged output at `outputs/crosscut_wave1/ECS-EB-044_reopen_determinism_probe.csv`
+- `ECS-EB-042`: display capture schema wave-1 output published at `outputs/crosscut_wave1/ECS-EB-042_display_capture_schema_wave1.json`
+- `ECS-EB-043`: calc-mode transition log wave-1 output published at `outputs/crosscut_wave1/ECS-EB-043_calc_mode_transition_log_wave1.csv`
+- `ECS-EB-045`: divergence minimization guidance published at `outputs/crosscut_wave1/ECS-EB-045_empirical_divergence_minimization_wave1.md`
+- `ECS-EB-047`: stepwise capture schema wave-1 output published at `outputs/crosscut_wave1/ECS-EB-047_stepwise_capture_schema_wave1.json`
+- `ECS-EB-048`: locale execution profile wave-1 output published at `outputs/crosscut_wave1/ECS-EB-048_locale_execution_profile_wave1.json`
+- `ECS-EB-005`: function template plan wave-1 output published at `outputs/function_edge_wave1/ECS-EB-005_function_template_plan_wave1.csv`
+- `ECS-EB-006`: function edge manifest wave-1 output published at `outputs/function_edge_wave1/ECS-EB-006_function_edge_wave1_manifest.csv`
+- `ECS-EB-007`: function edge matrix schema wave-1 output published at `outputs/function_edge_wave1/ECS-EB-007_function_edge_matrix_schema_wave1.csv`
+- `ECS-EB-008`: function unresolved queue wave-1 output published at `outputs/function_edge_wave1/ECS-EB-008_function_unresolved_queue_wave1.csv`
+- `ECS-EB-009`: function edge evidence index wave-1 output published at `outputs/function_edge_wave1/ECS-EB-009_function_edge_evidence_index_wave1.csv`
+- `ECS-EB-039`: parity regression and refresh artifacts published at `outputs/platform_availability/platform_parity_regression_log.csv` and `outputs/refresh_cycle_01/ECS-EB-039_platform_parity_regression_log_wave1.csv`
+
+## Post-completion closure wave
+- Deduplicated unresolved queue replay/closure published at:
+  - `outputs/unresolved_wave2/unresolved_resolution_matrix_wave2.csv`
+  - `outputs/unresolved_wave2/UNRESOLVED_WAVE2_REPORT.md`

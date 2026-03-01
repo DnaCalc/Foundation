@@ -1,0 +1,9 @@
+{
+    "notes":  "Single-rule CF baseline from cf wave1.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-041",
+    "evidence_refs":  [
+                          "outputs/cf_wave1/ECS-EB-031_cf_overlap_fixture_manifest_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

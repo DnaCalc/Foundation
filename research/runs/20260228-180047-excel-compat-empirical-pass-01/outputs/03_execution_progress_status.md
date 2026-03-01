@@ -1,33 +1,59 @@
 # Execution Progress Status (Interleaved Track A/B)
 
 ## Purpose
-Snapshot current execution state after reason-code, formula-parse, coercion, and conditional-format interleaving wave-1 batches.
+Final completion snapshot after:
+1. backlog-linked interleaving batches and refresh cycle 01,
+2. known-known closure wave 1 (`ECS-EK-001..048`),
+3. unresolved queue closure wave 2.
 
 ## Completed backlog-linked empirical tasks (executed artifacts)
-1. `ECS-EB-001` through `ECS-EB-004` (runner contracts/schemas/validator)
-2. `ECS-EB-010`, `ECS-EB-011`, `ECS-EB-014`, `ECS-EB-023` (pilot wave)
-3. `ECS-EB-012`, `ECS-EB-013` (volatility context + reason-code mapping wave2)
-4. `ECS-EB-015` (RTD lifecycle wave1)
-5. `ECS-EB-016` (date-system wave1)
-6. `ECS-EB-028`, `ECS-EB-029`, `ECS-EB-030` (formula-parse wave1)
+1. `ECS-EB-001` through `ECS-EB-004` (runner contracts/schemas/validator baseline)
+2. `ECS-EB-005` through `ECS-EB-009` (function-edge planning/index wave1)
+3. `ECS-EB-010`, `ECS-EB-011`, `ECS-EB-014`, `ECS-EB-023` (pilot wave1)
+4. `ECS-EB-012`, `ECS-EB-013` (volatility context + reason-code mapping wave2)
+5. `ECS-EB-015`, `ECS-EB-016` (RTD/date-system waves)
+6. `ECS-EB-017` through `ECS-EB-022` (tier4/5 deep-semantics + caveat outputs)
 7. `ECS-EB-024`, `ECS-EB-025`, `ECS-EB-026`, `ECS-EB-027` (coercion wave1)
-8. `ECS-EB-031`, `ECS-EB-032`, `ECS-EB-033` (conditional-format wave1)
-9. `ECS-EB-037` (platform source extraction/merge)
-10. `ECS-EB-038` (build metadata schema)
-11. `ECS-EB-040`, `ECS-EB-041` (tier-3 reason-code verification/sync wave1)
-12. `ECS-EB-046` (platform capability profile template)
+8. `ECS-EB-028`, `ECS-EB-029`, `ECS-EB-030` (formula-parse wave1)
+9. `ECS-EB-031`, `ECS-EB-032`, `ECS-EB-033` (conditional-format wave1)
+10. `ECS-EB-034`, `ECS-EB-035`, `ECS-EB-036` (table/listobject wave1)
+11. `ECS-EB-037`, `ECS-EB-038`, `ECS-EB-046` (platform availability/build/capability framing)
+12. `ECS-EB-039` (platform parity regression + refresh cycle tracking)
+13. `ECS-EB-040`, `ECS-EB-041` (tier-3 reason-code verification/sync wave1)
+14. `ECS-EB-042`, `ECS-EB-043`, `ECS-EB-044`, `ECS-EB-045`, `ECS-EB-047`, `ECS-EB-048` (cross-cutting instrumentation/reopen/minimization/locale-stepwise outputs)
 
-## Interleaving highlights now explicit
-1. `ECS-BL-11` has wave-1 closure with one retained counter-signal triage item (`SUMIF` reason-code review).
-2. `ECS-BL-07` has wave-1 closure with one retained ambiguity triage item (`=SUM(A1,,B1)` accepted in this environment).
-3. `ECS-BL-06` has wave-1 closure with three retained mismatch triage items for range coercion expectations (`SUM/AVERAGE/COUNT` on mixed text+numeric ranges).
-4. `ECS-BL-08` has wave-1 closure with two retained mismatch triage items for spill-related conditional-format display expectations (`C3/C4` in `SCN-EB033-CF-TABLE-SPILL`).
+## Completed known-known empirical tasks
+1. `ECS-EK-001..048` are closed in `known_known_wave1`.
+2. Completion modes:
+   - `direct_probe`: 19 tasks
+   - `linked_existing_evidence`: 29 tasks
+3. Canonical matrix: `outputs/known_known_wave1/ECS-EK_execution_matrix_wave1.csv`
 
-## Next priority backlog-linked tasks (remaining)
-1. `ECS-EB-034` through `ECS-EB-036` (table/listobject interaction depth + platform divergence).
-2. `ECS-EB-039` (platform parity regression tracker).
-3. `ECS-EB-017` through `ECS-EB-022` (tier-5 platform caveat report and tier-4/3 deep semantic expansions).
-4. `ECS-EB-042` through `ECS-EB-045`, `ECS-EB-047`, `ECS-EB-048` (cross-cutting instrumentation and replay quality tasks).
+## Unresolved queue closure
+1. `unresolved_wave2` replayed all deduplicated unresolved scenario families (10 replay scenarios).
+2. Deduplicated unresolved items: 20
+3. Closure outcomes:
+   - `reproduced_counter_signal`: 12
+   - `probe_reconfirmed`: 8
+   - `drift_detected`: 0
+4. Remaining unresolved queue rows in wave2 closure file: 0
+
+## Interleaving highlights retained
+1. `SUMIF` remains an explicit reason-code counter-signal follow-up (`ECS-BL-11`).
+2. `=SUM(A1,,B1)` acceptance remains an explicit grammar-ambiguity follow-up (`ECS-BL-07`).
+3. Mixed text+numeric range coercion mismatch rows remain explicit follow-ups (`ECS-BL-06`).
+4. Spill-related conditional-format display mismatch rows remain explicit follow-ups (`ECS-BL-08`).
+5. Table structured-ref/spill expectation mismatch row (`TBW1-002`) remains explicit follow-up (`ECS-BL-09`).
+
+## Remaining backlog-linked tasks
+None in this pass scope. All `ECS-EB-001..048` have emitted artifacts.
+
+## Remaining known-known tasks
+None in this pass scope. All `ECS-EK-001..048` have closure artifacts in `known_known_wave1`.
 
 ## Status decision
-Interleaving is active and progressing in wave batches; four backlog families (`BL-11`, `BL-07`, `BL-06`, `BL-08`) now have empirical wave-1 closure with explicit mismatch/counter-signal retention instead of implicit uncertainty.
+This run is complete for the current empirical list:
+1. backlog-linked tasks (`ECS-EB-001..048`) complete,
+2. known-known tasks (`ECS-EK-001..048`) complete,
+3. unresolved queue closure wave complete.
+Retained counter-signal behaviors are now explicitly closed with resolution states rather than open queue entries.

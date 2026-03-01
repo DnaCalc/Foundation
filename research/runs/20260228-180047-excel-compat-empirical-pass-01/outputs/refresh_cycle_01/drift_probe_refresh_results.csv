@@ -1,0 +1,4 @@
+"cycle_utc","probe_id","label","scenario_path","runner_exit_code","run_exit_status","metric","metric_value","evidence_ref"
+"2026-02-28T22:19:31Z","REFRESH-001","formula_parse_double_comma","research/runs/20260228-180047-excel-compat-empirical-pass-01/outputs/formula_parse_wave1/scenarios/SCN-EB030-AMBIG-DOUBLE-COMMA.json","0","success","final_formula","=SUM(A1,,B1)","outputs/refresh_cycle_01/evidence/REFRESH-001"
+"2026-02-28T22:19:31Z","REFRESH-002","reason_code_sumif_unrelated","research/runs/20260228-180047-excel-compat-empirical-pass-01/outputs/reason_code_wave1/scenarios/SCN-EB040-SUMIF-UNRELATED-EDIT.json","0","success","unique_value_count","1","outputs/refresh_cycle_01/evidence/REFRESH-002"
+"2026-02-28T22:19:31Z","REFRESH-003","reason_code_now_recalc","research/runs/20260228-180047-excel-compat-empirical-pass-01/outputs/reason_code_wave1/scenarios/SCN-EB040-NOW-RECALC.json","0","success","unique_value_count","4","outputs/refresh_cycle_01/evidence/REFRESH-003"

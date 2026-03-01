@@ -1,0 +1,90 @@
+﻿{
+  "run_id": "run-20260228-234926-9a0b58b1e",
+  "task_id": "ECS-EK-015",
+  "scenario_id": "SCN-EK015-AGGREGATE-BASELINE",
+  "timestamp_utc": "2026-02-28T23:49:28.2099006Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002B5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "5d0cfc1c8021cf6eedc89ae77e5048f5578cf121",
+      "repo_git_commit_short": "5d0cfc1",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!D1",
+      "kind": "value",
+      "status": "observed",
+      "value": 21,
+      "metadata": {
+        "formula": "=SUM(A1:B3)",
+        "display_text": "21",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D2",
+      "kind": "value",
+      "status": "observed",
+      "value": 6,
+      "metadata": {
+        "formula": "=COUNTA(A1:B3)",
+        "display_text": "6",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D3",
+      "kind": "value",
+      "status": "observed",
+      "value": 6,
+      "metadata": {
+        "formula": "=COUNT(A1:B3)",
+        "display_text": "6",
+        "number_format": "General",
+        "has_formula": true
+      }
+    },
+    {
+      "target": "Sheet1!D4",
+      "kind": "value",
+      "status": "observed",
+      "value": 32,
+      "metadata": {
+        "formula": "=SUMPRODUCT(A1:A3,B1:B3)",
+        "display_text": "32",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\scenarios\\SCN-EK015-AGGREGATE-BASELINE.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260228-180047-excel-compat-empirical-pass-01\\outputs\\known_known_wave1\\evidence\\SCN-EK015-AGGREGATE-BASELINE\u0022 --visible false --timeout-sec 3600",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/11_function_catalog_guide.md"
+    ]
+  }
+}

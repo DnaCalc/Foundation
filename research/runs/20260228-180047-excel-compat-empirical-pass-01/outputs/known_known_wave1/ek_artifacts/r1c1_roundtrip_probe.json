@@ -1,0 +1,9 @@
+{
+    "notes":  "No explicit ReferenceStyle toggle lane in runner; baseline syntax acceptance linked to parse corpus pending dedicated R1C1 operation support.",
+    "status":  "completed",
+    "task_id":  "ECS-EK-004",
+    "evidence_refs":  [
+                          "outputs/formula_parse_wave1/ECS-EB-028_formula_parse_acceptance_corpus_wave1.csv"
+                      ],
+    "completion_mode":  "linked_existing_evidence"
+}

@@ -1,0 +1,31 @@
+{
+    "observations":  [
+                         {
+                             "target":  "Sheet1!C1",
+                             "value":  11,
+                             "formula":  "=A1+$B$1",
+                             "display_text":  "11",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!C2",
+                             "value":  21,
+                             "formula":  "=A2+$B$1",
+                             "display_text":  "21",
+                             "number_format":  "General"
+                         },
+                         {
+                             "target":  "Sheet1!D1",
+                             "value":  2,
+                             "formula":  "=B1+$B$1",
+                             "display_text":  "2",
+                             "number_format":  "General"
+                         }
+                     ],
+    "task_id":  "ECS-EK-003",
+    "evidence_ref":  "outputs/known_known_wave1/evidence/SCN-EK003-A1-COPY",
+    "scenario_id":  "SCN-EK003-A1-COPY",
+    "completion_mode":  "direct_probe",
+    "status":  "completed",
+    "notes":  "A1 rewrite/copy direct probe."
+}
