@@ -1,0 +1,7 @@
+source_key,path,authority,role,notes
+model_frame_outputs,prompts/runs/20260301-203623-cell-abstraction-pass-01-model-frame/responses,medium,upstream_outputs,inputs from pass 01
+excel_conformance_spec,reference/conformance/excel-worksheet-engine/EXCEL_CONFORMANCE_SPEC.md,high,conformance,authoritative working spec
+excel_conformance_requirements,reference/conformance/excel-worksheet-engine/CONFORMANCE_REQUIREMENTS.csv,high,conformance,requirement-level source-backed items
+excel_gaps_and_uncertainties,reference/conformance/excel-worksheet-engine/KNOWN_GAPS_AND_UNCERTAINTIES.md,high,conformance,open ambiguity registry
+excel_source_bindings,reference/conformance/excel-worksheet-engine/SOURCE_BINDINGS.csv,high,conformance,source and evidence id map
+excel_empirical_findings,reference/empirical/findings_index.md,medium,empirical,curated empirical findings index

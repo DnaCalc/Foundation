@@ -1,0 +1,2 @@
+run_id,status,start_utc,end_utc,artifact,notes
+20260301-203623-cell-abstraction-pass-03-conformance-mapping,planned,,,,scaffold created; depends on pass 01 and pass 02 outputs

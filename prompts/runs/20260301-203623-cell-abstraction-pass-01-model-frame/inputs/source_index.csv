@@ -1,0 +1,7 @@
+source_key,path,authority,role,notes
+foundation_charter,CHARTER.md,high,doctrine,mission and doctrine bounds
+foundation_architecture,ARCHITECTURE_AND_REQUIREMENTS.md,high,architecture,system boundaries and requirements taxonomy
+foundation_operations,OPERATIONS.md,high,operations,managed-run and evidence doctrine
+core_engine_formal_model,CORE_ENGINE_FORMAL_MODEL.md,high,formal_core,current core semantics framing
+excel_conformance_index,reference/conformance/excel-worksheet-engine/README.md,high,conformance_index,entry point to excel conformance corpus
+excel_empirical_index,reference/empirical/README.md,medium,empirical_index,entry point to curated empirical findings

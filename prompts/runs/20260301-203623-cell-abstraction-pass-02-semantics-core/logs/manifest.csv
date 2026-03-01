@@ -1,0 +1,2 @@
+run_id,status,start_utc,end_utc,artifact,notes
+20260301-203623-cell-abstraction-pass-02-semantics-core,planned,,,,scaffold created; depends on pass 01 outputs

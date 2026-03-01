@@ -1,0 +1,6 @@
+source_key,path,authority,role,notes
+pass01_outputs,prompts/runs/20260301-203623-cell-abstraction-pass-01-model-frame/responses,medium,upstream_outputs,abstraction vocabulary and model frame
+pass02_outputs,prompts/runs/20260301-203623-cell-abstraction-pass-02-semantics-core/responses,medium,upstream_outputs,semantics rules and uncertainty list
+excel_conformance_root,reference/conformance/excel-worksheet-engine/,high,conformance,official conformance structure and references
+excel_empirical_root,reference/empirical/,medium,empirical,curated empirical findings and provenance
+reference_doctrine,REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md,high,doctrine,source/provenance and conformance item contract
