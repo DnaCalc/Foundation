@@ -1,0 +1,17 @@
+﻿{
+  "document_id": "vba-functions-functions-visual-basic-for-applications-90fd5e35",
+  "source_id": "VBA-FUNCTIONS",
+  "source_url": "https://learn.microsoft.com/en-us/office/vba/language/reference/functions-visual-basic-for-applications",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\learn.microsoft.com\\en-us\\office\\vba\\language\\reference\\functions-visual-basic-for-applications.md",
+  "source_sha256": "90fd5e35a0c9b7fec51bb837bb5345330d4190e3b28ff20370c467350dc56d52",
+  "extraction_status": "ok",
+  "extraction_mode": "markdown_native",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\docs\\vba-functions-functions-visual-basic-for-applications-90fd5e35\\images"
+  }
+}

@@ -4,3 +4,8 @@ MS-VBAL,microsoft_general_purpose_programming_languages,VBA Language Specificati
 MS-OVBA,office_file_formats,Office VBA File Format Structure,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-ovba/b39ac32f-0ce1-4533-9297-2ff3ff62c9ec,false,true
 MS-DTYP,windows_protocols,Windows Data Types,https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/cca27429-5689-4a16-b2b4-9325d93e4ba2,false,true
 MS-OAUT,windows_protocols,OLE Automation Protocol,https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/bbb05720-f724-45c7-8d17-f83c3d1a3961,false,true
+VBA-API-OVERVIEW,office_vba,VBA API overview language reference,https://learn.microsoft.com/en-us/office/vba/api/overview/language-reference,false,true
+VBA-FUNCTIONS,office_vba,Functions (Visual Basic for Applications),https://learn.microsoft.com/en-us/office/vba/language/reference/functions-visual-basic-for-applications,false,true
+VBA-LANG-UIHELP,office_vba,Visual Basic language reference (UI help),https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference,false,true
+MS-XLS,office_file_formats,Excel Binary File Format (.xls) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xls,false,true
+MS-XLSB,office_file_formats,Excel Binary Workbook (.xlsb) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xlsb,false,true

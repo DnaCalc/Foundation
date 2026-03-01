@@ -1,0 +1,37 @@
+﻿{
+  "run_id": "specproc-20260301-100120",
+  "captured_utc": "2026-03-01T10:01:29.1618016Z",
+  "source_index": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\inputs\\selected_index.csv",
+  "docs_processed": 7,
+  "segments": 76499,
+  "sentences": 159292,
+  "spec_items": 36233,
+  "conformance_candidates": 525,
+  "conformance_excluded": 2,
+  "pending_items": 0,
+  "tooling": {
+    "runner_name": "SpecPackProcessor",
+    "runner_version": "0.1.0\u002B1da83fbac520bd7f6488e33174a3272b5f20c557",
+    "runner_build_version": "0.1.0.0",
+    "platform": "Microsoft Windows NT 10.0.26200.0",
+    "dotnet_runtime": "10.0.3",
+    "working_directory": "C:\\Work\\DnaCalc\\Foundation\\tools",
+    "invocation_working_directory": "C:\\Work\\DnaCalc\\Foundation",
+    "git_commit": "1da83fbac520bd7f6488e33174a3272b5f20c557",
+    "git_branch": "master",
+    "git_dirty": true
+  },
+  "quality": {
+    "excluded_by_reason": {
+      "normative_keyword_definition": 2
+    }
+  },
+  "outputs": {
+    "documents_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\documents.csv",
+    "selected_sources_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\selected_sources.csv",
+    "spec_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\spec_items.jsonl",
+    "conformance_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\conformance_items.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\conformance_excluded.jsonl",
+    "llm_tasks_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-webref-compare-v3\\outputs\\llm\\classification_tasks.jsonl"
+  }
+}

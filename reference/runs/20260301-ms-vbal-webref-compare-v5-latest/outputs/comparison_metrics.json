@@ -1,0 +1,33 @@
+{
+  "generated_utc": "2026-03-01T10:06:34.0301274Z",
+  "official_doc_ids": [
+    "discovered-ms-vbal-250520-f945507e",
+    "discovered-ms-vbal-1f6d62a5",
+    "ms-vbal-d5418146-0bd2-45eb-9c7a-fd9502722c74-ec3db090"
+  ],
+  "reference_doc_ids": [
+    "vba-api-overview-language-reference-f51e0ecc",
+    "vba-functions-functions-visual-basic-for-applications-90fd5e35",
+    "vba-lang-uihelp-visual-basic-language-reference-606c92b3"
+  ],
+  "official_vs_reference_spec": {
+    "a": 17058,
+    "b": 158,
+    "intersection": 0,
+    "a_only": 17058,
+    "b_only": 158,
+    "jaccard": 0.0,
+    "a_covered_by_b": 0.0,
+    "b_covered_by_a": 0.0
+  },
+  "official_vs_reference_conformance": {
+    "a": 409,
+    "b": 0,
+    "intersection": 0,
+    "a_only": 409,
+    "b_only": 0,
+    "jaccard": 0.0,
+    "a_covered_by_b": 0.0,
+    "b_covered_by_a": 0.0
+  }
+}

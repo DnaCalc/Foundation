@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.IO.Compression;
+using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using UglyToad.PdfPig;
 
 internal static class Program
 {
@@ -52,7 +54,7 @@ internal static class Program
 
     static void Help() => Console.WriteLine("""
 spec-pack-processor (C#)
-  run --source-index <csv> --out <dir> [--filter <text>] [--max-docs N] [--include-ext .docx,.md,.pdf]
+  run --source-index <csv> --out <dir> [--filter <text>] [--max-docs N] [--include-ext .docx,.md,.pdf,.html,.htm]
 """);
 
     static int Run(string[] args)
@@ -61,7 +63,7 @@ spec-pack-processor (C#)
         string? outDir = null;
         string filter = string.Empty;
         int maxDocs = 0;
-        string includeExt = ".docx,.md,.pdf";
+        string includeExt = ".docx,.md,.pdf,.html,.htm";
 
         for (int i = 0; i < args.Length; i++)
         {
@@ -105,6 +107,7 @@ spec-pack-processor (C#)
         if (maxDocs > 0) rows = rows.Take(maxDocs).ToList();
 
         var docSummaries = new List<DocSummary>();
+        var allSpecItems = new List<SpecItem>();
         var allConformance = new List<ConformanceItem>();
         var allExcludedConformance = new List<ExcludedConformanceItem>();
         var allSentences = new List<SentenceRecord>();
@@ -116,18 +119,19 @@ spec-pack-processor (C#)
         {
             iDoc++;
             Console.WriteLine($"[{iDoc}/{rows.Count}] {row.LocalPath}");
-            var summary = ProcessDocument(row, docsRoot, allConformance, allExcludedConformance, allSentences);
+            var summary = ProcessDocument(row, docsRoot, allSpecItems, allConformance, allExcludedConformance, allSentences);
             docSummaries.Add(summary);
         }
 
+        WriteJsonl(Path.Combine(outputRoot, "spec_items.jsonl"), allSpecItems);
         WriteJsonl(Path.Combine(outputRoot, "conformance_items.jsonl"), allConformance);
         WriteJsonl(Path.Combine(outputRoot, "conformance_excluded.jsonl"), allExcludedConformance);
         WriteJsonl(Path.Combine(llmRoot, "classification_tasks.jsonl"), allSentences);
         WriteCsv(Path.Combine(outputRoot, "documents.csv"),
-            ["document_id","source_id","source_url","local_path","sha256","extraction_status","extraction_mode","segments","sentences","conformance","conformance_excluded","images","tables","pending","notes"],
+            ["document_id","source_id","source_url","local_path","sha256","extraction_status","extraction_mode","segments","sentences","spec_items","conformance","conformance_excluded","images","tables","pending","notes"],
             docSummaries.Select(s => new[] { s.DocumentId, s.SourceId, s.SourceUrl, s.LocalPath, s.Sha256, s.ExtractionStatus, s.ExtractionMode,
                 s.SegmentCount.ToString(CultureInfo.InvariantCulture), s.SentenceCount.ToString(CultureInfo.InvariantCulture),
-                s.ConformanceCount.ToString(CultureInfo.InvariantCulture), s.ExcludedConformanceCount.ToString(CultureInfo.InvariantCulture), s.ImageCount.ToString(CultureInfo.InvariantCulture),
+                s.SpecItemCount.ToString(CultureInfo.InvariantCulture), s.ConformanceCount.ToString(CultureInfo.InvariantCulture), s.ExcludedConformanceCount.ToString(CultureInfo.InvariantCulture), s.ImageCount.ToString(CultureInfo.InvariantCulture),
                 s.TableCount.ToString(CultureInfo.InvariantCulture), s.PendingCount.ToString(CultureInfo.InvariantCulture), s.Notes ?? string.Empty }));
 
         var excludedByReason = allExcludedConformance
@@ -143,6 +147,7 @@ spec-pack-processor (C#)
             docs_processed = docSummaries.Count,
             segments = docSummaries.Sum(d => d.SegmentCount),
             sentences = docSummaries.Sum(d => d.SentenceCount),
+            spec_items = allSpecItems.Count,
             conformance_candidates = allConformance.Count,
             conformance_excluded = allExcludedConformance.Count,
             pending_items = docSummaries.Sum(d => d.PendingCount),
@@ -155,6 +160,7 @@ spec-pack-processor (C#)
             {
                 documents_csv = Path.Combine(outputRoot, "documents.csv"),
                 selected_sources_csv = Path.Combine(outputRoot, "selected_sources.csv"),
+                spec_jsonl = Path.Combine(outputRoot, "spec_items.jsonl"),
                 conformance_jsonl = Path.Combine(outputRoot, "conformance_items.jsonl"),
                 conformance_excluded_jsonl = Path.Combine(outputRoot, "conformance_excluded.jsonl"),
                 llm_tasks_jsonl = Path.Combine(llmRoot, "classification_tasks.jsonl")
@@ -172,6 +178,7 @@ spec-pack-processor (C#)
     static DocSummary ProcessDocument(
         IndexRow row,
         string docsRoot,
+        List<SpecItem> allSpecItems,
         List<ConformanceItem> allConformance,
         List<ExcludedConformanceItem> allExcludedConformance,
         List<SentenceRecord> allSentences)
@@ -189,6 +196,7 @@ spec-pack-processor (C#)
         {
             ".docx" => ExtractDocx(sourcePath, imageDir),
             ".md" => ExtractMarkdown(sourcePath),
+            ".html" or ".htm" => ExtractHtml(sourcePath),
             ".pdf" => ExtractPdf(sourcePath, docOutDir),
             _ => ExtractUnsupported($"Unsupported extension: {ext}")
         };
@@ -241,10 +249,35 @@ spec-pack-processor (C#)
         }
 
         int cidx = 0;
+        int sidx = 0;
+        var specItems = new List<SpecItem>();
         var conformance = new List<ConformanceItem>();
         var excluded = new List<ExcludedConformanceItem>();
-        foreach (var s in sentences.Where(x => x.Informative && IsNormative(x.NormativeLevel)))
+        foreach (var s in sentences.Where(x => x.Informative))
         {
+            if (TryGetSpecExclusionReason(s.Text, s.TopicTags, out _))
+            {
+                continue;
+            }
+
+            sidx++;
+            specItems.Add(new SpecItem
+            {
+                ItemId = $"SPEC-{docId}-{sidx:D5}",
+                DocumentId = docId,
+                SourceSentenceId = s.SentenceId,
+                SpecLevel = IsNormative(s.NormativeLevel) ? "normative" : "informative",
+                Statement = s.Text,
+                TopicTags = s.TopicTags,
+                Status = "candidate",
+                Source = s.Source
+            });
+
+            if (!IsNormative(s.NormativeLevel))
+            {
+                continue;
+            }
+
             if (TryGetConformanceExclusionReason(s.Text, s.TopicTags, out var reason))
             {
                 excluded.Add(new ExcludedConformanceItem
@@ -282,6 +315,7 @@ spec-pack-processor (C#)
 
         WriteJsonl(Path.Combine(docOutDir, "segments.jsonl"), segments);
         WriteJsonl(Path.Combine(docOutDir, "sentences.jsonl"), sentences);
+        WriteJsonl(Path.Combine(docOutDir, "spec_items.jsonl"), specItems);
         WriteJsonl(Path.Combine(docOutDir, "conformance_candidates.jsonl"), conformance);
         WriteJsonl(Path.Combine(docOutDir, "conformance_excluded.jsonl"), excluded);
 
@@ -299,12 +333,14 @@ spec-pack-processor (C#)
             {
                 segments_jsonl = Path.Combine(docOutDir, "segments.jsonl"),
                 sentences_jsonl = Path.Combine(docOutDir, "sentences.jsonl"),
+                spec_items_jsonl = Path.Combine(docOutDir, "spec_items.jsonl"),
                 conformance_candidates_jsonl = Path.Combine(docOutDir, "conformance_candidates.jsonl"),
                 conformance_excluded_jsonl = Path.Combine(docOutDir, "conformance_excluded.jsonl"),
                 images_dir = imageDir
             }
         });
 
+        allSpecItems.AddRange(specItems);
         allConformance.AddRange(conformance);
         allExcludedConformance.AddRange(excluded);
         allSentences.AddRange(sentences);
@@ -320,6 +356,7 @@ spec-pack-processor (C#)
             ExtractionMode = extracted.ExtractionMode,
             SegmentCount = segments.Count,
             SentenceCount = sentences.Count,
+            SpecItemCount = specItems.Count,
             ConformanceCount = conformance.Count,
             ExcludedConformanceCount = excluded.Count,
             ImageCount = extracted.ImageCount,
@@ -333,6 +370,20 @@ spec-pack-processor (C#)
     {
         var result = new ExtractResult { ExtractionStatus = "ok", ExtractionMode = "markdown_native" };
         var lines = File.ReadAllLines(path);
+        var startIndex = 0;
+
+        // Skip YAML front matter commonly present in Microsoft Learn markdown exports.
+        if (lines.Length > 0 && lines[0].Trim() == "---")
+        {
+            for (int i = 1; i < lines.Length; i++)
+            {
+                if (lines[i].Trim() == "---")
+                {
+                    startIndex = i + 1;
+                    break;
+                }
+            }
+        }
         var buffer = new List<string>();
         int startLine = 0;
         bool inCode = false;
@@ -349,10 +400,22 @@ spec-pack-processor (C#)
             startLine = 0;
         }
 
-        for (int i = 0; i < lines.Length; i++)
+        for (int i = startIndex; i < lines.Length; i++)
         {
             var lineNo = i + 1;
             var trim = lines[i].Trim();
+
+            if (string.IsNullOrWhiteSpace(trim)) { Flush(lineNo - 1); continue; }
+            if (Regex.IsMatch(trim, @"^(ms|author|locale|document_id|updated_at|original_content_git_url|gitcommit|git_commit_id|site_name|depot_name|page_type|toc_rel|word_count|asset_id|item_type|source_path|canonicalUrl|breadcrumb_path)\s*:\s*", RegexOptions.IgnoreCase))
+            {
+                Flush(lineNo - 1);
+                continue;
+            }
+            if (trim == "---")
+            {
+                Flush(lineNo - 1);
+                continue;
+            }
 
             if (trim.StartsWith("```") || trim.StartsWith("~~~")) { Flush(lineNo - 1); inCode = !inCode; continue; }
             if (inCode) continue;
@@ -361,6 +424,19 @@ spec-pack-processor (C#)
             {
                 Flush(lineNo - 1);
                 result.Segments.Add(new SegmentDraft { Kind = "heading", Text = NormalizeWhitespace(trim.TrimStart('#').Trim()), Anchor = $"L{lineNo}" });
+                continue;
+            }
+
+            if (Regex.IsMatch(trim, @"^([-*+]|[0-9]+\.)\s+"))
+            {
+                Flush(lineNo - 1);
+                var listText = Regex.Replace(trim, @"^([-*+]|[0-9]+\.)\s+", "");
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "list_item",
+                    Text = NormalizeWhitespace(listText),
+                    Anchor = $"L{lineNo}"
+                });
                 continue;
             }
 
@@ -400,13 +476,131 @@ spec-pack-processor (C#)
                 continue;
             }
 
-            if (string.IsNullOrWhiteSpace(trim)) { Flush(lineNo - 1); continue; }
             if (buffer.Count == 0) startLine = lineNo;
             buffer.Add(trim);
         }
 
         Flush(lines.Length);
         return result;
+    }
+
+    static ExtractResult ExtractHtml(string path)
+    {
+        var result = new ExtractResult { ExtractionStatus = "ok", ExtractionMode = "html_text_strip" };
+        var html = File.ReadAllText(path);
+
+        html = Regex.Replace(html, @"(?is)<script\b[^>]*>.*?</script>", " ");
+        html = Regex.Replace(html, @"(?is)<style\b[^>]*>.*?</style>", " ");
+
+        int section = 0;
+        foreach (Match m in Regex.Matches(html, @"(?is)<h[1-6][^>]*>(.*?)</h[1-6]>"))
+        {
+            section++;
+            var text = HtmlToText(m.Groups[1].Value);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "heading",
+                    Text = text,
+                    Anchor = $"h:{section}"
+                });
+            }
+        }
+
+        int p = 0;
+        foreach (Match m in Regex.Matches(html, @"(?is)<p\b[^>]*>(.*?)</p>"))
+        {
+            p++;
+            var text = HtmlToText(m.Groups[1].Value);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "paragraph",
+                    Text = text,
+                    Anchor = $"p:{p}"
+                });
+            }
+        }
+
+        int li = 0;
+        foreach (Match m in Regex.Matches(html, @"(?is)<li\b[^>]*>(.*?)</li>"))
+        {
+            li++;
+            var text = HtmlToText(m.Groups[1].Value);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "list_item",
+                    Text = text,
+                    Anchor = $"li:{li}"
+                });
+            }
+        }
+
+        int tbl = 0;
+        foreach (Match table in Regex.Matches(html, @"(?is)<table\b[^>]*>(.*?)</table>"))
+        {
+            tbl++;
+            result.TableCount++;
+            int row = 0;
+            foreach (Match tr in Regex.Matches(table.Groups[1].Value, @"(?is)<tr\b[^>]*>(.*?)</tr>"))
+            {
+                row++;
+                int col = 0;
+                foreach (Match td in Regex.Matches(tr.Groups[1].Value, @"(?is)<t[hd]\b[^>]*>(.*?)</t[hd]>"))
+                {
+                    col++;
+                    var text = HtmlToText(td.Groups[1].Value);
+                    var blank = string.IsNullOrWhiteSpace(text);
+                    result.Segments.Add(new SegmentDraft
+                    {
+                        Kind = "table_cell",
+                        Text = blank ? "<blank>" : text,
+                        Anchor = $"tbl:{tbl}",
+                        Table = tbl,
+                        Row = row,
+                        Column = col,
+                        IsBlank = blank
+                    });
+                }
+            }
+        }
+
+        if (result.Segments.Count == 0)
+        {
+            var fallback = HtmlToText(html);
+            var lines = fallback.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+            int i = 0;
+            foreach (var line in lines)
+            {
+                i++;
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "paragraph",
+                    Text = line,
+                    Anchor = $"line:{i}"
+                });
+            }
+        }
+
+        if (result.Segments.Count == 0)
+        {
+            result.ExtractionStatus = "warning";
+            result.Notes = "Parsed HTML but emitted no segments.";
+        }
+
+        return result;
+    }
+
+    static string HtmlToText(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value)) return string.Empty;
+        var withBreaks = Regex.Replace(value, @"(?is)<br\s*/?>", "\n");
+        var stripped = Regex.Replace(withBreaks, @"(?is)<[^>]+>", " ");
+        return NormalizeWhitespace(WebUtility.HtmlDecode(stripped));
     }
 
     static ExtractResult ExtractDocx(string path, string imageDir)
@@ -557,35 +751,24 @@ spec-pack-processor (C#)
         var artifactsDir = Path.Combine(docOutDir, "artifacts");
         Directory.CreateDirectory(artifactsDir);
         var txtPath = Path.Combine(artifactsDir, "pdf_text.txt");
+        string? pigNote = null;
 
         if (TryPdfToText(path, txtPath, out var note) && File.Exists(txtPath))
         {
-            var text = File.ReadAllText(txtPath);
-            var pages = text.Split('\f');
-            int p = 0;
-            foreach (var page in pages)
-            {
-                p++;
-                var blocks = Regex.Split(page, "\\r?\\n\\s*\\r?\\n")
-                    .Select(NormalizeWhitespace)
-                    .Where(x => !string.IsNullOrWhiteSpace(x))
-                    .ToList();
-                int b = 0;
-                foreach (var block in blocks)
-                {
-                    b++;
-                    result.Segments.Add(new SegmentDraft
-                    {
-                        Kind = "paragraph",
-                        Text = block,
-                        Anchor = $"page:{p}:block:{b}",
-                        Page = p
-                    });
-                }
-            }
+            AppendPdfSegmentsFromFormFeedText(result, File.ReadAllText(txtPath));
             result.ExtractionStatus = result.Segments.Count > 0 ? "ok" : "warning";
             result.ExtractionMode = "pdf_pdftotext";
             result.Notes = note ?? "Extracted with pdftotext.";
+        }
+        else if (TryPdfPigExtract(path, out var pages, out pigNote))
+        {
+            var pigTxtPath = Path.Combine(artifactsDir, "pdf_text_pdfpig.txt");
+            var combinedText = string.Join('\f', pages);
+            File.WriteAllText(pigTxtPath, combinedText, new UTF8Encoding(false));
+            AppendPdfSegmentsFromFormFeedText(result, combinedText);
+            result.ExtractionStatus = result.Segments.Count > 0 ? "ok" : "warning";
+            result.ExtractionMode = "pdf_pdfpig";
+            result.Notes = pigNote ?? "Extracted with PdfPig.";
         }
         else
         {
@@ -596,10 +779,107 @@ spec-pack-processor (C#)
                 Text = "PDF extraction pending OCR/text pass.",
                 Anchor = "pdf:pending"
             });
-            result.Notes = note ?? "pdftotext not found on PATH.";
+            result.Notes = $"{note ?? "pdftotext not found on PATH."} {(pigNote ?? "PdfPig extraction failed.")}".Trim();
         }
 
         return result;
+    }
+
+    static void AppendPdfSegmentsFromFormFeedText(ExtractResult result, string text)
+    {
+        var pages = text.Split('\f');
+        int p = 0;
+        foreach (var page in pages)
+        {
+            p++;
+            var blocks = Regex.Split(page, "\\r?\\n\\s*\\r?\\n")
+                .Select(NormalizeWhitespace)
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .ToList();
+
+            // Some extractors produce little/no paragraph breaks. Fall back to line-level chunks.
+            if (blocks.Count <= 1)
+            {
+                var lineBlocks = page
+                    .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .Select(NormalizeWhitespace)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .ToList();
+                if (lineBlocks.Count > 1) blocks = lineBlocks;
+            }
+
+            int b = 0;
+            foreach (var block in blocks)
+            {
+                b++;
+                result.Segments.Add(new SegmentDraft
+                {
+                    Kind = "paragraph",
+                    Text = block,
+                    Anchor = $"page:{p}:block:{b}",
+                    Page = p
+                });
+            }
+        }
+    }
+
+    static bool TryPdfPigExtract(string pdfPath, out List<string> pageTexts, out string? note)
+    {
+        pageTexts = [];
+        note = null;
+        try
+        {
+            using var document = PdfDocument.Open(pdfPath);
+            foreach (var page in document.GetPages())
+            {
+                pageTexts.Add(ExtractPdfPigPageText(page));
+            }
+            note = $"Extracted with PdfPig ({pageTexts.Count} pages).";
+            return pageTexts.Count > 0;
+        }
+        catch (Exception ex)
+        {
+            note = $"PdfPig extraction failed: {ex.Message}";
+            return false;
+        }
+    }
+
+    static string ExtractPdfPigPageText(UglyToad.PdfPig.Content.Page page)
+    {
+        var letters = page.Letters?.ToList();
+        if (letters is null || letters.Count == 0)
+        {
+            return page.Text ?? string.Empty;
+        }
+
+        static double LineBucket(double bottom) => Math.Round(bottom * 2.0, MidpointRounding.AwayFromZero) / 2.0;
+
+        var lineGroups = letters
+            .GroupBy(l => LineBucket(l.GlyphRectangle.Bottom))
+            .OrderByDescending(g => g.Key)
+            .ToList();
+
+        var lines = new List<string>(lineGroups.Count);
+        foreach (var group in lineGroups)
+        {
+            var ordered = group.OrderBy(l => l.GlyphRectangle.Left).ToList();
+            var sb = new StringBuilder(ordered.Count);
+            double? prevRight = null;
+            foreach (var letter in ordered)
+            {
+                var glyph = letter.Value;
+                if (string.IsNullOrEmpty(glyph)) continue;
+                if (glyph.Length == 1 && char.IsControl(glyph[0])) continue;
+                if (prevRight.HasValue && letter.GlyphRectangle.Left - prevRight.Value > 1.5) sb.Append(' ');
+                sb.Append(glyph);
+                prevRight = letter.GlyphRectangle.Right;
+            }
+
+            var line = NormalizeWhitespace(sb.ToString());
+            if (!string.IsNullOrWhiteSpace(line)) lines.Add(line);
+        }
+
+        return string.Join(Environment.NewLine, lines);
     }
 
     static bool TryPdfToText(string pdfPath, string textOut, out string? note)
@@ -839,6 +1119,26 @@ spec-pack-processor (C#)
         return false;
     }
 
+    static bool TryGetSpecExclusionReason(string text, List<string> topicTags, out string reason)
+    {
+        var s = text.ToLowerInvariant();
+        if (topicTags.Contains("legal_notice", StringComparer.OrdinalIgnoreCase))
+        {
+            reason = "legal_notice";
+            return true;
+        }
+        if (s.Contains("intellectual property rights notice")
+            || s.Contains("all rights reserved")
+            || s.Contains("contact dochelp@microsoft.com"))
+        {
+            reason = "legal_or_support_meta";
+            return true;
+        }
+
+        reason = string.Empty;
+        return false;
+    }
+
     static string BuildRunReadme(dynamic manifest, List<DocSummary> summaries, IReadOnlyDictionary<string, int> excludedByReason)
     {
         var sb = new StringBuilder();
@@ -849,6 +1149,7 @@ spec-pack-processor (C#)
         sb.AppendLine($"- Documents processed: `{manifest.docs_processed}`");
         sb.AppendLine($"- Segment count: `{manifest.segments}`");
         sb.AppendLine($"- Sentence count: `{manifest.sentences}`");
+        sb.AppendLine($"- Spec items: `{manifest.spec_items}`");
         sb.AppendLine($"- Conformance candidates: `{manifest.conformance_candidates}`");
         sb.AppendLine($"- Conformance excluded: `{manifest.conformance_excluded}`");
         sb.AppendLine($"- Pending items: `{manifest.pending_items}`");
@@ -1071,6 +1372,18 @@ spec-pack-processor (C#)
         public required SourceRef Source { get; init; }
     }
 
+    sealed class SpecItem
+    {
+        public required string ItemId { get; init; }
+        public required string DocumentId { get; init; }
+        public required string SourceSentenceId { get; init; }
+        public required string SpecLevel { get; init; }
+        public required string Statement { get; init; }
+        public required List<string> TopicTags { get; init; }
+        public required string Status { get; init; }
+        public required SourceRef Source { get; init; }
+    }
+
     sealed class ExcludedConformanceItem
     {
         public required string ItemId { get; init; }
@@ -1095,6 +1408,7 @@ spec-pack-processor (C#)
         public required string ExtractionMode { get; init; }
         public required int SegmentCount { get; init; }
         public required int SentenceCount { get; init; }
+        public required int SpecItemCount { get; init; }
         public required int ConformanceCount { get; init; }
         public required int ExcludedConformanceCount { get; init; }
         public required int ImageCount { get; init; }

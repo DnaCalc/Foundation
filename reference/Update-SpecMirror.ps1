@@ -45,7 +45,7 @@ function Normalize-Url {
 
 function Ensure-MarkdownUrl {
     param([string]$Url)
-    if ($Url -notmatch "learn\.microsoft\.com/.*/openspecs/") {
+    if ($Url -notmatch "^https://learn\.microsoft\.com/") {
         return $Url
     }
     if ($Url -match "accept=text/markdown") {

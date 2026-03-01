@@ -1,0 +1,53 @@
+{
+  "release_docx": "",
+  "release_pdf_new": "",
+  "release_pdf_old": "",
+  "spec_docx_vs_pdf_new": {
+    "a": 5656,
+    "b": 11407,
+    "intersection": 47,
+    "a_covered": 0.0083,
+    "b_covered": 0.0041,
+    "jaccard": 0.0028
+  },
+  "spec_docx_vs_pdf_old": {
+    "a": 5656,
+    "b": 11405,
+    "intersection": 48,
+    "a_covered": 0.0085,
+    "b_covered": 0.0042,
+    "jaccard": 0.0028
+  },
+  "spec_pdf_old_vs_pdf_new": {
+    "a": 11405,
+    "b": 11407,
+    "intersection": 11232,
+    "a_covered": 0.9848,
+    "b_covered": 0.9847,
+    "jaccard": 0.9699
+  },
+  "conformance_docx_vs_pdf_new": {
+    "a": 360,
+    "b": 49,
+    "intersection": 0,
+    "a_covered": 0.0,
+    "b_covered": 0.0,
+    "jaccard": 0.0
+  },
+  "conformance_docx_vs_pdf_old": {
+    "a": 360,
+    "b": 52,
+    "intersection": 1,
+    "a_covered": 0.0028,
+    "b_covered": 0.0192,
+    "jaccard": 0.0024
+  },
+  "conformance_pdf_old_vs_pdf_new": {
+    "a": 52,
+    "b": 49,
+    "intersection": 48,
+    "a_covered": 0.9231,
+    "b_covered": 0.9796,
+    "jaccard": 0.9057
+  }
+}
