@@ -1,0 +1,17 @@
+﻿{
+  "document_id": "ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f",
+  "source_id": "MS-OAUT",
+  "source_url": "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/bbb05720-f724-45c7-8d17-f83c3d1a3961",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\learn.microsoft.com\\en-us\\openspecs\\windows_protocols\\ms-oaut\\bbb05720-f724-45c7-8d17-f83c3d1a3961.md",
+  "source_sha256": "c3862f9f62f34048e5485225814637a4c611a1159024e0aa1964ec6b946f6af9",
+  "extraction_status": "ok",
+  "extraction_mode": "markdown_native",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\ms-oaut-bbb05720-f724-45c7-8d17-f83c3d1a3961-c3862f9f\\images"
+  }
+}

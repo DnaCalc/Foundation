@@ -1,0 +1,18 @@
+﻿{
+  "document_id": "discovered-ms-vbal-250218-4d2d7c09",
+  "source_id": "discovered",
+  "source_url": "https://officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net/files/MS-VBAL/%5bMS-VBAL%5d-250218.pdf",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net\\files\\MS-VBAL\\[MS-VBAL]-250218.pdf",
+  "source_sha256": "4d2d7c09f1d510d650dfaef5a6a508810b540e66ed7820534dc8eba6f47df85a",
+  "extraction_status": "ok",
+  "extraction_mode": "pdf_pdfpig",
+  "notes": "Extracted with PdfPig (288 pages).",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-vbal-pass07\\outputs\\docs\\discovered-ms-vbal-250218-4d2d7c09\\images"
+  }
+}

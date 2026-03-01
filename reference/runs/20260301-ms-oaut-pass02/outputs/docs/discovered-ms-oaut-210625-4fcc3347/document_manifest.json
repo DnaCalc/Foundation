@@ -1,0 +1,18 @@
+﻿{
+  "document_id": "discovered-ms-oaut-210625-4fcc3347",
+  "source_id": "discovered",
+  "source_url": "https://winprotocoldocs-bhdugrdyduf5h2e4.b02.azurefd.net/MS-OAUT/%5bMS-OAUT%5d-210625.pdf",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\winprotocoldocs-bhdugrdyduf5h2e4.b02.azurefd.net\\MS-OAUT\\[MS-OAUT]-210625.pdf",
+  "source_sha256": "4fcc33470b736f371b7434c4664fdf13dfbbd7675c34318674d7a706eb33564c",
+  "extraction_status": "ok",
+  "extraction_mode": "pdf_pdfpig",
+  "notes": "Extracted with PdfPig (195 pages).",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260301-ms-oaut-pass02\\outputs\\docs\\discovered-ms-oaut-210625-4fcc3347\\images"
+  }
+}
