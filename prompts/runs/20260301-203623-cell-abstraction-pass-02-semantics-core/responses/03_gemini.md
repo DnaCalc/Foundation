@@ -1,0 +1,98 @@
+# Run ID: 20260301-203623-cell-abstraction-pass-02-semantics-core
+
+## 1. Scope And Assumptions
+
+**Scope:**
+This run formalizes the core semantics for in-cell computation within the foundation model. It explicitly defines the rules governing expression evaluation, implicit value coercion, error propagation lattices, function volatility classifications, and the boundaries between evaluation and visual formatting side effects.
+
+**Assumptions:**
+1. **Target Engine:** The semantics defined here target strict conformance with the standard Excel calculation engine, as required by the `CORE_ENGINE_FORMAL_MODEL.md`.
+2. **Immutability:** Cell evaluation is fundamentally side-effect free concerning the calculation state (pure functions), with well-defined exceptions for external links or macro-enabled functions.
+3. **Data Types:** The engine recognizes a closed set of primitive scalar types (Number, String, Boolean, Error, Empty) and compound types (Array, Reference).
+4. **Formatting Boundary:** Formatting (number formats, conditional formatting) is strictly a projection layer applied post-evaluation. It does not alter the underlying computed cell value.
+
+## 2. Response To Prompt Sequence
+
+### 2.1. Formalize expression evaluation and value coercion semantics
+In-cell computation evaluates an Abstract Syntax Tree (AST) where nodes represent operators or functions, and leaves represent primitive values or references. 
+
+**Coercion Rules:**
+Implicit coercion occurs when an operator or function expects a specific data type but receives another.
+*   **To Number:** 
+    *   `Boolean`: `TRUE` → `1`, `FALSE` → `0`.
+    *   `String`: Parsed as number if format matches locale settings; otherwise, results in `#VALUE!`.
+    *   `Empty`: Coerced to `0` in arithmetic contexts.
+*   **To Boolean:**
+    *   `Number`: `0` → `FALSE`, any non-zero value → `TRUE`.
+    *   `String`: Results in `#VALUE!` in logical contexts, except in specific legacy functions.
+    *   `Empty`: Coerced to `FALSE`.
+*   **To String:**
+    *   `Number`: Converted to base-10 string representation.
+    *   `Boolean`: Converted to `"TRUE"` or `"FALSE"`.
+    *   `Empty`: Coerced to `""` (empty string).
+
+### 2.2. Formalize error behavior and propagation lattice
+Errors are first-class values in the computation engine. 
+
+**Base Error Set:** `#DIV/0!`, `#N/A`, `#NAME?`, `#NULL!`, `#NUM!`, `#REF!`, `#VALUE!`, `#SPILL!`, `#CALC!`.
+
+**Propagation Rules:**
+*   **Strict Evaluation:** If any operand in an expression evaluates to an Error, the operation immediately yields that Error (short-circuiting).
+*   **Propagation Lattice (Precedence):** When an operation encounters multiple errors (e.g., in a binary operator or function arguments evaluated left-to-right), the standard engine propagates the *first* error encountered in standard left-to-right evaluation order.
+*   **Exceptions:** Error-handling functions (`IFERROR`, `ISERR`, `ISNA`) intercept error propagation and yield standard scalar values. `#N/A` possesses unique propagation rules in lookup functions, strictly representing "missing data" rather than a computational fault.
+
+### 2.3. Classify function semantics: pure, volatile, host-context, external, and structural-reference sensitive
+Function evaluation models must classify behavior to optimize the dependency graph and recalculation triggers.
+
+*   **Pure Functions:** Output is strictly and completely determined by the provided input arguments. Safe to cache. (e.g., `SUM`, `SIN`, `MID`).
+*   **Volatile Functions:** Output may change even if inputs do not. Must be marked dirty and recalculated on *every* recalculation cycle. (e.g., `RAND`, `NOW`, `TODAY`, `OFFSET`, `INDIRECT`).
+*   **Host-Context Functions:** Output depends on the state of the host application, window, or specific file properties. (e.g., `CELL`, `INFO`).
+*   **External Functions:** Output relies on out-of-process asynchronous data streams or external service calls. (e.g., `RTD`, `WEBSERVICE`, Linked Data Types).
+*   **Structural-Reference Sensitive Functions:** Output or dependency footprint dynamically shifts based on structural mutations (resizing) of bound Table objects, requiring dynamic sub-graph invalidation.
+
+### 2.4. Formalize value-to-display formatting semantics and conditional formatting interaction points
+*   **Value-to-Display:** Formatting applies a purely visual projection $P: \text{Value} \times \text{FormatString} \rightarrow \text{RenderedText}$. The underlying cell value $V_{calc}$ remains immutable. Aggregation functions always operate on $V_{calc}$, not the projected text (e.g., `SUM` on visually rounded numbers uses the raw precision).
+*   **Conditional Formatting Interaction:** Conditional Formatting (CF) evaluates a separate, overlay AST. CF expressions are evaluated contextually against $V_{calc}$ and the surrounding workbook state. Evaluation of CF rules happens strictly *after* the primary calculation chain resolves, preventing cyclic computational dependencies.
+
+### 2.5. Produce unresolved questions with concrete evidence requirements
+*   **Intersection of Coercion and Arrays:** Does an array operation forcefully coerce internally prior to returning a spilled `#VALUE!`? *Evidence needed: Empirical tests validating coercion boundaries in Dynamic Arrays vs. legacy CSE (Ctrl+Shift+Enter) arrays.*
+*   **Error Dominance in Spills:** When `#SPILL!` intersects with an internal calculation `#DIV/0!`, which error dominates the cell's output? *Evidence needed: Edge-case execution mapping against `EXCEL_CONFORMANCE_SPEC.md`.*
+
+## 3. Uncertainties And Evidence Needs
+
+*   **[UNCERTAINTY-01] Volatility Cascade over Dynamic Arrays:** If a dynamic array formula incorporates a volatile function inside a purely conditional branch that is *not* taken, does the engine still flag the entire spilled array as volatile? 
+    *   *Need:* Empirical test utilizing `RAND()` inside an `IF(FALSE, ...)` within a `SEQUENCE()` bounds check.
+*   **[UNCERTAINTY-02] `#CALC!` Error Propagation Precedence:** The `#CALC!` error (introduced with dynamic arrays) may possess different propagation precedence than legacy errors like `#VALUE!`. 
+    *   *Need:* Cross-reference against MS-VBAL documentation and `EMPIRICAL_PROMOTION_PLAN.md` test results.
+
+## 4. Promotion-Ready Draft Content
+
+```markdown
+<!-- TARGET: CORE_ENGINE_FORMAL_MODEL.md -->
+### 3.4 In-Cell Evaluation Semantics
+
+#### 3.4.1 Type Coercion Matrix
+The core engine enforces implicit type coercion based on operand context:
+| Source Type | Context: Arithmetic | Context: Logical | Context: Text |
+|-------------|---------------------|------------------|---------------|
+| `Boolean`   | `TRUE`=1, `FALSE`=0 | Identity         | `"TRUE"`, `"FALSE"`|
+| `Number`    | Identity            | `0`=FALSE, non-zero=TRUE | String representation |
+| `String`    | Parsed or `#VALUE!` | `#VALUE!`        | Identity      |
+| `Empty`     | `0`                 | `FALSE`          | `""`          |
+
+#### 3.4.2 Function Volatility Classes
+The dependency graph must recognize the following function classifications to maintain optimal recalculation limits:
+1.  **$\mathbb{P}$ (Pure):** $f(x) \rightarrow y$. Cachable. 
+2.  **$\mathbb{V}$ (Volatile):** $f(x, t) \rightarrow y$. Evaluates on every calc cycle. Marks dependent sub-graphs as dirty.
+3.  **$\mathbb{E}$ (External/Async):** $f(x, e_{state}) \rightarrow y$. Requires RTD lifecycle hooks and throttle bridging.
+4.  **$\mathbb{S}$ (Structural):** $f(Table_{ref}) \rightarrow y$. Modifies dependency footprint dynamically upon host-environment table resize events.
+
+#### 3.4.3 The Formatting Boundary Principle
+Calculations operate strictly over the mathematical underlying value ($V_{calc}$). Visual formatting, including Conditional Formatting rules, are pure rendering projections and must never feed back into the evaluation tree.
+```
+
+## 5. Follow-Up Backlog
+
+1.  **Generate Empirical Test Suite:** Draft scripts in the `tools/excel-probe/` directory to test `#SPILL!` vs `#CALC!` vs `#VALUE!` error precedence based on `[UNCERTAINTY-02]`.
+2.  **Define RTD Lifecycle Model:** Break out the `External Functions` classification into a dedicated specification addressing throttle intervals and state-teardown using findings from `EMP-0006-rtd-lifecycle-baseline.md`.
+3.  **Formalize Spill Target Overlap:** Document the exact evaluation sequence when a dynamic array spill target intersects with a structurally formatted table (following counter-signals noted in `EMP-0005-table-structref-spill-growth-counter-signal.md`).

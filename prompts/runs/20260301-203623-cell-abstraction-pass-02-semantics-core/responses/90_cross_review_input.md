@@ -1,0 +1,787 @@
+# Cross Review Input
+Run id: 20260301-203623-cell-abstraction-pass-02-semantics-core
+
+## Codex Base Output
+1. Scope And Assumptions
+- This run defines semantics for in-cell formula computation: expression evaluation, coercion, error propagation, function behavior classes, and display/format side effects.
+- Target behavior is Excel-compatible first, with dynamic arrays enabled, A1 references, and workbook snapshot semantics per recalc cycle.
+- The output is designed as model fragments that can be lifted into `CORE_ENGINE_FORMAL_MODEL.md`.
+- Out of scope for this pass: VBA/UDF side effects, iterative circular calc tuning, security/policy around external connectors.
+- Constraint note: this draft is produced from the provided text only, so unresolved behavior is explicitly tagged `U-*` with evidence links.
+
+2. Response To Prompt Sequence
+
+2.1 Formalize expression evaluation and value coercion semantics
+```text
+Value ::= Num(f64) | Text(string) | Bool(bool) | Blank | Err(ErrorCode) | Ref(RefSet) | Arr(rows, cols, Value)
+Result ::= Ok(Value, Meta) | Fail(ErrorToken)
+ErrorToken ::= (origin_index, ErrorCode, phase)
+phase ::= bind | eval | spill | async
+```
+
+```text
+Eval(cell, expr, env) -> Result
+env = {workbook_snapshot, calc_epoch, locale, timezone, date_system, array_mode}
+
+Rules:
+1) Bind references/names.
+2) Evaluate AST left-to-right unless function strictness class overrides.
+3) In scalar-required contexts, apply scalarization to Ref/Arr (implicit-intersection/array rules) [U-05].
+4) Apply context coercion policy.
+5) Return first effective error token unless function masks/catches it.
+```
+
+Coercion policies (default engine rules):
+- `NumCtx`:
+  - `Num(n) -> n`
+  - `Bool(TRUE/FALSE) -> 1/0`
+  - `Blank -> 0`
+  - `Text(s) -> parse_number(s, locale)` or `Err(VALUE)` [U-09]
+  - `Err(e) -> Err(e)`
+  - `Ref/Arr -> scalarize or array-eval depending context` [U-05]
+- `BoolCtx`:
+  - `Bool(b) -> b`
+  - `Num(n) -> (n != 0)`
+  - `Blank -> FALSE`
+  - `Text("TRUE"/"FALSE") -> Bool` or `Err(VALUE)` [U-02]
+- `TextCtx`:
+  - `Text(s) -> s`
+  - `Num(n) -> general_format(n, locale)`
+  - `Bool -> "TRUE"/"FALSE"`
+  - `Blank -> ""`
+  - `Err(e) -> Err(e)`
+
+Operator defaults:
+- Arithmetic (`+ - * / ^`): strict numeric coercion.
+- Concatenation (`&`): text coercion.
+- Comparison (`= <> < <= > >=`): same-type compare direct; cross-type ordering/equality behavior needs conformance lock [U-01].
+- Function-specific coercion can override defaults (example class: aggregators vs strict operators) [U-11].
+
+2.2 Formalize error behavior and propagation lattice
+Error universe (core + modern):  
+`{NULL, DIV0, VALUE, REF, NAME, NUM, NA, SPILL, CALC, FIELD, BLOCKED, CONNECT, GETTING_DATA, UNKNOWN}`
+
+Propagation model:
+- Base element: `⊥` (no error).
+- Each sub-expression yields either value or `ErrorToken(origin_index, code, phase)`.
+- Strict composition uses `join_error(a,b) = earlier_origin(a,b)` (deterministic first-error-by-eval-order).
+- This produces deterministic behavior even under parallel execution if each AST node has stable `origin_index`.
+
+Function error policies:
+- `strict`: any argument error propagates (most arithmetic/text functions).
+- `mask_any`: catches any error from first arg (`IFERROR`).
+- `mask_na`: catches only `NA` (`IFNA`).
+- `branch_lazy`: evaluate selector first, then selected branch only (`IF`, `CHOOSE`) [U-04].
+- `eager_logical`: evaluate all args before result (`AND`, `OR`) [U-03].
+- `aggregate_ignore_mode`: ignores selected errors by option (e.g., class like `AGGREGATE`).
+
+Array/spill behavior:
+- Element-wise ops keep per-element errors.
+- Anchor-level spill obstruction returns `SPILL` at anchor.
+- External async can produce transitional states (`GETTING_DATA` etc.) [U-10].
+
+2.3 Classify function semantics
+Function classes are orthogonal tags (not mutually exclusive).
+
+| Class | Formal criterion | Recalc trigger | Typical examples |
+|---|---|---|---|
+| Pure | Depends only on explicit inputs; no host/external state | Dependency change only | `SUM`, `ABS`, `MIN` |
+| Volatile | May change each calc epoch with same explicit inputs | Every recalc cycle | `RAND`, `RANDBETWEEN`, `NOW`, `TODAY` |
+| Host-context | Depends on locale/timezone/workbook settings/UI state | Host context change + deps | `TEXT`, `CELL`, `INFO`, date/time render-dependent behavior |
+| External | Depends on connector/network/service/add-in | External refresh/async events | `RTD`, data-linked functions, web/stock feeds |
+| Structural-reference sensitive | Semantics depend on address topology, not only values | Structural edits (insert/delete/rename/table reshape) | `OFFSET`, `INDIRECT`, structured references |
+
+Recommended metadata schema per function:
+```text
+FunctionMeta = {
+  strictness: strict | branch_lazy | eager_logical | mask_any | mask_na | aggregate_policy,
+  volatility: nonvolatile | volatile_epoch,
+  host_context: set(locale, timezone, date_system, ui_state),
+  externality: none | sync | async,
+  ref_sensitivity: value_only | address_sensitive | shape_sensitive
+}
+```
+
+2.4 Formalize value-to-display formatting semantics and conditional formatting interaction points
+Display pipeline:
+```text
+raw_value = Eval(cell.formula)
+cf_style_delta = EvalConditionalFormatting(cell, raw_value, sheet_state)
+effective_style = Merge(base_style, cf_style_delta, priority_order)
+display_text = Render(raw_value, effective_style.number_format, locale, date_system, column_width)
+```
+
+Normative display rules:
+- Formatting does not mutate `raw_value`.
+- Numeric/date/time display is format-driven; underlying value remains numeric serial.
+- Display rounding is representational only.
+- Error values render as error tokens and ignore numeric format sections.
+- Width overflow may render placeholder hashes; value remains unchanged.
+
+Conditional formatting interaction points:
+- CF rules evaluate after formula values are available.
+- CF formula rules use same coercion/error semantics as normal formulas, anchored to rule range origin.
+- Rule priority and `Stop If True` determine final style.
+- CF may override number format, changing display text without changing value.
+- Data bars/color scales/icon sets derive from raw numeric domain; handling of errors/blanks needs conformance lock [U-08].
+
+2.5 Produce unresolved questions with concrete evidence requirements
+- Unresolved items are tagged `U-*` below with required executable evidence and source targets.
+- Promotion should occur only after each `U-*` has a passing conformance fixture.
+
+3. Uncertainties And Evidence Needs
+
+| Tag | Uncertainty | Evidence required | Source links |
+|---|---|---|---|
+| U-01 | Cross-type comparison semantics (`Num` vs `Text` vs `Bool`) for `=`, `<`, `>` | Matrix workbook + expected outputs across 365 channels | [S1](https://learn.microsoft.com/en-us/office/open-xml/spreadsheet/working-with-formulas), [S5](https://support.microsoft.com/en-us/office/if-function) |
+| U-02 | Text-to-bool coercion in logical contexts (`"TRUE"`, `"FALSE"`, other text) | Formula grid in `IF`, `NOT`, direct boolean tests | [S5](https://support.microsoft.com/en-us/office/if-function), [S6](https://support.microsoft.com/en-us/office/and-function), [S7](https://support.microsoft.com/en-us/office/or-function) |
+| U-03 | `AND`/`OR` eagerness vs short-circuit (scalar and array cases) | Cases like `AND(FALSE,1/0)` and array variants | [S6](https://support.microsoft.com/en-us/office/and-function), [S7](https://support.microsoft.com/en-us/office/or-function) |
+| U-04 | `IF` branch laziness consistency under dynamic arrays/volatile args | `IF(FALSE,1/0,1)` and spill-array branch cases | [S5](https://support.microsoft.com/en-us/office/if-function), [S2](https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation) |
+| U-05 | Scalarization/implicit intersection behavior in modern array mode | Legacy workbook import + `@` operator differential tests | [S3](https://support.microsoft.com/en-us/office/implicit-intersection-operator-ce3be07b-0101-4450-a24e-c1c999be2b34), [S4](https://support.microsoft.com/en-us/office/dynamic-array-formulas-vs-legacy-cse-array-formulas-ca421f1b-fbb2-4c99-9924-df571bd4f1b4) |
+| U-06 | Deterministic precedence when multiple errors exist in one expression/array | Dual-error operand and element-wise test matrix | [S2](https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation) |
+| U-07 | Canonical volatile function set and trigger granularity | Recalc tracing with unchanged dependencies | [S2](https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation) |
+| U-08 | Conditional formatting precedence and number-format override semantics | Multi-rule workbook with `Stop If True` and format conflicts | [S10](https://support.microsoft.com/en-us/office/use-conditional-formatting-to-highlight-information-in-excel), [S11](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68) |
+| U-09 | Locale-sensitive numeric text parsing during coercion | Same workbook executed under multiple locales | [S11](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68) |
+| U-10 | Async external error lifecycle (`GETTING_DATA`, `BLOCKED`, etc.) | Online/offline transition tests on external functions | [S2](https://learn.microsoft.com/en-us/office/client-developer/excel/excel-recalculation) |
+| U-11 | Aggregator coercion differences (literal text arg vs referenced text cell) | `SUM("1",2)` vs `SUM(A1,2)` where `A1="1"` | [S1](https://learn.microsoft.com/en-us/office/open-xml/spreadsheet/working-with-formulas) |
+
+4. Promotion-Ready Draft Content
+```markdown
+## Semantics Core: In-Cell Evaluation
+
+### 1) Value Domain
+`Value ::= Num | Text | Bool | Blank | Err | Ref | Arr`
+All date/time values are stored as numeric serials; formatting controls display only.
+
+### 2) Evaluation Contract
+`Eval(cell, expr, env) -> Result`
+The engine MUST:
+1. Resolve names/references against workbook snapshot.
+2. Evaluate AST left-to-right with stable origin indexes.
+3. Apply context coercion policy before operator/function execution.
+4. Preserve deterministic error choice using first-origin error token.
+5. Produce scalar or array result per expression context and array mode.
+
+### 3) Coercion Policies
+The engine MUST implement coercion by context:
+- `NumCtx`: Num direct, Bool->1/0, Blank->0, Text->locale parse or `#VALUE!`.
+- `BoolCtx`: Bool direct, Num nonzero true, Blank false, Text parsing behavior is `UNRESOLVED(U-02)`.
+- `TextCtx`: Num via general format, Bool->`TRUE/FALSE`, Blank->empty.
+Function-specific policies MAY override defaults and MUST be declared in function metadata.
+
+### 4) Error Propagation
+Errors are represented as `ErrorToken(origin_index, code, phase)`.
+Strict contexts MUST propagate earliest-origin error.
+Masking functions MUST follow mask policy:
+- `IFERROR`: catch any error from first argument.
+- `IFNA`: catch only `#N/A`.
+Branch functions and logical functions MUST follow declared strictness class.
+Unresolved precedence details are `UNRESOLVED(U-03,U-04,U-06)`.
+
+### 5) Function Semantics Classification
+Each function MUST declare:
+- `strictness`
+- `volatility`
+- `host_context`
+- `externality`
+- `ref_sensitivity`
+These tags drive dependency graphing, recalc scheduling, and cache invalidation.
+
+### 6) Display/Formatting Boundary
+Display text MUST be derived by:
+`Render(raw_value, effective_number_format, locale, date_system, width)`
+Formatting MUST NOT mutate computed value.
+Conditional formatting MUST be evaluated after value computation and MAY override number format for display.
+Conditional formatting MUST NOT alter formula value.
+Rule precedence/stop behavior is `UNRESOLVED(U-08)`.
+```
+
+5. Follow-Up Backlog
+1. Build a conformance workbook suite covering `U-01..U-11` with expected outputs from target Excel versions.
+2. Add a machine-readable `FunctionMeta` registry and enforce metadata completeness in CI.
+3. Implement origin-indexed error tokens and deterministic `join_error`.
+4. Implement explicit coercion policy modules (`NumCtx`, `BoolCtx`, `TextCtx`) with locale test coverage.
+5. Add array-mode compatibility tests for implicit intersection and `@`.
+6. Add display pipeline tests separating raw value, effective style, and rendered text.
+7. Add conditional formatting precedence tests including number-format overrides and `Stop If True`.
+8. Gate promotion to `CORE_ENGINE_FORMAL_MODEL.md` on closure of all `U-*` or explicit waiver records.
+
+## Claude Base Output
+# Response — Pass 02: Semantics Core
+
+**Run id:** `20260301-203623-cell-abstraction-pass-02-semantics-core`
+**Model:** Claude (base pass)
+
+---
+
+## 1. Scope And Assumptions
+
+**In scope:**
+- Expression evaluation order within a single cell.
+- Value type system and implicit coercion rules triggered by operators and function arguments.
+- Error value semantics: generation, propagation, and short-circuit points.
+- Volatility classification of functions and its effect on recalculation scheduling.
+- The boundary between computed value and displayed representation (formatting semantics).
+
+**Out of scope:**
+- Cross-cell dependency graph and recalculation order (deferred to a dependency/calc-chain pass).
+- Array formula spill mechanics and dynamic array resize behavior.
+- Specific function signatures beyond what is needed to illustrate classification.
+- VBA/macro interaction with cell evaluation.
+- Collaborative/co-authoring conflict resolution.
+
+**Assumptions:**
+- The target conformance baseline is ECMA-376 5th Edition (ISO/IEC 29500) plus observable Excel 365 behavior where the spec is silent.
+- ODF/ODS divergences are noted but not primary.
+- "Cell" means a single worksheet cell; merged-cell display semantics are out of scope.
+
+---
+
+## 2. Response To Prompt Sequence
+
+### 2.1 Expression Evaluation and Value Coercion Semantics
+
+#### 2.1.1 Value Type Universe
+
+A cell's computed result belongs to exactly one of these types:
+
+| Type | Internal Representation | Notes |
+|---|---|---|
+| **Number** | IEEE 754 double-precision float | All numeric values, including dates/times (serial number encoding) |
+| **String** | UTF-16 string, max 32767 chars | Text values |
+| **Boolean** | TRUE / FALSE | Distinct from Number in storage, coercible in arithmetic |
+| **Error** | Error code (see §2.2) | Propagates through most operations |
+| **Empty** | Sentinel (not the same as zero or blank string) | Uninitialized cell, omitted argument |
+| **Array** | Rectangular matrix of the above scalar types | Intermediate only; resolves to scalar on cell write unless spill context |
+
+There is no null type distinct from Empty. A cell that has never been touched yields Empty.
+
+**[CONFORMANCE: ECMA-376 §18.17.2 — "A cell can contain a number, a string, a Boolean, or an error value."]**
+
+#### 2.1.2 Coercion Rules
+
+Coercion is context-dependent. The trigger is always the consuming operator or function, never the producing cell.
+
+**Arithmetic operators** (`+`, `-`, `*`, `/`, `^`, unary `-`, unary `+`):
+
+| Source Type | Coerced To | Rule |
+|---|---|---|
+| Number | Number | Identity |
+| Boolean | Number | TRUE→1, FALSE→0 |
+| String (numeric parse) | Number | Parsed as locale-invariant decimal. Leading/trailing whitespace trimmed. |
+| String (non-numeric) | Error | `#VALUE!` |
+| Empty | Number | 0 |
+| Error | Error | Propagated (see §2.2) |
+
+**Comparison operators** (`=`, `<>`, `<`, `>`, `<=`, `>=`):
+
+Comparisons follow a type-rank ordering when operands differ in type:
+
+```
+Number (rank 0) < String (rank 1) < Boolean (rank 2)
+```
+
+- Two values of different type rank: the lower-ranked value is always "less than." No coercion occurs.
+- Two Numbers: numeric comparison (IEEE 754 rules; NaN should not arise from normal operations).
+- Two Strings: case-insensitive lexicographic comparison using the workbook's collation locale.
+- Two Booleans: FALSE < TRUE.
+- Empty compared to Number 0 yields equal (`=` → TRUE). Empty compared to String "" yields equal. Empty compared to FALSE yields equal.
+
+**[CONFORMANCE: ECMA-376 §18.17.3.1 — comparison semantics including type ranking.]**
+
+**[UNCERTAINTY-01: The exact collation order for string comparison is locale-dependent. The spec defers to "implementation-defined locale." Excel uses the Windows system locale by default. Need empirical pass to document specific collation edge cases (e.g., Turkish dotless-i).]**
+
+**String concatenation** (`&`):
+
+| Source Type | Coerced To | Rule |
+|---|---|---|
+| Number | String | Formatted using General format (no thousands separator, up to 15 significant digits) |
+| Boolean | String | "TRUE" / "FALSE" (locale-invariant in English Excel; localized in non-English) |
+| Empty | String | "" (empty string) |
+| Error | Error | Propagated |
+
+**[UNCERTAINTY-02: Boolean-to-string via `&` — is the output locale-dependent? Empirical evidence suggests TRUE/FALSE in English, VRAI/FAUX in French. Needs conformance citation or controlled test.]**
+
+**Function argument coercion:**
+
+Functions define per-parameter coercion expectations. Three coercion modes exist:
+
+1. **Strict-typed**: No coercion; wrong type → `#VALUE!`. (e.g., `LEFT(text, num_chars)` — first arg must be string or string-coercible.)
+2. **Arithmetic-coercing**: Same rules as arithmetic operators. (e.g., `SUM`, `AVERAGE` for their numeric arguments.)
+3. **Aggregate-scanning**: Used by functions that scan ranges. String and Boolean values in ranges are typically **skipped**, not coerced. (e.g., `SUM(A1:A10)` skips text and logical values in the range but coerces them if passed as direct arguments.)
+
+This dual behavior (range-skip vs. direct-coerce) is a critical semantic distinction:
+
+```
+A1 = TRUE
+=SUM(A1)       → 0   (range reference: Boolean skipped)
+=SUM(TRUE)     → 1   (direct literal: Boolean coerced to 1)
+=SUM(A1*1)     → 1   (expression: A1 coerced via arithmetic)
+```
+
+**[CONFORMANCE: ECMA-376 §18.17.7.2 — aggregate function behavior with mixed types in ranges.]**
+
+#### 2.1.3 Evaluation Order
+
+Within a single cell formula:
+
+1. **Operator precedence** (highest to lowest):
+   - Reference operators (`:`, `,`, ` ` [intersection])
+   - Unary `+`, unary `-`
+   - `%` (percent — divides by 100)
+   - `^` (exponentiation — right-associative)
+   - `*`, `/` (left-to-right)
+   - `+`, `-` (left-to-right)
+   - `&` (concatenation)
+   - Comparison operators (`=`, `<>`, `<`, `>`, `<=`, `>=`)
+
+2. **Function arguments**: Evaluated left-to-right before the function body executes. Exception: `IF`, `IFS`, `SWITCH`, `IFERROR`, `IFNA`, `CHOOSE` — these short-circuit (see §2.2.2).
+
+3. **No guaranteed sub-expression elimination**: The engine may evaluate the same sub-expression multiple times (implementation-dependent).
+
+**[CONFORMANCE: ECMA-376 §18.17.3 — operator precedence table.]**
+
+---
+
+### 2.2 Error Behavior and Propagation Lattice
+
+#### 2.2.1 Error Values
+
+| Error | Code | Trigger |
+|---|---|---|
+| `#NULL!` | 0x00 | Intersection of two ranges that don't intersect |
+| `#DIV/0!` | 0x07 | Division by zero; `MOD(n,0)` |
+| `#VALUE!` | 0x0F | Wrong argument type; coercion failure |
+| `#REF!` | 0x17 | Reference to deleted cells/sheets |
+| `#NAME?` | 0x1D | Unrecognized formula name |
+| `#NUM!` | 0x24 | Numeric result out of range; invalid numeric argument |
+| `#N/A` | 0x2A | Value not available; explicit `NA()` |
+| `#GETTING_DATA` | 0x2B | Async data retrieval in progress (volatile/transient) |
+| `#SPILL!` | — | Dynamic array spill blocked (Excel 365+) |
+| `#CALC!` | — | Calculation engine limit (e.g., empty array result) |
+| `#CONNECT!` | — | External data source connection failure |
+| `#BLOCKED!` | — | Security policy blocked the operation |
+| `#UNKNOWN!` | — | Unrecognized/future error |
+| `#FIELD!` | — | Structured reference field not found |
+
+The first seven (`#NULL!` through `#N/A`) are "classic" errors defined in the BIFF/ECMA spec. The remainder are Excel 365 extensions.
+
+**[CONFORMANCE: ECMA-376 §18.17.2.4 — error value definitions.]**
+
+#### 2.2.2 Propagation Rules
+
+**Default propagation (most operators and functions):**
+If any operand/argument is an Error, the Error propagates as the result. When multiple operands are errors, the **leftmost** (first-evaluated) error wins.
+
+```
+=#REF! + #VALUE!    → #REF!   (left operand evaluated first)
+=SUM(#N/A, #DIV/0!) → #N/A    (first argument evaluated first)
+```
+
+**Short-circuit functions** suppress propagation in unevaluated branches:
+
+| Function | Behavior |
+|---|---|
+| `IF(cond, then, else)` | Only evaluates the taken branch. Error in untaken branch does not propagate. |
+| `IFERROR(value, fallback)` | Evaluates `value`; if any error, evaluates and returns `fallback`. |
+| `IFNA(value, fallback)` | Like `IFERROR` but only traps `#N/A`. |
+| `IFS(cond1, val1, ...)` | Evaluates conditions sequentially; stops at first TRUE. |
+| `SWITCH(expr, val1, result1, ...)` | Evaluates match values sequentially. |
+
+**Aggregate functions** (`SUM`, `AVERAGE`, `COUNT`, `MAX`, `MIN`, etc.):
+- Error cells within a scanned range **do propagate** (the entire aggregate returns the error).
+- Exception: `AGGREGATE` function with `options` parameter can ignore error values.
+
+**[UNCERTAINTY-03: When multiple error values exist in a range passed to SUM, which error propagates? Testing suggests the first encountered in row-major scan order, but this is not spec-cited.]**
+
+#### 2.2.3 Error Lattice (Partial Order)
+
+There is **no formal priority lattice** among error types in the spec. Propagation is determined solely by evaluation order (leftmost-first), not by error "severity." This is a common misconception.
+
+However, certain errors preempt evaluation entirely:
+- `#NAME?` is typically detected at parse time, before evaluation begins.
+- `#REF!` from deleted references is resolved at formula adjustment time, before evaluation.
+
+So in practice a cell containing `=deleted_ref + unknown_name()` would show `#NAME?` if the name is unresolved (parse-time), or `#REF!` if the name resolves but the reference is broken (adjust-time). The distinction is temporal, not ordinal.
+
+---
+
+### 2.3 Function Semantics Classification
+
+#### 2.3.1 Classification Taxonomy
+
+| Class | Definition | Recalc Implication |
+|---|---|---|
+| **Pure** | Output depends only on input values. No side effects. | Recalc only when inputs change. |
+| **Volatile** | Output may change even when inputs are unchanged. | Recalc on every calculation cycle. |
+| **Volatile-once** | Volatile on initial evaluation; pure thereafter within the session. | Recalc once per workbook-open, then treated as pure. |
+| **Host-context** | Depends on workbook/sheet/cell metadata not modeled as cell references. | Recalc when relevant metadata changes. |
+| **External** | Depends on data outside the workbook (files, databases, web services). | Recalc policy depends on connection settings. |
+| **Structural-reference-sensitive** | Result depends on the structure (shape, size, position) of reference arguments, not just their values. | Recalc when structural changes occur (insert/delete rows/cols). |
+
+#### 2.3.2 Classification of Key Functions
+
+| Function | Class | Rationale |
+|---|---|---|
+| `SUM`, `AVERAGE`, `IF`, `VLOOKUP` | Pure | Deterministic on inputs |
+| `NOW()`, `TODAY()` | Volatile | Time-dependent |
+| `RAND()`, `RANDBETWEEN()` | Volatile | Non-deterministic |
+| `INDIRECT(ref_text)` | Volatile | Depends on string evaluation at runtime; engine cannot statically resolve dependency |
+| `OFFSET(ref, rows, cols, ...)` | Volatile | Dynamic reference construction |
+| `INFO(type_text)` | Volatile | System-state dependent |
+| `CELL(info_type, ref)` | Volatile | Cell metadata dependent |
+| `ROWS(ref)`, `COLUMNS(ref)` | Structural-reference-sensitive | Returns structural dimension, not cell values |
+| `ROW(ref)`, `COLUMN(ref)` | Host-context | Returns position metadata |
+| `SHEET(ref)`, `SHEETS()` | Host-context | Workbook structure metadata |
+| `HYPERLINK(url, text)` | Host-context + side-effect | Produces a clickable link (display side effect) |
+| `RTD(...)` | External | Real-time data from COM server |
+| `WEBSERVICE(url)` | External | HTTP request |
+| `STOCKHISTORY(...)` | External | Financial data service |
+
+**`INDIRECT` and `OFFSET` volatility note:** These are marked volatile by Excel because the engine cannot determine which cells they depend on without evaluating the formula. This is a limitation of the dependency tracker, not an inherent property of the computation. A sufficiently advanced engine could resolve some INDIRECT/OFFSET patterns statically.
+
+**[CONFORMANCE: ECMA-376 §18.17.5.1 — volatile function list. Note: the spec lists only NOW, TODAY, RAND, RANDBETWEEN as "shall be volatile." INDIRECT and OFFSET volatility is observable behavior not explicitly mandated by the spec text.]**
+
+**[UNCERTAINTY-04: Is OFFSET truly volatile in all implementations, or only when its offset arguments are non-constant? LibreOffice Calc treats OFFSET as volatile unconditionally. Google Sheets documentation says it's volatile. Need to verify whether any engine optimizes constant-offset OFFSET as non-volatile.]**
+
+#### 2.3.3 Volatile-Once Semantics
+
+Certain functions recalculate on workbook open but not on every recalc cycle:
+
+- `TODAY()` — some documentation suggests it's volatile (recalculates on every change), but observable Excel behavior is volatile (recalculates when any cell changes).
+- `INFO("directory")` — returns the current directory at time of evaluation. Volatile.
+
+**[UNCERTAINTY-05: The "volatile-once" category is referenced in some engine documentation (e.g., LibreOffice internals) but not clearly delineated in ECMA-376. Need to determine whether this class exists in Excel or is a Calc-only optimization. Evidence needed: controlled test with a volatile-once candidate function and a forced recalc trigger.]**
+
+---
+
+### 2.4 Value-to-Display Formatting Semantics
+
+#### 2.4.1 The Formatting Pipeline
+
+The separation between computed value and displayed text is fundamental:
+
+```
+Formula → Evaluation → Typed Value → Format Application → Display String
+                          ↑                    ↑
+                    (§2.1 semantics)    (this section)
+```
+
+A cell's display is determined by:
+
+1. The **computed value** (typed result from evaluation).
+2. The **number format** (either explicitly applied or inherited from General).
+3. The **conditional format rules** (zero or more overlay rules that may modify fill, font, borders, or number format).
+4. The **column width** (can cause `###` overflow display).
+
+#### 2.4.2 Number Format Semantics
+
+A number format string has up to four sections separated by `;`:
+
+```
+positive_format ; negative_format ; zero_format ; text_format
+```
+
+Fewer sections:
+- 1 section: applies to all numbers; text passes through unformatted.
+- 2 sections: first for positive and zero, second for negative.
+- 3 sections: positive; negative; zero. Text unformatted.
+- 4 sections: positive; negative; zero; text.
+
+**Format string does NOT change the stored value.** It is purely a display transformation. `=A1+0` on a formatted cell operates on the stored double, not the displayed string.
+
+**The `General` format:**
+- Displays up to 11 significant characters (including decimal point, minus sign).
+- Suppresses trailing zeros after decimal point.
+- Switches to scientific notation if the number exceeds display width.
+- Shows integers without decimal point.
+- Dates stored as numbers display as numbers under General (date display requires a date format, either explicitly applied or auto-applied by input parsing).
+
+**[CONFORMANCE: ECMA-376 §18.8.31 — numFmt format codes.]**
+
+#### 2.4.3 Date/Time Formatting Interaction
+
+Dates and times are stored as serial numbers (doubles):
+- Integer part: days since epoch (1900-01-00 in the 1900 date system, or 1904-01-01 in the 1904 system).
+- Fractional part: fraction of a 24-hour day.
+
+**The Lotus 1-2-3 bug:** The 1900 date system incorrectly treats 1900 as a leap year. Serial number 60 corresponds to the non-existent date February 29, 1900. This is preserved for backward compatibility.
+
+**[CONFORMANCE: ECMA-376 §18.17.4.1 — date serial number encoding, including the 1900 leap year bug.]**
+
+Date formatting applies only when:
+1. The cell has an explicit date/time format, OR
+2. The user entered a value that was auto-recognized as a date (which triggers auto-format application as a side effect of input parsing — see §2.4.5).
+
+A date-formatted cell containing a negative number or a number > 2958465 (9999-12-31) displays `###` or a sequence of hashes.
+
+#### 2.4.4 Conditional Formatting Interaction
+
+Conditional formatting rules are evaluated **after** the cell value is computed but **before** final display rendering. They can:
+
+- Override the number format (e.g., show negative values in red with a different decimal precision).
+- Apply visual modifications (fill, font, border, icon sets, data bars).
+- **Not** change the stored value.
+
+Conditional formatting evaluation order:
+1. Rules are evaluated in priority order (user-defined ordering in the CF rules list).
+2. If `stopIfTrue` is set on a matching rule, subsequent rules are skipped.
+3. Multiple non-conflicting rules can stack (e.g., one rule sets fill, another sets font).
+
+**[CONFORMANCE: ECMA-376 §18.3.1.10 — conditionalFormatting element; §18.3.1.12 — cfRule with stopIfTrue.]**
+
+#### 2.4.5 Input Parsing Side Effects on Formatting
+
+When a user enters a value into a cell, the input parser may apply formatting as a side effect:
+
+| Input | Stored Value | Auto-Applied Format |
+|---|---|---|
+| `42` | Number 42 | General (no change) |
+| `3/1/2026` | Serial number for that date | Date format (e.g., `m/d/yyyy`) |
+| `$1,234.56` | Number 1234.56 | Currency format `$#,##0.00` |
+| `10%` | Number 0.1 | Percentage format `0%` |
+| `1:30 PM` | Fraction 0.5625 | Time format `h:mm AM/PM` |
+| `1 1/2` | Number 1.5 | Fraction format `# ?/?` |
+
+This auto-formatting is a **UI-level side effect**, not an evaluation semantic. Programmatic cell writes (via API, paste-values, or formula results) do **not** trigger auto-format application.
+
+**[UNCERTAINTY-06: When a formula result writes a serial number into a cell that previously had auto-applied date formatting, does the format persist? Empirical observation: yes, the format persists from prior user entry. But if the cell was previously General and receives a formula result, it stays General regardless of the numeric value. Need controlled test to verify edge cases around format inheritance on formula-result cells.]**
+
+---
+
+## 3. Uncertainties And Evidence Needs
+
+| ID | Description | Evidence Required | Priority |
+|---|---|---|---|
+| UNCERTAINTY-01 | String comparison collation locale dependency | Empirical test: compare locale-sensitive characters (Turkish İ/i, German ß) in `=A1=A2` across locales | Medium |
+| UNCERTAINTY-02 | Boolean-to-string coercion via `&` — is it localized? | Test `=TRUE&""` in English vs. French vs. German Excel | Low |
+| UNCERTAINTY-03 | Error propagation order in multi-error ranges for aggregates | Test `=SUM(range)` where range contains `#N/A` and `#VALUE!` at known positions; vary positions | Medium |
+| UNCERTAINTY-04 | OFFSET volatility — constant vs. dynamic arguments | Test OFFSET with constant arguments in Excel; observe whether it recalculates when unrelated cells change | Medium |
+| UNCERTAINTY-05 | Volatile-once function class — does it exist in Excel? | Monitor recalc count for `INFO("directory")` and `CELL("filename")` across multiple recalc triggers within a single session | Low |
+| UNCERTAINTY-06 | Format persistence when formula overwrites previously formatted cell | Set date format via input; then write formula that produces a number; observe displayed format | Medium |
+| UNCERTAINTY-07 | Unary `+` on string — coercion or error? | Test `=+"123"` and `=+"abc"` in Excel. Expected: coerces to number or `#VALUE!` like arithmetic. | Low |
+| UNCERTAINTY-08 | `#GETTING_DATA` transient error — does it propagate through formulas that reference the async cell? | Create RTD-dependent cell; reference it from another formula; observe intermediate state | Low |
+
+---
+
+## 4. Promotion-Ready Draft Content
+
+The following fragments are ready for migration into `CORE_ENGINE_FORMAL_MODEL.md` after review:
+
+---
+
+### Fragment: Value Type System
+
+```markdown
+## Value Types
+
+Every cell value belongs to exactly one of:
+
+- **Number**: IEEE 754 double-precision. Encodes all numeric values including 
+  date/time serial numbers.
+- **String**: UTF-16, max 32767 characters.
+- **Boolean**: TRUE or FALSE.
+- **Error**: One of the defined error codes (see Error Values section).
+- **Empty**: The value of an uninitialized cell or omitted function argument. 
+  Coerces to 0 (arithmetic), "" (string), or FALSE (logical) depending on context.
+
+Arrays are intermediate computation values. In single-cell context, an array 
+result is reduced to its top-left element (implicit intersection in legacy mode)
+or spills to adjacent cells (dynamic array mode).
+```
+
+---
+
+### Fragment: Coercion Matrix (Arithmetic Context)
+
+```markdown
+## Arithmetic Coercion
+
+When an arithmetic operator (+, -, *, /, ^, unary -, unary +) requires a 
+numeric operand:
+
+| Source    | Result         |
+|-----------|---------------|
+| Number    | Number (identity) |
+| Boolean   | Number (TRUE→1, FALSE→0) |
+| String    | Number if parseable; otherwise #VALUE! |
+| Empty     | 0             |
+| Error     | Error (propagated) |
+```
+
+---
+
+### Fragment: Error Propagation
+
+```markdown
+## Error Propagation
+
+Default rule: if any operand of an operator or argument of a function evaluates 
+to an Error, the result is that Error. When multiple operands are errors, the 
+first-evaluated (leftmost) error propagates.
+
+### Short-Circuit Functions
+
+IF, IFERROR, IFNA, IFS, SWITCH: evaluate arguments lazily. Errors in 
+unevaluated branches do not propagate.
+
+### Aggregate Functions and Errors
+
+SUM, AVERAGE, MIN, MAX, etc.: an error value anywhere in the scanned range 
+causes the entire result to be that error. Use AGGREGATE with ignore-errors 
+option to suppress this.
+```
+
+---
+
+### Fragment: Volatility Classes
+
+```markdown
+## Function Volatility Classification
+
+- **Pure**: Deterministic on input values. Recalculated only when precedent 
+  cells change. (SUM, IF, VLOOKUP, INDEX, MATCH, etc.)
+- **Volatile**: Must recalculate on every calculation cycle regardless of 
+  precedent changes. (NOW, TODAY, RAND, RANDBETWEEN, INDIRECT, OFFSET, INFO, CELL)
+- **Host-context**: Depends on workbook/sheet/cell metadata. (ROW, COLUMN, SHEET, 
+  SHEETS, HYPERLINK)
+- **External**: Depends on data outside the workbook. (RTD, WEBSERVICE, STOCKHISTORY)
+- **Structural-reference-sensitive**: Result depends on the shape or position of 
+  references, not their values. (ROWS, COLUMNS)
+```
+
+---
+
+### Fragment: Formatting Pipeline
+
+```markdown
+## Value-to-Display Pipeline
+
+1. Formula evaluation produces a typed value (Number, String, Boolean, Error, Empty).
+2. The cell's number format string transforms the value to a display string.
+   - Format has up to 4 sections: positive; negative; zero; text.
+   - Format NEVER alters the stored value.
+3. Conditional formatting rules are evaluated in priority order.
+   - Rules may override number format or apply visual styles.
+   - `stopIfTrue` halts further rule evaluation.
+4. Column width may cause overflow display (### for numbers, truncation for text).
+```
+
+---
+
+## 5. Follow-Up Backlog
+
+| Item | Description | Suggested Pass |
+|---|---|---|
+| **BACKLOG-01** | Implicit intersection vs. dynamic array spill semantics — full formalization | Dedicated array-semantics pass |
+| **BACKLOG-02** | Range reference semantics (`:`, `,`, space intersection operator) and structured references | Reference-model pass |
+| **BACKLOG-03** | Locale-dependent input parsing rules (date recognition, decimal separator, list separator) | Locale/i18n pass |
+| **BACKLOG-04** | `LAMBDA` and `LET` — scoping rules, name shadowing, recursion depth limits | Advanced-function-semantics pass |
+| **BACKLOG-05** | Thread-safe vs. thread-unsafe function marking for parallel recalculation | Engine-internals pass |
+| **BACKLOG-06** | Automatic number format application heuristics on cell input (when does Excel decide "this is a date"?) | Input-parsing pass |
+| **BACKLOG-07** | Error value comparison semantics (`=#N/A=#N/A` → `#N/A`, not TRUE) | Extend this pass with empirical confirmation |
+| **BACKLOG-08** | `TEXT`, `VALUE`, `DATEVALUE`, `TIMEVALUE` explicit coercion functions — full semantic specification | Function-catalog pass |
+| **BACKLOG-09** | Named range and table scoping rules — workbook-level vs. sheet-level name resolution | Reference-model pass |
+| **BACKLOG-10** | Circular reference handling modes (iterative calculation with convergence threshold) | Dependency/calc-chain pass |
+
+
+## Gemini Base Output
+# Run ID: 20260301-203623-cell-abstraction-pass-02-semantics-core
+
+## 1. Scope And Assumptions
+
+**Scope:**
+This run formalizes the core semantics for in-cell computation within the foundation model. It explicitly defines the rules governing expression evaluation, implicit value coercion, error propagation lattices, function volatility classifications, and the boundaries between evaluation and visual formatting side effects.
+
+**Assumptions:**
+1. **Target Engine:** The semantics defined here target strict conformance with the standard Excel calculation engine, as required by the `CORE_ENGINE_FORMAL_MODEL.md`.
+2. **Immutability:** Cell evaluation is fundamentally side-effect free concerning the calculation state (pure functions), with well-defined exceptions for external links or macro-enabled functions.
+3. **Data Types:** The engine recognizes a closed set of primitive scalar types (Number, String, Boolean, Error, Empty) and compound types (Array, Reference).
+4. **Formatting Boundary:** Formatting (number formats, conditional formatting) is strictly a projection layer applied post-evaluation. It does not alter the underlying computed cell value.
+
+## 2. Response To Prompt Sequence
+
+### 2.1. Formalize expression evaluation and value coercion semantics
+In-cell computation evaluates an Abstract Syntax Tree (AST) where nodes represent operators or functions, and leaves represent primitive values or references. 
+
+**Coercion Rules:**
+Implicit coercion occurs when an operator or function expects a specific data type but receives another.
+*   **To Number:** 
+    *   `Boolean`: `TRUE` → `1`, `FALSE` → `0`.
+    *   `String`: Parsed as number if format matches locale settings; otherwise, results in `#VALUE!`.
+    *   `Empty`: Coerced to `0` in arithmetic contexts.
+*   **To Boolean:**
+    *   `Number`: `0` → `FALSE`, any non-zero value → `TRUE`.
+    *   `String`: Results in `#VALUE!` in logical contexts, except in specific legacy functions.
+    *   `Empty`: Coerced to `FALSE`.
+*   **To String:**
+    *   `Number`: Converted to base-10 string representation.
+    *   `Boolean`: Converted to `"TRUE"` or `"FALSE"`.
+    *   `Empty`: Coerced to `""` (empty string).
+
+### 2.2. Formalize error behavior and propagation lattice
+Errors are first-class values in the computation engine. 
+
+**Base Error Set:** `#DIV/0!`, `#N/A`, `#NAME?`, `#NULL!`, `#NUM!`, `#REF!`, `#VALUE!`, `#SPILL!`, `#CALC!`.
+
+**Propagation Rules:**
+*   **Strict Evaluation:** If any operand in an expression evaluates to an Error, the operation immediately yields that Error (short-circuiting).
+*   **Propagation Lattice (Precedence):** When an operation encounters multiple errors (e.g., in a binary operator or function arguments evaluated left-to-right), the standard engine propagates the *first* error encountered in standard left-to-right evaluation order.
+*   **Exceptions:** Error-handling functions (`IFERROR`, `ISERR`, `ISNA`) intercept error propagation and yield standard scalar values. `#N/A` possesses unique propagation rules in lookup functions, strictly representing "missing data" rather than a computational fault.
+
+### 2.3. Classify function semantics: pure, volatile, host-context, external, and structural-reference sensitive
+Function evaluation models must classify behavior to optimize the dependency graph and recalculation triggers.
+
+*   **Pure Functions:** Output is strictly and completely determined by the provided input arguments. Safe to cache. (e.g., `SUM`, `SIN`, `MID`).
+*   **Volatile Functions:** Output may change even if inputs do not. Must be marked dirty and recalculated on *every* recalculation cycle. (e.g., `RAND`, `NOW`, `TODAY`, `OFFSET`, `INDIRECT`).
+*   **Host-Context Functions:** Output depends on the state of the host application, window, or specific file properties. (e.g., `CELL`, `INFO`).
+*   **External Functions:** Output relies on out-of-process asynchronous data streams or external service calls. (e.g., `RTD`, `WEBSERVICE`, Linked Data Types).
+*   **Structural-Reference Sensitive Functions:** Output or dependency footprint dynamically shifts based on structural mutations (resizing) of bound Table objects, requiring dynamic sub-graph invalidation.
+
+### 2.4. Formalize value-to-display formatting semantics and conditional formatting interaction points
+*   **Value-to-Display:** Formatting applies a purely visual projection $P: \text{Value} \times \text{FormatString} \rightarrow \text{RenderedText}$. The underlying cell value $V_{calc}$ remains immutable. Aggregation functions always operate on $V_{calc}$, not the projected text (e.g., `SUM` on visually rounded numbers uses the raw precision).
+*   **Conditional Formatting Interaction:** Conditional Formatting (CF) evaluates a separate, overlay AST. CF expressions are evaluated contextually against $V_{calc}$ and the surrounding workbook state. Evaluation of CF rules happens strictly *after* the primary calculation chain resolves, preventing cyclic computational dependencies.
+
+### 2.5. Produce unresolved questions with concrete evidence requirements
+*   **Intersection of Coercion and Arrays:** Does an array operation forcefully coerce internally prior to returning a spilled `#VALUE!`? *Evidence needed: Empirical tests validating coercion boundaries in Dynamic Arrays vs. legacy CSE (Ctrl+Shift+Enter) arrays.*
+*   **Error Dominance in Spills:** When `#SPILL!` intersects with an internal calculation `#DIV/0!`, which error dominates the cell's output? *Evidence needed: Edge-case execution mapping against `EXCEL_CONFORMANCE_SPEC.md`.*
+
+## 3. Uncertainties And Evidence Needs
+
+*   **[UNCERTAINTY-01] Volatility Cascade over Dynamic Arrays:** If a dynamic array formula incorporates a volatile function inside a purely conditional branch that is *not* taken, does the engine still flag the entire spilled array as volatile? 
+    *   *Need:* Empirical test utilizing `RAND()` inside an `IF(FALSE, ...)` within a `SEQUENCE()` bounds check.
+*   **[UNCERTAINTY-02] `#CALC!` Error Propagation Precedence:** The `#CALC!` error (introduced with dynamic arrays) may possess different propagation precedence than legacy errors like `#VALUE!`. 
+    *   *Need:* Cross-reference against MS-VBAL documentation and `EMPIRICAL_PROMOTION_PLAN.md` test results.
+
+## 4. Promotion-Ready Draft Content
+
+```markdown
+<!-- TARGET: CORE_ENGINE_FORMAL_MODEL.md -->
+### 3.4 In-Cell Evaluation Semantics
+
+#### 3.4.1 Type Coercion Matrix
+The core engine enforces implicit type coercion based on operand context:
+| Source Type | Context: Arithmetic | Context: Logical | Context: Text |
+|-------------|---------------------|------------------|---------------|
+| `Boolean`   | `TRUE`=1, `FALSE`=0 | Identity         | `"TRUE"`, `"FALSE"`|
+| `Number`    | Identity            | `0`=FALSE, non-zero=TRUE | String representation |
+| `String`    | Parsed or `#VALUE!` | `#VALUE!`        | Identity      |
+| `Empty`     | `0`                 | `FALSE`          | `""`          |
+
+#### 3.4.2 Function Volatility Classes
+The dependency graph must recognize the following function classifications to maintain optimal recalculation limits:
+1.  **$\mathbb{P}$ (Pure):** $f(x) \rightarrow y$. Cachable. 
+2.  **$\mathbb{V}$ (Volatile):** $f(x, t) \rightarrow y$. Evaluates on every calc cycle. Marks dependent sub-graphs as dirty.
+3.  **$\mathbb{E}$ (External/Async):** $f(x, e_{state}) \rightarrow y$. Requires RTD lifecycle hooks and throttle bridging.
+4.  **$\mathbb{S}$ (Structural):** $f(Table_{ref}) \rightarrow y$. Modifies dependency footprint dynamically upon host-environment table resize events.
+
+#### 3.4.3 The Formatting Boundary Principle
+Calculations operate strictly over the mathematical underlying value ($V_{calc}$). Visual formatting, including Conditional Formatting rules, are pure rendering projections and must never feed back into the evaluation tree.
+```
+
+## 5. Follow-Up Backlog
+
+1.  **Generate Empirical Test Suite:** Draft scripts in the `tools/excel-probe/` directory to test `#SPILL!` vs `#CALC!` vs `#VALUE!` error precedence based on `[UNCERTAINTY-02]`.
+2.  **Define RTD Lifecycle Model:** Break out the `External Functions` classification into a dedicated specification addressing throttle intervals and state-teardown using findings from `EMP-0006-rtd-lifecycle-baseline.md`.
+3.  **Formalize Spill Target Overlap:** Document the exact evaluation sequence when a dynamic array spill target intersects with a structurally formatted table (following counter-signals noted in `EMP-0005-table-structref-spill-growth-counter-signal.md`).
+

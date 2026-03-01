@@ -1,0 +1,83 @@
+Here is the synthesized best output, combining the structural rigor of Codex, the domain clarity and pedagogical notation of Claude, and the empirical testing focus of Gemini.
+
+### 1. Consolidated Best Output
+
+#### 1.1 Scope and Assumptions
+**In Scope (In-Cell Semantics):** Everything inside a single cell from input acceptance through value resolution and display formatting. This is treated as a mostly pure function against a provided snapshot environment.
+**Out of Scope:** Workbook-level dependency graph construction, topological scheduling, cross-workbook resolution mechanics, and multi-threaded calculation.
+**Key Assumption (The Profile Parameter):** The model must support cross-domain reuse. Therefore, domain-specific quirks (like exact parsing rules or coercion tables) are parameterized into a pluggable **Profile ($\Pi$)**. Excel is the primary conformance anchor and acts as the default Profile.
+
+#### 1.2 Abstract Domains and Entities (Prompt Item 1)
+To model in-cell behavior comprehensively, we define seven core domains:
+
+| Domain | Core Entities | Role / Description |
+| :--- | :--- | :--- |
+| **A. Input & Parse** | `RawInput`, `CellInput` (Empty, Literal, Formula) | Maps user keystrokes/bytes to a classified internal representation. |
+| **B. Expression** | `Expr` (AST), `Ref`, `Op`, `FuncCall` | The structural representation of a formula. |
+| **C. Value Space** | `CellValue`, `ValTag`, `ErrorKind`, `Empty` | The resolved content. `Empty` is distinctly treated as a primitive, not a blank string. |
+| **D. Coercion** | `CoercionContext`, `CoercionRule` | Explicit implicit type conversion policies. |
+| **E. Context** | `Snapshot` ($\Gamma$), `Ambient` ($\Xi$), `Profile` ($\Pi$) | $\Gamma$: resolved references. $\Xi$: volatile state (time, rand). $\Pi$: engine policy. |
+| **F. Evaluation** | `EvalResult`, `DepSet`, `EventLog` | The core execution mechanics. Outputs a value or error, alongside conformance trace data. |
+| **G. Presentation** | `FormatCode`, `DisplayString` | Formats a resolved `CellValue` for display without altering the underlying storage. |
+
+#### 1.3 Notation and Judgment Forms (Prompt Item 2)
+The following operational semantics notations are designed for a living formal document. They explicitly thread the Profile ($\Pi$), Environment ($\Gamma$), and Ambient state ($\Xi$).
+
+1. **Parse:** $\Pi \vdash raw \rhd ci$
+   *(Under profile $\Pi$, raw string parses to CellInput $ci$)*
+2. **Reference Resolution:** $\Gamma \vdash ref \mapsto v$
+   *(Looking up reference in environment snapshot $\Gamma$ yields value $v$)*
+3. **Coercion:** $\Pi \vdash v \triangleright \tau \Rightarrow v'$
+   *(Under profile $\Pi$, value $v$ coerced toward expected type $\tau$ yields $v'$ or an error)*
+4. **Evaluation:** $\langle \Pi, \Gamma, \Xi \rangle \vdash e \Downarrow \rho$
+   *(Under profile, snapshot, and ambient context, expression $e$ evaluates to result $\rho$, where $\rho$ contains a value and trace logs)*
+5. **Formatting:** $\Pi \vdash v \oplus fmt \Rightarrow s$
+   *(Under profile $\Pi$, value $v$ formatted by $fmt$ yields display string $s$)*
+
+#### 1.4 Excel-Anchored Examples (Prompt Item 3)
+*Examples use abstract domain concepts mapped to Excel realities.*
+
+| Domain | Abstract Representation | Excel Anchor Example |
+| :--- | :--- | :--- |
+| **A. Input** | $raw \rhd Literal(Text("42"))$ | User types `'42`. Quote-prefix is parsed as text literal. |
+| **B. Expr** | $BinOp(/, Lit(Num(1)), Lit(Num(0)))$ | Formula `=1/0`. (Note: Error arises at eval, not parse). |
+| **C. Value** | $v_1 = Empty$, $v_2 = Text("")$ | Untouched cell vs. cell containing `=""`. They are fundamentally distinct in the model. |
+| **D. Coercion** | $Text("2") \triangleright WantNum \Rightarrow Num(2)$ | Implicit conversion in arithmetic operator contexts (e.g., `+"2"`). |
+| **E. Context** | $\Xi(Time) \mapsto Num(46112.5)$ | Ambient context providing the OS clock for the `=NOW()` function. |
+| **F. Eval** | $\dots \Downarrow Ok(Num(6), reads:\{A1\}, ops:\{*\})$ | The output includes observation traces for conformance testing. |
+| **G. Format** | $Num(0.5) \oplus "0\%" \Rightarrow "50\%"$ | Number format code applied to display value. |
+
+#### 1.5 Ambiguities and Missing Evidence (Prompt Item 4)
+
+**Spec-Gaps (Missing or ambiguous in ECMA-376 / formal specs):**
+1. **`SG-1`: The Coercion Matrix.** The specification lacks a complete mapping of every `ValTag` to every `CoercionContext` (e.g., how do explicit arrays coerce in scalar contexts?).
+2. **`SG-2`: Empty vs. Blank vs. `""`.** Specification uses "blank" inconsistently, especially regarding functions like `COUNTBLANK` vs arithmetic coercion.
+3. **`SG-3`: Error Precedence.** When multiple arguments evaluate to errors (e.g., `=#N/A + #DIV/0!`), which error propagates? (Does left-to-right strictly apply?).
+4. **`SG-4`: Dynamic Array / Spill Boundary.** When does an array spill naturally versus trigger a `#SPILL!` error due to implicit intersection? This boundary is entirely post-spec.
+
+**Empirical-Gaps (Behavior must be measured against running Excel instances):**
+1. **`EG-1`: Short-Circuit Evaluation.** Do functions like `IF()`, `CHOOSE()`, and `IFS()` strictly short-circuit? If a branch contains a volatile function or a divide-by-zero, does it execute/track dependencies if not selected?
+2. **`EG-2`: Error Trapping pre-coercion.** Does coercion to a number always propagate an Error, or do functions like `AGGREGATE` and `IFERROR` trap the error *before* the coercion step?
+3. **`EG-3`: Num $\rightarrow$ Text Precision.** When coercing floats to strings (e.g., `=1/3 & ""`), what is the exact stringification algorithm and floating-point tolerance compared to the `General` format?
+4. **`EG-4`: Epoch Boundaries.** Does the Windows Excel engine accept serial number `0` as a valid date? How is the Lotus 1-2-3 leap year bug (serial `60`) handled in modern AST coercion?
+
+---
+
+### 2. Conflict Resolution Notes
+*   **Pure Evaluation vs. State Transitions:** Gemini proposed modeling cell state transitions ($S \rightarrow S'$). I favored Claude and Codex's approach of pure evaluation judgments ($\Gamma \vdash e \Downarrow v$). Because the global dependency graph owns recalculation triggers, the in-cell model should strictly act as a pure evaluator against a frozen snapshot of the environment.
+*   **Formatting/Presentation Domain:** Codex excluded formatting, but Claude included it. I retained Claude's Presentation domain. Formatting (`TEXT()`, visual coercion) often bleeds into value semantics and is a critical part of what a cell "is", even if it doesn't affect the stored AST.
+*   **Cross-Domain Applicability:** Claude achieved domain neutrality via naming, but Codex introduced the formal mathematical concept of a **Profile ($\Pi$)**. I integrated Codex's Profile into all judgments, as it provides a rigorous mechanism to swap Excel's behavior for a different engine's without rewriting the core abstraction.
+
+---
+
+### 3. Residual Uncertainties
+*   **Dependency Tracing Depth:** If an `IF()` statement short-circuits, does the `DepSet` (recorded for the conformance trace) include the references inside the un-evaluated branch? This is crucial for determining if the model's environment snapshot needs to be lazy or strict.
+*   **Dynamic Array Responsibility:** Does the in-cell evaluation return a single `ArrayValue` and rely on the global scheduler to physically "spill" it into neighboring cells, or does the cell model itself need spatial awareness of neighboring occupancy?
+
+---
+
+### 4. Immediate Next Actions
+1.  **Construct Coercion Matrix Tests (`SG-1`, `EG-3`):** Use `excel-probe` to generate a test suite mapping every Excel value type against arithmetic, text, and logical operators to formalize the missing ECMA table.
+2.  **Validate Short-Circuiting (`EG-1`):** Write an `excel-probe` payload with custom UDFs or side-effecting volatile functions inside unselected `IF()` branches to observe execution behavior and dependency tracking.
+3.  **Formalize Parse-Rule Priority:** Draft the exact cascading logic for resolving user input (Date $\rightarrow$ Number $\rightarrow$ Boolean $\rightarrow$ Text) and verify it against locale-specific Excel instances.
+4.  **Draft Error Propagation Rules (`SG-3`):** Create test cases combining multiple `#` error types to reverse-engineer Excel's AST error precedence rules.
