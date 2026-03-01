@@ -12,6 +12,7 @@ This folder stores local mirror/index artifacts for external specification packs
 - `index.md`: human-readable mirror summary.
 - `runs/<run-id>/`: managed spec-processing run artifacts (`inputs`/`outputs`/`logs` style).
 - `empirical/`: curated empirical findings promoted as stable conformance-source references.
+- `conformance/`: authoritative working conformance specification docs and requirement corpora.
 
 ## Update Procedure (Mirror)
 Run:
