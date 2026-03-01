@@ -16,19 +16,19 @@ Local C# RTD COM server tooling for Excel empirical probes.
 From repo root:
 
 ```cmd
-research\tools\excel-rtd-server\excel-rtd-server.cmd build
+tools\\excel-rtd-server\\excel-rtd-server.cmd build
 ```
 
 ```cmd
-research\tools\excel-rtd-server\excel-rtd-server.cmd register
+tools\\excel-rtd-server\\excel-rtd-server.cmd register
 ```
 
 ```cmd
-research\tools\excel-rtd-server\excel-rtd-server.cmd unregister
+tools\\excel-rtd-server\\excel-rtd-server.cmd unregister
 ```
 
 ```cmd
-research\tools\excel-rtd-server\excel-rtd-server.cmd info
+tools\\excel-rtd-server\\excel-rtd-server.cmd info
 ```
 
 ## Notes
@@ -41,3 +41,5 @@ research\tools\excel-rtd-server\excel-rtd-server.cmd info
   - `ECHO,<text>` -> static text.
   - `PULSE` -> toggling integer value.
 - RTD behavior is deterministic enough for lifecycle probes but not intended as a production feed.
+
+

@@ -1,11 +1,11 @@
 param(
-    [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
+    [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$specRoot = Join-Path $RepoRoot "research\specs"
+$specRoot = Join-Path $RepoRoot "reference"
 $downloadsRoot = Join-Path $specRoot "downloads"
 $seedPath = Join-Path $specRoot "spec_seeds.csv"
 $indexCsvPath = Join-Path $specRoot "index.csv"
@@ -451,7 +451,7 @@ $md = New-Object System.Text.StringBuilder
 [void]$md.AppendLine("")
 [void]$md.AppendLine("- Run ID: $runId")
 [void]$md.AppendLine("- Run UTC: $($runUtc.ToString("yyyy-MM-dd HH:mm:ss 'UTC'"))")
-[void]$md.AppendLine("- Seed file: research/specs/spec_seeds.csv")
+[void]$md.AppendLine("- Seed file: reference/spec_seeds.csv")
 [void]$md.AppendLine("")
 [void]$md.AppendLine("## Status Counts")
 [void]$md.AppendLine("")

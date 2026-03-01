@@ -255,7 +255,7 @@ excel-probe (C#)
                 ["run_id"] = runId, ["task_id"] = scenario["task_id"]?.GetValue<string>() ?? "unknown", ["scenario_id"] = scenario["scenario_id"]?.GetValue<string>() ?? "unknown", ["timestamp_utc"] = finish,
                 ["environment"] = new Dictionary<string, object?> { ["platform"] = "windows_desktop", ["excel_channel"] = "unknown", ["excel_build"] = excelBinary["excel_file_version"], ["locale"] = CultureInfo.CurrentCulture.Name, ["calc_mode"] = calcMode, ["date_system"] = dateSystem, ["capability_profile"] = "unknown", ["tooling"] = tool },
                 ["observations"] = obs, ["comparison"] = new Dictionary<string, object?> { ["expected_profile"] = "scenario_expectations", ["result"] = "manual_review", ["mismatch_count"] = 0 },
-                ["evidence"] = new Dictionary<string, object?> { ["raw_capture_ref"] = "raw_capture.json", ["step_capture_ref"] = "step_capture.json", ["rerun_command"] = $"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"] = sourceRefs }
+                ["evidence"] = new Dictionary<string, object?> { ["raw_capture_ref"] = "raw_capture.json", ["step_capture_ref"] = "step_capture.json", ["rerun_command"] = $"dotnet run --project tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"] = sourceRefs }
             };
             var stepCapturePayload = new Dictionary<string, object?>
             {
@@ -289,7 +289,7 @@ excel-probe (C#)
                 ["run_id"]=runId, ["task_id"]=scenario?["task_id"]?.GetValue<string>() ?? "unknown", ["scenario_id"]=scenario?["scenario_id"]?.GetValue<string>() ?? "unknown", ["timestamp_utc"]=end,
                 ["environment"]=new Dictionary<string, object?> { ["platform"]="windows_desktop", ["excel_channel"]="unknown", ["excel_build"]=excelBinary.TryGetValue("excel_file_version", out var bb) ? bb : null, ["locale"]=CultureInfo.CurrentCulture.Name, ["calc_mode"]="unknown", ["date_system"]="unknown", ["capability_profile"]="unknown", ["tooling"]=tool },
                 ["observations"]=Array.Empty<object>(), ["comparison"]=new Dictionary<string, object?> { ["expected_profile"]="scenario_expectations", ["result"]="manual_review", ["mismatch_count"]=0 },
-                ["evidence"]=new Dictionary<string, object?> { ["raw_capture_ref"]="raw_capture.json", ["step_capture_ref"]="step_capture.json", ["rerun_command"]=$"dotnet run --project research/tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"]=Array.Empty<object>() }
+                ["evidence"]=new Dictionary<string, object?> { ["raw_capture_ref"]="raw_capture.json", ["step_capture_ref"]="step_capture.json", ["rerun_command"]=$"dotnet run --project tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \"{scenarioPath}\" --out \"{outDir}\" --visible {visible.ToString().ToLowerInvariant()} --timeout-sec {timeoutSec}", ["source_refs"]=Array.Empty<object>() }
             });
             WriteJson(stepCapturePath, new Dictionary<string, object?> { ["run_id"] = runId, ["error"] = ex.ToString() });
             File.WriteAllText(stdoutPath, "", Encoding.UTF8);
@@ -745,3 +745,4 @@ excel-probe (C#)
     static int ExcelPid(int hwnd) { GetWindowThreadProcessId((nint)hwnd, out var pid); return (int)pid; }
     [DllImport("user32.dll")] private static extern uint GetWindowThreadProcessId(nint hWnd, out uint lpdwProcessId);
 }
+

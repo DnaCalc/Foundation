@@ -1,6 +1,6 @@
-# Research Tools
+# Tools
 
-This directory holds local tooling used by research/empirical runs.
+This directory holds local tooling used by managed runs (research, reference processing, empirical probing, and related orchestration).
 
 ## Current tools
 - `excel-probe/`
@@ -12,6 +12,9 @@ This directory holds local tooling used by research/empirical runs.
   - Pins local research tools to .NET SDK `10.0.103` (latest installed release, preview disallowed).
 - `LOCAL_EXECUTION_TOOLS.md`
   - Local tooling policy note (SDK pin, language policy, and run metadata expectations).
+- `spec-pack-processor/`
+  - .NET (C#) reference-spec processing tool for converting mirrored Microsoft specs into normalized text segments, sentence classification tasks, and conformance candidate item lists.
+  - Optional wrappers (`.cmd` / `.ps1`) are convenience launchers; runtime logic is in `tools/SpecPackProcessor/`.
 
 ## Usage note
 Tool outputs should be written into the target run directory and referenced from that run's `logs/manifest.csv`.

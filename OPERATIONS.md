@@ -163,8 +163,14 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Foundation docs remain the source of truth for doctrine, architecture framing, and operations process, and must stay consistent with that upstream functional contract.
 - Proposed functional-scope expansions discovered in implementation (for example from gap-analysis style docs) are tracked as follow-on backlog and routed through synthesis before any doctrine/policy promotion.
 
-## 8. Prompt, Research, and Synthesis Run Discipline
-Prompt execution, deep research, and synthesis are treated as operational activities with run artifacts.
+## 8. Managed-Run Discipline (Prompt, Research, Synthesis, Reference)
+Prompt execution, deep research, synthesis, and reference-spec processing are treated as managed operational activities with run artifacts.
+
+### 8.0 Managed-Run Task Types
+- `prompt_run`: reusable prompt execution runs under `prompts/runs/<run-id>/`.
+- `research_run`: deep research runs under `research/runs/<run-id>/`.
+- `synthesis_run`: synthesis/decision runs under `synthesis/runs/<run-id>/`.
+- `reference_run`: reference-spec processing and conformance-candidate extraction runs under `reference/runs/<run-id>/`.
 
 ### 8.1 Prompt Runs
 - Prompt-run operating procedure lives in `prompts/README.md`.
@@ -204,7 +210,7 @@ When synthesis suggestions conflict, precedence remains:
   - `archived` (run retained for audit/history, no longer active working set).
 
 ### 8.6 Working Directory Semantics
-- `prompts/runs/*` and `research/runs/*` are working evidence directories.
+- `prompts/runs/*`, `research/runs/*`, `synthesis/runs/*`, and `reference/runs/*` are managed run evidence directories.
 - Their outputs must be assumed non-authoritative until synthesis promotion.
 - After synthesis, these directories remain audit inputs; day-to-day guidance comes from source-of-truth docs and `notes/RESEARCH_NOTES.md`.
 - Temporary agent-generated files should default to a repository-local `.tmp/` directory that is `.gitignore`d.
@@ -225,6 +231,20 @@ When synthesis suggestions conflict, precedence remains:
   - retain it explicitly in Foundation notes as deferred backlog with rationale.
 - Current retained example: `notes/VISICALC_V0_SCOPE_ALIGNMENT_NOTES.md`.
 - Superseded guides can then be archived without losing material planning knowledge.
+
+### 8.9 Reference Spec Processing and Conformance Extraction
+- Raw external-spec mirrors remain under `reference/downloads/` with indexed provenance in `reference/index.csv`.
+- Managed spec-processing runs emit normalized reference artifacts under `reference/runs/<run-id>/outputs/` and are the preferred input layer for conformance extraction and formal-model cross-referencing work.
+- Required processed-run outputs:
+  - `run_manifest.json`,
+  - `documents.csv`,
+  - `conformance_items.ndjson`,
+  - `llm/classification_tasks.ndjson`,
+  - per-document `document_manifest.json`, `segments.ndjson`, `sentences.ndjson`, and `conformance_candidates.ndjson`.
+- Every extracted segment/sentence/conformance item must retain source back-references (source URL, mirrored local path, and finest available anchor such as page/section/table/cell/image reference).
+- Coverage must be explicit: if any source artifact cannot be fully extracted (for example OCR-pending PDF), the run must emit pending markers/counters rather than silently dropping content.
+- LLM-assisted classification is allowed only as an auditable layer on top of deterministic extraction; prompts/responses or imported classifier outputs must be captured as run artifacts.
+- Detailed format contract for this layer is maintained in `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md`.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:

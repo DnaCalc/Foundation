@@ -12,7 +12,7 @@ Local empirical runner for Excel worksheet scenario execution.
 ## Implementation language policy
 - Primary runtime language: **C#** (`tools/ExcelProbe/`).
 - Optional shell wrappers (`excel-probe.cmd`, `excel-probe.ps1`) are convenience launchers only.
-- Process-containment helper language: **C#** (`research/tools/JobGuard/tools/JobGuard`) where Windows Job semantics are needed.
+- Process-containment helper language: **C#** (`tools/JobGuard/tools/JobGuard`) where Windows Job semantics are needed.
 - Policy alignment:
   - Excel-driving and artifact emission are in the .NET tool.
   - PowerShell may be used for convenience orchestration only (batch loops, wrappers).
@@ -27,18 +27,18 @@ Local empirical runner for Excel worksheet scenario execution.
 From repo root (recommended):
 
 ```cmd
-research\tools\excel-probe\excel-probe.cmd env --out research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\platform_availability
+tools\\excel-probe\\excel-probe.cmd env --out research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\platform_availability
 ```
 
 ```cmd
-research\tools\excel-probe\excel-probe.cmd run --scenario research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\scenarios\SCN-EB010-SUM-UNRELATED-EDIT.json --out research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\evidence\SCN-EB010-SUM-UNRELATED-EDIT --visible false --timeout-sec 180
+tools\\excel-probe\\excel-probe.cmd run --scenario research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\scenarios\SCN-EB010-SUM-UNRELATED-EDIT.json --out research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\evidence\SCN-EB010-SUM-UNRELATED-EDIT --visible false --timeout-sec 180
 ```
 
 ```cmd
-research\tools\excel-probe\excel-probe.cmd run-manifest --manifest research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\scenario_manifest_wave1.csv --base-dir research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1 --out-root research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\evidence --visible false --timeout-sec 180
+tools\\excel-probe\\excel-probe.cmd run-manifest --manifest research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\scenario_manifest_wave1.csv --base-dir research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1 --out-root research\runs\20260228-180047-excel-compat-empirical-pass-01\outputs\pilot_wave1\evidence --visible false --timeout-sec 180
 ```
 
-Direct `dotnet run` usage is also supported, but run it from `research/tools/` to honor pinned SDK policy in `research/tools/global.json`.
+Direct `dotnet run` usage is also supported, but run it from `tools/` to honor pinned SDK policy in `tools/global.json`.
 
 ## Output files for `run`
 - `run_manifest.json`
@@ -62,7 +62,7 @@ Direct `dotnet run` usage is also supported, but run it from `research/tools/` t
 1. Scenario source:
    - `research/runs/<empirical-run>/outputs/pilot_wave1/scenarios/*.json`
 2. Execution entry:
-   - `research\tools\excel-probe\excel-probe.cmd run --scenario ... --out ...`
+   - `tools\\excel-probe\\excel-probe.cmd run --scenario ... --out ...`
 3. Artifacts per scenario:
    - `run_manifest.json` (includes Excel version and `EXCEL.EXE` hash)
    - `raw_capture.json`
@@ -71,3 +71,5 @@ Direct `dotnet run` usage is also supported, but run it from `research/tools/` t
    - `run-manifest` command or `research/runs/<empirical-run>/outputs/pilot_wave1/run_wave1.ps1` wrapper
 5. Platform metadata support:
    - `research/runs/<empirical-run>/outputs/platform_availability/*`
+
+

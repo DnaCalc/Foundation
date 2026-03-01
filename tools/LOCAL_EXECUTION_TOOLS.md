@@ -1,11 +1,11 @@
 # Local Execution Tools Note
 
-This note applies to repository-local research and empirical tooling under `research/tools/`.
+This note applies to repository-local research and empirical tooling under `tools/`.
 
 ## SDK policy
 - Use the latest installed **release** .NET 10 SDK: `10.0.103`.
 - Do not use preview SDKs for research tooling runs.
-- SDK pinning is enforced by [`global.json`](/C:/Work/DnaCalc/Foundation/research/tools/global.json).
+- SDK pinning is enforced by [`global.json`](/C:/Work/DnaCalc/Foundation/tools/global.json).
 
 ## Language policy
 - Core research execution tooling should be implemented as stable .NET tools (C# or F#).
