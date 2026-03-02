@@ -10,7 +10,7 @@ Generated pass-2 consolidated outputs for scenario set `FMLP2-001..FMLP2-037`.
 - Observed rejected: 2
 - Mismatch rows: 0
 - Run-failed rows: 0
-- Manual-prep rows: 4 (executed: 4)
+- Manual-prep rows: 2 (executed: 2)
 
 ## Artifacts
 - `FORMULA_PARSE_PASS2_RESULTS.csv`

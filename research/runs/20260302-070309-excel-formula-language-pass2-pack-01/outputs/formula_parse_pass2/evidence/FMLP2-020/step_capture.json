@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-051230-55864add0",
+  "run_id": "run-20260302-063521-e3d0f683e",
   "task_id": "ECS-EB-035",
   "scenario_id": "FMLP2-020",
   "targets": [
@@ -9,7 +9,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T05:12:31.9066508Z",
+      "timestamp_utc": "2026-03-02T06:35:23.2786763Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -31,7 +31,7 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T05:12:32.1753903Z",
+      "timestamp_utc": "2026-03-02T06:35:23.3366137Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -53,7 +53,7 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T05:12:32.1875703Z",
+      "timestamp_utc": "2026-03-02T06:35:23.4179831Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -75,7 +75,7 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T05:12:32.1964411Z",
+      "timestamp_utc": "2026-03-02T06:35:23.5358271Z",
       "captures": [
         {
           "target": "Sheet1!D1",

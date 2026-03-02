@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-061109-289b394d8",
+  "run_id": "run-20260302-063523-432a90e4b",
   "scenario": {
     "scenario_id": "FMLP2-021",
     "task_id": "ECS-EB-036",
@@ -77,6 +77,16 @@
         }
       },
       {
+        "op": "open_support_workbook",
+        "target": "workbook",
+        "args": {
+          "source_workbook_fixture": "research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/Book2.xlsx",
+          "update_links": 0,
+          "read_only": true,
+          "allow_error": true
+        }
+      },
+      {
         "op": "edit_cell",
         "target": "Sheet1!D1",
         "args": {
@@ -121,28 +131,35 @@
       "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
       "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
     ],
-    "notes": "External workbook reference grammar baseline. | probe_id=P2-FML-006 | profile=external_workbook_present | manual_prep=Create support workbook Book2.xlsx (Sheet1!A1 populated) under fixtures/formula_parse_pass2/support before execution."
+    "notes": "External workbook reference grammar baseline. | probe_id=P2-FML-006 | profile=external_workbook_present"
   },
   "operation_trace": [
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:10.9141467Z",
-      "finished_utc": "2026-03-02T06:11:11.3485032Z",
+      "started_utc": "2026-03-02T06:35:25.9603501Z",
+      "finished_utc": "2026-03-02T06:35:26.0100834Z",
+      "status": "ok"
+    },
+    {
+      "op": "open_support_workbook",
+      "target": "workbook",
+      "started_utc": "2026-03-02T06:35:26.0101130Z",
+      "finished_utc": "2026-03-02T06:35:26.7017086Z",
       "status": "ok"
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!D1",
-      "started_utc": "2026-03-02T06:11:11.3485205Z",
-      "finished_utc": "2026-03-02T06:11:11.4095362Z",
+      "started_utc": "2026-03-02T06:35:26.7017230Z",
+      "finished_utc": "2026-03-02T06:35:26.7370507Z",
       "status": "ok"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:11.4095508Z",
-      "finished_utc": "2026-03-02T06:11:11.4322686Z",
+      "started_utc": "2026-03-02T06:35:26.7370596Z",
+      "finished_utc": "2026-03-02T06:35:26.7603010Z",
       "status": "ok"
     }
   ],
@@ -150,7 +167,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T06:11:10.9141208Z",
+      "timestamp_utc": "2026-03-02T06:35:25.9603269Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -172,7 +189,29 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T06:11:11.3484396Z",
+      "timestamp_utc": "2026-03-02T06:35:26.0100749Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_open_support_workbook",
+      "operation": "open_support_workbook",
+      "timestamp_utc": "2026-03-02T06:35:26.7017033Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -194,13 +233,13 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T06:11:11.4095314Z",
+      "timestamp_utc": "2026-03-02T06:35:26.7370471Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": -2146826265,
+          "value": 77,
           "formula": "=[Book2.xlsx]Sheet1!A1",
-          "display_text": "#REF!",
+          "display_text": "77",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -216,13 +255,13 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T06:11:11.4322605Z",
+      "timestamp_utc": "2026-03-02T06:35:26.7602962Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": -2146826265,
+          "value": 77,
           "formula": "=[Book2.xlsx]Sheet1!A1",
-          "display_text": "#REF!",
+          "display_text": "77",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -239,9 +278,9 @@
   "captures": [
     {
       "target": "Sheet1!D1",
-      "value": -2146826265,
+      "value": 77,
       "formula": "=[Book2.xlsx]Sheet1!A1",
-      "display_text": "#REF!",
+      "display_text": "77",
       "number_format": "General",
       "has_formula": true,
       "interior_color": 16777215,

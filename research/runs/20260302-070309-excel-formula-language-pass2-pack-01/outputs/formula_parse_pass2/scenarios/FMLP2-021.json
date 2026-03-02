@@ -75,6 +75,16 @@
                                     }
                        },
                        {
+                           "op":  "open_support_workbook",
+                           "target":  "workbook",
+                           "args":  {
+                                        "source_workbook_fixture":  "research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/Book2.xlsx",
+                                        "update_links":  0,
+                                        "read_only":  true,
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
                            "op":  "edit_cell",
                            "target":  "Sheet1!D1",
                            "args":  {
@@ -119,5 +129,5 @@
                     "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
                     "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
                 ],
-    "notes":  "External workbook reference grammar baseline. | probe_id=P2-FML-006 | profile=external_workbook_present | manual_prep=Create support workbook Book2.xlsx (Sheet1!A1 populated) under fixtures/formula_parse_pass2/support before execution."
+    "notes":  "External workbook reference grammar baseline. | probe_id=P2-FML-006 | profile=external_workbook_present"
 }

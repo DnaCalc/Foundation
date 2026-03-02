@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-061107-5c13ee0ed",
+  "run_id": "run-20260302-063517-d2e1212d9",
   "task_id": "ECS-EB-035",
   "scenario_id": "FMLP2-019",
   "targets": [
@@ -9,7 +9,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T06:11:08.7450339Z",
+      "timestamp_utc": "2026-03-02T06:35:20.4870520Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -31,7 +31,7 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T06:11:08.9836146Z",
+      "timestamp_utc": "2026-03-02T06:35:20.8395122Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -53,13 +53,13 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T06:11:09.0164060Z",
+      "timestamp_utc": "2026-03-02T06:35:20.9350034Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": 1,
+          "value": 4,
           "formula": "=MyName",
-          "display_text": "1",
+          "display_text": "4",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -75,13 +75,13 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T06:11:09.0290025Z",
+      "timestamp_utc": "2026-03-02T06:35:20.9593930Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": 1,
+          "value": 4,
           "formula": "=MyName",
-          "display_text": "1",
+          "display_text": "4",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,

@@ -50,6 +50,18 @@
                                     }
                        },
                        {
+                           "op":  "convert_to_linked_data_type",
+                           "target":  "Sheet1!A1",
+                           "args":  {
+                                        "service_ids":  [
+                                                            1,
+                                                            2
+                                                        ],
+                                        "culture":  1033,
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
                            "op":  "edit_cell",
                            "target":  "Sheet1!D1",
                            "args":  {

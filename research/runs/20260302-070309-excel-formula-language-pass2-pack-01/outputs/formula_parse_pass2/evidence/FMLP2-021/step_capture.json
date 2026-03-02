@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-061109-289b394d8",
+  "run_id": "run-20260302-063523-432a90e4b",
   "task_id": "ECS-EB-036",
   "scenario_id": "FMLP2-021",
   "targets": [
@@ -9,7 +9,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T06:11:10.9141208Z",
+      "timestamp_utc": "2026-03-02T06:35:25.9603269Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -31,7 +31,29 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T06:11:11.3484396Z",
+      "timestamp_utc": "2026-03-02T06:35:26.0100749Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_open_support_workbook",
+      "operation": "open_support_workbook",
+      "timestamp_utc": "2026-03-02T06:35:26.7017033Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -53,13 +75,13 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T06:11:11.4095314Z",
+      "timestamp_utc": "2026-03-02T06:35:26.7370471Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": -2146826265,
+          "value": 77,
           "formula": "=[Book2.xlsx]Sheet1!A1",
-          "display_text": "#REF!",
+          "display_text": "77",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -75,13 +97,13 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T06:11:11.4322605Z",
+      "timestamp_utc": "2026-03-02T06:35:26.7602962Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": -2146826265,
+          "value": 77,
           "formula": "=[Book2.xlsx]Sheet1!A1",
-          "display_text": "#REF!",
+          "display_text": "77",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,

@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-061107-5c13ee0ed",
+  "run_id": "run-20260302-063517-d2e1212d9",
   "scenario": {
     "scenario_id": "FMLP2-019",
     "task_id": "ECS-EB-035",
@@ -68,6 +68,16 @@
               }
             },
             {
+              "kind": "name",
+              "address": "",
+              "value": {
+                "name": "MyName",
+                "refers_to": "=Sheet1!$B$1",
+                "scope": "sheet",
+                "sheet": "Sheet1"
+              }
+            },
+            {
               "kind": "value",
               "address": "D1",
               "value": 0
@@ -129,28 +139,28 @@
       "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
       "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
     ],
-    "notes": "Name shadowing precedence. | probe_id=P2-FML-005 | profile=manual_name_shadowing | manual_prep=Add a sheet-local name MyName on Sheet1 that intentionally shadows workbook-level MyName before execution."
+    "notes": "Name shadowing precedence. | probe_id=P2-FML-005 | profile=name_shadowing"
   },
   "operation_trace": [
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:08.7450539Z",
-      "finished_utc": "2026-03-02T06:11:08.9836211Z",
+      "started_utc": "2026-03-02T06:35:20.4870798Z",
+      "finished_utc": "2026-03-02T06:35:20.8395191Z",
       "status": "ok"
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!D1",
-      "started_utc": "2026-03-02T06:11:08.9836389Z",
-      "finished_utc": "2026-03-02T06:11:09.0164105Z",
+      "started_utc": "2026-03-02T06:35:20.8395327Z",
+      "finished_utc": "2026-03-02T06:35:20.9350087Z",
       "status": "ok"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:09.0164208Z",
-      "finished_utc": "2026-03-02T06:11:09.0290071Z",
+      "started_utc": "2026-03-02T06:35:20.9350238Z",
+      "finished_utc": "2026-03-02T06:35:20.9593981Z",
       "status": "ok"
     }
   ],
@@ -158,7 +168,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T06:11:08.7450339Z",
+      "timestamp_utc": "2026-03-02T06:35:20.4870520Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -180,7 +190,7 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T06:11:08.9836146Z",
+      "timestamp_utc": "2026-03-02T06:35:20.8395122Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -202,13 +212,13 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T06:11:09.0164060Z",
+      "timestamp_utc": "2026-03-02T06:35:20.9350034Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": 1,
+          "value": 4,
           "formula": "=MyName",
-          "display_text": "1",
+          "display_text": "4",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -224,13 +234,13 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T06:11:09.0290025Z",
+      "timestamp_utc": "2026-03-02T06:35:20.9593930Z",
       "captures": [
         {
           "target": "Sheet1!D1",
-          "value": 1,
+          "value": 4,
           "formula": "=MyName",
-          "display_text": "1",
+          "display_text": "4",
           "number_format": "General",
           "has_formula": true,
           "interior_color": 16777215,
@@ -247,9 +257,9 @@
   "captures": [
     {
       "target": "Sheet1!D1",
-      "value": 1,
+      "value": 4,
       "formula": "=MyName",
-      "display_text": "1",
+      "display_text": "4",
       "number_format": "General",
       "has_formula": true,
       "interior_color": 16777215,

@@ -66,6 +66,16 @@
                                                                         }
                                                           },
                                                           {
+                                                              "kind":  "name",
+                                                              "address":  "",
+                                                              "value":  {
+                                                                            "name":  "MyName",
+                                                                            "refers_to":  "=Sheet1!$B$1",
+                                                                            "scope":  "sheet",
+                                                                            "sheet":  "Sheet1"
+                                                                        }
+                                                          },
+                                                          {
                                                               "kind":  "value",
                                                               "address":  "D1",
                                                               "value":  0
@@ -127,5 +137,5 @@
                     "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
                     "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
                 ],
-    "notes":  "Name shadowing precedence. | probe_id=P2-FML-005 | profile=manual_name_shadowing | manual_prep=Add a sheet-local name MyName on Sheet1 that intentionally shadows workbook-level MyName before execution."
+    "notes":  "Name shadowing precedence. | probe_id=P2-FML-005 | profile=name_shadowing"
 }

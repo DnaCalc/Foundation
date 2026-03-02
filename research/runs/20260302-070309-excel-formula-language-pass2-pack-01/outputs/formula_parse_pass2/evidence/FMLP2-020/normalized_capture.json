@@ -1,8 +1,8 @@
 ﻿{
-  "run_id": "run-20260302-051230-55864add0",
+  "run_id": "run-20260302-063521-e3d0f683e",
   "task_id": "ECS-EB-035",
   "scenario_id": "FMLP2-020",
-  "timestamp_utc": "2026-03-02T05:12:32.2434946Z",
+  "timestamp_utc": "2026-03-02T06:35:23.7862249Z",
   "environment": {
     "platform": "windows_desktop",
     "excel_channel": "unknown",
@@ -14,13 +14,13 @@
     "tooling": {
       "runner_name": "excel-probe",
       "runner_language": "C#",
-      "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+      "runner_version": "0.2.0\u002B54b8424b38d55906d53ba4eb8e3cdb14ab162111",
       "runner_build_version": "0.2.0.0",
       "dotnet_sdk_version": "10.0.103",
       "dotnet_runtime_version": "10.0.3",
       "repo_root": "C:\\Work\\DnaCalc\\Foundation",
-      "repo_git_commit": "b87d202d04681d7b37b7424bc2a07fab818c494a",
-      "repo_git_commit_short": "b87d202",
+      "repo_git_commit": "54b8424b38d55906d53ba4eb8e3cdb14ab162111",
+      "repo_git_commit_short": "54b8424",
       "repo_git_is_dirty": true
     }
   },

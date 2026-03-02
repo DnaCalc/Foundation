@@ -79,8 +79,9 @@ Primary execution artifacts:
 2. `SEED_TO_EXECUTED_MAPPING_PASS2.csv`
 3. `PASS2_EXECUTION_REPORT.md`
 4. `MANUAL_PREP_PASS2B_REPORT.md`
+5. `TARGETED_PASS2C_LANES_REPORT.md`
 
 Remaining unresolved lanes after execution:
-1. `P2-FML-002` linked-data semantic branch (true linked-data fixture still required).
-2. `P2-FML-005` explicit dual-scope name shadowing setup in current harness.
-3. `P2-FML-006` external workbook-present resolution in current harness.
+1. `P2-FML-002` linked-data semantic branch (true linked-data fixture still required; conversion attempts currently captured as allowed-error in this environment).
+2. `P2-FML-005` requires explicit policy wording for sheet-qualified name behavior after targeted lane results.
+3. `P2-FML-006` now has workbook-present resolution in harness; remaining work is link-update/open-state policy expansion and cross-build replay.

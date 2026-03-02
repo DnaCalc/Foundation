@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-051236-86f4fd9f5",
+  "run_id": "run-20260302-063627-630a5cc6d",
   "scenario": {
     "scenario_id": "FMLP2-022",
     "task_id": "ECS-EB-036",
@@ -127,22 +127,22 @@
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-03-02T05:12:38.2730509Z",
-      "finished_utc": "2026-03-02T05:12:38.4902400Z",
+      "started_utc": "2026-03-02T06:36:29.4792949Z",
+      "finished_utc": "2026-03-02T06:36:29.5961589Z",
       "status": "ok"
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!D1",
-      "started_utc": "2026-03-02T05:12:38.4902475Z",
-      "finished_utc": "2026-03-02T05:12:38.5134251Z",
+      "started_utc": "2026-03-02T06:36:29.5961721Z",
+      "finished_utc": "2026-03-02T06:36:29.8953127Z",
       "status": "ok"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-03-02T05:12:38.5134338Z",
-      "finished_utc": "2026-03-02T05:12:38.5222029Z",
+      "started_utc": "2026-03-02T06:36:29.8953248Z",
+      "finished_utc": "2026-03-02T06:36:30.0897225Z",
       "status": "ok"
     }
   ],
@@ -150,7 +150,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T05:12:38.2730347Z",
+      "timestamp_utc": "2026-03-02T06:36:29.4792670Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -172,7 +172,7 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T05:12:38.4902357Z",
+      "timestamp_utc": "2026-03-02T06:36:29.5961510Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -194,7 +194,7 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T05:12:38.5134221Z",
+      "timestamp_utc": "2026-03-02T06:36:29.8953077Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -216,7 +216,7 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T05:12:38.5222013Z",
+      "timestamp_utc": "2026-03-02T06:36:30.0897182Z",
       "captures": [
         {
           "target": "Sheet1!D1",

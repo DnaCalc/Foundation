@@ -24,7 +24,9 @@ Prepare an executable empirical pass-2 pack for formula-language conformance lan
    - run `outputs/formula_parse_pass2/run_pass2.ps1`
 3. Execute targeted manual-prep rerun:
    - run `outputs/formula_parse_pass2/run_pass2_manualprep.ps1`
-4. Build summarized result artifacts:
+4. Execute targeted unresolved-lane rerun:
+   - run `outputs/formula_parse_pass2/run_pass2c_targeted_lanes.ps1`
+5. Build summarized result artifacts:
    - run `outputs/formula_parse_pass2/build_pass2_outputs.ps1`
 
 ## Current Status (2026-03-02)
@@ -36,3 +38,5 @@ Prepare an executable empirical pass-2 pack for formula-language conformance lan
    - run-failed rows: `0`
 3. Targeted manual-prep rerun executed for:
    - `FMLP2-008`, `FMLP2-009`, `FMLP2-019`, `FMLP2-021`
+4. Targeted pass-2c lane rerun executed for:
+   - `FMLP2-008`, `FMLP2-009`, `FMLP2-019`, `FMLP2-020`, `FMLP2-021`, `FMLP2-022`

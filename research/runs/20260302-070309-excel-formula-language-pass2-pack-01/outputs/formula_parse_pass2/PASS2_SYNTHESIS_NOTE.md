@@ -17,7 +17,8 @@ Run pack:
 3. `FML-R-003` promoted to `provisional` with expanded `@`/`#` interaction evidence.
 4. `FML-R-006` promoted to `provisional` with helper-form and external-reference pass-2 coverage.
 5. `FML-R-007` promoted to `provisional` with broadened normalization corpus.
-6. `FML-R-009` promoted to `provisional` with structured-reference pass-2 matrix coverage.
+6. `FML-R-008` promoted to `provisional` after targeted dual-scope name-lane execution.
+7. `FML-R-009` promoted to `provisional` with structured-reference pass-2 matrix coverage.
 
 ## Major Behavioral Captures
 1. Argument-gap forms (`SUM`/`IF`/`LET`) were accepted in current build (`FMLP2-001..005`).
@@ -25,11 +26,15 @@ Run pack:
 3. Helper family (`MAP`, `BYROW`, `BYCOL`, `SCAN`, `REDUCE`) parsed/evaluated as accepted.
 4. `=-2^2` observed `4`; `=1+2&3` observed `33`.
 5. `=@A1#` and `=@SEQUENCE(3)` stored without `@` in tested forms.
+6. Targeted pass-2c lane captures:
+   - `=MyName` observed `4` under explicit workbook+sheet-scope setup.
+   - `=Sheet1!MyName` observed `1` in same setup (policy wording required).
+   - external workbook-present lane observed `77` when support workbook was explicitly opened.
 
 ## Remaining Unresolved Lanes
 1. Linked-data semantic branch for `FML-R-011` remains unresolved without true linked-data fixture setup in the runner.
-2. Dual-scope name-shadowing lane for `FML-R-008` remains unresolved in current harness.
-3. External workbook-present resolution lane for `FML-R-006` remains unresolved (probe still `#REF!` in current harness).
+2. Scoped-name qualification semantics require explicit policy wording and cross-build replay.
+3. External-reference lane needs link-update/open-state expansion and cross-build replay.
 4. Cross-build/channel replay is still required before any `validated` promotion.
 
 ## Documents Updated in Foundation
@@ -40,3 +45,4 @@ Run pack:
 5. `reference/conformance/excel-worksheet-engine/EXCEL_CONFORMANCE_SPEC.md`
 6. `reference/conformance/excel-worksheet-engine/README.md`
 7. `reference/conformance/excel-worksheet-engine/model/README.md`
+8. `TARGETED_PASS2C_LANES_REPORT.md`

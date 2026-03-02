@@ -18,7 +18,7 @@ It tightens `ECM-FML-001..004` into implementation-facing rule statements tied t
 | FML-R-005 | Dynamic-array spill behavior must be represented at formula-language boundary with spill reference updates and visible spill errors. | XLS-CF-FL-005 | ECS-006;ECS-007;ECS-EB-038 | draft |
 | FML-R-006 | Parser grammar coverage must stay aligned with the formal MS-XLSX grammar anchor; any observed widening must be explicit and version-scoped. | XLS-CF-FL-006 | ECS-008;ECS-009;REFX-001;ECS-EB-034;ECS-EB-036 | provisional |
 | FML-R-007 | Cell-formula storage/normalization behavior (entered text vs stored formula) must be captured explicitly in conformance outputs. | XLS-CF-FL-007 | ECS-009;REFX-001;ECS-EB-039;ECS-EB-038 | provisional |
-| FML-R-008 | Workbook/sheet name resolution must follow Excel name-scope behavior and collision precedence. | XLS-CF-FL-008 | ECS-010;ECS-011;ECS-008 | draft |
+| FML-R-008 | Workbook/sheet name resolution must follow Excel name-scope behavior and collision precedence. | XLS-CF-FL-008 | ECS-010;ECS-011;ECS-008;ECS-EB-035 | provisional |
 | FML-R-009 | Structured references are first-class formula syntax (`Table[Col]`, `[@Col]`, qualifiers) and participate in normal parse/bind/eval. | XLS-CF-FL-009 | ECS-012;ECS-013;ECS-014;ECS-EB-037 | provisional |
 | FML-R-010 | `=SUM(A1,,B1)` behavior is treated as build-scoped provisional ambiguity; parser policy must remain configurable until resolved. | XLS-CF-FL-010 | EMP-0001;ECS-EB-031 | provisional |
 | FML-R-011 | Dot-field syntax (`=A1.Price`) is tracked as syntax-accepted in current evidence, with runtime semantics constrained by linked-data context. | XLS-CF-FL-011 | ECS-024;ECS-025;EMP-0002;ECS-EB-032 | provisional |
@@ -104,15 +104,17 @@ Key behavior captures:
    - `=@A1#` stored as `=A1#` and evaluated against spill anchor.
    - `=@SEQUENCE(3)` stored as `=SEQUENCE(3)`.
    - `=A1#` on non-spill scalar produced `#REF!`.
-7. Name/external manual-prep rerun (`pass-2b`) did not yet close two lanes:
-   - explicit sheet-local/workbook shadowing still unresolved in current scenario harness (`FMLP2-019`),
-   - workbook-present external reference still returned `#REF!` (`FMLP2-021`).
+7. Targeted lane rerun (`pass-2c`) added explicit lane controls:
+   - linked-data conversion attempts are now captured as operation-trace evidence (`allowed_error` in current environment) for `FMLP2-008/009`,
+   - dual-scope name setup produced `=MyName -> 4` and `=Sheet1!MyName -> 1` in current build (`FMLP2-019/020`),
+   - workbook-present external reference resolved to `77` when support workbook was explicitly opened (`FMLP2-021`), while missing workbook remained `#REF!` (`FMLP2-022`).
 
 Primary artifacts:
 1. `FORMULA_PARSE_PASS2_RESULTS.csv`
 2. `SEED_TO_EXECUTED_MAPPING_PASS2.csv`
 3. `PASS2_EXECUTION_REPORT.md`
 4. `MANUAL_PREP_PASS2B_REPORT.md`
+5. `TARGETED_PASS2C_LANES_REPORT.md`
 
 ## 7. Operator Precedence Baseline (Worksheet Formula Context)
 Current precedence baseline for parser/evaluator alignment:
@@ -145,10 +147,10 @@ Coverage note:
 2. Helper-form completeness therefore depends on mixed formal + behavioral + empirical evidence.
 
 ## 9. Open Items for Next Tightening Pass
-1. Add explicit dual-scope name collision matrix with unambiguous sheet-local and workbook-global setup primitives in the scenario harness.
-2. Add explicit external/workbook reference harness controls (open/closed source workbook state, link-update policy) for `P2-FML-006`.
+1. Fix policy wording for sheet-qualified name semantics based on observed `=MyName` vs `=Sheet1!MyName` behavior.
+2. Expand external/workbook reference lane to cover link-update policy variants and workbook-open/closed permutations.
 3. Add linked-data fixture preparation primitive for `P2-FML-002` so dot-field semantics can be split by true linked vs non-linked contexts.
-4. Replicate precedence and argument-gap lanes across additional target builds/channels for status promotion to validated.
+4. Replicate precedence, name-resolution, and argument-gap lanes across additional target builds/channels for status promotion to validated.
 
 ## 10. Conformance Matrix and Pass-2 Plan
 This rule set is operationalized by:
@@ -159,6 +161,6 @@ This rule set is operationalized by:
 Primary unresolved closures currently depend on:
 1. `P2-FML-001` (double-comma argument-gap lane),
 2. `P2-FML-002` (dot-field parse/eval lane),
-3. `P2-FML-005` (explicit dual-scope name-shadowing lane),
-4. `P2-FML-006` (external workbook-present resolution lane),
-5. cross-build replay of `P2-FML-003`, `P2-FML-009`, and `P2-FML-010`.
+3. `P2-FML-002` (linked-data semantic branch),
+4. link-update policy expansion for `P2-FML-006`,
+5. cross-build replay of `P2-FML-003`, `P2-FML-005`, `P2-FML-009`, and `P2-FML-010`.

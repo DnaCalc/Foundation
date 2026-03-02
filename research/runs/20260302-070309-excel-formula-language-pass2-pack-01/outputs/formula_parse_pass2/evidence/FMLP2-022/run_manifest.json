@@ -1,11 +1,11 @@
 ﻿{
-  "run_id": "run-20260302-051236-86f4fd9f5",
+  "run_id": "run-20260302-063627-630a5cc6d",
   "task_id": "ECS-EB-036",
   "scenario_id": "FMLP2-022",
-  "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+  "runner_version": "0.2.0\u002B54b8424b38d55906d53ba4eb8e3cdb14ab162111",
   "runner_build_version": "0.2.0.0",
-  "start_utc": "2026-03-02T05:12:36.7201950Z",
-  "end_utc": "2026-03-02T05:12:38.5647531Z",
+  "start_utc": "2026-03-02T06:36:27.0445388Z",
+  "end_utc": "2026-03-02T06:36:30.1501711Z",
   "exit_status": "success",
   "visible": false,
   "timeout_sec": 480,
@@ -14,13 +14,13 @@
   "excel_channel": "unknown",
   "calc_mode": "automatic",
   "excel_app_version": "16.0",
-  "excel_pid": 40788,
+  "excel_pid": 89300,
   "excel_process_snapshot": {
-    "pid": 40788,
+    "pid": 89300,
     "name": "EXCEL",
     "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
     "command_line": null,
-    "creation_date": "2026-03-02T05:12:37.1401932Z"
+    "creation_date": "2026-03-02T06:36:27.4809120Z"
   },
   "excel_binary": {
     "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
@@ -37,22 +37,22 @@
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-03-02T05:12:38.2730509Z",
-      "finished_utc": "2026-03-02T05:12:38.4902400Z",
+      "started_utc": "2026-03-02T06:36:29.4792949Z",
+      "finished_utc": "2026-03-02T06:36:29.5961589Z",
       "status": "ok"
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!D1",
-      "started_utc": "2026-03-02T05:12:38.4902475Z",
-      "finished_utc": "2026-03-02T05:12:38.5134251Z",
+      "started_utc": "2026-03-02T06:36:29.5961721Z",
+      "finished_utc": "2026-03-02T06:36:29.8953127Z",
       "status": "ok"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-03-02T05:12:38.5134338Z",
-      "finished_utc": "2026-03-02T05:12:38.5222029Z",
+      "started_utc": "2026-03-02T06:36:29.8953248Z",
+      "finished_utc": "2026-03-02T06:36:30.0897225Z",
       "status": "ok"
     }
   ],
@@ -60,13 +60,13 @@
   "tooling": {
     "runner_name": "excel-probe",
     "runner_language": "C#",
-    "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+    "runner_version": "0.2.0\u002B54b8424b38d55906d53ba4eb8e3cdb14ab162111",
     "runner_build_version": "0.2.0.0",
     "dotnet_sdk_version": "10.0.103",
     "dotnet_runtime_version": "10.0.3",
     "repo_root": "C:\\Work\\DnaCalc\\Foundation",
-    "repo_git_commit": "b87d202d04681d7b37b7424bc2a07fab818c494a",
-    "repo_git_commit_short": "b87d202",
+    "repo_git_commit": "54b8424b38d55906d53ba4eb8e3cdb14ab162111",
+    "repo_git_commit_short": "54b8424",
     "repo_git_is_dirty": true
   }
 }

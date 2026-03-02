@@ -67,13 +67,23 @@ foreach ($case in $cases) {
     $runExit = if ($runManifest) { To-ScalarString ($runManifest.exit_status) } else { '' }
 
     $editTrace = $null
+    $linkedDataTrace = $null
+    $supportWorkbookTrace = $null
     if ($rawCapture -and $rawCapture.operation_trace) {
         $editTrace = @($rawCapture.operation_trace | Where-Object { $_.op -eq 'edit_cell' } | Select-Object -Last 1)
         if ($editTrace.Count -gt 0) { $editTrace = $editTrace[0] } else { $editTrace = $null }
+        $linkedDataTrace = @($rawCapture.operation_trace | Where-Object { $_.op -eq 'convert_to_linked_data_type' } | Select-Object -Last 1)
+        if ($linkedDataTrace.Count -gt 0) { $linkedDataTrace = $linkedDataTrace[0] } else { $linkedDataTrace = $null }
+        $supportWorkbookTrace = @($rawCapture.operation_trace | Where-Object { $_.op -eq 'open_support_workbook' } | Select-Object -Last 1)
+        if ($supportWorkbookTrace.Count -gt 0) { $supportWorkbookTrace = $supportWorkbookTrace[0] } else { $supportWorkbookTrace = $null }
     }
 
     $editStatus = ''
     $editMessage = ''
+    $linkedDataStatus = ''
+    $linkedDataMessage = ''
+    $supportWorkbookStatus = ''
+    $supportWorkbookMessage = ''
     $observedAcceptance = 'not_executed'
     if ($editTrace) {
         $editStatus = if ($editTrace.PSObject.Properties.Name -contains 'status') { To-ScalarString $editTrace.status } else { '' }
@@ -86,6 +96,14 @@ foreach ($case in $cases) {
     }
     elseif ($runExit -eq 'failed') {
         $observedAcceptance = 'scenario_failed'
+    }
+    if ($linkedDataTrace) {
+        $linkedDataStatus = if ($linkedDataTrace.PSObject.Properties.Name -contains 'status') { To-ScalarString $linkedDataTrace.status } else { '' }
+        $linkedDataMessage = if ($linkedDataTrace.PSObject.Properties.Name -contains 'message') { To-ScalarString $linkedDataTrace.message } else { '' }
+    }
+    if ($supportWorkbookTrace) {
+        $supportWorkbookStatus = if ($supportWorkbookTrace.PSObject.Properties.Name -contains 'status') { To-ScalarString $supportWorkbookTrace.status } else { '' }
+        $supportWorkbookMessage = if ($supportWorkbookTrace.PSObject.Properties.Name -contains 'message') { To-ScalarString $supportWorkbookTrace.message } else { '' }
     }
 
     $initialCapture = $null
@@ -145,6 +163,10 @@ foreach ($case in $cases) {
         run_exit_status = $runExit
         edit_operation_status = $editStatus
         edit_operation_message = $editMessage
+        linked_data_operation_status = $linkedDataStatus
+        linked_data_operation_message = $linkedDataMessage
+        support_workbook_operation_status = $supportWorkbookStatus
+        support_workbook_operation_message = $supportWorkbookMessage
         stored_formula_initial = $storedFormulaInitial
         stored_formula_final = $storedFormulaFinal
         normalization_changed = $normalizationChanged

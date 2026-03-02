@@ -1,5 +1,5 @@
 ﻿{
-  "run_id": "run-20260302-061101-b833f514d",
+  "run_id": "run-20260302-063508-45e6db325",
   "scenario": {
     "scenario_id": "FMLP2-008",
     "task_id": "ECS-EB-032",
@@ -49,6 +49,18 @@
         "target": "workbook",
         "args": {
           "mode": "automatic"
+        }
+      },
+      {
+        "op": "convert_to_linked_data_type",
+        "target": "Sheet1!A1",
+        "args": {
+          "service_ids": [
+            1,
+            2
+          ],
+          "culture": 1033,
+          "allow_error": true
         }
       },
       {
@@ -102,22 +114,30 @@
     {
       "op": "set_calc_mode",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:04.2505134Z",
-      "finished_utc": "2026-03-02T06:11:04.4400706Z",
+      "started_utc": "2026-03-02T06:35:13.0993858Z",
+      "finished_utc": "2026-03-02T06:35:13.2522167Z",
       "status": "ok"
+    },
+    {
+      "op": "convert_to_linked_data_type",
+      "target": "Sheet1!A1",
+      "started_utc": "2026-03-02T06:35:13.2522645Z",
+      "finished_utc": "2026-03-02T06:35:13.3283517Z",
+      "status": "allowed_error",
+      "message": "convert_to_linked_data_type failed for service ids [1,2]. Last error: Error while invoking ConvertToLinkedDataType."
     },
     {
       "op": "edit_cell",
       "target": "Sheet1!D1",
-      "started_utc": "2026-03-02T06:11:04.4400889Z",
-      "finished_utc": "2026-03-02T06:11:04.4617772Z",
+      "started_utc": "2026-03-02T06:35:13.3283851Z",
+      "finished_utc": "2026-03-02T06:35:13.3658834Z",
       "status": "ok"
     },
     {
       "op": "recalc",
       "target": "workbook",
-      "started_utc": "2026-03-02T06:11:04.4617981Z",
-      "finished_utc": "2026-03-02T06:11:04.4796532Z",
+      "started_utc": "2026-03-02T06:35:13.3659124Z",
+      "finished_utc": "2026-03-02T06:35:13.4167932Z",
       "status": "ok"
     }
   ],
@@ -125,7 +145,7 @@
     {
       "step": "initial_after_setup",
       "operation": "setup",
-      "timestamp_utc": "2026-03-02T06:11:04.2504425Z",
+      "timestamp_utc": "2026-03-02T06:35:13.0990786Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -147,7 +167,29 @@
     {
       "step": "after_set_calc_mode",
       "operation": "set_calc_mode",
-      "timestamp_utc": "2026-03-02T06:11:04.4400603Z",
+      "timestamp_utc": "2026-03-02T06:35:13.2521943Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_convert_to_linked_data_type_allowed_error",
+      "operation": "convert_to_linked_data_type",
+      "timestamp_utc": "2026-03-02T06:35:13.3281765Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -169,7 +211,7 @@
     {
       "step": "after_edit_cell",
       "operation": "edit_cell",
-      "timestamp_utc": "2026-03-02T06:11:04.4617704Z",
+      "timestamp_utc": "2026-03-02T06:35:13.3658738Z",
       "captures": [
         {
           "target": "Sheet1!D1",
@@ -191,7 +233,7 @@
     {
       "step": "after_recalc",
       "operation": "recalc",
-      "timestamp_utc": "2026-03-02T06:11:04.4796493Z",
+      "timestamp_utc": "2026-03-02T06:35:13.4167852Z",
       "captures": [
         {
           "target": "Sheet1!D1",
