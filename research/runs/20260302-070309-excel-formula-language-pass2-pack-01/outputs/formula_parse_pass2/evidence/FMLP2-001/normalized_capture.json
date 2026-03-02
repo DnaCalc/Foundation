@@ -1,0 +1,57 @@
+﻿{
+  "run_id": "run-20260302-051142-667083878",
+  "task_id": "ECS-EB-031",
+  "scenario_id": "FMLP2-001",
+  "timestamp_utc": "2026-03-02T05:11:46.8145002Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "b87d202d04681d7b37b7424bc2a07fab818c494a",
+      "repo_git_commit_short": "b87d202",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!D1",
+      "kind": "value",
+      "status": "observed",
+      "value": 5,
+      "metadata": {
+        "formula": "=SUM(A1,,B1)",
+        "display_text": "5",
+        "number_format": "General",
+        "has_formula": true
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-070309-excel-formula-language-pass2-pack-01\\outputs\\formula_parse_pass2\\scenarios\\FMLP2-001.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-070309-excel-formula-language-pass2-pack-01\\outputs\\formula_parse_pass2\\evidence\\FMLP2-001\u0022 --visible false --timeout-sec 480",
+    "source_refs": [
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
+    ]
+  }
+}

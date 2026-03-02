@@ -1,0 +1,98 @@
+﻿{
+  "run_id": "run-20260302-051142-667083878",
+  "task_id": "ECS-EB-031",
+  "scenario_id": "FMLP2-001",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T05:11:46.1979688Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T05:11:46.6239902Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T05:11:46.6686826Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T05:11:46.7102847Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ]
+}

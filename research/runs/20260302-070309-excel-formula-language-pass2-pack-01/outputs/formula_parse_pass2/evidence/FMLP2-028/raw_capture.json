@@ -1,0 +1,232 @@
+﻿{
+  "run_id": "run-20260302-051253-30792d853",
+  "scenario": {
+    "scenario_id": "FMLP2-028",
+    "task_id": "ECS-EB-038",
+    "topic": "formula_parse_pass2",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-028.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "formula",
+              "address": "A1",
+              "value": "=SEQUENCE(3,1,10,1)"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "D1",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=@SEQUENCE(3)",
+          "allow_error": true
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-FMLP2-028",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture parse acceptance/rejection and stored formula/value behavior for FMLP2-028."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "display_number_format",
+        "display_interior_color",
+        "display_font_color",
+        "display_font_bold",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
+    ],
+    "notes": "@ with dynamic array producer. | probe_id=P2-FML-008 | profile=spill_anchor"
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:12:55.1411047Z",
+      "finished_utc": "2026-03-02T05:12:55.4345973Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-03-02T05:12:55.4346039Z",
+      "finished_utc": "2026-03-02T05:12:55.4481735Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:12:55.4481801Z",
+      "finished_utc": "2026-03-02T05:12:55.4576048Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T05:12:55.1410925Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T05:12:55.4345937Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T05:12:55.4481714Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=SEQUENCE(3)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T05:12:55.4576027Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 1,
+          "formula": "=SEQUENCE(3)",
+          "display_text": "1",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 1,
+      "formula": "=SEQUENCE(3)",
+      "display_text": "1",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    }
+  ],
+  "error": null
+}

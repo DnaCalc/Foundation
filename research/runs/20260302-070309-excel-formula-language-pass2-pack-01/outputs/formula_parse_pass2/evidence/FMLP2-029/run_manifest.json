@@ -1,0 +1,72 @@
+﻿{
+  "run_id": "run-20260302-051257-a5f9f20e3",
+  "task_id": "ECS-EB-038",
+  "scenario_id": "FMLP2-029",
+  "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-03-02T05:12:57.8709589Z",
+  "end_utc": "2026-03-02T05:12:59.7410411Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 480,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 63500,
+  "excel_process_snapshot": {
+    "pid": 63500,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-03-02T05:12:58.2983527Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "date_system": "1900",
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-070309-excel-formula-language-pass2-pack-01\\fixtures\\formula_parse_pass2\\FMLP2-029.xlsx",
+  "fixture_preexisting": false,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:12:59.4405659Z",
+      "finished_utc": "2026-03-02T05:12:59.6571943Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-03-02T05:12:59.6572028Z",
+      "finished_utc": "2026-03-02T05:12:59.6917165Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:12:59.6917254Z",
+      "finished_utc": "2026-03-02T05:12:59.6997199Z",
+      "status": "ok"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002Bb87d202d04681d7b37b7424bc2a07fab818c494a",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "b87d202d04681d7b37b7424bc2a07fab818c494a",
+    "repo_git_commit_short": "b87d202",
+    "repo_git_is_dirty": true
+  }
+}

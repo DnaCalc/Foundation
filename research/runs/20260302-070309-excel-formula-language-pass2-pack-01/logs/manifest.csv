@@ -1,0 +1,5 @@
+﻿"timestamp_utc","event","artifact","notes"
+"2026-03-02T05:11:09Z","formula_parse_pass2_outputs_generated","outputs/formula_parse_pass2/FORMULA_PARSE_PASS2_RESULTS.csv","Generated pass-2 consolidated scenario results."
+"2026-03-02T05:11:09Z","formula_parse_pass2_outputs_generated","outputs/formula_parse_pass2/SEED_TO_EXECUTED_MAPPING_PASS2.csv","Generated pass-2 seed-to-executed mapping."
+"2026-03-02T05:11:09Z","formula_parse_pass2_reported","outputs/formula_parse_pass2/PASS2_EXECUTION_REPORT.md","Published pass-2 execution report."
+"2026-03-02T05:11:09Z","formula_parse_pass2_manifest_status_updated","outputs/formula_parse_pass2/scenario_manifest_pass2.csv","Marked pass-2 scenarios completed when evidence bundle exists."

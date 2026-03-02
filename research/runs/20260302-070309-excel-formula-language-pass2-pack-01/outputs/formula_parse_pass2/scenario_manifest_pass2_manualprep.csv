@@ -1,0 +1,5 @@
+﻿"scenario_id","task_id","priority","domain","fixture","scenario_file","status","notes"
+"FMLP2-008","ECS-EB-032","P1","formula_parse","research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-008.xlsx","scenarios/FMLP2-008.json","planned","FPCP2-008|dot_field|expected=probe|profile=manual_linked_data"
+"FMLP2-009","ECS-EB-032","P1","formula_parse","research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-009.xlsx","scenarios/FMLP2-009.json","planned","FPCP2-009|dot_field|expected=probe|profile=manual_linked_data"
+"FMLP2-019","ECS-EB-035","P1","formula_parse","research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-019.xlsx","scenarios/FMLP2-019.json","planned","FPCP2-019|name_resolution|expected=probe|profile=manual_name_shadowing"
+"FMLP2-021","ECS-EB-036","P1","formula_parse","research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-021.xlsx","scenarios/FMLP2-021.json","planned","FPCP2-021|external_reference|expected=probe|profile=external_workbook_present"

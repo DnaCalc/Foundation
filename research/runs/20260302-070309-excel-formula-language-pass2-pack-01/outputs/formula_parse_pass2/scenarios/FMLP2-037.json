@@ -1,0 +1,123 @@
+﻿{
+    "scenario_id":  "FMLP2-037",
+    "task_id":  "ECS-EB-034",
+    "topic":  "formula_parse_pass2",
+    "priority":  "P1",
+    "platform_target":  [
+                            "windows_desktop"
+                        ],
+    "inputs":  {
+                   "workbook_fixture":  "research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-037.xlsx",
+                   "sheet_setup":  [
+                                       {
+                                           "sheet":  "Sheet1",
+                                           "writes":  [
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A1",
+                                                              "value":  1
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A2",
+                                                              "value":  2
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "A3",
+                                                              "value":  3
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B1",
+                                                              "value":  4
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B2",
+                                                              "value":  5
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "B3",
+                                                              "value":  6
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "C1",
+                                                              "value":  7
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "C2",
+                                                              "value":  8
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "C3",
+                                                              "value":  9
+                                                          },
+                                                          {
+                                                              "kind":  "value",
+                                                              "address":  "D1",
+                                                              "value":  0
+                                                          }
+                                                      ]
+                                       }
+                                   ]
+               },
+    "operations":  [
+                       {
+                           "op":  "set_calc_mode",
+                           "target":  "workbook",
+                           "args":  {
+                                        "mode":  "automatic"
+                                    }
+                       },
+                       {
+                           "op":  "edit_cell",
+                           "target":  "Sheet1!D1",
+                           "args":  {
+                                        "formula":  "=REDUCE(0,A1:A3,LAMBDA(a,b,a+b))",
+                                        "allow_error":  true
+                                    }
+                       },
+                       {
+                           "op":  "recalc",
+                           "target":  "workbook"
+                       }
+                   ],
+    "expectations":  [
+                         {
+                             "assertion_id":  "ASSERT-FMLP2-037",
+                             "kind":  "manual_review",
+                             "target":  "Sheet1!D1",
+                             "expected":  {
+                                              "question":  "Capture parse acceptance/rejection and stored formula/value behavior for FMLP2-037."
+                                          },
+                             "confidence":  "medium"
+                         }
+                     ],
+    "capture":  {
+                    "raw_capture":  "raw_capture.json",
+                    "normalized_capture":  "normalized_capture.json",
+                    "capture_fields":  [
+                                           "value",
+                                           "formula",
+                                           "display_text",
+                                           "number_format",
+                                           "display_number_format",
+                                           "display_interior_color",
+                                           "display_font_color",
+                                           "display_font_bold",
+                                           "calc_mode"
+                                       ]
+                },
+    "sources":  [
+                    "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md",
+                    "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv",
+                    "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
+                    "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
+                ],
+    "notes":  "Helper REDUCE availability and grammar. | probe_id=P2-FML-004 | profile=baseline"
+}

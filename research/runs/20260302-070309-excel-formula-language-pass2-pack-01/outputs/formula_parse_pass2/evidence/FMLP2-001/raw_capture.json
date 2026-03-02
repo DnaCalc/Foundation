@@ -1,0 +1,257 @@
+﻿{
+  "run_id": "run-20260302-051142-667083878",
+  "scenario": {
+    "scenario_id": "FMLP2-001",
+    "task_id": "ECS-EB-031",
+    "topic": "formula_parse_pass2",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260302-070309-excel-formula-language-pass2-pack-01/fixtures/formula_parse_pass2/FMLP2-001.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "A3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 4
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 5
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 6
+            },
+            {
+              "kind": "value",
+              "address": "C1",
+              "value": 7
+            },
+            {
+              "kind": "value",
+              "address": "C2",
+              "value": 8
+            },
+            {
+              "kind": "value",
+              "address": "C3",
+              "value": 9
+            },
+            {
+              "kind": "value",
+              "address": "D1",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=SUM(A1,,B1)",
+          "allow_error": true
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-FMLP2-001",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture parse acceptance/rejection and stored formula/value behavior for FMLP2-001."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "display_number_format",
+        "display_interior_color",
+        "display_font_color",
+        "display_font_bold",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
+    ],
+    "notes": "Double-comma middle argument gap. | probe_id=P2-FML-001 | profile=baseline"
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:11:46.1980349Z",
+      "finished_utc": "2026-03-02T05:11:46.6240165Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-03-02T05:11:46.6240474Z",
+      "finished_utc": "2026-03-02T05:11:46.6686954Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T05:11:46.6687431Z",
+      "finished_utc": "2026-03-02T05:11:46.7102925Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T05:11:46.1979688Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T05:11:46.6239902Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T05:11:46.6686826Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T05:11:46.7102847Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": 5,
+      "formula": "=SUM(A1,,B1)",
+      "display_text": "5",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General"
+    }
+  ],
+  "error": null
+}
