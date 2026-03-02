@@ -153,6 +153,7 @@ excel-probe (C#)
         JsonObject? scenario = null;
         dynamic? excel = null;
         dynamic? workbook = null;
+        var supportWorkbooks = new List<object>();
         int? excelPid = null;
         var messageFilterInstalled = false;
 
@@ -173,6 +174,7 @@ excel-probe (C#)
             excel.Visible = visible;
             excel.DisplayAlerts = false;
             excel.ScreenUpdating = visible;
+            try { excel.AskToUpdateLinks = false; } catch { }
             excelPid = ExcelPid((int)excel.Hwnd);
 
             var wb = EnsureWorkbook(excel, scenario);
@@ -196,7 +198,7 @@ excel-probe (C#)
                     && allowNode.GetValue<bool>();
                 try
                 {
-                    workbook = InvokeOp(excel, workbook, op, fixturePath);
+                    workbook = InvokeOp(excel, workbook, op, fixturePath, supportWorkbooks);
                     stepCaptures.Add(CaptureStep(workbook, targets, $"after_{opName}", opName));
                     opTrace.Add(new()
                     {
@@ -300,6 +302,7 @@ excel-probe (C#)
         finally
         {
             if (messageFilterInstalled) OleMessageFilter.Revoke();
+            CloseSupportWorkbooks(supportWorkbooks);
             try { if (workbook is not null) workbook.Close(true); } catch { }
             try { if (excel is not null) excel.Quit(); } catch { }
             ReleaseCom(workbook); ReleaseCom(excel);
@@ -341,7 +344,28 @@ excel-probe (C#)
             case "value": sheet.Range(address).Value2 = NodeToCom(value); break;
             case "formula": sheet.Range(address).Formula = value?.GetValue<string>() ?? ""; break;
             case "format": sheet.Range(address).NumberFormat = value?.GetValue<string>() ?? ""; break;
-            case "name": if (value is JsonObject n) { var name = n["name"]?.GetValue<string>(); var refers = n["refers_to"]?.GetValue<string>(); if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(refers)) wb.Names.Add(name, refers); } break;
+            case "name":
+                if (value is JsonObject n)
+                {
+                    var name = n["name"]?.GetValue<string>();
+                    var refers = n["refers_to"]?.GetValue<string>();
+                    var scope = n["scope"]?.GetValue<string>()?.Trim().ToLowerInvariant() ?? "workbook";
+                    var scopeSheet = n["sheet"]?.GetValue<string>();
+                    if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(refers))
+                    {
+                        if (scope == "sheet")
+                        {
+                            var wsName = string.IsNullOrWhiteSpace(scopeSheet) ? sheetName : scopeSheet;
+                            dynamic ws = EnsureSheet(wb, wsName!);
+                            ws.Names.Add(name, refers);
+                        }
+                        else
+                        {
+                            wb.Names.Add(name, refers);
+                        }
+                    }
+                }
+                break;
             default: throw new InvalidOperationException($"Unsupported write kind '{kind}'.");
         }
     }
@@ -352,7 +376,7 @@ excel-probe (C#)
         dynamic s = wb.Worksheets.Add(); s.Name = name; return s;
     }
 
-    static dynamic? InvokeOp(dynamic excel, dynamic? wb, JsonObject op, string fixturePath)
+    static dynamic? InvokeOp(dynamic excel, dynamic? wb, JsonObject op, string fixturePath, List<object> supportWorkbooks)
     {
         var opName = op["op"]?.GetValue<string>() ?? throw new InvalidOperationException("op missing");
         var target = op["target"]?.GetValue<string>();
@@ -407,6 +431,86 @@ excel-probe (C#)
                         try { if (sourceWb is not null) sourceWb.Close(false); } catch { }
                         ReleaseCom(sourceWb);
                     }
+                    return w;
+                }
+            case "open_support_workbook":
+                {
+                    var w = RequireWb(wb, opName);
+                    var sourceFixtureHint = args?["source_workbook_fixture"]?.GetValue<string>()
+                        ?? throw new InvalidOperationException("open_support_workbook requires args.source_workbook_fixture");
+                    var sourcePath = ResolveInputPath(sourceFixtureHint);
+                    if (!File.Exists(sourcePath)) throw new FileNotFoundException("support workbook fixture not found", sourcePath);
+                    var updateLinks = args?["update_links"]?.GetValue<int>() ?? 0;
+                    var readOnly = args?["read_only"]?.GetValue<bool>() ?? true;
+                    dynamic supportWb = excel.Workbooks.Open(sourcePath, updateLinks, readOnly);
+                    supportWorkbooks.Add((object)supportWb);
+                    return w;
+                }
+            case "close_support_workbooks":
+                {
+                    CloseSupportWorkbooks(supportWorkbooks);
+                    return wb;
+                }
+            case "convert_to_linked_data_type":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    dynamic cell = ws.Range(ad);
+                    var culture = args?["culture"]?.GetValue<int>() ?? 1033;
+                    var serviceIds = new List<int>();
+                    if (args is not null && args.TryGetPropertyValue("service_ids", out var serviceNode) && serviceNode is JsonArray serviceArray)
+                    {
+                        foreach (var s in serviceArray)
+                        {
+                            if (s is null) continue;
+                            serviceIds.Add(s.GetValue<int>());
+                        }
+                    }
+                    else if (args?["service_id"] is JsonNode singleService)
+                    {
+                        serviceIds.Add(singleService.GetValue<int>());
+                    }
+                    else
+                    {
+                        serviceIds.Add(1);
+                        serviceIds.Add(2);
+                    }
+
+                    var distinctServiceIds = serviceIds.Distinct().ToList();
+                    Exception? lastError = null;
+                    var converted = false;
+                    foreach (var serviceId in distinctServiceIds)
+                    {
+                        try
+                        {
+                            cell.ConvertToLinkedDataType(serviceId, culture);
+                            converted = true;
+                            break;
+                        }
+                        catch (Exception exWithCulture)
+                        {
+                            lastError = exWithCulture;
+                            try
+                            {
+                                cell.ConvertToLinkedDataType(serviceId);
+                                converted = true;
+                                break;
+                            }
+                            catch (Exception exNoCulture)
+                            {
+                                lastError = exNoCulture;
+                            }
+                        }
+                    }
+
+                    if (!converted)
+                    {
+                        throw new InvalidOperationException(
+                            $"convert_to_linked_data_type failed for service ids [{string.Join(",", distinctServiceIds)}]. Last error: {lastError?.Message}",
+                            lastError);
+                    }
+
                     return w;
                 }
             case "create_table":
@@ -621,6 +725,16 @@ excel-probe (C#)
 
     static (string sheet, string address) ParseTarget(string? t) { if (string.IsNullOrWhiteSpace(t)) throw new InvalidOperationException("target missing"); var i = t.IndexOf('!'); if (i <= 0 || i >= t.Length - 1) throw new InvalidOperationException($"invalid target '{t}'"); return (t[..i], t[(i + 1)..]); }
     static dynamic RequireWb(dynamic? wb, string op) { if (wb is null) throw new InvalidOperationException($"{op} requires open workbook"); return wb; }
+    static void CloseSupportWorkbooks(List<object> supportWorkbooks)
+    {
+        for (var i = supportWorkbooks.Count - 1; i >= 0; i--)
+        {
+            var sw = supportWorkbooks[i];
+            try { ((dynamic)sw).Close(false); } catch { }
+            ReleaseCom(sw);
+        }
+        supportWorkbooks.Clear();
+    }
     static string CalcModeName(int code) => code switch { XlAutomatic => "automatic", XlManual => "manual", XlSemiautomatic => "semiautomatic", _ => "unknown" };
     static string DateSystemName(dynamic? wb)
     {

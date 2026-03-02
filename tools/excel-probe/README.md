@@ -54,6 +54,8 @@ Direct `dotnet run` usage is also supported, but run it from `tools/` to honor p
 - If `workbook_fixture` does not exist, the runner creates a new workbook and applies `sheet_setup`.
 - Scenario operations support an `args.allow_error=true` flag for expected-failure probes; these are captured as `operation_trace.status=allowed_error` without failing the whole scenario.
 - Scenario operations include `create_table` for ListObject setup in worksheet-level probes.
+- Scenario operations include `open_support_workbook` / `close_support_workbooks` for external-reference probe control.
+- Scenario operations include `convert_to_linked_data_type` for linked-data probe attempts (supports `service_id` or `service_ids` with optional `culture`).
 - Scenario operations include conditional-format helpers: `clear_cf`, `add_cf_expression`, `set_cf_priority`, and `set_cf_stop_if_true`.
 - Cell capture now includes direct and rendered display-format properties: interior color, font color, bold, and display number format.
 - Tool run outputs include tool version/build, git commit, and repo dirty-state metadata when available.
