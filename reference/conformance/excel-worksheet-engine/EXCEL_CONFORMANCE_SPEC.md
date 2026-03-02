@@ -25,8 +25,16 @@ Out of scope (unchanged):
 1. Requirement corpus: `CONFORMANCE_REQUIREMENTS.csv`.
 2. Source registry bridge: `SOURCE_BINDINGS.csv`.
 3. Open/provisional lane register: `KNOWN_GAPS_AND_UNCERTAINTIES.md`.
-4. Empirical registry: `../../empirical/findings_registry.jsonl`.
-5. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
+4. Concrete Excel-first model: `model/EXCEL_CELL_CONCRETE_MODEL.md`.
+5. Concrete formula-language rules: `model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md`.
+6. Formula-language conformance matrix: `model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv`.
+7. Formula-language pass-2 probe plan: `model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md`.
+8. Formula-language pass-2 scenario seed list: `model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv`.
+9. Concrete-model open/gap ledger: `model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`.
+10. Concrete-model trace ledger: `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`.
+11. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
+12. Empirical registry: `../../empirical/findings_registry.jsonl`.
+13. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
 
 ## 4. Evidence Lineage Model
 1. `ECS-*`: source ids from prior authoritative Excel source registry.
@@ -62,3 +70,11 @@ When conflict exists between spec-derived and empirical-derived evidence:
 1. Bind current implementation tasks to requirement ids (`XLS-CF-*`).
 2. Bind empirical probe/test outputs to the same requirement ids.
 3. Promote additional high-value empirical findings to `EMP-*` ids before adding new provisional rows.
+4. Use pass-2 execution artifacts (`FORMULA_PARSE_PASS2_RESULTS.csv`, `SEED_TO_EXECUTED_MAPPING_PASS2.csv`) as current formula-language empirical baseline.
+
+## 9. Concrete-First Modeling Lane
+The current modeling strategy is Excel-first:
+1. Define detailed, concrete, nitpickable in-cell Excel behavior in `model/EXCEL_CELL_CONCRETE_MODEL.md`.
+2. Keep unresolved details explicit in `model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`.
+3. Track each concrete model statement with requirement and evidence binding in `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`.
+4. Extract generalized/abstract model candidates only after concrete rules are reviewed and tightened.
