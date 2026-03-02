@@ -13,33 +13,43 @@ In scope:
 1. Function semantic classes (pure, volatile, non-deterministic, host-interactive, external-source).
 2. Invalidation/recalc trigger classes and observable consequences.
 3. Function evaluation context dependencies (workbook/session/environment).
-4. Error/coercion policy framing for function definitions.
-5. Traceability from function-policy rows to `XLS-CF-*` lanes.
+4. Argument/return coercion and adaptation framing.
+5. Value vs extended-value boundary at function call/return interface.
+6. UDF surface taxonomy and compatibility posture.
+7. Traceability from function-policy rows to `XLS-CF-*` lanes.
 
 Out of scope:
 1. Full per-function final semantics table for all 500 functions.
 2. Workbook scheduler internals beyond worksheet-observable effects.
+3. Full spill layout mechanics (tracked in non-function formula/table lanes).
 
 ## 3. Preliminary Function Class System
 
 ### 3.1 Class Axes
 Each function can carry multiple orthogonal tags:
 1. `determinism_class`: `deterministic | pseudo_random | time_dependent | external_event_dependent`.
-2. `volatility_class`: `nonvolatile | volatile_full | volatile_contextual`.
+2. `volatility_class`: `nonvolatile | volatile_full | volatile_contextual | undecided`.
 3. `host_interaction_class`: `none | workbook_state | application_state | environment_state | external_provider`.
 4. `coercion_policy_class`: `strict | permissive_scalar | permissive_range_scan | mixed`.
 5. `error_policy_class`: `strict_propagate | conditional_mask | branch_selective | custom`.
+6. `compat_version_policy`: `stable_across_versions | version_scoped | unknown`.
 
 ### 3.2 Working Definitions (Preliminary)
 1. Volatile:
-   - Function may recalc without direct dependency-graph input change.
-   - Volatility is about invalidation policy, not necessarily about deterministic output.
+   - Volatility is invalidation policy, not output determinism.
+   - A volatile cell can be scheduled for recalculation without direct dependency input edits.
 2. Non-deterministic:
    - Function output can vary between evaluations with same explicit inputs and same workbook state.
    - Non-determinism can arise from time/random/external-source dependencies.
 3. Host-interactive:
    - Function semantics depend on host/application/session state not fully represented in cell inputs.
    - Includes platform capability and feature availability boundaries.
+
+4. `volatile_full` vs `volatile_contextual`:
+   - retained as unresolved terminology pending interactive policy finalization.
+   - current provisional intent:
+     - `volatile_full`: always participates in volatile invalidation cycle.
+     - `volatile_contextual`: participates only under function/context-specific conditions.
 
 ### 3.3 Current High-Risk Class Anchors
 1. `NOW`, `TODAY`: volatile + time-dependent.
@@ -59,15 +69,86 @@ Trigger classes:
 Preliminary rule:
 1. Function definition rows must declare expected trigger classes.
 2. Conformance probes must isolate trigger class in scenario design where feasible.
+3. Workbook compatibility version is part of trigger context when version-scoped behavior applies.
 
-## 5. Coupling Into Non-Function Lanes
+### 4.1 Volatility mechanics (provisional)
+1. Working model: volatility leaves a recalculation eligibility marker on the calling cell.
+2. Marker semantics are not equivalent to dirty-edit semantics; volatility can still place cell in future recalc candidate set.
+3. UDF-triggered volatility controls (`xlfVolatile` / `Application.Volatile`) are treated as policy hooks that can modify marker behavior.
+4. Exact mechanics remain an explicit policy topic and empirical target.
+
+### 4.2 RTD lifecycle mechanics (provisional)
+1. First RTD evaluation for a topic establishes a topic connection and topic->cell association at worksheet boundary.
+2. External topic updates trigger targeted invalidation for associated cells.
+3. Recalculation can either refresh topic value (if topic remains referenced) or disconnect lifecycle path (if no longer referenced).
+4. This lifecycle is modeled as external invalidation semantics, distinct from volatile invalidation.
+
+## 5. Argument and Return Conversion Boundary
+### 5.1 Pre-call argument coercion
+1. Arguments can be coerced before function invocation according to function signature and evaluator policy.
+2. Coercion source is host/evaluator policy, not function implementation internals.
+3. Reference-like arguments may be normalized/dereferenced according to function/operator contract before execution.
+
+### 5.2 Post-call return adaptation
+1. Function return values can be adapted by host after function execution.
+2. Array returns can be adapted into dynamic-array anchor representation at the calling cell.
+3. Spill-cell virtual value projection is tracked as related but primarily non-function-lane behavior.
+
+### 5.3 Value vs extended value
+1. `value`: primary scalar/reference/array semantic payload.
+2. `extended_value`: value plus host metadata/structure used at worksheet boundary.
+3. Candidate extended-value families to refine:
+   - formatting-hint enriched value,
+   - error with detail payload (`source`, `description`, etc.),
+   - virtual value relative to anchor.
+
+## 6. Operator Functions and Syntax Delimiters
+1. Evaluable operators are represented as pseudo-functions (`OP_*`) in this lane.
+2. Parse-only delimiters are not function rows.
+3. Current split:
+   - semantic/evaluable example: `OP_UNION_REF`, `OP_IMPLICIT_INTERSECTION`, `OP_SPILL_REF`.
+   - parse-only example: `SYN_ARG_SEPARATOR` with locale token profile.
+4. Trim references are modeled as one operator family:
+   - `OP_TRIM_REF(mode=leading|trailing|both)`.
+
+## 7. UDF Surface Taxonomy (Preliminary)
+1. XLL UDFs:
+   - registration/lifetime/signature model (SDK + `xlfRegister` + caller context).
+   - includes volatility and execution-context flags.
+2. VBA UDFs:
+   - scope rules differ workbook module vs add-in context.
+   - COM object interaction and mutation restrictions remain explicit open questions.
+3. Automation Add-in UDFs:
+   - COM registration and invocation model.
+   - lower detail priority for current pass.
+4. JavaScript custom functions:
+   - async/external and custom data-type implications.
+   - extended value returns and custom entity payloads in scope for compatibility classification.
+
+## 8. Compatibility-Version Semantics
+1. Function definitions may be workbook-compatibility-version scoped.
+2. Conformance matrix must include compatibility-version axis in addition to build/channel/platform.
+3. Version divergence is modeled explicitly; not treated as automatic regression.
+
+## 9. Implicit Intersection (`@`) as Operator Function
+1. Canonical semantic id: `OP_IMPLICIT_INTERSECTION`.
+2. Legacy/interop alias context:
+   - historical preview representation included `SINGLE(...)`,
+   - compatibility serialization may include `_xlfn.SINGLE(...)` in pre-DA contexts.
+3. Alias forms are compatibility representations, not separate modern semantic operators.
+4. Behavioral summary (source-backed, provisional wording):
+   - `@` enforces single-value extraction behavior where formulas would otherwise return arrays/ranges in dynamic-array Excel.
+   - when opening legacy formulas, Excel can insert `@` to preserve historical implicit-intersection behavior.
+   - behavior remains context-dependent on argument/reference shape and surrounding formula context.
+
+## 10. Coupling Into Non-Function Lanes
 Function-definition decisions directly affect:
 1. `XLS-CF-TV-008` aggregate coercion policy boundary.
 2. `XLS-CF-FL-010` argument-gap rationale and parser/evaluator policy.
 3. `XLS-CF-FL-005`, `XLS-CF-TB-004`, `XLS-CF-FM-005` where dynamic-array function semantics influence spill expectations.
 4. `XLS-CF-FL-006` external-reference behavior interpretation in host/open-state contexts.
 
-## 6. Evidence Model for This Lane
+## 11. Evidence Model for This Lane
 Evidence classes:
 1. `spec_anchor`: public formal/help references (`ECS-*`, `REFX-*`).
 2. `empirical_anchor`: promoted empirical findings (`EMP-*`).
@@ -76,5 +157,7 @@ Evidence classes:
 Promotion principle:
 1. Function-policy rows remain `draft` or `provisional` until supported by spec and/or empirical anchors with explicit policy decisions.
 
-## 7. Immediate Next Step
-Use `EXCEL_FUNCTION_DEFINITION_DISCUSSION.md` to resolve open policy decisions and then update `EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
+## 12. Immediate Next Step
+1. Use `EXCEL_FUNCTION_DEFINITION_DISCUSSION.md` to resolve open policy decisions.
+2. Update `EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv` with confirmed decisions.
+3. Run language-independent prompt pack for non-interesting-function `.xll` implementation planning and differential validation.

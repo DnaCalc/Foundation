@@ -17,6 +17,8 @@ This folder is the authoritative working conformance specification area for Exce
 - `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`: preliminary function-definition semantics frame for interactive tightening.
 - `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`: preliminary function-definition conformance lanes and affected requirement bindings.
 - `functions/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`: structured discussion doc for unresolved function-policy decisions.
+- `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`: first-pass axis classification for all interesting functions (tiers 3/4/5).
+- `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`: coverage summary and review priorities for the initial classification set.
 - `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`: executed pass-2 artifacts and evidence bundles.
   - includes pass-4 policy/trace sync, pass-5 replay pack, and pass-3 interactive planning note.
 - `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`: non-function closure run artifacts including targeted link/format/table replay and ambiguity register.

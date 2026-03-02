@@ -39,6 +39,8 @@ Out of scope (unchanged):
 15. Function-definition preliminary conformance lanes: `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
 16. Function-definition discussion register: `functions/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
 17. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
+18. Interesting-function initial classification table: `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`.
+19. Interesting-function initial classification summary: `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`.
 
 ## 4. Evidence Lineage Model
 1. `ECS-*`: source ids from prior authoritative Excel source registry.

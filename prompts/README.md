@@ -26,6 +26,7 @@ Define reusable prompt assets and store prompt-run artifacts as versioned projec
 - `triad.md`: triad execution pattern and sequencing.
 - `deep-research.md`: deep research run guidance.
 - `packs/cell-abstraction-formalization.md`: prompt sequence for in-cell abstraction/formalization passes.
+- `packs/xll-non-interesting-functions-implementation.md`: language-independent prompt sequence for `.xll`-based non-interesting function implementation planning and differential validation.
 - `roles/`: role-scoped prompt templates.
 - `packs/`: phase-scoped prompt curation.
 - `runs/`: timestamped executed runs and captured outputs.

@@ -77,6 +77,94 @@ Decision output needed:
 1. Function-vs-non-function boundary statement.
 2. Ownership mapping for each spill-related requirement lane.
 
+### D-007: Argument and Return Conversion Boundaries
+Question:
+1. Which coercions/adaptations are function-definition obligations vs evaluator/worksheet host obligations?
+2. How do we encode pre-call coercion and post-call adaptation in conformance rows?
+
+Why this matters:
+1. Central to UDF parity goals.
+2. Required to model array-return anchor adaptation without collapsing full spill semantics into this lane.
+
+Decision output needed:
+1. Canonical pre-call coercion policy schema.
+2. Canonical post-call adaptation schema and spill-boundary statement.
+
+### D-008: Operator-As-Function Coverage
+Question:
+1. Which operators are modeled as evaluable `OP_*` function rows?
+2. Which parser tokens remain syntax-only (`SYN_*`) with no function row?
+
+Why this matters:
+1. Unifies operator and function semantics under one conformance framework.
+2. Prevents semantic/grammar ambiguity for separator-like tokens.
+
+Decision output needed:
+1. Approved `OP_*` inventory (including trim-ref family and `@`).
+2. Approved syntax-only inventory and locale token profile.
+
+### D-009: UDF Surface Model (XLL/VBA/Automation/JS)
+Question:
+1. What minimum semantic contract do we require per UDF surface in this phase?
+2. Which open questions must stay explicit (for example VBA mutation constraints, Range return semantics)?
+
+Why this matters:
+1. Function-definition scope includes host integration classes.
+2. We need comparable axis tags across built-ins and UDF families.
+
+Decision output needed:
+1. UDF-surface-specific metadata contract.
+2. Prioritized empirical/doc probes per surface.
+
+### D-010: Compatibility-Version-Scoped Function Definitions
+Question:
+1. How should workbook-level compatibility version toggle function semantics and conformance expectations?
+
+Why this matters:
+1. Prevents false regressions when version-scoped behavior is intentional.
+2. Adds required evaluation axis to probe matrices.
+
+Decision output needed:
+1. Compatibility-version policy schema per function/operator row.
+2. Replay matrix contract including compatibility version.
+
+### D-011: Non-Interesting Function UDF Parity Hypothesis
+Question:
+1. Is every non-interesting function implementable with full fidelity via UDF-style implementation under explicit coercion/reference policies?
+2. Which counterexamples exist?
+
+Why this matters:
+1. This is a major simplification candidate for implementation and assurance planning.
+2. It can drive axis/tag refinement from concrete differential implementation evidence.
+
+Decision output needed:
+1. Acceptance/rejection criteria for parity hypothesis.
+2. Differential validation campaign plan and required evidence outputs.
+
+### D-012: `INDIRECT` and Context-Dependence vs Non-Determinism
+Question:
+1. Should `INDIRECT` be classified as deterministic context-dependent, non-deterministic, or mixed by context?
+
+Why this matters:
+1. Distinguishes invalidation policy and host-context dependence from true non-determinism.
+2. Influences function-class boundary quality.
+
+Decision output needed:
+1. Final determinism/host-interaction classification rule for context-sensitive reference functions.
+2. Example matrix (`INDIRECT`, `OFFSET`, `XLOOKUP`) with rationale.
+
+### D-013: RTD Topic Lifecycle Semantics
+Question:
+1. What is the canonical lifecycle model for topic connect/register/update/invalidate/disconnect at cell-rooted evaluation boundary?
+
+Why this matters:
+1. External invalidation pathway correctness depends on this.
+2. Needed to align docs, empirical probes, and conformance rows.
+
+Decision output needed:
+1. Minimal state machine for RTD topic lifecycle.
+2. Replayable scenario set and promotion criteria.
+
 ## 3. Decision Log Template
 For each discussion item:
 1. `decision_id`
