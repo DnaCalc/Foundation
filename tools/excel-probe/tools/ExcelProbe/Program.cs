@@ -400,6 +400,23 @@ excel-probe (C#)
                     return w;
                 }
             case "edit_cell": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); dynamic ws = w.Worksheets.Item(sh); if (args?.TryGetPropertyValue("formula", out var f) == true && f is not null) ws.Range(ad).Formula = f.GetValue<string>(); else ws.Range(ad).Value2 = NodeToCom(args?["value"]); return w; }
+            case "merge_cells":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    var across = args?["across"]?.GetValue<bool>() ?? false;
+                    ws.Range(ad).Merge(across);
+                    return w;
+                }
+            case "unmerge_cells":
+                {
+                    var w = RequireWb(wb, opName);
+                    var (sh, ad) = ParseTarget(target);
+                    dynamic ws = w.Worksheets.Item(sh);
+                    ws.Range(ad).UnMerge();
+                    return w;
+                }
             case "insert_row": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); w.Worksheets.Item(sh).Range(ad).EntireRow.Insert(); return w; }
             case "delete_row": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); w.Worksheets.Item(sh).Range(ad).EntireRow.Delete(); return w; }
             case "insert_column": { var w = RequireWb(wb, opName); var (sh, ad) = ParseTarget(target); w.Worksheets.Item(sh).Range(ad).EntireColumn.Insert(); return w; }
@@ -667,6 +684,9 @@ excel-probe (C#)
             ["display_font_color"] = displayFormat is null ? null : TryCom(() => displayFormat.Font.Color),
             ["display_font_bold"] = displayFormat is null ? null : TryCom(() => displayFormat.Font.Bold),
             ["display_number_format"] = displayFormat is null ? null : TryCom(() => displayFormat.NumberFormat)
+            ,
+            ["merge_cells"] = TryCom(() => cell.MergeCells),
+            ["merge_area_address"] = TryCom(() => cell.MergeArea.Address)
         };
     }
 

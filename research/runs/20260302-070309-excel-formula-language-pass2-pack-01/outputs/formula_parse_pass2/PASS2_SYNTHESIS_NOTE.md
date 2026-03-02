@@ -28,14 +28,19 @@ Run pack:
 5. `=@A1#` and `=@SEQUENCE(3)` stored without `@` in tested forms.
 6. Targeted pass-2c lane captures:
    - `=MyName` observed `4` under explicit workbook+sheet-scope setup.
-   - `=Sheet1!MyName` observed `1` in same setup (policy wording required).
+   - `=Sheet1!MyName` observed `1` in same setup (policy wording now documented as provisional).
    - external workbook-present lane observed `77` when support workbook was explicitly opened.
 
 ## Remaining Unresolved Lanes
 1. Linked-data semantic branch for `FML-R-011` remains unresolved without true linked-data fixture setup in the runner.
-2. Scoped-name qualification semantics require explicit policy wording and cross-build replay.
+2. Scoped-name qualification semantics now have provisional wording; cross-build replay is still required.
 3. External-reference lane needs link-update/open-state expansion and cross-build replay.
 4. Cross-build/channel replay is still required before any `validated` promotion.
+
+## Follow-up Lane Status
+1. Pass-4 policy/trace sync: complete.
+2. Pass-5 replay-pack preparation: complete.
+3. Pass-3 interactive review/planning: prepared and intentionally deferred for interactive execution.
 
 ## Documents Updated in Foundation
 1. `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv`

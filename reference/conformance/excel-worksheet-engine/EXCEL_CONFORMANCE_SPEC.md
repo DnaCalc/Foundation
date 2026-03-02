@@ -35,6 +35,10 @@ Out of scope (unchanged):
 11. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
 12. Empirical registry: `../../empirical/findings_registry.jsonl`.
 13. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
+14. Function-definition preliminary scope/spec: `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`.
+15. Function-definition preliminary conformance lanes: `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
+16. Function-definition discussion register: `functions/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
+17. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
 
 ## 4. Evidence Lineage Model
 1. `ECS-*`: source ids from prior authoritative Excel source registry.
@@ -71,6 +75,7 @@ When conflict exists between spec-derived and empirical-derived evidence:
 2. Bind empirical probe/test outputs to the same requirement ids.
 3. Promote additional high-value empirical findings to `EMP-*` ids before adding new provisional rows.
 4. Use pass-2 execution artifacts (`FORMULA_PARSE_PASS2_RESULTS.csv`, `SEED_TO_EXECUTED_MAPPING_PASS2.csv`) as current formula-language empirical baseline.
+5. Treat function-definition artifacts under `functions/` as preliminary and discussion-driven until interactive review resolves policy lanes.
 
 ## 9. Concrete-First Modeling Lane
 The current modeling strategy is Excel-first:

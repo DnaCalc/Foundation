@@ -1,0 +1,130 @@
+﻿{
+  "run_id": "run-20260302-081449-e0ad55e88",
+  "task_id": "ECS-EB-036",
+  "scenario_id": "NFCP1-LINK-PRESENT-OPEN-UPD3",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T08:14:51.7748792Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T08:14:51.8085699Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_open_support_workbook",
+      "operation": "open_support_workbook",
+      "timestamp_utc": "2026-03-02T08:14:52.6953063Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:14:52.9139304Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 77,
+          "formula": "=[Book2.xlsx]Sheet1!A1",
+          "display_text": "77",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T08:14:52.9931374Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 77,
+          "formula": "=[Book2.xlsx]Sheet1!A1",
+          "display_text": "77",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    }
+  ]
+}

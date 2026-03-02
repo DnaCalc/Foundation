@@ -16,7 +16,7 @@ It tightens `ECM-FML-001..004` into implementation-facing rule statements tied t
 | FML-R-003 | `@` is parsed as explicit implicit-intersection operator syntax and must not be discarded during parse normalization. | XLS-CF-FL-003 | ECS-004;ECS-007;ECS-EB-038 | provisional |
 | FML-R-004 | `#` is parsed as spilled-range suffix operator (`<ref>#`) and must reject malformed prefix usage such as `=#A1`. | XLS-CF-FL-004 | ECS-005;ECS-006 | provisional |
 | FML-R-005 | Dynamic-array spill behavior must be represented at formula-language boundary with spill reference updates and visible spill errors. | XLS-CF-FL-005 | ECS-006;ECS-007;ECS-EB-038 | draft |
-| FML-R-006 | Parser grammar coverage must stay aligned with the formal MS-XLSX grammar anchor; any observed widening must be explicit and version-scoped. | XLS-CF-FL-006 | ECS-008;ECS-009;REFX-001;ECS-EB-034;ECS-EB-036 | provisional |
+| FML-R-006 | Parser grammar coverage must stay aligned with the formal MS-XLSX grammar anchor; any observed widening must be explicit and version-scoped. | XLS-CF-FL-006 | ECS-008;ECS-009;REFX-001;ECS-EB-034;ECS-EB-036;EMP-0011 | provisional |
 | FML-R-007 | Cell-formula storage/normalization behavior (entered text vs stored formula) must be captured explicitly in conformance outputs. | XLS-CF-FL-007 | ECS-009;REFX-001;ECS-EB-039;ECS-EB-038 | provisional |
 | FML-R-008 | Workbook/sheet name resolution must follow Excel name-scope behavior and collision precedence. | XLS-CF-FL-008 | ECS-010;ECS-011;ECS-008;ECS-EB-035 | provisional |
 | FML-R-009 | Structured references are first-class formula syntax (`Table[Col]`, `[@Col]`, qualifiers) and participate in normal parse/bind/eval. | XLS-CF-FL-009 | ECS-012;ECS-013;ECS-014;ECS-EB-037 | provisional |
@@ -116,6 +116,20 @@ Primary artifacts:
 4. `MANUAL_PREP_PASS2B_REPORT.md`
 5. `TARGETED_PASS2C_LANES_REPORT.md`
 
+### 6.1 Provisional Policy Wording (Pass-4 Sync)
+1. `FML-R-008` scoped-name behavior is now documented as a build-scoped provisional policy:
+   - in current evidence, unqualified `=MyName` bound to the workbook-scoped name (`4`),
+   - `=Sheet1!MyName` bound to the sheet-scoped name (`1`) and stored as a normalized workbook-qualified token.
+2. `FML-R-006` external-reference behavior is now documented as:
+   - parser accepts workbook references in both present and missing-workbook forms,
+   - workbook-present resolution in this harness requires explicit support-workbook open (`open_support_workbook`),
+   - missing workbook produced `#REF!` in the current build,
+   - `update_links=0` and `update_links=3` produced the same observed value in this environment (`EMP-0011`).
+3. `FML-R-011` dot-field behavior remains provisional with explicit runner limitation:
+   - linked-data conversion attempts are trace-captured,
+   - conversion currently fails in this environment (`allowed_error`),
+   - non-linked branch captures `#FIELD!` for both `A1.Price` and `FIELDVALUE`.
+
 ## 7. Operator Precedence Baseline (Worksheet Formula Context)
 Current precedence baseline for parser/evaluator alignment:
 1. Reference operators (`:`, `,`, space intersection)
@@ -147,10 +161,11 @@ Coverage note:
 2. Helper-form completeness therefore depends on mixed formal + behavioral + empirical evidence.
 
 ## 9. Open Items for Next Tightening Pass
-1. Fix policy wording for sheet-qualified name semantics based on observed `=MyName` vs `=Sheet1!MyName` behavior.
-2. Expand external/workbook reference lane to cover link-update policy variants and workbook-open/closed permutations.
-3. Add linked-data fixture preparation primitive for `P2-FML-002` so dot-field semantics can be split by true linked vs non-linked contexts.
-4. Replicate precedence, name-resolution, and argument-gap lanes across additional target builds/channels for status promotion to validated.
+1. Replicate scoped-name and precedence lanes across target channels/builds to verify current provisional policy wording.
+2. Expand external/workbook reference lane to cover additional link-update policy variants and workbook-open/closed permutations across builds/channels (same-build baseline captured in `EMP-0011`).
+3. Establish a true linked-data fixture path for `P2-FML-002` so dot-field semantics can be split by linked vs non-linked contexts.
+4. Expand `P2-FML-008` spill-blocking/update scenarios to support `FML-R-005` promotion from `draft`.
+5. Replicate argument-gap and normalization lanes across additional target builds/channels for status promotion to validated.
 
 ## 10. Conformance Matrix and Pass-2 Plan
 This rule set is operationalized by:
@@ -159,8 +174,8 @@ This rule set is operationalized by:
 3. `EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv` (seed scenario rows for pass-2 execution).
 
 Primary unresolved closures currently depend on:
-1. `P2-FML-001` (double-comma argument-gap lane),
-2. `P2-FML-002` (dot-field parse/eval lane),
-3. `P2-FML-002` (linked-data semantic branch),
-4. link-update policy expansion for `P2-FML-006`,
+1. `P2-FML-001` convergence (double-comma argument-gap across builds/channels),
+2. `P2-FML-002` linked-data semantic branch (true linked-data fixture still missing),
+3. `P2-FML-006` link-update/open-state policy expansion,
+4. `P2-FML-008` spill-blocking/update expansion for `FML-R-005`,
 5. cross-build replay of `P2-FML-003`, `P2-FML-005`, `P2-FML-009`, and `P2-FML-010`.

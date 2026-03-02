@@ -15,6 +15,11 @@ This directory is the Excel-first concrete modeling lane for in-cell worksheet-e
 - `EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv`: seeded scenario list for pass-2 formula-language empirical execution.
 - `EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`: explicit open-question ledger.
 - `EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`: machine-linkable trace records for model statements.
+- Pass-2 run artifact lane:
+  - `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS2_SYNTHESIS_NOTE.md`
+  - `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS4_POLICY_TRACE_SYNC.md`
+  - `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS5_REPLAY_PACK.md`
+  - `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS3_INTERACTIVE_PLAN.md`
 
 ## Trace Model
 Each `trace` record should bind:

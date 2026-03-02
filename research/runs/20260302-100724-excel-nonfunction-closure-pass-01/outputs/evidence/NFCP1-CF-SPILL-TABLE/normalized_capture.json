@@ -1,0 +1,80 @@
+﻿{
+  "run_id": "run-20260302-081556-287fc0def",
+  "task_id": "ECS-EB-033",
+  "scenario_id": "NFCP1-CF-SPILL-TABLE",
+  "timestamp_utc": "2026-03-02T08:15:59.9989879Z",
+  "environment": {
+    "platform": "windows_desktop",
+    "excel_channel": "unknown",
+    "excel_build": "16.0.19725.20126",
+    "locale": "en-ZA",
+    "calc_mode": "automatic",
+    "date_system": "1900",
+    "capability_profile": "unknown",
+    "tooling": {
+      "runner_name": "excel-probe",
+      "runner_language": "C#",
+      "runner_version": "0.2.0\u002Ba02a0cf9d63f2958660ef8bdb731e09aebe879c4",
+      "runner_build_version": "0.2.0.0",
+      "dotnet_sdk_version": "10.0.103",
+      "dotnet_runtime_version": "10.0.3",
+      "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+      "repo_git_commit": "a02a0cf9d63f2958660ef8bdb731e09aebe879c4",
+      "repo_git_commit_short": "a02a0cf",
+      "repo_git_is_dirty": true
+    }
+  },
+  "observations": [
+    {
+      "target": "Sheet1!B3",
+      "kind": "value",
+      "status": "observed",
+      "value": 3,
+      "metadata": {
+        "formula": "3",
+        "display_text": "3",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C3",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    },
+    {
+      "target": "Sheet1!C4",
+      "kind": "value",
+      "status": "observed",
+      "value": null,
+      "metadata": {
+        "formula": "",
+        "display_text": "",
+        "number_format": "General",
+        "has_formula": false
+      }
+    }
+  ],
+  "comparison": {
+    "expected_profile": "scenario_expectations",
+    "result": "manual_review",
+    "mismatch_count": 0
+  },
+  "evidence": {
+    "raw_capture_ref": "raw_capture.json",
+    "step_capture_ref": "step_capture.json",
+    "rerun_command": "dotnet run --project tools/excel-probe/tools/ExcelProbe/ExcelProbe.csproj -- run --scenario \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-100724-excel-nonfunction-closure-pass-01\\outputs\\scenarios\\NFCP1-CF-SPILL-TABLE.json\u0022 --out \u0022C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-100724-excel-nonfunction-closure-pass-01\\outputs\\evidence\\NFCP1-CF-SPILL-TABLE\u0022 --visible false --timeout-sec 600",
+    "source_refs": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/21_conditional_format_semantics_model_scaffold.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/13_table_semantics_guide.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md"
+    ]
+  }
+}

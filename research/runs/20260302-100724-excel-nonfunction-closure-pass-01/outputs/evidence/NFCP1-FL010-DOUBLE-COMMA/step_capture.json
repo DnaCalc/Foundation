@@ -1,0 +1,106 @@
+﻿{
+  "run_id": "run-20260302-081333-5ef0ff045",
+  "task_id": "ECS-EB-031",
+  "scenario_id": "NFCP1-FL010-DOUBLE-COMMA",
+  "targets": [
+    "Sheet1!D1"
+  ],
+  "steps": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T08:13:38.3611749Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T08:13:38.4254992Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:13:38.4556890Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T08:13:38.4809033Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 5,
+          "formula": "=SUM(A1,,B1)",
+          "display_text": "5",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    }
+  ]
+}

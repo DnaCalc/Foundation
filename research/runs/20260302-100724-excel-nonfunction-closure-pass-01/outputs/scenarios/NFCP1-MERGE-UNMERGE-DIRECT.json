@@ -1,0 +1,151 @@
+{
+  "scenario_id": "NFCP1-MERGE-UNMERGE-DIRECT",
+  "task_id": "ECS-EK-040",
+  "topic": "formatting_merge_probe",
+  "priority": "P1",
+  "platform_target": [
+    "windows_desktop"
+  ],
+  "inputs": {
+    "workbook_fixture": "research/runs/20260302-100724-excel-nonfunction-closure-pass-01/fixtures/NFCP1-MERGE-UNMERGE-DIRECT-fresh.xlsx",
+    "sheet_setup": [
+      {
+        "sheet": "Sheet1",
+        "writes": [
+          {
+            "kind": "value",
+            "address": "A1",
+            "value": "Hdr"
+          },
+          {
+            "kind": "value",
+            "address": "A2",
+            "value": 1
+          },
+          {
+            "kind": "value",
+            "address": "B2",
+            "value": 2
+          },
+          {
+            "kind": "value",
+            "address": "C2",
+            "value": 3
+          },
+          {
+            "kind": "value",
+            "address": "D2",
+            "value": 0
+          },
+          {
+            "kind": "value",
+            "address": "E2",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "args": {
+        "mode": "automatic"
+      }
+    },
+    {
+      "op": "merge_cells",
+      "target": "Sheet1!A2:B2",
+      "args": {
+        "across": false
+      }
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D2",
+      "args": {
+        "formula": "=A2"
+      }
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!E2",
+      "args": {
+        "formula": "=SEQUENCE(2,1,10,10)"
+      }
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    },
+    {
+      "op": "unmerge_cells",
+      "target": "Sheet1!A2:B2"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook"
+    }
+  ],
+  "expectations": [
+    {
+      "assertion_id": "ASSERT-NFCP1-MRG-A2",
+      "kind": "manual_review",
+      "target": "Sheet1!A2",
+      "expected": {
+        "question": "Capture merge-state and post-unmerge value behavior."
+      },
+      "confidence": "medium"
+    },
+    {
+      "assertion_id": "ASSERT-NFCP1-MRG-B2",
+      "kind": "manual_review",
+      "target": "Sheet1!B2",
+      "expected": {
+        "question": "Capture merge-state and post-unmerge value behavior."
+      },
+      "confidence": "medium"
+    },
+    {
+      "assertion_id": "ASSERT-NFCP1-MRG-E2",
+      "kind": "manual_review",
+      "target": "Sheet1!E2",
+      "expected": {
+        "question": "Capture spill interaction near merged range before/after unmerge."
+      },
+      "confidence": "medium"
+    },
+    {
+      "assertion_id": "ASSERT-NFCP1-MRG-E3",
+      "kind": "manual_review",
+      "target": "Sheet1!E3",
+      "expected": {
+        "question": "Capture spill continuation near merged range before/after unmerge."
+      },
+      "confidence": "medium"
+    }
+  ],
+  "capture": {
+    "raw_capture": "raw_capture.json",
+    "normalized_capture": "normalized_capture.json",
+    "capture_fields": [
+      "value",
+      "formula",
+      "display_text",
+      "number_format",
+      "display_number_format",
+      "display_interior_color",
+      "display_font_color",
+      "display_font_bold",
+      "merge_cells",
+      "merge_area_address",
+      "calc_mode"
+    ]
+  },
+  "sources": [
+    "../../../../reference/conformance/excel-worksheet-engine/CONFORMANCE_REQUIREMENTS.csv",
+    "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md"
+  ],
+  "notes": "Direct merge/unmerge probe for formatting lane with nearby spill expression."
+}

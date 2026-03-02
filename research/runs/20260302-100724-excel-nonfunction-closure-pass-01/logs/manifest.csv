@@ -1,0 +1,3 @@
+timestamp_utc,event,artifact,notes
+2026-03-02T08:17:42Z,targeted_empirical_results_generated,outputs/TARGETED_RESULTS.csv,Generated scenario-level result rows
+2026-03-02T08:17:42Z,targeted_empirical_summary_generated,outputs/TARGETED_EXECUTION_SUMMARY.md,Generated targeted execution summary

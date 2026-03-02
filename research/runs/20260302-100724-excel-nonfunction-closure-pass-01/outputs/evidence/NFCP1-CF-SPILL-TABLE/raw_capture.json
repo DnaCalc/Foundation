@@ -1,0 +1,931 @@
+﻿{
+  "run_id": "run-20260302-081556-287fc0def",
+  "scenario": {
+    "scenario_id": "NFCP1-CF-SPILL-TABLE",
+    "task_id": "ECS-EB-033",
+    "topic": "cf_wave1",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260302-100724-excel-nonfunction-closure-pass-01/fixtures/NFCP1-CF-SPILL-TABLE-fresh.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": "Name"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": "Val"
+            },
+            {
+              "kind": "value",
+              "address": "A2",
+              "value": "x"
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "C1",
+              "value": "Spill"
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "create_table",
+        "target": "Sheet1!A1:B2",
+        "args": {
+          "name": "TblCfWave1",
+          "has_headers": true
+        }
+      },
+      {
+        "op": "clear_cf",
+        "target": "Sheet1!B2:B20"
+      },
+      {
+        "op": "add_cf_expression",
+        "target": "Sheet1!B2:B20",
+        "args": {
+          "formula": "=$B2\u003E=2",
+          "interior_color": 16711680,
+          "stop_if_true": false
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!A3",
+        "args": {
+          "value": "y"
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!B3",
+        "args": {
+          "value": 3
+        }
+      },
+      {
+        "op": "clear_cf",
+        "target": "Sheet1!C2:C20"
+      },
+      {
+        "op": "add_cf_expression",
+        "target": "Sheet1!C2:C20",
+        "args": {
+          "formula": "=C2\u003E=2",
+          "interior_color": 65535,
+          "stop_if_true": false
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!C2",
+        "args": {
+          "formula": "=SEQUENCE(3,1,1,1)"
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-SCN-EB033-CF-TABLE-SPILL-Sheet1_B3",
+        "kind": "manual_review",
+        "target": "Sheet1!B3",
+        "expected": {
+          "question": "Capture conditional-format rendered outcome and compare to case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB033-CF-TABLE-SPILL-Sheet1_C3",
+        "kind": "manual_review",
+        "target": "Sheet1!C3",
+        "expected": {
+          "question": "Capture conditional-format rendered outcome and compare to case registry."
+        },
+        "confidence": "medium"
+      },
+      {
+        "assertion_id": "ASSERT-SCN-EB033-CF-TABLE-SPILL-Sheet1_C4",
+        "kind": "manual_review",
+        "target": "Sheet1!C4",
+        "expected": {
+          "question": "Capture conditional-format rendered outcome and compare to case registry."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "display_interior_color",
+        "display_font_color",
+        "display_font_bold",
+        "display_number_format",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/21_conditional_format_semantics_model_scaffold.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/13_table_semantics_guide.md",
+      "../../20260228-130325-excel-compat-spec-index-pass-01/outputs/14_formatting_guide.md"
+    ],
+    "notes": "Conditional-format wave1 empirical scenario."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:15:58.4914584Z",
+      "finished_utc": "2026-03-02T08:15:58.8725822Z",
+      "status": "ok"
+    },
+    {
+      "op": "create_table",
+      "target": "Sheet1!A1:B2",
+      "started_utc": "2026-03-02T08:15:58.8726012Z",
+      "finished_utc": "2026-03-02T08:15:59.5057161Z",
+      "status": "ok"
+    },
+    {
+      "op": "clear_cf",
+      "target": "Sheet1!B2:B20",
+      "started_utc": "2026-03-02T08:15:59.5057336Z",
+      "finished_utc": "2026-03-02T08:15:59.5844610Z",
+      "status": "ok"
+    },
+    {
+      "op": "add_cf_expression",
+      "target": "Sheet1!B2:B20",
+      "started_utc": "2026-03-02T08:15:59.5844710Z",
+      "finished_utc": "2026-03-02T08:15:59.6563450Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!A3",
+      "started_utc": "2026-03-02T08:15:59.6563544Z",
+      "finished_utc": "2026-03-02T08:15:59.7043923Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B3",
+      "started_utc": "2026-03-02T08:15:59.7044007Z",
+      "finished_utc": "2026-03-02T08:15:59.7432417Z",
+      "status": "ok"
+    },
+    {
+      "op": "clear_cf",
+      "target": "Sheet1!C2:C20",
+      "started_utc": "2026-03-02T08:15:59.7432498Z",
+      "finished_utc": "2026-03-02T08:15:59.7883608Z",
+      "status": "ok"
+    },
+    {
+      "op": "add_cf_expression",
+      "target": "Sheet1!C2:C20",
+      "started_utc": "2026-03-02T08:15:59.7883710Z",
+      "finished_utc": "2026-03-02T08:15:59.8327924Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C2",
+      "started_utc": "2026-03-02T08:15:59.8328010Z",
+      "finished_utc": "2026-03-02T08:15:59.8802761Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:15:59.8802848Z",
+      "finished_utc": "2026-03-02T08:15:59.9196427Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T08:15:58.4914404Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T08:15:58.8725718Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_create_table",
+      "operation": "create_table",
+      "timestamp_utc": "2026-03-02T08:15:59.5057101Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_clear_cf",
+      "operation": "clear_cf",
+      "timestamp_utc": "2026-03-02T08:15:59.5844581Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_add_cf_expression",
+      "operation": "add_cf_expression",
+      "timestamp_utc": "2026-03-02T08:15:59.6563396Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:15:59.7043894Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:15:59.7432387Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "3",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16711680,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_clear_cf",
+      "operation": "clear_cf",
+      "timestamp_utc": "2026-03-02T08:15:59.7883575Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "3",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16711680,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_add_cf_expression",
+      "operation": "add_cf_expression",
+      "timestamp_utc": "2026-03-02T08:15:59.8327895Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "3",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16711680,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:15:59.8802732Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "3",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16711680,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T08:15:59.9196379Z",
+      "captures": [
+        {
+          "target": "Sheet1!B3",
+          "value": 3,
+          "formula": "3",
+          "display_text": "3",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16711680,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$B$3"
+        },
+        {
+          "target": "Sheet1!C3",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$3"
+        },
+        {
+          "target": "Sheet1!C4",
+          "value": null,
+          "formula": "",
+          "display_text": "",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$C$4"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!B3",
+      "value": 3,
+      "formula": "3",
+      "display_text": "3",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16711680,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General",
+      "merge_cells": false,
+      "merge_area_address": "$B$3"
+    },
+    {
+      "target": "Sheet1!C3",
+      "value": null,
+      "formula": "",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General",
+      "merge_cells": false,
+      "merge_area_address": "$C$3"
+    },
+    {
+      "target": "Sheet1!C4",
+      "value": null,
+      "formula": "",
+      "display_text": "",
+      "number_format": "General",
+      "has_formula": false,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General",
+      "merge_cells": false,
+      "merge_area_address": "$C$4"
+    }
+  ],
+  "error": null
+}

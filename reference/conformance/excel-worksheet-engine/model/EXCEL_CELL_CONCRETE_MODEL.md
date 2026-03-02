@@ -100,11 +100,13 @@ Initial concrete rules (draft):
 - `ECM-FMT-001` (draft): Number-format grammar and render behavior are represented as worksheet-visible conformance requirements.
 - `ECM-FMT-002` (draft): Value semantics and display formatting semantics are distinct layers; formatting must not silently mutate value semantics.
 - `ECM-FMT-003` (draft): Conditional-format overlap/priority behavior is captured as explicit rules with provisional lanes where evidence conflicts.
+- `ECM-FMT-004` (draft): Merge/unmerge state transitions are explicit worksheet-visible formatting semantics and require deterministic capture.
 
 Initial concrete rules (draft):
 1. Stored value semantics and rendered display semantics are modeled as separate layers.
 2. Number-format behavior is treated as a parse/render language with explicit grammar and section semantics.
 3. Conditional-format rule evaluation and style-priority resolution are explicit conformance lanes, including spill-target conflict lanes.
+4. Merge and unmerge operations are modeled as state transitions that preserve deterministic cell-addressable outcomes.
 
 ### 4.8 Tables and Structured References
 - `ECM-TBL-001` (draft): Table structured-reference syntax/semantics are part of formula evaluation scope.
@@ -139,7 +141,7 @@ Initial domain binding snapshot:
 | Coercion | ECM-COE-001..003 | XLS-CF-TV-003; XLS-CF-TV-007; XLS-CF-TV-008 |
 | Evaluation/Error | ECM-EVL-001..003 | XLS-CF-FL-005; XLS-CF-FN-003; XLS-CF-FN-011 |
 | Functions | ECM-FUN-001..003 | XLS-CF-FN-001..008; XLS-CF-FN-010 |
-| Formatting | ECM-FMT-001..003 | XLS-CF-FM-001..005 |
+| Formatting | ECM-FMT-001..004 | XLS-CF-FM-001..005 |
 | Tables | ECM-TBL-001..003 | XLS-CF-TB-001..004 |
 
 This table is intentionally compact; per-statement trace detail belongs in the JSONL trace file.

@@ -83,5 +83,16 @@ Primary execution artifacts:
 
 Remaining unresolved lanes after execution:
 1. `P2-FML-002` linked-data semantic branch (true linked-data fixture still required; conversion attempts currently captured as allowed-error in this environment).
-2. `P2-FML-005` requires explicit policy wording for sheet-qualified name behavior after targeted lane results.
-3. `P2-FML-006` now has workbook-present resolution in harness; remaining work is link-update/open-state policy expansion and cross-build replay.
+2. `P2-FML-005` policy wording has been drafted from pass-2c evidence; cross-build/channel replay is still required.
+3. `P2-FML-006` now has workbook-present/open-state baseline evidence (`EMP-0011`); remaining work is link-update/open-state policy expansion and cross-build replay.
+4. `P2-FML-008` spill-blocking/update lane still needs expansion before `FML-R-005` can leave `draft`.
+
+## 7. Post Pass-2 Parallel Lanes (2026-03-02)
+Pass-2 execution is complete. Follow-up is split into two independent lanes:
+1. Pass-4 policy/trace sync (documentation tightening without new execution).
+2. Pass-5 replay-pack preparation (cross-build/channel execution planning).
+
+Run artifacts:
+1. `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS4_POLICY_TRACE_SYNC.md`
+2. `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS5_REPLAY_PACK.md`
+3. `research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/PASS5_REPLAY_MANIFEST.csv`

@@ -1,0 +1,121 @@
+﻿{
+  "run_id": "run-20260302-081556-287fc0def",
+  "task_id": "ECS-EB-033",
+  "scenario_id": "NFCP1-CF-SPILL-TABLE",
+  "runner_version": "0.2.0\u002Ba02a0cf9d63f2958660ef8bdb731e09aebe879c4",
+  "runner_build_version": "0.2.0.0",
+  "start_utc": "2026-03-02T08:15:56.3269728Z",
+  "end_utc": "2026-03-02T08:15:59.9989879Z",
+  "exit_status": "success",
+  "visible": false,
+  "timeout_sec": 600,
+  "platform": "windows_desktop",
+  "excel_build": "16.0.19725.20126",
+  "excel_channel": "unknown",
+  "calc_mode": "automatic",
+  "excel_app_version": "16.0",
+  "excel_pid": 90500,
+  "excel_process_snapshot": {
+    "pid": 90500,
+    "name": "EXCEL",
+    "executable_path": "C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE",
+    "command_line": null,
+    "creation_date": "2026-03-02T08:15:56.8177951Z"
+  },
+  "excel_binary": {
+    "excel_exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+    "excel_exe_sha256": "78E29AF2342C4120CAE3BAE64621E3BB2517D4DC122768F107E46528C177379E",
+    "excel_file_version": "16.0.19725.20126",
+    "excel_product_version": "16.0.19725.20126",
+    "excel_company_name": "Microsoft Corporation",
+    "excel_product_name": "Microsoft Office"
+  },
+  "date_system": "1900",
+  "fixture_path": "C:\\Work\\DnaCalc\\Foundation\\research\\runs\\20260302-100724-excel-nonfunction-closure-pass-01\\fixtures\\NFCP1-CF-SPILL-TABLE-fresh.xlsx",
+  "fixture_preexisting": false,
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:15:58.4914584Z",
+      "finished_utc": "2026-03-02T08:15:58.8725822Z",
+      "status": "ok"
+    },
+    {
+      "op": "create_table",
+      "target": "Sheet1!A1:B2",
+      "started_utc": "2026-03-02T08:15:58.8726012Z",
+      "finished_utc": "2026-03-02T08:15:59.5057161Z",
+      "status": "ok"
+    },
+    {
+      "op": "clear_cf",
+      "target": "Sheet1!B2:B20",
+      "started_utc": "2026-03-02T08:15:59.5057336Z",
+      "finished_utc": "2026-03-02T08:15:59.5844610Z",
+      "status": "ok"
+    },
+    {
+      "op": "add_cf_expression",
+      "target": "Sheet1!B2:B20",
+      "started_utc": "2026-03-02T08:15:59.5844710Z",
+      "finished_utc": "2026-03-02T08:15:59.6563450Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!A3",
+      "started_utc": "2026-03-02T08:15:59.6563544Z",
+      "finished_utc": "2026-03-02T08:15:59.7043923Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!B3",
+      "started_utc": "2026-03-02T08:15:59.7044007Z",
+      "finished_utc": "2026-03-02T08:15:59.7432417Z",
+      "status": "ok"
+    },
+    {
+      "op": "clear_cf",
+      "target": "Sheet1!C2:C20",
+      "started_utc": "2026-03-02T08:15:59.7432498Z",
+      "finished_utc": "2026-03-02T08:15:59.7883608Z",
+      "status": "ok"
+    },
+    {
+      "op": "add_cf_expression",
+      "target": "Sheet1!C2:C20",
+      "started_utc": "2026-03-02T08:15:59.7883710Z",
+      "finished_utc": "2026-03-02T08:15:59.8327924Z",
+      "status": "ok"
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!C2",
+      "started_utc": "2026-03-02T08:15:59.8328010Z",
+      "finished_utc": "2026-03-02T08:15:59.8802761Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:15:59.8802848Z",
+      "finished_utc": "2026-03-02T08:15:59.9196427Z",
+      "status": "ok"
+    }
+  ],
+  "step_capture_enabled": true,
+  "tooling": {
+    "runner_name": "excel-probe",
+    "runner_language": "C#",
+    "runner_version": "0.2.0\u002Ba02a0cf9d63f2958660ef8bdb731e09aebe879c4",
+    "runner_build_version": "0.2.0.0",
+    "dotnet_sdk_version": "10.0.103",
+    "dotnet_runtime_version": "10.0.3",
+    "repo_root": "C:\\Work\\DnaCalc\\Foundation",
+    "repo_git_commit": "a02a0cf9d63f2958660ef8bdb731e09aebe879c4",
+    "repo_git_commit_short": "a02a0cf",
+    "repo_git_is_dirty": true
+  }
+}

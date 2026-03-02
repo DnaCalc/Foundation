@@ -1,0 +1,286 @@
+﻿{
+  "run_id": "run-20260302-081338-45d594c15",
+  "scenario": {
+    "scenario_id": "NFCP1-FL011-DOT-FIELD",
+    "task_id": "ECS-EB-032",
+    "topic": "formula_parse_pass2",
+    "priority": "P1",
+    "platform_target": [
+      "windows_desktop"
+    ],
+    "inputs": {
+      "workbook_fixture": "research/runs/20260302-100724-excel-nonfunction-closure-pass-01/fixtures/NFCP1-FL011-DOT-FIELD-fresh.xlsx",
+      "sheet_setup": [
+        {
+          "sheet": "Sheet1",
+          "writes": [
+            {
+              "kind": "value",
+              "address": "A1",
+              "value": "LinkedDataCandidate"
+            },
+            {
+              "kind": "value",
+              "address": "B1",
+              "value": 1
+            },
+            {
+              "kind": "value",
+              "address": "B2",
+              "value": 2
+            },
+            {
+              "kind": "value",
+              "address": "B3",
+              "value": 3
+            },
+            {
+              "kind": "value",
+              "address": "D1",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "set_calc_mode",
+        "target": "workbook",
+        "args": {
+          "mode": "automatic"
+        }
+      },
+      {
+        "op": "convert_to_linked_data_type",
+        "target": "Sheet1!A1",
+        "args": {
+          "service_ids": [
+            1,
+            2
+          ],
+          "culture": 1033,
+          "allow_error": true
+        }
+      },
+      {
+        "op": "edit_cell",
+        "target": "Sheet1!D1",
+        "args": {
+          "formula": "=A1.Price",
+          "allow_error": true
+        }
+      },
+      {
+        "op": "recalc",
+        "target": "workbook"
+      }
+    ],
+    "expectations": [
+      {
+        "assertion_id": "ASSERT-FMLP2-008",
+        "kind": "manual_review",
+        "target": "Sheet1!D1",
+        "expected": {
+          "question": "Capture parse acceptance/rejection and stored formula/value behavior for FMLP2-008."
+        },
+        "confidence": "medium"
+      }
+    ],
+    "capture": {
+      "raw_capture": "raw_capture.json",
+      "normalized_capture": "normalized_capture.json",
+      "capture_fields": [
+        "value",
+        "formula",
+        "display_text",
+        "number_format",
+        "display_number_format",
+        "display_interior_color",
+        "display_font_color",
+        "display_font_bold",
+        "calc_mode"
+      ]
+    },
+    "sources": [
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md",
+      "../../../../reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv"
+    ],
+    "notes": "Dot-field on linked data type cell. | probe_id=P2-FML-002 | profile=manual_linked_data | manual_prep=Convert Sheet1!A1 into a linked data type and ensure field \u0022Price\u0022 is available before execution."
+  },
+  "operation_trace": [
+    {
+      "op": "set_calc_mode",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:13:41.1914032Z",
+      "finished_utc": "2026-03-02T08:13:41.2395816Z",
+      "status": "ok"
+    },
+    {
+      "op": "convert_to_linked_data_type",
+      "target": "Sheet1!A1",
+      "started_utc": "2026-03-02T08:13:41.2396036Z",
+      "finished_utc": "2026-03-02T08:13:41.3923133Z",
+      "status": "allowed_error",
+      "message": "convert_to_linked_data_type failed for service ids [1,2]. Last error: Error while invoking ConvertToLinkedDataType."
+    },
+    {
+      "op": "edit_cell",
+      "target": "Sheet1!D1",
+      "started_utc": "2026-03-02T08:13:41.3923926Z",
+      "finished_utc": "2026-03-02T08:13:41.5693025Z",
+      "status": "ok"
+    },
+    {
+      "op": "recalc",
+      "target": "workbook",
+      "started_utc": "2026-03-02T08:13:41.5693485Z",
+      "finished_utc": "2026-03-02T08:13:41.8591827Z",
+      "status": "ok"
+    }
+  ],
+  "step_captures": [
+    {
+      "step": "initial_after_setup",
+      "operation": "setup",
+      "timestamp_utc": "2026-03-02T08:13:41.1913686Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_set_calc_mode",
+      "operation": "set_calc_mode",
+      "timestamp_utc": "2026-03-02T08:13:41.2395723Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_convert_to_linked_data_type_allowed_error",
+      "operation": "convert_to_linked_data_type",
+      "timestamp_utc": "2026-03-02T08:13:41.3922230Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": 0,
+          "formula": "0",
+          "display_text": "0",
+          "number_format": "General",
+          "has_formula": false,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_edit_cell",
+      "operation": "edit_cell",
+      "timestamp_utc": "2026-03-02T08:13:41.5692942Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826239,
+          "formula": "=A1.Price",
+          "display_text": "#FIELD!",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    },
+    {
+      "step": "after_recalc",
+      "operation": "recalc",
+      "timestamp_utc": "2026-03-02T08:13:41.8591742Z",
+      "captures": [
+        {
+          "target": "Sheet1!D1",
+          "value": -2146826239,
+          "formula": "=A1.Price",
+          "display_text": "#FIELD!",
+          "number_format": "General",
+          "has_formula": true,
+          "interior_color": 16777215,
+          "font_color": 0,
+          "font_bold": false,
+          "display_interior_color": 16777215,
+          "display_font_color": 0,
+          "display_font_bold": false,
+          "display_number_format": "General",
+          "merge_cells": false,
+          "merge_area_address": "$D$1"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "target": "Sheet1!D1",
+      "value": -2146826239,
+      "formula": "=A1.Price",
+      "display_text": "#FIELD!",
+      "number_format": "General",
+      "has_formula": true,
+      "interior_color": 16777215,
+      "font_color": 0,
+      "font_bold": false,
+      "display_interior_color": 16777215,
+      "display_font_color": 0,
+      "display_font_bold": false,
+      "display_number_format": "General",
+      "merge_cells": false,
+      "merge_area_address": "$D$1"
+    }
+  ],
+  "error": null
+}

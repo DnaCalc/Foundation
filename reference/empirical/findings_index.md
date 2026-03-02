@@ -3,10 +3,10 @@
 Promoted findings are selective, high-value observations from empirical runs.
 
 ## Registry Summary
-- Total findings: 10
+- Total findings: 12
 - Status counts:
-  - provisional: 7
-  - confirmed: 3
+  - provisional: 8
+  - confirmed: 4
   - superseded: 0
   - deprecated: 0
 
@@ -23,3 +23,5 @@ Promoted findings are selective, high-value observations from empirical runs.
 | EMP-0008 | confirmed | Volatility control behaviors (RAND vs SUM) confirmed | 20260228-180047-excel-compat-empirical-pass-01 | ECS-EB-012 / SCN-EB012-* | 2026-03-01T13:56:08.9097064Z |
 | EMP-0009 | provisional | SUMIF mixed reason-code signal retained | 20260228-180047-excel-compat-empirical-pass-01 | ECS-EB-040 / SCN-EB040-SUMIF-UNRELATED-EDIT | 2026-03-01T13:56:08.9097064Z |
 | EMP-0010 | provisional | Dynamic-array mixed-type tier4/5 counter-signals retained | 20260228-180047-excel-compat-empirical-pass-01 | ECS-EB-018/ECS-EB-019 unresolved replay | 2026-03-01T13:56:08.9097064Z |
+| EMP-0011 | provisional | External-reference open-state behavior captured (`open => value`, `closed/missing => #REF!`) | 20260302-100724-excel-nonfunction-closure-pass-01 | ECS-EB-036 / NFCP1-LINK-* | 2026-03-02T08:16:35.4605542Z |
+| EMP-0012 | confirmed | Direct merge/unmerge state capture confirmed (`merge_cells`, `merge_area_address`) | 20260302-100724-excel-nonfunction-closure-pass-01 | ECS-EK-040 / NFCP1-MERGE-UNMERGE-DIRECT | 2026-03-02T08:17:07.8305067Z |

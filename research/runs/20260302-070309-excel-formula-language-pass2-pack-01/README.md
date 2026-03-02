@@ -40,3 +40,9 @@ Prepare an executable empirical pass-2 pack for formula-language conformance lan
    - `FMLP2-008`, `FMLP2-009`, `FMLP2-019`, `FMLP2-021`
 4. Targeted pass-2c lane rerun executed for:
    - `FMLP2-008`, `FMLP2-009`, `FMLP2-019`, `FMLP2-020`, `FMLP2-021`, `FMLP2-022`
+5. Pass-2 synthesis and model-sync updates completed (`PASS2_SYNTHESIS_NOTE.md`).
+6. Parallel follow-up lanes completed:
+   - pass-4 policy/trace sync (`PASS4_POLICY_TRACE_SYNC.md`)
+   - pass-5 replay-pack preparation (`PASS5_REPLAY_PACK.md`, `PASS5_REPLAY_MANIFEST.csv`)
+7. Pass-3 initial interactive planning note prepared:
+   - `PASS3_INTERACTIVE_PLAN.md`

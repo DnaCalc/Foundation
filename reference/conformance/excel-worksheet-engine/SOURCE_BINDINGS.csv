@@ -60,3 +60,5 @@
 "EMP-0008","empirical","empirical_registry","EMP-0008","Volatility context controls","reference/empirical/findings/EMP-0008-volatility-context-controls.md","active","Promoted empirical baseline."
 "EMP-0009","empirical","empirical_registry","EMP-0009","SUMIF mixed signal","reference/empirical/findings/EMP-0009-sumif-mixed-reason-code-signal.md","active","Promoted empirical counter-signal."
 "EMP-0010","empirical","empirical_registry","EMP-0010","Dynamic-array mixed-type counter-signals","reference/empirical/findings/EMP-0010-dynamic-array-mixed-type-counter-signals.md","active","Promoted empirical counter-signal."
+"EMP-0011","empirical","empirical_registry","EMP-0011","External reference open-state policy","reference/empirical/findings/EMP-0011-external-reference-open-state-policy.md","active","Promoted empirical provisional lane."
+"EMP-0012","empirical","empirical_registry","EMP-0012","Direct merge/unmerge capture","reference/empirical/findings/EMP-0012-direct-merge-unmerge-capture.md","active","Promoted empirical confirmed baseline."

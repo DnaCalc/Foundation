@@ -57,7 +57,9 @@ Direct `dotnet run` usage is also supported, but run it from `tools/` to honor p
 - Scenario operations include `open_support_workbook` / `close_support_workbooks` for external-reference probe control.
 - Scenario operations include `convert_to_linked_data_type` for linked-data probe attempts (supports `service_id` or `service_ids` with optional `culture`).
 - Scenario operations include conditional-format helpers: `clear_cf`, `add_cf_expression`, `set_cf_priority`, and `set_cf_stop_if_true`.
+- Scenario operations include merge helpers: `merge_cells` and `unmerge_cells`.
 - Cell capture now includes direct and rendered display-format properties: interior color, font color, bold, and display number format.
+- Cell capture includes merge state fields: `merge_cells` and `merge_area_address`.
 - Tool run outputs include tool version/build, git commit, and repo dirty-state metadata when available.
 
 ## Runner structure for empirical tasks
