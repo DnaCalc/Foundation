@@ -1,0 +1,4 @@
+"timestamp_utc","stage","model","status","output_file","log_file","notes"
+"2026-03-03T07:38:18.9805631Z","base","codex_gpt-5.3-codex_xhigh","ok","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\responses\01_codex.md","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\logs\01_codex_base.log","completed"
+"2026-03-03T07:40:30.1510467Z","base","claude_opus-4-6_high","ok","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\responses\02_claude.md","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\logs\02_claude_base.log","completed"
+"2026-03-03T07:43:07.3144890Z","base","gemini_3.1-pro-preview","ok","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\responses\03_gemini.md","prompts\runs\20260303-093804-xll-non-interesting-pack-pass-02-fec\logs\03_gemini_base.log","completed"

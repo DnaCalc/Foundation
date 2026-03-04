@@ -22,6 +22,7 @@ This ledger tracks unresolved questions for the Excel-first concrete cell model.
 | ECM-Q-008 | Function availability by channel/platform | ECM-FUN-001 | XLS-CF-VP-002;XLS-CF-VP-003 | empirical-gap | ECS-035;ECS-036 | Machine-readable capability capture from empirical probes | Availability map retained with dated build anchors |
 | ECM-Q-009 | Dot-field parse/eval behavior outside linked-data payloads | ECM-FML-004;ECM-TYP-002 | XLS-CF-FL-011;XLS-CF-TV-005 | conflict | ECS-024;ECS-025;EMP-0002;ECS-EB-032 | Stable linked-data fixture primitive in runner + split matrix (linked vs non-linked); current conversion attempts recorded as allowed-error in this environment | Provisional row replaced with explicit bounded rule |
 | ECM-Q-010 | Parser acceptance of double-comma argument gaps | ECM-INP-001;ECM-FML-004 | XLS-CF-FL-010 | conflict | EMP-0001;ECS-EB-031 | Expanded parser probes across channels/builds | Behavior narrowed to deterministic compatibility policy |
+| ECM-Q-012 | Function-call admission vs runtime error boundaries (`SIN` canonical lane) | ECM-FML-004;ECM-FUN-001;ECM-COE-001 | XLS-CF-FL-012;XLS-CF-FN-001;XLS-CF-TV-007 | spec-gap | ECS-008;ECS-109;ECS-110;ECS-111;ECS-112 | Dedicated empirical matrix for required-arg omission (`SIN()`), scalar coercion errors (`SIN("asd")`), array-lift mixed-type behavior (`SIN({1,"asd",3})`), and numeric-domain mapping (`ASIN(2)`) across builds/channels | Parse-admission vs runtime-error policy becomes explicit, stable, and version-scoped where needed |
 
 ## Operating Rule
 Keep this ledger synchronized with:

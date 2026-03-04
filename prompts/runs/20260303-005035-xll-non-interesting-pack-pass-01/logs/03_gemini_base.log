@@ -1,0 +1,160 @@
+Loaded cached credentials.
+**Run ID:** `20260303-005035-xll-non-interesting-pack-pass-01`
+**Objective:** Specification and planning for language-independent `.xll` implementation of "non-interesting" (pure, deterministic, non-stateful) Excel functions.
+
+---
+
+### 1. Scope Freeze And Inventory Rule
+
+**Definition of "Non-Interesting" Functions:**
+Functions classified as non-interesting are pure, side-effect-free, and deterministic. They do not interact with the workbook object model, do not require evaluation state (beyond basic caller context), do not trigger macro actions, and are not structurally dynamic (e.g., `LAMBDA`, `OFFSET`, `INDIRECT` are excluded). 
+
+**Inventory Rule:**
+A function is eligible for this pack if and only if it satisfies all the following criteria:
+1.  **Pure Computation:** Output is entirely derived from its declared input parameters.
+2.  **No Structural Volatility:** Cannot change the size or shape of a referenced range.
+3.  **Standard Coercion:** Adheres strictly to standard Excel scalar or array coercion rules (e.g., MS-OAUT data type conversions).
+4.  **No Engine Callbacks:** Does not require calling back into the Excel engine via `xlfEvaluate` or similar mechanism to resolve internal state.
+
+### 2. Semantic Contract Schema (Per Function)
+
+To maintain clean-room discipline and conformance traceability, each function must be mapped to the following schema before implementation begins:
+
+```yaml
+FunctionContract:
+  Name: "FunctionName" (e.g., "SIN")
+  Category: "Math & Trig"
+  Arity:
+    Min: Integer
+    Max: Integer
+  Parameters:
+    - Index: 0
+      Name: "number"
+      ExpectedExcelType: "Scalar | Array | Reference"
+      CoercionRule: "ToDoubleStrict | ToDoubleLenient | PassThrough"
+      MissingBehavior: "DefaultZero | ErrorValue | OptionalSkip"
+  Outputs:
+    SuccessType: "Double | String | Boolean | Array"
+    ErrorConditions:
+      - Condition: "Type mismatch after coercion"
+        Yields: "#VALUE!"
+      - Condition: "Domain violation (e.g., div by zero)"
+        Yields: "#NUM! | #DIV/0!"
+  Traceability:
+    SpecReference: "MS-XLSX 2.4.x / MS-OAUT 2.2.x"
+    KnownGaps: "Link to KNOWN_GAPS_AND_UNCERTAINTIES.md"
+```
+
+### 3. XLL Registration/Type Mapping Plan
+
+The implementation will utilize the C API `xlfRegister` semantics conceptually, mapping Excel types to our adapter layer.
+
+*   **Registration Context:** Functions will be registered as Thread-Safe (`$`) and Macro-Sheet Equivalent (`#`) where applicable to ensure maximal calculation performance.
+*   **`pxTypeText` Strategy:**
+    *   We will **exclusively** use the `U` and `Q` type identifiers (`XLOPER12` and `XLOPER12*`) for the adapter layer (Layer A).
+    *   *Reasoning:* Relying on Excel's automatic C-type conversions (e.g., `B` for standard double) obscures the clean-room coercion logic and hides differences between Empty Cells, Missing Arguments, and Zero. Passing everything as `XLOPER12` ensures Layer A has complete authority over coercion fidelity.
+
+| Parameter Type | `pxTypeText` String | Adapter Handling |
+| :--- | :--- | :--- |
+| Return Value | `U` (XLOPER12) | Final boxing of typed core output. |
+| Any Argument | `U` (XLOPER12) | Interrogated for `xltypeNum`, `xltypeStr`, `xltypeErr`, `xltypeMissing`, `xltypeNil`. |
+
+### 4. Two-Layer Implementation Template
+
+The architecture enforces a strict boundary between Excel's type system and pure mathematical logic.
+
+**Layer A: Declarative Adapter (The Shell)**
+Handles XLOPER unwrapping, explicit coercion, missing argument defaults, and error propagation.
+
+```text
+// Pseudocode Template
+function LAYER_A_SIN(args: List<XLOPER12>) -> XLOPER12:
+    // 1. Arity Check
+    if args.length != 1: return XLOPER_ERROR(#VALUE!)
+    
+    // 2. Coercion (Excel specific semantics)
+    coerced_val, err = CoerceToDouble(args[0], Lenient=True)
+    if err: return XLOPER_ERROR(err)
+    
+    // 3. Invoke Layer B (Core Kernel)
+    try:
+        core_result = LAYER_B_SIN(coerced_val)
+        return XLOPER_NUM(core_result)
+    catch DomainError:
+        return XLOPER_ERROR(#NUM!)
+```
+
+**Layer B: Typed Core Kernel (The Math)**
+Strictly typed, framework-agnostic, easily testable logic.
+
+```text
+// Pseudocode Template
+function LAYER_B_SIN(x: double) -> double:
+    // Pure standard library math or custom high-precision math
+    return math.sin(x)
+```
+
+### 5. Formal Contract Candidates
+
+#### Candidate 1: Pure Math (`SIN`)
+*   **Signature:** `SIN: double -> double`
+*   **Preconditions:** `x` is a valid IEEE 754 floating-point number.
+*   **Postconditions:** `-1.0 <= return <= 1.0`.
+*   **Invariants:** `SIN(x) == SIN(x + 2*PI)` (within floating-point precision limits).
+*   **Adapter Contract:** Empty cells coerce to `0.0`. Strings representing numbers coerce to `double`. Non-numeric strings yield `#VALUE!`.
+
+#### Candidate 2: Aggregate (`SUM`)
+*   **Signature:** `SUM: Iterable<Variant> -> double`
+*   **Preconditions:** Input is an iterable set of typed values (References, Scalars, Arrays).
+*   **Postconditions:** `return == Mathematical sum of all valid coercible numerics`.
+*   **Invariants:** Order of evaluation does not change the mathematical result.
+*   **Adapter Contract:** 
+    *   *Direct Scalars:* Strings coerce to double. Booleans coerce to `1.0` or `0.0`.
+    *   *References/Arrays:* Text and Booleans inside ranges are **ignored** (yield `0.0` towards the sum). Error values propagate immediately and short-circuit the result.
+
+#### Candidate 3: Reference-Sensitive (`ROW`)
+*   **Signature:** `ROW: Reference|Missing -> Int`
+*   **Preconditions:** Argument is a valid grid reference object, or omitted.
+*   **Postconditions:** `return >= 1` and `return <= MAX_ROWS`.
+*   **Invariants:** `ROW(A1) == 1` regardless of sheet context.
+*   **Adapter Contract:** If missing, must invoke `xlfCaller` to determine the row of the calling cell. If a range is provided, returns the row index of the top-left cell of the range. Yields `#VALUE!` if the argument is a non-reference scalar or array.
+
+### 6. Differential Validation Matrix
+
+| Scenario | Native Excel Behavior | XLL Adapter Behavior (Target) | Equivalence Requirement |
+| :--- | :--- | :--- | :--- |
+| Empty Cell arg to `SIN()` | Evaluates as `0.0` | Senses `xltypeNil`, coerces to `0.0` | Exact Match |
+| String `"TRUE"` to `SIN()` | `#VALUE!` | Senses string, fails numeric coercion | Exact Match |
+| Boolean `TRUE` to `SIN()` | Evaluates to `1.0` (in formulas) | Coerces `xltypeBool` `TRUE` to `1.0` | Exact Match |
+| `SUM({1, "2", TRUE})` | Yields `1` (Arrays ignore text/bool) | Adapter iterates array, skips text/bool | Exact Match |
+| Missing optional arg | Defaults applied based on function | Senses `xltypeMissing`, applies default | Exact Match |
+| Overflow during math | Yields `#NUM!` | Layer B throws, Layer A catches & boxes `#NUM!` | Exact Match |
+
+### 7. Parity-Hypothesis Challenge List (Unresolved Assumptions)
+
+To guarantee clean-room correctness, the following empirical challenges must be verified via `excel-probe` against the native engine:
+
+1.  **Floating-Point Precision Divergence:** Native Excel uses custom 15-significant-digit truncation and specialized IEEE 754 handling (e.g., `0.1 + 0.2` rounding). *Challenge:* Will our Layer B `math.sin` diverge from Excel's `SIN` in the 14th/15th decimal place?
+2.  **Locale-Dependent Coercion:** Does an XLL coercion of `"1,200.50"` to double respect the system locale natively, or do we need to manually invoke locale-aware parsing in Layer A?
+3.  **Error Shadowing in Aggregates:** If a range contains `#DIV/0!` and `#N/A`, which error takes precedence in `SUM()`? (Usually top-left-most reading order, but must be empirically proven).
+4.  **Implicit Intersection:** If a user passes `A1:A10` to `SIN()`, does Excel pass an array to our XLL, or does it implicitly intersect and pass a single `XLOPER`? Our registration flags (`pxTypeText`) dictate this, but parity with dynamic arrays requires exact configuration.
+
+### 8. Promotion Pack
+
+**Decisions Made:**
+*   Strict Layer A (Adapter) / Layer B (Core) segregation is mandated.
+*   XLL signatures will exclusively use `U` or `Q` (XLOPER12) to bypass Excel's automatic, opaque C-type conversions, retaining full control over coercion logic.
+*   All non-interesting functions will be marked thread-safe (`$`).
+
+**Unresolved Items (To be promoted to Research/Review):**
+*   *Math Kernel Precision:* Do we need to implement Excel's 15-digit floating-point rounding algorithm in Layer B, or is standard IEEE 754 sufficient for this baseline?
+*   *Array Spill Parity:* How the XLL adapter handles Dynamic Array spillage when returning an array from a scalar-mapped function.
+
+**Documentation Updates:**
+*   Append Layer A / Layer B architectural boundary rules to `ARCHITECTURE_AND_REQUIREMENTS.md`.
+*   Log the Coercion rules vs Aggregate rules divergence into `EXCEL_CONFORMANCE_SPEC.md`.
+
+**Empirical Validation Plan (Next Steps):**
+1.  Generate a parameter matrix via `spec-pack-processor`.
+2.  Execute `excel-probe.ps1` to capture native Excel outputs for `SIN`, `SUM`, and `ROW` covering empty cells, missing arguments, errors, arrays, strings, and booleans.
+3.  Write findings to `EMPIRICAL_PROMOTION_PLAN.md` (e.g., as `EMP-0010-xll-scalar-coercion-rules`).

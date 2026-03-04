@@ -57,7 +57,21 @@ The project evolves through a “recalc” cycle operating on DAGs.
 6. **Meta-epoch Commit**
    - Publish capability manifest + conformance report + regression updates.
 
-### 3.3 Auto vs Manual Modes (dev analogy)
+### 3.3 Sequence-Only Planning Doctrine (No Time Schedules)
+Project execution planning is sequence-based, not calendar-based.
+
+Mandatory rule:
+1. Plans and execution notes must not use date-based or duration-based commitments (for example deadlines, ETA dates, week-based schedules, or "finish by X time").
+2. Execution order must be expressed using:
+   - priority,
+   - dependency/`depends_on` relations,
+   - blocker status,
+   - gate/pack readiness criteria,
+   - risk and impact ordering.
+3. Progress is reported by state transitions and obligation closure (for example `planned -> in_progress -> blocked -> complete`), not by elapsed time targets.
+4. If temporal metadata is captured for audit/provenance (timestamps in artifacts), it is observational only and must not be used as a planning commitment axis.
+
+### 3.4 Auto vs Manual Modes (dev analogy)
 - **Auto**: CI runs the full required packs for affected profiles.
 - **Manual**: local development may defer heavy packs, but merge requires stabilization.
 

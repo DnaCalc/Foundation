@@ -1,0 +1,7 @@
+artifact,kind,path
+run_brief,input,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\inputs\run_brief.md
+prompt_base,input,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\inputs\prompt_base.md
+codex_response,response,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\01_codex.md
+claude_response,response,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\02_claude.md
+gemini_response,response,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\03_gemini.md
+model_runs,log,prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\logs\model_runs.csv

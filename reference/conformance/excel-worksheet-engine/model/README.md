@@ -9,6 +9,8 @@ This directory is the Excel-first concrete modeling lane for in-cell worksheet-e
 
 ## Files
 - `EXCEL_CELL_CONCRETE_MODEL.md`: concrete model document (human-readable).
+- `EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`: planning draft for Formula Evaluation Context (FEC), including the matching F3E interaction protocol and cell-level state machine sketch.
+- `FEC_F3E_INTERFACE_DRAFT_SPEC.md`: comprehensive draft interface spec for FEC/F3E responsibilities, call contracts, state model, and pathfinder-oriented Rust split mapping.
 - `EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md`: detailed concrete formula-language rule set for `ECM-FML-*`.
 - `EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv`: rule-by-rule status/evidence/probe mapping for `FML-R-*`.
 - `EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md`: pass-2 plan with execution status and remaining unresolved lanes.

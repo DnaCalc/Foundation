@@ -1,0 +1,5 @@
+"timestamp_utc","stage","model","status","output_file","log_file","notes"
+"2026-03-02T22:50:51.4446421Z","base","codex_gpt-5.3-codex_xhigh","ok","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\01_codex.md","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\logs\01_codex_base.log","completed"
+"2026-03-02T22:53:13.3435455Z","base","claude_opus-4-6_high","ok","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\02_claude.md","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\logs\02_claude_base.log","completed"
+"2026-03-02T22:54:35.9152812Z","base","gemini_3.1-pro-preview","ok","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\responses\03_gemini.md","prompts\runs\20260303-005035-xll-non-interesting-pack-pass-01\logs\03_gemini_base.log","completed"
+"2026-03-02T23:01:53.6678634Z","base_rerun","claude_opus-4-6_high","ok","prompts\\runs\\20260303-005035-xll-non-interesting-pack-pass-01\\responses\\02_claude.md","prompts\\runs\\20260303-005035-xll-non-interesting-pack-pass-01\\logs\\02_claude_base.log","rerun completed after empty initial capture"

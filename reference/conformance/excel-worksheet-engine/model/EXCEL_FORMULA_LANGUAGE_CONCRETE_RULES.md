@@ -22,6 +22,7 @@ It tightens `ECM-FML-001..004` into implementation-facing rule statements tied t
 | FML-R-009 | Structured references are first-class formula syntax (`Table[Col]`, `[@Col]`, qualifiers) and participate in normal parse/bind/eval. | XLS-CF-FL-009 | ECS-012;ECS-013;ECS-014;ECS-EB-037 | provisional |
 | FML-R-010 | `=SUM(A1,,B1)` behavior is treated as build-scoped provisional ambiguity; parser policy must remain configurable until resolved. | XLS-CF-FL-010 | EMP-0001;ECS-EB-031 | provisional |
 | FML-R-011 | Dot-field syntax (`=A1.Price`) is tracked as syntax-accepted in current evidence, with runtime semantics constrained by linked-data context. | XLS-CF-FL-011 | ECS-024;ECS-025;EMP-0002;ECS-EB-032 | provisional |
+| FML-R-012 | Function-call conformance must distinguish formula-entry rejection from accepted-formula runtime errors, including required-argument omission and array-lifted element error behavior. | XLS-CF-FL-012 | ECS-008;ECS-109;ECS-110;ECS-111;ECS-112 | provisional |
 
 ## 3. Parse Acceptance Baseline (Wave 1)
 Empirical registry anchor:
@@ -160,12 +161,45 @@ Coverage note:
 1. Public formal grammar anchors are incomplete for some modern helper-form details.
 2. Helper-form completeness therefore depends on mixed formal + behavioral + empirical evidence.
 
+### 8.1 Compile-Time Reducibility Boundary (Planning Note)
+Formula-language and function metadata together should be sufficient to classify whether an expression may be reduced before runtime evaluation.
+
+Working rule:
+1. A formula subtree is compile-time reducible only when:
+   - all inputs are constant-closed, and
+   - all functions/operators in the subtree are classified `const_foldable_when_closed`.
+2. Subtrees containing reference-dependent or context-dependent functions must be deferred to runtime evaluation.
+
+Illustrative examples:
+1. `=SIN(4)` and `=SIN(2*PI())` can be reduced immediately after parse/bind if folding is enabled.
+2. `=SIN(A1)` must wait for evaluation because argument resolution depends on runtime reference values.
+3. `=ROW()` and `=NOW()` must not be treated as deterministic compile-time reductions because they depend on caller/time context.
+
+Cross-lane dependency:
+1. Final policy depends on function-definition metadata in `../../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md` (not parser grammar alone).
+
+### 8.2 Function-Call Admission vs Runtime Error Boundary (Planning Note)
+This lane captures a missing-but-critical distinction:
+1. parse-time formula rejection (`cannot enter formula` class), versus
+2. accepted formula with runtime error result (`#VALUE!`, `#NUM!`, etc.).
+
+Canonical seed examples:
+1. `=SIN()` should be tracked as parse/admission failure (required-argument omission).
+2. `=SIN("asd")` should be tracked as formula-accepted with runtime coercion/error outcome.
+3. `=SIN({1,"asd",3})` should be tracked for array-lift/error propagation policy (`single error` vs `elementwise result array with internal error elements`).
+4. `=ASIN(2)` should be tracked for numeric-domain error mapping (`#NUM!` expectation in common builds).
+
+Evidence posture:
+1. Current public sources provide only thin direct guidance for this lane.
+2. Therefore this rule remains provisional until dedicated empirical matrices are promoted.
+
 ## 9. Open Items for Next Tightening Pass
 1. Replicate scoped-name and precedence lanes across target channels/builds to verify current provisional policy wording.
 2. Expand external/workbook reference lane to cover additional link-update policy variants and workbook-open/closed permutations across builds/channels (same-build baseline captured in `EMP-0011`).
 3. Establish a true linked-data fixture path for `P2-FML-002` so dot-field semantics can be split by linked vs non-linked contexts.
 4. Expand `P2-FML-008` spill-blocking/update scenarios to support `FML-R-005` promotion from `draft`.
 5. Replicate argument-gap and normalization lanes across additional target builds/channels for status promotion to validated.
+6. Execute `P2-FML-011` function-admission/coercion edge matrix (`SIN`/`ASIN` seeds), then split stable sub-rules from remaining provisional rows.
 
 ## 10. Conformance Matrix and Pass-2 Plan
 This rule set is operationalized by:
@@ -179,3 +213,4 @@ Primary unresolved closures currently depend on:
 3. `P2-FML-006` link-update/open-state policy expansion,
 4. `P2-FML-008` spill-blocking/update expansion for `FML-R-005`,
 5. cross-build replay of `P2-FML-003`, `P2-FML-005`, `P2-FML-009`, and `P2-FML-010`.
+6. `P2-FML-011` required-argument omission vs runtime error mapping (`FML-R-012`).

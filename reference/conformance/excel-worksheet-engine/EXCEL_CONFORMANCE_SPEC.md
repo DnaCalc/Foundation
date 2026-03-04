@@ -32,15 +32,19 @@ Out of scope (unchanged):
 8. Formula-language pass-2 scenario seed list: `model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv`.
 9. Concrete-model open/gap ledger: `model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`.
 10. Concrete-model trace ledger: `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`.
-11. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
-12. Empirical registry: `../../empirical/findings_registry.jsonl`.
-13. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
-14. Function-definition preliminary scope/spec: `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`.
-15. Function-definition preliminary conformance lanes: `functions/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
-16. Function-definition discussion register: `functions/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
-17. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
-18. Interesting-function initial classification table: `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`.
-19. Interesting-function initial classification summary: `functions/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`.
+11. FEC planning draft: `model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`.
+12. FEC/F3E interface draft specification: `model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`.
+13. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
+14. Empirical registry: `../../empirical/findings_registry.jsonl`.
+15. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
+16. Function-definition preliminary scope/spec: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`.
+17. Function-definition preliminary conformance lanes: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
+18. Function-definition discussion register: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
+19. Function-universe formalization charter: `../../../../OxFunc/CHARTER.md`.
+20. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
+21. Interesting-function initial classification table: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`.
+22. Interesting-function initial classification summary: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`.
+23. XLL SDK registration/types digest: `functions/XLL_SDK_REGISTRATION_AND_TYPES_REFERENCE.md`.
 
 ## 4. Evidence Lineage Model
 1. `ECS-*`: source ids from prior authoritative Excel source registry.
@@ -77,7 +81,7 @@ When conflict exists between spec-derived and empirical-derived evidence:
 2. Bind empirical probe/test outputs to the same requirement ids.
 3. Promote additional high-value empirical findings to `EMP-*` ids before adding new provisional rows.
 4. Use pass-2 execution artifacts (`FORMULA_PARSE_PASS2_RESULTS.csv`, `SEED_TO_EXECUTED_MAPPING_PASS2.csv`) as current formula-language empirical baseline.
-5. Treat function-definition artifacts under `functions/` as preliminary and discussion-driven until interactive review resolves policy lanes.
+5. Treat function-definition artifacts under `../../../../OxFunc/docs/function-lane/` as preliminary and discussion-driven until interactive review resolves policy lanes.
 
 ## 9. Concrete-First Modeling Lane
 The current modeling strategy is Excel-first:
