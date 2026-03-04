@@ -241,3 +241,63 @@
   3. `INDIRECT` determinism vs context-dependence,
   4. `XLOOKUP` reference-output behavior confirmation,
   5. observability of pre-call normalized references by non-interesting functions.
+
+## Note 013
+- Update: added SDK-backed XLL reference documentation to support prompt pack and function-definition lane.
+- New doc:
+  1. `reference/conformance/excel-worksheet-engine/functions/XLL_SDK_REGISTRATION_AND_TYPES_REFERENCE.md`
+- Coverage includes:
+  1. registration model (`xlfRegister`, `xlfRegisterId`, `xlfUnregister`),
+  2. type text and behavior markers (`pxTypeText`, `!/#/$/&`),
+  3. value/reference containers and argument/return modeling,
+  4. caller context (`xlfCaller`),
+  5. callback/thread constraints,
+  6. memory ownership hooks (`xlFree`, `xlAutoFree`).
+- Prompt pack integration:
+  1. `prompts/packs/xll-non-interesting-functions-implementation.md` now requires the SDK digest and emits an explicit registration/type mapping artifact.
+
+## Note 014
+- Prompt-pack enhancement requested and applied:
+  1. Added explicit formal contract outputs (`preconditions`, `postconditions`, `invariants`).
+  2. Added explicit two-layer decomposition requirement:
+     - Layer A: declarative type/coercion/conversion/error-exit adapter,
+     - Layer B: tightly typed core kernel (example: `SIN` as pure `double -> double`).
+  3. Added dedicated pass (`Pass 3b`) for contract/verification shape and adapter->core refinement obligations.
+  4. Added output artifacts for formal contract candidates, typed-kernel catalog, and adapter template spec.
+
+## Note 015
+- Topic: function-call syntax/admission errors vs runtime coercion/domain/array errors (canonical `SIN` lane).
+- User concern:
+  1. `=SIN()` should be invalid formula entry (syntax/admission error; cannot enter).
+  2. `=SIN("asd")` should be accepted formula with runtime `#VALUE!`.
+  3. `=SIN({1,"asd",3})` uncertainty: scalar `#VALUE!` vs elementwise array with middle error.
+  4. No sufficiently complete official spec has been found for this full boundary.
+- Clarifying interpretation:
+  1. This is a separate conformance axis from general grammar and from generic coercion tables.
+  2. We need explicit admission-vs-runtime policy rows per function family.
+  3. Public sources are thin/user-facing for these details; empirical evidence is required for closure.
+- Immediate follow-up actions applied:
+  1. Added formula-language provisional rule lane `FML-R-012` and requirement `XLS-CF-FL-012`.
+  2. Added open question `ECM-Q-012`.
+  3. Added pass-2 probe family `P2-FML-011` with canonical seeds:
+     - `=SIN()`
+     - `=SIN("asd")`
+     - `=SIN({1,"asd",3})`
+     - `=ASIN(2)`
+  4. Added function-definition conformance row `FDEF-025` and discussion topic `D-017`.
+
+## Note 016
+- Ad-hoc empirical probe (local COM, not yet promoted to `EMP-*`) for canonical trig seeds:
+  1. `=SIN()`:
+     - formula assignment rejected (`0x800A03EC`) in both `Formula` and `Formula2` pathways.
+  2. `=SIN("asd")`:
+     - accepted; displays `#VALUE!`.
+  3. `=ASIN(2)`:
+     - accepted; displays `#NUM!`.
+  4. `=SIN({1,"asd",3})`:
+     - accepted in both pathways, but behavior differs by entry API:
+       - via `Formula`: anchor displays first element only (`0.841471`), no observed spill capture in adjacent cells.
+       - via `Formula2`: dynamic-array spill observed across row: `0.841471 | #VALUE! | 0.14112`.
+- Interpretation:
+  1. The scalar-vs-elementwise ambiguity for mixed-type array input is context/API-sensitive and must be explicitly versioned in conformance notes.
+  2. `Formula` vs `Formula2` entry path is part of the evaluation context for this lane and should be included in formal empirical scenario metadata.
