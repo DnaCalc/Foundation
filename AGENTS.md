@@ -48,3 +48,4 @@ If a conflict is found, call it out explicitly and propose an edit path instead 
 - Prefer concrete decisions, clear assumptions, and short action lists.
 - Distinguish current state, proposal, and open questions.
 - Avoid claiming completion without naming the artifact changed.
+- When listing groups of files, include a standalone relative directory path line immediately before the file list, without labels like `Relative path`.

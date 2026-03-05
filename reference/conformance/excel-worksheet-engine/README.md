@@ -14,6 +14,7 @@ This folder is the authoritative working conformance specification area for Exce
 - `model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv`: formula-rule status/evidence/probe mapping table.
 - `model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md`: pass-2 probe plan plus execution status snapshot.
 - `model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv`: seeded scenario list for pass-2 formula-language probes.
+- `model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md`: focused style hierarchy, defaults, locale, and formula-visibility model.
 - `model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`: open/gap ledger for the concrete model.
 - `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`: machine-linkable statement-to-evidence trace records.
 - `../../../../OxFunc/CHARTER.md`: OxFunc charter for formalization and proof-oriented closure of the worksheet function universe with Rust implementation obligations.
@@ -26,6 +27,8 @@ This folder is the authoritative working conformance specification area for Exce
 - `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`: executed pass-2 artifacts and evidence bundles.
   - includes pass-4 policy/trace sync, pass-5 replay pack, and pass-3 interactive planning note.
 - `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`: non-function closure run artifacts including targeted link/format/table replay and ambiguity register.
+- `../../../reference/runs/20260305-ms-formatting-formal-pass-01/outputs/FORMATTING_HIERARCHY_FINDINGS.md`: focused formal extraction findings for style/default/visibility lanes.
+- `../../../research/runs/20260305-235500-excel-formatting-hierarchy-empirical-pack-01/outputs/`: empirical probe pack for precedence/defaults/locale/visibility closure tasks.
 
 ## Evidence lineage model
 - `ECS-*`: source ids from prior Excel research source registry (`research/.../source_list.csv`).

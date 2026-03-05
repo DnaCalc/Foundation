@@ -101,12 +101,24 @@ Initial concrete rules (draft):
 - `ECM-FMT-002` (draft): Value semantics and display formatting semantics are distinct layers; formatting must not silently mutate value semantics.
 - `ECM-FMT-003` (draft): Conditional-format overlap/priority behavior is captured as explicit rules with provisional lanes where evidence conflicts.
 - `ECM-FMT-004` (draft): Merge/unmerge state transitions are explicit worksheet-visible formatting semantics and require deterministic capture.
+- `ECM-FMT-005` (draft): Style hierarchy (workbook style tables, row/column defaults, cell style index, differential overlays) is explicitly modeled.
+- `ECM-FMT-006` (draft): Formatting defaults (font/size/base style/sheet defaults) are profile-bound and evidence-driven.
+- `ECM-FMT-007` (provisional): Formula-visible formatting introspection (`TEXT`/`CELL`/`INFO`) is modeled as an explicit boundary lane.
+- `ECM-FMT-008` (provisional): Conditional-format effective-style visibility to formulas remains an explicit unresolved lane.
+
+Detailed rule set:
+1. `EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md` is the focused hierarchy/default/visibility artifact for `ECM-FMT-*` lanes.
 
 Initial concrete rules (draft):
 1. Stored value semantics and rendered display semantics are modeled as separate layers.
-2. Number-format behavior is treated as a parse/render language with explicit grammar and section semantics.
+2. Number-format behavior is treated as a parse/render language with explicit grammar and section semantics, including formal ABNF-backed and locale-adjusted lanes.
 3. Conditional-format rule evaluation and style-priority resolution are explicit conformance lanes, including spill-target conflict lanes.
-4. Merge and unmerge operations are modeled as state transitions that preserve deterministic cell-addressable outcomes.
+4. Conditional-format formulas use a restricted grammar lane (no array constants, no structured references, no union/intersection operators, no 3-D references) unless an explicit build-scoped caveat is recorded.
+5. Formal specifications leave parts of number-format semantics underspecified (`formatCode` bounds/content and `numFmtId` defaults), so explicit policy lanes plus empirical closure are required.
+6. Style resolution is modeled as layered precedence rather than flattened per-cell formatting state.
+7. Defaults are represented as workbook/profile policy outputs, not globally hardcoded constants.
+8. Formula-level access to formatting state is explicitly classified, including a provisional lane for conditional-format observability.
+9. Merge and unmerge operations are modeled as state transitions that preserve deterministic cell-addressable outcomes.
 
 ### 4.8 Tables and Structured References
 - `ECM-TBL-001` (draft): Table structured-reference syntax/semantics are part of formula evaluation scope.
@@ -141,7 +153,7 @@ Initial domain binding snapshot:
 | Coercion | ECM-COE-001..003 | XLS-CF-TV-003; XLS-CF-TV-007; XLS-CF-TV-008 |
 | Evaluation/Error | ECM-EVL-001..003 | XLS-CF-FL-005; XLS-CF-FN-003; XLS-CF-FN-011 |
 | Functions | ECM-FUN-001..003 | XLS-CF-FN-001..008; XLS-CF-FN-010 |
-| Formatting | ECM-FMT-001..004 | XLS-CF-FM-001..005 |
+| Formatting | ECM-FMT-001..008 | XLS-CF-FM-001..014 |
 | Tables | ECM-TBL-001..003 | XLS-CF-TB-001..004 |
 
 This table is intentionally compact; per-statement trace detail belongs in the JSONL trace file.

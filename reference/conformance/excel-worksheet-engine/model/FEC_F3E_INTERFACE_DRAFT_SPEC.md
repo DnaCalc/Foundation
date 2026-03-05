@@ -322,6 +322,9 @@ For context-sensitive constructs:
 1. F3E may emit `format_overlay` suggestions.
 2. FEC/host applies policy for whether/how overlay affects persisted formatting or render-only view.
 3. Value semantics must remain independent of display formatting semantics.
+4. F3E formatting grammar must support formal ABNF-backed number-format lanes plus locale-profile adjustments supplied by FEC.
+5. F3E must enforce the conditional-format restricted-formula lane (no array constants, no structured references, no union/intersection operators, no 3-D references) unless profile policy explicitly enables a documented divergence.
+6. Where formal sources are underspecified (`formatCode` bounds/content and `numFmtId` defaults), F3E exposes explicit policy hooks and diagnostics; FEC binds those policies to profile/version metadata.
 
 ## 13. Function Registry and Cooperative Name Resolution
 Protocol obligations:
@@ -394,3 +397,5 @@ Required checks for adopting this split:
 2. Exact policy mapping for capability violations (user-visible error vs internal fault class).
 3. Whether `format_overlay` is persisted, transient, or dual-lane per profile.
 4. Long-term ABI/stable protocol format for compiled IR and dependency artifacts.
+5. Default-policy strategy for number-format underspec lanes (`formatCode` and `numFmtId`) before full empirical closure.
+6. Formula-visible formatting boundary policy for `TEXT`/`CELL`/`INFO` and legacy compatibility probes, including whether conditional-format effective style is observable.

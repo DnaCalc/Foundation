@@ -1,0 +1,12 @@
+# Keep this focused run lightweight in git; raw extraction artifacts are retained as local working data.
+/inputs/**
+/outputs/**
+
+!/inputs/source_index_focus.csv
+!/outputs/README.md
+!/outputs/run_manifest.json
+!/outputs/selected_sources.csv
+!/outputs/documents.csv
+!/outputs/conformance_excluded.jsonl
+!/outputs/FORMATTING_FORMAL_FINDINGS.md
+!/outputs/FORMATTING_HIERARCHY_FINDINGS.md

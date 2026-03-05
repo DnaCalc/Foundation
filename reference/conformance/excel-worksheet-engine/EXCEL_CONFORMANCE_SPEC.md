@@ -34,21 +34,24 @@ Out of scope (unchanged):
 10. Concrete-model trace ledger: `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`.
 11. FEC planning draft: `model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`.
 12. FEC/F3E interface draft specification: `model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`.
-13. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
-14. Empirical registry: `../../empirical/findings_registry.jsonl`.
-15. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
-16. Function-definition preliminary scope/spec: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`.
-17. Function-definition preliminary conformance lanes: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
-18. Function-definition discussion register: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
-19. Function-universe formalization charter: `../../../../OxFunc/CHARTER.md`.
-20. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
-21. Interesting-function initial classification table: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`.
-22. Interesting-function initial classification summary: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`.
-23. XLL SDK registration/types digest: `functions/XLL_SDK_REGISTRATION_AND_TYPES_REFERENCE.md`.
+13. Formatting hierarchy/visibility model: `model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md`.
+14. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
+15. Empirical registry: `../../empirical/findings_registry.jsonl`.
+16. Prior authoritative source registry: `../../../research/runs/20260228-130325-excel-compat-spec-index-pass-01/outputs/source_list.csv`.
+17. Function-definition preliminary scope/spec: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_SPEC.md`.
+18. Function-definition preliminary conformance lanes: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_PRELIM_CONFORMANCE.csv`.
+19. Function-definition discussion register: `../../../../OxFunc/docs/function-lane/EXCEL_FUNCTION_DEFINITION_DISCUSSION.md`.
+20. Function-universe formalization charter: `../../../../OxFunc/CHARTER.md`.
+21. Non-function closure empirical run outputs: `../../../research/runs/20260302-100724-excel-nonfunction-closure-pass-01/outputs/`.
+22. Interesting-function initial classification table: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.csv`.
+23. Interesting-function initial classification summary: `../../../../OxFunc/docs/function-lane/INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`.
+24. XLL SDK registration/types digest: `functions/XLL_SDK_REGISTRATION_AND_TYPES_REFERENCE.md`.
+25. Formatting formal focused pass outputs: `../../runs/20260305-ms-formatting-formal-pass-01/outputs/`.
+26. Formatting hierarchy empirical probe-pack scaffold: `../../../research/runs/20260305-235500-excel-formatting-hierarchy-empirical-pack-01/outputs/`.
 
 ## 4. Evidence Lineage Model
 1. `ECS-*`: source ids from prior authoritative Excel source registry.
-2. `REFX-*`: mirrored Open Spec entries under `reference/index.*`.
+2. `REFX-*`: mirrored Open Spec entries and focused extraction anchors under `reference/index.*` and `reference/runs/*`.
 3. `EMP-*`: curated empirical findings promoted from empirical run artifacts.
 
 Each requirement row must cite one or more evidence ids from this model.

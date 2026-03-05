@@ -66,6 +66,7 @@ Candidate capability families:
    - RTD/STREAM-like topic lookup and update hooks.
 6. `cap_locale_parse_format`:
    - list separator, decimal separator, localized parsing behavior.
+   - number-format grammar profile variants and locale rendering conventions.
 7. `cap_feature_gate`:
    - dynamic array mode, compatibility-version toggles, preview feature switches.
 8. `cap_error_detail_enrichment`:
@@ -78,6 +79,8 @@ Policy values used by parser/binder/evaluator:
 3. implicit intersection mode and spill mode policy,
 4. link-resolution policy for external refs,
 5. volatility/external invalidation interaction policy.
+6. number-format underspec policy for formal gaps (`formatCode` bounds/content and `numFmtId` default handling).
+7. conditional-format restricted-formula policy (default strict lane unless explicitly version-gated).
 
 ## 4. Interaction with Existing Specs
 
@@ -303,6 +306,7 @@ Semantics:
 2. `extended_value` carries optional host-enriched metadata.
 3. `format_overlay` is a formatting hint/result candidate passed back to FEC/host for render/application policy.
 4. render policy remains host/FEC-governed; F3E may suggest, FEC decides application path.
+5. locale-profile and compatibility-profile choices in FEC are allowed to affect formatting parse/render behavior but must not redefine core value semantics.
 
 Ownership note:
 1. structure and interpretation of `value` and `extended_value` are defined by F3E type contracts.
@@ -362,7 +366,9 @@ After this planning pass, add:
 3. targeted empirical probe pack for:
    - dependency declaration and runtime dep refinement,
    - FEC capability denial tests,
-   - value/format overlay round-trip behavior.
+   - value/format overlay round-trip behavior,
+   - number-format underspec closure probes (`formatCode`/`numFmtId`),
+   - conditional-format restricted-formula acceptance/rejection probes.
 
 ## 18. Implications of "Value System Fully in F3E"
 This section captures the practical implications of the ownership rule.
@@ -391,3 +397,10 @@ This section captures the practical implications of the ownership rule.
 3. Any observed semantic change across FEC profiles should be treated as either:
    - declared profile feature-gate behavior, or
    - a defect.
+
+## 19. Formatting-Specific Formal Anchor Notes
+Focused formatting formal extraction (`reference/runs/20260305-ms-formatting-formal-pass-01/outputs/`) adds three FEC-relevant constraints:
+1. number-format grammar uses formal ABNF-backed lanes with international-profile adjustments,
+2. conditional-format formulas operate under a restricted grammar lane,
+3. parts of formatting semantics remain formally underspecified and therefore require explicit policy lanes plus empirical closure.
+4. formula-visible formatting boundary (`TEXT`/`CELL`/`INFO` and legacy compatibility probes) must be modeled explicitly; conditional-format effective-style visibility remains provisional.
