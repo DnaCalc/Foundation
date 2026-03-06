@@ -8,6 +8,7 @@ This document defines a comprehensive draft interface between:
 Status:
 1. draft, implementation-oriented,
 2. intended as the immediate design baseline for refactoring `..\DnaVisiCalc` Rust pathfinder toward explicit FEC/F3E split.
+3. protocol-lane obligations are tracked in `FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv` and mapped to `XLS-CF-FEC-PR-*` / `XLS-CF-FEC-REF-*` rows.
 
 ## 2. Scope and Non-Goals
 In scope:

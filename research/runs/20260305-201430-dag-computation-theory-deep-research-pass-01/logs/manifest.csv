@@ -1,0 +1,7 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260305-201430-dag-computation-theory-deep-research-pass-01,scaffold,complete,2026-03-05T20:14:30Z,2026-03-05T20:22:00Z,README.md,Run scaffold created
+20260305-201430-dag-computation-theory-deep-research-pass-01,prompt_pack,complete,2026-03-05T20:22:00Z,2026-03-05T20:26:00Z,inputs/prompt_01_landscape.md;inputs/prompt_02_math.md;inputs/prompt_03_algorithms.md;inputs/prompt_04_transfer.md,Prompt pack seeded
+20260305-201430-dag-computation-theory-deep-research-pass-01,source_capture,complete,2026-03-05T20:26:00Z,2026-03-05T20:42:00Z,outputs/source_list.csv,Primary source set captured
+20260305-201430-dag-computation-theory-deep-research-pass-01,synthesis,complete,2026-03-05T20:42:00Z,2026-03-05T20:58:00Z,outputs/01_scope_and_question_map.md;outputs/02_theory_and_math_catalog.md;outputs/03_algorithm_family_map.md;outputs/04_dnacalc_transfer_matrix.md;outputs/05_deep_research_synthesis.md;outputs/06_follow_up_prompt_pack.md,Deep research synthesis completed
+20260305-201430-dag-computation-theory-deep-research-pass-01,external_report_ingest,complete,2026-03-06T00:10:00Z,2026-03-06T00:20:00Z,outputs/07_claude_research_report.md;outputs/08_chatgpt_research_report.md,External deep research reports captured in run outputs for comparison and synthesis
+20260305-201430-dag-computation-theory-deep-research-pass-01,run_status,captured,2026-03-06T00:20:00Z,2026-03-06T00:20:00Z,README.md,Ready for synthesis promotion or follow-on execution (external report ingest included)

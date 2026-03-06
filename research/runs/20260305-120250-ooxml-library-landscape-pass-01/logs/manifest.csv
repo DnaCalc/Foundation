@@ -1,0 +1,7 @@
+"run_id","stage","status","start_utc","end_utc","artifact","notes"
+"20260305-120250-ooxml-library-landscape-pass-01","scaffold","complete","2026-03-05T12:02:50Z","2026-03-05T12:05:00Z","README.md","Run scaffold created"
+"20260305-120250-ooxml-library-landscape-pass-01","prompt_pack","complete","2026-03-05T12:05:00Z","2026-03-05T12:08:00Z","inputs/prompt_01_master.md;inputs/prompt_02_rust_focus.md;inputs/prompt_03_comparison.md","Prompt pack seeded"
+"20260305-120250-ooxml-library-landscape-pass-01","source_capture","in_progress","2026-03-05T12:08:00Z","","","Collecting source set and metadata snapshot"
+"20260305-120250-ooxml-library-landscape-pass-01","source_capture","complete","2026-03-05T12:08:00Z","2026-03-05T12:16:00Z","outputs/source_list.csv;outputs/02_library_inventory_github_snapshot.csv","Source set and GitHub metadata snapshot captured"
+"20260305-120250-ooxml-library-landscape-pass-01","analysis","complete","2026-03-05T12:16:00Z","2026-03-05T12:22:00Z","outputs/01_research_report.md;outputs/03_library_comparison_matrix.csv;outputs/04_recommendation_lanes.md;outputs/05_follow_up_queries.md","Comparison and recommendation outputs generated"
+"20260305-120250-ooxml-library-landscape-pass-01","run_status","captured","2026-03-05T12:22:00Z","2026-03-05T12:22:00Z","README.md","Run ready for synthesis or follow-up empirical pass"

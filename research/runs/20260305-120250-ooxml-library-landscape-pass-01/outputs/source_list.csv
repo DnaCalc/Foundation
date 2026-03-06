@@ -1,0 +1,21 @@
+source_id,title,author_or_org,type,url,publish_date,accessed_utc,credibility_note,topic_id,tags
+OOL-001,calamine repository,tafia,repo,https://github.com/tafia/calamine,,2026-03-05T10:04:09Z,Primary Rust spreadsheet reader implementation,R-TOPIC-009,rust|xlsx|reader
+OOL-002,rust_xlsxwriter repository,jmcnamara,repo,https://github.com/jmcnamara/rust_xlsxwriter,,2026-03-05T10:04:09Z,Primary Rust XLSX writer implementation,R-TOPIC-009,rust|xlsx|writer
+OOL-003,umya-spreadsheet repository,MathNya,repo,https://github.com/MathNya/umya-spreadsheet,,2026-03-05T10:04:09Z,Rust read/write spreadsheet implementation,R-TOPIC-009,rust|xlsx|read_write
+OOL-004,excelize repository,qax-os,repo,https://github.com/qax-os/excelize,,2026-03-05T10:04:09Z,High-activity non-Rust reference implementation,R-TOPIC-009,go|xlsx|xlsm|streaming
+OOL-005,Open XML SDK repository,dotnet,repo,https://github.com/dotnet/Open-XML-SDK,,2026-03-05T10:04:09Z,Microsoft-maintained low-level OOXML SDK,R-TOPIC-009,dotnet|ooxml|sdk
+OOL-006,ClosedXML repository,ClosedXML,repo,https://github.com/ClosedXML/ClosedXML,,2026-03-05T10:04:09Z,High-level .NET Excel API built on Open XML SDK,R-TOPIC-009,dotnet|xlsx|xlsm
+OOL-007,Apache POI repository,Apache,repo,https://github.com/apache/poi,,2026-03-05T10:04:09Z,Widely-used Java Office/OOXML library,R-TOPIC-009,java|ooxml|excel
+OOL-008,libxlsxwriter repository,jmcnamara,repo,https://github.com/jmcnamara/libxlsxwriter,,2026-03-05T10:04:09Z,Mature C XLSX writer library,R-TOPIC-009,c|xlsx|writer
+OOL-009,xlnt repository,tfussell,repo,https://github.com/tfussell/xlnt,,2026-03-05T10:04:09Z,C++ XLSX manipulation library,R-TOPIC-009,cpp|xlsx
+OOL-010,OpenXLSX repository,troldal,repo,https://github.com/troldal/OpenXLSX,,2026-03-05T10:04:09Z,C++ XLSX read/write library with active commits,R-TOPIC-009,cpp|xlsx
+OOL-011,NPOI repository,nissl-lab,repo,https://github.com/nissl-lab/npoi,,2026-03-05T10:04:09Z,.NET port of Apache POI with Office format support,R-TOPIC-009,dotnet|xlsx|xls
+OOL-012,Open XML SDK docs,Microsoft Learn,docs,https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk,,2026-03-05T10:04:09Z,Official SDK documentation,R-TOPIC-009,microsoft|ooxml|sdk
+OOL-013,Apache POI spreadsheet overview,Apache POI,docs,https://poi.apache.org/components/spreadsheet/,,2026-03-05T10:04:09Z,Official project documentation,R-TOPIC-009,java|excel|docs
+OOL-014,libxlsxwriter documentation,libxlsxwriter,docs,https://libxlsxwriter.github.io/,,2026-03-05T10:04:09Z,Official C API docs and feature reference,R-TOPIC-009,c|xlsx|docs
+OOL-015,ClosedXML documentation,ClosedXML,docs,https://closedxml.readthedocs.io/,,2026-03-05T10:04:09Z,Official .NET high-level API docs,R-TOPIC-009,dotnet|docs
+OOL-016,excelize documentation,excelize,docs,https://xuri.me/excelize/en/,,2026-03-05T10:04:09Z,Official feature and API docs for Go implementation,R-TOPIC-009,go|docs
+OOL-017,MS-OFFSTANDLP index,Microsoft Learn Open Specifications,spec,https://learn.microsoft.com/en-us/openspecs/office_standards/ms-offstandlp/d5784a8b-7070-466b-befa-b7bf3724c6f0,,2026-03-05T10:04:09Z,Official Office standards mapping index,R-TOPIC-009,spec|ooxml
+OOL-018,MS-XLSX open specification,Microsoft Learn Open Specifications,spec,https://learn.microsoft.com/en-us/openspecs/office_standards/ms-xlsx/2c5dee00-eff2-4b22-92b6-0738acd4475e,,2026-03-05T10:04:09Z,Excel OOXML format details,R-TOPIC-009,spec|xlsx
+OOL-019,ECMA-376 Office Open XML standard,Ecma International,standard,https://ecma-international.org/publications-and-standards/standards/ecma-376/,,2026-03-05T10:04:09Z,Primary OOXML standard reference,R-TOPIC-009,standard|ooxml
+OOL-020,GitHub REST API repositories,GitHub,api_docs,https://docs.github.com/en/rest/repos/repos,,2026-03-05T10:04:09Z,Method reference for metadata capture reproducibility,R-TOPIC-009,api|metadata

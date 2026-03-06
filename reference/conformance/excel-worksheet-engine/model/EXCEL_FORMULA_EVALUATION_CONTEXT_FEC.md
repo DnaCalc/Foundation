@@ -114,6 +114,8 @@ Add `XLS-CF-FEC-*` lanes to capture:
 2. per-function declared FEC dependency profile,
 3. evaluator enforcement that no undeclared FEC facility is observed,
 4. parser/binder behavior under locale and compatibility profiles.
+5. Ref->Val seam obligations (`XLS-CF-FEC-REF-*`) for boundary typing, deterministic resolver error mapping, capability-denial behavior, and resolver provenance metadata.
+6. protocol obligations (`XLS-CF-FEC-PR-*`) for compile/dependency/evaluate/publish sequence, capability gating, dependency-token lifecycle, and violation/error mapping policy.
 
 ### 5.2 Evidence Model
 Evidence types:
@@ -144,6 +146,8 @@ Follow-on artifacts after review:
    - add FEC-specific open items and evidence gaps.
 5. `model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`:
    - maintain the exact protocol/call/state specification used for implementation refactors.
+6. `model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`:
+   - maintain seeded protocol obligation rows and requirement mapping status.
 
 ## 7. Open Questions to Resolve Interactively
 1. Should volatility policy live fully in FEC, or split between function contract and scheduler profile?

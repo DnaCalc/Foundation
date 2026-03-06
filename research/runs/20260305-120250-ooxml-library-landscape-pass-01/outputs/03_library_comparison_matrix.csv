@@ -1,0 +1,12 @@
+source_id,library,language,api_level,xlsx_read,xlsx_write,xlsm_or_macro_lane,streaming_lane,license_signal,maintenance_signal,excel_interop_depth,fit_for_dnacalc_primary,recommended_role,evidence_quality,notes
+OOL-001,calamine,Rust,mid,yes,no,reads_xlsm_and_vba_lane,no,MIT,active,medium,no,reader_adapter_or_oracle,direct_plus_inferred,Strong Rust reader; no write path.
+OOL-002,rust_xlsxwriter,Rust,high_writer,no,yes,macro_lane_present_in_docs_but_verify_details,no,Apache-2.0,active,medium,no,writer_adapter_or_fixture_generator,direct_plus_inferred,Good output generation; not a reader.
+OOL-003,umya-spreadsheet,Rust,high,yes,yes,xlsm_mentions_present_verify_vba_roundtrip,no,MIT,active_high_issue_backlog,medium,conditional,prototype_full_rust_path,direct_plus_inferred,Promising Rust read/write path; needs hard empirical validation.
+OOL-004,excelize,Go,high,yes,yes,xlsm_xlam_support_doc_claim,yes,BSD-3-Clause,very_active,high,no,reference_implementation_and_diff_oracle,direct_plus_inferred,Strong mature non-Rust comparator.
+OOL-005,Open XML SDK,C#,low_level,package_level,package_level,possible_via_part_level_ops,zip_streaming_constraints_documented,MIT,very_active,very_high,no,low_level_ooxml_adapter_core,direct,Best low-level OOXML control baseline.
+OOL-006,ClosedXML,C#,high,yes,yes,xlsm_container_support_yes_vba_semantics_verify,no,MIT,active_high_issue_backlog,high,no,high_level_productivity_layer,direct_plus_inferred,Good high-level API; thread-safety caveat in docs.
+OOL-007,Apache POI,Java,high_plus_low,yes,yes,macro_preservation_possible_verify_details,yes_via_SXSSF,Apache-2.0,active,high,no,reference_oracle_and_adapter_option,direct_plus_inferred,Mature Excel ecosystem library.
+OOL-008,libxlsxwriter,C,writer_high,no,yes,macro_addition_support_doc_claim,constant_memory_writer,FreeBSD,active,medium,no,high_fidelity_writer_component,direct_plus_inferred,Excellent writer; no reader.
+OOL-009,xlnt,C++,high,yes,yes,macro_lane_unclear,no,MIT,stale_activity_signal,medium,no,cpp_reference_or_fallback,direct_plus_inferred,Lower maintenance confidence from activity signal.
+OOL-010,OpenXLSX,C++,mid,yes,yes,macro_lane_unclear,no,BSD-3-Clause,active,medium,no,cpp_adapter_candidate,direct_plus_inferred,Active commits; release cadence less clear.
+OOL-011,NPOI,C#,high,yes,yes,legacy_office_focus_plus_xlsx,xssf_streaming_limited,Apache-2.0,active,medium_high,no,interop_fallback_or_legacy_support,direct_plus_inferred,Broad format coverage including xls.

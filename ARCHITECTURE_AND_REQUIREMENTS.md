@@ -188,6 +188,17 @@ Architecture summary:
 - Lean, OCaml oracle, and shared trace schemas remain mandatory integration seams,
 - the `CoreIds/CoreStructure/CoreRefs/CoreDeps/CoreEval/CoreOps` split remains baseline.
 
+### 3.18 FEC/F3E Lane Boundary (OxFml/OxFunc/FEC)
+To reduce ownership drift during implementation spikes, lane ownership is explicitly split as follows:
+- **OxFml** owns formula grammar, parse, and bind semantics.
+- **OxFunc** owns value-type and function semantics consumed during evaluation.
+- **FEC host/model lane** owns host protocol, capability policy, dependency lifecycle, scheduler interaction, and publication lifecycle.
+
+Current working references:
+- `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`
+- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`
+- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+
 ## 4. Architectural Constraints (A2 / CONSTR- examples)
 - **CONSTR-001:** All persistent mutations are ops; direct document mutation is forbidden outside the coordinator.
 - **CONSTR-002:** File and network I/O are adapters outside core; core engine has no socket/file dependencies.

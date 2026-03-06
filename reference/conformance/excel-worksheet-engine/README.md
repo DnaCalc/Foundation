@@ -10,6 +10,7 @@ This folder is the authoritative working conformance specification area for Exce
 - `model/EXCEL_CELL_CONCRETE_MODEL.md`: Excel-first concrete cell semantics model (nitpick target).
 - `model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`: first-pass Formula Evaluation Context planning doc for parser/binder/evaluator host-context boundaries.
 - `model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`: comprehensive draft FEC/F3E interface and protocol specification for implementation planning and pathfinder refactor alignment.
+- `model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`: protocol obligation matrix for FEC/F3E sequence, capability, token, and error-policy lanes.
 - `model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md`: concrete worksheet formula-language rules and empirical parse anchors.
 - `model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv`: formula-rule status/evidence/probe mapping table.
 - `model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md`: pass-2 probe plan plus execution status snapshot.
@@ -34,6 +35,7 @@ This folder is the authoritative working conformance specification area for Exce
 - `ECS-*`: source ids from prior Excel research source registry (`research/.../source_list.csv`).
 - `REFX-*`: mirrored reference spec entries from `reference/index.csv`.
 - `EMP-*`: curated empirical finding ids from `reference/empirical/findings_registry.jsonl`.
+- `INT-*`: internal normative design artifacts for FEC/F3E protocol and boundary modeling.
 
 ## Scope
 - Formula language semantics.

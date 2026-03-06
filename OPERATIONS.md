@@ -277,6 +277,21 @@ When synthesis suggestions conflict, precedence remains:
   - empirical-derived evidence (`EMP-*` lineage),
   and should support mixed-source justification where both apply.
 
+### 8.11 Cross-Repo Lane Handoff Template (Normative)
+When sibling lane repos propose cross-program policy text for Foundation adoption, include a minimal handoff record in the managed run:
+1. scope and profile bounds:
+   - affected domains, requirement families, and profile/version applicability.
+2. proposed normative text:
+   - exact candidate text and target artifact paths/sections.
+3. evidence and replay links:
+   - source/evidence ids, run ids, and replay artifact locations.
+4. unresolved decisions and risk impact:
+   - explicit open decisions, blocker status, and failure/risk impact if deferred.
+
+Handoff records may be included as:
+1. a dedicated `outputs/HANDOFF_<lane>.md`, or
+2. a structured section inside synthesis decision logs.
+
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
   - claim identifier, linked REQ/INT/REAL IDs, admissible source type, capture/reproduction steps, reviewer decision.

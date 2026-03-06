@@ -17,6 +17,10 @@ This file tracks open/provisional conformance lanes that remain intentionally ex
 12. `XLS-CF-FM-011` (`REFX-004;REFX-005;REFX-010`): defaults-origin lane (workbook/template/profile).
 13. `XLS-CF-FM-013` (`ECS-110;ECS-062;ECS-063;REFX-010`): formula-visible formatting introspection lane.
 14. `XLS-CF-FM-014` (`ECS-030;ECS-062;ECS-063;REFX-010`): conditional-format visibility to formulas.
+15. `XLS-CF-TV-010` (`ECS-109;ECS-113;INT-001`): numeric-edge behavior in formula-only evaluation lane.
+16. `XLS-CF-TV-011` (`REFX-001;INT-001`): numeric-edge behavior in sheet materialization lane.
+17. `XLS-CF-TV-012` (`INT-001;INT-002`): numeric-edge behavior in reference-reuse lane.
+18. `XLS-CF-TV-013` (`REFX-001;REFX-004;INT-001`): numeric-edge behavior in interop-ingestion lane.
 
 ## B. Known Unknown Families (Retained)
 1. Full per-function edge-case matrix across all functions.
@@ -28,6 +32,8 @@ This file tracks open/provisional conformance lanes that remain intentionally ex
 7. Style hierarchy precedence closure across row/column/cell/table/CF overlays.
 8. Defaults provenance closure (workbook/template/profile/build) for formatting baseline.
 9. Formula-observable formatting boundary closure, including CF-effective-style visibility.
+10. FEC/F3E protocol lane closure from draft/exercised to validated/green-validated across compile/dependency/evaluate/publish obligations.
+11. Per-row confidence/maturity backfill from default (`draft`/`exercised`) to evidence-closed `validated`/`green-validated` where pack closure exists.
 
 ## C. Required Follow-up Pattern
 1. Keep affected requirement rows `provisional` until reconciliation evidence is promoted.
