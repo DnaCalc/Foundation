@@ -10,9 +10,9 @@ Scope: Evaluate two improvement notes (CODEX1/CODEX2) and promote high-value gui
 - Doctrine/context docs: `README.md`, `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, `OPERATIONS.md`, `notes/BRAINSTORM_NOTES.md`
 
 ## Synthesis Outcome
-- Accepted: 9
-- Adapted: 5
-- Deferred: 2
+- Accepted: 10
+- Adapted: 6
+- Deferred: 0 (after follow-up ODR closure)
 - Rejected: 0
 
 ## Promoted Changes
@@ -38,9 +38,13 @@ Scope: Evaluate two improvement notes (CODEX1/CODEX2) and promote high-value gui
 - Continuous differential cockpit was adapted as candidate-pack + architecture realization, not yet a hard release gate requirement.
 - Typed reject calculus was adapted because base structured reject semantics already existed; this pass added explicit pack-level closure direction.
 
-## Deferred Items
-- ODR-009 overlay fallback economics thresholds and owner contract.
-- ODR-010 program-level single advanced experimental lane policy.
+## ODR Closure Update
+- ODR-009 locked with staged policy:
+  - minimum `PACK.overlay.fallback_economics` counter schema is now doctrine-locked,
+  - thresholds remain pack-owner calibrated per profile/version.
+- ODR-010 locked:
+  - no hard single-lane rule,
+  - bounded advanced-lanes policy adopted (max two concurrent by default, synthesis override only, explicit owner/exit/kill-switch requirements).
 
 ## Applied Source-of-Truth Targets
 - `OPERATIONS.md`

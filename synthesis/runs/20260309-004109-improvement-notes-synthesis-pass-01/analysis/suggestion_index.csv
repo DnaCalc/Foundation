@@ -15,3 +15,5 @@ IMS013,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Maintain continuous cross-engine
 IMS014,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Further formalize typed reject calculus",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR-019),medium,reviewed
 IMS015,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Track overlay fallback economics (incremental reuse vs conservative rebuild)",OPERATIONS.md,4.1,medium,reviewed
 IMS016,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Constrain advanced experimental-lane promotion by explicit parity thresholds",OPERATIONS.md,8.12;open-decisions,medium,reviewed
+IMS017,follow-up user decision (2026-03-09),Lock ODR-009 with fixed fallback-economics counter schema and staged threshold calibration,OPERATIONS.md,4.1;PACK.overlay.fallback_economics,high,reviewed
+IMS018,follow-up user decision (2026-03-09),Lock ODR-010 with bounded advanced-lanes policy (max two default plus synthesis override),OPERATIONS.md,8.15,high,reviewed

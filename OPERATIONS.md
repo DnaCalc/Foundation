@@ -122,6 +122,21 @@ Additional synthesis-promoted candidate packs (improvement-notes pass-01):
 - `PACK.reject.calculus` (typed reject-class taxonomy and replay consistency)
 - `PACK.overlay.fallback_economics` (incremental overlay reuse vs conservative rebuild counters and thresholds)
 
+`PACK.overlay.fallback_economics` minimum counter schema is locked:
+- `overlay_reuse_hits_total`
+- `overlay_reuse_miss_total`
+- `overlay_rebuild_conservative_total`
+- `overlay_rebuild_reason_structural_total`
+- `overlay_rebuild_reason_epoch_total`
+- `overlay_rebuild_reason_token_total`
+- `overlay_rebuild_reason_bind_total`
+- `overlay_rebuild_reason_profile_total`
+- `overlay_gc_evictions_total`
+
+Threshold policy:
+- doctrine locks the counter schema and artifact requirements now,
+- pass/fail thresholds are calibrated by pack owners per profile/version and are not globally frozen in doctrine at this stage.
+
 Pack status terminology:
 - `exercised`: implementation-level behavior exists with local tests.
 - `green-validated`: Green-owned pack artifacts and required conformance evidence are complete.
@@ -346,6 +361,18 @@ Handoff records may be included as:
   - explicit deferred item with rationale.
 - Current register location: `notes/THEORY_TO_PACK_REGISTER.md`.
 - The register must be updated during synthesis when new theory-backed guidance is accepted/adapted/deferred.
+
+### 8.15 Advanced Experimental Lane Policy (Normative)
+- Foundation does not enforce a hard single advanced experimental lane rule.
+- Default bounded policy: at most `2` concurrent advanced experimental lanes may be active program-wide unless a synthesis decision explicitly overrides.
+- Every advanced lane must declare:
+  - owner,
+  - objective and target scope,
+  - parity/conformance pack set,
+  - explicit exit criteria,
+  - kill-switch criteria and fallback path.
+- Advanced lanes are non-baseline by default and may not silently alter baseline semantics.
+- Promotion from advanced lane to baseline requires synthesis decision plus parity evidence artifacts.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
