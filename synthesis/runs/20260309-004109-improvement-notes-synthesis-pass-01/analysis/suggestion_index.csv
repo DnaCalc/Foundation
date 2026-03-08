@@ -1,0 +1,17 @@
+suggestion_id,source_file,suggestion_summary,target_doc_candidate,target_section_candidate,priority,status
+IMS001,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Make host progression an explicit conformance ladder with semantic commitments and required packs/artifacts",OPERATIONS.md,8.12;4.1,high,reviewed
+IMS002,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Define a repo-level dependency constitution (allowed/forbidden dependency directions)",OPERATIONS.md,8.14,high,reviewed
+IMS003,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Strengthen promotion gate from pathfinder findings to Foundation doctrine",OPERATIONS.md,8.13,high,reviewed
+IMS004,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Separate semantic truth from runtime strategy/optimization choices",ARCHITECTURE_AND_REQUIREMENTS.md,4(CONSTR),high,reviewed
+IMS005,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Standardize invalidation/staleness vocabulary across hosts",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR-016),medium,reviewed
+IMS006,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Define shared trace schemas and replay artifacts earlier across hosts",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR);8.12,high,reviewed
+IMS007,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Lock minimal cross-repo identity model early",ARCHITECTURE_AND_REQUIREMENTS.md,4(CONSTR-010),medium,reviewed
+IMS008,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Require degradation-class planning matrix per host",OPERATIONS.md,8.12;4.1,high,reviewed
+IMS009,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Require host acceptance matrix for Excel-compatibility surface",OPERATIONS.md,8.12;4.1,high,reviewed
+IMS010,notes/IMPROVEMENT_SUGGESTIONS_CODEX1.md,"Create Foundation-owned theory-to-pack mapping register",OPERATIONS.md;notes/THEORY_TO_PACK_REGISTER.md,8.14;new-file,high,reviewed
+IMS011,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Treat replay as first-class appliance and not only debug tooling",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR-024),high,reviewed
+IMS012,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Build a forensic trace plane for explainable recalc causality",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR-024),high,reviewed
+IMS013,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Maintain continuous cross-engine differential cockpit with indexed divergences",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;INT/REAL,high,reviewed
+IMS014,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Further formalize typed reject calculus",OPERATIONS.md;ARCHITECTURE_AND_REQUIREMENTS.md,4.1;4(CONSTR-019),medium,reviewed
+IMS015,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Track overlay fallback economics (incremental reuse vs conservative rebuild)",OPERATIONS.md,4.1,medium,reviewed
+IMS016,notes/IMPROVEMENT_SUGGESTIONS_CODEX2.md,"Constrain advanced experimental-lane promotion by explicit parity thresholds",OPERATIONS.md,8.12;open-decisions,medium,reviewed

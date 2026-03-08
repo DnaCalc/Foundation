@@ -240,6 +240,8 @@ Current working references:
 - **CONSTR-020:** Runtime overlay reuse must be keyed by epoch/token/bind/profile fences; stale overlays must be evicted deterministically under epoch-safe GC rules.
 - **CONSTR-021:** `VisibleFirst` scheduling is optional and must enforce deterministic ordering plus bounded non-visible starvation.
 - **CONSTR-022:** Formatting semantics that influence formula evaluation must be modeled through evaluator/seam contracts, not inferred from renderer state.
+- **CONSTR-023:** Core semantic truth is profile-defined and must remain invariant under runtime strategy choices (scheduler policy, parallelism shape, incremental algorithm, or optimization mode).
+- **CONSTR-024:** Required profiles must emit portable replay bundles plus structured forensic traces sufficient for deterministic causality diagnosis and cross-engine differential triage.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -267,6 +269,8 @@ Current working references:
   **REAL:** Geometry/hit-test invariants and RenderPlan determinism are required and pack-gated.
 - **INT:** Performance claims must be trend-checkable, not anecdotal.  
   **REAL:** Required profiles publish deterministic phase counters and slope-based scaling signatures with regression thresholds.
+- **INT:** Cross-engine disagreements must be quickly explainable and reproducible.  
+  **REAL:** Required profiles maintain differential execution lanes across Red/Blue/oracle surfaces and publish indexed divergence artifacts with replay handles.
 - **INT:** Clean-room compatibility claims must be auditable.  
   **REAL:** Every compatibility claim links to admissible evidence records and review status.
 - **INT:** Structural change semantics must be predictable and formally checkable.  

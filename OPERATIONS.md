@@ -112,6 +112,16 @@ Additional synthesis-promoted candidate packs (core-engine/FEC-F3E pass-02):
 - `PACK.treehost_to_gridhost.semantic_gap_registry` (explicitly tracked deferred tree/grid parity gaps)
 - `PACK.concurrent.epochs` follow-up lanes must include: reject-fence determinism, stream-version replay matrix, visibility-event replay determinism, and pin/unpin overlay-GC safety.
 
+Additional synthesis-promoted candidate packs (improvement-notes pass-01):
+- `PACK.host.conformance_ladder` (host charter semantics surface + gate obligations)
+- `PACK.host.acceptance_matrix` (Committed/Experimental/Deferred behavior matrix per host)
+- `PACK.host.degradation_matrix` (`Native`/`Lowered`/`Opaque`/`Rejected` declaration coverage per host)
+- `PACK.trace.forensic_plane` (canonical trace coverage for calc causality and suppression decisions)
+- `PACK.replay.appliance` (portable replay bundle usability across local/CI/cross-engine runs)
+- `PACK.diff.cross_engine.continuous` (continuous Rust/.NET/OCaml differential execution and divergence indexing)
+- `PACK.reject.calculus` (typed reject-class taxonomy and replay consistency)
+- `PACK.overlay.fallback_economics` (incremental overlay reuse vs conservative rebuild counters and thresholds)
+
 Pack status terminology:
 - `exercised`: implementation-level behavior exists with local tests.
 - `green-validated`: Green-owned pack artifacts and required conformance evidence are complete.
@@ -308,6 +318,34 @@ When sibling lane repos propose cross-program policy text for Foundation adoptio
 Handoff records may be included as:
 1. a dedicated `outputs/HANDOFF_<lane>.md`, or
 2. a structured section inside synthesis decision logs.
+
+### 8.12 Host Charter Conformance Ladder (Normative)
+- Host/repo progression is a conformance ladder, not only a delivery sequence.
+- Each host charter must declare:
+  - semantic surface commitments by feature family (`Committed`, `Experimental`, `Deferred`),
+  - degradation-class expectations by feature family (`Native` / `Lowered` / `Opaque` / `Rejected`),
+  - required pack set and required artifact set before downstream hosts may rely on its claims.
+- Foundation promotion of host outputs requires these declarations to be explicit and versioned.
+
+### 8.13 Promotion Packet Contract (Normative)
+- No host/pathfinder finding may be promoted into Foundation doctrine/architecture text without a promotion packet containing:
+  - exact candidate target text and destination section,
+  - linked evidence and replay artifacts,
+  - explicit open questions/risks,
+  - pack/gate impact notes,
+  - migration/compatibility notes when applicable.
+- Promotion packets are managed-run artifacts and must be referenced from synthesis decision logs.
+
+### 8.14 Dependency Constitution and Theory-to-Pack Mapping (Normative)
+- Active repos/lane groups must maintain an explicit dependency constitution (allowed dependency directions and forbidden coupling edges).
+- Dependency-constitution changes are policy changes and must route through synthesis before becoming normative.
+- Foundation maintains a theory-to-pack mapping register that links high-value theory claims to one of:
+  - proof obligation,
+  - conformance pack requirement,
+  - empirical pack requirement,
+  - explicit deferred item with rationale.
+- Current register location: `notes/THEORY_TO_PACK_REGISTER.md`.
+- The register must be updated during synthesis when new theory-backed guidance is accepted/adapted/deferred.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
