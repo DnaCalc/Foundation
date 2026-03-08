@@ -1,1 +1,4 @@
 .tmp/
+prompts/runs/*/tmp/
+research/runs/*/tmp/
+synthesis/runs/*/tmp/

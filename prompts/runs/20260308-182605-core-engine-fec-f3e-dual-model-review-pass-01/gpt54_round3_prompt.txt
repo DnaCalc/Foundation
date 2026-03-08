@@ -1,0 +1,12 @@
+You are doing self-review round 2 for the same task.
+Read the task prompt file:
+prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\inputs\base_prompt.md
+
+Read your prior revised answer file:
+prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\responses\gpt54\02_review1.md
+
+Output format requirements:
+1) A concise but rigorous second-pass critique of the revised answer.
+2) Then a final revised answer that replaces the previous version and follows the task deliverable order exactly.
+
+You may inspect additional repository files if needed; cite any extra files you actually used.

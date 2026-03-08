@@ -1,0 +1,11 @@
+item_id,title,source,status,priority,blocking,related_decisions,notes
+INTAKE-001,Formatting-sensitive calc overlay and CF visibility boundary,inputs/design_brief.md,stabilized,high,yes,DEC-CALC-007,Stable entry documented in outputs/03_stable_topic_entries.md
+INTAKE-002,Visibility-state representation and optional visible-first scheduling,inputs/design_brief.md,stabilized,high,yes,DEC-CALC-008,Stable entry documented in outputs/03_stable_topic_entries.md
+INTAKE-003,Structural DAG versus calc-time overlay publish semantics,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-001,Awaiting additional topic intake
+INTAKE-004,Spill invalidation algebra and virtual-region lifecycle,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-002,Awaiting additional topic intake
+INTAKE-005,Pure-calc fast-path eligibility and fallback,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-003,Awaiting additional topic intake
+INTAKE-006,FEC pre-resolution versus F3E semantic ownership,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-004,Awaiting additional topic intake
+INTAKE-007,Async scheduler plus epoch visibility and lock discipline,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-005,Awaiting additional topic intake
+INTAKE-008,Dynamic-reference policy tiers and promotion criteria,outputs/01_gap_map.md,queued,high,yes,DEC-CALC-006,Awaiting additional topic intake
+INTAKE-009,Cross-repo FEC/F3E redesign adoption gate and contract hardening,../DnaVisiCalc/docs/ENGINE_FEC_F3E_REDESIGN_SPEC.md,stabilized,high,yes,DEC-CALC-009,Stable review artifact captured in outputs/05_fec_f3e_redesign_review.md
+INTAKE-010,Post-review b4 FEC/F3E pointer bundle ingestion,../DnaVisiCalc/docs/ENGINE_FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md,stabilized,high,yes,DEC-CALC-009,Pointer-linked source bundle captured in outputs/06_fec_f3e_b4_pointer_intake.md

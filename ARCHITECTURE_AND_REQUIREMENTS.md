@@ -39,12 +39,21 @@ Detailed core semantics are in `CORE_ENGINE_FORMAL_MODEL.md`:
 
 ### 3.2 Profiles, Feature Gates, and Compatibility
 - Profiles remain the semantic spine (`profile_id` + `profile_version`) for compatibility, feature gates, obligation packs, and degrade behavior.
+- Required profile-governed semantic selectors include:
+  - `CycleSemantics = PriorValueFallback | CycleError | Iterative`,
+  - `StreamSemanticsVersion = ExternalInvalidationV0 | TopicEnvelopeV1 | RtdLifecycleV2`,
+  - optional scheduler policy selectors (for example `VisibleFirst`) that must preserve stabilized semantic equivalence.
 
 Detailed core profile semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.2`.
 
 ### 3.3 Epoch Model (MVCC-style)
 - Core epoch semantics (`committed/stabilized/value epoch`, stale/pending visibility, pinning/GC constraints) remain mandatory.
 - Core calc-delta derived-output semantics remain mandatory.
+
+#### 3.3.1 Derived Publication Contract
+- An accepted node commit publishes exactly one atomic derived bundle for that node.
+- The bundle must include `value_delta`, `topology_delta`, `shape_delta`, and optional display/format deltas when profile-gated features are enabled.
+- Rejected commits publish no derived deltas and must provide structured rejection detail sufficient for deterministic replay diagnostics.
 
 Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.3`.
 
@@ -62,6 +71,13 @@ Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.4`.
 - STREAM/external update semantics include explicit topic identity, dedupe rules, ordering guarantees, and coalescing policy.
 - Profile policy defines whether oracle values are local-only or shared for collaboration scenarios.
 - A stream replay bundle (topic declarations, updates, timing/order envelope) is a required artifact for conformance and minimization.
+
+#### 3.5.0 Stream Semantics Versioning
+- `StreamSemanticsVersion` is profile-governed with three explicit values:
+  - `ExternalInvalidationV0`: pathfinder-style externally-driven invalidation behavior.
+  - `TopicEnvelopeV1`: topic/sequence envelope with deterministic ordering and dedupe replay behavior.
+  - `RtdLifecycleV2`: full RTD-style topic lifecycle semantics.
+- Profile claims must state which stream version is active and replay artifacts must be validated against that version.
 
 #### 3.5.1 External Invalidation vs Volatile Invalidation
 - External functions (`STREAM`, RTD, and profile-marked externally-invalidated UDFs) recalculate on explicit external signal, not on every volatile cycle.
@@ -179,7 +195,7 @@ Architecture summary:
 Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.6`).
 Architecture summary:
 - SCC processing order is deterministic,
-- cycle mode is profile-governed (`CycleError` vs `Iterative`),
+- cycle mode is profile-governed (`PriorValueFallback` vs `CycleError` vs `Iterative`),
 - stabilization rules are explicit and terminal-state based.
 
 ### 3.17 Formalization Seams for Lean and OCaml
@@ -193,6 +209,8 @@ To reduce ownership drift during implementation spikes, lane ownership is explic
 - **OxFml** owns formula grammar, parse, and bind semantics.
 - **OxFunc** owns value-type and function semantics consumed during evaluation.
 - **FEC host/model lane** owns host protocol, capability policy, dependency lifecycle, scheduler interaction, and publication lifecycle.
+- Formula-semantic formatting behavior (including format-string interpretation and conditional-format configuration evaluation lanes) is evaluator work and must cross the FEC/F3E seam; it is not a display-only concern.
+- Visibility-priority scheduling policy is core-engine policy and must preserve stabilized semantic equivalence; FEC/F3E provides evidence and deltas, not global scheduling truth.
 
 Current working references:
 - `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`
@@ -212,11 +230,16 @@ Current working references:
 - **CONSTR-010:** Snapshot identity is ID-based (`RowId`/`ColId`/`CellId`), not coordinate-string-based; address projection is derived.
 - **CONSTR-011:** Every structural op must define deterministic axis rewrite functions and explicit rewrite classification for affected references.
 - **CONSTR-012:** Reference layer must model region nodes and error references explicitly; unresolved references cannot be silently discarded.
-- **CONSTR-013:** Cycle handling mode (`CycleError` or `Iterative`) is profile-defined and deterministic with explicit terminal behavior.
+- **CONSTR-013:** Cycle handling mode (`PriorValueFallback` / `CycleError` / `Iterative`) is profile-defined and deterministic with explicit terminal behavior.
 - **CONSTR-014:** Op envelopes require idempotency/causality metadata sufficient for deterministic replay and replication safety.
 - **CONSTR-015:** Green/Red persistence-facade split must preserve immutable core semantics and avoid hidden mutation in facade caches.
 - **CONSTR-016:** Function invalidation classes (`Standard` / `Volatile` / `ExternallyInvalidated`) must have deterministic, non-ambiguous trigger semantics per profile.
 - **CONSTR-017:** Control/chart lifecycle mutations must be represented as explicit operations and replay artifacts, never as UI-only hidden state.
+- **CONSTR-018:** Accepted commit publication is atomic at node-bundle granularity; rejected commits publish no derived deltas.
+- **CONSTR-019:** Rejected commits must carry structured rejection detail (`reject_code` + typed context) for deterministic replay and migration diagnostics.
+- **CONSTR-020:** Runtime overlay reuse must be keyed by epoch/token/bind/profile fences; stale overlays must be evicted deterministically under epoch-safe GC rules.
+- **CONSTR-021:** `VisibleFirst` scheduling is optional and must enforce deterministic ordering plus bounded non-visible starvation.
+- **CONSTR-022:** Formatting semantics that influence formula evaluation must be modeled through evaluator/seam contracts, not inferred from renderer state.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -227,7 +250,7 @@ Current working references:
 - System never crashes on unsupported features; must yield deterministic errors/warnings or preserve opaque.
 - Structural edits must preserve or invalidate references deterministically with explicit diagnostics and replayable rewrite traces.
 - OpLog replay of an accepted operation sequence must reproduce equivalent snapshot/value states across engines.
-- Cycle behavior (error or iterative) must be observable, deterministic, and profile-consistent.
+- Cycle behavior (prior-value fallback, error, or iterative) must be observable, deterministic, and profile-consistent.
 - Reference-grid updates must be incrementally maintained and auditable after every structural or formula mutation.
 - CalcDelta outputs must be epoch-tagged, typed, and observationally consistent with committed snapshot transitions.
 
@@ -269,7 +292,8 @@ Foundation documents define doctrine/architecture/process and must remain consis
   - cell/name inputs, deterministic formula evaluation, dynamic arrays/spill behavior,
   - epoch model (`committed_epoch`, `stabilized_epoch`, `value_epoch`) and manual/auto recalc,
   - deterministic row/column structural rewrites with explicit invalidation behavior,
-  - SCC-based cycle handling with iterative mode configuration,
+  - profile-governed cycle handling with explicit v0-compatible `PriorValueFallback` behavior and optional iterative mode configuration,
+  - stream behavior declared by `StreamSemanticsVersion`, with pathfinder v0 mapping to `ExternalInvalidationV0`,
   - three-class invalidation model (`Standard`, `Volatile`, `ExternallyInvalidated`) with distinct trigger paths,
   - external UDF registration/invalidation, engine-managed controls/charts, typed change-tracking journal,
   - metadata-only formatting and deterministic bulk enumeration sufficient for current file-adapter handoff,

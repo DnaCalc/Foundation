@@ -1,0 +1,2 @@
+model,mode,status,response_path,notes
+claude-opus-4-6,high-effort,completed,responses/deep_research_core_engine_fec_f3e_design.md,full 9-deliverable deep research output covering findings/options/architecture/contracts/overlays/concurrency/roadmap/experiments/checklist

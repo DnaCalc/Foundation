@@ -22,9 +22,13 @@
 - `outputs/06_follow_up_prompt_pack.md`
 - `outputs/07_claude_research_report.md`
 - `outputs/08_chatgpt_research_report.md`
+- `outputs/09_external_report_reconciliation.md`
+- `outputs/10_conformance_and_proof_obligations.md`
+- `outputs/11_empirical_pack_definitions.md`
 
 ## Method
 - Source-first deep research using primary papers/docs/spec references.
 - Structured synthesis into theory families + transfer-to-DNA-Calc obligations.
 - Explicit uncertainty and evidence-strength tagging.
 - External deep-research report ingestion from ChatGPT/Claude outputs captured as run artifacts.
+- Reconciliation pass promoting concrete proof/conformance obligations and empirical-pack definitions.

@@ -78,6 +78,16 @@ Profiles are semantic control planes for core behavior:
 - define degradation classes (`Native` / `Lowered` / `Opaque` / `Rejected`),
 - define feature-gate tokens (for example stream semantics and external update policies).
 
+Required profile selectors:
+```text
+CycleSemantics = PriorValueFallback | CycleError | Iterative
+StreamSemanticsVersion = ExternalInvalidationV0 | TopicEnvelopeV1 | RtdLifecycleV2
+```
+
+Required mapping notes:
+- `ExternalInvalidationV0` preserves pathfinder externally-invalidated stream behavior.
+- `VisibleFirst`-style scheduling remains optional policy surface and must preserve stabilized semantic equivalence with baseline scheduling.
+
 ### 5.3 Epoch and CalcDelta Semantics (`Baseline`)
 Epoch model:
 - `committed_epoch`: latest accepted changes,
@@ -104,6 +114,26 @@ Required properties:
 - deterministic emission policy,
 - drain-style retrieval contract accepted as baseline.
 
+Derived publication contract:
+```text
+DerivedBundle = {
+  value_delta,
+  topology_delta,
+  shape_delta,
+  display_delta?,
+  format_delta?
+}
+
+CommitOutcome =
+  | Applied(bundle: DerivedBundle)
+  | Rejected(reject_code, reject_detail)
+```
+
+Required invariants:
+- `Applied` commits publish exactly one atomic `DerivedBundle` per committed node.
+- `Rejected` commits publish no value/topology/shape/display/format deltas.
+- `Rejected` commits must carry structured `reject_detail` including expected/actual token and snapshot-fence context.
+
 ### 5.4 Calculation Semantics (`Baseline`)
 Pipeline semantics:
 - parse -> bind -> dependency graph -> invalidation closure -> schedule -> evaluate -> commit.
@@ -128,6 +158,11 @@ Determinism requirements:
 - explicit numeric reduction policy where relevant,
 - persisted calc order artifacts treated as cache/diagnostic, not semantic truth.
 
+Visibility and formatting policy constraints:
+- `VisibleFirst` is optional and policy/profile-controlled with deterministic queue keys and bounded fairness.
+- Given identical operation + visibility-event streams, stabilized outputs under baseline scheduling and `VisibleFirst` must be semantically equivalent.
+- Formula-semantic formatting behavior (for example `TEXT` format-string interpretation and conditional-format configuration evaluation lanes) is evaluator work and crosses the FEC/F3E seam; it is not display-only rendering state.
+
 ### 5.5 External Invalidation and UDF Semantics (`Baseline` + `Provisional`)
 Three invalidation classes:
 - `Standard`: upstream-dependent invalidation,
@@ -139,6 +174,11 @@ External stream/update semantics retained:
 - explicit topic identity and sequence handling,
 - deterministic ordering/dedupe/coalescing policy by profile,
 - replay-bundle expectations for conformance/minimization flows.
+
+Stream version mapping (profile-declared):
+- `ExternalInvalidationV0`: pathfinder externally-driven invalidation behavior.
+- `TopicEnvelopeV1`: topic/sequence envelope with deterministic ordering and dedupe replay.
+- `RtdLifecycleV2`: RTD-style topic lifecycle semantics.
 
 Required split:
 - volatile invalidation path and external invalidation path are distinct,
@@ -182,6 +222,7 @@ Tree-grid hybrid concept retained from earlier notes:
 - workbook/sheet/grid structural substrate,
 - no arbitrary unrooted calc-node bags,
 - augmentation structures may attach and participate via defined seams.
+- early tree-host phases do not model spreadsheet spill analogs; multi-result tree-host behavior uses explicit node/value constructs until spill-analog promotion is explicitly approved.
 
 ### 6.2 Layered Formal Model (`Baseline`)
 ```text
@@ -196,7 +237,8 @@ Contracts:
 - `R` derives from `S` + bind context,
 - `D` derives from `R`,
 - `V` commit validity is epoch-strict,
-- `O` is exclusive persistent mutation pathway.
+- `O` is exclusive persistent mutation pathway,
+- calc-time dependency/reference overlays are derived overlays over `R`/`D`, never direct mutation of canonical structural/reference layers.
 
 ### 6.3 Reference Model (`Provisional`)
 Binding context includes workbook/sheet/anchor/address-mode/profile semantics.
@@ -215,6 +257,12 @@ Invariants:
 - explicit forward/reverse dependency indices,
 - explicit unresolved/error references,
 - structural edit rewrite provenance retained.
+
+Calc-time overlay identity/lifecycle:
+- overlay key is `(snapshot_epoch, wave_id, formula_stable_id, formula_token, bind_hash, profile_version)`.
+- overlay reuse is allowed only on exact key match.
+- immediate invalidation triggers include snapshot-epoch change, formula-token mismatch, bind mismatch, profile-version mismatch, and structural rewrite impact on bound references.
+- eviction policy is deterministic and epoch-safe: retain only active-session and stabilization-window overlays; non-pinned overlays older than `min_active_session_epoch` are evicted.
 
 Open hotspot:
 - `RegionRef` canonical domain under structural rewrites.
@@ -238,7 +286,11 @@ OpEnvelope = {
 
 Transition relation:
 ```text
-apply_op(profile, snapshot_e, op) -> Result(snapshot_e_plus_1, OpError)
+TransitionOutcome =
+  | Applied(snapshot_e_plus_1, commit_bundle)
+  | Rejected(snapshot_e, reject_code, reject_detail)
+
+apply_op(profile, snapshot_e, op) -> TransitionOutcome
 ```
 
 Required transition phases:
@@ -249,6 +301,10 @@ Required transition phases:
 5. dirty/pending marking,
 6. deterministic calc/delta emission,
 7. snapshot publish.
+
+Reject semantics:
+- rejected outcomes preserve input snapshot (`snapshot_e`) and publish no derived deltas.
+- rejection classes and `reject_detail` payloads are replay artifacts, not logging-only text.
 
 Replay equivalence:
 - `Baseline`: observational equivalence under same profile,
@@ -273,7 +329,12 @@ Required behavior:
 Cycle processing baseline:
 - SCC decomposition in stable order,
 - acyclic SCC topological evaluation,
-- cyclic SCC profile mode (`CycleError` or `Iterative`).
+- cyclic SCC profile mode (`PriorValueFallback`, `CycleError`, or `Iterative`).
+
+`PriorValueFallback` baseline semantics:
+- circular recalc remains non-fatal,
+- circular reads use prior stabilized values when available; otherwise `0.0`,
+- non-fatal cycle diagnostics are emitted deterministically.
 
 Iteration baseline:
 - bounded policy,

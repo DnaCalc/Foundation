@@ -1,0 +1,5 @@
+Read and execute the task prompt in this file:
+prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\inputs\base_prompt.md
+
+Do the full requested deliverables in the exact required order.
+You may inspect additional repository files if needed; cite any extra files you actually used.

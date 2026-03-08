@@ -1,0 +1,315 @@
+# ARCHITECTURE_AND_REQUIREMENTS.md — DNA Calc Architecture and Requirements
+
+## 1. Overview
+DNA Calc is a near-formal spreadsheet system with two independent engines (Rust and .NET) sharing identical protocol surfaces and validated against a Green-owned spec stack: Lean (semantics proofs), TLA+ (concurrency protocol checks), OCaml oracle (executable reference), and conformance packs.
+
+### 1.1 Three Hard Boundaries (core architectural shape)
+1. **OpLog (Operations)**
+   - All persistent state changes are operations (including structural edits, external updates, macro edits).
+2. **DocSnapshot (Versioned Document State)**
+   - Immutable snapshots per epoch/meta-epoch. Inputs are truth; derived values are caches.
+3. **CalcDeltas (Derived Outputs)**
+   - Engine produces deltas tagged with version info (epoch/value_epoch) and explicit stale/pending status.
+
+## 2. Requirements Taxonomy (how to write requirements)
+### 2.1 Architecture-independent requirements (REQ-)
+Observable behaviors and quality targets, independent of internal mechanisms.
+
+### 2.2 Architecture-dependent constraints (CONSTR-)
+Enforceable structural rules derived from Mission/Doctrine.
+
+### 2.3 Architecture-anchored intents and realizations (INT-/REAL-)
+- **Intent (INT-)**: desired outcome, mechanism-agnostic.
+- **Realization (REAL-)**: precise, testable specification anchored to chosen architecture.
+
+## 3. System Architecture (A1)
+This section now includes a formal-core layer model intended to be shared by Green proofs/models, the OCaml oracle, and both delivery engines.
+Detailed core formal/semantic model development is maintained in `CORE_ENGINE_FORMAL_MODEL.md`.
+This document should keep architecture-level summaries and stable constraints, with minimal duplication of formal-core detail.
+
+### 3.1 Protocol Surface (identical across Red/Blue)
+- Dispatch ops/transactions.
+- Query snapshots/state.
+- Subscribe to deltas/events.
+- Capability negotiation.
+
+Detailed core semantics are in `CORE_ENGINE_FORMAL_MODEL.md`:
+- protocol baseline: Section `5.1`,
+- operation/replay semantics: Section `6.4`.
+
+### 3.2 Profiles, Feature Gates, and Compatibility
+- Profiles remain the semantic spine (`profile_id` + `profile_version`) for compatibility, feature gates, obligation packs, and degrade behavior.
+
+Detailed core profile semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.2`.
+
+### 3.3 Epoch Model (MVCC-style)
+- Core epoch semantics (`committed/stabilized/value epoch`, stale/pending visibility, pinning/GC constraints) remain mandatory.
+- Core calc-delta derived-output semantics remain mandatory.
+
+Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.3`.
+
+### 3.4 Calculation Engine Pipeline (conceptual)
+- Core pipeline remains parse/bind/dependency/invalidation/schedule/evaluate/commit with deterministic and incremental requirements.
+- `NodeId`-based dependency identity remains baseline.
+- Both invariant-oriented and dirty-closure propagation models remain valid formal baselines.
+
+Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.4`.
+
+### 3.5 External Streaming and RTD-like Behavior
+- Pathfinder: `STREAM("topic")` is acceptable and deterministic (epoch-scoped external provider).
+- Full system: RTD support (topic lifecycle, updates, invalidations) is a core interop feature.
+- External updates must appear as explicit `OpExternalUpdate` ops (`topic_id`, `topic_seq`, payload ref/envelope) and be replayable for test harnesses where required.
+- STREAM/external update semantics include explicit topic identity, dedupe rules, ordering guarantees, and coalescing policy.
+- Profile policy defines whether oracle values are local-only or shared for collaboration scenarios.
+- A stream replay bundle (topic declarations, updates, timing/order envelope) is a required artifact for conformance and minimization.
+
+#### 3.5.1 External Invalidation vs Volatile Invalidation
+- External functions (`STREAM`, RTD, and profile-marked externally-invalidated UDFs) recalculate on explicit external signal, not on every volatile cycle.
+- Volatile functions recalculate on invalidation cycles triggered by host policy.
+- Distinct invalidation pathways are required:
+  - volatile invalidation scope (global or class-based),
+  - external invalidation scope (targeted by provider/topic/UDF identity).
+- Both pathways converge on the same dirty-closure propagation and deterministic evaluation pipeline.
+
+### 3.6 External UDFs / XLL-like integration
+Pathfinder scope includes:
+- external UDF registration/unregistration with explicit volatility class,
+- externally driven invalidation hooks (`invalidate_udf`) that feed normal dirty-closure propagation,
+- deterministic caller-driven execution (no autonomous internal timers/threads in pathfinder engine boundary),
+- UDFs treated as pure-oracle from Lean/TLA+ perspective (semantics parameterized by oracle results).
+
+Volatility classification:
+- `Standard`: recalculates when upstream dependencies change.
+- `Volatile`: recalculates on host invalidation cycle.
+- `ExternallyInvalidated`: recalculates on explicit external signal.
+
+Built-in and UDF volatility classification is profile-governed and must be reflected in capability/profile artifacts.
+
+Full system adds:
+- full XLL compatibility including marshalling/lifetime contracts and RTD integration.
+- XLL is in-process with the engine; boundary contracts are formally specified and validated by Green packs.
+
+### 3.6.1 Controls and Charts as Engine Entities
+- Controls/charts are core engine entities participating in dependency semantics and operation/replay lifecycle.
+
+Detailed core semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.6`.
+
+### 3.7 VBA and Macros (outside core)
+- VBA runtime and editor live outside the core engine.
+- Core engine stores the VBA project as a document object:
+  - opaque blob (e.g., `vbaProject.bin`) + minimal metadata.
+- Application layer glues:
+  - file I/O ↔ engine (store/retrieve blob),
+  - VBA runtime ↔ engine (macros emit ops via protocol),
+  - macro execution occurs in an exclusive mutation mode (serialized event stream).
+
+Windows-only COM automation is a separate facade layered on top of the identical protocol surface.
+
+### 3.8 File I/O (outside core, full fidelity)
+- File adapters are external components that translate to/from the object model and ops.
+- For Excel interop:
+  - preserve unknown/unsupported OOXML parts where feasible (opaque attachments),
+  - never silently drop meaning on round-trip,
+  - lowering pipeline may translate internal constructs to Excel-safe constructs or explicit loss markers,
+  - degrade outcomes must be surfaced through diagnostics with policy class (`Native` / `Lowered` / `Opaque` / `Rejected`).
+
+### 3.9 Collaboration (designed-in seam)
+- Collaboration modeled as replication of the OpLog.
+- Initial design preference: server-sequenced ops (deterministic shared log).
+- Identity under structural edits is considered early (stable IDs where needed).
+- Derived calc is generally local; external oracles (RTD) may be local or shared depending on profile policy.
+- Replication envelope requires operation idempotency, causal ordering metadata, and transaction grouping.
+
+### 3.10 UI Architecture (intended stack)
+- Tauri shell with web UI.
+- Grid rendering:
+  - Canvas/WebGL for the giant grid (virtualized; no DOM-per-cell).
+  - DOM overlay editor for Excel-grade editing (IME, selection, clipboard).
+- UI state machine (“reducer” style) with explicit modes (selecting, editing, formula ref picking, fill, resize).
+- Geometry spec and hit-test invariants.
+- RenderPlan IR used for deterministic testing (avoid screenshot brittleness).
+- View state is partially document-backed (saved view settings) and partially session state.
+- UI reliability requires property-level invariants for geometry/hit-test consistency and deterministic RenderPlan validation.
+
+### 3.10.1 Core and Non-core Interaction Summary
+- UI/TUI layers read snapshots/deltas and dispatch explicit operations; no hidden persistent core mutation path is allowed.
+- File adapters translate external formats to/from core entities and operations, and surface degradation outcomes explicitly.
+- VBA/macro runtimes execute outside core and interact through operation pathways.
+- Collaboration adapters replicate operation envelopes and preserve causality/idempotency constraints.
+
+Formal-model note:
+- Detailed formal semantics for the core engine model are in `CORE_ENGINE_FORMAL_MODEL.md`.
+- Sections `3.11`..`3.17` in this document are architecture summaries linked to that detailed model.
+
+### 3.11 Formal State Kernel (tree-grid hybrid with persistence facades)
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.1`).
+Architecture summary:
+- immutable green core + ephemeral red facade split,
+- identity is ID-based (not coordinate-string-based),
+- representation strategy may vary while preserving identical semantics.
+
+### 3.12 Layered Semantics (structure, refs, deps, values, ops)
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.2`).
+Architecture summary:
+- five-layer model `S/R/D/V/O`,
+- explicit derivation contracts between layers,
+- mutation authority remains operation-driven.
+
+### 3.13 OpLog Formal Transition Semantics
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.4`).
+Architecture summary:
+- `OpEnvelope` is the canonical persistent-change carrier,
+- `apply_op` is the canonical transition relation,
+- replay target is observational equivalence under profile constraints.
+
+### 3.14 Structural Rewrite Semantics (rows/cols/sheets)
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.5`).
+Architecture summary:
+- structural edits require deterministic rewrite functions and reference-classification outputs,
+- invalidated targets must remain explicit and traceable.
+
+### 3.15 Reference Resolution and Reference-Grid Update Semantics
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.3`).
+Architecture summary:
+- normalized reference forms are required for deterministic binder outputs,
+- reference-grid updates must preserve explicit forward/reverse/provenance information,
+- unresolved references remain explicit errors, never silent drops.
+
+### 3.16 Cycle Detection, Iteration, and Stabilization Semantics
+Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.6`).
+Architecture summary:
+- SCC processing order is deterministic,
+- cycle mode is profile-governed (`CycleError` vs `Iterative`),
+- stabilization rules are explicit and terminal-state based.
+
+### 3.17 Formalization Seams for Lean and OCaml
+Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`6.7`).
+Architecture summary:
+- Lean, OCaml oracle, and shared trace schemas remain mandatory integration seams,
+- the `CoreIds/CoreStructure/CoreRefs/CoreDeps/CoreEval/CoreOps` split remains baseline.
+
+### 3.18 FEC/F3E Lane Boundary (OxFml/OxFunc/FEC)
+To reduce ownership drift during implementation spikes, lane ownership is explicitly split as follows:
+- **OxFml** owns formula grammar, parse, and bind semantics.
+- **OxFunc** owns value-type and function semantics consumed during evaluation.
+- **FEC host/model lane** owns host protocol, capability policy, dependency lifecycle, scheduler interaction, and publication lifecycle.
+
+Current working references:
+- `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`
+- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`
+- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+
+## 4. Architectural Constraints (A2 / CONSTR- examples)
+- **CONSTR-001:** All persistent mutations are ops; direct document mutation is forbidden outside the coordinator.
+- **CONSTR-002:** File and network I/O are adapters outside core; core engine has no socket/file dependencies.
+- **CONSTR-003:** Unsupported constructs never crash; they preserve or degrade explicitly.
+- **CONSTR-004:** Protocol surfaces are identical across Red/Blue; compatibility negotiation is mandatory.
+- **CONSTR-005:** Deterministic mode must exist and be used for conformance and minimization runs.
+- **CONSTR-006:** Spec stack/oracle/tool integration contracts are file/CLI-based with schema-versioned artifacts.
+- **CONSTR-007:** Compatibility claims require linked clean-room evidence records tied to REQ/INT/REAL identifiers.
+- **CONSTR-008:** Engine lock discipline forbids awaiting or user-callback execution while holding mutation-critical locks.
+- **CONSTR-009:** Performance readiness uses deterministic phase counters and published scaling signatures per required profile.
+- **CONSTR-010:** Snapshot identity is ID-based (`RowId`/`ColId`/`CellId`), not coordinate-string-based; address projection is derived.
+- **CONSTR-011:** Every structural op must define deterministic axis rewrite functions and explicit rewrite classification for affected references.
+- **CONSTR-012:** Reference layer must model region nodes and error references explicitly; unresolved references cannot be silently discarded.
+- **CONSTR-013:** Cycle handling mode (`CycleError` or `Iterative`) is profile-defined and deterministic with explicit terminal behavior.
+- **CONSTR-014:** Op envelopes require idempotency/causality metadata sufficient for deterministic replay and replication safety.
+- **CONSTR-015:** Green/Red persistence-facade split must preserve immutable core semantics and avoid hidden mutation in facade caches.
+- **CONSTR-016:** Function invalidation classes (`Standard` / `Volatile` / `ExternallyInvalidated`) must have deterministic, non-ambiguous trigger semantics per profile.
+- **CONSTR-017:** Control/chart lifecycle mutations must be represented as explicit operations and replay artifacts, never as UI-only hidden state.
+
+## 5. Core Requirements (REQ- and INT-/REAL- examples)
+### REQ (architecture-independent)
+- Excel interop: load/save macro-enabled workbooks with no unexpected loss; preserve VBA project unless explicitly edited.
+- Manual and auto recalc behaviors must match the profile definition.
+- Streaming updates propagate to dependents; system exposes progress and staleness.
+- UI remains responsive under defined workloads (scrolling/edit feedback targets per profile).
+- System never crashes on unsupported features; must yield deterministic errors/warnings or preserve opaque.
+- Structural edits must preserve or invalidate references deterministically with explicit diagnostics and replayable rewrite traces.
+- OpLog replay of an accepted operation sequence must reproduce equivalent snapshot/value states across engines.
+- Cycle behavior (error or iterative) must be observable, deterministic, and profile-consistent.
+- Reference-grid updates must be incrementally maintained and auditable after every structural or formula mutation.
+- CalcDelta outputs must be epoch-tagged, typed, and observationally consistent with committed snapshot transitions.
+
+### INT/REAL (architecture-anchored)
+- **INT:** Users can trust what they see during recalculation.  
+  **REAL:** Every value carries `value_epoch` and explicit stale/pending status in UI/API.
+- **INT:** Custom features must not break other builds.  
+  **REAL:** Unknown extension payloads round-trip; unsupported semantic extensions evaluate to explicit deterministic errors and emit diagnostics.
+- **INT:** STREAM/external updates must be predictable and replayable across engines.  
+  **REAL:** External updates are explicit OpLog operations with versioned stream semantics, deterministic replay bundles, and pack-validated ordering/dedupe behavior.
+- **INT:** Volatile and externally-signaled recalculation must not be conflated.  
+  **REAL:** Profiles classify functions as `Standard` / `Volatile` / `ExternallyInvalidated` with explicit invalidation triggers and deterministic dirty-scope behavior.
+- **INT:** UI correctness must be testable without screenshot dependence.  
+  **REAL:** Geometry/hit-test invariants and RenderPlan determinism are required and pack-gated.
+- **INT:** Performance claims must be trend-checkable, not anecdotal.  
+  **REAL:** Required profiles publish deterministic phase counters and slope-based scaling signatures with regression thresholds.
+- **INT:** Clean-room compatibility claims must be auditable.  
+  **REAL:** Every compatibility claim links to admissible evidence records and review status.
+- **INT:** Structural change semantics must be predictable and formally checkable.  
+  **REAL:** Structural ops produce deterministic axis rewrite mappings plus per-reference rewrite classification artifacts.
+- **INT:** Reference resolution ambiguity must be bounded and diagnosable.  
+  **REAL:** Binder outputs normalized references (`CellRef`/`RegionRef`/`NameRef`/`ErrorRef`) and explicit unresolved diagnostics.
+- **INT:** The formal core must be implementable consistently in Lean, OCaml, Rust, and .NET.  
+  **REAL:** Shared algebraic data schemas and transition traces are normative artifacts for proofs, oracle runs, and engine conformance.
+- **INT:** Cycles should not produce hidden nondeterminism.  
+  **REAL:** SCC decomposition order, iteration bounds, convergence policy, and terminal-state rules are profile-governed and replayable.
+
+## 6. Pathfinder Scope Anchor (DnaVisiCalc)
+Round 0 pathfinder functional scope is authoritative in the DnaVisiCalc docs set:
+- `..\\DnaVisiCalc\\docs\\SPEC_v0.md`
+- `..\\DnaVisiCalc\\docs\\ENGINE_REQUIREMENTS.md`
+- `..\\DnaVisiCalc\\docs\\ENGINE_API.md`
+
+Foundation documents define doctrine/architecture/process and must remain consistent with that authoritative functional scope.
+
+### 6.1 Round 0 Normative Contract (minimum)
+- Required functional scope baseline (frozen for pathfinder v0) includes:
+  - externally driven single-sheet engine contract with default `A1..BK254` bounds,
+  - cell/name inputs, deterministic formula evaluation, dynamic arrays/spill behavior,
+  - epoch model (`committed_epoch`, `stabilized_epoch`, `value_epoch`) and manual/auto recalc,
+  - deterministic row/column structural rewrites with explicit invalidation behavior,
+  - SCC-based cycle handling with iterative mode configuration,
+  - three-class invalidation model (`Standard`, `Volatile`, `ExternallyInvalidated`) with distinct trigger paths,
+  - external UDF registration/invalidation, engine-managed controls/charts, typed change-tracking journal,
+  - metadata-only formatting and deterministic bulk enumeration sufficient for current file-adapter handoff,
+  - TUI interaction/testing scope (editing/commands plus deterministic replay/capture surfaces) as defined by upstream pathfinder docs.
+- Required obligations: core semantics packs, epoch/concurrency invariants, oracle alignment, and basic scaling signature.
+- Required artifacts: capability manifest, conformance report, minimized trace corpus, replay bundles for stream cases, and formal-core traces (structural rewrite + reference-grid delta + SCC iteration).
+
+### 6.2 Explicit Non-goals for Round 0
+- Multi-sheet workbook semantics.
+- Full number-format mini-language and full date/time serial compatibility system.
+- Full Excel coercion parity and implicit-intersection (`@`) compatibility breadth.
+- Lambda-helper family completeness beyond the stabilized pathfinder subset.
+- Full XLL marshalling/lifetime compatibility.
+- Full RTD lifecycle parity.
+- Full OOXML fidelity breadth outside the pathfinder subset.
+- VBA runtime hosting.
+- Multi-writer collaboration semantics beyond seam validation.
+
+### 6.3 Round 0 Track Status Decomposition (Pathfinder Feedback Snapshot)
+As of **February 27, 2026**, synthesis of DnaVisiCalc pathfinder feedback indicates:
+
+- Track A — Engine implementation scope:
+  - status: functional scope is stabilized and exercised against the authoritative v0 spec/requirements/API contract.
+- Track B — Green formal artifacts and assurance packs:
+  - status: remains the principal Round 0 exit blocker (Lean/TLA+/oracle/pack artifacts still required by doctrine).
+- Track C — beyond-minimum artifacts:
+  - status: design/API artifacts exist and should be treated as evidence inputs for Round 1 shaping, not as Round 0 gate substitutes.
+
+Round 0 exit remains blocked until required Track B obligations are completed, regardless of Track A progress.
+
+### 6.4 Deferred Functional Expansion Backlog (Retained From Pathfinder Gap Analysis)
+The following areas are retained as explicit post-freeze expansion candidates, not pathfinder-v0 functional-scope requirements:
+- comprehensive number-format code language behavior,
+- full date/time serial compatibility system,
+- full coercion-matrix parity and implicit-intersection behavior,
+- multi-sheet references and workbook semantics,
+- broader lambda-helper family coverage.
+
+## 7. Rounds 1–3 Forward Compatibility
+DnaVisiCalc must already validate the meta-architecture and the discipline that enables:
+- DnaPreCalc to expand feature surface without abandoning proofs/packs,
+- DnaSuperCalc to explore deeper refactors and extensibility,
+- DnaCalc to synthesize a maintainable, optimized foundation for long-term evolution.

@@ -1,0 +1,4 @@
+"timestamp_utc","stage","model","status","output_file","log_file","notes"
+"2026-03-08T18:47:26.1236845Z","round1_base","gpt-5.4_xhigh","ok","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\responses\gpt54\01_base.md","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\logs\gpt54_round1.jsonl","completed"
+"2026-03-08T18:56:53.7253792Z","round2_review1","gpt-5.4_xhigh","ok","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\responses\gpt54\02_review1.md","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\logs\gpt54_round2.jsonl","completed"
+"2026-03-08T19:04:42.9802143Z","round3_review2_final","gpt-5.4_xhigh","ok","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\responses\gpt54\03_review2_final.md","prompts\runs\20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01\logs\gpt54_round3.jsonl","completed"

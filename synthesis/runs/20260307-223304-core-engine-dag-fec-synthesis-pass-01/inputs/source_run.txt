@@ -1,0 +1,45 @@
+Synthesis scope for 20260307-223304-core-engine-dag-fec-synthesis-pass-01
+
+Primary objective:
+- Discussion-first synthesis prep for a layered core calculation engine model integrating structural DAG baseline, calc-time dependency overlays, FEC/F3E contracts, and epoch-safe async recalculation.
+
+Inputs:
+- README.md
+- CHARTER.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/BRAINSTORM_NOTES.md
+- CORE_ENGINE_FORMAL_MODEL.md
+- reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md
+- reference/conformance/excel-worksheet-engine/model/FEC_F3E_INTERFACE_DRAFT_SPEC.md
+- reference/conformance/excel-worksheet-engine/model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv
+- research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/05_deep_research_synthesis.md
+- research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/09_external_report_reconciliation.md
+- research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/10_conformance_and_proof_obligations.md
+- research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/11_empirical_pack_definitions.md
+- synthesis/runs/20260227-193511-core-engine-model-story-pass-01/outputs/synthesis_report.md
+- ../DnaVisiCalc/docs/ENGINE_FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md
+- ../DnaVisiCalc/docs/ENGINE_FEC_F3E_REDESIGN_SPEC.md
+- ../DnaVisiCalc/docs/ENGINE_FEC_F3E_REDESIGN_SYNTHESIS.md
+- ../DnaVisiCalc/docs/ENGINE_FEC_F3E_REDESIGN_OBSERVATIONS.md
+- ../DnaVisiCalc/docs/review/dec_f3e_plan_b/FOUNDATION_REVIEW.md
+- ../DnaVisiCalc/docs/review/dec_f3e_plan_b/OXFUNC_REVIEW.md
+- ../DnaVisiCalc/docs/testing/TESTING_ROUNDS.md
+- ../DnaVisiCalc/artifacts/fec_f3e/exams_20260308_redesign/EXAM_SUMMARY.md
+- ../DnaVisiCalc/artifacts/fec_f3e/seam_trace.log
+- ../DnaVisiCalc/artifacts/fec_f3e/seam_trace.event_counts.tsv
+- ../DnaVisiCalc/artifacts/fec_f3e/seam_trace.callgraph.edges.csv
+- ../DnaVisiCalc/artifacts/fec_f3e/seam_trace.callgraph.dot
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/fec_f3e/contracts.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/fec_f3e/f3e_engine.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/fec_f3e/fec_host.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/fec_f3e/trace.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/engine.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/src/eval.rs
+- ../DnaVisiCalc/crates/dnavisicalc-core-fml/tests/fec_f3e_seam_scenarios_tests.rs
+Targets:
+- CORE_ENGINE_FORMAL_MODEL.md
+- ARCHITECTURE_AND_REQUIREMENTS.md
+- OPERATIONS.md
+- notes/RESEARCH_NOTES.md
+- synthesis run artifacts

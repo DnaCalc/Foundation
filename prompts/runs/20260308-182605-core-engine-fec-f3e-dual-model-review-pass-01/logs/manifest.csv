@@ -1,0 +1,13 @@
+artifact,kind,path,notes
+run_readme,meta,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/README.md,run overview
+base_prompt,input,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/inputs/base_prompt.md,shared task prompt
+interaction_protocol,input,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/inputs/interaction_protocol.md,requested interaction pattern
+claude_base,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/claude/01_base.md,claude round1
+claude_review1,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/claude/02_review1.md,claude round2
+claude_review2_final,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/claude/03_review2_final.md,claude round3
+gpt54_base,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/gpt54/01_base.md,gpt round1
+gpt54_review1,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/gpt54/02_review1.md,gpt round2
+gpt54_review2_final,response,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/gpt54/03_review2_final.md,gpt round3
+model_runs,log,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/logs/model_runs.csv,combined lane run index
+claude_lane_log,log,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/logs/claude_model_runs.csv,claude lane raw index
+gpt54_lane_log,log,prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/logs/gpt54_model_runs.csv,gpt lane raw index

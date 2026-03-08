@@ -97,6 +97,21 @@ Additional Round 1 candidate packs informed by pathfinder evidence:
 - `PACK.calcdelta.basic` (typed delta entries, epoch tagging, emission/drain semantics)
 - `PACK.volatility.three_cat` (Standard/Volatile/ExternallyInvalidated invalidation behavior)
 
+Additional synthesis-promoted candidate packs (core-engine/FEC-F3E pass-02):
+- `PACK.fec.commit_atomicity` (single atomic derived bundle per accepted node commit)
+- `PACK.fec.reject_detail_replay` (structured reject-code/detail replay determinism)
+- `PACK.fec.overlay_lifecycle` (overlay key match, eviction triggers, epoch-safe GC)
+- `PACK.fec.format_dependency_tokens` (format/CF dependency-token invalidation behavior)
+- `PACK.format.semantic_vs_display_boundary` (formula-semantic formatting through evaluator seam)
+- `PACK.visibility.policy_equivalence` (None vs VisibleFirst stabilized-equivalence checks)
+- `PACK.visibility.starvation_bound` (fairness bound enforcement under visibility-priority scheduling)
+- `PACK.dag.dynamic_dependency_bind_semantics` (calc-time bind delta behavior under dynamic refs)
+- `PACK.dag.cycle_iterative_semantics` (3-mode cycle semantics and diagnostics)
+- `PACK.dag.external_stream_ordering` (stream ordering/dedupe behavior by declared version)
+- `PACK.treehost.multiresult.explicit` (no implicit spill analog in early tree-host phases)
+- `PACK.treehost_to_gridhost.semantic_gap_registry` (explicitly tracked deferred tree/grid parity gaps)
+- `PACK.concurrent.epochs` follow-up lanes must include: reject-fence determinism, stream-version replay matrix, visibility-event replay determinism, and pin/unpin overlay-GC safety.
+
 Pack status terminology:
 - `exercised`: implementation-level behavior exists with local tests.
 - `green-validated`: Green-owned pack artifacts and required conformance evidence are complete.
@@ -190,6 +205,8 @@ Prompt execution, deep research, synthesis, and reference-spec processing are tr
 - Prompt-run operating procedure lives in `prompts/README.md`.
 - Prompt runs must capture raw outputs, manifests, and trace artifacts under `prompts/runs/<run-id>/`.
 - Prompt outputs are inputs to decision-making, not source-of-truth policy.
+- Pointer hygiene rule: when a prompt input pack includes `CURRENT_SPEC_SET.md`, that file must list only currently present curated files; any rename/replacement in the curated set must update `CURRENT_SPEC_SET.md` in the same change.
+- Prompt-run input freeze validation must treat missing/stale `CURRENT_SPEC_SET.md` pointers as run-integrity failures, not warnings.
 
 ### 8.2 Synthesis Runs
 - Synthesis-run operating procedure lives in `synthesis/README.md`.
