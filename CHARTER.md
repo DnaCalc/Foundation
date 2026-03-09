@@ -56,13 +56,13 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 - **Foundation** — doctrine, architecture, operations, formal-model framing, and conformance policy authority.
 - **DnaVisiCalc** — Round 0 pathfinder and executable seam evidence source.
 - **OxFunc** — value universe and function semantics lane.
-- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane.
+- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, and trace schema.
 - **OxCalc** — multi-node core calculation engine lane.
 - **OxVba** — VBA runtime/compiler and host integration lane.
 
 ### 3.3 Host Progression (Execution Vehicles)
 - **DNA VbCalc** — dedicated OxVba host proving path (independent lane progression).
-- **DNA OneCalc** — single-node formula/function host for fast evaluator proving.
+- **DNA OneCalc** — single-node formula/function host for fast evaluator proving. Proves formula language completeness, OxFunc function semantics, and UDF/VBA host integration on a single-cell or defined-name substrate with no reference resolution or multi-node scheduling. Clean-room evaluator proving ground separate from the DnaVisiCalc pathfinder.
 - **DNA TreeCalc** — first serious multi-node host for OxCalc on tree substrate.
 - **DNA PreCalc** — first full tree-grid-hybrid host in the Round 1 path.
 - **DNA SuperCalc** — later refinement host stage.
@@ -72,6 +72,12 @@ Interpretation rule:
 - Round names describe program stages.
 - Repo names describe long-lived ownership lanes.
 - Host names describe proving/application vehicles built from those lanes.
+
+#### 3.3.1 Host-to-Round Mapping
+- **DNA VbCalc:** independent lane, not round-bound.
+- **DNA OneCalc:** lane-proving host from Wave B/C, not round-gated.
+- **DNA TreeCalc:** lane-proving host from Wave D/E, proving tree-only before Round 1 grid scope.
+- **DNA PreCalc:** Round 1 aligned host.
 
 ### 3.4 Team Colors
 - **Green** — Spec stack + verification: DSLs, Lean proofs, TLA+ models, OCaml oracle, conformance packs.

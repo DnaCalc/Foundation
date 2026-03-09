@@ -155,61 +155,32 @@ Windows-only COM automation is a separate facade layered on top of the identical
 
 Formal-model note:
 - Detailed formal semantics for the core engine model are in `CORE_ENGINE_FORMAL_MODEL.md`.
-- Sections `3.11`..`3.17` in this document are architecture summaries linked to that detailed model.
+- Section `3.11` in this document provides a consolidated architecture summary with cross-references to that detailed model.
 
-### 3.11 Formal State Kernel (tree-grid hybrid with persistence facades)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.1`).
-Architecture summary:
-- immutable green core + ephemeral red facade split,
-- identity is ID-based (not coordinate-string-based),
-- representation strategy may vary while preserving identical semantics.
+### 3.11 Core Formal Semantics Summary
+Detailed formal semantics for the core engine model are maintained in `CORE_ENGINE_FORMAL_MODEL.md`. This section provides architecture-level summaries; consult the detailed model for formal definitions, type sketches, and invariant specifications.
 
-### 3.12 Layered Semantics (structure, refs, deps, values, ops)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.2`).
-Architecture summary:
-- five-layer model `S/R/D/V/O`,
-- explicit derivation contracts between layers,
-- mutation authority remains operation-driven.
+Key areas and their detailed-model locations:
 
-### 3.13 OpLog Formal Transition Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.4`).
-Architecture summary:
-- `OpEnvelope` is the canonical persistent-change carrier,
-- `apply_op` is the canonical transition relation,
-- replay target is observational equivalence under profile constraints.
-
-### 3.14 Structural Rewrite Semantics (rows/cols/sheets)
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.5`).
-Architecture summary:
-- structural edits require deterministic rewrite functions and reference-classification outputs,
-- invalidated targets must remain explicit and traceable.
-
-### 3.15 Reference Resolution and Reference-Grid Update Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.3`).
-Architecture summary:
-- normalized reference forms are required for deterministic binder outputs,
-- reference-grid updates must preserve explicit forward/reverse/provenance information,
-- unresolved references remain explicit errors, never silent drops.
-
-### 3.16 Cycle Detection, Iteration, and Stabilization Semantics
-Detailed model is in `CORE_ENGINE_FORMAL_MODEL.md` (`6.6`).
-Architecture summary:
-- SCC processing order is deterministic,
-- cycle mode is profile-governed (`PriorValueFallback` vs `CycleError` vs `Iterative`),
-- stabilization rules are explicit and terminal-state based.
-
-### 3.17 Formalization Seams for Lean and OCaml
-Detailed seam definitions are in `CORE_ENGINE_FORMAL_MODEL.md` (`6.7`).
-Architecture summary:
-- Lean, OCaml oracle, and shared trace schemas remain mandatory integration seams,
-- the `CoreIds/CoreStructure/CoreRefs/CoreDeps/CoreEval/CoreOps` split remains baseline.
+| Area | Summary | CORE_ENGINE_FORMAL_MODEL Section |
+|---|---|---|
+| State kernel | Immutable green core + ephemeral red facades; ID-based identity | `6.1` |
+| Layered semantics | Five-layer `S/R/D/V/O` model with explicit derivation contracts | `6.2` |
+| OpLog transitions | `OpEnvelope` carrier, `apply_op` transition, replay equivalence | `6.4` |
+| Structural rewrites | Deterministic rewrite functions, explicit invalidation traces | `6.5` |
+| Reference resolution | Normalized reference forms, forward/reverse indices, no silent drops | `6.3` |
+| Cycles and iteration | Deterministic SCC order, profile-governed cycle mode, terminal rules | `6.6` |
+| Formalization seams | Lean/OCaml/trace schema integration, `CoreIds`..`CoreOps` module split | `6.7` |
 
 ### 3.18 FEC/F3E Lane Boundary (OxFml/OxFunc/FEC)
 To reduce ownership drift during implementation spikes, lane ownership is explicitly split as follows:
 - **OxFml** owns formula grammar, parse, and bind semantics.
 - **OxFunc** owns value-type and function semantics consumed during evaluation.
 - **FEC host/model lane** owns host protocol, capability policy, dependency lifecycle, scheduler interaction, and publication lifecycle.
+
+FEC/F3E spec ownership transfers to OxFml when that repo is created (Wave A); Foundation retains a read-only conformance mirror of the FEC/F3E specification artifacts for cross-reference and assurance use.
 - Formula-semantic formatting behavior (including format-string interpretation and conditional-format configuration evaluation lanes) is evaluator work and must cross the FEC/F3E seam; it is not a display-only concern.
+- FEC/F3E protocol definition authority: co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
 - Visibility-priority scheduling policy is core-engine policy and must preserve stabilized semantic equivalence; FEC/F3E provides evidence and deltas, not global scheduling truth.
 
 Current working references:
@@ -217,12 +188,27 @@ Current working references:
 - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md`
 - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
 
+#### 3.18.1 End-to-End Data Flow Narrative (OxFml -> FEC/F3E -> OxCalc)
+The core architectural data flow connects the formula evaluator to the multi-node coordinator through the FEC/F3E transactional seam:
+
+1. **Formula text enters OxFml** — parse and bind produce a normalized formula AST with resolved references.
+2. **OxFml evaluator executes single-node evaluation within an FEC session** — the session lifecycle is `prepare -> open_session/capability_view -> execute -> commit`.
+3. **Accepted commit publishes one atomic derived bundle** — containing `value_delta` + `topology_delta` + `shape_delta` + optional `display_delta`/`format_delta` when profile-gated features are enabled.
+4. **OxCalc coordinator consumes bundles** — for multi-node scheduling, dependency closure maintenance, epoch management, and stabilization tracking.
+5. **Rejected commits produce no deltas** — structured reject detail (`reject_code` + typed context) flows back for diagnostics and deterministic replay.
+
+This flow is the primary seam contract between the evaluator lane (OxFml) and the coordinator lane (OxCalc). Detailed session/commit semantics are in `CORE_ENGINE_FORMAL_MODEL.md` Sections `5.3` and `6.8`.
+
 ### 3.19 Core Engine Realization Plan (Option-B Staged Baseline)
 The baseline realization strategy is:
 1. immutable structural truth (`DocSnapshot`) and deterministic structural dependency derivation,
 2. epoch-scoped runtime overlays (dynamic deps/spill/format tokens/visibility metadata),
 3. FEC/F3E transactional seam for node-local evaluation publication,
 4. single-publisher coordinator semantics for accepted/rejected commit publication.
+
+Substrate progression:
+- **Tree-only first (DNA TreeCalc):** multi-node calculation without grid concerns — no spill, no coordinates, no structural rewrites. Multi-result uses explicit node/value constructs. Tree-only is a proving strategy for coordinator/dependency/epoch semantics, not a separate doctrine.
+- **Tree-grid-hybrid second (DNA PreCalc):** adds grid layer, spill semantics, structural rewrites, coordinate projection. Full reference resolution and grid-aware scheduling enter scope here.
 
 Staged adoption:
 - **Stage 1 (sequential coordinator):**
@@ -232,6 +218,7 @@ Staged adoption:
 - **Stage 2 (partitioned parallel evaluation):**
   - concurrent evaluator partitions with coordinator-controlled publication fences,
   - deterministic parallel signature packs required before policy promotion.
+  - Stage 2 entry requires closure of FEC/F3E concurrency-hardening gates: (a) deterministic contention replay, (b) structured reject-detail for cross-engine replay, (c) coordinator snapshot/token fencing under concurrent evaluators.
 - **Stage 3 (advanced policy lanes):**
   - optional dynamic-topology/SAC-inspired lanes and stream-heavy advanced lanes,
   - promotion only through parity/equivalence evidence and synthesis decisions.
@@ -244,8 +231,8 @@ The staged model is normative for execution planning:
 Architecture ownership map:
 - **Foundation:** doctrine, architecture framing, operations and conformance policy.
 - **OxFunc:** value/function semantics.
-- **OxFml:** formula grammar/bind and single-node evaluator seam contracts.
-- **OxCalc:** multi-node core engine policy and execution.
+- **OxFml:** formula grammar/bind and single-node evaluator seam contracts. FEC/F3E spec owner (seam specification, evaluator contract, trace schema).
+- **OxCalc:** multi-node core engine policy and execution. Co-defines coordinator-facing FEC/F3E protocol parts.
 - **OxVba:** VBA runtime/compiler and host integration lane.
 - **DnaVisiCalc:** Round 0 pathfinder evidence source.
 
@@ -391,7 +378,7 @@ DnaVisiCalc must already validate the meta-architecture and the discipline that 
 
 ### 7.1 Forward Execution Vehicles
 Round-compatible host progression for implementation planning:
-1. `DNA OneCalc`: fast single-node proving host for OxFml/OxFunc (optional OxVba integration).
+1. `DNA OneCalc`: fast single-node proving host for OxFml/OxFunc (optional OxVba integration). Proves formula language completeness, OxFunc function semantics, and UDF/VBA host integration on a single-cell or defined-name substrate — no reference resolution, no multi-node scheduling. Clean-room evaluator proving ground separate from DnaVisiCalc pathfinder.
 2. `DNA TreeCalc`: first serious multi-node proving host for OxCalc on tree substrate.
 3. `DNA PreCalc`: first integrated tree-grid-hybrid host aligned with Round 1 scope.
 4. `DNA SuperCalc`: later refinement/perfection host stage.

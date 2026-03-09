@@ -379,6 +379,7 @@ Handoff records may be included as:
   - `OxFunc` -> `OxFml`/`OxCalc`/`OxVba`
   - `OxFml` -> `OxCalc`
   - `OxCalc` -> host/UI/file-adapter implementation layers
+- FEC/F3E protocol definition authority: FEC/F3E protocol is co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
 - Foundation maintains a theory-to-pack mapping register that links high-value theory claims to one of:
   - proof obligation,
   - conformance pack requirement,
@@ -434,10 +435,10 @@ Handoff records may be included as:
 
 ### 10.3 Sequence Baseline for Current Program Layout
 Use this dependency-ordered wave sequence for current execution planning:
-1. **Wave A**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map).
-2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts).
-3. **Wave C**: DNA OneCalc proving host for single-node evaluator semantics and fast conformance loops.
-4. **Wave D**: OxCalc tree-substrate realization and coordinator baseline closure.
+1. **Wave A**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map). FEC/F3E spec ownership transfer to OxFml (Foundation retains read-only conformance mirror).
+2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts). FEC/F3E concurrency-hardening gates are Stage 2 prerequisites, not Wave B exit criteria; DNA OneCalc and DNA TreeCalc proceed under Stage 1 sequential coordinator. OCaml/Lean kickoff items are Deferred — revisit activation at Wave B when OxFml evaluator contracts are exercised and can inform the formal model shape.
+3. **Wave C**: DNA OneCalc proving host — no-reference-resolution profile proving, formula language completeness, OxFunc function catalog validation, Stage 1 sequential coordinator.
+4. **Wave D**: OxCalc tree-substrate realization and coordinator baseline closure — tree-only substrate realization (no grid, no spill, no structural rewrites, Stage 1 sequential coordinator).
 5. **Wave E**: DNA TreeCalc proving host for serious multi-node behavior before grid complexity.
 6. **Wave F**: DNA PreCalc first integrated tree-grid-hybrid host with staged concurrency policy.
 7. **Wave G**: DNA SuperCalc and DNA Calc expansion lanes under bounded advanced-lane policy and parity evidence.

@@ -249,6 +249,15 @@ Tree-grid hybrid concept retained from earlier notes:
 - augmentation structures may attach and participate via defined seams.
 - early tree-host phases do not model spreadsheet spill analogs; multi-result tree-host behavior uses explicit node/value constructs until spill-analog promotion is explicitly approved.
 
+#### 6.1.1 Tree-Only Phase Semantics
+The tree-only phase (DNA TreeCalc) exercises core coordinator/dependency/epoch semantics without grid complexity:
+- no spill semantics — multi-result is modeled through explicit node/value constructs (see `PACK.treehost.multiresult.explicit`),
+- no coordinate projection — identity remains ID-based without row/column address derivation,
+- no structural rewrites — no insert/delete row/column operations; dependency graph is structurally stable,
+- the semantic gap between tree-only and tree-grid-hybrid phases is explicitly tracked in `PACK.treehost_to_gridhost.semantic_gap_registry`.
+
+Tree-only is a proving strategy, not a separate formal model. All tree-only semantics must remain a strict subset of the full tree-grid-hybrid kernel.
+
 ### 6.2 Layered Formal Model (`Baseline`)
 ```text
 Layer S: Structure
@@ -399,9 +408,13 @@ Overlay lifecycle baseline:
 - overlay reuse requires epoch/token/bind/profile fence match,
 - overlay eviction is deterministic and pinned-epoch safe.
 
+Substrate progression (aligned with `ARCHITECTURE_AND_REQUIREMENTS.md` Section `3.19`):
+- **Tree-only first (DNA TreeCalc):** multi-node coordinator/dependency/epoch proving without grid concerns. No spill, no coordinates, no structural rewrites. Stage 1 sequential coordinator.
+- **Tree-grid-hybrid second (DNA PreCalc):** adds grid layer, spill semantics, structural rewrites, coordinate projection. Staged concurrency policy applies.
+
 Execution-vehicle guidance (non-doctrinal but retained):
 - `DNA OneCalc` is the preferred fast proving host for single-node evaluator semantics.
-- `DNA TreeCalc` is the preferred first serious proving host for multi-node core-engine semantics.
+- `DNA TreeCalc` is the preferred first serious proving host for multi-node core-engine semantics on tree-only substrate.
 - `DNA PreCalc` is the first integrated tree-grid-hybrid host target.
 
 ## 7. Consolidated Idea Funnel (No-Loss Triage)
@@ -444,7 +457,7 @@ Priority decision buckets:
 - iterative-cycle defaults.
 - post-server-sequenced collaboration conflict semantics.
 
-### 7.4 Suggested Kickoff Work Items (`Provisional`)
+### 7.4 Suggested Kickoff Work Items (`Deferred`)
 OCaml:
 - implement core ADTs and `apply_op` skeleton with phase deltas.
 
@@ -453,6 +466,8 @@ Lean:
   - replay determinism,
   - structural rewrite totality/invalidation coverage,
   - no hidden green-state mutation.
+
+Lean/OCaml formal artifacts are Green-team obligations. Revisit activation at Wave B when OxFml evaluator contracts are exercised and can inform the formal model shape.
 
 Packs/evidence implications retained:
 - structural rewrite classification trace requirements,

@@ -4,6 +4,8 @@ This document captures additional ideas, potentials, open questions, and lower-l
 
 Round 0 note (2026-02-27): DnaVisiCalc pathfinder functional scope is now stabilized in `..\\DnaVisiCalc\\docs\\SPEC_v0.md`, `ENGINE_REQUIREMENTS.md`, and `ENGINE_API.md`. Items here that differ should be treated as historical brainstorming or post-v0 expansion ideas.
 
+**Historical note:** Sections A-M below are historical brainstorming origins. Normative versions of these ideas now live in `ARCHITECTURE_AND_REQUIREMENTS.md`, `CHARTER.md`, and `OPERATIONS.md`. Consult source-of-truth docs for current policy.
+
 ## A. Core architectural motifs
 - “Small toy built like a big system”: strict boundaries, replaceable adapters, protocol-first design.
 - Three hard boundaries: OpLog → DocSnapshot → CalcDeltas.
@@ -115,9 +117,10 @@ Round 0 note (2026-02-27): DnaVisiCalc pathfinder functional scope is now stabil
 - Clean-room positioning explicitly included in mission.
 
 ## N. Open questions (to keep visible)
-- Determinism policy under parallelism (float reduction, scheduling).
-- External oracle policy for collaboration (local vs shared).
-- Export degradation: cell errors vs metadata/comments vs both.
-- Async UDF continuations: needed after Pathfinder or later?
-- How much “view state” is document-backed vs session-only.
-- Minimum set of Excel semantics to define profiles early (subset selection and measurement).
+- ~~Determinism policy under parallelism (float reduction, scheduling).~~ *Resolved:* deterministic mode is mandatory (CONSTR-005); numeric reduction policy is profile-governed (Section 5.4 CORE_ENGINE_FORMAL_MODEL).
+- External oracle policy for collaboration (local vs shared). *Open.*
+- ~~Export degradation: cell errors vs metadata/comments vs both.~~ *Resolved:* four degradation classes (`Native`/`Lowered`/`Opaque`/`Rejected`) in ARCHITECTURE_AND_REQUIREMENTS Section 3.8.
+- Async UDF continuations: needed after Pathfinder or later? *Open.*
+- How much “view state” is document-backed vs session-only. *Open.*
+- ~~Minimum set of Excel semantics to define profiles early (subset selection and measurement).~~ *Partially resolved:* profiles are the semantics spine with selectors defined in ARCHITECTURE_AND_REQUIREMENTS Section 3.2; minimum profile semantics definition remains open for detailed scoping.
+- ~~Stream ordering.~~ *Resolved:* `StreamSemanticsVersion` with three explicit values and replay artifacts (ARCHITECTURE_AND_REQUIREMENTS Section 3.5.0).
