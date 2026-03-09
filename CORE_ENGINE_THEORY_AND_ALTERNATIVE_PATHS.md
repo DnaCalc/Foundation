@@ -1,7 +1,11 @@
-# CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md - Theory Exposition and Complementary Paths
+# CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md - Foundation Mirror Copy - Theory Exposition and Complementary Paths
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copy:
+- `C:/Work/DnaCalc/OxCalc/docs/spec/core-engine/CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md`
 
 ## 1. Purpose and Scope
-This document is the theory-focused companion to `CORE_ENGINE_FORMAL_MODEL.md`.
+This document is the theory-focused companion to `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md` (mirrored in Foundation as `CORE_ENGINE_FORMAL_MODEL.md`).
 
 It does two things:
 1. confirms coverage of the main deep-research and review corpus used for the current core-engine direction,
@@ -10,7 +14,7 @@ It does two things:
 Normative source-of-truth remains:
 - `CHARTER.md`
 - `ARCHITECTURE_AND_REQUIREMENTS.md`
-- `CORE_ENGINE_FORMAL_MODEL.md`
+- `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md`
 - `OPERATIONS.md`
 
 This document is explanatory and synthesis-supporting, not a replacement for normative contracts.

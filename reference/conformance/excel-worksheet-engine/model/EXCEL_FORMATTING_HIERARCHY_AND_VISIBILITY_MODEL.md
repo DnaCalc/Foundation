@@ -1,4 +1,9 @@
-# Excel Formatting Hierarchy and Visibility Model
+# Excel Formatting Hierarchy and Visibility Model (Foundation Mirror Copy)
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copies:
+- `C:/Work/DnaCalc/OxFml/docs/spec/formatting/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md` (formatting semantics that affect evaluator behavior)
+- `C:/Work/DnaCalc/OxCalc/docs/spec/visibility/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md` (visibility-policy consumption context)
 
 ## 1. Purpose
 Define a concrete, implementation-facing model for:

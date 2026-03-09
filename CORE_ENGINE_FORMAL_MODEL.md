@@ -1,4 +1,8 @@
-# CORE_ENGINE_FORMAL_MODEL.md — Core Engine Formal Model Story (Consolidated)
+# CORE_ENGINE_FORMAL_MODEL.md — Foundation Mirror Copy — Core Engine Formal Model Story (Consolidated)
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copy:
+- `C:/Work/DnaCalc/OxCalc/docs/spec/core-engine/CORE_ENGINE_FORMAL_MODEL.md`
 
 ## 1. Purpose and Status
 This document is the consolidated story-so-far for DNA Calc core engine formal/semantic modeling.
@@ -9,7 +13,7 @@ It is not:
 - the final theorem/spec artifact set.
 
 It is:
-- the single active funnel for core-engine formal ideas,
+- the Foundation mirror funnel for core-engine formal ideas,
 - a triaged and tagged consolidation of what we currently know, suspect, and need to decide,
 - the working base for iterative review and promotion into stable formal semantics over time.
 

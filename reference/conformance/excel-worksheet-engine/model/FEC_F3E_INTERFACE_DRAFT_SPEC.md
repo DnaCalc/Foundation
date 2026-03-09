@@ -2,7 +2,10 @@
 
 This legacy draft was archived.
 
-Current active spec:
+Canonical active spec:
+- `C:/Work/DnaCalc/OxFml/docs/spec/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`
+
+Foundation mirror copy:
 - `fec-f3e/FEC_F3E_REDESIGN_SPEC.md`
 
 Archived copy:

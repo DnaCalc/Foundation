@@ -53,11 +53,11 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 - **DNA Calc** (`DnaCalc`) — Round 3 synthesized long-term product.
 
 ### 3.2 Component Repos
-- **Foundation** — doctrine, architecture, operations, formal-model framing, and conformance policy authority.
+- **Foundation** — doctrine, architecture, operations, formal-model framing, and conformance policy authority; maintains read-only mirror snapshots of lane-owned specs for cross-program assurance.
 - **DnaVisiCalc** — Round 0 pathfinder and executable seam evidence source.
 - **OxFunc** — value universe and function semantics lane.
-- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, and trace schema.
-- **OxCalc** — multi-node core calculation engine lane.
+- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, trace schema, and formula-language evaluator-facing spec set.
+- **OxCalc** — multi-node core calculation engine lane; owner of core-engine detailed realization/formal-model spec set.
 - **OxVba** — VBA runtime/compiler and host integration lane.
 
 ### 3.3 Host Progression (Execution Vehicles)

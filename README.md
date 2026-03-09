@@ -7,11 +7,16 @@ DNA Calc is developed by DNA Kode.
 The program has completed the DnaVisiCalc pathfinder phase — engine scope is exercised; formal artifact exit (Track B) remains outstanding.
 Next focus shifts to two parallel lanes: **OxFml** (formula/evaluator lane with FEC/F3E spec ownership) using DNA OneCalc as the proving host, and **OxCalc** (core engine lane) starting with tree-only substrate via DNA TreeCalc.
 Foundation remains the doctrine, architecture, and conformance policy owner. It does not own implementation or spec artifacts once they transfer to lane repos.
-The Wave sequence A-G in `OPERATIONS.md` Section 10.3 governs execution order. Wave A ownership freeze and FEC/F3E spec transfer to OxFml are the immediate next actions.
+The Wave sequence A-G in `OPERATIONS.md` Section 10.3 governs execution order. Wave A ownership freeze and repo bootstrap are complete.
+
+**Canonical lane-owned spec locations (post-bootstrap):**
+- OxFml canonical specs: `..\\OxFml\\docs\\spec\\`
+- OxCalc canonical specs: `..\\OxCalc\\docs\\spec\\`
+- Foundation keeps read-only mirror snapshots for conformance/governance only.
 
 Start with `CHARTER.md` for mission/doctrine, then `ARCHITECTURE_AND_REQUIREMENTS.md` for the system shape and constraints.
-Use `CORE_ENGINE_FORMAL_MODEL.md` for ongoing core formal/semantic model work and extraction of formal details from architecture docs.
-Use `CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md` for theory-grounding, source-traceable synthesis coverage, and complementary paths-not-taken framing.
+Use `CORE_ENGINE_FORMAL_MODEL.md` as the Foundation mirror snapshot of core formal semantics (canonical editable copy is in `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md`).
+Use `CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md` as the Foundation mirror snapshot of theory exposition (canonical editable copy is in `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md`).
 Use `OPERATIONS.md` for team/process mechanics, `notes/BRAINSTORM_NOTES.md` for captured ideas, and `prompts/` for reusable prompt packs.
 Use `notes/README.md` for active-vs-archive notes indexing.
 Use `notes/RUNNING_PROJECT_NOTES.md` as the active short-lived scratchpad.

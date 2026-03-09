@@ -8,7 +8,7 @@ Operations defines how DNA Calc is developed, stabilized, and evolved under the 
 **Green (Spec & Assurance)**
 - Owns DSL specs, proofs, protocol specs, OCaml oracle, cases, conformance packs.
 - Owns profile definitions, profile versioning rules, and negotiation schemas.
-- Owns `CORE_ENGINE_FORMAL_MODEL.md` as the detailed formal-semantics working document.
+- Owns formal-semantics governance and mirror-sync gates for detailed model artifacts; canonical detailed core-engine model/spec files are lane-owned in OxCalc/OxFml.
 - Curates minimized regressions and “known quirks” documentation.
 - **Has veto on declaring a profile “stabilized/green.”**
 
@@ -388,7 +388,21 @@ Handoff records may be included as:
 - Current register location: `notes/THEORY_TO_PACK_REGISTER.md`.
 - The register must be updated during synthesis when new theory-backed guidance is accepted/adapted/deferred.
 
-### 8.15 Advanced Experimental Lane Policy (Normative)
+### 8.15 Spec Mirror Gate and Naming Policy (Normative)
+- Canonical editable lane-owned spec sets:
+  - `..\\OxFml\\docs\\spec\\` (FEC/F3E seam, formula-language, evaluator-facing formatting semantics),
+  - `..\\OxCalc\\docs\\spec\\` (core-engine detailed model/realization and coordinator policy surfaces).
+- Foundation mirror copies under `reference/conformance/excel-worksheet-engine/model/` and Foundation root core-model mirrors are read-only by default.
+- Local Foundation edits to mirrored files are allowed only as mirror-sync changes from canonical lane repos, with:
+  - source repo/path and source commit hash recorded,
+  - no local-only normative divergence,
+  - updated mirror status metadata in the edited file header and/or mirror index docs.
+- Naming policy:
+  - existing historical filenames may remain for link stability,
+  - mirror files must include a top-level mirror banner (`Foundation Mirror Copy - Read-only`) plus canonical path pointer,
+  - new mirror artifacts should use `_MIRROR` suffix where practical.
+
+### 8.16 Advanced Experimental Lane Policy (Normative)
 - Foundation does not enforce a hard single advanced experimental lane rule.
 - Default bounded policy: at most `2` concurrent advanced experimental lanes may be active program-wide unless a synthesis decision explicitly overrides.
 - Every advanced lane must declare:
@@ -435,7 +449,7 @@ Handoff records may be included as:
 
 ### 10.3 Sequence Baseline for Current Program Layout
 Use this dependency-ordered wave sequence for current execution planning:
-1. **Wave A**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map). FEC/F3E spec ownership transfer to OxFml (Foundation retains read-only conformance mirror).
+1. **Wave A (completed)**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map). OxFml/OxCalc repos are bootstrapped and Foundation now operates as read-only mirror for lane-owned specs.
 2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts). FEC/F3E concurrency-hardening gates are Stage 2 prerequisites, not Wave B exit criteria; DNA OneCalc and DNA TreeCalc proceed under Stage 1 sequential coordinator. OCaml/Lean kickoff items are Deferred — revisit activation at Wave B when OxFml evaluator contracts are exercised and can inform the formal model shape.
 3. **Wave C**: DNA OneCalc proving host — no-reference-resolution profile proving, formula language completeness, OxFunc function catalog validation, Stage 1 sequential coordinator.
 4. **Wave D**: OxCalc tree-substrate realization and coordinator baseline closure — tree-only substrate realization (no grid, no spill, no structural rewrites, Stage 1 sequential coordinator).

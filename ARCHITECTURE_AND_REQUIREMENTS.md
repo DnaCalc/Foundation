@@ -24,7 +24,7 @@ Enforceable structural rules derived from Mission/Doctrine.
 
 ## 3. System Architecture (A1)
 This section now includes a formal-core layer model intended to be shared by Green proofs/models, the OCaml oracle, and both delivery engines.
-Detailed core formal/semantic model development is maintained in `CORE_ENGINE_FORMAL_MODEL.md`.
+Detailed core formal/semantic model development is owned in `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md`; `CORE_ENGINE_FORMAL_MODEL.md` in Foundation is the read-only mirror snapshot.
 This document should keep architecture-level summaries and stable constraints, with minimal duplication of formal-core detail.
 
 ### 3.1 Protocol Surface (identical across Red/Blue)
@@ -158,7 +158,7 @@ Formal-model note:
 - Section `3.11` in this document provides a consolidated architecture summary with cross-references to that detailed model.
 
 ### 3.11 Core Formal Semantics Summary
-Detailed formal semantics for the core engine model are maintained in `CORE_ENGINE_FORMAL_MODEL.md`. This section provides architecture-level summaries; consult the detailed model for formal definitions, type sketches, and invariant specifications.
+Detailed formal semantics for the core engine model are maintained canonically in `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md`; `CORE_ENGINE_FORMAL_MODEL.md` in Foundation is a read-only mirror snapshot. This section provides architecture-level summaries; consult the detailed model for formal definitions, type sketches, and invariant specifications.
 
 Key areas and their detailed-model locations:
 
@@ -176,14 +176,20 @@ Key areas and their detailed-model locations:
 To reduce ownership drift during implementation spikes, lane ownership is explicitly split as follows:
 - **OxFml** owns formula grammar, parse, and bind semantics.
 - **OxFunc** owns value-type and function semantics consumed during evaluation.
-- **FEC host/model lane** owns host protocol, capability policy, dependency lifecycle, scheduler interaction, and publication lifecycle.
+- **OxCalc** owns coordinator/core-engine policy: dependency lifecycle, scheduler interaction, publication lifecycle, and coordinator-facing protocol clauses.
 
-FEC/F3E spec ownership transfers to OxFml when that repo is created (Wave A); Foundation retains a read-only conformance mirror of the FEC/F3E specification artifacts for cross-reference and assurance use.
+FEC/F3E spec ownership is now in OxFml; Foundation retains a read-only conformance mirror of FEC/F3E artifacts for cross-reference and assurance use.
 - Formula-semantic formatting behavior (including format-string interpretation and conditional-format configuration evaluation lanes) is evaluator work and must cross the FEC/F3E seam; it is not a display-only concern.
 - FEC/F3E protocol definition authority: co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
 - Visibility-priority scheduling policy is core-engine policy and must preserve stabilized semantic equivalence; FEC/F3E provides evidence and deltas, not global scheduling truth.
 
-Current working references:
+Canonical working references:
+- `..\\OxFml\\docs\\spec\\fec-f3e\\FEC_F3E_REDESIGN_SPEC.md`
+- `..\\OxFml\\docs\\spec\\fec-f3e\\FEC_F3E_REDESIGN_OBSERVATIONS.md`
+- `..\\OxFml\\docs\\spec\\fec-f3e\\FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+- `..\\OxCalc\\docs\\spec\\core-engine\\CORE_ENGINE_FORMAL_MODEL.md`
+
+Foundation mirror references (read-only copies):
 - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`
 - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md`
 - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`

@@ -1,4 +1,8 @@
-# FEC/F3E Updated Spec Pointers Prompt (Foundation Handoff)
+# FEC/F3E Updated Spec Pointers Prompt (Foundation Mirror Copy)
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copy:
+- `C:/Work/DnaCalc/OxFml/docs/spec/fec-f3e/FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md`
 
 Imported into Foundation conformance workspace from:
 - `C:/Work/DnaCalc/DnaVisiCalc/docs/ENGINE_FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md`

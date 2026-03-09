@@ -1,4 +1,8 @@
-# Excel Formula Language Concrete Rules
+# Excel Formula Language Concrete Rules (Foundation Mirror Copy)
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copy:
+- `C:/Work/DnaCalc/OxFml/docs/spec/formula-language/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md`
 
 ## 1. Purpose
 This document defines concrete worksheet-formula language rules for the Excel-first model.

@@ -1,11 +1,17 @@
 # Excel Cell Concrete Model Workspace
 
 This directory is the Excel-first concrete modeling lane for in-cell worksheet-engine semantics.
+In Foundation, this directory is a mirror snapshot workspace for cross-repo conformance/governance.
 
 ## Purpose
 - Provide concrete, reviewable, source-backed behavior models.
 - Keep unresolved areas explicit.
 - Maintain an explicit active-vs-archive split for FEC/F3E seam documentation.
+- Keep mirror copies read-only and pointer-linked to canonical lane repos (`OxFml`, `OxCalc`).
+
+Canonical editable lane-owned locations:
+- `C:/Work/DnaCalc/OxFml/docs/spec/`
+- `C:/Work/DnaCalc/OxCalc/docs/spec/`
 
 ## Active files
 - `EXCEL_CELL_CONCRETE_MODEL.md`

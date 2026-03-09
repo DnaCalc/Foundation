@@ -5,7 +5,7 @@
 - Source-of-truth doctrine remains `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, and `OPERATIONS.md`.
 - This notes file is the live knowledge base for details not yet promoted to doctrine.
 - Current baseline snapshot reflects the 2026-03-09 synthesis consolidation (core-engine, FEC/F3E, and program-layout passes complete).
-- 2026-03 synthesis promotions for core engine and FEC/F3E are reflected in source-of-truth docs, `CORE_ENGINE_FORMAL_MODEL.md`, and conformance/model artifacts under `reference/conformance/excel-worksheet-engine/model/fec-f3e/`.
+- 2026-03 synthesis promotions for core engine and FEC/F3E are reflected in source-of-truth doctrine docs; canonical editable specs now live in `..\\OxCalc\\docs\\spec\\` and `..\\OxFml\\docs\\spec\\`, with Foundation keeping read-only mirror copies.
 
 ## 2. Inputs synthesized in this pass
 - Prompt run set: `prompts/runs/20260222-011351-prompt-pack/responses/*` (18 responses).
@@ -131,13 +131,13 @@
 - Overlay lifecycle keying (`snapshot_epoch`, `wave_id`, `formula_stable_id`, `formula_token`, `bind_hash`, `profile_version`) is locked with epoch-safe eviction policy.
 - Co-defined protocol authority between OxFml (evaluator-side) and OxCalc (coordinator-facing) is the resolved ownership model.
 - Concurrency-hardening gates are Stage 2 prerequisites; Stage 1 sequential coordinator is sufficient for DNA OneCalc and DNA TreeCalc.
-- Detailed spec artifacts: `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md` and related files.
+- Detailed spec artifacts are canonically in `..\\OxFml\\docs\\spec\\fec-f3e\\` (Foundation keeps mirror copies under `reference/conformance/excel-worksheet-engine/model/fec-f3e/`).
 
 ## 7. Next synthesis-triggering questions
 - How should Green pack coverage be staged against the now-stabilized DnaVisiCalc v0 functional contract (`SPEC_v0`, `ENGINE_REQUIREMENTS`, `ENGINE_API`)? *Open.*
 - Which deterministic replay schema is canonical for concurrent evaluator traces? *Open (Stage 2 prerequisite).*
 - What is the chosen OxCaml posture for Green (observe-only, experimental, or committed)? *Open.*
 - Which OpenClaw source corpus is canonical for topic 004? *Open.*
-- FEC/F3E spec artifact migration plan to OxFml — what is the handoff format and which artifacts transfer vs mirror? *New, open.*
+- FEC/F3E spec artifact migration plan to OxFml — resolved in bootstrap pass `20260309-184706-oxfml-oxcalc-bootstrap-prep-pass-01`; OxFml canonical ownership is active and Foundation now keeps read-only mirrors under mirror policy.
 - DNA OneCalc minimum viable profile definition — which function subset, coercion rules, and format behavior are in scope? *New, open.*
 - Tree-host semantic gap register baseline — what is the initial gap set between tree-only and tree-grid-hybrid phases? *New, open (see `PACK.treehost_to_gridhost.semantic_gap_registry`).*

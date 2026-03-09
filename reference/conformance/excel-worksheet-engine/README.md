@@ -1,6 +1,11 @@
 # Excel Worksheet-Engine Conformance Workspace
 
-This folder is the authoritative working conformance specification area for Excel worksheet-engine compatibility scope.
+This folder is the Foundation conformance and mirror workspace for Excel worksheet-engine compatibility scope.
+Canonical editable lane-owned specs are maintained in:
+- `..\\..\\..\\..\\OxFml\\docs\\spec\\`
+- `..\\..\\..\\..\\OxCalc\\docs\\spec\\`
+
+Foundation copies under this folder are read-only mirrors unless a mirror-sync update is being performed.
 
 ## Active core documents
 - `EXCEL_CONFORMANCE_SPEC.md`: single working conformance spec contract.
@@ -15,10 +20,13 @@ This folder is the authoritative working conformance specification area for Exce
 - `model/fec-f3e/README.md`: active FEC/F3E detail set index.
 - `model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`: active seam contract baseline.
 - `model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`: active current protocol matrix.
+- `MIRROR_POLICY.md`: mirror edit gate, canonical ownership map, and naming policy.
 
 ## Active external references
 - `../../../../OxFunc/CHARTER.md`: OxFunc charter.
 - `../../../../OxFunc/docs/function-lane/*`: mutable function/value working docs (OxFunc-owned).
+- `../../../../OxFml/docs/spec/*`: mutable formula/evaluator seam working docs (OxFml-owned).
+- `../../../../OxCalc/docs/spec/*`: mutable core-engine working docs (OxCalc-owned).
 - `functions/XLL_SDK_REGISTRATION_AND_TYPES_REFERENCE.md`: Foundation-owned XLL reference artifact.
 
 ## Active empirical/formal run lanes

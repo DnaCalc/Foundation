@@ -1,4 +1,8 @@
-# FEC/F3E Redesign Observations (current)
+# FEC/F3E Redesign Observations (Foundation Mirror Copy)
+
+Read-only in Foundation (except mirror-sync updates).
+Canonical editable copy:
+- `C:/Work/DnaCalc/OxFml/docs/spec/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md`
 
 Imported into Foundation conformance workspace from:
 - `C:/Work/DnaCalc/DnaVisiCalc/docs/ENGINE_FEC_F3E_REDESIGN_OBSERVATIONS.md`
