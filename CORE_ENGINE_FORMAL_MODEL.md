@@ -21,7 +21,32 @@ Core context docs used in this consolidation:
 - `OPERATIONS.md`
 - `notes/BRAINSTORM_NOTES.md`
 
-Archived formal-idea sources consolidated here:
+Primary synthesis/evidence inputs integrated into the current baseline:
+- DAG theory lane outputs:
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/02_theory_and_math_catalog.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/03_algorithm_family_map.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/04_dnacalc_transfer_matrix.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/05_deep_research_synthesis.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/09_external_report_reconciliation.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/10_conformance_and_proof_obligations.md`
+  - `research/runs/20260305-201430-dag-computation-theory-deep-research-pass-01/outputs/11_empirical_pack_definitions.md`
+- FEC/F3E current best-spec set (current):
+  - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`
+  - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SYNTHESIS.md`
+  - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md`
+  - `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+- Deep design/review synthesis inputs:
+  - `prompts/runs/20260308-171858-core-engine-fec-f3e-deep-research-pack-01/responses/deep_research_core_engine_fec_f3e_design.md`
+  - `prompts/runs/20260308-171858-core-engine-fec-f3e-deep-research-pack-01/responses/chatgpt_pro_response.md`
+  - `prompts/runs/20260308-171858-core-engine-fec-f3e-deep-research-pack-01/responses/claude_opus_response.md`
+  - `prompts/runs/20260308-182605-core-engine-fec-f3e-dual-model-review-pass-01/responses/gpt54/03_review2_final.md`
+  - `prompts/runs/20260308-184205-core-engine-fec-f3e-dual-model-review-pass-02/responses/claude/03_review2_final.md`
+- Promotion decision sources:
+  - `synthesis/runs/20260308-213253-core-engine-fec-f3e-synthesis-pass-02/outputs/synthesis_report.md`
+  - `synthesis/runs/20260309-004109-improvement-notes-synthesis-pass-01/outputs/synthesis_report.md`
+  - `synthesis/runs/20260309-072109-core-engine-program-layout-synthesis-pass-01/outputs/synthesis_report.md`
+
+Archived formal-idea sources retained and consolidated here:
 - `notes/archive/formal-model/FORMAL_MODELS_IDEAS.md`
 - `notes/archive/formal-model/FORMAL_MODEL_REMAINING_NOTES.md`
 - `notes/archive/formal-model/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md`
@@ -358,6 +383,27 @@ Seam artifacts:
 Baseline module split:
 - `CoreIds`, `CoreStructure`, `CoreRefs`, `CoreDeps`, `CoreEval`, `CoreOps`.
 
+### 6.8 Coordinator and Staged Realization (`Baseline` + `Provisional`)
+Baseline coordinator model:
+- single publisher authority for accepted/rejected commit publication,
+- explicit session/token/capability/snapshot fences at commit,
+- deterministic reject semantics with structured reject detail.
+
+Staged realization contract:
+1. **Stage 1 (Baseline):** sequential coordinator, deterministic topo/SCC, conservative fallback allowed.
+2. **Stage 2 (Provisional):** partitioned parallel evaluators behind same coordinator publication authority.
+3. **Stage 3 (Provisional/Experimental):** advanced incremental lanes (dynamic-topo/SAC-like) and stream-heavy policy lanes only after parity/equivalence evidence.
+
+Overlay lifecycle baseline:
+- runtime overlays are epoch-scoped derived state,
+- overlay reuse requires epoch/token/bind/profile fence match,
+- overlay eviction is deterministic and pinned-epoch safe.
+
+Execution-vehicle guidance (non-doctrinal but retained):
+- `DNA OneCalc` is the preferred fast proving host for single-node evaluator semantics.
+- `DNA TreeCalc` is the preferred first serious proving host for multi-node core-engine semantics.
+- `DNA PreCalc` is the first integrated tree-grid-hybrid host target.
+
 ## 7. Consolidated Idea Funnel (No-Loss Triage)
 
 ### 7.1 Captured High-Value Core Ideas (`Exploratory` unless noted)
@@ -433,6 +479,12 @@ This index asserts where each source family is captured in this document.
 
 - `ARCHITECTURE_AND_REQUIREMENTS.md` core sections (`3.1`, `3.2`, `3.3`, `3.4`, `3.6.1`, `3.11`..`3.17`): Sections `5` and `6`.
 - `notes/BRAINSTORM_NOTES.md` core-related motifs/open questions: Sections `7.1`, `7.3`, `8`.
+- DAG theory lane (`02/03/04/05/09/10/11` outputs): Sections `5.2`, `5.4`, `5.5`, `6.6`, `6.8`, `7.3`.
+- FEC/F3E current spec set (`SPEC/SYNTH/OBS/MATRIX`): Sections `5.3`, `5.4`, `6.3`, `6.4`, `6.8`.
+- Deep design/review outputs (ChatGPT/Claude/dual reviews): Sections `5.3`, `5.4`, `6.2`, `6.3`, `6.8`.
+- Formatting/visibility conformance model:
+  - `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md`: Sections `5.4`, `6.2`.
+- Synthesis promotion runs (`20260308-213253`, `20260309-004109`, `20260309-072109`): Sections `5.2`, `5.3`, `6.8`, `7.3`.
 - `notes/archive/formal-model/FORMAL_MODELS_IDEAS.md` layered model + design-space ideas + benchmarking: Sections `6`, `7.1`, `7.2`.
 - `notes/archive/formal-model/FORMAL_MODEL_REMAINING_NOTES.md` deferred decisions: Section `7.3`.
 - `notes/archive/formal-model/FORMAL_CORE_STATUS_AND_SUGGESTIONS_DRAFT.md` status-derived priorities + kickoff suggestions: Sections `7.4`, `7.3`.
@@ -442,3 +494,12 @@ Active formal-model work must happen in this document.
 
 Superseded note paths (`notes/FORMAL_*.md`) remain as archive redirects.
 Full historical copies are retained under `notes/archive/formal-model/`.
+
+## 12. Recheck Status (2026-03-09)
+Comprehensiveness recheck result:
+- current baseline semantics are consistent with the best available research/review corpus currently promoted,
+- known advanced alternatives are retained with explicit `Provisional`/`Deferred` status and pack-evidence gates,
+- no high-signal source family from the active synthesis input corpus remains unaccounted for.
+
+Companion theory exposition:
+- `CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md` provides fuller theory framing, source references, and complementary future-path analysis.

@@ -217,6 +217,23 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Foundation docs remain the source of truth for doctrine, architecture framing, and operations process, and must stay consistent with that upstream functional contract.
 - Proposed functional-scope expansions discovered in implementation (for example from gap-analysis style docs) are tracked as follow-on backlog and routed through synthesis before any doctrine/policy promotion.
 
+### 7.2 Program Repo and Host Layout Baseline
+Component lane repos:
+- `Foundation`: doctrine/architecture/operations authority.
+- `DnaVisiCalc`: Round 0 pathfinder and seam-evidence source.
+- `OxFunc`: value/function semantics lane.
+- `OxFml`: formula language and single-node evaluator seam lane.
+- `OxCalc`: multi-node core engine lane.
+- `OxVba`: VBA runtime/compiler lane.
+
+Host progression:
+- `DNA VbCalc` -> `DNA OneCalc` -> `DNA TreeCalc` -> `DNA PreCalc` -> `DNA SuperCalc` -> `DNA Calc`.
+
+Execution rule:
+- host repos prove and compose lane repos,
+- lane repos do not silently mutate Foundation doctrine,
+- Foundation promotion requires managed-run handoff and synthesis decision logging.
+
 ## 8. Managed-Run Discipline (Prompt, Research, Synthesis, Reference)
 Prompt execution, deep research, synthesis, and reference-spec processing are treated as managed operational activities with run artifacts.
 
@@ -354,6 +371,14 @@ Handoff records may be included as:
 ### 8.14 Dependency Constitution and Theory-to-Pack Mapping (Normative)
 - Active repos/lane groups must maintain an explicit dependency constitution (allowed dependency directions and forbidden coupling edges).
 - Dependency-constitution changes are policy changes and must route through synthesis before becoming normative.
+- Baseline allowed dependency direction (component lanes):
+  - `OxFml` -> `OxFunc`
+  - `OxCalc` -> `OxFml` and `OxFunc`
+  - `OxVba` remains independent by default; optional adapters are host-level composition choices and must not backflow doctrine into lane boundaries.
+- Baseline forbidden coupling edges (without synthesis override):
+  - `OxFunc` -> `OxFml`/`OxCalc`/`OxVba`
+  - `OxFml` -> `OxCalc`
+  - `OxCalc` -> host/UI/file-adapter implementation layers
 - Foundation maintains a theory-to-pack mapping register that links high-value theory claims to one of:
   - proof obligation,
   - conformance pack requirement,
@@ -406,3 +431,13 @@ Handoff records may be included as:
 - Open cross-team policy decisions are tracked as `DEC-###` entries with:
   - owner, target round, current status, blocking impact.
 - No critical ambiguity should remain implicit in brainstorm-only notes once it affects stabilization criteria.
+
+### 10.3 Sequence Baseline for Current Program Layout
+Use this dependency-ordered wave sequence for current execution planning:
+1. **Wave A**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map).
+2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts).
+3. **Wave C**: DNA OneCalc proving host for single-node evaluator semantics and fast conformance loops.
+4. **Wave D**: OxCalc tree-substrate realization and coordinator baseline closure.
+5. **Wave E**: DNA TreeCalc proving host for serious multi-node behavior before grid complexity.
+6. **Wave F**: DNA PreCalc first integrated tree-grid-hybrid host with staged concurrency policy.
+7. **Wave G**: DNA SuperCalc and DNA Calc expansion lanes under bounded advanced-lane policy and parity evidence.

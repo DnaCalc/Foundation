@@ -32,9 +32,9 @@ Out of scope (unchanged):
 8. Formula-language pass-2 scenario seed list: `model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv`.
 9. Concrete-model open/gap ledger: `model/EXCEL_CELL_CONCRETE_MODEL_OPEN_QUESTIONS.md`.
 10. Concrete-model trace ledger: `model/EXCEL_CELL_CONCRETE_MODEL_TRACE.jsonl`.
-11. FEC planning draft: `model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`.
-12. FEC/F3E interface draft specification: `model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`.
-13. FEC/F3E protocol conformance matrix: `model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`.
+11. FEC/F3E active detail index: `model/fec-f3e/README.md`.
+12. FEC/F3E redesign spec (current): `model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`.
+13. FEC/F3E redesign protocol matrix (current): `model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`.
 14. Formatting hierarchy/visibility model: `model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md`.
 15. Pass-2 execution outputs: `../../../research/runs/20260302-070309-excel-formula-language-pass2-pack-01/outputs/formula_parse_pass2/`.
 16. Empirical registry: `../../empirical/findings_registry.jsonl`.

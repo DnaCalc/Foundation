@@ -213,9 +213,53 @@ To reduce ownership drift during implementation spikes, lane ownership is explic
 - Visibility-priority scheduling policy is core-engine policy and must preserve stabilized semantic equivalence; FEC/F3E provides evidence and deltas, not global scheduling truth.
 
 Current working references:
-- `reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md`
-- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_INTERFACE_DRAFT_SPEC.md`
-- `reference/conformance/excel-worksheet-engine/model/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+- `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md`
+- `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md`
+- `reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv`
+
+### 3.19 Core Engine Realization Plan (Option-B Staged Baseline)
+The baseline realization strategy is:
+1. immutable structural truth (`DocSnapshot`) and deterministic structural dependency derivation,
+2. epoch-scoped runtime overlays (dynamic deps/spill/format tokens/visibility metadata),
+3. FEC/F3E transactional seam for node-local evaluation publication,
+4. single-publisher coordinator semantics for accepted/rejected commit publication.
+
+Staged adoption:
+- **Stage 1 (sequential coordinator):**
+  - deterministic topo/SCC scheduling,
+  - atomic commit bundle publication (`value_delta` + `topology_delta` + `shape_delta`),
+  - conservative fallback allowed for unresolved spill/topology complexity.
+- **Stage 2 (partitioned parallel evaluation):**
+  - concurrent evaluator partitions with coordinator-controlled publication fences,
+  - deterministic parallel signature packs required before policy promotion.
+- **Stage 3 (advanced policy lanes):**
+  - optional dynamic-topology/SAC-inspired lanes and stream-heavy advanced lanes,
+  - promotion only through parity/equivalence evidence and synthesis decisions.
+
+The staged model is normative for execution planning:
+- do not skip Stage 1 correctness closure,
+- do not promote advanced lanes directly into baseline semantics.
+
+### 3.20 Program Repo and Host Mapping
+Architecture ownership map:
+- **Foundation:** doctrine, architecture framing, operations and conformance policy.
+- **OxFunc:** value/function semantics.
+- **OxFml:** formula grammar/bind and single-node evaluator seam contracts.
+- **OxCalc:** multi-node core engine policy and execution.
+- **OxVba:** VBA runtime/compiler and host integration lane.
+- **DnaVisiCalc:** Round 0 pathfinder evidence source.
+
+Host progression map:
+- `DNA VbCalc` (OxVba proving host),
+- `DNA OneCalc` (single-node formula/function proving host),
+- `DNA TreeCalc` (first serious OxCalc host on tree substrate),
+- `DNA PreCalc` (first full tree-grid-hybrid host),
+- later `DNA SuperCalc` and `DNA Calc` progression.
+
+Interpretation rule:
+- lane repos own reusable semantics/implementation lanes,
+- host repos prove and compose lanes,
+- Foundation remains doctrine owner.
 
 ## 4. Architectural Constraints (A2 / CONSTR- examples)
 - **CONSTR-001:** All persistent mutations are ops; direct document mutation is forbidden outside the coordinator.
@@ -242,6 +286,9 @@ Current working references:
 - **CONSTR-022:** Formatting semantics that influence formula evaluation must be modeled through evaluator/seam contracts, not inferred from renderer state.
 - **CONSTR-023:** Core semantic truth is profile-defined and must remain invariant under runtime strategy choices (scheduler policy, parallelism shape, incremental algorithm, or optimization mode).
 - **CONSTR-024:** Required profiles must emit portable replay bundles plus structured forensic traces sufficient for deterministic causality diagnosis and cross-engine differential triage.
+- **CONSTR-025:** Core runtime overlays are epoch-scoped derived state; overlay lifecycle, retention, and eviction must be deterministic and pinned-epoch safe.
+- **CONSTR-026:** Coordinator publication authority is single-publisher at baseline; concurrent evaluators may not bypass coordinator commit fences.
+- **CONSTR-027:** Host/repo composition may evolve, but lane ownership boundaries (OxFunc/OxFml/OxCalc/OxVba) cannot be collapsed without synthesis-approved architecture edits.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -341,3 +388,18 @@ DnaVisiCalc must already validate the meta-architecture and the discipline that 
 - DnaPreCalc to expand feature surface without abandoning proofs/packs,
 - DnaSuperCalc to explore deeper refactors and extensibility,
 - DnaCalc to synthesize a maintainable, optimized foundation for long-term evolution.
+
+### 7.1 Forward Execution Vehicles
+Round-compatible host progression for implementation planning:
+1. `DNA OneCalc`: fast single-node proving host for OxFml/OxFunc (optional OxVba integration).
+2. `DNA TreeCalc`: first serious multi-node proving host for OxCalc on tree substrate.
+3. `DNA PreCalc`: first integrated tree-grid-hybrid host aligned with Round 1 scope.
+4. `DNA SuperCalc`: later refinement/perfection host stage.
+5. `DNA Calc`: final full host/product realization.
+
+### 7.2 Dependency-Conscious Progression Rule
+Architecture progression must respect dependency constitution:
+1. OxFunc remains dependency-light semantic base.
+2. OxFml consumes OxFunc and exposes evaluator contracts.
+3. OxCalc consumes OxFml/OxFunc and owns multi-node execution policy.
+4. Host repos compose lanes; they do not redefine lane ownership or doctrine.

@@ -52,7 +52,28 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 - **DNA SuperCalc** (`DnaSuperCalc`) — Round 2 refactor/perfection pass.
 - **DNA Calc** (`DnaCalc`) — Round 3 synthesized long-term product.
 
-### 3.2 Team Colors
+### 3.2 Component Repos
+- **Foundation** — doctrine, architecture, operations, formal-model framing, and conformance policy authority.
+- **DnaVisiCalc** — Round 0 pathfinder and executable seam evidence source.
+- **OxFunc** — value universe and function semantics lane.
+- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane.
+- **OxCalc** — multi-node core calculation engine lane.
+- **OxVba** — VBA runtime/compiler and host integration lane.
+
+### 3.3 Host Progression (Execution Vehicles)
+- **DNA VbCalc** — dedicated OxVba host proving path (independent lane progression).
+- **DNA OneCalc** — single-node formula/function host for fast evaluator proving.
+- **DNA TreeCalc** — first serious multi-node host for OxCalc on tree substrate.
+- **DNA PreCalc** — first full tree-grid-hybrid host in the Round 1 path.
+- **DNA SuperCalc** — later refinement host stage.
+- **DNA Calc** — future full host/product realization.
+
+Interpretation rule:
+- Round names describe program stages.
+- Repo names describe long-lived ownership lanes.
+- Host names describe proving/application vehicles built from those lanes.
+
+### 3.4 Team Colors
 - **Green** — Spec stack + verification: DSLs, Lean proofs, TLA+ models, OCaml oracle, conformance packs.
 - **Red** — Rust implementation.
 - **Blue** — .NET implementation.

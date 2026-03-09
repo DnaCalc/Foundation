@@ -4,7 +4,8 @@
 - This file stores retained, non-doctrinal knowledge synthesized from prompt and research runs.
 - Source-of-truth doctrine remains `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, and `OPERATIONS.md`.
 - This notes file is the live knowledge base for details not yet promoted to doctrine.
-- Current synthesis pass: `20260227-124919-visicalc-foundation-pass-02` follow-up (after `20260226-224457-visicalc-foundation-pass-01`).
+- Current baseline snapshot in this file remains the 2026-02-27 synthesis wave.
+- Later 2026-03 synthesis promotions for core engine and FEC/F3E are primarily reflected in source-of-truth docs and conformance/model artifacts under `reference/conformance/excel-worksheet-engine/model/fec-f3e/`.
 
 ## 2. Inputs synthesized in this pass
 - Prompt run set: `prompts/runs/20260222-011351-prompt-pack/responses/*` (18 responses).

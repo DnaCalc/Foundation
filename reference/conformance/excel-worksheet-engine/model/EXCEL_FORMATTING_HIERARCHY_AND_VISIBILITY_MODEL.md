@@ -8,7 +8,7 @@ Define a concrete, implementation-facing model for:
 
 This document is a focused companion to:
 1. `EXCEL_CELL_CONCRETE_MODEL.md` (`ECM-FMT-*` lanes),
-2. `EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md` (locale/profile policy lanes),
+2. `fec-f3e/FEC_F3E_REDESIGN_SPEC.md` (locale/profile and seam policy lanes),
 3. `CONFORMANCE_REQUIREMENTS.csv` (`XLS-CF-FM-*` lanes).
 
 ## 2. Formatting Object Families (SpreadsheetML-facing)

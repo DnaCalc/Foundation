@@ -26,5 +26,5 @@ Foundation redirect stubs retained for compatibility:
 5. `INTERESTING_FUNCTIONS_INITIAL_CLASSIFICATION.md`
 
 Cross-lane context:
-1. `../model/EXCEL_FORMULA_EVALUATION_CONTEXT_FEC.md` defines the planning draft for Formula Evaluation Context (FEC) capability modeling used by function dependency profiles.
+1. `../model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md` defines the active FEC/F3E seam contract used by function dependency profiles.
 2. In the FEC/F3E split, OxFunc is the canonical owner of the F3E value/function lane; this folder provides Foundation-side reference anchors and redirects.
