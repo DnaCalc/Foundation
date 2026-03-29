@@ -1,0 +1,18 @@
+repo,source_relative_path,target_relative_path,authority_after_import,copy_mode,notes
+OxFml,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md,docs/spec/fec-f3e/FEC_F3E_REDESIGN_SPEC.md,OxFml,copy,Primary seam contract owned by OxFml after import.
+OxFml,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SYNTHESIS.md,docs/spec/fec-f3e/FEC_F3E_REDESIGN_SYNTHESIS.md,OxFml,copy,Supporting synthesis notes retained with active spec.
+OxFml,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md,docs/spec/fec-f3e/FEC_F3E_REDESIGN_OBSERVATIONS.md,OxFml,copy,Operational observations retained with active spec.
+OxFml,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv,docs/spec/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv,OxFml,copy,Protocol requirement matrix.
+OxFml,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md,docs/spec/fec-f3e/FEC_F3E_FOUNDATION_UPDATED_SPEC_POINTERS_PROMPT.md,OxFml,copy,Pointer pack for review/evidence provenance.
+OxFml,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md,docs/spec/formula-language/EXCEL_FORMULA_LANGUAGE_CONCRETE_RULES.md,OxFml,copy,Formula grammar/behavior rule authority transfers to OxFml.
+OxFml,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv,docs/spec/formula-language/EXCEL_FORMULA_LANGUAGE_CONFORMANCE_MATRIX.csv,OxFml,copy,Formula-language conformance matrix.
+OxFml,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md,docs/spec/formula-language/EXCEL_FORMULA_LANGUAGE_PASS2_PROBE_PLAN.md,OxFml,copy,Active probe-plan baseline.
+OxFml,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv,docs/spec/formula-language/EXCEL_FORMULA_LANGUAGE_PASS2_SCENARIO_SEED.csv,OxFml,copy,Scenario seed baseline.
+OxFml,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md,docs/spec/formatting/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md,OxFml,copy,Formatting semantics affecting evaluation are OxFml-owned; visibility policy is coordinated with OxCalc.
+OxCalc,CORE_ENGINE_FORMAL_MODEL.md,docs/spec/core-engine/CORE_ENGINE_FORMAL_MODEL.md,OxCalc,copy,Core formal model baseline now lane-owned for implementation evolution.
+OxCalc,CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md,docs/spec/core-engine/CORE_ENGINE_THEORY_AND_ALTERNATIVE_PATHS.md,OxCalc,copy,Theory grounding and paths-not-taken context.
+OxCalc,ARCHITECTURE_AND_REQUIREMENTS.md,docs/spec/core-engine/FOUNDATION_ARCHITECTURE_SNAPSHOT.md,OxCalc,copy,Snapshot reference for adopted constraints and requirements.
+OxCalc,OPERATIONS.md,docs/spec/core-engine/FOUNDATION_OPERATIONS_SNAPSHOT.md,OxCalc,copy,Snapshot of pack/gate process relevant to OxCalc execution.
+OxCalc,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_REDESIGN_SPEC.md,docs/spec/fec-f3e/FEC_F3E_REDESIGN_SPEC_MIRROR.md,OxFml,copy,Mirror for coordinator implementers; authority remains OxFml.
+OxCalc,reference/conformance/excel-worksheet-engine/model/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX.csv,docs/spec/fec-f3e/FEC_F3E_PROTOCOL_CONFORMANCE_MATRIX_MIRROR.csv,OxFml,copy,Mirror for coordinator-side pack wiring.
+OxCalc,reference/conformance/excel-worksheet-engine/model/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md,docs/spec/visibility/EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md,OxCalc,copy,Visibility-priority policy ownership is OxCalc; formatting clauses consumed as seam inputs.

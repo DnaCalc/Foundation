@@ -1,0 +1,11 @@
+Start a new research project to define the initial host scope for `DNA OneCalc` and assess repo readiness for creating the `DnaOneCalc` repo.
+
+Use current Foundation doctrine plus current authoritative sibling-repo docs and artifacts.
+
+Goals:
+1. define a coherent initial host mission and boundary for `DNA OneCalc`,
+2. define the first host-profile ladder for a single-node formula/function host,
+3. clarify the UI/runtime split needed for Tauri desktop plus web/WASM/WASI ambitions,
+4. clarify the initial persistence and add-in/XLL/VBA integration boundaries,
+5. identify the real outstanding work in `OxFml`, `OxFunc`, `OxReplay`, `OxXlObs`, and `OxVba` that blocks or shapes a first `DnaOneCalc` repo,
+6. gather enough evidence to guide repo bootstrap and early worksets.

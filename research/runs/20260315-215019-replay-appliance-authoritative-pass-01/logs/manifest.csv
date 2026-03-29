@@ -1,0 +1,8 @@
+run_id,stage,status,start_utc,end_utc,artifact,notes
+20260315-215019-replay-appliance-authoritative-pass-01,authoritative_inventory,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/01_authoritative_lane_inventory.md,Authoritative sibling-repo replay and evidence surfaces inventoried
+20260315-215019-replay-appliance-authoritative-pass-01,replay_spec,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/02_replay_appliance_motivation_charter_requirements.md,Replay appliance motivation charter and requirements captured
+20260315-215019-replay-appliance-authoritative-pass-01,replay_architecture,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/03_replay_appliance_architecture.md,Replay appliance architecture captured
+20260315-215019-replay-appliance-authoritative-pass-01,replay_performance_design,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/04_replay_appliance_performance_sensitive_design.md,Performance-sensitive design captured
+20260315-215019-replay-appliance-authoritative-pass-01,tool_proposal,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/05_dna_recalc_tool_proposal.md,DNA ReCalc tool proposal captured
+20260315-215019-replay-appliance-authoritative-pass-01,lane_addenda,complete,2026-03-15T19:52:28Z,2026-03-15T19:52:28Z,outputs/06_oxcalc_addendum.md;outputs/07_oxfml_addendum.md;outputs/08_oxfunc_addendum.md;outputs/09_oxvba_addendum.md,Repo-specific implementation addenda captured
+

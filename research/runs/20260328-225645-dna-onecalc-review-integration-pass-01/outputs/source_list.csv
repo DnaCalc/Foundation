@@ -1,0 +1,12 @@
+path,kind,role
+inputs/pack/README.md,input,compact onecalc pack overview
+inputs/pack/DNA_ONECALC_SCOPE_AND_SPEC.md,input,reviewed compact onecalc spec snapshot
+inputs/pack/OXCALC_REFERENCE.md,input,consolidated oxcalc seam-reference pack
+inputs/pack/OXFML_REFERENCE.md,input,consolidated oxfml reference pack
+inputs/pack/OXFUNC_REFERENCE.md,input,consolidated oxfunc reference pack
+inputs/pack/OXREPLAY_REFERENCE.md,input,consolidated oxreplay reference pack
+inputs/pack/OXXLOBS_REFERENCE.md,input,consolidated oxxlobs reference pack
+inputs/pack/OXVBA_REFERENCE.md,input,consolidated oxvba reference pack
+inputs/reviews/DNA_OneCalc_Clarifications_and_Suggestions.md,input,review suggestions and clarification memo
+inputs/reviews/DNA_OneCalc_Prompt_Packets.md,input,review-derived upstream prompt packet set
+notes/DNA_ONECALC_SCOPE_AND_SPEC.md,updated_target,canonical refined foundation onecalc spec

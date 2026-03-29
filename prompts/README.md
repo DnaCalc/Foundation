@@ -22,6 +22,8 @@ Define reusable prompt assets and store prompt-run artifacts as versioned projec
 ## Layout
 - `PROMPT_PACK.md`: general improvement prompt pack.
 - `PROMPT_PACK_DEEP_RESEARCH.md`: deep research prompt pack.
+- `dna-onecalc-oxcalc-doc-improvement.md`: repo-local prompt for improving OxCalc docs as DNA OneCalc seam-reference material.
+- `dna-onecalc-oxreplay-doc-improvement.md`: repo-local prompt for improving OxReplay docs as DNA OneCalc replay-infrastructure material.
 - `MODEL_EXECUTION_NOTES.md`: pinned CLI model ids and one-shot execution templates.
 - `triad.md`: triad execution pattern and sequencing.
 - `deep-research.md`: deep research run guidance.

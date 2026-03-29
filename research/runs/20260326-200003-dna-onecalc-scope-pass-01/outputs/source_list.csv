@@ -1,0 +1,41 @@
+source_id,repo,path_or_url,kind,status,notes
+SRC-FDN-001,Foundation,C:\Work\DnaCalc\Foundation\README.md,doc,read,Foundation orientation
+SRC-FDN-002,Foundation,C:\Work\DnaCalc\Foundation\CHARTER.md,doc,read,Program charter and host ladder
+SRC-FDN-003,Foundation,C:\Work\DnaCalc\Foundation\ARCHITECTURE_AND_REQUIREMENTS.md,doc,read,Current architecture and requirements constraints
+SRC-FDN-004,Foundation,C:\Work\DnaCalc\Foundation\OPERATIONS.md,doc,read,Operational doctrine and repo constitution
+SRC-FDN-005,Foundation,C:\Work\DnaCalc\Foundation\notes\BRAINSTORM_NOTES.md,doc,read,Supporting context only
+SRC-FDN-006,Foundation,C:\Work\DnaCalc\Foundation\notes\DNA_ONECALC_INITIAL_SCOPE.md,doc,read,Initial OneCalc scope note created in this turn
+SRC-OXFML-001,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\OXFML_DNA_ONECALC_HOST_POLICY_BASELINE.md,doc,read,Repo-local downstream host policy for DNA OneCalc
+SRC-OXFML-002,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\OXFML_TEST_LADDER_AND_PROVING_HOSTS.md,doc,read,Current proving-host ladder and exercised floor
+SRC-OXFML-003,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\OXFML_HOST_RUNTIME_AND_EXTERNAL_REQUIREMENTS.md,doc,read,Current bounded host/runtime packet
+SRC-OXFML-004,OxFml,C:\Work\DnaCalc\OxFml\crates\oxfml_core\src\host\mod.rs,code,read,SingleFormulaHost and first replay capture packet
+SRC-OXFML-005,OxFml,C:\Work\DnaCalc\OxFml\crates\oxfml_core\tests\fixtures\single_formula_host_replay_cases.json,artifact,read,Current retained single-formula replay scenarios
+SRC-OXFML-006,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\formatting\EXCEL_FORMATTING_HIERARCHY_AND_VISIBILITY_MODEL.md,doc,read,Formatting hierarchy and formula-visibility model
+SRC-OXFML-007,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\formula-language\OXFML_CF_DV_RESTRICTED_SUBLANGUAGES.md,doc,read,Initial conditional-formatting and data-validation carrier floor
+SRC-OXFML-008,OxFml,C:\Work\DnaCalc\OxFml\docs\spec\formula-language\MS_OE376_FORMULA_AND_FORMATTING_REVIEW.md,doc,read,Upstream review outcome for formatting and carrier families
+SRC-OXFML-009,OxFml,command:cargo test -p oxfml_core --test replay_retained_and_host_policy_tests --test w047_host_readiness_tests --test host_tests,command,pass,Fresh targeted executable evidence for host readiness
+SRC-OXFUNC-001,OxFunc,C:\Work\DnaCalc\OxFunc\docs\worksets\W046_CALL_AND_REGISTER_ID_UDF_REGISTRATION_SEAM.md,doc,read,Current UDF registration seam scope
+SRC-OXFUNC-002,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\W46_EXECUTION_RECORD.md,doc,read,Executed CALL and REGISTER.ID seam evidence
+SRC-OXFUNC-003,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\OXFUNC_LIBRARY_CONTEXT_SNAPSHOT_EXPORT_V1.csv,artifact,read,Current library-context export artifact
+SRC-OXFUNC-004,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\FUNCTION_SLICE_RUNTIME_LIBRARY_CONTEXT_PROVIDER_CONSUMER_MODEL_PRELIM.md,doc,read,Runtime-first library context model
+SRC-OXFUNC-005,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\XLL_ADDIN_BRIDGE_EXECUTION_RECORD.md,doc,read,Current XLL/add-in bridge execution record
+SRC-OXFUNC-006,OxFunc,C:\Work\DnaCalc\OxFunc\.tmp\replay-bundles\oxfunc-w15-v1\bundle_manifest.json,artifact,read,Current local replay bundle root
+SRC-OXFUNC-007,OxFunc,command:cargo test -p oxfunc_core call_register_id -- --nocapture,command,pass,Fresh targeted executable evidence for registration seam
+SRC-OXREPLAY-001,OxReplay,C:\Work\DnaCalc\OxReplay\docs\spec\DNA_RECALC_HOST.md,doc,read,DNA ReCalc host boundary in OxReplay
+SRC-OXREPLAY-002,OxReplay,C:\Work\DnaCalc\OxReplay\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Current active replay worksets
+SRC-OXREPLAY-003,OxReplay,C:\Work\DnaCalc\OxReplay\CURRENT_BLOCKERS.md,doc,read,Current replay blocker register
+SRC-OXREPLAY-004,OxReplay,C:\Work\DnaCalc\OxReplay\docs\test-runs,artifact,read,Retained validate replay diff explain and distill baselines
+SRC-OXREPLAY-005,OxReplay,command:pwsh ./scripts/meta-check.ps1 -Fast -NoArtifacts,command,pass,Fresh repo-level executable evidence
+SRC-OXXLOBS-001,OxXlObs,C:\Work\DnaCalc\OxXlObs\README.md,doc,read,Repo mission and replay-handoff boundary
+SRC-OXXLOBS-002,OxXlObs,C:\Work\DnaCalc\OxXlObs\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Current active observation worksets
+SRC-OXXLOBS-003,OxXlObs,C:\Work\DnaCalc\OxXlObs\docs\worksets\W007_FIRST_CROSS_REPO_REPLAY_AND_DIFF_CONSUMPTION.md,doc,read,Current cross-repo replay consumption scope
+SRC-OXXLOBS-004,OxXlObs,C:\Work\DnaCalc\OxXlObs\states\excel\xlobs_capture_values_formulae_001,artifact,read,Retained live Excel capture family
+SRC-OXXLOBS-005,OxXlObs,command:pwsh ./scripts/meta-check.ps1 -Fast -NoArtifacts,command,pass,Fresh repo-level executable evidence
+SRC-OXVBA-001,OxVba,C:\Work\DnaCalc\OxVba\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Current in-progress register and closure notes
+SRC-OXVBA-002,OxVba,C:\Work\DnaCalc\OxVba\CURRENT_BLOCKERS.md,doc,read,Current blocker ledger
+SRC-OXVBA-003,OxVba,C:\Work\DnaCalc\OxVba\docs\spec\HOSTING_PROJECT_TOOLING_PROPOSAL.md,doc,read,Current hosting/add-in/tooling direction
+SRC-OXVBA-004,OxVba,C:\Work\DnaCalc\OxVba\docs\worksets\WORKSET_2026-03-23_XLL_ADDIN_SUPPORT_P8.md,doc,read,Current XLL/add-in work packet
+SRC-OXVBA-005,OxVba,C:\Work\DnaCalc\OxVba\docs\evidence\conformance\COM_ACTIVATION_BOUNDARY_RECONCILIATION_2026-03-25.md,artifact,read,Recent oracle-backed COM activation truth
+SRC-OXIDE-001,OxIde,C:\Work\DnaCalc\OxIde\README.md,doc,read,Optional inspiration source for editor shell shape
+SRC-OXCALC-001,OxCalc,C:\Work\DnaCalc\OxCalc\README.md,doc,read,Multi-node engine mission for contrast and non-dependency confirmation
+SRC-OXCALC-002,OxCalc,C:\Work\DnaCalc\OxCalc\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Current advanced state of TreeCalc and replay work

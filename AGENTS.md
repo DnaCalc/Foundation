@@ -28,6 +28,12 @@ Before proposing architecture or process changes:
 4. Read `OPERATIONS.md`.
 5. Read `notes/BRAINSTORM_NOTES.md` as supporting context.
 
+For Replay appliance architecture, governance, or rollout work:
+1. Read `REPLAY_APPLIANCE.md` after the core source-of-truth docs.
+
+For repo-creation, repo-bootstrap, or execution-doctrine changes for sibling DNA Calc repos:
+1. Read `OPERATIONS.md` Section `8.18` after the core source-of-truth docs.
+
 Use `prompts/` only as helper material, not as source-of-truth doctrine.
 
 ## 3. Source of Truth and Conflict Handling

@@ -15,9 +15,9 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 3. **One-command readiness**  
    `meta check` (or equivalent) is the standard way to declare a state “green.”
 4. **Regressions are assets**  
-   Every bug becomes a minimized, machine-replayable trace/case artifact and remains in the corpus.
+   Every bug becomes a replayable witness or minimized machine-replayable trace/case artifact and remains in the corpus.
 5. **Determinism-first debugging**  
-   Deterministic modes exist for triage and conformance runs; non-determinism is opt-in and labeled.
+   Deterministic modes exist for triage, replay, differential conformance, and minimization runs; non-determinism is opt-in, labeled, and must not silently invalidate replay evidence.
 6. **Evidence discipline**  
    Every Excel-compatibility claim is backed by public sources and/or a reproducible observation harness.
 7. **Coupled assurance stack**  
@@ -53,12 +53,13 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 - **DNA Calc** (`DnaCalc`) — Round 3 synthesized long-term product.
 
 ### 3.2 Component Repos
-- **Foundation** — doctrine, architecture, operations, formal-model framing, and conformance policy authority; maintains read-only mirror snapshots of lane-owned specs for cross-program assurance.
+- **Foundation** — doctrine, architecture, operations, formal-model framing, replay-governance, and conformance policy authority; maintains read-only mirror snapshots of lane-owned specs for cross-program assurance.
 - **DnaVisiCalc** — Round 0 pathfinder and executable seam evidence source.
 - **OxFunc** — value universe and function semantics lane.
 - **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, trace schema, and formula-language evaluator-facing spec set.
 - **OxCalc** — multi-node core calculation engine lane; owner of core-engine detailed realization/formal-model spec set.
 - **OxVba** — VBA runtime/compiler and host integration lane.
+- **OxReplay** — shared replay implementation repo and library family for the Replay appliance, including bundle validation, replay, diff/explain, witness distillation, adapter conformance, and the `DNA ReCalc` host surface. `OxReplay` is not a semantics lane.
 
 ### 3.3 Host Progression (Execution Vehicles)
 - **DNA VbCalc** — dedicated OxVba host proving path (independent lane progression).
@@ -78,6 +79,9 @@ Interpretation rule:
 - **DNA OneCalc:** lane-proving host from Wave B/C, not round-gated.
 - **DNA TreeCalc:** lane-proving host from Wave D/E, proving tree-only before Round 1 grid scope.
 - **DNA PreCalc:** Round 1 aligned host.
+
+#### 3.3.2 Replay Host Surface
+- **DNA ReCalc:** Replay appliance CLI/UI/host built on `OxReplay`; it is not part of the spreadsheet host progression ladder.
 
 ### 3.4 Team Colors
 - **Green** — Spec stack + verification: DSLs, Lean proofs, TLA+ models, OCaml oracle, conformance packs.
@@ -107,6 +111,9 @@ Excluded:
 - **External update op**: An explicit OpLog operation representing inbound STREAM/RTD-like value changes.
 - **Stream semantics version**: A profile-scoped version token controlling STREAM/external update behavior.
 - **Stream replay bundle**: A versioned artifact containing topic declarations and ordered update envelopes for deterministic replay.
+- **Replay appliance**: The cross-lane replay, diff, explain, and witness-distillation plane governed by Foundation and implemented through lane adapters plus `OxReplay`.
+- **Replay witness**: A retained replay bundle or reduced replay-closed counterexample proving a behavior, divergence, or regression.
+- **Replay adapter capability manifest**: A machine-readable declaration of adapter schemas, supported capability levels, limits, and conformance evidence.
 - **Degradation class**: Policy outcome for unsupported behavior (`Native`, `Lowered`, `Opaque`, `Rejected`).
 - **Obligation pack**: A computed set of checks required to claim readiness for a profile.
 - **Capability manifest**: Runtime/Build metadata describing supported protocols, profiles, features, and pack results.

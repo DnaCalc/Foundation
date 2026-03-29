@@ -1,0 +1,37 @@
+source_id,repo,path_or_url,kind,status,notes
+SRC-OXCALC-001,OxCalc,C:\Work\DnaCalc\OxCalc\CHARTER.md,doc,read,Repo charter and lane scope
+SRC-OXCALC-002,OxCalc,C:\Work\DnaCalc\OxCalc\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical open-feature register
+SRC-OXCALC-003,OxCalc,C:\Work\DnaCalc\OxCalc\docs\test-runs\core-engine\treecalc-local\w025-treecalc-local-baseline\run_summary.json,artifact,read,Checked-in TreeCalc local baseline summary
+SRC-OXCALC-004,OxCalc,command:cargo test --workspace --quiet,command,pass,Fresh local audit run
+SRC-OXCALC-005,OxCalc,command:pwsh -File scripts/compare-tracecalc-run.ps1 -CandidateRunId w019-replay-distill-baseline -BaselineRunId w019-replay-distill-baseline,command,pass,Explorer corroboration
+SRC-OXCALC-006,OxCalc,command:cargo fmt --check -p oxcalc-core -p oxcalc-tracecalc -p oxcalc-tracecalc-cli,command,fail,Formatting drift detected in current worktree
+SRC-OXFML-001,OxFml,C:\Work\DnaCalc\OxFml\CHARTER.md,doc,read,Repo charter and lane scope
+SRC-OXFML-002,OxFml,C:\Work\DnaCalc\OxFml\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical open-feature register
+SRC-OXFML-003,OxFml,C:\Work\DnaCalc\OxFml\crates\oxfml_core\tests\fixtures\witness_distillation,artifact,read,Retained witness/distillation fixture family
+SRC-OXFML-004,OxFml,C:\Work\DnaCalc\OxFml\formal\tla\states,artifact,read,Checked TLA state outputs
+SRC-OXFML-005,OxFml,command:cargo test -p oxfml_core --quiet,command,pass,Fresh local audit run
+SRC-OXFUNC-001,OxFunc,C:\Work\DnaCalc\OxFunc\CHARTER.md,doc,read,Repo charter and lane scope
+SRC-OXFUNC-002,OxFunc,C:\Work\DnaCalc\OxFunc\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical open-feature register
+SRC-OXFUNC-003,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\W21_EXECUTION_RECORD.md,artifact,read,Retained replay-adapter execution record
+SRC-OXFUNC-004,OxFunc,C:\Work\DnaCalc\OxFunc\docs\function-lane\OXFUNC_LIBRARY_CONTEXT_SNAPSHOT_EXPORT_V1.csv,artifact,read,Current snapshot export artifact
+SRC-OXFUNC-005,OxFunc,C:\Work\DnaCalc\OxFunc\.tmp\replay-bundles\oxfunc-w15-v1\bundle_manifest.json,artifact,read,Current local replay bundle root
+SRC-OXFUNC-006,OxFunc,command:cargo test --manifest-path crates/oxfunc_core/Cargo.toml --tests --lib --quiet,command,pass,Fresh local audit run over library and test targets
+SRC-OXFUNC-007,OxFunc,command:cargo test --manifest-path crates/oxfunc_core/Cargo.toml --quiet,command,fail,Current full crate test fails compiling example probes after Busy variant addition
+SRC-OXVBA-001,OxVba,C:\Work\DnaCalc\OxVba\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical in-progress register with closure corrections
+SRC-OXVBA-002,OxVba,C:\Work\DnaCalc\OxVba\CURRENT_BLOCKERS.md,doc,read,Active blocker and historical blocker ledger
+SRC-OXVBA-003,OxVba,C:\Work\DnaCalc\OxVba\docs\evidence\conformance,artifact,read,Retained conformance and oracle evidence corpus
+SRC-OXVBA-004,OxVba,C:\Work\DnaCalc\OxVba\conformance\tests,artifact,read,Executable VBA conformance suite corpus
+SRC-OXVBA-005,OxVba,command:pwsh ./scripts/meta-check.ps1 -Fast -NoArtifacts,command,fail,Fresh audit stopped at cargo fmt --check after governance and smoke subchecks passed
+SRC-OXREPLAY-001,OxReplay,C:\Work\DnaCalc\OxReplay\CHARTER.md,doc,read,Repo charter and scope
+SRC-OXREPLAY-002,OxReplay,C:\Work\DnaCalc\OxReplay\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical active worksets
+SRC-OXREPLAY-003,OxReplay,C:\Work\DnaCalc\OxReplay\docs\test-runs,artifact,read,Retained validate/replay/diff/explain baseline runs
+SRC-OXREPLAY-004,OxReplay,command:pwsh ./scripts/meta-check.ps1,command,pass,Fresh local audit run
+SRC-OXXLOBS-001,OxXlObs,C:\Work\DnaCalc\OxXlObs\CHARTER.md,doc,read,Repo charter and scope
+SRC-OXXLOBS-002,OxXlObs,C:\Work\DnaCalc\OxXlObs\docs\IN_PROGRESS_FEATURE_WORKLIST.md,doc,read,Canonical active worksets
+SRC-OXXLOBS-003,OxXlObs,C:\Work\DnaCalc\OxXlObs\states\excel\xlobs_capture_values_formulae_001,artifact,read,Retained live Excel capture family
+SRC-OXXLOBS-004,OxXlObs,command:pwsh ./scripts/meta-check.ps1,command,pass,Fresh local audit run
+SRC-OXIDE-001,OxIde,C:\Work\DnaCalc\OxIde\README.md,doc,read,Current repo scope summary
+SRC-OXIDE-002,OxIde,C:\Work\DnaCalc\OxIde\VISION.md,doc,read,Intended long-range scope
+SRC-OXIDE-003,OxIde,C:\Work\DnaCalc\OxIde\ARCHITECTURE.md,doc,read,Current architecture note
+SRC-OXIDE-004,OxIde,C:\Work\DnaCalc\OxIde\src\main.rs,code,read,Implemented thin-slice app surface
+SRC-OXIDE-005,OxIde,command:cargo test --quiet,command,pass,Fresh local audit run

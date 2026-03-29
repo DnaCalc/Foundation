@@ -4,8 +4,9 @@
 - This file stores retained, non-doctrinal knowledge synthesized from prompt and research runs.
 - Source-of-truth doctrine remains `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, and `OPERATIONS.md`.
 - This notes file is the live knowledge base for details not yet promoted to doctrine.
-- Current baseline snapshot reflects the 2026-03-09 synthesis consolidation (core-engine, FEC/F3E, and program-layout passes complete).
+- Current baseline snapshot reflects the 2026-03-16 doctrine state: 2026-03-09 synthesis consolidation (core-engine, FEC/F3E, and program-layout passes complete) plus Replay appliance promotion.
 - 2026-03 synthesis promotions for core engine and FEC/F3E are reflected in source-of-truth doctrine docs; canonical editable specs now live in `..\\OxCalc\\docs\\spec\\` and `..\\OxFml\\docs\\spec\\`, with Foundation keeping read-only mirror copies.
+- 2026-03 Replay appliance promotion is now reflected in `CHARTER.md`, `ARCHITECTURE_AND_REQUIREMENTS.md`, `OPERATIONS.md`, `README.md`, and `REPLAY_APPLIANCE.md`.
 
 ## 2. Inputs synthesized in this pass
 - Prompt run set: `prompts/runs/20260222-011351-prompt-pack/responses/*` (18 responses).
@@ -14,6 +15,17 @@
   - `synthesis/runs/20260309-004109-improvement-notes-synthesis-pass-01/outputs/synthesis_report.md`
   - `synthesis/runs/20260309-072109-core-engine-program-layout-synthesis-pass-01/outputs/synthesis_report.md`
   - Deep research/review packs under `prompts/runs/20260308-*`
+- 2026-03 replay appliance promotion inputs:
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/02_replay_appliance_motivation_charter_requirements.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/03_replay_appliance_architecture.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/04_replay_appliance_performance_sensitive_design.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/05_dna_recalc_tool_proposal.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/10_witness_distillation_and_counterexample_reduction.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/11_adapter_conformance_and_capability_matrix.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/12_predicate_mismatch_and_status_registry.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/13_witness_lifecycle_retention_and_quarantine_policy.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/18_foundation_replay_appliance_promotion_plan.md`
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/outputs/19_oxreplay_repo_scope_and_model.md`
 - Research run set:
   - `research/runs/20260222-082019-run1-master-landscape/outputs/deep-research-report.md` (external)
   - `research/runs/20260222-082019-run2-concurrency-mvcc/outputs/deep-research-report.md` (external)
@@ -28,6 +40,7 @@
 - Epoch-tagged stale/pending visibility is core user contract, not UI decoration.
 - External updates are explicit operations with replay envelopes; stream ordering and dedupe are profile-governed.
 - Deterministic replay artifacts are mandatory for conformance and regression minimization.
+- Replay governance now includes explicit adapter capability, canonical registries, and witness lifecycle or quarantine policy.
 - Clean-room interop posture requires preserving unsupported OOXML/macros as opaque payloads when feasible.
 - TLA+ model-checking plus minimized traces is the default mechanism for concurrency risk retirement.
 - "Design for Evolution" requires versioned profiles, protocol negotiation, and explicit degradation classes.
@@ -105,7 +118,25 @@
   - side-by-side comparison: Incremental vs HyperFormula vs CoreCalc recalculation strategies,
   - explicit OxCaml strategy decision (observe-only vs experimental branch).
 
-### 5.5 Pending tracked topics not yet synthesized from dedicated runs
+### 5.5 R-TOPIC-011 - Replay appliance and `OxReplay` topology (2026-03 promotion)
+- Sources: replay appliance research run `20260315-215019-replay-appliance-authoritative-pass-01` and the resulting doctrine promotion into Foundation source-of-truth docs.
+- Retained findings:
+  - the Replay appliance is now an explicit cross-lane causality, replay, diff, explain, and witness-distillation plane governed by Foundation,
+  - `OxReplay` is the shared replay implementation repo and library family, not a semantics lane,
+  - `DNA ReCalc` is the replay host surface built on `OxReplay` and is distinct from the spreadsheet proving-host ladder,
+  - replay bundles must preserve source identity, schema, and capture-loss status explicitly,
+  - reduced witnesses require explicit lifecycle and quarantine handling rather than ad hoc retention.
+- Promoted to core docs in this pass:
+  - detailed Replay doctrine in `REPLAY_APPLIANCE.md`,
+  - replay architecture and constraints in `ARCHITECTURE_AND_REQUIREMENTS.md`,
+  - replay-governed pack, rollout, and dependency policy in `OPERATIONS.md`,
+  - replay doctrine and topology anchors in `CHARTER.md` and `README.md`.
+- Outstanding backlog:
+  - first adapter conformance suites and retained witness flows in the lane repos,
+  - first `OxReplay` extraction once `OxCalc` and `OxFml` prove shared adapter surfaces,
+  - further registry expansion only as cross-lane need justifies it.
+
+### 5.6 Pending tracked topics not yet synthesized from dedicated runs
 - `R-TOPIC-004` OpenClaw / design-for-evolution patterns:
   - current status is pending and source resolution is still required.
 - `R-TOPIC-005` spreadsheet implementation and extension research:
@@ -124,7 +155,7 @@
   - unresolved research questions,
   - comparative analysis tasks not yet doctrinally settled.
 
-### 5.6 FEC/F3E Deep Research Findings (2026-03 synthesis)
+## 7. FEC/F3E Deep Research Findings (2026-03 synthesis)
 - FEC/F3E session lifecycle (`prepare -> open_session/capability_view -> execute -> commit`) is confirmed as the baseline evaluator seam contract.
 - Atomic derived bundle publication (`value_delta` + `topology_delta` + `shape_delta` + optional display/format deltas) is locked as the commit output shape.
 - Structured reject detail (`reject_code` + typed context) is required for deterministic replay diagnostics.
@@ -133,7 +164,21 @@
 - Concurrency-hardening gates are Stage 2 prerequisites; Stage 1 sequential coordinator is sufficient for DNA OneCalc and DNA TreeCalc.
 - Detailed spec artifacts are canonically in `..\\OxFml\\docs\\spec\\fec-f3e\\` (Foundation keeps mirror copies under `reference/conformance/excel-worksheet-engine/model/fec-f3e/`).
 
-## 7. Next synthesis-triggering questions
+## 8. Replay appliance promotion status (2026-03-16)
+- The authoritative Foundation Replay doctrine now lives in:
+  - `CHARTER.md`
+  - `ARCHITECTURE_AND_REQUIREMENTS.md`
+  - `OPERATIONS.md`
+  - `README.md`
+  - `REPLAY_APPLIANCE.md`
+- The replay research run remains the retained evidence base and detailed lineage for the doctrine promotion:
+  - `research/runs/20260315-215019-replay-appliance-authoritative-pass-01/`
+- This notes file should retain:
+  - rollout sequencing observations that are not yet doctrinally stable,
+  - future adapter/extraction lessons from `OxCalc`, `OxFml`, `OxFunc`, `OxVba`, and `OxReplay`,
+  - comparative analysis and backlog that should not bloat the source-of-truth docs.
+
+## 9. Next synthesis-triggering questions
 - How should Green pack coverage be staged against the now-stabilized DnaVisiCalc v0 functional contract (`SPEC_v0`, `ENGINE_REQUIREMENTS`, `ENGINE_API`)? *Open.*
 - Which deterministic replay schema is canonical for concurrent evaluator traces? *Open (Stage 2 prerequisite).*
 - What is the chosen OxCaml posture for Green (observe-only, experimental, or committed)? *Open.*

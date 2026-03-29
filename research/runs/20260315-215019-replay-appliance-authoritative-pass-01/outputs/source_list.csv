@@ -1,0 +1,29 @@
+source_id,repo,path,role,notes
+S001,Foundation,CHARTER.md,framing_doctrine,Replay proposal remains subordinate to current mission and doctrine
+S002,Foundation,ARCHITECTURE_AND_REQUIREMENTS.md,framing_architecture,Replay proposal must respect profile versioning replay bundles and forensic trace requirements
+S003,Foundation,OPERATIONS.md,framing_operations,Replay proposal must fit packs managed runs and evidence discipline
+S004,OxCalc,docs/spec/README.md,canonical_index,Defines the canonical OxCalc set and supporting TraceCalc documents
+S005,OxCalc,docs/spec/core-engine/CORE_ENGINE_OXFML_SEAM.md,coordinator_seam_contract,Defines OxCalc local seam requirements candidate versus publication split and typed rejects
+S006,OxCalc,docs/spec/core-engine/CORE_ENGINE_TEST_SCENARIO_SCHEMA_AND_TRACECALC.md,scenario_schema,Defines canonical TraceCalc scenario serialization and expected artifact surfaces
+S007,OxCalc,docs/spec/core-engine/CORE_ENGINE_TEST_VALIDATOR_AND_RUNNER_CONTRACT.md,runner_contract,Defines validator runner artifact layout and deterministic scenario execution boundary
+S008,OxCalc,docs/spec/core-engine/CORE_ENGINE_TRACECALC_REFERENCE_MACHINE.md,oracle_contract,Defines the TraceCalc reference machine and conformance artifact root
+S009,OxCalc,docs/worksets/W009_REPLAY_AND_PACK_BINDING_FOR_STAGE1_SEAM_AND_COORDINATOR_BEHAVIOR.md,replay_pack_planning,Defines Stage 1 replay classes and first pack bindings
+S010,OxFml,docs/spec/README.md,canonical_index,Defines the canonical OxFml bootstrap set and authoritative groups
+S011,OxFml,docs/spec/OXFML_ARTIFACT_IDENTITIES_AND_VERSION_KEYS.md,identity_contract,Defines canonical identity version fingerprint and runtime-handle distinctions
+S012,OxFml,docs/spec/OXFML_CANONICAL_ARTIFACT_SHAPES.md,artifact_shape_contract,Defines canonical artifact families from FormulaSourceRecord to CommitBundle and RejectRecord
+S013,OxFml,docs/spec/OXFML_DELTA_EFFECT_TRACE_AND_REJECT_TAXONOMIES.md,taxonomy_contract,Defines typed delta effect reject and trace families
+S014,OxFml,docs/spec/OXFML_MINIMUM_SEAM_SCHEMAS.md,minimum_schema_contract,Defines minimum typed schema objects for deltas facts rejects host-query capability and trace events
+S015,OxFml,docs/spec/fec-f3e/FEC_F3E_TESTING_AND_REPLAY.md,replay_strategy,Defines FEC/F3E testing replay layers packs and witness floors
+S016,OxFml,docs/spec/fec-f3e/FEC_F3E_SCHEMA_REPLAY_FIXTURE_PLAN.md,fixture_strategy,Defines first replay fixture families and schema sufficiency cases
+S017,OxFunc,docs/function-lane/README.md,canonical_index,Defines the active mutable working set for function-lane semantics and evidence
+S018,OxFunc,docs/function-lane/FUNCTION_LANE_EVIDENCE_ID_REGISTRY.md,evidence_identity,Defines stable local evidence id discipline and artifact references
+S019,OxFunc,docs/function-lane/DOCTRINE_DECISION_FULL_EMPIRICAL_FUNCTION_IDENTITY_20260309.md,parity_doctrine,Defines that functions remain in progress until full empirical identity is reached
+S020,OxFunc,docs/function-lane/FORMALIZATION_STRATEGY_EXECUTABLE_SEMANTIC_MODEL.md,formal_alignment,Defines alignment via shared contracts manifests and correlation artifacts
+S021,OxFunc,docs/function-lane/CROSS_BOUNDARY_INVARIANT_CHECKLIST_TEMPLATE.md,boundary_discipline,Defines boundary invariant declaration across formula interop persistence and XLL lanes
+S022,OxFunc,docs/function-lane/W15_PROBE_RUNTIME_REQUIREMENTS.md,replay_runtime_example,Concrete example of manifest driven replay outputs labels and compatibility descriptors
+S023,OxVba,docs/spec/README.md,canonical_index,Defines current working draft spec set and evidence-backed artifact expectations
+S024,OxVba,docs/spec/HOST_RUNNER_POLICY_BOOTSTRAP_V1.md,runner_fingerprint,Defines reproducible auditable profile and policy bootstrap fingerprinting
+S025,OxVba,docs/spec/HAL_CONFORMANCE_SUITE.md,conformance_artifact_contract,Defines runnable suite layers commands and jsonl artifact schema
+S026,OxVba,docs/spec/HAL_FORMALIZATION_PROGRAM.md,clause_test_discipline,Defines clause-to-test mapping and registry discipline
+S027,OxVba,docs/CONFORMANCE.md,current_conformance_loop,Defines current corpus commands matrix outputs and deferred oracle registers
+

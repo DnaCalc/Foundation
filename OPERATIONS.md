@@ -157,6 +157,27 @@ Pack status terminology:
   - tiered model-check configurations and archived minimized counterexample traces.
 - `PACK.visicalc.core` contract must include:
   - minimum semantic coverage and required artifact set for Round 0 profile readiness.
+- Replay-governed pack contracts must also declare:
+  - minimum required adapter capability level,
+  - required bundle mode and schema,
+  - required registry families and versions,
+  - required witness lifecycle states,
+  - whether reduced witnesses are mandatory, optional, or forbidden for the claim.
+- `PACK.replay.appliance` contract must include:
+  - required bundle validation surface,
+  - replay mode requirements,
+  - capability-manifest evidence,
+  - lifecycle/quarantine handling for retained witnesses.
+- `PACK.trace.forensic_plane` contract must include:
+  - required trace/event families,
+  - capture-loss reporting expectations,
+  - explain-surface requirements for causality queries.
+- `PACK.diff.cross_engine.continuous` contract must include:
+  - required diff scopes,
+  - baseline/oracle binding rules,
+  - divergence indexing requirements,
+  - reduced-witness or quarantine behavior for retained mismatches.
+- `PACK.reject.calculus` contract must include replay-consistency requirements when typed reject evidence is part of the claim.
 
 ## 5. Regression Handling (AAR-driven)
 - Every failure produces:
@@ -218,19 +239,24 @@ Each command must emit machine-readable artifacts suitable for CI gating and loc
 - Proposed functional-scope expansions discovered in implementation (for example from gap-analysis style docs) are tracked as follow-on backlog and routed through synthesis before any doctrine/policy promotion.
 
 ### 7.2 Program Repo and Host Layout Baseline
-Component lane repos:
+Component repos:
 - `Foundation`: doctrine/architecture/operations authority.
 - `DnaVisiCalc`: Round 0 pathfinder and seam-evidence source.
 - `OxFunc`: value/function semantics lane.
 - `OxFml`: formula language and single-node evaluator seam lane.
 - `OxCalc`: multi-node core engine lane.
 - `OxVba`: VBA runtime/compiler lane.
+- `OxReplay`: shared replay/tooling repo for bundle validation, replay, diff/explain, witness distillation, adapter conformance, and `DNA ReCalc`.
 
 Host progression:
 - `DNA VbCalc` -> `DNA OneCalc` -> `DNA TreeCalc` -> `DNA PreCalc` -> `DNA SuperCalc` -> `DNA Calc`.
 
+Replay tooling host:
+- `DNA ReCalc` over `OxReplay` (not part of spreadsheet host progression).
+
 Execution rule:
 - host repos prove and compose lane repos,
+- shared tooling repos may implement cross-lane infrastructure without claiming lane-semantic authority,
 - lane repos do not silently mutate Foundation doctrine,
 - Foundation promotion requires managed-run handoff and synthesis decision logging.
 
@@ -374,11 +400,15 @@ Handoff records may be included as:
 - Baseline allowed dependency direction (component lanes):
   - `OxFml` -> `OxFunc`
   - `OxCalc` -> `OxFml` and `OxFunc`
+  - `OxReplay` -> shared abstractions and replay schemas only; lane semantics enter through declared adapter contracts, not semantic-core dependencies
+  - lane repos may depend on narrow `OxReplay` abstractions only when that does not pull in the broad replay runtime or transfer semantic ownership
   - `OxVba` remains independent by default; optional adapters are host-level composition choices and must not backflow doctrine into lane boundaries.
 - Baseline forbidden coupling edges (without synthesis override):
   - `OxFunc` -> `OxFml`/`OxCalc`/`OxVba`
   - `OxFml` -> `OxCalc`
   - `OxCalc` -> host/UI/file-adapter implementation layers
+  - `OxReplay` -> lane-semantic internals outside declared adapter or conformance-test boundaries
+  - lane semantic cores -> broad `OxReplay` runtime packages
 - FEC/F3E protocol definition authority: FEC/F3E protocol is co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
 - Foundation maintains a theory-to-pack mapping register that links high-value theory claims to one of:
   - proof obligation,
@@ -413,6 +443,92 @@ Handoff records may be included as:
   - kill-switch criteria and fallback path.
 - Advanced lanes are non-baseline by default and may not silently alter baseline semantics.
 - Promotion from advanced lane to baseline requires synthesis decision plus parity evidence artifacts.
+
+### 8.17 Replay Appliance Governance (Normative)
+- Detailed Replay doctrine lives in `REPLAY_APPLIANCE.md`; this section states the operational governance contract.
+- Governance ownership split:
+  - Foundation owns Replay doctrine, adapter policy, registry governance, lifecycle policy, and promotion rules.
+  - `OxReplay` owns shared replay implementation and `DNA ReCalc`.
+  - lane repos own lane-native capture meaning and authoritative adapter semantics.
+- Shared adapter capability levels are:
+  - `C0.ingest_valid`
+  - `C1.replay_valid`
+  - `C2.diff_valid`
+  - `C3.explain_valid`
+  - `C4.distill_valid`
+  - `C5.pack_valid`
+- Every adapter claim must publish a machine-readable capability manifest with:
+  - supported source schemas,
+  - supported bundle schemas,
+  - claimed capability levels,
+  - known limits,
+  - conformance artifact refs,
+  - registry version refs.
+- Replay-governed canonical registries are versioned and currently cover:
+  - predicate kind,
+  - mismatch kind,
+  - severity,
+  - reduction outcome,
+  - witness lifecycle state,
+  - capability level.
+- Every retained witness must carry explicit lifecycle state and, where relevant:
+  - quarantine reason,
+  - supersession lineage,
+  - pack-eligibility state.
+- `quarantined` and explanatory-only witnesses are visible to triage but are not pack-eligible.
+- New Replay doctrine, capability claims used by downstream packs, and replay-governed Foundation promotions require managed-run promotion packets with linked replay evidence.
+- No host or pack may rely on undeclared adapter capability levels.
+
+### 8.18 New Repo Bootstrap And Beads Execution Standard (Normative)
+- New DNA Calc repos must default to a slim bootstrap shape unless a synthesis decision explicitly approves a different structure.
+- Default root files:
+  - `README.md`
+  - `AGENTS.md`
+  - `.gitignore`
+- Default required directories and files:
+  - `.beads/` initialized and tracked,
+  - `docs/CHARTER.md`,
+  - `docs/OPERATIONS.md`,
+  - one main engineering spec, preferably `docs/SCOPE_AND_SPEC.md`,
+  - `docs/WORKSET_REGISTER.md`,
+  - `docs/BEADS.md`,
+  - `scripts/invoke-br-serialized.ps1`,
+  - `scripts/check-worksets.ps1` or equivalent minimal register-shape checker.
+- Default reduction rules:
+  - do not create a `CURRENT_BLOCKERS.md` file by default,
+  - do not split `OPERATIONS.md` and `LOCAL_EXECUTION_DOCTRINE.md` by default,
+  - do not create `docs/spec/README.md` or a multi-file spec tree for a repo that still has one main engineering spec,
+  - do not create a multi-file beads-doc tree by default.
+- Execution-truth split for new repos:
+  - the main engineering spec owns scope, design, and artifact truth,
+  - `docs/WORKSET_REGISTER.md` owns workset truth only,
+  - `.beads/` owns execution truth only,
+  - active work executes through `workset -> epic -> bead`.
+- Workset-register rule:
+  - use one living all-worksets register by default,
+  - the register should describe the ordered workset set, workset meaning, dependency shape, and default sequencing,
+  - worksets are high-level planning or scope partitions, not execution-state objects,
+  - the register must not track per-workset `active`, `ready`, `queued`, `blocked`, or `complete` status,
+  - one document per workset is not the default operating model,
+  - if a repo has a prior detailed planning breakdown worth retaining, keep it inside the register as a seed map rather than fanning out immediately into separate workset documents.
+- Rollout rule:
+  - some epics and child beads may be created directly during initial rollout from the register,
+  - some epics should be rollout epics whose execution creates or refines child beads later,
+  - a workset is practically incomplete while open epics or leaf beads rolled from it remain open in `.beads/`.
+- Bead-tool rule:
+  - `br` is the authoritative mutation tool,
+  - `bv` is the supported graph-aware inspection tool,
+  - agents may use only non-interactive robot-style inspection commands,
+  - direct edits to `.beads/` state are prohibited,
+  - `br` mutations must be serialized through the repo-local wrapper script.
+- Checker rule:
+  - any repo-local `check-worksets` script should be described as a minimal register-shape checker,
+  - it must not be described as the owner of readiness, blocker, progress, or closure truth.
+- Cross-repo boundary rule for new repos:
+  - agents working in one repo may read sibling repos under the shared `DnaCalc` root for seam consumption, reference checks, replay evidence intake, or design alignment,
+  - those sibling repos are read-only from the perspective of the current repo,
+  - required changes in another repo must be handled through a handoff, prompt packet, or a separate repo-local execution run in that repo.
+- This standard is the default template for new DNA Calc repos, including host repos such as `DnaOneCalc`.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
@@ -456,3 +572,17 @@ Use this dependency-ordered wave sequence for current execution planning:
 5. **Wave E**: DNA TreeCalc proving host for serious multi-node behavior before grid complexity.
 6. **Wave F**: DNA PreCalc first integrated tree-grid-hybrid host with staged concurrency policy.
 7. **Wave G**: DNA SuperCalc and DNA Calc expansion lanes under bounded advanced-lane policy and parity evidence.
+
+### 10.4 Replay Appliance Rollout Baseline
+- Replay rollout is a Logistics-owned cross-wave substrate, not a replacement for lane or host progression.
+- Required sequence:
+  - promote Replay doctrine and architecture in Foundation first,
+  - prove first adapter surfaces in `OxCalc` and `OxFml`,
+  - centralize stable shared replay mechanics in `OxReplay`,
+  - use `DNA ReCalc` as the common replay host surface,
+  - widen later to `OxFunc` and `OxVba`.
+- Initial lane expectations:
+  - `OxCalc` is the first lane expected to drive toward `C5.pack_valid` for `PACK.replay.appliance`.
+  - `OxFml` should first prove ingest/replay/diff/explain and add distillation after seam evidence stabilizes.
+  - `OxFunc` and `OxVba` begin with narrower initial replay surfaces.
+- Downstream host, pack, and promotion claims must name the required adapter capability level rather than assuming Replay support generically.

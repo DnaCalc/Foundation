@@ -1,0 +1,2 @@
+run_id,task,status,artifacts,notes
+20260309-184706-oxfml-oxcalc-bootstrap-prep-pass-01,bootstrap_pack_generation,completed,"outputs/bootstrap/README.md;outputs/bootstrap/SPEC_TRANSFER_MANIFEST.csv;outputs/bootstrap/create_oxfml_oxcalc_repos.ps1;outputs/bootstrap/templates/oxfml/*;outputs/bootstrap/templates/oxcalc/*;outputs/repo_bootstrap_plan.md","Dry-run validated bootstrap script pathing and manifest-driven copy plan."

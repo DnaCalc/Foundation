@@ -1,0 +1,17 @@
+source_path,role,notes
+..\OxVba\OPERATIONS.md,primary_doctrine,Current DnaCalc repo-level bead execution doctrine
+..\OxVba\docs\LOCAL_EXECUTION_DOCTRINE.md,primary_doctrine,Operational execution rules for workset-to-bead flow
+..\OxVba\docs\methods\beads\BEADS_WORKING_METHOD.md,primary_doctrine,Core design-to-beads method
+..\OxVba\docs\methods\beads\BEADS_UTILITIES_CHEAT_SHEET.md,primary_doctrine,`br` and `bv` tool split
+..\OxVba\docs\methods\beads\BEAD_QUALITY_CONTRACT.md,primary_doctrine,Minimum bead quality bar
+..\OxVba\docs\templates\WORKSET_EPIC_BEAD_ROLLOUT_TEMPLATE.md,primary_doctrine,Rollout template for new active worksets
+..\OxVba\scripts\invoke-br-serialized.ps1,tooling_reference,Serialized bead mutation helper
+..\OxVba\scripts\validate-bead-traceability.ps1,tooling_reference,Traceability validation pattern
+..\OxVba\scripts\validate-workset-rollout.ps1,tooling_reference,Workset-to-bead rollout validation pattern
+C:\Work\WinTermDriver\AGENTS.md,secondary_reference,Useful `bv` and runner guidance with narrower applicability
+C:\Work\WinTermDriver\docs\operations\BEADS_WORKING_METHOD.md,secondary_reference,Earlier bead method note
+README.md,foundation_context,Current Foundation orientation and wave/bootstrap references
+OPERATIONS.md,foundation_context,Current Foundation execution doctrine and wave references
+notes\DNA_ONECALC_SCOPE_AND_SPEC.md,dnaonecalc_context,Current OneCalc engineering spec and workset-heavy execution framing
+synthesis\runs\20260309-184706-oxfml-oxcalc-bootstrap-prep-pass-01\outputs\repo_bootstrap_plan.md,bootstrap_reference,Previous repo bootstrap pattern without bead doctrine
+synthesis\runs\20260316-010158-oxreplay-bootstrap-prep-pass-01\outputs\repo_bootstrap_plan.md,bootstrap_reference,Previous repo bootstrap pattern without bead doctrine

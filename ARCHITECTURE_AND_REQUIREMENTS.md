@@ -240,6 +240,7 @@ Architecture ownership map:
 - **OxFml:** formula grammar/bind and single-node evaluator seam contracts. FEC/F3E spec owner (seam specification, evaluator contract, trace schema).
 - **OxCalc:** multi-node core engine policy and execution. Co-defines coordinator-facing FEC/F3E protocol parts.
 - **OxVba:** VBA runtime/compiler and host integration lane.
+- **OxReplay:** shared replay implementation repo and library family for bundle validation, replay, diff/explain, witness distillation, adapter conformance, and replay-governed pack export.
 - **DnaVisiCalc:** Round 0 pathfinder evidence source.
 
 Host progression map:
@@ -249,10 +250,53 @@ Host progression map:
 - `DNA PreCalc` (first full tree-grid-hybrid host),
 - later `DNA SuperCalc` and `DNA Calc` progression.
 
+Replay tooling host:
+- `DNA ReCalc` (Replay appliance host over `OxReplay`, distinct from spreadsheet host progression).
+
 Interpretation rule:
 - lane repos own reusable semantics/implementation lanes,
 - host repos prove and compose lanes,
+- Replay tooling hosts do not redefine spreadsheet-host progression or lane ownership,
 - Foundation remains doctrine owner.
+
+### 3.21 Replay Appliance
+Detailed Replay doctrine, governance, and rollout policy live in `REPLAY_APPLIANCE.md`. This section states the architecture-level contract.
+
+The Replay appliance is a cross-lane causality, replay, diff, explain, and witness-distillation plane.
+
+Architectural boundary:
+1. lane repos remain authoritative for lane-native replay semantics and adapter meaning,
+2. Replay normalizes lane artifacts for cross-program tooling without taking semantic ownership away from the lanes,
+3. shared implementation may live in `OxReplay`,
+4. `DNA ReCalc` is the shared replay host surface over that infrastructure.
+
+Normalized layers:
+1. lane-native capture,
+2. lane adapter,
+3. normalized replay model,
+4. portable bundle packaging,
+5. shared validate/replay/diff/explain/distill/export surface.
+
+Core normalized artifact families include:
+1. bundle/run/scenario manifests,
+2. replay events and counter sets,
+3. replay diffs and explain records,
+4. preservation predicates and reduction manifests,
+5. adapter capability manifests,
+6. registry refs and witness lifecycle records.
+
+Architectural rules:
+1. Replay bundles must preserve source identity, source schema version, and capture-loss status,
+2. Replay outputs use canonical registry ids when a registry family exists,
+3. witness lifecycle and quarantine are part of the architecture, not merely tooling metadata,
+4. replay capture is performance-sensitive and must not collapse hot-path semantics into logging,
+5. witness distillation is offline, predicate-driven, and closure-aware.
+
+Pack integration:
+1. Replay serves `PACK.replay.appliance`,
+2. Replay feeds `PACK.trace.forensic_plane`,
+3. Replay feeds `PACK.diff.cross_engine.continuous`,
+4. Replay evidence may also feed `PACK.reject.calculus` where reject semantics are part of the claim.
 
 ## 4. Architectural Constraints (A2 / CONSTR- examples)
 - **CONSTR-001:** All persistent mutations are ops; direct document mutation is forbidden outside the coordinator.
@@ -282,6 +326,14 @@ Interpretation rule:
 - **CONSTR-025:** Core runtime overlays are epoch-scoped derived state; overlay lifecycle, retention, and eviction must be deterministic and pinned-epoch safe.
 - **CONSTR-026:** Coordinator publication authority is single-publisher at baseline; concurrent evaluators may not bypass coordinator commit fences.
 - **CONSTR-027:** Host/repo composition may evolve, but lane ownership boundaries (OxFunc/OxFml/OxCalc/OxVba) cannot be collapsed without synthesis-approved architecture edits.
+- **CONSTR-028:** Replay is a cross-lane adapter-mediated plane; lane-native semantics remain lane-owned even when normalized for shared tooling.
+- **CONSTR-029:** Required Replay bundles must preserve source identity, schema version, projection status, and capture-loss status explicitly.
+- **CONSTR-030:** Replay outputs must use canonical registry ids when a registry family exists.
+- **CONSTR-031:** Adapter capability claims must be machine-readable and conformance-validated before downstream pack or host reliance.
+- **CONSTR-032:** Witness lifecycle, quarantine reason, supersession, and pack-eligibility state must be explicit and machine-readable.
+- **CONSTR-033:** Witness distillation must be offline, replay-closed, and must fail explicitly when preservation predicates or capture are unstable.
+- **CONSTR-034:** Replay bundle, adapter, and registry evolution must classify additive, tightening, breaking, experimental, deprecated, and removed changes explicitly.
+- **CONSTR-035:** Shared replay implementation may be centralized in `OxReplay`, but `OxReplay` may not take ownership of lane-native semantics or reinterpret source artifacts outside declared adapter contracts.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -321,6 +373,8 @@ Interpretation rule:
   **REAL:** Shared algebraic data schemas and transition traces are normative artifacts for proofs, oracle runs, and engine conformance.
 - **INT:** Cycles should not produce hidden nondeterminism.  
   **REAL:** SCC decomposition order, iteration bounds, convergence policy, and terminal-state rules are profile-governed and replayable.
+- **INT:** Regressions and cross-engine divergences should become reusable evidence rather than disposable incidents.  
+  **REAL:** Required profiles publish replay bundles, forensic traces, and reduced witnesses or structured quarantine records sufficient for deterministic differential triage.
 
 ## 6. Pathfinder Scope Anchor (DnaVisiCalc)
 Round 0 pathfinder functional scope is authoritative in the DnaVisiCalc docs set:

@@ -1,0 +1,14 @@
+path,kind,role
+README.md,foundation_doctrine,orientation
+CHARTER.md,foundation_doctrine,primary_authority
+ARCHITECTURE_AND_REQUIREMENTS.md,foundation_doctrine,architecture_authority
+OPERATIONS.md,foundation_doctrine,operational_authority
+notes/BRAINSTORM_NOTES.md,foundation_notes,supporting_context
+notes/DNA_ONECALC_INITIAL_SCOPE.md,dna_onecalc_note,scope_note
+research/runs/20260326-200003-dna-onecalc-scope-pass-01/outputs/01_scope_and_host_profile_plan.md,research_output,scope_plan
+research/runs/20260326-200003-dna-onecalc-scope-pass-01/outputs/02_repo_readiness_and_outstanding_work.md,research_output,readiness_review
+research/runs/20260326-200003-dna-onecalc-scope-pass-01/outputs/repo_readiness_matrix.csv,research_output,readiness_matrix
+research/runs/20260327-085833-dna-onecalc-review-pass-01/inputs/claude_review_prompt.md,run_input,claude_prompt
+research/runs/20260327-085833-dna-onecalc-review-pass-01/logs/01_claude_review_raw.json,run_log,claude_raw_output
+research/runs/20260327-085833-dna-onecalc-review-pass-01/logs/model_runs.csv,run_log,claude_model_run
+research/runs/20260327-085833-dna-onecalc-review-pass-01/outputs/03_claude_review.md,run_output,claude_review

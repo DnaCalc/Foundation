@@ -1,0 +1,7 @@
+step,status,notes
+foundation_context_load,complete,Loaded README CHARTER ARCHITECTURE_AND_REQUIREMENTS OPERATIONS and notes/BRAINSTORM_NOTES before planning
+scope_note_draft,complete,Created notes/DNA_ONECALC_INITIAL_SCOPE.md and linked it from notes/README.md
+research_run_bootstrap,complete,Registered topic R-TOPIC-013 and scaffolded the DNA OneCalc scope run
+repo_evidence_gathering,complete,Read key sibling repo docs and retained artifact roots for OxFml OxFunc OxReplay OxXlObs OxVba OxCalc and OxIde
+targeted_executable_checks,complete,Ran fresh targeted checks in OxReplay OxXlObs OxFml and OxFunc to ground readiness claims
+research_outputs_write,complete,Wrote scope plan readiness review source list and readiness matrix for the run
