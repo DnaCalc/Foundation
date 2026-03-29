@@ -1,0 +1,37 @@
+{
+  "run_id": "specproc-20260318-204910",
+  "captured_utc": "2026-03-18T20:49:30.1585267Z",
+  "source_index": "C:\\Work\\DnaCalc\\Foundation\\reference\\index.csv",
+  "docs_processed": 4,
+  "segments": 266798,
+  "sentences": 526563,
+  "spec_items": 133584,
+  "conformance_candidates": 4096,
+  "conformance_excluded": 2,
+  "pending_items": 0,
+  "tooling": {
+    "runner_name": "SpecPackProcessor",
+    "runner_version": "0.1.0+3583a6d85fdea4f3b2ed453ba4aeadc58ef60078",
+    "runner_build_version": "0.1.0.0",
+    "platform": "Microsoft Windows NT 10.0.26200.0",
+    "dotnet_runtime": "10.0.4",
+    "working_directory": "C:\\Work\\DnaCalc\\Foundation\\tools",
+    "invocation_working_directory": "C:\\Work\\DnaCalc\\Foundation",
+    "git_commit": "3583a6d85fdea4f3b2ed453ba4aeadc58ef60078",
+    "git_branch": "master",
+    "git_dirty": true
+  },
+  "quality": {
+    "excluded_by_reason": {
+      "normative_keyword_definition": 2
+    }
+  },
+  "outputs": {
+    "documents_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\documents.csv",
+    "selected_sources_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\selected_sources.csv",
+    "spec_jsonl": "C:\\Work\\DnaCalc\\Foundation\\.local\\reference-cache\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\spec_items.jsonl",
+    "conformance_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\conformance_items.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\conformance_excluded.jsonl",
+    "llm_tasks_jsonl": "C:\\Work\\DnaCalc\\Foundation\\.local\\reference-cache\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\llm\\classification_tasks.jsonl"
+  }
+}

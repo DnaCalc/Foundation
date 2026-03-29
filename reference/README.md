@@ -7,12 +7,13 @@ This folder stores local mirror/index artifacts for external specification packs
 - Seed entry points are listed in `spec_seeds.csv`.
 
 ## Layout
-- `downloads/`: raw mirrored source artifacts.
+- `downloads/`: raw mirrored source artifacts that are small enough to retain in git.
 - `index.csv`: machine-readable mirror index (including hashes and download timestamps).
 - `index.md`: human-readable mirror summary.
-- `runs/<run-id>/`: managed spec-processing run artifacts (`inputs`/`outputs`/`logs` style).
+- `runs/<run-id>/`: managed spec-processing run artifacts (`inputs`/`outputs`/`logs` style). Compact promoted packs stay in git; bulky processor intermediates may be moved to the local cache with tracked omission manifests.
 - `empirical/`: curated empirical findings promoted as stable conformance-source references.
 - `conformance/`: authoritative working conformance specification docs and requirement corpora.
+- `.local/reference-cache/` (gitignored): local cache root for bulky raw bundles, expanded processor intermediates, extracted images, and other regeneration-heavy artifacts that should remain indexed but should not bloat the repository.
 
 ## Update Procedure (Mirror)
 Run:
@@ -27,6 +28,8 @@ The script:
 - discovers downloadable artifacts (PDF/DOCX/ZIP/RSS),
 - downloads in-scope files to `downloads/`,
 - records `downloaded_utc` timestamps per file in `index.csv`.
+
+Large umbrella bundles or other bulky cache-only artifacts may be moved after download into `.local/reference-cache/` while remaining indexed by URL, hash, size, and local-cache path.
 
 ## Processing Procedure (Managed Run)
 After mirroring, normalize selected specs into text-first, anchor-preserving artifacts:
@@ -44,6 +47,8 @@ The processing run emits:
 - selected-source capture for reproducibility (`selected_sources.csv`),
 - per-document manifests and explicit pending coverage markers.
 
+When a processing run produces very large intermediate files, keep the compact promoted pack in `reference/runs/<run-id>/` and move the bulky intermediates into `.local/reference-cache/reference/runs/<run-id>/`. The tracked run should then include a concise omission manifest that records the moved artifact paths, hashes, sizes, and local-cache destinations.
+
 Detailed artifact contract: `REFERENCE_SPEC_FORMAT_AND_CONFORMANCE.md`.
 
 For official-vs-reference source-group comparisons on completed runs, use:
@@ -54,7 +59,7 @@ pwsh -File tools/spec-pack-processor/compare-source-groups.ps1 -RunOutputsDir re
 
 ## Notes
 - Historical revision downloads discovered on spec pages are indexed but marked `excluded_historical` by default.
-- Very large umbrella bundles (for example `Windows_Protocols.zip`) are indexed and marked `excluded_large_bundle` by default.
+- Very large umbrella bundles (for example `Windows_Protocols.zip`) are indexed and marked `excluded_large_bundle` by default. Prefer keeping those bundles in `.local/reference-cache/` rather than in the tracked repo tree.
 
 ## Empirical Findings Promotion
 Empirical run outputs are produced under `research/runs/<run-id>/` and remain working evidence by default.

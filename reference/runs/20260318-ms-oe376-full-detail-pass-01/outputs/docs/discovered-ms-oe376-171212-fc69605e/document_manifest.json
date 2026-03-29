@@ -1,0 +1,18 @@
+{
+  "document_id": "discovered-ms-oe376-171212-fc69605e",
+  "source_id": "discovered",
+  "source_url": "https://officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net/files/MS-OE376/%5bMS-OE376%5d-171212.pdf",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net\\files\\MS-OE376\\[MS-OE376]-171212.pdf",
+  "source_sha256": "fc69605ebed052a18f28127177d247dea90810207bbec475f3753f3b948bcf9b",
+  "extraction_status": "ok",
+  "extraction_mode": "pdf_pdfpig",
+  "notes": "Extracted with PdfPig (1027 pages).",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\.local\\reference-cache\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\.local\\reference-cache\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\.local\\reference-cache\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260318-ms-oe376-full-detail-pass-01\\outputs\\docs\\discovered-ms-oe376-171212-fc69605e\\images"
+  }
+}

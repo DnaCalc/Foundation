@@ -9,3 +9,8 @@ VBA-FUNCTIONS,office_vba,Functions (Visual Basic for Applications),https://learn
 VBA-LANG-UIHELP,office_vba,Visual Basic language reference (UI help),https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference,false,true
 MS-XLS,office_file_formats,Excel Binary File Format (.xls) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xls,false,true
 MS-XLSB,office_file_formats,Excel Binary Workbook (.xlsb) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xlsb,false,true
+OFFICE2003-XML-OSP,office_2003_xml_schemas,Office 2003 XML Reference Schemas in Open Specification Promise,https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/1c24c7c8-28b0-4ce1-a47d-95fe1ff504bc,false,true
+OFFICE2003-XML-DESKTOP,office_2003_xml_schemas,Microsoft Office System and XML Bringing XML to the Desktop,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa159914(v=office.11),false,true
+OFFICE2003-WORD-EXCEL-SCHEMAS,office_2003_xml_schemas,Using Schemas with Word 2003 and Excel 2003,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa159902(v=office.11),false,true
+WORD2003-XML-SDK-WELCOME,office_2003_xml_schemas,Welcome to the Microsoft Office Word 2003 XML Software Development Kit,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa214923(v=office.11),false,true
+WORD2003-WORDPROCESSINGML-OVERVIEW,office_2003_xml_schemas,Overview of WordprocessingML,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa212812(v=office.11),false,true

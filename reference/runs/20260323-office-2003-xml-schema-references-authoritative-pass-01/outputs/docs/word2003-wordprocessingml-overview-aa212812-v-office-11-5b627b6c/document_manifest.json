@@ -1,0 +1,17 @@
+﻿{
+  "document_id": "word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c",
+  "source_id": "WORD2003-WORDPROCESSINGML-OVERVIEW",
+  "source_url": "https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa212812(v=office.11)",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\learn.microsoft.com\\en-us\\previous-versions\\office\\developer\\office-2003\\aa212812(v=office.11).md",
+  "source_sha256": "5b627b6c82ce9038c041ebc06a1ef312043ab8f7cf0f4e43d5f5537e35c153b9",
+  "extraction_status": "ok",
+  "extraction_mode": "markdown_native",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\docs\\word2003-wordprocessingml-overview-aa212812-v-office-11-5b627b6c\\images"
+  }
+}

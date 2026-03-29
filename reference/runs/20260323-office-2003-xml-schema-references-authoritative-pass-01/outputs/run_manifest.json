@@ -1,0 +1,35 @@
+﻿{
+  "run_id": "specproc-20260323-164112",
+  "captured_utc": "2026-03-23T16:41:13.2012643Z",
+  "source_index": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\inputs\\source_index_subset.csv",
+  "docs_processed": 5,
+  "segments": 579,
+  "sentences": 796,
+  "spec_items": 700,
+  "conformance_candidates": 20,
+  "conformance_excluded": 0,
+  "pending_items": 0,
+  "tooling": {
+    "runner_name": "SpecPackProcessor",
+    "runner_version": "0.1.0\u002B3583a6d85fdea4f3b2ed453ba4aeadc58ef60078",
+    "runner_build_version": "0.1.0.0",
+    "platform": "Microsoft Windows NT 10.0.26200.0",
+    "dotnet_runtime": "10.0.4",
+    "working_directory": "C:\\Work\\DnaCalc\\Foundation\\tools",
+    "invocation_working_directory": "C:\\Work\\DnaCalc\\Foundation",
+    "git_commit": "3583a6d85fdea4f3b2ed453ba4aeadc58ef60078",
+    "git_branch": "master",
+    "git_dirty": true
+  },
+  "quality": {
+    "excluded_by_reason": {}
+  },
+  "outputs": {
+    "documents_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\documents.csv",
+    "selected_sources_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\selected_sources.csv",
+    "spec_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\spec_items.jsonl",
+    "conformance_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\conformance_items.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\conformance_excluded.jsonl",
+    "llm_tasks_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260323-office-2003-xml-schema-references-authoritative-pass-01\\outputs\\llm\\classification_tasks.jsonl"
+  }
+}
