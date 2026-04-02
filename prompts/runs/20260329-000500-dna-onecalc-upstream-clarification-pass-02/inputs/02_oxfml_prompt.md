@@ -1,6 +1,6 @@
 # DNA OneCalc -> OxFml Downstream Clarification Prompt
 
-`DNA OneCalc` is the single-node proving host and user-facing application for the `OxFml` + `OxFunc` + `OxReplay` stack. It is meant to behave like one isolated Excel calculation cell or defined-name context, with explicit host inputs, formatting and conditional-formatting scope, full replay visibility and control in the UI, and Windows-only twin-oracle comparison against Excel through `OxXlObs`. It is not a worksheet engine and must not invent a second parser, binder, editor, or host-semantics truth locally.
+`DNA OneCalc` is the single-node proving host and user-facing application for the `OxFml` + `OxFunc` + `OxReplay` stack. It is meant to behave like one isolated Excel calculation cell or defined-name context, with explicit host inputs, formatting and conditional-formatting scope, full replay visibility and control in the UI, and Windows-only twin-oracle comparison against Excel through `OxXlPlay`. It is not a worksheet engine and must not invent a second parser, binder, editor, or host-semantics truth locally.
 
 You are working inside the OxFml repo.
 

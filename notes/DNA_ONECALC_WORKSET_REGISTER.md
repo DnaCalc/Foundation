@@ -46,7 +46,7 @@ The worksets below were originally derived from the following engineering work a
 1. maps_to: `W1.2`
 2. depends_on: `WS-001`
 3. note:
-   must consume the current OneCalc-facing docs from `OxFml`, `OxFunc`, `OxReplay`, `OxXlObs`, and the OxCalc seam-reference slice rather than relying on older Foundation-only assumptions.
+   must consume the current OneCalc-facing docs from `OxFml`, `OxFunc`, `OxReplay`, `OxXlPlay`, and the OxCalc seam-reference slice rather than relying on older Foundation-only assumptions.
 4. intent:
    seam manifest, dependency pin set, and first emitted capability snapshot for the exact dependency set in use.
 
@@ -146,7 +146,7 @@ The worksets below were originally derived from the following engineering work a
 1. maps_to: `W10.1`
 2. depends_on: `WS-009`, `WS-011`, `WS-013`
 3. note:
-   should use the OxXlObs OneCalc consumer contract and must preserve `direct`, `derived`, `unavailable`, and `lossy` distinctions in the first comparison UI.
+   should use the OxXlPlay OneCalc consumer contract and must preserve `direct`, `derived`, `unavailable`, and `lossy` distinctions in the first comparison UI.
 4. intent:
    first real Windows-only compare lane against Excel-observed evidence.
 
@@ -154,7 +154,7 @@ The worksets below were originally derived from the following engineering work a
 1. maps_to: `W9.2`
 2. depends_on: `WS-015`, `WS-016`
 3. intent:
-   first retained conditional-formatting comparison family plus any required OxXlObs widening requests.
+   first retained conditional-formatting comparison family plus any required OxXlPlay widening requests.
 
 ### WS-018 First Proving Spine Family
 1. maps_to: `W10.2`

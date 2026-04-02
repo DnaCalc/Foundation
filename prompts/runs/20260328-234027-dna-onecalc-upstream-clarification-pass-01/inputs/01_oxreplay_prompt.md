@@ -1,4 +1,4 @@
-`DNA OneCalc` is the single-node proving host and product shell that combines `OxFml`, `OxFunc`, `OxReplay`, and `OxXlObs` into an interactive `Twin Oracle Workbench`. It must remain narrower than `OxCalc`, keep replay and comparison first-class, preserve retained evidence lineage, expose full replay visibility and control in the UI, and stay honest about platform limits, capability floors, and provisional upstream seams.
+`DNA OneCalc` is the single-node proving host and product shell that combines `OxFml`, `OxFunc`, `OxReplay`, and `OxXlPlay` into an interactive `Twin Oracle Workbench`. It must remain narrower than `OxCalc`, keep replay and comparison first-class, preserve retained evidence lineage, expose full replay visibility and control in the UI, and stay honest about platform limits, capability floors, and provisional upstream seams.
 
 You are working inside the `OxReplay` repo.
 
@@ -23,7 +23,7 @@ Focus especially on the downstream-consumer and replay-governance surface:
 4. `docs\spec\OXREPLAY_BUNDLE_WITNESS_AND_REGISTRY_MODEL.md`
 5. `docs\spec\DNA_RECALC_HOST.md`
 6. `docs\spec\DNA_RECALC_CLI_CONTRACT.md`
-7. `docs\spec\OXREPLAY_OXXLOBS_OBSERVATION_SEAM.md`
+7. `docs\spec\OXREPLAY_OXXLPLAY_OBSERVATION_SEAM.md`
 8. `docs\spec\OXREPLAY_INITIAL_ADAPTER_INTAKE_PLAN.md`
 9. `docs\spec\OXREPLAY_CAPABILITY_AND_PACK_TRACEABILITY.md`
 
@@ -35,7 +35,7 @@ Review the current docs and improve them so the OneCalc team can understand exac
 4. explain,
 5. witness handling,
 6. scenario-library growth,
-7. Excel-observation comparison through `OxXlObs`,
+7. Excel-observation comparison through `OxXlPlay`,
 8. full replay visibility and control through the `DNA OneCalc` UI.
 
 Priority outcomes:
@@ -44,7 +44,7 @@ Priority outcomes:
 3. Clarify what a host like `DNA OneCalc` may embed directly from `OxReplay`.
 4. Clarify the current honest mode gates for `Replay`, `Diff`, `Explain`, `Distill`, and `Handoff` from a OneCalc perspective.
 5. Clarify artifact-lineage obligations for downstream product hosts, including lossy or registry-unpinned inputs.
-6. Clarify how `OxXlObs` inputs should be labeled and interpreted when consumed through `OxReplay`.
+6. Clarify how `OxXlPlay` inputs should be labeled and interpreted when consumed through `OxReplay`.
 7. If there is no sufficient canonical local doc for this, update or extend the existing OneCalc-facing canonical note rather than scattering truth into handoff or status docs.
 
 Important constraints:

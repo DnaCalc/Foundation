@@ -1,6 +1,6 @@
 # DNA OneCalc -> OxReplay Doc Improvement Prompt
 
-`DNA OneCalc` is the single-node proving host and user-facing application for the `OxFml` + `OxFunc` + `OxReplay` stack. It is meant to behave like one isolated Excel calculation cell or defined-name context, with explicit host inputs, formatting and conditional-formatting scope, full replay visibility and control in the UI, and Windows-only twin-oracle comparison against Excel through `OxXlObs`. It is not a worksheet engine and not `DNA ReCalc`, but it must consume `OxReplay` as shared replay infrastructure for capture, replay, diff, explain, witness handling, and scenario-library growth.
+`DNA OneCalc` is the single-node proving host and user-facing application for the `OxFml` + `OxFunc` + `OxReplay` stack. It is meant to behave like one isolated Excel calculation cell or defined-name context, with explicit host inputs, formatting and conditional-formatting scope, full replay visibility and control in the UI, and Windows-only twin-oracle comparison against Excel through `OxXlPlay`. It is not a worksheet engine and not `DNA ReCalc`, but it must consume `OxReplay` as shared replay infrastructure for capture, replay, diff, explain, witness handling, and scenario-library growth.
 
 You are working inside the OxReplay repo.
 
@@ -35,7 +35,7 @@ Review the OxReplay docs named there and improve them so the OneCalc team can un
 4. explain,
 5. witness handling,
 6. scenario-library growth,
-7. Excel-observation comparison through OxXlObs,
+7. Excel-observation comparison through OxXlPlay,
 8. full replay visibility and control through the OneCalc UI,
 
 without confusing that with:
@@ -47,7 +47,7 @@ Priority outcomes:
 1. Make the OneCalc-facing consumption model explicit.
 2. Keep the DNA ReCalc boundary explicit.
 3. Clarify what a non-ReCalc host like DNA OneCalc may do directly with OxReplay runtime or library surfaces.
-4. Clarify the minimum adapter and capability expectations OneCalc should assume today for OxFml, OxFunc, OxXlObs, and later OxVba.
+4. Clarify the minimum adapter and capability expectations OneCalc should assume today for OxFml, OxFunc, OxXlPlay, and later OxVba.
 5. Clarify witness lifecycle, registry expectations, and what OneCalc should treat as stable versus still maturing.
 6. If there is no good canonical local doc for DNA OneCalc-as-consumer, add one narrow canonical spec note under `docs\spec\` that defines that integration model.
 
@@ -64,7 +64,7 @@ Recommended doc targets:
 3. `docs\spec\OXREPLAY_ADAPTER_AND_CONFORMANCE_MODEL.md`
 4. `docs\spec\OXREPLAY_BUNDLE_WITNESS_AND_REGISTRY_MODEL.md`
 5. `docs\spec\DNA_RECALC_HOST.md`
-6. `docs\spec\OXREPLAY_OXXLOBS_OBSERVATION_SEAM.md`
+6. `docs\spec\OXREPLAY_OXXLPLAY_OBSERVATION_SEAM.md`
 7. `docs\IN_PROGRESS_FEATURE_WORKLIST.md`
 8. `CURRENT_BLOCKERS.md`
 

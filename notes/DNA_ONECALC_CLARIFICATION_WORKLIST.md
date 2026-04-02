@@ -263,7 +263,7 @@ Decision:
    - `crates/app_core` for workbench orchestration, commands, mode switching, and artifact lifecycle,
    - `crates/editor` for formula-buffer integration, diagnostics, completion, and signature/help bridging,
    - `crates/execution` for host-packet construction, OxFml/OxFunc driving, and result-surface normalization,
-   - `crates/replay_compare` for OxReplay/OxXlObs integration and comparison flows,
+   - `crates/replay_compare` for OxReplay/OxXlPlay integration and comparison flows,
    - `crates/persistence` for `Document` mapping, `SpreadsheetML 2003`, and attachment bookkeeping,
    - `crates/extensions` for native extension ABI, discovery, enablement, and registration bridging,
    - `crates/evidence_store` for retained artifacts, indexes, attachments, and local evidence caching,
@@ -350,9 +350,9 @@ Decision:
    - replay or trace divergence.
 5. Those wider dimensions are only populated, surfaced, and claimed where the underlying retained source family actually supports them.
 6. Every comparison artifact must declare exactly which dimensions are active for the compared artifact pair.
-7. `DNA OneCalc` should not treat the narrow current envelope as a reason to stop there; the project should exert explicit downstream pressure on `OxXlObs` to widen the observation and comparison envelope.
-8. Requirements for widening the envelope in `OxXlObs` should be captured as named work and dependency items rather than as vague future desire.
-9. Confirmation of widened `OxXlObs` support should likewise be tied to retained evidence and explicit work completion, not assumed from design intent.
+7. `DNA OneCalc` should not treat the narrow current envelope as a reason to stop there; the project should exert explicit downstream pressure on `OxXlPlay` to widen the observation and comparison envelope.
+8. Requirements for widening the envelope in `OxXlPlay` should be captured as named work and dependency items rather than as vague future desire.
+9. Confirmation of widened `OxXlPlay` support should likewise be tied to retained evidence and explicit work completion, not assumed from design intent.
 
 ### Q15. Reliability And Projection Label Contract
 Status: resolved
@@ -540,7 +540,7 @@ Decision:
    - author or edit a formula in `DNA OneCalc`,
    - execute the DNA path and retain a `ScenarioRun`,
    - invoke `Compare with Excel`,
-   - drive live capture through `OxXlObs`,
+   - drive live capture through `OxXlPlay`,
    - ingest the resulting observation artifacts through `OxReplay`,
    - compare the `ScenarioRun` against the captured Excel observation,
    - show value comparison, formula-text comparison, provenance, reliability/projection labels, and Windows-only live-source status,
@@ -580,7 +580,7 @@ Decision:
    - conditional-formatting for the promoted subset,
    - clear status/header truth and keyboard-usable main flows.
 3. Windows desktop additional mandatory acceptance:
-   - live `OxXlObs` compare workflow for the first comparison envelope,
+   - live `OxXlPlay` compare workflow for the first comparison envelope,
    - provenance/reliability labeling for live Excel observations,
    - version-to-version scenario replay/compare,
    - native add-in loading for the admitted Excel-C-API subset,

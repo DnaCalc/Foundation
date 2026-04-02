@@ -44,7 +44,7 @@ The core mission of `DNA OneCalc` is:
 2. evaluate it with `OxFml` + `OxFunc` semantics,
 3. present the result and its effective display state in an attractive interactive host,
 4. capture replayable evaluation evidence through `OxReplay`,
-5. compare and replay those scenarios against Excel through `OxXlObs`,
+5. compare and replay those scenarios against Excel through `OxXlPlay`,
 6. grow a durable single-node scenario corpus that validates the stack against Excel.
 
 The project exists to close the gap between:
@@ -69,7 +69,7 @@ Primary dependencies:
 3. `OxReplay`
 
 Validation and empirical dependencies:
-1. `OxXlObs` for Windows-only Excel-facing empirical comparison
+1. `OxXlPlay` for Windows-only Excel-facing empirical comparison
 
 Optional or staged dependencies:
 1. `OxVba` for VBA-backed UDF and `.xll` shim integration
@@ -292,7 +292,7 @@ This is a defining project focus, not a sidecar.
 `DNA OneCalc` should be the first user-facing host that proves:
 1. `OxReplay` can trace through real `OxFml` + `OxFunc` evaluations,
 2. those traces can be retained as replay bundles and witnesses,
-3. scenarios can be replayed or compared against Excel-facing captures through `OxXlObs`,
+3. scenarios can be replayed or compared against Excel-facing captures through `OxXlPlay`,
 4. the same scenario corpus can serve authoring, regression, diff, explain, and witness-distillation flows.
 
 Replay is not only an artifact plane.
@@ -333,11 +333,11 @@ The scenario library should also generate:
 
 ### 9.3 Comparison Direction
 The architecture should support both:
-1. `DNA OneCalc` -> `OxReplay` -> compare to Excel/OxXlObs evidence,
-2. Excel/OxXlObs capture -> `OxReplay` -> replay/explain against `DNA OneCalc`.
+1. `DNA OneCalc` -> `OxReplay` -> compare to Excel/OxXlPlay evidence,
+2. Excel/OxXlPlay capture -> `OxReplay` -> replay/explain against `DNA OneCalc`.
 
 Windows-only rule:
-1. Excel-facing and `OxXlObs`-driven comparison lanes are Windows-only,
+1. Excel-facing and `OxXlPlay`-driven comparison lanes are Windows-only,
 2. desktop Linux and browser/WASM hosts must not imply live Excel-comparison availability.
 
 ### 9.4 Delivery Framing
@@ -375,7 +375,7 @@ The first serious `DNA OneCalc` scope should be considered real only when all of
 3. the host profile is explicit and visible,
 4. base formatting and effective-display state are visible and honest,
 5. replay output can be emitted for at least one nontrivial scenario family,
-6. at least one retained scenario family is validated against Excel-facing evidence through `OxXlObs`,
+6. at least one retained scenario family is validated against Excel-facing evidence through `OxXlPlay`,
 7. at least one retained formatting or conditional-formatting family exists,
 8. the UI is usable and keyboard-first,
 9. persisted documents round-trip through the declared initial file format with formatting state intact,
@@ -391,5 +391,5 @@ The first serious `DNA OneCalc` scope should be considered real only when all of
 6. What is the right first honest conditional-formatting scope for a single-node host, and how should it relate to the fuller OxFml carrier backlog?
 7. What is the exact portable C-ABI extension contract for Windows `.xll` and Linux `.so`, and how should it differ from hosted web and browser/WASM where add-ins are initially absent?
 8. Which replay, trace, and provenance surfaces must be exposed in the first `Leptos` UI wave?
-9. Which current outstanding items in `OxFml`, `OxFunc`, `OxReplay`, `OxXlObs`, and `OxVba` are the true blockers for a first `DnaOneCalc` repo?
+9. Which current outstanding items in `OxFml`, `OxFunc`, `OxReplay`, `OxXlPlay`, and `OxVba` are the true blockers for a first `DnaOneCalc` repo?
 10. What scenario-library and upstream-handoff contract should `DNA OneCalc` adopt from day one so replay artifacts remain durable and useful for co-development?

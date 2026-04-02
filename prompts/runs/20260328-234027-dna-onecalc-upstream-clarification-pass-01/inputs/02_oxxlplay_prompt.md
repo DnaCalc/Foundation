@@ -1,9 +1,9 @@
-`DNA OneCalc` is the single-node proving host and product shell that combines `OxFml`, `OxFunc`, `OxReplay`, and `OxXlObs` into an interactive `Twin Oracle Workbench`. It must remain narrower than `OxCalc`, keep replay and comparison first-class, preserve retained evidence lineage, expose full replay visibility and control in the UI, and stay honest about platform limits, capability floors, lossy projections, and provisional upstream seams.
+`DNA OneCalc` is the single-node proving host and product shell that combines `OxFml`, `OxFunc`, `OxReplay`, and `OxXlPlay` into an interactive `Twin Oracle Workbench`. It must remain narrower than `OxCalc`, keep replay and comparison first-class, preserve retained evidence lineage, expose full replay visibility and control in the UI, and stay honest about platform limits, capability floors, lossy projections, and provisional upstream seams.
 
-You are working inside the `OxXlObs` repo.
+You are working inside the `OxXlPlay` repo.
 
 Goal:
-Improve the `OxXlObs` documentation set so `DNA OneCalc` can consume Excel-observation evidence cleanly and honestly. This is a docs-first pass. Do not change runtime code unless a tiny supporting doc-generation fix is unavoidable; if so, keep it minimal and explain why.
+Improve the `OxXlPlay` documentation set so `DNA OneCalc` can consume Excel-observation evidence cleanly and honestly. This is a docs-first pass. Do not change runtime code unless a tiny supporting doc-generation fix is unavoidable; if so, keep it minimal and explain why.
 
 Read first:
 1. `.\README.md`
@@ -17,19 +17,19 @@ Then read:
 1. `..\Foundation\notes\DNA_ONECALC_SCOPE_AND_SPEC.md`
 
 Focus especially on:
-1. `docs\spec\OXXLOBS_SCOPE_AND_BOUNDARY.md`
-2. `docs\spec\OXXLOBS_ARCHITECTURE_AND_CAPTURE_MODEL.md`
-3. `docs\spec\OXXLOBS_ENVIRONMENT_AND_PROVENANCE_MODEL.md`
-4. `docs\spec\OXXLOBS_BUNDLE_EMISSION_AND_HANDOFF_MODEL.md`
-5. `docs\spec\OXXLOBS_CAPABILITY_AND_PACK_TRACEABILITY.md`
-6. `docs\spec\OXXLOBS_SCENARIO_REGISTER.md`
-7. `docs\spec\OXXLOBS_CLI_CONTRACT.md`
-8. `docs\spec\OXXLOBS_IMPLEMENTATION_BASELINE.md`
+1. `docs\spec\OXXLPLAY_SCOPE_AND_BOUNDARY.md`
+2. `docs\spec\OXXLPLAY_ARCHITECTURE_AND_CAPTURE_MODEL.md`
+3. `docs\spec\OXXLPLAY_ENVIRONMENT_AND_PROVENANCE_MODEL.md`
+4. `docs\spec\OXXLPLAY_BUNDLE_EMISSION_AND_HANDOFF_MODEL.md`
+5. `docs\spec\OXXLPLAY_CAPABILITY_AND_PACK_TRACEABILITY.md`
+6. `docs\spec\OXXLPLAY_SCENARIO_REGISTER.md`
+7. `docs\spec\OXXLPLAY_CLI_CONTRACT.md`
+8. `docs\spec\OXXLPLAY_IMPLEMENTATION_BASELINE.md`
 9. `docs\test-runs\W006_STABLE_WINDOWS_EXECUTION_DRIVER.md`
 10. `docs\test-runs\W007_FIRST_CROSS_REPO_REPLAY_AND_DIFF_CONSUMPTION.md`
 
 Task:
-Review the current docs and improve them so the OneCalc team can understand exactly how `DNA OneCalc` should consume `OxXlObs` for:
+Review the current docs and improve them so the OneCalc team can understand exactly how `DNA OneCalc` should consume `OxXlPlay` for:
 1. Windows live Excel observation,
 2. provenance-rich retained evidence,
 3. bundle and handoff emission,
@@ -48,18 +48,18 @@ Priority outcomes:
 7. If there is no good canonical local note for OneCalc as a downstream consumer, add one narrow canonical spec note under `docs\spec\`.
 
 Important constraints:
-1. `OxXlObs` owns observation and evidence capture, not Excel semantics and not replay semantics.
+1. `OxXlPlay` owns observation and evidence capture, not Excel semantics and not replay semantics.
 2. Do not overclaim the current live-driver surface beyond what the retained evidence and current test-run docs justify.
 3. Keep lossy or inferred surfaces visibly distinct from direct observation.
 4. Preserve Foundation and `OxReplay` precedence for replay doctrine and generic replay-host concerns.
 5. Be explicit where the current comparison floor is still narrow.
 
 Deliverables:
-1. Updated `OxXlObs` docs.
+1. Updated `OxXlPlay` docs.
 2. If needed, one improved canonical local downstream-consumer note for `DNA OneCalc`.
 3. A short final summary listing:
    - files changed,
-   - the authoritative `OxXlObs` doc set `DNA OneCalc` should now use,
+   - the authoritative `OxXlPlay` doc set `DNA OneCalc` should now use,
    - remaining gaps that still belong in Foundation, `OxReplay`, or sibling repos.
 
 Verification:
