@@ -5,7 +5,7 @@
   "description": "Single-cell formula test cases for OxFml/DnaOneCalc evaluator proving and Excel comparison",
   "target_host": "DnaOneCalc",
   "target_lane": "OxFml",
-  "entry_count": 1000,
+  "entry_count": 1018,
   "category_counts": {
     "arithmetic_operators": 50,
     "array_constant_literal": 30,
