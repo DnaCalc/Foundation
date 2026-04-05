@@ -61,6 +61,14 @@ pwsh -File tools/spec-pack-processor/compare-source-groups.ps1 -RunOutputsDir re
 - Historical revision downloads discovered on spec pages are indexed but marked `excluded_historical` by default.
 - Very large umbrella bundles (for example `Windows_Protocols.zip`) are indexed and marked `excluded_large_bundle` by default. Prefer keeping those bundles in `.local/reference-cache/` rather than in the tracked repo tree.
 
+## Test Corpus
+The `test-corpus/` directory holds curated test corpora for verifying DNA Calc formula evaluation and workbook behavior against Excel. It includes:
+- `EXTERNAL_CORPORA_INDEX.csv`: references to external test suites (HyperFormula, Apache POI, LibreOffice, Gnumeric, Calamine, pbartxl gists).
+- `formula/single-cell/`: single-cell formula test cases (JSONL) for OxFml / DnaOneCalc proving.
+- `formula/multi-cell/` and `workbook/`: future multi-cell and workbook-level test suites.
+
+Schema and governance details: `test-corpus/README.md` and `test-corpus/formula/README.md`.
+
 ## Empirical Findings Promotion
 Empirical run outputs are produced under `research/runs/<run-id>/` and remain working evidence by default.
 Only high-value, conformance-relevant observations should be promoted into `reference/empirical/`.
