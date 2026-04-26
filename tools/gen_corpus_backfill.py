@@ -96,10 +96,10 @@ entries.append(e("math_trig", "large_number_precision_loss",
     notes="Beyond 15 digits: 1E16+1 loses the +1 entirely, result is 0 not 1"))
 
 entries.append(e("math_trig", "denormalized_float",
-    '=2.2250738585072014E-308/10', 2.225073858507201E-309,
-    ["ieee754", "denormalized", "subnormal"],
+    '=2.2250738585072014E-308/10', 0.0,
+    ["ieee754", "denormalized", "subnormal", "excel_underflow"],
     [], operators=["/"],
-    notes="Division producing subnormal/denormalized float near minimum positive"))
+    notes="Excel canonicalizes this tiny literal to zero before division"))
 
 entries.append(e("math_trig", "max_double",
     '=1.7976931348623157E+308*1', 1.7976931348623157E+308,

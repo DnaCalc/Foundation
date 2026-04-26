@@ -566,7 +566,7 @@ entries.append(e(ftc(n), '=""=0', cat, "cross_type", ["coercion"], "simple", [],
 entries.append(e(ftc(n), '=TRUE="TRUE"', cat, "cross_type", ["coercion"], "moderate", [], ["="], False, "logical", prov_detail=pd, notes="Boolean and text are different types")); n+=1
 entries.append(e(ftc(n), '=1="1"', cat, "cross_type", ["coercion"], "moderate", [], ["="], False, "logical", prov_detail=pd, notes="Number and text are different types")); n+=1
 entries.append(e(ftc(n), '=0.1+0.2=0.3', cat, "floating_point", ["coercion","floating_point"], "moderate", [], ["+","="], False, "logical", prov_detail=pd, notes="IEEE 754 floating point: 0.1+0.2 != 0.3")); n+=1
-entries.append(e(ftc(n), '=0.1+0.2-0.3', cat, "floating_point", ["coercion","floating_point"], "moderate", [], ["+","-"], 5.55111512312578e-17, "number", prov_detail=pd)); n+=1
+entries.append(e(ftc(n), '=0.1+0.2-0.3', cat, "floating_point", ["coercion","floating_point","excel_zero_reaching"], "moderate", [], ["+","-"], 0.0, "number", prov_detail=pd, notes="Excel root add/sub zero-reaching publication compensates the binary residue")); n+=1
 entries.append(e(ftc(n), '=SUM(TRUE,FALSE,TRUE)', cat, "sum_bool", ["coercion"], "moderate", ["SUM"], [], 2, "number", prov_detail=pd, notes="SUM coerces boolean args to numbers")); n+=1
 entries.append(e(ftc(n), '=AVERAGE(TRUE,FALSE)', cat, "avg_bool", ["coercion"], "moderate", ["AVERAGE"], [], 0.5, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=SUM("1","2","3")', cat, "sum_text", ["coercion"], "moderate", ["SUM"], [], 6, "number", prov_detail=pd, notes="SUM coerces text args that look like numbers")); n+=1
