@@ -290,7 +290,7 @@ entries.append(e(ftc(n), '=SLOPE({2,4,6,8,10},{1,2,3,4,5})', cat, "regression", 
 entries.append(e(ftc(n), '=INTERCEPT({2,4,6,8,10},{1,2,3,4,5})', cat, "regression", ["stats"], "moderate", ["INTERCEPT"], [], 0, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=RSQ({2,4,6,8,10},{1,2,3,4,5})', cat, "regression", ["stats"], "moderate", ["RSQ"], [], 1, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=NORM.DIST(0,0,1,TRUE)', cat, "distribution", ["stats"], "moderate", ["NORM.DIST"], [], 0.5, "number", prov_detail=pd, notes="CDF of standard normal at 0")); n+=1
-entries.append(e(ftc(n), '=NORM.INV(0.975,0,1)', cat, "distribution", ["stats"], "moderate", ["NORM.INV"], [], 1.95996398454005, "number", prov_detail=pd)); n+=1
+entries.append(e(ftc(n), '=NORM.INV(0.975,0,1)', cat, "distribution", ["stats"], "moderate", ["NORM.INV"], [], 1.9599639845400536, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=BINOM.DIST(3,10,0.5,FALSE)', cat, "distribution", ["stats"], "moderate", ["BINOM.DIST"], [], 0.1171875, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=POISSON.DIST(2,3,FALSE)', cat, "distribution", ["stats"], "moderate", ["POISSON.DIST"], [], 0.224041807654836, "number", prov_detail=pd)); n+=1
 entries.append(e(ftc(n), '=SKEW({1,2,2,3,5})', cat, "shape", ["stats"], "moderate", ["SKEW"], [], 0.946174695757561, "number", prov_detail=pd)); n+=1
