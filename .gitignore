@@ -1,5 +1,12 @@
 .tmp/
 .local/
+tmp/
+target/
+.claude/
+__pycache__/
+*.pyc
+bin/
+obj/
 prompts/runs/*/tmp/
 research/runs/*/tmp/
 synthesis/runs/*/tmp/

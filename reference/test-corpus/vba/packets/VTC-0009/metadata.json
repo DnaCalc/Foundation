@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0009",
+  "title": "Val/Str type conversion",
+  "description": "Demonstrates type conversion between strings and numbers using Val and Str, including round-trip verification, edge cases, and practical parsing scenarios.",
+  "category": "type_coercion",
+  "subcategory": "val_str",
+  "tags": ["val", "str", "conversion", "type_coercion", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure", "type_conversion"],
+  "stdlib_functions": ["Val", "Str", "CStr", "CLng", "CDbl", "Trim"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Type conversion round-trips with Val and Str"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test conversion_val_str_subset.bas into natural program style with Debug.Print output",
+  "notes": null
+}

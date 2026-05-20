@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0017",
+  "title": "String Reversal",
+  "description": "Reverse several strings and print the original alongside the reversed version.",
+  "category": "string_manipulation",
+  "subcategory": "transformation",
+  "tags": ["string", "reversal", "transformation"],
+  "complexity": "trivial",
+  "language_features": ["For-Next", "Function", "Mid$", "string-concatenation"],
+  "stdlib_functions": ["Debug.Print", "Mid$", "Len", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "String reversal with multiple test cases"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard string reversal algorithm description",
+  "notes": null
+}

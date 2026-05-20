@@ -55,15 +55,15 @@ Doctrine is mandatory operating guidance. **Hygiene** is listed before **Evoluti
 ### 3.2 Component Repos
 - **Foundation** — doctrine, architecture, operations, formal-model framing, replay-governance, and conformance policy authority; maintains read-only mirror snapshots of lane-owned specs for cross-program assurance.
 - **DnaVisiCalc** — Round 0 pathfinder and executable seam evidence source.
-- **OxFunc** — value universe and function semantics lane.
-- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, trace schema, and formula-language evaluator-facing spec set.
-- **OxCalc** — multi-node core calculation engine lane; owner of core-engine detailed realization/formal-model spec set.
+- **OxFunc** — value universe and worksheet function/operator semantics lane. Owns coercion, array lifting, reference-visible behavior, helper/callback semantics, error propagation, host/provider projection, volatility, locale dependency, and function-facing optimization metadata consumed by formula evaluators and calculation hosts.
+- **OxFml** — formula language and single-node evaluator/FEC-F3E seam lane. Permanent owner of FEC/F3E seam specification, evaluator contract, trace schema, formula-language evaluator-facing spec set, formula structure, parse/bind behavior, lexical slots, LET/LAMBDA binding, child evaluation order, lazy control forms, compiled formula plans, and trace publication policy.
+- **OxCalc** — multi-node core calculation engine lane; owner of core-engine detailed realization/formal-model spec set, workbook-level scheduling, invalidation, publication, caching, concurrency, and graph/backend execution strategy.
 - **OxVba** — VBA runtime/compiler and host integration lane.
-- **OxReplay** — shared replay implementation repo and library family for the Replay appliance, including bundle validation, replay, diff/explain, witness distillation, adapter conformance, and the `DNA ReCalc` host surface. `OxReplay` is not a semantics lane.
+- **OxReplay** — shared replay implementation repo and library family for the Replay appliance, including bundle validation, replay, diff/explain, witness distillation, adapter conformance, the `DNA ReCalc` host surface, and normalized comparison/equivalence semantics over declared replay-comparable surfaces (worksheet values, display surfaces, typed outcome/reject classes, and related replay-governed comparison views). `OxReplay` is not a semantics lane and does not own final host verdict policy.
 
 ### 3.3 Host Progression (Execution Vehicles)
 - **DNA VbCalc** — dedicated OxVba host proving path (independent lane progression).
-- **DNA OneCalc** — single-node formula/function host for fast evaluator proving. Proves formula language completeness, OxFunc function semantics, and UDF/VBA host integration on a single-cell or defined-name substrate with no reference resolution or multi-node scheduling. Clean-room evaluator proving ground separate from the DnaVisiCalc pathfinder.
+- **DNA OneCalc** — single-node formula/function host for fast evaluator proving. Proves formula language completeness, OxFunc function semantics, and UDF/VBA host integration on a single-cell or defined-name substrate with no reference resolution or multi-node scheduling. Clean-room evaluator proving ground separate from the DnaVisiCalc pathfinder. Hosts such as `DNA OneCalc` remain the owners of orchestration and final host verdict policy (`Matched` / `Mismatched` / `Blocked` or equivalent host-facing status), even when replay-comparable equivalence is centralized in `OxReplay`.
 - **DNA TreeCalc** — first serious multi-node host for OxCalc on tree substrate.
 - **DNA PreCalc** — first full tree-grid-hybrid host in the Round 1 path.
 - **DNA SuperCalc** — later refinement host stage.

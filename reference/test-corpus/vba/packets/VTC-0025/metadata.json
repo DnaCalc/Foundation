@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0025",
+  "title": "Type conversion chain",
+  "description": "Chains multiple type conversions through CInt, CLng, CDbl, CStr, CBool, Val, and Str functions. Prints the value and type name at each step to trace the conversion pipeline.",
+  "category": "type_coercion",
+  "subcategory": "conversion_chain",
+  "tags": ["type_conversion", "cint", "clng", "cdbl", "cstr", "cbool", "val", "str", "tier3"],
+  "complexity": "moderate",
+  "language_features": ["variable_declaration", "sub_procedure", "type_conversion"],
+  "stdlib_functions": ["CInt", "CLng", "CDbl", "CStr", "CBool", "Val", "Str", "TypeName", "VarType"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Type conversion chain demonstrating CInt, CLng, CDbl, CStr, CBool, Val, Str"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored to exercise type coercion functions of VBA built-in library",
+  "notes": null
+}

@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0018",
+  "title": "Palindrome Check",
+  "description": "Check several strings for the palindrome property, printing each with True or False.",
+  "category": "string_manipulation",
+  "subcategory": "validation",
+  "tags": ["string", "palindrome", "validation"],
+  "complexity": "simple",
+  "language_features": ["For-Next", "Function", "Mid$", "LCase$", "Boolean"],
+  "stdlib_functions": ["Debug.Print", "Mid$", "Len", "LCase$"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Palindrome checker with multiple test strings"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard palindrome check algorithm description",
+  "notes": null
+}

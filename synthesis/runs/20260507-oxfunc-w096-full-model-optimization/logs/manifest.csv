@@ -1,0 +1,10 @@
+artifact,type,status
+inputs/source_run.txt,input,created
+inputs/source_hashes.csv,input,created
+analysis/suggestion_index.csv,analysis,created
+decisions/decision_log.csv,decision_log,created
+outputs/synthesis_report.md,report,created
+CHARTER.md,source_doc,edited
+ARCHITECTURE_AND_REQUIREMENTS.md,source_doc,edited
+OPERATIONS.md,source_doc,edited
+notes/THEORY_TO_PACK_REGISTER.md,source_doc,edited

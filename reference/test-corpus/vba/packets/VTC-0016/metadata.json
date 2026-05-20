@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0016",
+  "title": "GCD (Euclidean Algorithm)",
+  "description": "Compute the greatest common divisor of several integer pairs using the Euclidean algorithm and print each result.",
+  "category": "math_numeric",
+  "subcategory": "number_theory",
+  "tags": ["gcd", "euclidean", "number-theory", "math"],
+  "complexity": "simple",
+  "language_features": ["Do-While", "Function", "Mod-operator"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Euclidean GCD with step-by-step trace"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard Euclidean algorithm description",
+  "notes": null
+}

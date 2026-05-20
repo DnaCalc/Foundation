@@ -61,6 +61,9 @@ Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.3`.
 - Core pipeline remains parse/bind/dependency/invalidation/schedule/evaluate/commit with deterministic and incremental requirements.
 - `NodeId`-based dependency identity remains baseline.
 - Both invariant-oriented and dirty-closure propagation models remain valid formal baselines.
+- High-throughput full-model recalculation is a core long-term architecture goal. Graph-level planning, concurrency, cache reuse, and compiled/backend execution strategies are allowed only when they preserve the same profile-defined worksheet-visible semantics.
+- Optimized evaluators should consume resolved OxFunc call-site handles and metadata rather than repeatedly routing hot paths through broad string dispatch. Compatibility string APIs may remain wrappers over resolved dispatch surfaces.
+- Value-only and trace-rich execution are evaluator/runtime modes. Trace requirements must not force OxFunc to allocate per-call trace structures in hot value paths, and value-only execution must preserve identical worksheet-visible semantics.
 
 Detailed definitions are in `CORE_ENGINE_FORMAL_MODEL.md` Section `5.4`.
 
@@ -174,14 +177,18 @@ Key areas and their detailed-model locations:
 
 ### 3.18 FEC/F3E Lane Boundary (OxFml/OxFunc/FEC)
 To reduce ownership drift during implementation spikes, lane ownership is explicitly split as follows:
-- **OxFml** owns formula grammar, parse, and bind semantics.
-- **OxFunc** owns value-type and function semantics consumed during evaluation.
-- **OxCalc** owns coordinator/core-engine policy: dependency lifecycle, scheduler interaction, publication lifecycle, and coordinator-facing protocol clauses.
+- **OxFunc** owns worksheet value, function, and operator semantics consumed during evaluation. This includes coercion, array lifting, reference-visible behavior, helper/callback semantics, error propagation, host/provider projection, volatility, locale dependency, and function-facing FEC dependency metadata.
+- **OxFml** owns formula structure: grammar, parse/bind, lexical slots, LET/LAMBDA binding, references, child evaluation order, lazy control forms, compiled formula plans, evaluator session behavior, and trace publication policy.
+- **OxCalc** owns coordinator/core-engine policy: dependency lifecycle, scheduler interaction, publication lifecycle, workbook-level scheduling, invalidation, caching, concurrency, graph/backend execution strategy, and coordinator-facing protocol clauses.
 
 FEC/F3E spec ownership is now in OxFml; Foundation retains a read-only conformance mirror of FEC/F3E artifacts for cross-reference and assurance use.
 - Formula-semantic formatting behavior (including format-string interpretation and conditional-format configuration evaluation lanes) is evaluator work and must cross the FEC/F3E seam; it is not a display-only concern.
 - FEC/F3E protocol definition authority: co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
 - Visibility-priority scheduling policy is core-engine policy and must preserve stabilized semantic equivalence; FEC/F3E provides evidence and deltas, not global scheduling truth.
+- Optimization does not move function semantics. OxFml, FEC hosts, `DNA OneCalc`, `DNA TreeCalc`, and later DNA Calc hosts must not duplicate or special-case OxFunc-owned behavior for speed, including hot functions and operators such as `INDEX`, `HSTACK`/`VSTACK`, arithmetic operators, `REDUCE`, `SCAN`, `MAP`, `BYROW`, `BYCOL`, `MAKEARRAY`, or other helper functions.
+- Optimizer metadata is contract-relevant. Required metadata families include arity, argument preparation, volatility, determinism, host interaction, FEC dependency profiles, callable argument ordinals, reference visibility, shape behavior, array lifting, and hoistability under explicit runtime-context policy.
+- Future concurrent or compiled graph execution may rely on OxFunc/FEC metadata only when the relevant purity, dependency, host-interaction, volatile, locale, random/time, and external-provider conditions are declared and pack-validated.
+- Concrete OxFunc-facing optimization surfaces may include `SurfaceCallSite`, `SurfaceCallRuntime`, `SurfaceCallScratch`, `SurfaceCallHoistPolicy`, `SurfaceDispatchKey`, generated/catalog-index dispatch, and compatibility string APIs layered over resolved dispatch.
 
 Canonical working references:
 - `..\\OxFml\\docs\\spec\\fec-f3e\\FEC_F3E_REDESIGN_SPEC.md`
@@ -268,7 +275,9 @@ Architectural boundary:
 1. lane repos remain authoritative for lane-native replay semantics and adapter meaning,
 2. Replay normalizes lane artifacts for cross-program tooling without taking semantic ownership away from the lanes,
 3. shared implementation may live in `OxReplay`,
-4. `DNA ReCalc` is the shared replay host surface over that infrastructure.
+4. normalized comparison/equivalence semantics for declared replay-comparable surfaces live in `OxReplay`,
+5. spreadsheet proving hosts such as `DNA OneCalc` remain the owners of final host verdict policy (`Matched` / `Mismatched` / `Blocked` or equivalent host status),
+6. `DNA ReCalc` is the shared replay host surface over that infrastructure.
 
 Normalized layers:
 1. lane-native capture,
@@ -280,17 +289,19 @@ Normalized layers:
 Core normalized artifact families include:
 1. bundle/run/scenario manifests,
 2. replay events and counter sets,
-3. replay diffs and explain records,
-4. preservation predicates and reduction manifests,
-5. adapter capability manifests,
-6. registry refs and witness lifecycle records.
+3. replay comparison views, diffs, and explain records,
+4. typed outcome/reject classes and related comparison surfaces,
+5. preservation predicates and reduction manifests,
+6. adapter capability manifests,
+7. registry refs and witness lifecycle records.
 
 Architectural rules:
 1. Replay bundles must preserve source identity, source schema version, and capture-loss status,
 2. Replay outputs use canonical registry ids when a registry family exists,
-3. witness lifecycle and quarantine are part of the architecture, not merely tooling metadata,
-4. replay capture is performance-sensitive and must not collapse hot-path semantics into logging,
-5. witness distillation is offline, predicate-driven, and closure-aware.
+3. replay comparison must operate over explicit typed comparison surfaces and typed outcome/reject classes rather than inferring equivalence from ad hoc host-local fields,
+4. witness lifecycle and quarantine are part of the architecture, not merely tooling metadata,
+5. replay capture is performance-sensitive and must not collapse hot-path semantics into logging,
+6. witness distillation is offline, predicate-driven, and closure-aware.
 
 Pack integration:
 1. Replay serves `PACK.replay.appliance`,
@@ -334,6 +345,8 @@ Pack integration:
 - **CONSTR-033:** Witness distillation must be offline, replay-closed, and must fail explicitly when preservation predicates or capture are unstable.
 - **CONSTR-034:** Replay bundle, adapter, and registry evolution must classify additive, tightening, breaking, experimental, deprecated, and removed changes explicitly.
 - **CONSTR-035:** Shared replay implementation may be centralized in `OxReplay`, but `OxReplay` may not take ownership of lane-native semantics or reinterpret source artifacts outside declared adapter contracts.
+- **CONSTR-036:** Function-specific worksheet semantics must remain OxFunc-owned; evaluator, host, or graph-backend optimizations may not duplicate or locally special-case those semantics for speed.
+- **CONSTR-037:** Optimizer reliance on OxFunc metadata must be explicit, profile-scoped, and pack-validated before hoisting, compiled execution, concurrency, or cache reuse can claim semantic equivalence.
 
 ## 5. Core Requirements (REQ- and INT-/REAL- examples)
 ### REQ (architecture-independent)
@@ -361,6 +374,8 @@ Pack integration:
   **REAL:** Geometry/hit-test invariants and RenderPlan determinism are required and pack-gated.
 - **INT:** Performance claims must be trend-checkable, not anecdotal.  
   **REAL:** Required profiles publish deterministic phase counters and slope-based scaling signatures with regression thresholds.
+- **INT:** Whole-model optimization must scale without semantic drift.
+  **REAL:** Optimized graph/backend execution consumes OxFunc-resolved call handles and declared metadata, preserves clean-room Excel-observable semantics, and is pack-gated for purity, dependency, volatility, host/provider, locale, random/time, and trace-mode equivalence conditions.
 - **INT:** Cross-engine disagreements must be quickly explainable and reproducible.  
   **REAL:** Required profiles maintain differential execution lanes across Red/Blue/oracle surfaces and publish indexed divergence artifacts with replay handles.
 - **INT:** Clean-room compatibility claims must be auditable.  

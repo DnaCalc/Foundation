@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0002",
+  "title": "String slicing (Left, Right, Mid)",
+  "description": "Demonstrates string slicing functions Left, Right, and Mid to extract substrings from realistic data like phone numbers, file paths, and product codes.",
+  "category": "string_manipulation",
+  "subcategory": "slicing",
+  "tags": ["string", "left", "right", "mid", "substring", "tier1"],
+  "complexity": "trivial",
+  "language_features": ["variable_declaration", "sub_procedure", "string_operations"],
+  "stdlib_functions": ["Left", "Right", "Mid", "Len"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "String slicing with Left, Right, and Mid on realistic data"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_slice_ops.bas into natural program style with Debug.Print output",
+  "notes": null
+}

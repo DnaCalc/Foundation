@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0027",
+  "title": "Collection operations",
+  "description": "Demonstrates VBA Collection usage: Add items with and without keys, access by index and key, Remove, Count, and For Each iteration.",
+  "category": "data_structures",
+  "subcategory": "collection",
+  "tags": ["collection", "add", "remove", "for_each", "keyed_access", "tier3"],
+  "complexity": "moderate",
+  "language_features": ["variable_declaration", "sub_procedure", "for_each", "object_creation"],
+  "stdlib_functions": ["Collection.Add", "Collection.Remove", "Collection.Count", "Collection.Item"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Collection operations: Add, Remove, Count, keyed access, For Each"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored to exercise Collection data structure of VBA built-in library",
+  "notes": null
+}

@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0020",
+  "title": "Stack via Array",
+  "description": "Implement a stack data structure using an array with Push, Pop, and Peek operations demonstrated via module-level variables.",
+  "category": "data_structures",
+  "subcategory": "stack",
+  "tags": ["stack", "array", "data-structure", "push", "pop"],
+  "complexity": "moderate",
+  "language_features": ["module-level-variables", "Sub", "Function", "ReDim-Preserve", "error-handling"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Array-based stack with push, pop, and peek operations"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard array-based stack data structure description",
+  "notes": null
+}

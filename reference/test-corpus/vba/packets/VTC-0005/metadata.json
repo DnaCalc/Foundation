@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0005",
+  "title": "Financial functions (FV, PV, PMT)",
+  "description": "Demonstrates time-value-of-money functions FV, PV, and PMT for simple savings and loan calculations, including a zero-rate baseline scenario.",
+  "category": "financial",
+  "subcategory": "time_value_of_money",
+  "tags": ["financial", "fv", "pv", "pmt", "time_value", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure"],
+  "stdlib_functions": ["FV", "PV", "PMT"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Financial TVM calculations with FV, PV, and PMT"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_financial_zero_rate.bas into natural program style with Debug.Print output",
+  "notes": null
+}

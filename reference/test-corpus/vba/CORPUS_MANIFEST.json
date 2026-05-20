@@ -1,0 +1,38 @@
+{
+  "corpus_id": "foundation-vba-programs-v1",
+  "corpus_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "description": "VBA program test cases for OxVBA and Excel VBA conformance comparison",
+  "target_host": ["OxVBA", "ExcelVBA"],
+  "entry_count": 30,
+  "category_counts": {
+    "string_manipulation": 8,
+    "math_numeric": 5,
+    "sorting_searching": 2,
+    "data_structures": 2,
+    "control_flow": 3,
+    "error_handling": 1,
+    "type_coercion": 2,
+    "class_oop": 1,
+    "stdlib_exercise": 3,
+    "financial": 1,
+    "array_processing": 2
+  },
+  "complexity_distribution": {
+    "trivial": 6,
+    "simple": 13,
+    "moderate": 11
+  },
+  "provenance_summary": {
+    "adapted": 10,
+    "authored": 20
+  },
+  "deterministic_count": 30,
+  "non_deterministic_count": 0,
+  "requires_com_count": 0,
+  "requires_host_objects_count": 0,
+  "multi_module_count": 1,
+  "exclusion_policy": "First batch: no COM interop, no Excel object model, no file I/O, no GUI. All programs are standalone VBA modules runnable in both OxVBA and Excel VBA.",
+  "created_utc": "2026-04-05T00:00:00Z",
+  "last_updated_utc": "2026-04-05T00:00:00Z"
+}

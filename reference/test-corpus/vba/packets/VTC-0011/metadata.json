@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0011",
+  "title": "Bubble Sort",
+  "description": "Sort an array of integers using the bubble sort algorithm. Prints the array before and after sorting.",
+  "category": "sorting_searching",
+  "subcategory": "sorting",
+  "tags": ["bubble-sort", "sorting", "array", "in-place"],
+  "complexity": "simple",
+  "language_features": ["For-Next", "nested-loops", "array", "swap", "Boolean-flag"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Bubble sort implementation with before/after display"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard bubble sort algorithm description",
+  "notes": null
+}

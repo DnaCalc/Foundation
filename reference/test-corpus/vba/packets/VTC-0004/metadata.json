@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0004",
+  "title": "String building (Space, String$, Chr, Asc)",
+  "description": "Demonstrates string construction functions Space, String$, Chr, and Asc for building formatted output, generating character patterns, and converting between characters and ASCII codes.",
+  "category": "string_manipulation",
+  "subcategory": "building",
+  "tags": ["string", "space", "string$", "chr", "asc", "ascii", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure", "for_loop", "string_operations"],
+  "stdlib_functions": ["Space", "String$", "Chr", "Chr$", "Asc"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "String building with Space, String$, Chr, and Asc"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_string_expansion_core.bas into natural program style with Debug.Print output",
+  "notes": null
+}

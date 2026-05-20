@@ -8,6 +8,8 @@ This directory holds curated test corpora for verifying DNA Calc formula evaluat
 - `formula/`: formula-level test corpora.
   - `single-cell/`: formulas evaluable in a single cell/call (suitable for OxFml / DnaOneCalc).
   - `multi-cell/`: future -- formulas requiring multi-cell interaction.
+- `vba/`: VBA program test corpora for OxVBA and Excel VBA conformance comparison.
+  - `packets/VTC-NNNN/`: one directory per test program, each with `metadata.json` and `.bas`/`.cls` source files.
 - `workbook/`: future -- workbook-level test scenarios.
 
 ## Governance

@@ -3,12 +3,12 @@
 Working docs for the DNA Calc program foundation and planning.
 DNA Calc is developed by DNA Kode.
 
-**Current phase context (2026-03-16):**
+**Current phase context (2026-03-16; updated 2026-05-20):**
 The program has completed the DnaVisiCalc pathfinder phase — engine scope is exercised; formal artifact exit (Track B) remains outstanding.
 Next focus shifts to two parallel lanes: **OxFml** (formula/evaluator lane with FEC/F3E spec ownership) using DNA OneCalc as the proving host, and **OxCalc** (core engine lane) starting with tree-only substrate via DNA TreeCalc.
 Foundation remains the doctrine, architecture, and conformance policy owner. It does not own implementation or spec artifacts once they transfer to lane repos.
 Replay appliance doctrine promotion is now part of Foundation logistics scope, with `OxReplay` as the intended shared replay implementation repo and `DNA ReCalc` as the replay host surface.
-`DnaOneCalc` is now bootstrapped as a separate host repo, and new DNA Calc repos should follow the slim beads-based bootstrap standard in `OPERATIONS.md` Section `8.18`.
+`DnaOneCalc` is bootstrapped as a separate host repo. `DnaTreeCalc` is now created as a separate host repo (2026-05-20) — its design/planning document set has been migrated out of `Foundation/notes/` into `..\DnaTreeCalc\` (CHARTER.md + `docs/`), and its Git/beads bootstrap is complete. New DNA Calc repos should follow the slim beads-based bootstrap standard in `OPERATIONS.md` Section `8.18`; `DnaTreeCalc` is the current reference instance for that template.
 The Wave sequence A-G in `OPERATIONS.md` Section 10.3 governs execution order. Wave A ownership freeze and repo bootstrap are complete.
 
 **Canonical lane-owned spec locations (post-bootstrap):**
@@ -31,7 +31,7 @@ Use Foundation docs to hold doctrine, architecture framing, and process that rem
 
 Program map (working baseline):
 - Component repos: `Foundation`, `DnaVisiCalc`, `OxFunc`, `OxFml`, `OxCalc`, `OxVba`, `OxReplay`.
-- Host repos: `DnaOneCalc` (single-formula proving host), with further hosts widening along the progression ladder.
+- Host repos: `DnaOneCalc` (single-formula proving host), `DnaTreeCalc` (first multi-node tree-substrate host; created 2026-05-20, planning docs in `..\DnaTreeCalc\docs\`), with further hosts widening along the progression ladder.
 - Host progression: `DNA VbCalc` -> `DNA OneCalc` -> `DNA TreeCalc` -> `DNA PreCalc` -> `DNA SuperCalc` -> `DNA Calc`.
 - Replay tooling host: `DNA ReCalc` over `OxReplay`.
 - Round names remain authoritative stage names; host names are execution vehicles.

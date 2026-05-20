@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0012",
+  "title": "Binary Search",
+  "description": "Binary search on a sorted array, printing the search steps and final result.",
+  "category": "sorting_searching",
+  "subcategory": "searching",
+  "tags": ["binary-search", "searching", "array", "divide-and-conquer"],
+  "complexity": "simple",
+  "language_features": ["Do-While", "array", "Function", "integer-division"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Binary search with step-by-step trace"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard binary search algorithm description",
+  "notes": null
+}

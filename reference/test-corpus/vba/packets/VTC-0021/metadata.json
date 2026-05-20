@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0021",
+  "title": "Caesar Cipher",
+  "description": "Encode and decode a message using a Caesar cipher with shift of 3. Prints original, encoded, and decoded text.",
+  "category": "string_manipulation",
+  "subcategory": "cipher",
+  "tags": ["caesar", "cipher", "encryption", "string"],
+  "complexity": "moderate",
+  "language_features": ["For-Next", "Function", "Asc", "Chr$", "Mod-operator"],
+  "stdlib_functions": ["Debug.Print", "Asc", "Chr$", "Len", "Mid$", "UCase$"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Caesar cipher encode and decode with shift parameter"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard Caesar cipher algorithm description",
+  "notes": null
+}

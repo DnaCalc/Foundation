@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0010",
+  "title": "Split and Join",
+  "description": "Demonstrates Split and Join for parsing delimited strings, transforming data, and reassembling with different delimiters. Includes CSV-style parsing and data transformation.",
+  "category": "string_manipulation",
+  "subcategory": "split_join",
+  "tags": ["string", "split", "join", "csv", "delimiter", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure", "for_loop", "dynamic_array", "string_operations"],
+  "stdlib_functions": ["Split", "Join", "UBound", "LBound", "Trim"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Split and Join for delimited string processing"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_advanced_split_join.bas into natural program style with Debug.Print output",
+  "notes": null
+}

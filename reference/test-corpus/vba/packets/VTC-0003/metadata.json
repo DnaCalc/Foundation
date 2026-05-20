@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0003",
+  "title": "InStr and case conversion (LCase, UCase)",
+  "description": "Demonstrates string searching with InStr and case conversion with LCase and UCase, applied to realistic scenarios like email validation and text normalization.",
+  "category": "string_manipulation",
+  "subcategory": "search_case",
+  "tags": ["string", "instr", "lcase", "ucase", "search", "tier1"],
+  "complexity": "trivial",
+  "language_features": ["variable_declaration", "sub_procedure", "if_then", "string_operations"],
+  "stdlib_functions": ["InStr", "LCase", "UCase", "Len"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "String search and case conversion with InStr, LCase, and UCase"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_instr_case_ops.bas into natural program style with Debug.Print output",
+  "notes": null
+}

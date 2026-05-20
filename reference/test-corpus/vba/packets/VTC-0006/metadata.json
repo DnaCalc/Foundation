@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0006",
+  "title": "Date construction (DateSerial, DateValue)",
+  "description": "Demonstrates date construction using DateSerial and DateValue, including date arithmetic and extracting date components with Year, Month, and Day.",
+  "category": "stdlib_exercise",
+  "subcategory": "date_construction",
+  "tags": ["date", "dateserial", "datevalue", "year", "month", "day", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure", "date_operations"],
+  "stdlib_functions": ["DateSerial", "DateValue", "Year", "Month", "Day", "Weekday", "WeekdayName"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Date construction and inspection with DateSerial and DateValue"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test stdlib_date_serial_value.bas into natural program style with Debug.Print output",
+  "notes": null
+}

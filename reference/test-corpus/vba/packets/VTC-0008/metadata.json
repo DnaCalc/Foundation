@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0008",
+  "title": "Array store and load",
+  "description": "Demonstrates fixed-size array declaration, storing values, reading them back, and computing aggregate statistics over the array contents.",
+  "category": "array_processing",
+  "subcategory": "basic_array",
+  "tags": ["array", "fixed_array", "for_loop", "aggregate", "tier1"],
+  "complexity": "simple",
+  "language_features": ["variable_declaration", "sub_procedure", "for_loop", "fixed_array"],
+  "stdlib_functions": [],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Fixed array store, load, and aggregation"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test array_store_load.bas into natural program style with Debug.Print output",
+  "notes": null
+}

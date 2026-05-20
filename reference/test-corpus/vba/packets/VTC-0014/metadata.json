@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0014",
+  "title": "Factorial (Recursive)",
+  "description": "Compute factorials of 0 through 12 using a recursive function and print each result.",
+  "category": "math_numeric",
+  "subcategory": "recursion",
+  "tags": ["factorial", "recursion", "math"],
+  "complexity": "simple",
+  "language_features": ["recursion", "Function", "For-Next", "Long-arithmetic"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Recursive factorial computation"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard recursive factorial algorithm description",
+  "notes": null
+}

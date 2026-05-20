@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0007",
+  "title": "For-Next with GoSub",
+  "description": "Demonstrates For-Next loop combined with GoSub/Return to accumulate a sum of squares, showing classic VBA subroutine-style flow control within a single procedure.",
+  "category": "control_flow",
+  "subcategory": "for_gosub",
+  "tags": ["for_next", "gosub", "return", "loop", "accumulator", "tier1"],
+  "complexity": "moderate",
+  "language_features": ["variable_declaration", "sub_procedure", "for_loop", "gosub_return", "labels"],
+  "stdlib_functions": [],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "For-Next loop with GoSub accumulator pattern"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-126"],
+  "provenance": "adapted",
+  "provenance_detail": "Rewritten from OxVBA conformance test consolidate_for_gosub_mix.bas into natural program style with Debug.Print output",
+  "notes": null
+}

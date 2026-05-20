@@ -71,13 +71,14 @@ It owns shared implementation for:
 2. normalized replay runtime types,
 3. replay executor infrastructure,
 4. diff and explain engine infrastructure,
-5. witness-distillation framework,
-6. registry and lifecycle tooling,
-7. adapter SDK, loader, and conformance harnesses,
-8. shared pack-export infrastructure,
-9. `DNA ReCalc` host implementation.
+5. normalized comparison/equivalence semantics over declared replay-comparable surfaces,
+6. witness-distillation framework,
+7. registry and lifecycle tooling,
+8. adapter SDK, loader, and conformance harnesses,
+9. shared pack-export infrastructure,
+10. `DNA ReCalc` host implementation.
 
-`OxReplay` is not a semantics lane.
+`OxReplay` is not a semantics lane and does not own final spreadsheet-host verdict policy.
 
 ### 4.4 `DNA ReCalc`
 `DNA ReCalc` is the replay appliance host surface built on `OxReplay`.
@@ -87,7 +88,7 @@ It is:
 2. a replay and evidence host,
 3. distinct from spreadsheet proving hosts such as `DNA OneCalc`, `DNA TreeCalc`, or `DNA PreCalc`.
 
-`DNA ReCalc` must not become a second source of semantic truth.
+`DNA ReCalc` must not become a second source of semantic truth or a second source of final spreadsheet-host verdict policy.
 
 ## 5. Architectural model
 Replay is a cross-lane causality plane implemented through adapters.
@@ -183,6 +184,11 @@ Diff compares:
 4. required surfaces only or full forensic surfaces.
 
 Diff output must use typed mismatch classes where a registry family exists.
+Comparison/equivalence over declared replay-comparable surfaces lives here rather than in spreadsheet proving hosts. This includes worksheet-value equality, display-surface equality, numeric exactness-class comparison, and typed outcome/reject comparison when the artifact contract carries those classes explicitly.
+
+Host-policy rule:
+- `OxReplay` determines whether declared comparison surfaces are equivalent.
+- Spreadsheet proving hosts such as `DNA OneCalc` remain responsible for deciding final host verdicts such as `Matched`, `Mismatched`, or `Blocked`, including missing-surface and non-comparable-run policy.
 
 ### 7.4 Explain
 Explain surfaces must answer questions such as:
@@ -249,7 +255,9 @@ The initial registry families are:
 3. severity,
 4. reduction outcome,
 5. witness lifecycle state,
-6. capability level.
+6. capability level,
+7. comparison view family,
+8. typed outcome/reject class.
 
 Registry rule:
 1. tool outputs use registry ids when a family exists,

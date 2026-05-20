@@ -102,6 +102,8 @@ Additional synthesis-promoted candidate packs (core-engine/FEC-F3E pass-02):
 - `PACK.fec.reject_detail_replay` (structured reject-code/detail replay determinism)
 - `PACK.fec.overlay_lifecycle` (overlay key match, eviction triggers, epoch-safe GC)
 - `PACK.fec.format_dependency_tokens` (format/CF dependency-token invalidation behavior)
+- `PACK.fec.oxfunc_metadata_contract` (resolved call-site handles, dispatch keys, function-facing dependency metadata, volatility/determinism/host interaction declarations)
+- `PACK.optimization.semantic_equivalence` (value-only vs trace-rich execution, hoisting/cache/compiled-backend equivalence, no evaluator-local function special cases)
 - `PACK.format.semantic_vs_display_boundary` (formula-semantic formatting through evaluator seam)
 - `PACK.visibility.policy_equivalence` (None vs VisibleFirst stabilized-equivalence checks)
 - `PACK.visibility.starvation_bound` (fairness bound enforcement under visibility-priority scheduling)
@@ -178,6 +180,7 @@ Pack status terminology:
   - divergence indexing requirements,
   - reduced-witness or quarantine behavior for retained mismatches.
 - `PACK.reject.calculus` contract must include replay-consistency requirements when typed reject evidence is part of the claim.
+- Replay-governed comparison/equivalence semantics for declared comparison surfaces (worksheet values, display surfaces, numeric exactness classes, and typed reject/outcome classes) are centralized in `OxReplay`; spreadsheet proving hosts remain responsible for final host verdict policy and blocked/incomplete-run handling.
 
 ## 5. Regression Handling (AAR-driven)
 - Every failure produces:
@@ -257,8 +260,10 @@ Replay tooling host:
 Execution rule:
 - host repos prove and compose lane repos,
 - shared tooling repos may implement cross-lane infrastructure without claiming lane-semantic authority,
+- replay/equivalence comparison for declared replay-comparable surfaces should be implemented once in `OxReplay` rather than reimplemented independently in hosts,
+- hosts remain responsible for final host verdict policy and for deciding when missing or unavailable evidence requires a blocked/non-comparable result,
 - lane repos do not silently mutate Foundation doctrine,
-- Foundation promotion requires managed-run handoff and synthesis decision logging.
+- Foundation promotion requires managed-run handover and synthesis decision logging.
 
 ## 8. Managed-Run Discipline (Prompt, Research, Synthesis, Reference)
 Prompt execution, deep research, synthesis, and reference-spec processing are treated as managed operational activities with run artifacts.
@@ -362,8 +367,8 @@ When synthesis suggestions conflict, precedence remains:
   - empirical-derived evidence (`EMP-*` lineage),
   and should support mixed-source justification where both apply.
 
-### 8.11 Cross-Repo Lane Handoff Template (Normative)
-When sibling lane repos propose cross-program policy text for Foundation adoption, include a minimal handoff record in the managed run:
+### 8.11 Cross-Repo Lane Handover Template (Normative)
+When sibling lane repos propose cross-program policy text for Foundation adoption, include a minimal handover record in the managed run:
 1. scope and profile bounds:
    - affected domains, requirement families, and profile/version applicability.
 2. proposed normative text:
@@ -373,8 +378,8 @@ When sibling lane repos propose cross-program policy text for Foundation adoptio
 4. unresolved decisions and risk impact:
    - explicit open decisions, blocker status, and failure/risk impact if deferred.
 
-Handoff records may be included as:
-1. a dedicated `outputs/HANDOFF_<lane>.md`, or
+Handover records may be included as:
+1. a dedicated `outputs/HANDOVER_<lane>.md`, or
 2. a structured section inside synthesis decision logs.
 
 ### 8.12 Host Charter Conformance Ladder (Normative)
@@ -406,10 +411,12 @@ Handoff records may be included as:
 - Baseline forbidden coupling edges (without synthesis override):
   - `OxFunc` -> `OxFml`/`OxCalc`/`OxVba`
   - `OxFml` -> `OxCalc`
+  - `OxFml`/hosts/graph backends -> duplicated OxFunc-owned function/operator semantics for optimization shortcuts
   - `OxCalc` -> host/UI/file-adapter implementation layers
   - `OxReplay` -> lane-semantic internals outside declared adapter or conformance-test boundaries
   - lane semantic cores -> broad `OxReplay` runtime packages
-- FEC/F3E protocol definition authority: FEC/F3E protocol is co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handoff process.
+- FEC/F3E protocol definition authority: FEC/F3E protocol is co-defined. OxFml defines the evaluator-side contract (session lifecycle, commit deltas, trace schema). OxCalc co-defines the coordinator-facing parts (publication fences, scheduling interaction, rejection policy). The shared protocol specification lives in OxFml as the spec owner, with OxCalc contributing coordinator-facing requirements through the cross-repo handover process.
+- Full-model optimization direction: OxFunc remains canonical for worksheet value/function/operator semantics and provides contract metadata for optimized evaluators; OxFml owns formula-plan structure and trace publication policy; FEC/host/OxCalc layers own scheduling, invalidation, publication, caching, concurrency, and graph/backend execution strategy. Optimization work must route through metadata contracts and packs, not through evaluator-local function-specific shortcuts.
 - Foundation maintains a theory-to-pack mapping register that links high-value theory claims to one of:
   - proof obligation,
   - conformance pack requirement,
@@ -480,55 +487,74 @@ Handoff records may be included as:
 - No host or pack may rely on undeclared adapter capability levels.
 
 ### 8.18 New Repo Bootstrap And Beads Execution Standard (Normative)
-- New DNA Calc repos must default to a slim bootstrap shape unless a synthesis decision explicitly approves a different structure.
+- New DNA Calc repos default to the current slim `DnaTreeCalc`-shaped template unless a synthesis decision explicitly approves a different structure.
+- `DnaTreeCalc` is the current reference instance for host-repo execution doctrine.
 - Default root files:
   - `README.md`
   - `AGENTS.md`
+  - `CHARTER.md`
+  - `OPERATIONS.md`
   - `.gitignore`
 - Default required directories and files:
-  - `.beads/` initialized and tracked,
-  - `docs/CHARTER.md`,
-  - `docs/OPERATIONS.md`,
-  - one main engineering spec, preferably `docs/SCOPE_AND_SPEC.md`,
+  - `.beads/` initialized once bootstrap reaches bead execution,
+  - `docs/SPEC.md` as the spec/design entrypoint (usually an index for the repo's requirements, design, planning, and model documents),
   - `docs/WORKSET_REGISTER.md`,
-  - `docs/BEADS.md`,
-  - `scripts/invoke-br-serialized.ps1`,
-  - `scripts/check-worksets.ps1` or equivalent minimal register-shape checker.
+  - `docs/handovers/README.md` when cross-repo coordination is expected.
 - Default reduction rules:
   - do not create a `CURRENT_BLOCKERS.md` file by default,
   - do not split `OPERATIONS.md` and `LOCAL_EXECUTION_DOCTRINE.md` by default,
-  - do not create `docs/spec/README.md` or a multi-file spec tree for a repo that still has one main engineering spec,
-  - do not create a multi-file beads-doc tree by default.
+  - do not create `docs/BEADS.md` by default; keep bead doctrine in `OPERATIONS.md` until local complexity earns a split,
+  - do not require repo-local `br` wrapper scripts by default,
+  - do not require a repo-local workset checker by default,
+  - do not create one document per workset or bead by default,
+  - if one small repo truly has one spec document, `docs/SPEC.md` may be that document rather than an index.
 - Execution-truth split for new repos:
-  - the main engineering spec owns scope, design, and artifact truth,
-  - `docs/WORKSET_REGISTER.md` owns workset truth only,
-  - `.beads/` owns execution truth only,
-  - active work executes through `workset -> epic -> bead`.
+  - `CHARTER.md` owns mission, repo role, and strategic fit,
+  - the spec/design set, entered through `docs/SPEC.md`, owns requirements, design, planning, and artifact truth,
+  - `docs/WORKSET_REGISTER.md` owns roadmap, large work areas, coarse lifecycle, and work history,
+  - `.beads/` owns live execution truth,
+  - active work executes through `workset -> epic bead -> child beads`.
 - Workset-register rule:
   - use one living all-worksets register by default,
   - the register should describe the ordered workset set, workset meaning, dependency shape, and default sequencing,
-  - worksets are high-level planning or scope partitions, not execution-state objects,
-  - the register must not track per-workset `active`, `ready`, `queued`, `blocked`, or `complete` status,
+  - worksets are high-level planning or scope partitions, not a live task board,
+  - register status is limited to coarse `OPEN`, `IN PROGRESS`, and `CLOSED`,
+  - coarse status is a scan aid for fresh agents and humans; `br` remains the execution source of truth,
+  - once `.beads/` exists, adding an `OPEN` workset to the register means creating the matching epic bead in the same change,
+  - bootstrap worksets may be the exception while they create `.beads/`,
+  - every non-bootstrap register workset must have a matching epic bead once bead execution exists,
+  - `OPEN` means the workset is known and its epic exists, but execution has not yet materially started,
+  - `IN PROGRESS` and `CLOSED` should be reconciled at housekeeping or workset boundaries, not after every leaf bead,
+  - the register must not track live readiness, blockers, active ownership, leaf progress, or closure evidence,
   - one document per workset is not the default operating model,
   - if a repo has a prior detailed planning breakdown worth retaining, keep it inside the register as a seed map rather than fanning out immediately into separate workset documents.
 - Rollout rule:
   - some epics and child beads may be created directly during initial rollout from the register,
-  - some epics should be rollout epics whose execution creates or refines child beads later,
-  - a workset is practically incomplete while open epics or leaf beads rolled from it remain open in `.beads/`.
+  - some epics may start with a rollout bead whose execution creates or refines child beads later,
+  - child and rollout beads should be linked under the workset epic with `br` so the epic cannot honestly close while child work remains open,
+  - `br` owns readiness, blockers, dependency edges, child closure, and close truth.
 - Bead-tool rule:
   - `br` is the authoritative mutation tool,
   - `bv` is the supported graph-aware inspection tool,
   - agents may use only non-interactive robot-style inspection commands,
   - direct edits to `.beads/` state are prohibited,
-  - `br` mutations must be serialized through the repo-local wrapper script.
-- Checker rule:
-  - any repo-local `check-worksets` script should be described as a minimal register-shape checker,
-  - it must not be described as the owner of readiness, blocker, progress, or closure truth.
+  - repo-local wrapper scripts are optional operational aids, not part of the default template.
+- Verification and review rule:
+  - run the relevant useful checks for the touched area,
+  - code checks apply once the build/test surface exists,
+  - bootstrap and docs-only work may use read-through, link/reference scans, register scans, and `br` sanity checks,
+  - fresh-eyes review remains part of closure: code beads need a blunder/omission/bug pass; UX beads need click-through where applicable; infra/doctrine beads need a read-through,
+  - close notes should name the decisive useful check or observation, not repeat checklist boilerplate.
+- Housekeeping/checker rule:
+  - housekeeping should reconcile register entries against workset epic beads and stale pointers,
+  - a checker, if present, is a housekeeping aid for link health, register shape, and workset-epic pairing,
+  - checker policy must not duplicate `br` invariants for readiness, blockers, dependency closure, child closure, or live progress.
 - Cross-repo boundary rule for new repos:
   - agents working in one repo may read sibling repos under the shared `DnaCalc` root for seam consumption, reference checks, replay evidence intake, or design alignment,
-  - those sibling repos are read-only from the perspective of the current repo,
-  - required changes in another repo must be handled through a handoff, prompt packet, or a separate repo-local execution run in that repo.
-- This standard is the default template for new DNA Calc repos, including host repos such as `DnaOneCalc`.
+  - sibling repos are read-only from the perspective of the current repo unless the user explicitly scopes execution to that repo and the agent loads that repo's local context,
+  - otherwise, required changes in another repo must be handled through a handover, prompt packet, or separate repo-local execution run,
+  - handovers use `docs/handovers/HANDOVER_<TARGET>_<topic>.md` by default, with the request at the top, `Open`/`Responded`/`Done` status, and any response appended in the same file.
+- This standard is the default template for new DNA Calc repos, including host repos such as `DnaOneCalc` and `DnaTreeCalc`.
 
 ## 9. Clean-room Evidence Workflow
 - Compatibility claims require an evidence record that includes:
@@ -566,7 +592,7 @@ Handoff records may be included as:
 ### 10.3 Sequence Baseline for Current Program Layout
 Use this dependency-ordered wave sequence for current execution planning:
 1. **Wave A (completed)**: lane/host ownership freeze and Foundation text promotion (`OxFunc`/`OxFml`/`OxCalc`/`OxVba`, host progression map). OxFml/OxCalc repos are bootstrapped and Foundation now operates as read-only mirror for lane-owned specs.
-2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts). FEC/F3E concurrency-hardening gates are Stage 2 prerequisites, not Wave B exit criteria; DNA OneCalc and DNA TreeCalc proceed under Stage 1 sequential coordinator. OCaml/Lean kickoff items are Deferred — revisit activation at Wave B when OxFml evaluator contracts are exercised and can inform the formal model shape.
+2. **Wave B**: OxFml/OxFunc seam hardening (profiles, reject taxonomy, trace contracts, capability/fence contracts, OxFunc resolved-call and optimizer-metadata contract). FEC/F3E concurrency-hardening gates are Stage 2 prerequisites, not Wave B exit criteria; DNA OneCalc and DNA TreeCalc proceed under Stage 1 sequential coordinator. OCaml/Lean kickoff items are Deferred — revisit activation at Wave B when OxFml evaluator contracts are exercised and can inform the formal model shape.
 3. **Wave C**: DNA OneCalc proving host — no-reference-resolution profile proving, formula language completeness, OxFunc function catalog validation, Stage 1 sequential coordinator.
 4. **Wave D**: OxCalc tree-substrate realization and coordinator baseline closure — tree-only substrate realization (no grid, no spill, no structural rewrites, Stage 1 sequential coordinator).
 5. **Wave E**: DNA TreeCalc proving host for serious multi-node behavior before grid complexity.

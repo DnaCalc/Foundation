@@ -1,0 +1,5 @@
+Source handoff:
+..\OxFunc\docs\handoffs\PROMPT-FOUNDATION-W096_FULL_MODEL_OPTIMIZATION_DIRECTION.md
+
+Source context:
+OxFunc W096 clarified that whole-model optimization is a long-term DNA Calc architecture target, while OxFunc remains owner of function/operator semantics and supplies metadata consumed by optimized evaluators and hosts.

@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0022",
+  "title": "Calculator (Select Case)",
+  "description": "Evaluate a series of arithmetic operations using Select Case to dispatch operators. Print each calculation and result.",
+  "category": "control_flow",
+  "subcategory": "select_case",
+  "tags": ["calculator", "select-case", "arithmetic", "dispatch"],
+  "complexity": "simple",
+  "language_features": ["Select-Case", "Function", "For-Next", "Double-arithmetic"],
+  "stdlib_functions": ["Debug.Print", "CStr", "Format"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "Arithmetic calculator using Select Case dispatch"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard calculator with Select Case dispatch pattern",
+  "notes": null
+}

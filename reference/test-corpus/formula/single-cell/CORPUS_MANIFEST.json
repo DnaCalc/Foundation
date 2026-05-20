@@ -5,7 +5,7 @@
   "description": "Single-cell formula test cases for OxFml/DnaOneCalc evaluator proving and Excel comparison",
   "target_host": "DnaOneCalc",
   "target_lane": "OxFml",
-  "entry_count": 1042,
+  "entry_count": 1046,
   "category_counts": {
     "arithmetic_operators": 50,
     "array_constant_literal": 30,
@@ -14,35 +14,35 @@
     "engineering": 32,
     "financial": 60,
     "information": 30,
-    "let_lambda_functional": 140,
-    "logical": 50,
+    "let_lambda_functional": 141,
+    "logical": 52,
     "lookup_nonref": 40,
     "math_trig": 80,
-    "nested_complex": 137,
+    "nested_complex": 138,
     "operator_edge": 30,
     "statistical": 60,
     "text_string": 92,
     "type_coercion_edge": 64
   },
-  "deterministic_count": 1040,
+  "deterministic_count": 1044,
   "non_deterministic_count": 2,
   "distinct_functions_exercised": 253,
-  "distinct_tags": 780,
+  "distinct_tags": 779,
   "complexity_distribution": {
-    "basic": 191,
+    "trivial": 137,
     "simple": 249,
-    "trivial": 136,
     "moderate": 145,
-    "intermediate": 82,
     "complex": 73,
-    "advanced": 58,
-    "expert": 66
+    "expert": 78,
+    "intermediate": 96,
+    "basic": 193,
+    "advanced": 75
   },
   "exclusion_policy": "No formulas requiring multi-cell reference resolution (OFFSET, INDIRECT, cell references beyond LET bindings). RAND/RANDBETWEEN included but flagged non-deterministic.",
   "provenance_summary": {
-    "authored": 1000,
-    "adapted": 42
+    "authored": 992,
+    "adapted": 54
   },
   "created_utc": "2026-04-05T00:00:00Z",
-  "last_updated_utc": "2026-04-05T00:00:00Z"
+  "last_updated_utc": "2026-05-06T00:00:00Z"
 }

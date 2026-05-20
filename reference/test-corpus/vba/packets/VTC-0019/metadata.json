@@ -1,0 +1,20 @@
+{
+  "test_id": "VTC-0019",
+  "title": "FizzBuzz",
+  "description": "Classic FizzBuzz for numbers 1 to 30, printing Fizz, Buzz, FizzBuzz, or the number.",
+  "category": "control_flow",
+  "subcategory": "conditional_logic",
+  "tags": ["fizzbuzz", "conditional", "modulo", "classic"],
+  "complexity": "trivial",
+  "language_features": ["For-Next", "If-ElseIf-Else", "Mod-operator"],
+  "stdlib_functions": ["Debug.Print", "CStr"],
+  "modules": [{"filename": "main.bas", "kind": "standard", "description": "FizzBuzz implementation for 1 to 30"}],
+  "entry_point": "Main",
+  "requires_com": false,
+  "requires_host_objects": false,
+  "deterministic": true,
+  "source_ids": ["R-SRC-127"],
+  "provenance": "authored",
+  "provenance_detail": "Clean-room authored from standard FizzBuzz problem description",
+  "notes": null
+}

@@ -3,6 +3,10 @@
 This directory holds local tooling used by managed runs (research, reference processing, empirical probing, and related orchestration).
 
 ## Current tools
+- `corpus-monitor/`
+  - .NET (C#) Foundation-local formula corpus ledger and pane-monitoring tool.
+  - Builds latest-known campaign status from retained `verification-bundle-report.json` artifacts and polls `wtd` pane captures for coordinator visibility.
+  - Optional wrappers (`.cmd` / `.ps1`) are convenience launchers; runtime logic is in `tools/CorpusMonitor/`.
 - `excel-probe/`
   - .NET (C#) Excel empirical runner (`run`, `run-manifest`, and `env` commands).
   - Optional wrappers (`.cmd` / `.ps1`) are convenience launchers only; runtime logic is in `tools/ExcelProbe/`.

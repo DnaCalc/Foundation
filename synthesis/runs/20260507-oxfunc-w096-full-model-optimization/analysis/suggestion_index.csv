@@ -1,0 +1,4 @@
+suggestion_id,source_file,summary,target_docs
+W096-001,..\OxFunc\docs\handoffs\PROMPT-FOUNDATION-W096_FULL_MODEL_OPTIMIZATION_DIRECTION.md,Record high-throughput full-model optimization as a core architecture target,"ARCHITECTURE_AND_REQUIREMENTS.md; OPERATIONS.md"
+W096-002,..\OxFunc\docs\handoffs\PROMPT-FOUNDATION-W096_FULL_MODEL_OPTIMIZATION_DIRECTION.md,Clarify OxFunc/OxFml/OxCalc ownership split for semantics formula plans and graph execution,"CHARTER.md; ARCHITECTURE_AND_REQUIREMENTS.md; OPERATIONS.md"
+W096-003,..\OxFunc\docs\handoffs\PROMPT-FOUNDATION-W096_FULL_MODEL_OPTIMIZATION_DIRECTION.md,Forbid evaluator-local function special cases and require metadata-gated optimization,"ARCHITECTURE_AND_REQUIREMENTS.md; OPERATIONS.md; notes/THEORY_TO_PACK_REGISTER.md"
