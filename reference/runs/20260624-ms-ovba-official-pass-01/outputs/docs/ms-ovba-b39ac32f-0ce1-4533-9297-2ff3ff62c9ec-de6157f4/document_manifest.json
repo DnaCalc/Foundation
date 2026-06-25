@@ -1,0 +1,17 @@
+﻿{
+  "document_id": "ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4",
+  "source_id": "MS-OVBA",
+  "source_url": "https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-ovba/b39ac32f-0ce1-4533-9297-2ff3ff62c9ec",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\learn.microsoft.com\\en-us\\openspecs\\office_file_formats\\ms-ovba\\b39ac32f-0ce1-4533-9297-2ff3ff62c9ec.md",
+  "source_sha256": "de6157f4b4a5e2c0806837176cb8cfd32ffadb86ac08b06276bd5e3c31d656e4",
+  "extraction_status": "ok",
+  "extraction_mode": "markdown_native",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\docs\\ms-ovba-b39ac32f-0ce1-4533-9297-2ff3ff62c9ec-de6157f4\\images"
+  }
+}

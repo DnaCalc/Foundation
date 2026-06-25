@@ -14,3 +14,4 @@ OFFICE2003-XML-DESKTOP,office_2003_xml_schemas,Microsoft Office System and XML B
 OFFICE2003-WORD-EXCEL-SCHEMAS,office_2003_xml_schemas,Using Schemas with Word 2003 and Excel 2003,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa159902(v=office.11),false,true
 WORD2003-XML-SDK-WELCOME,office_2003_xml_schemas,Welcome to the Microsoft Office Word 2003 XML Software Development Kit,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa214923(v=office.11),false,true
 WORD2003-WORDPROCESSINGML-OVERVIEW,office_2003_xml_schemas,Overview of WordprocessingML,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa212812(v=office.11),false,true
+MS-OFORMS,office_file_formats,Office Forms Binary File Formats,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-oforms/9c79701a-8c3e-4429-a139-b60ac3a1d50a,true,true

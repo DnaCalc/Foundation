@@ -1,0 +1,37 @@
+﻿{
+  "run_id": "specproc-20260624-210741",
+  "captured_utc": "2026-06-24T21:07:47.8616687Z",
+  "source_index": "C:\\Work\\DnaCalc\\Foundation\\reference\\index.csv",
+  "docs_processed": 3,
+  "segments": 17897,
+  "sentences": 37974,
+  "spec_items": 9431,
+  "conformance_candidates": 357,
+  "conformance_excluded": 2,
+  "pending_items": 0,
+  "tooling": {
+    "runner_name": "SpecPackProcessor",
+    "runner_version": "0.1.0\u002Bcbf24b746e66860242fd7b0d87ffac5d0e71807d",
+    "runner_build_version": "0.1.0.0",
+    "platform": "Microsoft Windows NT 10.0.26200.0",
+    "dotnet_runtime": "10.0.9",
+    "working_directory": "C:\\Work\\DnaCalc\\Foundation\\tools",
+    "invocation_working_directory": "C:\\Work\\DnaCalc\\Foundation",
+    "git_commit": "cbf24b746e66860242fd7b0d87ffac5d0e71807d",
+    "git_branch": "master",
+    "git_dirty": true
+  },
+  "quality": {
+    "excluded_by_reason": {
+      "normative_keyword_definition": 2
+    }
+  },
+  "outputs": {
+    "documents_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\documents.csv",
+    "selected_sources_csv": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\selected_sources.csv",
+    "spec_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\spec_items.jsonl",
+    "conformance_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\conformance_items.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\conformance_excluded.jsonl",
+    "llm_tasks_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260624-ms-ovba-official-pass-01\\outputs\\llm\\classification_tasks.jsonl"
+  }
+}

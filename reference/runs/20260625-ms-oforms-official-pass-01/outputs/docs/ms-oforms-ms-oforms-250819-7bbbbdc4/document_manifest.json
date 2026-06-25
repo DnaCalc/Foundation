@@ -1,0 +1,17 @@
+﻿{
+  "document_id": "ms-oforms-ms-oforms-250819-7bbbbdc4",
+  "source_id": "MS-OFORMS",
+  "source_url": "https://officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net/files/MS-OFORMS/%5bMS-OFORMS%5d-250819.docx",
+  "local_path": "C:\\Work\\DnaCalc\\Foundation\\reference\\downloads\\officeprotocoldocs-f5hpbjgea6b8gneq.b02.azurefd.net\\files\\MS-OFORMS\\[MS-OFORMS]-250819.docx",
+  "source_sha256": "7bbbbdc43407524fe2af99c070dfc358cc67404e5224b56d5cdabbc4736c9158",
+  "extraction_status": "ok",
+  "extraction_mode": "docx_openxml_zip",
+  "artifacts": {
+    "segments_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\segments.jsonl",
+    "sentences_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\sentences.jsonl",
+    "spec_items_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\spec_items.jsonl",
+    "conformance_candidates_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\conformance_candidates.jsonl",
+    "conformance_excluded_jsonl": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\conformance_excluded.jsonl",
+    "images_dir": "C:\\Work\\DnaCalc\\Foundation\\reference\\runs\\20260625-ms-oforms-official-pass-01\\outputs\\docs\\ms-oforms-ms-oforms-250819-7bbbbdc4\\images"
+  }
+}

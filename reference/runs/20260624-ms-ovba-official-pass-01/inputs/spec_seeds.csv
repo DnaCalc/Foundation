@@ -1,0 +1,17 @@
+seed_id,topic_group,title,url,expand_relative_openspecs,must_include
+MS-OFFSTANDLP,office_standards,Word/Excel/PowerPoint standards landing page,https://learn.microsoft.com/en-us/openspecs/office_standards/ms-offstandlp/d5784a8b-7070-466b-befa-b7bf3724c6f0,true,true
+MS-VBAL,microsoft_general_purpose_programming_languages,VBA Language Specification,https://learn.microsoft.com/en-us/openspecs/microsoft_general_purpose_programming_languages/ms-vbal/d5418146-0bd2-45eb-9c7a-fd9502722c74,false,true
+MS-OVBA,office_file_formats,Office VBA File Format Structure,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-ovba/b39ac32f-0ce1-4533-9297-2ff3ff62c9ec,false,true
+MS-DTYP,windows_protocols,Windows Data Types,https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/cca27429-5689-4a16-b2b4-9325d93e4ba2,false,true
+MS-OAUT,windows_protocols,OLE Automation Protocol,https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-oaut/bbb05720-f724-45c7-8d17-f83c3d1a3961,false,true
+VBA-API-OVERVIEW,office_vba,VBA API overview language reference,https://learn.microsoft.com/en-us/office/vba/api/overview/language-reference,false,true
+VBA-FUNCTIONS,office_vba,Functions (Visual Basic for Applications),https://learn.microsoft.com/en-us/office/vba/language/reference/functions-visual-basic-for-applications,false,true
+VBA-LANG-UIHELP,office_vba,Visual Basic language reference (UI help),https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/visual-basic-language-reference,false,true
+MS-XLS,office_file_formats,Excel Binary File Format (.xls) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xls,false,true
+MS-XLSB,office_file_formats,Excel Binary Workbook (.xlsb) Structure Specification,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-xlsb,false,true
+OFFICE2003-XML-OSP,office_2003_xml_schemas,Office 2003 XML Reference Schemas in Open Specification Promise,https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/1c24c7c8-28b0-4ce1-a47d-95fe1ff504bc,false,true
+OFFICE2003-XML-DESKTOP,office_2003_xml_schemas,Microsoft Office System and XML Bringing XML to the Desktop,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa159914(v=office.11),false,true
+OFFICE2003-WORD-EXCEL-SCHEMAS,office_2003_xml_schemas,Using Schemas with Word 2003 and Excel 2003,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa159902(v=office.11),false,true
+WORD2003-XML-SDK-WELCOME,office_2003_xml_schemas,Welcome to the Microsoft Office Word 2003 XML Software Development Kit,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa214923(v=office.11),false,true
+WORD2003-WORDPROCESSINGML-OVERVIEW,office_2003_xml_schemas,Overview of WordprocessingML,https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2003/aa212812(v=office.11),false,true
+MS-OFORMS,office_file_formats,Office Forms Binary File Formats,https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-oforms/9c79701a-8c3e-4429-a139-b60ac3a1d50a,true,true

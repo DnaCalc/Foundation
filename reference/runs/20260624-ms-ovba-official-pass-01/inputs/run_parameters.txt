@@ -1,0 +1,7 @@
+source_index=reference/index.csv
+filter=MS-OVBA
+out=reference/runs/20260624-ms-ovba-official-pass-01/outputs
+command=tools/spec-pack-processor/spec-pack-processor.ps1 run --source-index reference/index.csv --out reference/runs/20260624-ms-ovba-official-pass-01/outputs --filter MS-OVBA
+captured_utc=2026-06-24T21:08:25.2042859Z
+git_commit=cbf24b746e66860242fd7b0d87ffac5d0e71807d
+git_branch=master

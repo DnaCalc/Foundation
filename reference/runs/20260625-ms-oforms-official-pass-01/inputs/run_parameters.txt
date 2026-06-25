@@ -1,0 +1,7 @@
+source_index=reference/index.csv
+filter=MS-OFORMS
+out=reference/runs/20260625-ms-oforms-official-pass-01/outputs
+command=tools/spec-pack-processor/spec-pack-processor.ps1 run --source-index reference/index.csv --out reference/runs/20260625-ms-oforms-official-pass-01/outputs --filter MS-OFORMS
+captured_utc=2026-06-25T05:11:32.6278869Z
+git_commit=cbf24b746e66860242fd7b0d87ffac5d0e71807d
+git_branch=master
