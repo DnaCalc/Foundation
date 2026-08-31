@@ -90,8 +90,18 @@ and origin counterparts.
 
 ## Worktrees
 
-Intent of this pass: extra worktrees removed; canonical checkout stays on
-`main`/`master`. Named branches remain.
+Extra worktrees were removed on 2026-08-31. Canonical checkouts:
+
+- `DnaTreeCalc` → `main` only
+- `OxVba` → `master` only
+
+Named branches remain. `OxVba-wt-*` directories are gone.
+
+## OxForms GitHub
+
+Created `https://github.com/DnaCalc/OxForms` (public) and pushed `master`.
+GitHub warned that `msforms_parity_ledger.v1.json` is 52.37 MB (over the 50 MB
+recommendation). Follow-up: LFS or split the ledger.
 
 ## Not a git repo
 
