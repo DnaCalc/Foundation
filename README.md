@@ -3,7 +3,10 @@
 Working docs for the DNA Calc program foundation and planning.
 DNA Calc is developed by DNA Kode.
 
-**Current phase context (2026-03-16; updated 2026-05-20):**
+**Current phase context (2026-03-16; updated 2026-09-14):**
+W011 (file-backed .xlsx open/edit/recalc/save in the DnaTreeCalc Calc host) closed 2026-09-02. The active program plan is the "Measured Excel" campaign in `notes/PROGRAM_INVESTIGATION_2026-09-10.md` (approved 2026-09-10): a provenance-first, offline Excel-vs-DNA differential over a real-workbook corpus as the instrument, then engine correctness, substrate decisions, and the OxDoc write ceiling, under an explicit dual-profile rule. The paragraph below is retained as history.
+
+**Phase context as of 2026-05-20 (historical):**
 The program has completed the DnaVisiCalc pathfinder phase — engine scope is exercised; formal artifact exit (Track B) remains outstanding.
 Next focus shifts to two parallel lanes: **OxFml** (formula/evaluator lane with FEC/F3E spec ownership) using DNA OneCalc as the proving host, and **OxCalc** (core engine lane) starting with tree-only substrate via DNA TreeCalc.
 Foundation remains the doctrine, architecture, and conformance policy owner. It does not own implementation or spec artifacts once they transfer to lane repos.

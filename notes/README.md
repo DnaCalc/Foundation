@@ -8,6 +8,7 @@
 - `PROGRAM_STOCKTAKING_20260503.md`
 - `PROGRAM_INVESTIGATION_2026-08-30.md` — current-state investigation of the mutable Excel calculation path (2026-08-30); working note, not doctrine
 - `HOUSEKEEPING_2026-08-31.md` — repo cleanliness, worktrees, leftover branches, delete-review folder
+- `PROGRAM_INVESTIGATION_2026-09-10.md` — post-W011 current-state investigation and the approved "Measured Excel" campaign plan (W0-W8): the offline cached-value Excel oracle, the FileCached false-green trap, the corpus census, the W0.1 harness-home decision; supersedes the 2026-08-30 note as current-state description
 - `FABLE_ULTRACODE_WORK_INSTRUCTIONS_W011_2026-09-01.md` — executable campaign pack for Fable Ultracode (~18 pp): W011 xlsx host glue first, beads + nominated JSM skills, Max credit budget, hard guardrails, Wave 2–3 stretch on the same file-backed path
 - `THEORY_TO_PACK_REGISTER.md`
 - `VISICALC_V0_SCOPE_ALIGNMENT_NOTES.md`
